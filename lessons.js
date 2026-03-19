@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.4.4';
+const lesson_data_ver = '2.5.0';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
@@ -104,7 +104,7 @@ const topics = {
       ]
   },
   "hobby_travel_1": {
-      id: 3,
+      id: 4,
       name: "Хобби и путешествия 1",
       words: [
   ["страна", "دولة", "dawla"],
@@ -129,7 +129,8 @@ const topics = {
   ["туризм", "سياحة", "siyaha"],
   ["путешествие", "سفر", "safar"],
   ["изучение", "دراسة", "dirasa"],
-  ["просмотр", "مشاهدة", "mushahada"]      ],
+  ["просмотр", "مشاهدة", "mushahada"]
+      ],
       sentences: [
   ["я люблю слушать музыку", "أنا أحب الاستماع إلى الموسيقى", "ana uhibb al-istima' ila al-musiqa"],
   ["я смотрю хорошие фильмы когда есть время", "أشاهد أفلاماً جيدة عندما يكون لدي وقت", "ushahid aflaman jayyida indama yakun ladayya waqt"],
@@ -143,6 +144,46 @@ const topics = {
   ["есть страны и города где лучше ездить на общественном транспорте", "هناك دول ومدن من الأفضل فيها استخدام المواصلات العامة", "hunaka duwal wa mudun min al-afdal fiha istikhdam al-muwasalat al-amma"],
   ["мы посетили многие страны Европы", "زرنا دولاً كثيرة في أوروبا", "zurna duwalan kathira fi urubba"],
   ["путешествие в новый город это интересно", "السفر إلى مدينة جديدة أمر ممتع", "al-safar ila madina jadida amrun mumti'"]
+      ]
+  },
+  "everyday_life_1": {
+      id: 3,
+      name: "Быт и обиход 1",
+      words: [
+  ["ковёр", "سجادة", "sajjada"],
+  ["кровать", "سرير", "sarir"],
+  ["шкаф", "خزانة", "khizana"],
+  ["комната", "غرفة", "ghurfa"],
+  ["кухня", "مطبخ", "matbakh"],
+  ["спальня", "غرفة نوم", "ghurfat nawm"],
+  ["окно", "شباك", "shubbak"],
+  ["пол", "أرضية", "ardiya"],
+  ["потолок", "سقف", "saqf"],
+  ["чайник", "غلاية", "ghallaya"],
+  ["стакан", "كوب", "kub"],
+  ["тарелка", "طبق", "tabbaq"],
+  ["нож", "سكين", "sikkin"],
+  ["вилка", "شوكة", "shawka"],
+  ["ложка", "ملعقة", "mil'aqa"],
+  ["печка", "فرن", "furn"],
+  ["кран / раковина", "حنفية", "khanafiye"]
+      ],
+      sentences: [
+  ["ковёр лежит на полу", "السجادة على الأرض", "al-sajjada 'ala al-ard"],
+  ["шкаф стоит в комнате", "الخزانه في الغرفة", "al-khizana fil-ghurfa"],
+  ["кровать большая и удобная", "السرير كبير ومريح", "al-sarir kabir wa murih"],
+  ["эта спальня очень светлая", "غرفة النوم هذه مضيئة جداً", "ghurfat al-nawm hadhihi mudi'a jiddan"],
+  ["окно в кухне открыто", "شباك المطبخ مفتوح", "shubbak al-matbakh maftuh"],
+  ["потолок белый и высокий", "السقف أبيض ومرتفع", "al-saqf abyad wa murtafi'"],
+  ["чайник сейчас на печке", "الغلاية على الفرن الآن", "al-ghallaya 'ala al-furn al-an"],
+  ["стакан стоит на столе", "الكوب على الطاولة", "al-kub 'ala al-tawila"],
+  ["ложка и вилка здесь", "الملعقة والشوكة هنا", "al-mil'aqa wal-shawka huna"],
+  ["нож и тарелка чистые", "السكين والطبق نظيفان", "al-sikkin wal-tabbaq nadhifan"],
+  ["кран находится в кухне", "الحنفية في المطبخ", "al-khanafiye fil-matbakh"],
+  ["я иду в спальню", "أنا أذهب لغرفة النوم", "ana adhab li-ghurfat al-nawm"],
+  ["в комнате есть окно", "هناك شباك في الغرفة", "hunaka shubbak fil-ghurfa"],
+  ["где лежит мой нож", "أين سكيني", "ayna sikkini"],
+  ["чайник горячий", "الغلاية ساخنة", "al-ghallaya sakhina"]
       ]
   }
 };
