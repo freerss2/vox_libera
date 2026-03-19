@@ -45,7 +45,7 @@ function scrollToTop(elementId) {
 
 function renderDrawer() {
     const pathContainer = document.getElementById('exercisePath');
-    pathContainer.innerHTML = ''; // Очистка
+    pathContainer.innerHTML = '';
 
     SCREEN_TYPES.forEach((screen, index) => {
         const li = document.createElement('li');
@@ -63,8 +63,6 @@ function renderDrawer() {
         // if this is current excercise - select it
         if ( currentGameType == screen.id ) setActiveExerciseInMenu(screen.id);
     });
-    displayTopicName(currentTopic);
-    showScreenTitle(currentGameType, currentTopic);
 }
 
 function setActiveExerciseInMenu(screen_id) {
@@ -134,10 +132,14 @@ function switchTopic(direction) {
   startTopic(nextTopicId);
 }
 
-function displayTopicName(topic) {
+// Apply topic to GUI
+// - title in menu
+// - completion status
+// - show/hide nodes in excercises path
+function applyTopicToDisplay(topic) {
   let topicTitle = topics[topic].name;
   document.getElementById('currentTopicName').textContent = topicTitle;
-  displayTopicState();
+  displayTopicCompletionState();
   // show/hide relevant items in menu
   // for topic 'all' hide item that have shared==0
   const nodes = document.getElementsByClassName('exercise-node');
@@ -155,9 +157,11 @@ function displayTopicName(topic) {
 // start the game
 function startTopic(topic) {
   currentTopic = topic;
-  displayTopicName(topic);
   currentGameType = SCREEN_TYPES[0].id;
+
+  applyTopicToDisplay(topic);
   showScreenTitle(currentGameType, topic);
+
   loadScreen(currentGameType);
 }
 
@@ -188,18 +192,18 @@ if ( ! topics[currentTopic] ) currentTopic = 'all';
 
 // Screen types
 const SCREEN_TYPES = [
-    { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь', inputs: ['words'] },
-    { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения', inputs: ['sentences'] },
-    { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов', inputs: ['words'] },
-    { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
-    { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары', inputs: ['words'] },
-    { id: 'quiz_ru_ar',      shared: 0, excercise: 1, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar', inputs: ['words', 'sentences'] },
-    { id: 'quiz_ar_ru',      shared: 0, excercise: 1, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru', inputs: ['words', 'sentences'] },
-    { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина', inputs: ['words', 'sentences'] },
-    { id: 'sent_ru_ar',      shared: 0, excercise: 1, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
-    { id: 'sent_ar_ru',      shared: 0, excercise: 1, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
-    { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение', inputs: ['sentences'] },
-    { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы', inputs: ['words', 'sentences'] }
+  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь',              inputs: ['words'] },
+  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения',          inputs: ['sentences'] },
+  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов',        inputs: ['words'] },
+  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
+  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары',           inputs: ['words'] },
+  { id: 'quiz_ru_ar',      shared: 0, excercise: 1, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar',   inputs: ['words', 'sentences'] },
+  { id: 'quiz_ar_ru',      shared: 0, excercise: 1, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru',   inputs: ['words', 'sentences'] },
+  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина',      inputs: ['words', 'sentences'] },
+  { id: 'sent_ru_ar',      shared: 0, excercise: 1, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
+  { id: 'sent_ar_ru',      shared: 0, excercise: 1, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
+  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение',    inputs: ['sentences'] },
+  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы',            inputs: ['words', 'sentences'] }
 ];
 
 // Reaction on completed round (according to reached grade)
@@ -219,11 +223,12 @@ const feedback = {
     ]
 };
 
+// by screen instance id (type) get whole record
 function getScreenRecord(type) {
   return SCREEN_TYPES.find(r => r.id == type);
 }
 
-// get screen type by game instance ID
+// get screen_type by game instance id
 function getScreenType(type) {
   const record = getScreenRecord(type);
   if (record) return record.screen_type;
@@ -234,6 +239,9 @@ function getScreenType(type) {
 function initMenu() {
     // 1. Populate list of screens
     renderDrawer();
+    // 2. Display topic title
+    applyTopicToDisplay(currentTopic);
+    showScreenTitle(currentGameType, currentTopic);
     // 3. Read and apply settings
     const savedDifficulty = localStorage.getItem('gameDifficulty') || 'easy';
     setGamesDifficulty(savedDifficulty);
@@ -276,6 +284,7 @@ function renderGameContent(type, topic) {
         const record = getScreenRecord(type);
         record.screen_type = replacement.screen_type;
         record.inputs = replacement.inputs;
+        // TODO: use data from "completed" topics
     }
     // 1. Hide all screen-related DOM elements
     const screens = document.querySelectorAll('.game-screen');
@@ -1122,6 +1131,8 @@ function getTopicData(topic, inputTypes) {
 
   if (!hideWellLearned) return currentData;
 
+  // TODO: for 'final' round - try to get data from other completed topics
+
   const candidates = currentData.filter(item => {
         const arabicWord = item[1];
         const stats = wordStats[arabicWord];
@@ -1173,7 +1184,7 @@ function toggleTopicPassed() {
     setTopicState(currentTopic, Number(isChecked));
 }
 
-function displayTopicState() {
+function displayTopicCompletionState() {
     const topicStates = getTopicStates();
     const state = Number(topicStates[currentTopic]);
     document.getElementById('topicPassedCheckbox').checked = state;
@@ -1224,6 +1235,7 @@ function updateStats(arabicWord, isCorrect) {
   wordStats[arabicWord] = stats[arabicWord];
 }
 
+// TODO: aggregate all settings in common object
 const hideWellLearnedElm = document.getElementById('hide-well-learned');
 var hideWellLearned = (localStorage.getItem('hideWellLearned') || 0) == '1';
 hideWellLearnedElm.checked = hideWellLearned == '1';

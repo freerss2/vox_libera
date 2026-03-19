@@ -133,17 +133,18 @@ const topics = {
       ],
       sentences: [
   ["я люблю слушать музыку", "أنا أحب الاستماع إلى الموسيقى", "ana uhibb al-istima' ila al-musiqa"],
-  ["я смотрю хорошие фильмы когда есть время", "أشاهد أفلاماً جيدة عندما يكون لدي وقت", "ushahid aflaman jayyida indama yakun ladayya waqt"],
   ["я люблю изучать разные языки", "أنا أحب دراسة لغات مختلفة", "ana uhibb dirasat lughat mukhtalifa"],
-  ["мы знакомимся с культурой разных стран и народов", "نحن نتعرف على ثقافة دول وشعوب مختلفة", "nahnu nata'arraf 'ala thaqafat duwal wa shu'ub mukhtalifa"],
   ["наша семья любит путешествовать", "عائلتنا تحب السفر", "a'ilatuna tuhibb al-safar"],
-  ["мы любим туризм внутри страны и поездки за рубеж", "نحن نحب السياحة الداخلية والسفر للخارج", "nahnu nuhibb al-siyaha al-dakhiliya wal-safar lil-kharij"],
   ["в некоторых странах мы арендуем машину", "في بعض الدول نستأجر سيارة", "fi ba'd al-duwal nasta'jir sayyara"],
   ["побережье этой страны короткое", "هَل ساحِل هٰذا الْبَلَد قَصير", "Hal sahil hadha al-balad qasir"],
   ["я готов к поездке", "انا جاهز للرحلة", "Ana jaahiz lal-rehli"],
-  ["есть страны и города где лучше ездить на общественном транспорте", "هناك دول ومدن من الأفضل فيها استخدام المواصلات العامة", "hunaka duwal wa mudun min al-afdal fiha istikhdam al-muwasalat al-amma"],
   ["мы посетили многие страны Европы", "زرنا دولاً كثيرة في أوروبا", "zurna duwalan kathira fi urubba"],
-  ["путешествие в новый город это интересно", "السفر إلى مدينة جديدة أمر ممتع", "al-safar ila madina jadida amrun mumti'"]
+  ["путешествие в новый город это интересно", "السفر إلى مدينة جديدة أمر ممتع", "al-safar ila madina jadida amrun mumti'"],
+  ["я смотрю фильмы иногда", "أشاهد أفلاماً أحياناً", "ushahid aflaman ahyanan"],
+  ["мы изучаем разные культуры", "نحن ندرس ثقافات مختلفة", "nahnu nadrus thaqafat mukhtalifa"],
+  ["мы любим местный туризм", "نحن نحب السياحة المحلية", "nahnu nuhibb al-siyaha al-mahalliya"],
+  ["мы часто путешествуем за рубеж", "نسافر كثيراً خارج البلاد", "nusafir kathiran kharij al-bilad"],
+  ["здесь лучше общественный транспорт", "المواصلات العامة هنا أفضل", "al-muwasalat al-amma huna afdal"]
       ]
   },
   "everyday_life_1": {
