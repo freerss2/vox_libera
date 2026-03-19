@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-<!-- 
+<!--
 <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
  -->
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2358cc02'/></svg>">
     <title>Vox-Libera - Arabic Lessons v2.5</title>
-    <script> 
+    <script>
       const html_code_ver = '2.5.0';
     </script>
     <link rel="stylesheet" href="style.css">
@@ -37,7 +37,7 @@
 
     <aside id="drawer" class="drawer">
         <div class="drawer-header">
-            
+
             <div class="drawer-title">
                 <div class="title-row">
                   <h3 id="currentTopicName">Название темы</h3>
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="drawer-content" id="drawer-content">
             <ul id="exercisePath" class="exercise-path"></ul>
         <h3>🛠 Настройки</h3>
@@ -72,17 +72,17 @@
           <div class="segmented-control" id="difficulty-picker">
               <input type="radio" name="diff" id="diff-easy" value="easy" checked onclick="changeDifficulty('easy')">
               <label for="diff-easy">Легко</label>
-              
+
               <input type="radio" name="diff" id="diff-medium" value="medium" onclick="changeDifficulty('medium')">
               <label for="diff-medium">Средне</label>
-              
+
               <input type="radio" name="diff" id="diff-hard" value="hard" onclick="changeDifficulty('hard')">
               <label for="diff-hard">Сложно</label>
-              
+
               <div class="selection-slider"></div>
           </div>
         </div>
-      
+
         <div class="setting-item">
           <span>Только невыученное</span>
           <label class="switch">
@@ -90,7 +90,7 @@
               <span class="slider round"></span>
           </label>
         </div>
-      
+
         <div class="setting-item">
           <span>Транскрипция</span>
           <label class="switch">
@@ -98,7 +98,7 @@
               <span class="slider round"></span>
           </label>
         </div>
-      
+
         <div class="setting-item">
           <span class="action-btn hard" onclick="resetStats()">
               <span>🗑️ Сбросить статистику</span>
