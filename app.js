@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.5.0';
+const app_code_ver = '2.5.1';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -83,17 +83,17 @@ function loadNextScreen() {
   const currGameIndex = SCREEN_TYPES.findIndex(m => m.id === currentGameType);
   if (currGameIndex+1 < SCREEN_TYPES.length) {
     // if not last - load the next
-    const screen_id = SCREEN_TYPES[currGameIndex+1].id;
+    const next_screen_id = SCREEN_TYPES[currGameIndex+1].id;
     // check for 'all' topic
     if ( currentTopic == 'all' ) {
-      const record = getScreenRecord(screen_id);
-      if (record.is_common == 0) {
-        // if not is_common - move to next topic
+      const record = getScreenRecord(next_screen_id);
+      if (record.shared == 0) {
+        // if next screen not shared - move to next topic
         nextTopic();
         return;
       }
     }
-    loadScreen(screen_id);
+    loadScreen(next_screen_id);
   } else {
     // if last - move to next topic
     nextTopic();
@@ -139,12 +139,12 @@ function displayTopicName(topic) {
   document.getElementById('currentTopicName').textContent = topicTitle;
   displayTopicState();
   // show/hide relevant items in menu
-  // for topic 'all' hide item that have is_common==0
+  // for topic 'all' hide item that have shared==0
   const nodes = document.getElementsByClassName('exercise-node');
   [...nodes].forEach(node => {
       const record = getScreenRecord(node.dataset.id);
       let display = 'flex';
-      if (topic == 'all' && record.is_common == 0) display = 'none';
+      if (topic == 'all' && record.shared == 0) display = 'none';
       node.style.display = display;
     }
   );
@@ -184,21 +184,22 @@ document.querySelectorAll('.drawer button').forEach(btn => {
 let currentGameType = localStorage.getItem('selectedType') || 'dictionary';
 let currentTopic = localStorage.getItem('selectedTopic') || "all";
 
-if ( ! topics[currentTopic] ) currentTopic = all;
+if ( ! topics[currentTopic] ) currentTopic = 'all';
 
 // Screen types
 const SCREEN_TYPES = [
-    { id: 'dictionary',      is_common: 1, screen_type: 'dictionary', name: 'Словарь', inputs: ['words'] },
-    { id: 'sentences',       is_common: 1, screen_type: 'dictionary', name: 'Предложения', inputs: ['sentences'] },
-    { id: 'flashcards',      is_common: 0, screen_type: 'flashcards', name: 'Карточки слов', inputs: ['words'] },
-    { id: 'flashcards-sent', is_common: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
-    { id: 'matching',        is_common: 0, screen_type: 'matching',   name: 'Поиск пары', inputs: ['words'] },
-    { id: 'quiz_ru_ar',      is_common: 0, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar', inputs: ['words', 'sentences'] },
-    { id: 'quiz_ar_ru',      is_common: 0, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru', inputs: ['words', 'sentences'] },
-    { id: 'quiz_audio',      is_common: 0, screen_type: 'quiz_audio', name: 'Аудио-викторина', inputs: ['words', 'sentences'] },
-    { id: 'sent_ru_ar',      is_common: 0, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
-    { id: 'sent_ar_ru',      is_common: 0, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
-    { id: 'sent_audio',      is_common: 0, screen_type: 'sent_audio', name: 'Аудио-Предложение', inputs: ['sentences'] },
+    { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь', inputs: ['words'] },
+    { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения', inputs: ['sentences'] },
+    { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов', inputs: ['words'] },
+    { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
+    { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары', inputs: ['words'] },
+    { id: 'quiz_ru_ar',      shared: 0, excercise: 1, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar', inputs: ['words', 'sentences'] },
+    { id: 'quiz_ar_ru',      shared: 0, excercise: 1, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru', inputs: ['words', 'sentences'] },
+    { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина', inputs: ['words', 'sentences'] },
+    { id: 'sent_ru_ar',      shared: 0, excercise: 1, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
+    { id: 'sent_ar_ru',      shared: 0, excercise: 1, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
+    { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение', inputs: ['sentences'] },
+    { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы', inputs: ['words', 'sentences'] }
 ];
 
 // Reaction on completed round (according to reached grade)
@@ -267,6 +268,15 @@ function startGame(type = currentGameType, topic = currentTopic) {
 
 // Render screen/game
 function renderGameContent(type, topic) {
+    // for screen 'final' get a random screen from screens with excercise==1
+    if (type == 'final') {
+        // build a set of candidates
+        const candidates = SCREEN_TYPES.filter(rec => rec.id != 'final' && rec.excercise == 1);
+        const replacement = candidates[Math.floor(Math.random() * candidates.length)];
+        const record = getScreenRecord(type);
+        record.screen_type = replacement.screen_type;
+        record.inputs = replacement.inputs;
+    }
     // 1. Hide all screen-related DOM elements
     const screens = document.querySelectorAll('.game-screen');
     screens.forEach(s => s.style.display = 'none');
@@ -310,14 +320,14 @@ function renderGameContent(type, topic) {
 
 // Initilize engine for game-type screen
 function initGameEngine(type, topic) {
-    const screenType = getScreenType(type);
+    let screenType = getScreenType(type);
     if (screenType == 'matching') {
         renderMatchingGame(topic);
     } else {
         if (screenType == 'flashcards') {
           initFlashcards(topic);
         } else if (screenType.startsWith('quiz')) {
-          startNewSet();
+          startNewQuizSet();
         } else {
           renderSent(type, topic);
         }
@@ -636,6 +646,7 @@ let firstAttempt = true;
 function renderQuizGame(type, topic) {
     const inputTypes = getGameInputTypes(type);
     const allWords = getTopicData(topic, inputTypes);
+    const screenType = getScreenType(type);
     // Take a random word from all words in topic
     quizCorrectWord = allWords[Math.floor(Math.random() * allWords.length)];
 
@@ -647,11 +658,11 @@ function renderQuizGame(type, topic) {
     document.getElementById('quiz-hint-panel').textContent = 'Нажми на слово';
 
     // 1. Fill the question card
-    if (type === 'quiz_ru_ar') {
+    if (screenType === 'quiz_ru_ar') {
         questionContainer.textContent = quizCorrectWord[0];  // Translation
-    } else if (type === 'quiz_ar_ru') {
+    } else if (screenType === 'quiz_ar_ru') {
         questionContainer.innerHTML = `<span class="arabic">${quizCorrectWord[1]}</span>`;
-    } else if (type === 'quiz_audio') {
+    } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
             <button class="audio-main-btn" onclick="speakArabic('${quizCorrectWord[1]}')">
                 <span style="font-size: 50px;">🔊</span>
@@ -673,7 +684,7 @@ function renderQuizGame(type, topic) {
 
         btn.dataset.speak = '';
         // According to quiz type determine the cards content
-        if (type === 'quiz_ru_ar') {
+        if (screenType === 'quiz_ru_ar') {
             btn.innerHTML = `<span class="arabic">${word[1]}</span>`;
             btn.dataset.speak = word[1];
         } else {
@@ -701,10 +712,8 @@ function generateDistractors(correct, all, totalChoices) {
         });
     filtered = filtered.slice(0, gameSettings.totalChoices-1);
     // shuffle and take out of them (totalChoices-1) answers
-    // filtered.sort(() => 0.5 - Math.random());
 
     return shuffle(choices.concat(filtered));
-    // choices.sort(() => 0.5 - Math.random()); // Final shuffle
 }
 
 let gameSet = {
@@ -714,7 +723,7 @@ let gameSet = {
     isSetRunning: false
 };
 
-function startNewSet() {
+function startNewQuizSet() {
     gameSet.totalQuestions = gameSettings.totalQuestions;
     gameSet.currentQuestionIndex = 0;
     gameSet.errors = 0;
@@ -790,9 +799,10 @@ function handleQuizChoice(selectedWord, btn) {
     { id: 'sent_audio', name: 'Аудио-Предложение' },
 */
 function renderSent(type, topic) {
+    const screenType = getScreenType(type);
     document.getElementById('errors-panel').style.display = 'block';
     // 1. get topic data
-    const inputTypes = ['sentences']; // getGameInputTypes(type);
+    const inputTypes = ['sentences'];
     const currentData = getTopicData(topic, inputTypes);
     const allData = currentData.filter(r => (r[0].includes(' ') && r[1].includes(' ') && !r[0].includes('.')));
     // for wrong topic without sentences - switch to a compatible screen type
@@ -817,13 +827,13 @@ function renderSent(type, topic) {
     let extractPosition = 0;
     let speakEnable = 0;
     resultContainer.classList.remove('arabic');
-    if ( type == 'sent_ru_ar' ) {
+    if ( screenType == 'sent_ru_ar' ) {
         questionHtml = gameSentence[0];
         expected = gameSentence[1];
         extractPosition = 1;
         speakEnable = 1;
         resultContainer.classList.add('arabic');
-    } else if (type == 'sent_ar_ru') {
+    } else if (screenType == 'sent_ar_ru') {
         questionHtml = gameSentence[1];
     } else {
         questionHtml = `
