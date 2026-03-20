@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.5.1';
+const app_code_ver = '2.5.3';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -140,6 +140,14 @@ function applyTopicToDisplay(topic) {
   let topicTitle = topics[topic].name;
   document.getElementById('currentTopicName').textContent = topicTitle;
   displayTopicCompletionState();
+  updateDrawerStats();
+  // Hide/show topic-settings
+  const topicSettings = document.getElementById('topic-settings');
+  if (topic == 'all') {
+    topicSettings.classList.add('hidden');
+  } else {
+    topicSettings.classList.remove('hidden');
+  }
   // show/hide relevant items in menu
   // for topic 'all' hide item that have shared==0
   const nodes = document.getElementsByClassName('exercise-node');
@@ -1239,6 +1247,71 @@ function updateStats(arabicWord, isCorrect) {
   }
   setStats(stats);
   wordStats[arabicWord] = stats[arabicWord];
+}
+
+function getTopicStats(topicId) {
+    let topicData = topics[topicId];
+
+    const stats = {
+        wordsCount: 0,
+        sentencesCount: 0,
+        wordsSuccess: 0,
+        sentencesSuccess: 0
+    };
+
+    if (!topicData) return stats;
+
+    let topicWords = topicData.words;
+    let topicSentences = topicData.sentences;
+    // collect all words and sentences for topicId == "all"
+    if (topicId == 'all') {
+      topicWords = [];
+      topicSentences = [];
+      for (let key in topics) {
+        topicData = topics[key];
+        if ( topicData ) {
+          if (topicData.hasOwnProperty('words'))     topicWords.push(...topicData.words);
+          if (topicData.hasOwnProperty('sentences')) topicSentences.push(...topicData.sentences);
+        }
+      }
+    }
+
+    stats.wordsCount = topicWords.length;
+    stats.sentencesCount = topicSentences.length;
+
+    if (stats.wordsCount > 0) {
+      let wordTotalRatio = 0;
+      topicWords.forEach(w => {
+          const s = wordStats[w[1]];
+          if (s && s.attempts > 0) {
+            wordTotalRatio += (s.success / s.attempts);
+          }
+      });
+      stats.wordsSuccess =  (wordTotalRatio / stats.wordsCount) * 100;
+    }
+
+    if (stats.sentencesCount > 0) {
+      let sentTotalRatio = 0;
+      topicSentences.forEach(s => {
+          const st = wordStats[s[1]]; 
+          if (st && st.attempts > 0) {
+            sentTotalRatio += (st.success / st.attempts);
+          }
+      });
+      stats.sentencesSuccess = (sentTotalRatio / stats.sentencesCount) * 100;
+    }
+
+    return stats;
+}
+
+function updateDrawerStats() {
+    const data = getTopicStats(currentTopic);
+    if (!data) return;
+
+    document.getElementById('statWords').textContent = 
+        `${data.wordsCount} / ${Math.round(data.wordsSuccess)}%`;
+    document.getElementById('statSents').textContent = 
+        `${data.sentencesCount} / ${Math.round(data.sentencesSuccess)}%`;
 }
 
 // TODO: aggregate all settings in common object

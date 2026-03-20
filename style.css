@@ -475,7 +475,6 @@ body {
     pointer-events: none;
 }
 
-
 .nav-controls {
     display: flex;
     justify-content: space-between;
@@ -594,6 +593,22 @@ body {
     overflow: hidden;
 }
 
+.topic-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(var(--primary-rgb), 0.1);
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: var(--primary);
+    margin-left: 4px;
+}
+
 .title-actions {
     display: flex;
     gap: 5px;
@@ -667,17 +682,21 @@ body {
     background: rgba(var(--primary-rgb), 0.05);
 }
 
-
-
-.topic-settings {
+#topic-settings {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
+    padding: 9px 0;
     margin-bottom: 5px;
     font-size: 0.8rem;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+}
+
+#topic-settings.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .pass-toggle {
