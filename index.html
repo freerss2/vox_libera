@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
     <title>Vox-Libera - Arabic Lessons v2.5</title>
     <script>
-      const html_code_ver = '2.5.0';
+      const html_code_ver = '2.5.1';
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -122,7 +122,7 @@
       <div id="screen-matching" class="game-screen" style="display: none;">
 
         <div class="matching-container" id="matching-grid"></div>
-        <div id="hint-panel" class="hint-panel translation">Нажми на арабское слово</div>
+        <div id="hint-panel" class="hint-panel transcription">Нажми на арабское слово</div>
       </div>
 
       <div class="win-screen" id="winScreen">
@@ -136,18 +136,22 @@
 
       <div id="screen-quiz" class="game-screen" style="display: none;">
 
-        <div id="quiz-question-container" class="question-card">
+        <div class="question-card">
+           <div id="quiz-question-container"></div>
+           <div id="quiz-main-hint" class="transcription"></div>
         </div>
 
         <div id="quiz-options-grid" class="options-grid">
         </div>
 
-        <div id="quiz-hint-panel" class="hint-panel translation">Нажми на арабское слово</div>
+        <div id="quiz-hint-panel" class="hint-panel transcription">Нажми на арабское слово</div>
       </div>
 
       <div id="screen-sent" class="game-screen" style="display: none;">
 
-        <div id="sent-question-container" class="question-card">
+        <div class="question-card">
+          <div id="sent-question-container"></div>
+          <div id="sent-main-hint" class="transcription"></div>
         </div>
 
         <button class="action-btn easy" style="width:100%;" onclick="checkSent()">☝  Проверить 👇</button>

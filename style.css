@@ -114,7 +114,9 @@ body {
 }
 
 .progress-bar {
-    width: 0%; height: 100%; background: var(--primary-color);
+    width: 0%;
+    height: 100%;
+    background: var(--primary-color);
     transition: width 0.3s ease;
 }
 
@@ -417,6 +419,7 @@ body {
     font-size: calc(var(--base-font-size) * 1.5);
     min-height: 120px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -461,7 +464,12 @@ body {
   margin-top: 4px;
 }
 
-.translation.hidden {
+.transcription {
+    color: #666;
+    font-style: italic;
+}
+
+.transcription.hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
@@ -470,12 +478,12 @@ body {
 
 .nav-controls {
     display: flex;
-    justify-content: space-between; /* Стрелки прижаты к краям */
+    justify-content: space-between;
     gap: 10px;
 }
 
 .nav-arrow {
-    flex: 1; /* Кнопки делят ширину 50/50 */
+    flex: 1;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -499,7 +507,7 @@ body {
     gap: 15px;
     padding: 10px;
     width: 80%;
-    border-bottom: 2px dashed #ccc; /* Путь между упражнениями */
+    border-bottom: 2px dashed #ccc; /* delimiter */
     cursor: pointer;
     transition: 0.3s;
 }
@@ -613,7 +621,7 @@ body {
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    padding: 0 10px 10px 10px; /* Отступы для названия */
+    padding: 0 10px 10px 10px;
 }
 
 .drawer-title::before {
@@ -621,14 +629,13 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    /* Геометрия уголка */
+    /* Corner triangle */
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 35px 35px 0 0; /* Размер уголка */
+    border-width: 35px 35px 0 0; /* size */
     border-color: var(--primary) transparent transparent transparent;
     
-    /* Текст внутри уголка */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -782,7 +789,13 @@ body {
 #overlay.active { display: block; }
 
 
-.drawer h3 { font-size: 14px; color: #888; text-transform: uppercase; margin-top: 20px; }
+.drawer h3 {
+  font-size: 14px;
+  color: #888;
+  text-transform:
+  uppercase;
+  margin-top: 20px;
+}
 
 .setting-group { margin: 20px 0; padding: 0 5px; }
 .setting-item { 
@@ -793,7 +806,7 @@ body {
     padding: 10px 5px;
 }
 
-/* Сегментированный переключатель */
+/* state switch */
 .segmented-control {
     display: flex;
     position: relative;
@@ -817,7 +830,7 @@ body {
 
 .segmented-control input:checked + label { color: #fff; font-weight: bold; }
 
-/* Слайдер для выбора сложности */
+/* tri-state slider */
 .selection-slider {
     position: absolute;
     top: 2px;
@@ -830,12 +843,12 @@ body {
     z-index: 0;
 }
 
-/* Логика перемещения слайдера */
+/* switching logic */
 #diff-easy:checked ~ .selection-slider { transform: translateX(0%); }
 #diff-medium:checked ~ .selection-slider { transform: translateX(100%); }
 #diff-hard:checked ~ .selection-slider { transform: translateX(200%); }
 
-/* Переключатель (Toggle) */
+/* Toggle */
 .switch { position: relative; width: 50px; height: 26px; }
 .switch input { opacity: 0; width: 0; height: 0; }
 .slider {
@@ -899,7 +912,7 @@ input:checked + .slider:before { transform: translateX(24px); }
 }
 
 .search-container:focus-within {
-    border-color: var(--primary-color); /* Цвет твоей арабской иконки */
+    border-color: var(--primary-color);
     box-shadow: 0 0 4px rgba(88, 204, 2, 0.3);
 }
 

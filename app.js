@@ -425,7 +425,7 @@ function updateCardContent() {
     if (studyMode === 'ar-ru') {
         front.innerHTML = `
             <div class="ar-text">${item[1]}</div>
-            <div class="tr-text translation">${trText}</div>`;
+            <div class="tr-text transcription">${trText}</div>`;
         back.innerHTML = `
             <div class="ru-text">${item[0]}</div>
         `;
@@ -434,7 +434,7 @@ function updateCardContent() {
             <div class="ru-text">${item[0]}</div>`;
         back.innerHTML = `
             <div class="ar-text">${item[1]}</div>
-            <div class="tr-text translation">${trText}</div>
+            <div class="tr-text transcription">${trText}</div>
         `;
     }
     updateTranscriptionDisplay();
@@ -666,11 +666,13 @@ function renderQuizGame(type, topic) {
     optionsGrid.innerHTML = '';
     document.getElementById('quiz-hint-panel').textContent = 'Нажми на слово';
 
+    let mainHint = '';
     // 1. Fill the question card
     if (screenType === 'quiz_ru_ar') {
         questionContainer.textContent = quizCorrectWord[0];  // Translation
     } else if (screenType === 'quiz_ar_ru') {
         questionContainer.innerHTML = `<span class="arabic">${quizCorrectWord[1]}</span>`;
+        mainHint = `[${quizCorrectWord[2]}]`;
     } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
             <button class="audio-main-btn" onclick="speakArabic('${quizCorrectWord[1]}')">
@@ -682,6 +684,7 @@ function renderQuizGame(type, topic) {
             `;
         speakArabic(quizCorrectWord[1]); // Immediately trigger the speak
     }
+    document.getElementById('quiz-main-hint').innerHTML = mainHint;
 
     // 2. Generate options for selection (one correct and rest - random)
     const options = generateDistractors(quizCorrectWord, allWords, gameSettings.totalChoices);
@@ -836,6 +839,7 @@ function renderSent(type, topic) {
     let extractPosition = 0;
     let speakEnable = 0;
     resultContainer.classList.remove('arabic');
+    let mainHint = '';
     if ( screenType == 'sent_ru_ar' ) {
         questionHtml = gameSentence[0];
         expected = gameSentence[1];
@@ -844,6 +848,7 @@ function renderSent(type, topic) {
         resultContainer.classList.add('arabic');
     } else if (screenType == 'sent_ar_ru') {
         questionHtml = gameSentence[1];
+        mainHint = `[${gameSentence[2]}]`;
     } else {
         questionHtml = `
             <button class="audio-main-btn" onclick="speakArabic('${gameSentence[1]}')">
@@ -855,6 +860,7 @@ function renderSent(type, topic) {
         speakArabic(gameSentence[1]);
     }
     questionContainer.innerHTML = questionHtml;
+    document.getElementById('sent-main-hint').innerHTML = mainHint;
     let bankWords = (expected.split(/\s+/)).filter(word => word.length > 0);
     questionContainer.dataset.expected = bankWords.join(' ');
     // 5. add to expected sentence more words (avoid already contaning words)
@@ -1090,7 +1096,7 @@ function openDictionary(topic) {
                   ${item[0]}
                   ${wordStat.attempts > 0 ? `<span style="font-size: 0.9em; opacity: 0.7; color: ${statusColor};"> (${accuracy}%)</span>` : ''}
                 </div>
-                <div class="dictionaryTransl translation">[${item[2]}]</div>
+                <div class="dictionaryTransl transcription">[${item[2]}]</div>
             </div>
             <div class="arabic" style="color: var(--text-color);">
                 ${item[1]}
@@ -1258,8 +1264,8 @@ function toggleTranscription() {
 
 // show or hide transcription according to global setting
 function updateTranscriptionDisplay() {
-  // change visibility for "translation" class
-  [...document.getElementsByClassName('translation')].forEach(e => {
+  // change visibility for "transcription" class
+  [...document.getElementsByClassName('transcription')].forEach(e => {
     e.classList.toggle('hidden', !showTransToggle);
   });
 }
