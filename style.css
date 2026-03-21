@@ -227,6 +227,10 @@ body {
 .action-btn.easy { border-color: var(--primary); color: var(--primary); }
 .action-btn.hard { border-color: var(--error-color); color: var(--error-color); }
 
+.row-btn {
+  margin-top: 10px;
+}
+
 .ar-text { direction: rtl; font-size: calc(var(--base-font-size) * 2); color: #222; margin-bottom: 10px; }
 .ru-text { font-size: 1.8rem; color: #2196F3; }
 .tr-text { color: #666; font-style: italic; margin-top: 5px; }
@@ -444,7 +448,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
-    padding-bottom: 40px;
 }
 
 .dictionaryCard {

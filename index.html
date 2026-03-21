@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
     <title>Vox-Libera - Arabic Lessons v2.5</title>
     <script>
-      const html_code_ver = '2.5.4';
+      const html_code_ver = '2.5.5';
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -123,9 +123,10 @@
     <div id="overlay" onclick="toggleDrawer()"></div>
 
     <main id="app-container">
-      <div id="screen-dictionary" class="game-screen" style="display: none;">
-        <button class="action-btn easy" onclick="loadNextScreen();" style="width: 100%;">ВПЕРЁД ▶▶</button>
+      <div id="screen-dictionary" class="game-screen" style="display: none; padding-bottom: 40px;">
+        <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;">ВПЕРЁД ▶▶</button>
         <div id="dictionaryList"></div>
+        <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;">ВПЕРЁД ▶▶</button>
       </div>
 
       <div id="flashcards-screen" class="game-screen flashcards-screen">

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.5.4';
+const app_code_ver = '2.5.5';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -188,6 +188,9 @@ function toggleDrawer() {
     const overlay = document.getElementById('overlay');
     scrollToTop('drawer-content');
 
+    // if opening - refresh statistics display
+    if ( !drawer.classList.contains('open') ) updateDrawerStats();
+
     // Toggle classes for both elements
     drawer.classList.toggle('open');
     overlay.classList.toggle('active');
@@ -296,6 +299,7 @@ function startGame(type = currentGameType, topic = currentTopic) {
 // Render screen/game
 function renderGameContent(type, topic) {
     // for screen 'final' get a random screen from screens with excercise==1
+    finalGameForTopic = '';
     if (type == 'final') {
         // build a set of candidates:
         // having 'excercise' flag on and excluding 'final' itself
@@ -304,7 +308,8 @@ function renderGameContent(type, topic) {
         const record = getScreenRecord(type);
         record.screen_type = replacement.screen_type;
         record.inputs = replacement.inputs;
-        // TODO: use data from "completed" topics
+        // use data from other topics in "completed" state
+        finalGameForTopic = topic;
     }
     // 1. Hide all screen-related DOM elements
     const screens = document.querySelectorAll('.game-screen');
@@ -702,6 +707,7 @@ function renderQuizGame(type, topic) {
                 <span style="font-size: 50px;">🐌</span>
             </button>
             `;
+        mainHint = `[${quizCorrectWord[2]}]`;
         speakArabic(quizCorrectWord[1]); // Immediately trigger the speak
     }
     document.getElementById('quiz-main-hint').innerHTML = mainHint;
@@ -877,6 +883,7 @@ function renderSent(type, topic) {
             <button class="audio-main-btn" onclick="speakArabicSlow('${gameSentence[1]}')">
                 <span style="font-size: 50px;">🐌</span>
             </button>`;
+        mainHint = `[${gameSentence[2]}]`;
         speakArabic(gameSentence[1]);
     }
     questionContainer.innerHTML = questionHtml;
@@ -971,15 +978,15 @@ function checkSent() {
   const resultContainer = document.getElementById('sent-result');
   const questionContainer = document.getElementById('sent-question-container');
   if ( resultContainer.dataset.words == questionContainer.dataset.expected) {
-    // count as success ?
-    // updateStats(questionContainer.dataset.expected, true);
+    // count as success
+    updateStats(questionContainer.dataset.expected, true);
     const acc = Math.round((2 / (2 + errors)) * 100);
     showWin(acc);
   } else {
     // increase errors count
     errors++;
-    // count as failure ?
-    // updateStats(questionContainer.dataset.expected, false);
+    // count as failure
+    updateStats(questionContainer.dataset.expected, false);
     resultContainer.classList.add('wrong');
     setTimeout(() => {
         resultContainer.classList.remove('wrong');
@@ -1155,14 +1162,26 @@ function getTopicData(topic, inputTypes) {
            typeof row[1] === 'string' && row[1].trim() !== "";
   });
 
+  // for 'final' round - try to get data from other completed topics:
+  //   iterate over all topics with state != 0, excluding the current one
+  //   append to currentData elements of each input type
+  if (finalGameForTopic) {
+    for (let key in topics) {
+      if (key == finalGameForTopic) continue;
+      let state = getTopicState(key);
+      if (! state) continue;
+      inputTypes.forEach( inputType => {
+        let topicData = topics[key][inputType];
+        if ( topicData ) {
+          currentData.push(...topicData);
+        }
+      });
+    }
+  }
+
   if (!hideWellLearned) return currentData;
 
-  // TODO:
-  // for 'final' round - try to get data from other completed topics:
-  //  \ iterate over all topics with state != 0, excluding the current one
-  //  \ state = getTopicState(topic)
-  //  \ append to currentData elements of each input type
-
+  // hide well-learned:
   const candidates = currentData.filter(item => {
         const arabicWord = item[1];
         const stats = wordStats[arabicWord];
@@ -1336,6 +1355,8 @@ function updateDrawerStats() {
 }
 
 // TODO: aggregate all settings in common object
+let finalGameForTopic = '';
+
 const hideWellLearnedElm = document.getElementById('hide-well-learned');
 var hideWellLearned = (localStorage.getItem('hideWellLearned') || 0) == '1';
 hideWellLearnedElm.checked = hideWellLearned == '1';
@@ -1413,20 +1434,24 @@ document.addEventListener('keydown', (event) => {
 
     const isMenuOpen = document.getElementById('drawer').classList.contains('open');
 
+    let handled = false;
     switch (event.key) {
         case 'Escape':
             toggleDrawer();
+            handled = true;            
             break;
 
         case 'ArrowRight':
             if (isMenuOpen) {
                 nextTopic();
+                handled = true;            
             }
             break;
 
         case 'ArrowLeft':
             if (isMenuOpen) {
                 prevTopic();
+                handled = true;            
             }
             break;
 
@@ -1434,6 +1459,7 @@ document.addEventListener('keydown', (event) => {
             if (isMenuOpen) {
                 event.preventDefault();
                 loadPrevScreen();
+                handled = true;            
             }
             break;
 
@@ -1441,14 +1467,20 @@ document.addEventListener('keydown', (event) => {
             if (isMenuOpen) {
                 event.preventDefault();
                 loadNextScreen();
+                handled = true;            
             }
             break;
             
         case 'Enter':
             if (isMenuOpen) {
                 toggleTopicPassed(); 
+                handled = true;            
             }
             break;
+    }
+    if (handled) {
+        event.preventDefault();
+        event.stopPropagation();
     }
 });
 

@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.5.2';
+const lesson_data_ver = '2.5.3';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
@@ -38,7 +38,7 @@ const topics = {
   ["в / внутри", "في", "Fi"]
       ],
       sentences: [
-  ["я работаю программистом", "أنا أعمل مبرمجاً", "Ana a'mal mubarmijan."],
+  ["я работаю программистом", "أعمل مبرمجاً", "A'mal mubarmijan."],
   ["я работаю удалённо", "أَعْمَلُ عَنْ بُعْد", "a'malu 'an bu'd"],
   ["я живу в большом городе", "أسكن في مدينة كبيرة", "Askun fi madina kabira."],
   ["у меня небольшая семья", "لي عائلة صغيرة", "Li a'ila saghira."],
@@ -51,13 +51,13 @@ const topics = {
   ["откуда ты?", "مِنْ أَيْنَ أَنْتَ؟", "Min ayna anta?"],
   ["я из России", "أَنَا مِنْ رُوسِيَا", "Ana min Rusiya"],
   ["я не понимаю", "لا أَفْهَمُ", "La afhamu"],
-  ["повторите пожалуйста", "أَعِدْ مِنْ فَضْلِكَ", "A'id min fadlika"],
+  ["ещё раз пожалуйста", "أَعِدْ مِنْ فَضْلِكَ", "A'id min fadlika"],
   ["где ты живешь", "أين تسكن؟", "Ayna taskun?"],
-  ["кем ты работаешь", "ما هي مهنتك؟", "Ma hiya mihnatuka?"],
-  ["я сейчас учу арабский язык", "أنا أدرس اللغة العربية الآن", "Ana adrus al-lugha al-arabiya al-an."],
+  ["какая твоя профессия", "ما هي مهنتك؟", "Ma hiya mihnatuka?"],
+  ["я учу арабский язык сейчас", "أدرس اللغة العربية الآن", "Adrus al-lugha al-arabiya al-an."],
   ["мой дом находится здесь", "بيتي هنا", "Bayti huna."],
   ["я люблю свою работу", "أحب عملي", "Uhibbu 'amali."],
-  ["мы живем вместе", "نحن نسكن معاً", "Nahnu naskun ma'an."]
+  ["мы живем вместе", "نسكن معاً", "Naskun ma'an."]
       ]
   },
   "work_n_learn_1": {
@@ -91,9 +91,9 @@ const topics = {
   ["математик работает в академии", "عالم الرياضيات يعمل في الأكاديمية", "alim al-riyadiyat yamal fil-akadimiya"],
   ["дизайнер создает проект в студии", "المصمم ينشئ مشروعاً في الاستوديو", "al-musammim yunshi mashruan fil-ustudiyu"],
   ["учитель объясняет урок в классе", "المعلم يشرح الدرس في الفصل", "al-muallim yashrah al-dars fil-fasl"],
-  ["мне нравится кинематография и искусство", "أنا أحب السينما والفن", "ana uhibb al-sinima wal-fann"],
+  ["я люблю кинематограф и искусство", "أنا أحب السينما والفن", "ana uhibb al-sinima wal-fann"],
   ["она шьет платье из красивой ткани", "هي تخيط فستاناً من قماش جميل", "hiya tukhayyit fustanan min qumash jamil"],
-  ["мы изучаем математику в университете", "نحن ندرس الرياضيات في الجامعة", "nahnu nadrus al-riyadiyat fil-jamia"],
+  ["мы изучаем математику в университете", "ندرس الرياضيات في الجامعة", "nadrus al-riyadiyat fil-jamia"],
   ["эта мастерская очень большая", "هذه الورشة كبيرة جداً", "hadhihi al-warsha kabira jiddan"],
   ["где находится твоя студия", "أين يقع الاستوديو الخاص بك", "ayna yaqa al-ustudiyu al-khass bika"],
   ["у студентки завтра экзамен", "الطالبة لديها امتحان غداً", "al-taliba ladayha imtihan ghadan"],
@@ -173,21 +173,21 @@ const topics = {
   ["языки", "لغات", "lughat"]
       ],
       sentences: [
-  ["я люблю слушать музыку", "أنا أحب سماع الموسيقى", "ana uhibb sima' al-musiqa"],
-  ["я смотрю фильмы иногда", "أنا أشاهد أفلاماً أحياناً", "ana ushahid aflaman ahyanan"],
-  ["я изучаю разные языки", "أنا أدرس لغات مختلفة", "ana adrus lughat mukhtalifa"],
   ["моя семья любит путешествовать", "عائلتي تحب السفر", "a'ilati tuhibb al-safar"],
-  ["мы изучаем разные культуры", "نحن ندرس ثقافات مختلفة", "nahnu nadrus thaqafat mukhtalifa"],
-  ["мы любим местный туризм", "نحن نحب السياحة المحلية", "nahnu nuhibb al-siyaha al-mahalliya"],
   ["путешествие за рубеж интересно", "السفر خارج البلاد ممتع", "al-safar kharij al-bilad mumti'"],
-  ["мы арендуем машину там", "نحن نستأجر سيارة هناك", "nahnu nasta'jir sayyara hunaka"],
   ["здесь общественный транспорт лучше", "المواصلات العامة هنا أفضل", "al-muwasalat al-amma huna afdal"],
   ["этот город очень красивый", "هذه المدينة جميلة جداً", "hadhihi al-madina jamila jiddan"],
-  ["мы посетили страны Европы", "نحن زرنا بلاد أوروبا", "nahnu zurna bilad urubba"],
-  ["я люблю этот город", "أنا أحب هذه المدينة", "ana uhibb hadhihi al-madina"],
   ["машина здесь лучше", "السيارة هنا أفضل", "al-sayyara huna afdal"],
-  ["мы знакомимся с народами", "نحن نتعرف على الشعوب", "nahnu nata'arraf 'ala al-shu'ub"],
-  ["я еду в центр", "أنا أذهب إلى البلد", "ana adhab ila al-balad"]
+  ["люблю слушать музыку", "بحب سماع الموسيقى", "bahibb sima' al-musiqa"],
+  ["смотрю фильмы иногда", "بشوف أفلام أحياناً", "bashuf aflam ahyanan"],
+  ["изучаю разные языки", "بدرس لغات مختلفة", "badrus lughat mukhtalifa"],
+  ["изучаем разные культуры", "بندرس ثقافات مختلفة", "bandrus thaqafat mukhtalifa"],
+  ["любим местный туризм", "بنحب السياحة المحلية", "binhibb as-siyaha al-mahalliya"],
+  ["арендуем машину там", "بنستأجر سيارة هناك", "bansta'jir sayyara hunaka"],
+  ["посетили страны Европы", "زرنا بلاد أوروبا", "zurna bilad urubba"],
+  ["люблю этот город", "بحب هذه المدينة", "bahibb hadhihi al-madina"],
+  ["знакомимся с народами", "بنتعرف على الشعوب", "banta'arraf 'ala ash-shu'ub"],
+  ["еду в центр", "بروح على البلد", "baruh 'ala al-balad"]
       ]
   },
   "restaurant_1": {
