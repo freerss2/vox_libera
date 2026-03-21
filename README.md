@@ -12,7 +12,7 @@ In a world oversaturated with subscriptions and intrusive gamification, **Vox-Li
 * **Free & Open-Source:** No hidden fees, advertising, or data collection. The code is community-owned.
 * **Offline First:** The app runs directly from a local file. Your learning isn't dependent on internet access, servers, or cellular coverage.
 * **Minimalism:** The interface is designed to eliminate distractions. Just you and the language.
-* **Versatility:** The platform is language-agnostic. You create your own learning sets—whether it's Arabic, Bulgarian, Amharic, or even programming languages.
+* **Versatility:** The platform is language-agnostic. You create your own learning sets—whether it's Arabic, Bulgarian or Amharic.
 
 ---
 
@@ -29,6 +29,7 @@ Vox-Libera is built on the principle of natural immersion. Each topic is a seque
 
 ## 3. Flexibility and Customization
 
+Versatile architecture allows getting the same look-n-feel on desktop or mobile browser.
 You are the architect of your own course. Vox-Libera allows you to create and load your own JSON files with custom lessons. There is no artificial rush for "points" or "streaks" as an end in itself. Move at your own pace, return to any point, and focus on what matters to you.
 
 ---
@@ -55,7 +56,7 @@ Vox-Libera consumes data in a standard JSON format. This makes it easy to genera
 ```json
 {
   "describe_yourself_1": {
-      "id": 1,
+      "index": 1,
       "name": "About yourself 1",
       "words": [
         ["Nice to meet you", "تشرفنا!", "Tasharrafna!"],
