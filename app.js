@@ -5,11 +5,12 @@
 
 "use strict";
 
-const app_code_ver = '2.5.3';
+const app_code_ver = '2.5.4';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
 
+const GENERAL_TOPIC_ID = 'all';
 
 document.getElementById('versions-info').innerHTML =
   '<table>' +
@@ -47,7 +48,7 @@ function renderDrawer() {
     const pathContainer = document.getElementById('exercisePath');
     pathContainer.innerHTML = '';
 
-    SCREEN_TYPES.forEach((screen, index) => {
+    SCREENS.forEach((screen, index) => {
         const li = document.createElement('li');
         li.className = 'exercise-node';
         li.setAttribute('data-id', screen.id);
@@ -76,25 +77,33 @@ function loadScreenFromMenu(screen_id) {
   toggleDrawer();
 }
 
+function loadPrevScreen() {
+  loadPrevNexScreen(-1);
+}
+
 function loadNextScreen() {
+  loadPrevNexScreen(1);
+}
+
+function loadPrevNexScreen(delta) {
   // find current screen index
-  const currGameIndex = SCREEN_TYPES.findIndex(m => m.id === currentGameType);
-  if (currGameIndex+1 < SCREEN_TYPES.length) {
-    // if not last - load the next
-    const next_screen_id = SCREEN_TYPES[currGameIndex+1].id;
-    // check for 'all' topic
-    if ( currentTopic == 'all' ) {
+  const currGameIndex = SCREENS.findIndex(m => m.id === currentGameType);
+  const newGameIndex = currGameIndex+delta;
+  if (newGameIndex >= 0 && newGameIndex < SCREENS.length) {
+    const next_screen_id = SCREENS[newGameIndex].id;
+    // special case for 'all' topic
+    if ( currentTopic == GENERAL_TOPIC_ID ) {
       const record = getScreenRecord(next_screen_id);
       if (record.shared == 0) {
-        // if next screen not shared - move to next topic
-        nextTopic();
+        // if next screen is not 'shared' - move to next topic
+        switchTopic(delta);
         return;
       }
     }
     loadScreen(next_screen_id);
   } else {
     // if last - move to next topic
-    nextTopic();
+    switchTopic(delta);
   }
 }
 
@@ -107,7 +116,7 @@ function loadScreen(screen_id) {
 // try to find topic key name by given index
 function getTopic(topicIndex) {
     for (let key in topics) {
-      if (topics[key].id == topicIndex) return key;
+      if (topics[key].index == topicIndex) return key;
     }
     return '';
 }
@@ -124,7 +133,7 @@ function nextTopic() {
 // do nothing if it is impossible
 function switchTopic(direction) {
   // get topic id
-  let topicIndex = topics[currentTopic].id;
+  let topicIndex = topics[currentTopic].index;
   // find topic with next id
   let nextTopicId = getTopic(topicIndex+direction);
   if (! nextTopicId) return;
@@ -143,7 +152,7 @@ function applyTopicToDisplay(topic) {
   updateDrawerStats();
   // Hide/show topic-settings
   const topicSettings = document.getElementById('topic-settings');
-  if (topic == 'all') {
+  if (topic == GENERAL_TOPIC_ID) {
     topicSettings.classList.add('hidden');
   } else {
     topicSettings.classList.remove('hidden');
@@ -154,7 +163,7 @@ function applyTopicToDisplay(topic) {
   [...nodes].forEach(node => {
       const record = getScreenRecord(node.dataset.id);
       let display = 'flex';
-      if (topic == 'all' && record.shared == 0) display = 'none';
+      if (topic == GENERAL_TOPIC_ID && record.shared == 0) display = 'none';
       node.style.display = display;
     }
   );
@@ -165,7 +174,7 @@ function applyTopicToDisplay(topic) {
 // start the game
 function startTopic(topic) {
   currentTopic = topic;
-  currentGameType = SCREEN_TYPES[0].id;
+  currentGameType = SCREENS[0].id;
 
   applyTopicToDisplay(topic);
   showScreenTitle(currentGameType, topic);
@@ -194,12 +203,14 @@ document.querySelectorAll('.drawer button').forEach(btn => {
 
 // Initiallize displayed screen type and selected topic
 let currentGameType = localStorage.getItem('selectedType') || 'dictionary';
-let currentTopic = localStorage.getItem('selectedTopic') || "all";
+let currentTopic = localStorage.getItem('selectedTopic') || GENERAL_TOPIC_ID;
 
-if ( ! topics[currentTopic] ) currentTopic = 'all';
+if ( ! topics.hasOwnProperty(GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
+
+if ( ! topics[currentTopic] ) currentTopic = GENERAL_TOPIC_ID;
 
 // Screen types
-const SCREEN_TYPES = [
+const SCREENS = [
   { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь',              inputs: ['words'] },
   { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения',          inputs: ['sentences'] },
   { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов',        inputs: ['words'] },
@@ -233,7 +244,7 @@ const feedback = {
 
 // by screen instance id (type) get whole record
 function getScreenRecord(type) {
-  return SCREEN_TYPES.find(r => r.id == type);
+  return SCREENS.find(r => r.id == type);
 }
 
 // get screen_type by game instance id
@@ -286,8 +297,9 @@ function startGame(type = currentGameType, topic = currentTopic) {
 function renderGameContent(type, topic) {
     // for screen 'final' get a random screen from screens with excercise==1
     if (type == 'final') {
-        // build a set of candidates
-        const candidates = SCREEN_TYPES.filter(rec => rec.id != 'final' && rec.excercise == 1);
+        // build a set of candidates:
+        // having 'excercise' flag on and excluding 'final' itself
+        const candidates = SCREENS.filter(rec => rec.id != 'final' && rec.excercise == 1);
         const replacement = candidates[Math.floor(Math.random() * candidates.length)];
         const record = getScreenRecord(type);
         record.screen_type = replacement.screen_type;
@@ -628,7 +640,7 @@ function showErrorCount(errors) {
 }
 // ------------------------------------------- common Win popup
 
-// Show final summary per round
+// Show completion summary per round
 function showWin(acc) {
 
     // Calculate the success rate
@@ -1120,7 +1132,7 @@ function openDictionary(topic) {
 // external parameter: hideWellLearned
 function getTopicData(topic, inputTypes) {
   let currentData = [];
-  if (topic == 'all') {
+  if (topic == GENERAL_TOPIC_ID) {
     for (let key in topics) {
       inputTypes.forEach( inputType => {
         let topicData = topics[key][inputType];
@@ -1145,7 +1157,11 @@ function getTopicData(topic, inputTypes) {
 
   if (!hideWellLearned) return currentData;
 
-  // TODO: for 'final' round - try to get data from other completed topics
+  // TODO:
+  // for 'final' round - try to get data from other completed topics:
+  //  \ iterate over all topics with state != 0, excluding the current one
+  //  \ state = getTopicState(topic)
+  //  \ append to currentData elements of each input type
 
   const candidates = currentData.filter(item => {
         const arabicWord = item[1];
@@ -1180,6 +1196,11 @@ function setTopicState(topic, state) {
   localStorage.setItem('topicStats', JSON.stringify(topicStates));
 }
 
+function getTopicState(topic) {
+  const topicStates = getTopicStates();
+  return Number(topicStates[topic]);
+}
+
 function getTopicStates() {
   return JSON.parse(localStorage.getItem('topicStats') || '{}');
 }
@@ -1199,8 +1220,7 @@ function toggleTopicPassed() {
 }
 
 function displayTopicCompletionState() {
-    const topicStates = getTopicStates();
-    const state = Number(topicStates[currentTopic]);
+    const state = getTopicState(currentTopic);
     document.getElementById('topicPassedCheckbox').checked = state;
     const titleContainer = document.querySelector('.drawer-title');
     if (state) {
@@ -1212,8 +1232,9 @@ function displayTopicCompletionState() {
 
 function resetTopicStats() {
   let stats = getStats();
-  // for each word in current topic
-  const topicData = topics[currentTopic]['words'];
+  // for each word/sentence in current topic
+  const topicData = [...topics[currentTopic]['words'], ...topics[currentTopic]['sentences']];
+
   // erase it from stats
   [...topicData].forEach(e => {delete stats[e[1]]});
   // save stats back
@@ -1264,7 +1285,7 @@ function getTopicStats(topicId) {
     let topicWords = topicData.words;
     let topicSentences = topicData.sentences;
     // collect all words and sentences for topicId == "all"
-    if (topicId == 'all') {
+    if (topicId == GENERAL_TOPIC_ID) {
       topicWords = [];
       topicSentences = [];
       for (let key in topics) {

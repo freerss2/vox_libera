@@ -594,7 +594,7 @@ body {
 }
 
 .topic-stats {
-    display: flex;
+    /* display: flex; */
     gap: 15px;
     margin-top: 8px;
     padding-top: 8px;
