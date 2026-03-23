@@ -58,7 +58,14 @@ class Settings {
             const getterName = `get${methodSuffix}`;
             this[getterName] = () => {
                 let result = this.params[name];
-                if (param_type == "json") result = JSON.parse(result);
+                if (param_type == "json") {
+                  if (result) {
+                    if (typeof result === 'string')
+                        result = JSON.parse(result);
+                  } else {
+                    resut = {};
+                  }
+                }
                 return result;
             };
         };
