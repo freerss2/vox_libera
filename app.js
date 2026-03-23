@@ -965,7 +965,6 @@ function renderSent(screen_id) {
     // 6. create word-buttons in bottom card
     bankContainer.innerText = '';
     let bankWordClass = 'sent-word';
-    let screenType = getScreenType(screen_id);
     if ( screenType == 'sent_ru_ar' ) bankWordClass += ' arabic';
     for (let i = 0; i < bankWords.length; i++) {
       const bankWord = document.createElement('span');
