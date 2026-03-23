@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.6.1';
+const app_code_ver = '2.6.3';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -19,58 +19,6 @@ document.getElementById('versions-info').innerHTML =
   '<tr><td>app code</td><td>&nbsp;v' + app_code_ver + '</td></tr>' +
   '<tr><td>lesson data</td><td>&nbsp;v' + lesson_data_ver + '</td></tr></table>'
   ;
-
-class Settings {
-
-    // Usage:
-    // const settings = new Settings({"gameDifficulty": {"default": "easy"}, });
-    constructor(params) {
-        this.params = {}; // Storage for values quick access
-        this.storage = localStorage;
-        
-        for (let name in params) {
-            // 1. Init with storage value (or "default")
-            let storageItemName = `vox_libera_setting_${name}`;
-            let methodSuffix = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
-            let paramSettings = params[name];
-            let default_value = paramSettings["default"] || null;
-            let param_type = paramSettings["type"] || "string";
-            this.params[name] = this.storage.getItem(storageItemName) || default_value;
-
-            // 2. Generate setter method
-            const setterName = `set${methodSuffix}`;
-            this[setterName] = (value) => {
-                // always convert integer from string
-                if (param_type == "int" && value)
-                    value = Number(value);
-                this.params[name] = value;
-                // convert JSON before storing
-                if (param_type == "json") {
-                    if (value) value = JSON.stringify(value);
-                    else       value = '{}';
-                }
-                this.storage.setItem(storageItemName, value);
-                // DEBUG:
-                // console.log(`Setting updated: ${name} = ${value}`);
-            };
-
-            // 3. Generate getter method
-            const getterName = `get${methodSuffix}`;
-            this[getterName] = () => {
-                let result = this.params[name];
-                if (param_type == "json") {
-                  if (result) {
-                    if (typeof result === 'string')
-                        result = JSON.parse(result);
-                  } else {
-                    resut = {};
-                  }
-                }
-                return result;
-            };
-        };
-    }
-}
 
 const settings = new Settings(
     {
@@ -161,6 +109,8 @@ function scrollToTop(elementId) {
     });
 }
 
+// ---------------- Side menu (drawer) control ---------------------
+
 function renderDrawer() {
     const pathContainer = document.getElementById('exercisePath');
     pathContainer.innerHTML = '';
@@ -182,11 +132,80 @@ function renderDrawer() {
     showActiveExerciseInMenu(settings.getCurrentScreenId());
 }
 
+// show the current screen name in menu as "selected"
 function showActiveExerciseInMenu() {
   document.querySelectorAll('.exercise-node').forEach(n => n.classList.remove('current'));
   const activeNode = document.querySelector(`[data-id="${settings.getCurrentScreenId()}"]`);
   if (activeNode) activeNode.classList.add('current');
 }
+
+// Apply topic to GUI
+// - title in menu
+// - completion status
+// - show/hide nodes in excercises path
+function applyTopicToDisplay() {
+  let topicTitle = topics[settings.getCurrentTopic()].name;
+  document.getElementById('currentTopicName').textContent = topicTitle;
+  displayTopicCompletionState();
+  updateDrawerStats();
+  // Hide/show topic-settings
+  const topicSettings = document.getElementById('topic-settings');
+  if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
+    topicSettings.classList.add('hidden');
+  } else {
+    topicSettings.classList.remove('hidden');
+  }
+  // show/hide relevant items in menu
+  // for topic 'all' hide item that have shared==0
+  const nodes = document.getElementsByClassName('exercise-node');
+  [...nodes].forEach(node => {
+      const record = getScreenRecord(node.dataset.id);
+      let display = 'flex';
+      if (settings.getCurrentTopic() == GENERAL_TOPIC_ID && record.shared == 0) display = 'none';
+      node.style.display = display;
+    }
+  );
+}
+
+// Show-hide side menu
+function toggleDrawer() {
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+    scrollToTop('drawer-content');
+
+    // if opening - refresh statistics display
+    if ( !drawer.classList.contains('open') ) updateDrawerStats();
+
+    // Toggle classes for both elements
+    drawer.classList.toggle('open');
+    overlay.classList.toggle('active');
+}
+
+// Set reaction on click for any button in side menu
+document.querySelectorAll('.drawer button').forEach(btn => {
+    if ( ! btn.classList.contains('nav-arrow') )
+    btn.addEventListener('click', () => {
+        toggleDrawer();
+    });
+});
+
+// Initialize side menu
+function initMenu() {
+    // 1. Populate list of screens
+    renderDrawer();
+    // 2. Display topic title
+    applyTopicToDisplay();
+    showScreenTitle();
+    // 3. Read and apply settings
+    const savedDifficulty = settings.getGameDifficulty()
+    setGamesDifficulty(savedDifficulty);
+    const radioToSelect = document.getElementById(`diff-${savedDifficulty}`);
+    if (radioToSelect) {
+        radioToSelect.checked = true;
+    }
+}
+
+// --------------- Screens navigation -------------------------
 
 function loadScreenFromMenu(screen_id) {
   settings.setCurrentScreenId(screen_id);
@@ -260,34 +279,6 @@ function switchTopic(direction) {
   startTopic();
 }
 
-// Apply topic to GUI
-// - title in menu
-// - completion status
-// - show/hide nodes in excercises path
-function applyTopicToDisplay() {
-  let topicTitle = topics[settings.getCurrentTopic()].name;
-  document.getElementById('currentTopicName').textContent = topicTitle;
-  displayTopicCompletionState();
-  updateDrawerStats();
-  // Hide/show topic-settings
-  const topicSettings = document.getElementById('topic-settings');
-  if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
-    topicSettings.classList.add('hidden');
-  } else {
-    topicSettings.classList.remove('hidden');
-  }
-  // show/hide relevant items in menu
-  // for topic 'all' hide item that have shared==0
-  const nodes = document.getElementsByClassName('exercise-node');
-  [...nodes].forEach(node => {
-      const record = getScreenRecord(node.dataset.id);
-      let display = 'flex';
-      if (settings.getCurrentTopic() == GENERAL_TOPIC_ID && record.shared == 0) display = 'none';
-      node.style.display = display;
-    }
-  );
-}
-
 // reset screen to default (first)
 // update display
 // start the game
@@ -300,54 +291,16 @@ function startTopic() {
   loadScreen();
 }
 
-// Show-hide side menu
-function toggleDrawer() {
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('overlay');
-    scrollToTop('drawer-content');
-
-    // if opening - refresh statistics display
-    if ( !drawer.classList.contains('open') ) updateDrawerStats();
-
-    // Toggle classes for both elements
-    drawer.classList.toggle('open');
-    overlay.classList.toggle('active');
-}
-
-// Set reaction on click for any button in side menu
-document.querySelectorAll('.drawer button').forEach(btn => {
-    if ( ! btn.classList.contains('nav-arrow') )
-    btn.addEventListener('click', () => {
-        toggleDrawer();
-    });
-});
-
 // by screen id get the whole record
 function getScreenRecord(screen_id) {
   return SCREENS.find(r => r.id == screen_id);
 }
 
-// get screen_type by game id
+// get screen_type by screen id
 function getScreenType(screen_id) {
   const record = getScreenRecord(screen_id);
   if (record) return record.screen_type;
   return DEFAULT_SCREEN_ID;
-}
-
-// Initialize side menu
-function initMenu() {
-    // 1. Populate list of screens
-    renderDrawer();
-    // 2. Display topic title
-    applyTopicToDisplay();
-    showScreenTitle();
-    // 3. Read and apply settings
-    const savedDifficulty = settings.getGameDifficulty()
-    setGamesDifficulty(savedDifficulty);
-    const radioToSelect = document.getElementById(`diff-${savedDifficulty}`);
-    if (radioToSelect) {
-        radioToSelect.checked = true;
-    }
 }
 
 function showScreenTitle() {
@@ -713,7 +666,7 @@ function showErrorCount(errors) {
     const errorDisplay = document.getElementById('errorCount');
     if (errorDisplay) errorDisplay.textContent = errors;
 }
-// ------------------------------------------- common Win popup
+// ------------------------------------------- game completion popup
 
 // Show completion summary per round
 function showWin(acc) {
@@ -988,6 +941,15 @@ function renderSent(screen_id) {
     resultContainer.dataset.words = '';
 }
 
+// from a list of lists allData extract all unique words on position pos
+// randomly shuffle the result
+function extractUniqueWordsFromData(allData, pos) {
+   let realWords = allData.flatMap(row => row[pos].split(/\s+|,/)).filter(w => w.length > 0);
+   realWords = realWords.filter(w => !w.includes(')')).filter(w => !w.includes('(')).filter(w => !w.includes('/'));
+   let allWords = [...new Set( realWords )];
+   return shuffle(allWords);
+}
+
 // onClick for bottom card buttons: move word to the end of middle set
 // take a word according to index from bank of words and append it to middle sentence
 function useBankWord(index) {
@@ -1065,15 +1027,6 @@ function checkSent() {
     }, 400);
   }
   showErrorCount(errors);
-}
-
-// from a list of lists allData extract all unique words on position pos
-// randomly shuffle the result
-function extractUniqueWordsFromData(allData, pos) {
-   let realWords = allData.flatMap(row => row[pos].split(/\s+|,/)).filter(w => w.length > 0);
-   realWords = realWords.filter(w => !w.includes(')')).filter(w => !w.includes('(')).filter(w => !w.includes('/'));
-   let allWords = [...new Set( realWords )];
-   return shuffle(allWords);
 }
 
 // Show/hide the "search" bar
