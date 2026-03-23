@@ -5,12 +5,13 @@
 
 "use strict";
 
-const app_code_ver = '2.5.5';
+const app_code_ver = '2.6.1';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
 
 const GENERAL_TOPIC_ID = 'all';
+const DEFAULT_SCREEN_ID = 'dictionary';
 
 document.getElementById('versions-info').innerHTML =
   '<table>' +
@@ -18,6 +19,115 @@ document.getElementById('versions-info').innerHTML =
   '<tr><td>app code</td><td>&nbsp;v' + app_code_ver + '</td></tr>' +
   '<tr><td>lesson data</td><td>&nbsp;v' + lesson_data_ver + '</td></tr></table>'
   ;
+
+class Settings {
+
+    // Usage:
+    // const settings = new Settings({"gameDifficulty": {"default": "easy"}, });
+    constructor(params) {
+        this.params = {}; // Storage for values quick access
+        this.storage = localStorage;
+        
+        for (let name in params) {
+            // 1. Init with storage value (or "default")
+            let storageItemName = `vox_libera_setting_${name}`;
+            let methodSuffix = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
+            let paramSettings = params[name];
+            let default_value = paramSettings["default"] || null;
+            let param_type = paramSettings["type"] || "string";
+            this.params[name] = this.storage.getItem(storageItemName) || default_value;
+
+            // 2. Generate setter method
+            const setterName = `set${methodSuffix}`;
+            this[setterName] = (value) => {
+                // always convert integer from string
+                if (param_type == "int" && value)
+                    value = Number(value);
+                this.params[name] = value;
+                // convert JSON before storing
+                if (param_type == "json") {
+                    if (value) value = JSON.stringify(value);
+                    else       value = '{}';
+                }
+                this.storage.setItem(storageItemName, value);
+                // DEBUG:
+                // console.log(`Setting updated: ${name} = ${value}`);
+            };
+
+            // 3. Generate getter method
+            const getterName = `get${methodSuffix}`;
+            this[getterName] = () => {
+                let result = this.params[name];
+                if (param_type == "json") result = JSON.parse(result);
+                return result;
+            };
+        };
+    }
+}
+
+const settings = new Settings(
+    {
+      "gameDifficulty": {"default": "easy"},
+      "hideWellLearned": {"default": 0, "type": "int"},
+      "showTranscription": {"default": 0, "type": "int"},
+      "currentTopic": {"default": GENERAL_TOPIC_ID},
+      "currentScreenId": {"default": DEFAULT_SCREEN_ID},
+      "topicsCompletion": {"default": {}, "type": "json"},
+      "wordStats": {"default": {}, "type": "json"}
+    }
+);
+
+let finalGameForTopic = '';
+
+const hideWellLearnedElm = document.getElementById('hide-well-learned');
+hideWellLearnedElm.checked = settings.getHideWellLearned() == 1;
+
+const showTransToggleElm = document.getElementById('show-trans-toggle');
+showTransToggleElm.checked = settings.getShowTranscription() == 1;
+
+const difficultySettings = {
+    easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5},
+    medium: { itemsPerRound: 6, totalChoices: 6, totalQuestions: 7,  sentenceFactor: 1.7},
+    hard:   { itemsPerRound: 7, totalChoices: 8, totalQuestions: 9,  sentenceFactor: 1.9}
+};
+
+// Auto-fix for wrong inputs
+if ( ! topics.hasOwnProperty(GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
+
+if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOPIC_ID);
+
+// Screen types
+const SCREENS = [
+  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь',              inputs: ['words'] },
+  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения',          inputs: ['sentences'] },
+  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов',        inputs: ['words'] },
+  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
+  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары',           inputs: ['words'] },
+  { id: 'quiz_ru_ar',      shared: 0, excercise: 1, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar',   inputs: ['words', 'sentences'] },
+  { id: 'quiz_ar_ru',      shared: 0, excercise: 1, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru',   inputs: ['words', 'sentences'] },
+  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина',      inputs: ['words', 'sentences'] },
+  { id: 'sent_ru_ar',      shared: 0, excercise: 1, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
+  { id: 'sent_ar_ru',      shared: 0, excercise: 1, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
+  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение',    inputs: ['sentences'] },
+  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы',            inputs: ['words', 'sentences'] }
+];
+
+// Reaction on completed round (according to reached grade)
+const feedback = {
+    perfect: [
+        {ar: "أَحْسَنْتَ!", ru: "Отлично!", tr: "Aḥsanta!"},
+        {ar: "مُمْتَاز!", ru: "Превосходно!", tr: "Mumtāz!"},
+        {ar: "مَا شَاءَ الله!", ru: "Машалла!", tr: "Mā shā'a Allāh!"}
+    ],
+    good: [
+        {ar: "عَمَلٌ جَيِّد!", ru: "Хорошая работа!", tr: "'Amalun jayyid!"},
+        {ar: "بَطَل!", ru: "Молодец!", tr: "Baṭal!"}
+    ],
+    tryAgain: [
+        {ar: "حَاوِلْ مَرَّةً أُخْرَى", ru: "Попробуй еще раз", tr: "Ḥāwil marratan ukhrā"},
+        {ar: "لَا تَسْتَسْلِم!", ru: "Не сдавайся!", tr: "Lā tastaslim!"}
+    ]
+};
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -60,20 +170,20 @@ function renderDrawer() {
         li.onclick = () => loadScreenFromMenu(screen.id);
 
         pathContainer.appendChild(li);
-
-        // if this is current excercise - select it
-        if ( currentGameType == screen.id ) setActiveExerciseInMenu(screen.id);
     });
+
+    showActiveExerciseInMenu(settings.getCurrentScreenId());
 }
 
-function setActiveExerciseInMenu(screen_id) {
+function showActiveExerciseInMenu() {
   document.querySelectorAll('.exercise-node').forEach(n => n.classList.remove('current'));
-  const activeNode = document.querySelector(`[data-id="${screen_id}"]`);
+  const activeNode = document.querySelector(`[data-id="${settings.getCurrentScreenId()}"]`);
   if (activeNode) activeNode.classList.add('current');
 }
 
 function loadScreenFromMenu(screen_id) {
-  loadScreen(screen_id);
+  settings.setCurrentScreenId(screen_id);
+  loadScreen();
   toggleDrawer();
 }
 
@@ -87,12 +197,12 @@ function loadNextScreen() {
 
 function loadPrevNexScreen(delta) {
   // find current screen index
-  const currGameIndex = SCREENS.findIndex(m => m.id === currentGameType);
+  const currGameIndex = SCREENS.findIndex(m => m.id === settings.getCurrentScreenId());
   const newGameIndex = currGameIndex+delta;
   if (newGameIndex >= 0 && newGameIndex < SCREENS.length) {
     const next_screen_id = SCREENS[newGameIndex].id;
     // special case for 'all' topic
-    if ( currentTopic == GENERAL_TOPIC_ID ) {
+    if ( settings.getCurrentTopic() == GENERAL_TOPIC_ID ) {
       const record = getScreenRecord(next_screen_id);
       if (record.shared == 0) {
         // if next screen is not 'shared' - move to next topic
@@ -100,7 +210,8 @@ function loadPrevNexScreen(delta) {
         return;
       }
     }
-    loadScreen(next_screen_id);
+    settings.setCurrentScreenId(next_screen_id);
+    loadScreen();
   } else {
     // if last - move to next topic
     switchTopic(delta);
@@ -108,9 +219,9 @@ function loadPrevNexScreen(delta) {
 }
 
 // load screen by ID
-function loadScreen(screen_id) {
-  setActiveExerciseInMenu(screen_id);
-  startGame(screen_id, currentTopic);
+function loadScreen() {
+  showActiveExerciseInMenu();
+  startScreen();
 }
 
 // try to find topic key name by given index
@@ -133,26 +244,27 @@ function nextTopic() {
 // do nothing if it is impossible
 function switchTopic(direction) {
   // get topic id
-  let topicIndex = topics[currentTopic].index;
+  let topicIndex = topics[settings.getCurrentTopic()].index;
   // find topic with next id
   let nextTopicId = getTopic(topicIndex+direction);
   if (! nextTopicId) return;
   // if found - load screen
-  startTopic(nextTopicId);
+  settings.setCurrentTopic(nextTopicId);
+  startTopic();
 }
 
 // Apply topic to GUI
 // - title in menu
 // - completion status
 // - show/hide nodes in excercises path
-function applyTopicToDisplay(topic) {
-  let topicTitle = topics[topic].name;
+function applyTopicToDisplay() {
+  let topicTitle = topics[settings.getCurrentTopic()].name;
   document.getElementById('currentTopicName').textContent = topicTitle;
   displayTopicCompletionState();
   updateDrawerStats();
   // Hide/show topic-settings
   const topicSettings = document.getElementById('topic-settings');
-  if (topic == GENERAL_TOPIC_ID) {
+  if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
     topicSettings.classList.add('hidden');
   } else {
     topicSettings.classList.remove('hidden');
@@ -163,23 +275,22 @@ function applyTopicToDisplay(topic) {
   [...nodes].forEach(node => {
       const record = getScreenRecord(node.dataset.id);
       let display = 'flex';
-      if (topic == GENERAL_TOPIC_ID && record.shared == 0) display = 'none';
+      if (settings.getCurrentTopic() == GENERAL_TOPIC_ID && record.shared == 0) display = 'none';
       node.style.display = display;
     }
   );
 }
 
-// set current topic, reset game type to first
+// reset screen to default (first)
 // update display
 // start the game
-function startTopic(topic) {
-  currentTopic = topic;
-  currentGameType = SCREENS[0].id;
+function startTopic() {
+  settings.setCurrentScreenId(SCREENS[0].id);
 
-  applyTopicToDisplay(topic);
-  showScreenTitle(currentGameType, topic);
+  applyTopicToDisplay();
+  showScreenTitle();
 
-  loadScreen(currentGameType);
+  loadScreen();
 }
 
 // Show-hide side menu
@@ -204,57 +315,16 @@ document.querySelectorAll('.drawer button').forEach(btn => {
     });
 });
 
-// Initiallize displayed screen type and selected topic
-let currentGameType = localStorage.getItem('selectedType') || 'dictionary';
-let currentTopic = localStorage.getItem('selectedTopic') || GENERAL_TOPIC_ID;
-
-if ( ! topics.hasOwnProperty(GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
-
-if ( ! topics[currentTopic] ) currentTopic = GENERAL_TOPIC_ID;
-
-// Screen types
-const SCREENS = [
-  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь',              inputs: ['words'] },
-  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения',          inputs: ['sentences'] },
-  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов',        inputs: ['words'] },
-  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
-  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары',           inputs: ['words'] },
-  { id: 'quiz_ru_ar',      shared: 0, excercise: 1, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar',   inputs: ['words', 'sentences'] },
-  { id: 'quiz_ar_ru',      shared: 0, excercise: 1, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru',   inputs: ['words', 'sentences'] },
-  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина',      inputs: ['words', 'sentences'] },
-  { id: 'sent_ru_ar',      shared: 0, excercise: 1, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
-  { id: 'sent_ar_ru',      shared: 0, excercise: 1, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
-  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение',    inputs: ['sentences'] },
-  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы',            inputs: ['words', 'sentences'] }
-];
-
-// Reaction on completed round (according to reached grade)
-const feedback = {
-    perfect: [
-        {ar: "أَحْسَنْتَ!", ru: "Отлично!", tr: "Aḥsanta!"},
-        {ar: "مُمْتَاز!", ru: "Превосходно!", tr: "Mumtāz!"},
-        {ar: "مَا شَاءَ الله!", ru: "Машалла!", tr: "Mā shā'a Allāh!"}
-    ],
-    good: [
-        {ar: "عَمَلٌ جَيِّد!", ru: "Хорошая работа!", tr: "'Amalun jayyid!"},
-        {ar: "بَطَل!", ru: "Молодец!", tr: "Baṭal!"}
-    ],
-    tryAgain: [
-        {ar: "حَاوِلْ مَرَّةً أُخْرَى", ru: "Попробуй еще раз", tr: "Ḥāwil marratan ukhrā"},
-        {ar: "لَا تَسْتَسْلِم!", ru: "Не сдавайся!", tr: "Lā tastaslim!"}
-    ]
-};
-
-// by screen instance id (type) get whole record
-function getScreenRecord(type) {
-  return SCREENS.find(r => r.id == type);
+// by screen id get the whole record
+function getScreenRecord(screen_id) {
+  return SCREENS.find(r => r.id == screen_id);
 }
 
-// get screen_type by game instance id
-function getScreenType(type) {
-  const record = getScreenRecord(type);
+// get screen_type by game id
+function getScreenType(screen_id) {
+  const record = getScreenRecord(screen_id);
   if (record) return record.screen_type;
-  return 'dictionary'; // DEFAULT
+  return DEFAULT_SCREEN_ID;
 }
 
 // Initialize side menu
@@ -262,10 +332,10 @@ function initMenu() {
     // 1. Populate list of screens
     renderDrawer();
     // 2. Display topic title
-    applyTopicToDisplay(currentTopic);
-    showScreenTitle(currentGameType, currentTopic);
+    applyTopicToDisplay();
+    showScreenTitle();
     // 3. Read and apply settings
-    const savedDifficulty = localStorage.getItem('gameDifficulty') || 'easy';
+    const savedDifficulty = settings.getGameDifficulty()
     setGamesDifficulty(savedDifficulty);
     const radioToSelect = document.getElementById(`diff-${savedDifficulty}`);
     if (radioToSelect) {
@@ -273,43 +343,36 @@ function initMenu() {
     }
 }
 
-function showScreenTitle(type, topic) {
-    const modeObj = getScreenRecord(type);
-    const modeName = modeObj ? modeObj.name : "Игра";
+function showScreenTitle() {
+    const record = getScreenRecord(settings.getCurrentScreenId());
+    const screenName = record ? record.name : "Screen";
 
     // Build main title
-    document.getElementById('title').textContent = `${topics[topic].name}: ${modeName}`;
+    document.getElementById('title').textContent = `${topics[settings.getCurrentTopic()].name}: ${screenName}`;
 }
 
 // Start any screen/game from any other context (not from menu)
-function startGame(type = currentGameType, topic = currentTopic) {
-    currentGameType = type;
-    currentTopic = topic;
-
-    showScreenTitle(type, topic);
-    // Memorize the selection for next run
-    localStorage.setItem('selectedTopic', topic);
-    localStorage.setItem('selectedType', type);
+function startScreen() {
+    showScreenTitle();
 
     // Render screen according to type
-    renderGameContent(type, topic);
+    renderScreen(settings.getCurrentScreenId());
 }
 
-
 // Render screen/game
-function renderGameContent(type, topic) {
+function renderScreen(screen_id) {
     // for screen 'final' get a random screen from screens with excercise==1
     finalGameForTopic = '';
-    if (type == 'final') {
+    if (screen_id == 'final') {
         // build a set of candidates:
         // having 'excercise' flag on and excluding 'final' itself
         const candidates = SCREENS.filter(rec => rec.id != 'final' && rec.excercise == 1);
         const replacement = candidates[Math.floor(Math.random() * candidates.length)];
-        const record = getScreenRecord(type);
+        const record = getScreenRecord(screen_id);
         record.screen_type = replacement.screen_type;
         record.inputs = replacement.inputs;
         // use data from other topics in "completed" state
-        finalGameForTopic = topic;
+        finalGameForTopic = settings.getCurrentTopic();
     }
     // 1. Hide all screen-related DOM elements
     const screens = document.querySelectorAll('.game-screen');
@@ -328,7 +391,7 @@ function renderGameContent(type, topic) {
 
 
     // 2. Show related screen only
-    const screenType = getScreenType(type);
+    const screenType = getScreenType(screen_id);
     let screenId = screenType.startsWith('quiz') ? 'screen-quiz' : ('screen-'+screenType);
     if (screenType.startsWith('sent')) { screenId = 'screen-sent'; }
     if (screenType == 'flashcards') { screenId = 'flashcards-screen'; }
@@ -339,13 +402,13 @@ function renderGameContent(type, topic) {
 
     // 3. Initialize screen according to type
     if (screenType === 'dictionary') {
-        openDictionary(topic);
+        showDictionary();
     } else {
         const container = document.getElementById('app-container');
         container.classList.add('hidden-anim');
         setTimeout(() => {
             // render content
-            initGameEngine(type, topic);
+            initGameEngine(screen_id);
             // animate
             container.classList.remove('hidden-anim');
         }, 300);
@@ -353,17 +416,17 @@ function renderGameContent(type, topic) {
 }
 
 // Initilize engine for game-type screen
-function initGameEngine(type, topic) {
-    let screenType = getScreenType(type);
+function initGameEngine(screen_id) {
+    let screenType = getScreenType(screen_id);
     if (screenType == 'matching') {
-        renderMatchingGame(topic);
+        renderMatchingGame();
     } else {
         if (screenType == 'flashcards') {
-          initFlashcards(topic);
+          initFlashcards();
         } else if (screenType.startsWith('quiz')) {
           startNewQuizSet();
         } else {
-          renderSent(type, topic);
+          renderSent(screen_id);
         }
     }
 }
@@ -374,12 +437,12 @@ let cardIndex = 0;
 let flashcardsData = [];
 let studyMode = 'ar-ru'; // Modes: 'ar-ru' / 'ru-ar'
 
-function initFlashcards(topic) {
+function initFlashcards() {
     const container = document.getElementById('flashcards-screen');
-    const inputTypes = getGameInputTypes(currentGameType);
+    const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
 
     // Deep copy for dynamic changes
-    flashcardsData = shuffle([...getTopicData(topic, inputTypes)]);
+    flashcardsData = shuffle([...getTopicData(inputTypes)]);
 
     if (flashcardsData.length === 0) {
         showCompletionMessage();
@@ -535,7 +598,7 @@ var gameSettings = {}
 var totalChoices = 4;
 
 // initialize pairs (matching) screen
-function renderMatchingGame(topic) {
+function renderMatchingGame() {
     const board = document.getElementById('matching-grid');
     board.innerHTML = '';
 
@@ -553,7 +616,7 @@ function renderMatchingGame(topic) {
 
     // Get all data related to topic
     const inputTypes = getGameInputTypes('matching');
-    const currentData = getTopicData(topic, inputTypes);
+    const currentData = getTopicData(inputTypes);
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
@@ -676,11 +739,11 @@ function showWin(acc) {
 let quizCorrectWord = null;
 let firstAttempt = true;
 
-// Initialize quiz (of all possoble types)
-function renderQuizGame(type, topic) {
-    const inputTypes = getGameInputTypes(type);
-    const allWords = getTopicData(topic, inputTypes);
-    const screenType = getScreenType(type);
+// Initialize quiz (of all possible types)
+function renderQuizGame(screen_id) {
+    const inputTypes = getGameInputTypes(screen_id);
+    const allWords = getTopicData(inputTypes);
+    const screenType = getScreenType(screen_id);
     // Take a random word from all words in topic
     quizCorrectWord = allWords[Math.floor(Math.random() * allWords.length)];
 
@@ -773,7 +836,7 @@ function startNewQuizSet() {
     showErrorCount(0);
     updateProgress(0);
 
-    renderQuizGame(currentGameType, currentTopic);
+    renderQuizGame(settings.getCurrentScreenId());
 }
 
 function finishSet() {
@@ -807,7 +870,7 @@ function handleQuizChoice(selectedWord, btn) {
         if (gameSet.currentQuestionIndex < gameSet.totalQuestions) {
             // Next mini-game
             setTimeout(() => {
-                renderQuizGame(currentGameType, currentTopic);
+                renderQuizGame(settings.getCurrentScreenId());
             }, 1000);
         } else {
             finishSet(); // success
@@ -824,8 +887,9 @@ function handleQuizChoice(selectedWord, btn) {
         btn.disabled = true; // Disable as already taken
         scrollToTop('app-container');
 
+        const screenType = getScreenType(settings.getCurrentScreenId());
         // For audio-based quiz re-run speaking routine
-        if (currentGameType === 'quiz_audio') speakArabic(quizCorrectWord[1]);
+        if (screenType === 'quiz_audio') speakArabic(quizCorrectWord[1]);
     }
 }
 
@@ -836,16 +900,16 @@ function handleQuizChoice(selectedWord, btn) {
     { id: 'sent_ar_ru', name: 'Предложение: Ар → Ру' },
     { id: 'sent_audio', name: 'Аудио-Предложение' },
 */
-function renderSent(type, topic) {
-    const screenType = getScreenType(type);
+function renderSent(screen_id) {
+    const screenType = getScreenType(screen_id);
     document.getElementById('errors-panel').style.display = 'block';
     // 1. get topic data
     const inputTypes = ['sentences'];
-    const currentData = getTopicData(topic, inputTypes);
+    const currentData = getTopicData(inputTypes);
     const allData = currentData.filter(r => (r[0].includes(' ') && r[1].includes(' ') && !r[0].includes('.')));
     // for wrong topic without sentences - switch to a compatible screen type
     if ( ! allData.length ) {
-        renderGameContent('matching', topic);
+        renderScreen('matching');
         return;
     }
     var allWords;
@@ -901,7 +965,8 @@ function renderSent(type, topic) {
     // 6. create word-buttons in bottom card
     bankContainer.innerText = '';
     let bankWordClass = 'sent-word';
-    if ( type == 'sent_ru_ar' ) bankWordClass += ' arabic';
+    let screenType = getScreenType(screen_id);
+    if ( screenType == 'sent_ru_ar' ) bankWordClass += ' arabic';
     for (let i = 0; i < bankWords.length; i++) {
       const bankWord = document.createElement('span');
       bankWord.onclick = () => useBankWord(i);
@@ -1081,19 +1146,19 @@ function changeZoom(delta) {
     document.documentElement.style.setProperty('--base-font-size', currentZoom + 'rem');
 }
 
-function getGameInputTypes(type) {
-  const modeObj = getScreenRecord(type);
-  return modeObj.inputs;
+function getGameInputTypes(screen_id) {
+  const record = getScreenRecord(screen_id);
+  return record.inputs;
 }
 
 // render dictionary according to selected topic
-function openDictionary(topic) {
+function showDictionary() {
     const listContainer = document.getElementById('dictionaryList');
     listContainer.innerHTML = '';
     showHideSearch(1);
 
-    const inputTypes = getGameInputTypes(currentGameType);
-    const currentData = getTopicData(topic, inputTypes);
+    const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
+    const currentData = getTopicData(inputTypes);
 
     const stats = getStats();
 
@@ -1137,9 +1202,9 @@ function openDictionary(topic) {
 
 // universal collector for topic data (including virtual "all")
 // external parameter: hideWellLearned
-function getTopicData(topic, inputTypes) {
+function getTopicData(inputTypes) {
   let currentData = [];
-  if (topic == GENERAL_TOPIC_ID) {
+  if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
     for (let key in topics) {
       inputTypes.forEach( inputType => {
         let topicData = topics[key][inputType];
@@ -1150,7 +1215,7 @@ function getTopicData(topic, inputTypes) {
     }
   } else {
     inputTypes.forEach( inputType => {
-      let topicData = topics[topic][inputType];
+      let topicData = topics[settings.getCurrentTopic()][inputType];
       if ( topicData ) {
         currentData.push(...topicData);
       }
@@ -1179,7 +1244,7 @@ function getTopicData(topic, inputTypes) {
     }
   }
 
-  if (!hideWellLearned) return currentData;
+  if ( settings.getHideWellLearned() == 0 ) return currentData;
 
   // hide well-learned:
   const candidates = currentData.filter(item => {
@@ -1195,6 +1260,7 @@ function getTopicData(topic, inputTypes) {
   return candidates;
 }
 
+// TODO: move this variable to generic 'settings' too
 const wordStats = getStats();
 
 // Stats manipulation: read words stats
@@ -1209,19 +1275,15 @@ function setStats(stats) {
 
 // Topics state manipulation (read/save)
 function setTopicState(topic, state) {
-  const topicStates = getTopicStates();
+  const topicStates = settings.getTopicsCompletion();
   topicStates[topic] = Number(state);
 
-  localStorage.setItem('topicStats', JSON.stringify(topicStates));
+  settings.setTopicsCompletion(topicStates);
 }
 
 function getTopicState(topic) {
-  const topicStates = getTopicStates();
+  const topicStates = settings.getTopicsCompletion();
   return Number(topicStates[topic]);
-}
-
-function getTopicStates() {
-  return JSON.parse(localStorage.getItem('topicStats') || '{}');
 }
 
 function toggleTopicPassed() {
@@ -1234,12 +1296,11 @@ function toggleTopicPassed() {
         titleContainer.classList.remove('is-passed');
     }
 
-    // Сохраняем в localStorage, чтобы при перезагрузке не пропало
-    setTopicState(currentTopic, Number(isChecked));
+    setTopicState(settings.getCurrentTopic(), Number(isChecked));
 }
 
 function displayTopicCompletionState() {
-    const state = getTopicState(currentTopic);
+    const state = getTopicState(settings.getCurrentTopic());
     document.getElementById('topicPassedCheckbox').checked = state;
     const titleContainer = document.querySelector('.drawer-title');
     if (state) {
@@ -1252,16 +1313,16 @@ function displayTopicCompletionState() {
 function resetTopicStats() {
   let stats = getStats();
   // for each word/sentence in current topic
-  const topicData = [...topics[currentTopic]['words'], ...topics[currentTopic]['sentences']];
+  const topicData = [...topics[settings.getCurrentTopic()]['words'], ...topics[settings.getCurrentTopic()]['sentences']];
 
   // erase it from stats
   [...topicData].forEach(e => {delete stats[e[1]]});
   // save stats back
   setStats(stats);
   // reload dictionary
-  const screenType = getScreenType(currentGameType);
+  const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
-     openDictionary(currentTopic);
+     showDictionary();
   }
 }
 
@@ -1269,9 +1330,9 @@ function resetTopicStats() {
 function resetStats() {
   setStats({});
   // reload dictionary
-  const screenType = getScreenType(currentGameType);
+  const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
-     openDictionary(currentTopic);
+     showDictionary();
   }
 }
 
@@ -1345,7 +1406,7 @@ function getTopicStats(topicId) {
 }
 
 function updateDrawerStats() {
-    const data = getTopicStats(currentTopic);
+    const data = getTopicStats(settings.getCurrentTopic());
     if (!data) return;
 
     document.getElementById('statWords').textContent = 
@@ -1354,26 +1415,15 @@ function updateDrawerStats() {
         `${data.sentencesCount} / ${Math.round(data.sentencesSuccess)}%`;
 }
 
-// TODO: aggregate all settings in common object
-let finalGameForTopic = '';
-
-const hideWellLearnedElm = document.getElementById('hide-well-learned');
-var hideWellLearned = (localStorage.getItem('hideWellLearned') || 0) == '1';
-hideWellLearnedElm.checked = hideWellLearned == '1';
-
+// callback for toggle "Well-learned" checkbox
 function toggleWellLearned() {
-  hideWellLearned = hideWellLearnedElm.checked;
-  localStorage.setItem('hideWellLearned', hideWellLearned ? 1 : 0);
-  startGame(currentGameType, currentTopic);
+  settings.setHideWellLearned(hideWellLearnedElm.checked ? 1 : 0);
+  startScreen();
 }
 
-const showTransToggleElm = document.getElementById('show-trans-toggle');
-var showTransToggle =  (localStorage.getItem('showTransToggle') || 0) == '1';
-showTransToggleElm.checked = showTransToggle == '1';
-
+// callback for toggle "transcription" checkbox
 function toggleTranscription() {
-  showTransToggle =  showTransToggleElm.checked;
-  localStorage.setItem('showTransToggle', showTransToggle ? 1 : 0);
+  settings.setShowTranscription(showTransToggleElm.checked ? 1 : 0);
   updateTranscriptionDisplay();
 }
 
@@ -1381,25 +1431,20 @@ function toggleTranscription() {
 function updateTranscriptionDisplay() {
   // change visibility for "transcription" class
   [...document.getElementsByClassName('transcription')].forEach(e => {
-    e.classList.toggle('hidden', !showTransToggle);
+    e.classList.toggle('hidden', settings.getShowTranscription()==0);
   });
 }
 
-const difficultySettings = {
-    easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5},
-    medium: { itemsPerRound: 6, totalChoices: 6, totalQuestions: 7,  sentenceFactor: 1.7},
-    hard:   { itemsPerRound: 7, totalChoices: 8, totalQuestions: 9,  sentenceFactor: 1.9}
-};
-
+// callback for GUI change
 function changeDifficulty(level) {
     // 1. Store for future
-    localStorage.setItem('gameDifficulty', level);
+    settings.setGameDifficulty(level);
     // 2. Change the games parameters
     setGamesDifficulty(level);
     // 3. Restart the game (exclude dictionary)
-    const screenType = getScreenType(currentGameType);
+    const screenType = getScreenType(settings.getCurrentScreenId());
     if (screenType === 'dictionary') {
-      startGame(currentGameType, currentTopic);
+      startScreen();
     }
 }
 
@@ -1487,5 +1532,5 @@ document.addEventListener('keydown', (event) => {
 // On page load initialize the menu and selected screen
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
-    startGame();
+    startScreen();
 });
