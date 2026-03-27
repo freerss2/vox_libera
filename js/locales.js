@@ -23,6 +23,11 @@ const locales = {
       "show-trans-toggle": "Transcription",
       "reset-all-stat": " Reset all stats"
     },
+    "modal_results": {
+      "title": "Completed topic:",
+      "words_learned": "Total words: ",
+      "words_accuracy": "Accuracy: "
+    },
     "screens": {
       "dictionary":      "Dictionary",
       "sentences":       "Sentences",
@@ -69,6 +74,11 @@ const locales = {
       "hide-well-learned": "Только невыученное",
       "show-trans-toggle": "Транскрипция",
       "reset-all-stat": " Сбросить статистику"
+    },
+    "modal_results": {
+      "title": "Завершена тема:",
+      "words_learned": "Всего слов: ",
+      "words_accuracy": "Точность: "
     },
     "screens": {
       "dictionary":      "Словарь",

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.1';
+const app_code_ver = '2.7.2';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -167,6 +167,8 @@ function showActiveExerciseInMenu() {
 function applyTopicToDisplay() {
   let topicTitle = topics[settings.getCurrentTopic()].name;
   document.getElementById('currentTopicName').textContent = topicTitle;
+  document.getElementById('currentTopicNameSummary').textContent = topicTitle;
+
   displayTopicCompletionState();
   updateDrawerStats();
   // Hide/show topic-settings
@@ -238,8 +240,42 @@ function loadPrevScreen() {
   loadPrevNexScreen(-1);
 }
 
-function loadNextScreen() {
+function loadNextScreen(fromWinDialog=false) {
+  if (settings.getCurrentScreenId() == 'final' && fromWinDialog) {
+    // if entered this code from WinScreen and current screen is 'final'
+    // open special dialog box for topic summary
+    showTopicResults();
+    return;
+  }
   loadPrevNexScreen(1);
+}
+
+function showTopicResults() {
+    const data = getTopicStats(settings.getCurrentTopic());
+    const modal = document.getElementById('resultsModal');
+    
+    // Statistics for words
+    document.getElementById('res-words-count').textContent = data.wordsCount;
+    document.getElementById('res-words-accuracy').textContent = `${Math.round(data.wordsSuccess)}%`;
+
+    // Statistics for phrases
+    document.getElementById('res-sent-count').textContent = data.sentencesCount;
+    document.getElementById('res-sent-accuracy').textContent = `${Math.round(data.sentencesSuccess)}%`;
+
+    // hide winScreen
+    const winScreenElm = document.getElementById('winScreen');
+    if (winScreenElm) winScreenElm.classList.add('hidden');
+    // show new screen
+    modal.classList.remove('hidden');
+    document.getElementById('btn-finish-lesson').onclick = () => {
+        modal.classList.add('hidden');
+        nextTopic();
+    };
+
+    // animate success
+    triggerSuccessEffect(modal);
+    setTimeout(() => { triggerSuccessEffect(modal); }, 1500);
+    setTimeout(() => { triggerSuccessEffect(modal); }, 2500);
 }
 
 function loadPrevNexScreen(delta) {
@@ -360,7 +396,7 @@ function renderScreen(screen_id) {
     screens.forEach(s => s.style.display = 'none');
     // including different panels
     const winScreenElm = document.getElementById('winScreen');
-    if (winScreenElm) winScreenElm.style.display = 'none';
+    if (winScreenElm) winScreenElm.classList.add('hidden');
     // initilize hint panel
     const hintPanelElm = document.getElementById('hint-panel');
     if (hintPanelElm) hintPanelElm.textContent = i18n.t("main.hint-panel");
@@ -710,7 +746,7 @@ function showWin(acc) {
 
     // hide the game board and visualize the popup
     document.getElementById('screen-matching').style.display = 'none';
-    document.getElementById('winScreen').style.display = 'block';
+    document.getElementById('winScreen').classList.remove('hidden');
     document.getElementById('accuracyStat').textContent = acc + "%";
 }
 
@@ -1446,18 +1482,16 @@ const successCharacters = [
   '✨', '🌟', '🎊', '🎉', '🏆', '🎖️', '💎', '💡', '🚀', '⚡', '🎈', '🔥'];
 
 function triggerSuccessEffect(button) {
-    // 1. Запускаем анимацию на самой кнопке
-    button.classList.add('correct-animation');
+    // button.classList.add('correct-animation');
 
-    // 2. Создаем "салют" (текстовый символ)
+    // animate random success icons
     const sparkle = document.createElement('span');
     sparkle.innerText = shuffle(successCharacters)[0]+shuffle(successCharacters)[1]+shuffle(successCharacters)[2];
     sparkle.className = 'success-sparkle';
     button.appendChild(sparkle);
 
-    // 3. Убираем всё через полсекунды
     setTimeout(() => {
-        button.classList.remove('correct-animation');
+        // button.classList.remove('correct-animation');
         sparkle.remove();
     }, 700);
 }

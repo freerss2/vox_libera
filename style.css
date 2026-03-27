@@ -297,10 +297,23 @@ body {
 }
 
 .win-screen {
-    display: none; position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); background: white;
-    padding: 40px; border-radius: 20px; box-shadow: 0 10px 50px rgba(0,0,0,0.3);
-    text-align: center; width: 80%; max-width: 350px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background: var(--primary-background, white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 80%;
+    max-width: 350px;
+}
+
+.win-screen.hidden { display: none; opacity: 0; }
+
+.modal-actions {
+    margin-top: 20px;
 }
 
 .card {
@@ -610,6 +623,12 @@ body {
     font-weight: bold;
     color: var(--primary);
     margin-left: 4px;
+}
+
+.results-stats {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 40px;
 }
 
 .title-actions {
@@ -923,7 +942,7 @@ input:checked + .slider:before { transform: translateX(24px); }
 
 .success-sparkle {
     position: absolute;
-    top: -25px; /* Сдвигаем вверх за границу кнопки */
+    top: 0px;
     left: 50%;
     transform: translateX(-50%) scale(2); /* Увеличиваем вдвое */
     font-size: 24px; /* Делаем сам символ крупнее */
