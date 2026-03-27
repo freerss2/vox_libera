@@ -22,6 +22,7 @@ document.getElementById('versions-info').innerHTML =
 
 const settings = new Settings(
     {
+      "userInterfaceLanguage": {"default": "en"},
       "gameDifficulty": {"default": "easy"},
       "hideWellLearned": {"default": 0, "type": "int"},
       "showTranscription": {"default": 0, "type": "int"},
@@ -40,6 +41,9 @@ hideWellLearnedElm.checked = settings.getHideWellLearned() == 1;
 const showTransToggleElm = document.getElementById('show-trans-toggle');
 showTransToggleElm.checked = settings.getShowTranscription() == 1;
 
+const langSelect = document.getElementById('ui-lang-select');
+langSelect.value = settings.getUserInterfaceLanguage();
+
 const difficultySettings = {
     easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5},
     medium: { itemsPerRound: 6, totalChoices: 6, totalQuestions: 7,  sentenceFactor: 1.7},
@@ -53,7 +57,7 @@ if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOP
 
 // instantiate I18nManager
 const i18n = new I18nManager(locales);
-i18n.setLanguage('en');
+i18n.setLanguage(settings.getUserInterfaceLanguage());
 
 // Screen types
 const SCREENS = [
@@ -72,6 +76,7 @@ const SCREENS = [
 ];
 
 // Reaction on completed round (according to reached grade)
+// TODO: move under lessons manifest
 const feedback = {
     perfect: [
         {ar: "أَحْسَنْتَ!", ru: "Отлично!", tr: "Aḥsanta!"},
@@ -1390,6 +1395,18 @@ function toggleTranscription() {
   settings.setShowTranscription(showTransToggleElm.checked ? 1 : 0);
   updateTranscriptionDisplay();
 }
+
+// Callback for UI language change
+langSelect.addEventListener('change', (event) => {
+    const newLang = event.target.value;
+    
+    settings.setUserInterfaceLanguage(newLang);
+    
+    i18n.setLanguage(newLang);
+    
+    // TODO: change UI direction (RTL/LTR)
+    // app.applyGlobalDirection(); 
+});
 
 // show or hide transcription according to global setting
 function updateTranscriptionDisplay() {
