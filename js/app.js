@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.4';
+const app_code_ver = '2.7.5';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -67,6 +67,15 @@ if ( ! topics.hasOwnProperty(GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"na
 if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOPIC_ID);
 
 // instantiate I18nManager
+const course_locales = manifest['course_locales'];
+if (course_locales) {
+  Object.keys(course_locales).forEach(langCode => {
+    if (locales[langCode]) {
+      locales[langCode]['cl'] = course_locales[langCode];
+    }
+  })
+}
+
 const i18n = new I18nManager(locales);
 i18n.setLanguage(currentLang);
 
@@ -160,12 +169,20 @@ function showActiveExerciseInMenu() {
   if (activeNode) activeNode.classList.add('current');
 }
 
+// Try to apply translation according to course locales
+function i18n_ct(text) {
+  if (i18n.currentLang == 'en') return text;  // by default never translate to English
+  const translation = i18n.t(`cl.${text}`);
+  if (translation.startsWith('cl.')) return text;  // better original English instead of "key"
+  return translation;
+}
+
 // Apply topic to GUI
 // - title in menu
 // - completion status
 // - show/hide nodes in excercises path
 function applyTopicToDisplay() {
-  let topicTitle = topics[settings.getCurrentTopic()].name;
+  const topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
   document.getElementById('currentTopicName').textContent = topicTitle;
   document.getElementById('currentTopicNameSummary').textContent = topicTitle;
 
@@ -361,7 +378,8 @@ function showScreenTitle() {
     const screenName = record ? i18n.t(`screens.${record.id}`) : "Screen";
 
     // Build main title
-    document.getElementById('title').textContent = `${topics[settings.getCurrentTopic()].name}: ${screenName}`;
+    let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
+    document.getElementById('title').textContent = `${topicTitle}: ${screenName}`;
 }
 
 // Start any screen/game from any other context (not from menu)

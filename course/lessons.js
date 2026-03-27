@@ -5,7 +5,7 @@ const topics = {
   "all": {name: "Все темы", index: 0},
   "describe_yourself_1": {
       index: 1,
-      name: "Рассказ о себе 1",
+      name: "Tell about yourself 1",
       words: [
   ["приятно познакомиться", "تشرفنا!", "Tasharrafna!"],
   ["имя", "اسم", "Ism"],
@@ -62,7 +62,7 @@ const topics = {
   },
   "work_n_learn_1": {
       index: 2,
-      name: "Профессии и учёба 1",
+      name: "Professions and studies 1",
       words: [
   ["портная", "خياطة", "khayyata"],
   ["математик", "عالم رياضيات", "alim riyadiyat"],
@@ -105,7 +105,7 @@ const topics = {
   },
   "everyday_life_1": {
       index: 3,
-      name: "Быт и обиход 1",
+      name: "Everyday life 1",
       words: [
   ["ковёр", "سجادة", "sajjada"],
   ["кровать", "سرير", "sarir"],
@@ -145,7 +145,7 @@ const topics = {
   },
   "hobby_travel_1": {
       index: 4,
-      name: "Хобби и путешествия 1",
+      name: "Hobbies and travel 1",
       words: [
   ["аренда", "استئجار", "isti'jar"],
   ["внутри страны", "داخل البلاد", "dakhil al-bilad"],
@@ -192,7 +192,7 @@ const topics = {
   },
   "restaurant_1": {
       index: 5,
-      name: "Ресторан 1",
+      name: "Restaurant 1",
       words: [
   ["вкусный", "زاكي", "zaki"],
   ["солёный", "مالح", "malih"],
@@ -242,7 +242,7 @@ const topics = {
   },
   "airport_1": {
       index: 6,
-      name: "Аэропорт 1",
+      name: "Airport 1",
       words: [
   ["аэропорт", "مطار", "matar"],
   ["самолёт", "طيارة", "tayyara"],
@@ -286,7 +286,7 @@ const topics = {
   },
   "names_meaning_1": {
       index: 7,
-      name: "Значения имён 1",
+      name: "Names meaning 1",
       words: [
   ["счастливый", "سعيد", "sa'id"],
   ["красивый", "جميل", "jamil"],

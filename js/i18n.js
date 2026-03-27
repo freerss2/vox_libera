@@ -22,7 +22,7 @@
 class I18nManager {
     constructor(locales) {
         this.locales = locales;
-        this.currentLang = 'ru'; // The default one
+        this.currentLang = 'en'; // The default one
     }
 
     setLanguage(lang) {
