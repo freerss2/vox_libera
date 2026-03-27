@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.0';
+const app_code_ver = '2.7.1';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -42,7 +42,18 @@ const showTransToggleElm = document.getElementById('show-trans-toggle');
 showTransToggleElm.checked = settings.getShowTranscription() == 1;
 
 const langSelect = document.getElementById('ui-lang-select');
-langSelect.value = settings.getUserInterfaceLanguage();
+// Configure UI selector
+const currentLang = settings.getUserInterfaceLanguage();
+langSelect.innerHtml = '';
+Object.keys(locales).forEach(langCode => {
+    const langName = locales[langCode].__title__ || langCode;
+    const option = document.createElement('option');
+    option.value = langCode;
+    option.textContent = langName;
+    if (langCode === currentLang) option.selected = true;
+    langSelect.appendChild(option);
+});
+langSelect.value = currentLang;
 
 const difficultySettings = {
     easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5},
@@ -57,7 +68,7 @@ if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOP
 
 // instantiate I18nManager
 const i18n = new I18nManager(locales);
-i18n.setLanguage(settings.getUserInterfaceLanguage());
+i18n.setLanguage(currentLang);
 
 // Screen types
 const SCREENS = [
@@ -131,7 +142,7 @@ function renderDrawer() {
         li.setAttribute('data-id', screen.id);
         li.innerHTML = `
             <div class="node-icon">${index + 1}</div>
-            <span class="node-name">${screen_name}</span>
+            <span class="node-name" data-i18n="screens.${screen.id}">${screen_name}</span>
         `;
 
         li.onclick = () => loadScreenFromMenu(screen.id);
@@ -1403,9 +1414,6 @@ langSelect.addEventListener('change', (event) => {
     settings.setUserInterfaceLanguage(newLang);
     
     i18n.setLanguage(newLang);
-    
-    // TODO: change UI direction (RTL/LTR)
-    // app.applyGlobalDirection(); 
 });
 
 // show or hide transcription according to global setting

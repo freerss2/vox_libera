@@ -29,6 +29,8 @@ class I18nManager {
         if (this.locales[lang]) {
             this.currentLang = lang;
             this.translatePage();
+            const dir = this.locales[lang].__dir__ || 'ltr';
+            document.documentElement.dir = dir;
         }
     }
 

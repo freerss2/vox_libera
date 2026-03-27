@@ -1,51 +1,8 @@
 // locales for UI i18n
 const locales = {
-  "ru": {
-    "menu": {
-      "words_count": "Слов:",
-      "sent_count": "Фраз:",
-      "topic_completed": "Тема пройдена",
-      "topic_completed_hint": "Включить тему в финальный раунд",
-      "reset_topic_stats_hint": "Сбросить прогресс упражнений",
-      "reset_topic_stats": "Сбросить ",
-      "prev_topic": " Пред.",
-      "next_topic": "След. ",
-      "reload": "Перезагрузить",
-      "close": "Закрыть",
-      "settings": " Настройки",
-      "difficulty": "Сложность",
-      "diff-easy": "Легко",
-      "diff-medium": "Средне",
-      "diff-hard": "Сложно",
-      "hide-well-learned": "Только невыученное",
-      "show-trans-toggle": "Транскрипция",
-      "reset-all-stat": " Сбросить статистику"
-    },
-    "screens": {
-      "dictionary":      "Словарь",
-      "sentences":       "Предложения",
-      "flashcards":      "Карточки слов",
-      "flashcards-sent": "Карточки предложений",
-      "matching":        "Поиск пары",
-      "quiz_ru_ar":      "Викторина: Ru → Ar",
-      "quiz_ar_ru":      "Викторина: Ar → Ru",
-      "quiz_audio":      "Аудио-викторина",
-      "sent_ru_ar":      "Предложение: Ru → Ar",
-      "sent_ar_ru":      "Предложение: Ar → Ru",
-      "sent_audio":      "Аудио-Предложение",
-      "final":           "Итог темы"
-    },
-    "main": {
-      "search_hint": "Поиск...",
-      "errors-count": "Ошибки: ",
-      "go_forward": "ВПЕРЁД ",
-      "hint-panel": "Транскрипция по клику",
-      "sum-repeat": " ПОВТОРИТЬ",
-      "sum-next": "ДАЛЬШЕ ",
-      "check": " Проверить "
-    }
-  },
   "en": {
+    "__title__": "English",
+    "__dir__": "ltr",
     "menu": {
       "words_count": "Words:",
       "sent_count": "Phrases:",
@@ -88,6 +45,53 @@ const locales = {
       "sum-repeat": " REPEAT",
       "sum-next": "NEXT ",
       "check": " Check "
+    }
+  },
+  "ru": {
+    "__title__": "Русский",
+    "__dir__": "ltr",
+    "menu": {
+      "words_count": "Слов:",
+      "sent_count": "Фраз:",
+      "topic_completed": "Тема пройдена",
+      "topic_completed_hint": "Включить тему в финальный раунд",
+      "reset_topic_stats_hint": "Сбросить прогресс упражнений",
+      "reset_topic_stats": "Сбросить ",
+      "prev_topic": " Пред.",
+      "next_topic": "След. ",
+      "reload": "Перезагрузить",
+      "close": "Закрыть",
+      "settings": " Настройки",
+      "difficulty": "Сложность",
+      "diff-easy": "Легко",
+      "diff-medium": "Средне",
+      "diff-hard": "Сложно",
+      "hide-well-learned": "Только невыученное",
+      "show-trans-toggle": "Транскрипция",
+      "reset-all-stat": " Сбросить статистику"
+    },
+    "screens": {
+      "dictionary":      "Словарь",
+      "sentences":       "Предложения",
+      "flashcards":      "Карточки слов",
+      "flashcards-sent": "Карточки предложений",
+      "matching":        "Поиск пары",
+      "quiz_ru_ar":      "Викторина: Ru → Ar",
+      "quiz_ar_ru":      "Викторина: Ar → Ru",
+      "quiz_audio":      "Аудио-викторина",
+      "sent_ru_ar":      "Предложение: Ru → Ar",
+      "sent_ar_ru":      "Предложение: Ar → Ru",
+      "sent_audio":      "Аудио-Предложение",
+      "final":           "Итог темы"
+    },
+    "main": {
+      "search_hint": "Поиск...",
+      "errors-count": "Ошибки: ",
+      "go_forward": "ВПЕРЁД ",
+      "hint-panel": "Транскрипция по клику",
+      "sum-repeat": " ПОВТОРИТЬ",
+      "sum-next": "ДАЛЬШЕ ",
+      "check": " Проверить "
     }
   }
 };
