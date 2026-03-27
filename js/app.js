@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.3';
+const app_code_ver = '2.7.4';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -1209,7 +1209,8 @@ function showDictionary() {
         updateTranscriptionDisplay();
         listContainer.appendChild(card);
     });
-
+    
+    scrollToTop('screen-dictionary');
 }
 
 // universal collector for topic data (including virtual "all")

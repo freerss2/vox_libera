@@ -34,7 +34,7 @@ body {
     height: 100vh; 
     height: 100svh;
     min-width: 20vw;
-    padding-bottom: 15vh;
+    padding-bottom: 5px;
     padding-top: 5px;
     -webkit-overflow-scrolling: touch;
     transition: all 0.3s ease-out;
@@ -461,6 +461,12 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
+}
+
+#screen-dictionary{
+    height: 100vh !important; 
+    overflow-y: auto !important;
+    padding-bottom: 50px;
 }
 
 .dictionaryCard {
