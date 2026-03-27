@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.2';
+const app_code_ver = '2.7.3';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -267,10 +267,6 @@ function showTopicResults() {
     if (winScreenElm) winScreenElm.classList.add('hidden');
     // show new screen
     modal.classList.remove('hidden');
-    document.getElementById('btn-finish-lesson').onclick = () => {
-        modal.classList.add('hidden');
-        nextTopic();
-    };
 
     // animate success
     triggerSuccessEffect(modal);
@@ -395,8 +391,8 @@ function renderScreen(screen_id) {
     const screens = document.querySelectorAll('.game-screen');
     screens.forEach(s => s.style.display = 'none');
     // including different panels
-    const winScreenElm = document.getElementById('winScreen');
-    if (winScreenElm) winScreenElm.classList.add('hidden');
+    document.getElementById('winScreen').classList.add('hidden');
+    document.getElementById('resultsModal').classList.add('hidden');
     // initilize hint panel
     const hintPanelElm = document.getElementById('hint-panel');
     if (hintPanelElm) hintPanelElm.textContent = i18n.t("main.hint-panel");
