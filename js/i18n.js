@@ -34,9 +34,9 @@ class I18nManager {
         }
     }
 
-    // Translation of content by data-tag key (like: "menu.stats_words")
+    // Translation of content by data-tag key (like: "menu|stats_words")
     t(key) {
-        const keys = key.split('.');
+        const keys = key.split('|');
         let result = this.locales[this.currentLang];
         
         for (const k of keys) {

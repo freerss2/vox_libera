@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.5';
+const app_code_ver = '2.7.6';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -95,24 +95,6 @@ const SCREENS = [
   { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы',            inputs: ['words', 'sentences'] }
 ];
 
-// Reaction on completed round (according to reached grade)
-// TODO: move under lessons manifest
-const feedback = {
-    perfect: [
-        {ar: "أَحْسَنْتَ!", ru: "Отлично!", tr: "Aḥsanta!"},
-        {ar: "مُمْتَاز!", ru: "Превосходно!", tr: "Mumtāz!"},
-        {ar: "مَا شَاءَ الله!", ru: "Машалла!", tr: "Mā shā'a Allāh!"}
-    ],
-    good: [
-        {ar: "عَمَلٌ جَيِّد!", ru: "Хорошая работа!", tr: "'Amalun jayyid!"},
-        {ar: "بَطَل!", ru: "Молодец!", tr: "Baṭal!"}
-    ],
-    tryAgain: [
-        {ar: "حَاوِلْ مَرَّةً أُخْرَى", ru: "Попробуй еще раз", tr: "Ḥāwil marratan ukhrā"},
-        {ar: "لَا تَسْتَسْلِم!", ru: "Не сдавайся!", tr: "Lā tastaslim!"}
-    ]
-};
-
 // Fisher–Yates shuffle
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -146,12 +128,12 @@ function renderDrawer() {
 
     SCREENS.forEach((screen, index) => {
         const li = document.createElement('li');
-        const screen_name = i18n.t(`screens.${screen.id}`);
+        const screen_name = i18n.t(`screens|${screen.id}`);
         li.className = 'exercise-node';
         li.setAttribute('data-id', screen.id);
         li.innerHTML = `
             <div class="node-icon">${index + 1}</div>
-            <span class="node-name" data-i18n="screens.${screen.id}">${screen_name}</span>
+            <span class="node-name" data-i18n="screens|${screen.id}">${screen_name}</span>
         `;
 
         li.onclick = () => loadScreenFromMenu(screen.id);
@@ -172,8 +154,8 @@ function showActiveExerciseInMenu() {
 // Try to apply translation according to course locales
 function i18n_ct(text) {
   if (i18n.currentLang == 'en') return text;  // by default never translate to English
-  const translation = i18n.t(`cl.${text}`);
-  if (translation.startsWith('cl.')) return text;  // better original English instead of "key"
+  const translation = i18n.t(`cl|${text}`);
+  if (translation.startsWith('cl|')) return text;  // better original English instead of "key"
   return translation;
 }
 
@@ -375,7 +357,7 @@ function getScreenType(screen_id) {
 
 function showScreenTitle() {
     const record = getScreenRecord(settings.getCurrentScreenId());
-    const screenName = record ? i18n.t(`screens.${record.id}`) : "Screen";
+    const screenName = record ? i18n.t(`screens|${record.id}`) : "Screen";
 
     // Build main title
     let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
@@ -413,7 +395,7 @@ function renderScreen(screen_id) {
     document.getElementById('resultsModal').classList.add('hidden');
     // initilize hint panel
     const hintPanelElm = document.getElementById('hint-panel');
-    if (hintPanelElm) hintPanelElm.textContent = i18n.t("main.hint-panel");
+    if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
     document.getElementById('progress-container').style.display = 'none';
     document.getElementById('errors-panel').style.display = 'none';
     // hide the search line
@@ -702,7 +684,7 @@ function checkMatch() {
         updateStats(arabicWord, true);
         triggerSuccessEffect(r);
         triggerSuccessEffect(l);
-        document.getElementById('hint-panel').textContent = i18n.t("main.hint-panel");
+        document.getElementById('hint-panel').textContent = i18n.t("main|hint-panel");
 
         l.classList.add('correct'); r.classList.add('correct');
         matches++;
@@ -745,16 +727,18 @@ function showWin(acc) {
     // Calculate the success rate
     let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
 
-    // For a variety select random phrase
-    let quotes = feedback[category];
+    // Text summary on completed round (according to reached grade)
+    let quotes = manifest.feedback[category];
+    // For a variety take random phrase
     let pick = quotes[Math.floor(Math.random() * quotes.length)];
 
     // Fill-in the informal summary
     const statusEl = document.getElementById('winStatus');
+    const user_lang_feedback = i18n_ct(pick[0]);
     statusEl.innerHTML = `
-        <span class="arabic" style="font-size: 1.5em; display: block; ">${pick.ar}</span>
+        <span class="arabic" style="font-size: 1.5em; display: block; ">${pick[1]}</span>
         <span style="font-size: 0.5em; color: #888; display: block; margin-top: 5px;">
-            ${pick.tr} — ${pick.ru}
+            ${pick[2]} — ${user_lang_feedback}
         </span>
     `;
 
@@ -783,7 +767,7 @@ function renderQuizGame(screen_id) {
 
     questionContainer.innerHTML = '';
     optionsGrid.innerHTML = '';
-    document.getElementById('quiz-hint-panel').textContent = i18n.t("main.hint-panel");
+    document.getElementById('quiz-hint-panel').textContent = i18n.t("main|hint-panel");
 
     let mainHint = '';
     // 1. Fill the question card

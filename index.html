@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
     <title>Vox-Libera - Arabic Lessons v2.7</title>
     <script>
-      const html_code_ver = '2.7.4';
+      const html_code_ver = '2.7.5';
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,12 +22,12 @@
           <button class="toolbarBtn" onclick="changeZoom(0.1)">A+</button>
         </div>
         <div id="searchBar" class="nav-row search-container" style="display: none; padding: 5px 10px; background: #fdfdfd;">
-          <input type="text" id="dictSearch" oninput="filterDictionary()" data-i18n-placeholder="main.search_hint" style="min-width: 300px; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+          <input type="text" id="dictSearch" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint" style="min-width: 300px; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
           <button id="clearSearch" onclick="clearInput()" style="display:none;">×</button>
         </div>
       <div class="nav-content-wrapper">
         <div class="progress-container" id="progress-container"><div class="progress-bar" id="progressBar"></div></div>
-        <div class="errors-panel" id="errors-panel"><span data-i18n="main.errors-count">Ошибки: </span><span id="errorCount">0</span></div>
+        <div class="errors-panel" id="errors-panel"><span data-i18n="main|errors-count">Ошибки: </span><span id="errorCount">0</span></div>
       </div>
     </nav>
 
@@ -39,60 +39,60 @@
                   <h3 id="currentTopicName">Название темы</h3>
 
                   <div class="top-actions">
-                    <button class="icon-btn" onclick="window.location.reload()" data-i18n-title="menu.reload">↻</button>
-                    <button class="icon-btn" onclick="" data-i18n-title="menu.close">✕</button>
+                    <button class="icon-btn" onclick="window.location.reload()" data-i18n-title="menu|reload">↻</button>
+                    <button class="icon-btn" onclick="" data-i18n-title="menu|close">✕</button>
                   </div>
                 </div>
 
                   <table class="topic-stats" id="topicStatsContainer">
                     <tr><td class="stat-item">
-                      <span class="stat-label" data-i18n="menu.words_count">Слов:</span>
+                      <span class="stat-label" data-i18n="menu|words_count">Слов:</span>
                       <span class="stat-value" id="statWords">0/0%</span>
                     </td>
                     <td class="stat-item">
-                      <span class="stat-label" data-i18n="menu.sent_count">Фраз:</span>
+                      <span class="stat-label" data-i18n="menu|sent_count">Фраз:</span>
                       <span class="stat-value" id="statSents">0/0%</span>
                     </td></tr>
                   </table>
 
                 <div id="topic-settings">
-                    <label class="pass-toggle" data-i18n-title="menu.topic_completed_hint">
+                    <label class="pass-toggle" data-i18n-title="menu|topic_completed_hint">
                         <input type="checkbox" id="topicPassedCheckbox" onchange="toggleTopicPassed()">
-                        <span data-i18n="menu.topic_completed">Тема пройдена</span>
+                        <span data-i18n="menu|topic_completed">Тема пройдена</span>
                     </label>
-                    <button class="btn-reset" onclick="resetTopicStats()" data-i18n-title="menu.reset_topic_stats_hint">
-                        <span data-i18n="menu.reset_topic_stats">Сбросить</span> 🗑️
+                    <button class="btn-reset" onclick="resetTopicStats()" data-i18n-title="menu|reset_topic_stats_hint">
+                        <span data-i18n="menu|reset_topic_stats">Сбросить</span> 🗑️
                     </button>
                 </div>
                 <div class="nav-controls">
-                    <button class="nav-arrow" onclick="prevTopic()">❮ <span data-i18n="menu.prev_topic">Пред.</span></button>
-                    <button class="nav-arrow" onclick="nextTopic()"><span data-i18n="menu.next_topic">След.</span> ❯</button>
+                    <button class="nav-arrow" onclick="prevTopic()">❮ <span data-i18n="menu|prev_topic">Пред.</span></button>
+                    <button class="nav-arrow" onclick="nextTopic()"><span data-i18n="menu|next_topic">След.</span> ❯</button>
                 </div>
             </div>
         </div>
 
         <div class="drawer-content" id="drawer-content">
             <ul id="exercisePath" class="exercise-path"></ul>
-        <h3>🛠 <span data-i18n="menu.settings">Настройки</span></h3>
+        <h3>🛠 <span data-i18n="menu|settings">Настройки</span></h3>
 
         <div class="setting-group">
-          <label data-i18n="menu.difficulty">Сложность</label>
+          <label data-i18n="menu|difficulty">Сложность</label>
           <div class="segmented-control" id="difficulty-picker">
               <input type="radio" name="diff" id="diff-easy" value="easy" checked onclick="changeDifficulty('easy')">
-              <label for="diff-easy" data-i18n="menu.diff-easy">Легко</label>
+              <label for="diff-easy" data-i18n="menu|diff-easy">Легко</label>
 
               <input type="radio" name="diff" id="diff-medium" value="medium" onclick="changeDifficulty('medium')">
-              <label for="diff-medium" data-i18n="menu.diff-medium">Средне</label>
+              <label for="diff-medium" data-i18n="menu|diff-medium">Средне</label>
 
               <input type="radio" name="diff" id="diff-hard" value="hard" onclick="changeDifficulty('hard')">
-              <label for="diff-hard" data-i18n="menu.diff-hard">Сложно</label>
+              <label for="diff-hard" data-i18n="menu|diff-hard">Сложно</label>
 
               <div class="selection-slider"></div>
           </div>
         </div>
 
         <div class="setting-item">
-          <span data-i18n="menu.hide-well-learned">Только невыученное</span>
+          <span data-i18n="menu|hide-well-learned">Только невыученное</span>
           <label class="switch">
               <input type="checkbox" id="hide-well-learned" onchange="toggleWellLearned()">
               <span class="slider round"></span>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="setting-item">
-          <span data-i18n="menu.show-trans-toggle">Транскрипция</span>
+          <span data-i18n="menu|show-trans-toggle">Транскрипция</span>
           <label class="switch">
               <input type="checkbox" id="show-trans-toggle" onchange="toggleTranscription()">
               <span class="slider round"></span>
@@ -109,7 +109,7 @@
 
         <div class="setting-item">
           <span class="action-btn hard" onclick="resetStats()">
-              <span>🗑️ <span data-i18n="menu.reset-all-stat">Сбросить статистику</span></span>
+              <span>🗑️ <span data-i18n="menu|reset-all-stat">Сбросить статистику</span></span>
           </span>
         </div>
 
@@ -145,44 +145,44 @@
         <h1 id="winStatus">Ахсанта!</h1>
         <div id="accuracyStat">100%</div>
         <div>
-          <button class="action-btn easy" onclick="startScreen()">✔ <span data-i18n="main.sum-repeat">ПОВТОРИТЬ<span></button>
-          <button class="action-btn easy" onclick="loadNextScreen(true)"><span data-i18n="main.sum-next">ДАЛЬШЕ</span> ▶▶</button>
+          <button class="action-btn easy" onclick="startScreen()">✔ <span data-i18n="main|sum-repeat">ПОВТОРИТЬ<span></button>
+          <button class="action-btn easy" onclick="loadNextScreen(true)"><span data-i18n="main|sum-next">ДАЛЬШЕ</span> ▶▶</button>
         </div>
       </div>
 
       <div class="win-screen hidden" id="resultsModal">
-          <h2 data-i18n="modal_results.title">Завершена тема:</h2>
+          <h2 data-i18n="modal_results|title">Завершена тема:</h2>
           <h2>"<span id="currentTopicNameSummary"></span>"</h2>
           <table class="results-stats">
               <tr class="stat-item">
-                  <td class="stat-label" data-i18n="modal_results.words_learned">Выучено слов:</td>
+                  <td class="stat-label" data-i18n="modal_results|words_learned">Выучено слов:</td>
                   <td id="res-words-count" class="stat-value">0</td>
                </tr>
               <tr class="stat-item">
-                  <td class="stat-label" data-i18n="modal_results.words_accuracy">Точность:</td>
+                  <td class="stat-label" data-i18n="modal_results|words_accuracy">Точность:</td>
                   <td id="res-words-accuracy" class="stat-value">0%</td>
               </tr>
               <tr class="stat-item">
-                  <td class="stat-label" data-i18n="menu.sent_count">Фраз:</td>
+                  <td class="stat-label" data-i18n="menu|sent_count">Фраз:</td>
                   <td id="res-sent-count" class="stat-value">0</td>
               </tr>
               <tr class="stat-item">
-                  <td class="stat-label" data-i18n="modal_results.words_accuracy">Точность:</td>
+                  <td class="stat-label" data-i18n="modal_results|words_accuracy">Точность:</td>
                   <td id="res-sent-accuracy" class="stat-value">0%</td>
               </tr>
           </table>
 
           <div class="modal-actions">
-              <button class="action-btn easy" onclick="startScreen();">✔ <span data-i18n="main.sum-repeat">ПОВТОРИТЬ<span></button>
-              <button class="action-btn easy" onclick="nextTopic();"><span data-i18n="main.sum-next">ДАЛЬШЕ</span> ▶▶</button>
+              <button class="action-btn easy" onclick="startScreen();">✔ <span data-i18n="main|sum-repeat">ПОВТОРИТЬ<span></button>
+              <button class="action-btn easy" onclick="nextTopic();"><span data-i18n="main|sum-next">ДАЛЬШЕ</span> ▶▶</button>
           </div>
       </div>
 
 
       <div id="screen-dictionary" class="game-screen" style="display: none;">
-        <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main.go_forward">ВПЕРЁД</span> ▶▶</button>
+        <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">ВПЕРЁД</span> ▶▶</button>
         <div id="dictionaryList"></div>
-        <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main.go_forward">ВПЕРЁД</span> ▶▶</button>
+        <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">ВПЕРЁД</span> ▶▶</button>
       </div>
 
       <div id="flashcards-screen" class="game-screen flashcards-screen">
@@ -191,7 +191,7 @@
       <div id="screen-matching" class="game-screen" style="display: none;">
 
         <div class="matching-container" id="matching-grid"></div>
-        <div id="hint-panel" class="hint-panel transcription" data-i18n="main.hint-panel">Нажми на слово</div>
+        <div id="hint-panel" class="hint-panel transcription" data-i18n="main|hint-panel">Нажми на слово</div>
       </div>
 
       <div id="screen-quiz" class="game-screen" style="display: none;">
@@ -214,7 +214,7 @@
           <div id="sent-main-hint" class="transcription"></div>
         </div>
 
-        <button class="action-btn easy" style="width:100%;" onclick="checkSent()">☝ <span data-i18n="main.check">Проверить</span> 👇</button>
+        <button class="action-btn easy" style="width:100%;" onclick="checkSent()">☝ <span data-i18n="main|check">Проверить</span> 👇</button>
 
         <div id="sent-result" class="sent-words">
         </div>

@@ -1,8 +1,8 @@
-const lesson_data_ver = '2.7.1';
+const lesson_data_ver = '2.7.2';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
-  "all": {name: "Все темы", index: 0},
+  "all": {name: "All topics", index: 0},
   "describe_yourself_1": {
       index: 1,
       name: "Tell about yourself 1",
