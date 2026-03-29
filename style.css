@@ -120,6 +120,10 @@ body {
     transition: width 0.3s ease;
 }
 
+.game-screen {
+    padding-bottom: 30px;
+}
+
 .flashcards-screen {
     display: flex;
     flex-direction: column;

@@ -444,6 +444,14 @@ function initGameEngine(screen_id) {
     }
 }
 
+// extract from learned item fields:
+// string in user language, string in learned language, transliteration
+function decodeLearnedItem(item) {
+  const user_lang = i18n_ct(item[0]);
+  const translit = item[2] || '';
+  return [user_lang, item[1], translit];
+}
+
 // --------------------------------- flash-cards
 
 let cardIndex = 0;
@@ -521,8 +529,9 @@ function updateCardContent() {
 
 
     speakArabic(item[1]);
-    const trText = `[${item[2] || ''}]`;
+    const trText = `[${item[2]}]`;
     // [0] - RU, [1] - AR, [2] - Translit
+    // TODO: use generic codes and calculated class names
     if (studyMode === 'ar-ru') {
         front.innerHTML = `
             <div class="ar-text">${item[1]}</div>
@@ -678,10 +687,10 @@ function handleSelectTile(el, side) {
 // Verify did we got a match
 function checkMatch() {
     const l = selectedLeft, r = selectedRight;
-    const arabicWord = l.dataset.arabic || r.dataset.arabic || l.textContent;
+    const targetWord = l.dataset.arabic || r.dataset.arabic || l.textContent;
     if (l.dataset.id === r.dataset.id) {
         scrollToTop('app-container');
-        updateStats(arabicWord, true);
+        updateStats(targetWord, true);
         triggerSuccessEffect(r);
         triggerSuccessEffect(l);
         document.getElementById('hint-panel').textContent = i18n.t("main|hint-panel");
@@ -695,7 +704,7 @@ function checkMatch() {
             showWin(acc);
         }, 400);
     } else {
-        updateStats(arabicWord, false);
+        updateStats(targetWord, false);
         errors++;
         showErrorCount(errors);
         l.classList.add('wrong'); r.classList.add('wrong');
@@ -797,7 +806,6 @@ function renderQuizGame(screen_id) {
     options.forEach(word => {
         const btn = document.createElement('div');
         btn.className = 'card quiz-card';
-
         btn.dataset.speak = '';
         // According to quiz type determine the cards content
         if (screenType === 'quiz_ru_ar') {
@@ -927,7 +935,7 @@ function renderSent(screen_id) {
         renderScreen('matching');
         return;
     }
-    var allWords;
+    // var allWords;
     errors = 0;
     showErrorCount(errors);
     // 2. draw a random sentence from topic data (X russian and Y arabic words)
@@ -1258,13 +1266,14 @@ function getTopicData(inputTypes) {
       });
     }
   }
+  currentData.forEach((item, index) => { currentData[index] = decodeLearnedItem(item); });
 
   if ( settings.getHideWellLearned() == 0 ) return currentData;
 
   // hide well-learned:
   const candidates = currentData.filter(item => {
-        const arabicWord = item[1];
-        const stats = wordStats[arabicWord];
+        const targetWord = item[1];
+        const stats = wordStats[targetWord];
         if (!stats) return true; // all new words should be learned
         const accuracy = (stats.success / stats.attempts) * 100;
         return accuracy < 90; // threshold (maybe 85?)
@@ -1352,17 +1361,17 @@ function resetStats() {
 }
 
 // Word stats update
-function updateStats(arabicWord, isCorrect) {
+function updateStats(targetWord, isCorrect) {
   let stats = getStats();
-  if (!stats[arabicWord]) {
-      stats[arabicWord] = { attempts: 0, success: 0 };
+  if (!stats[targetWord]) {
+      stats[targetWord] = { attempts: 0, success: 0 };
   }
-  stats[arabicWord].attempts += 1;
+  stats[targetWord].attempts += 1;
   if (isCorrect) {
-      stats[arabicWord].success += 1;
+      stats[targetWord].success += 1;
   }
   setStats(stats);
-  wordStats[arabicWord] = stats[arabicWord];
+  wordStats[targetWord] = stats[targetWord];
 }
 
 function getTopicStats(topicId) {
@@ -1449,6 +1458,8 @@ langSelect.addEventListener('change', (event) => {
     settings.setUserInterfaceLanguage(newLang);
     
     i18n.setLanguage(newLang);
+
+    location.reload();
 });
 
 // show or hide transcription according to global setting
