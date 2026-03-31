@@ -1351,7 +1351,7 @@ const topics = {
         "hadha al-walad ali kathir"
       ],
       [
-        "the sea is very calm today",
+        "the sea today is very calm",
         "البحر اليوم هادي كثير",
         "al-bahr al-yawm hadi kathir"
       ],
@@ -1367,7 +1367,7 @@ const topics = {
       ],
       [
         "my son is very smart",
-        "ابني فهим كثير",
+        "ابني فهيم كثير",
         "ibni fahim kathir"
       ],
       [
@@ -1396,7 +1396,7 @@ const topics = {
         "hadhihi az-zahra jamila kathir"
       ],
       [
-        "the sun is very hot today",
+        "the sun today is very hot",
         "الشمس اليوم سخنة كثير",
         "ash-shams al-yawm sukhna kathir"
       ],
@@ -1416,7 +1416,7 @@ const topics = {
         "hadhihi al-warda jamila kathir"
       ],
       [
-        "the sky is very clear today",
+        "the sky today is very clear",
         "السماء اليوم صافية كثير",
         "as-sama' al-yawm safiya kathir"
       ],
@@ -1431,7 +1431,7 @@ const topics = {
         "ummi tayyiba kathir"
       ],
       [
-        "the moon is very beautiful today",
+        "the moon today is very beautiful",
         "القمر اليوم جميل كثير",
         "al-qamar al-yawm jamil kathir"
       ],
