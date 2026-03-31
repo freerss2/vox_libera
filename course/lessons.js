@@ -513,7 +513,7 @@ const topics = {
       ],
       [
         "oven / stove",
-        "فرн",
+        "فرن",
         "al-furn"
       ],
       [
@@ -545,7 +545,7 @@ const topics = {
       ],
       [
         "the kitchen window is open",
-        "شباك المطبх مفتوح",
+        "شباك المطبح مفتوح",
         "shubbak al-matbakh maftuh"
       ],
       [
@@ -555,7 +555,7 @@ const topics = {
       ],
       [
         "the kettle is on the stove now",
-        "الغلاية на الفرن الآن",
+        "الغلاية على الفرن الآن",
         "al-ghallaya 'ala al-furn al-an"
       ],
       [
@@ -585,7 +585,7 @@ const topics = {
       ],
       [
         "there is a window in the room",
-        "فيه شباк في الغرفة",
+        "فيه شباك في الغرفة",
         "fi shubbak fil-ghurfa"
       ],
       [
@@ -1189,7 +1189,7 @@ const topics = {
       ],
       [
         "the purpose of the visit is tourism",
-        "هدف الزиارة السياحة",
+        "هدف الزيارة السياحة",
         "hadaf az-ziyara as-siyaha"
       ],
       [
