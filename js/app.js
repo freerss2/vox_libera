@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9';
+const app_code_ver = '2.7.9a';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -745,6 +745,7 @@ function showWin(acc) {
 
     // Fill-in the informal summary
     const statusEl = document.getElementById('winStatus');
+    const tipEl = document.getElementById('tipOfTheDay');
     const user_lang_feedback = i18n_ct(pick[0]);
     statusEl.innerHTML = `
         <span class="arabic" style="font-size: 1.5em; display: block; ">${pick[1]}</span>
@@ -752,11 +753,31 @@ function showWin(acc) {
             ${pick[2]} — ${user_lang_feedback}
         </span>
     `;
+    // generate tip of the day
+    tipEl.innerHTML = tipOfTheDay();
 
     // hide the game board and visualize the popup
     document.getElementById('screen-matching').style.display = 'none';
     document.getElementById('winScreen').classList.remove('hidden');
     document.getElementById('accuracyStat').textContent = acc + "%";
+}
+
+
+function tipOfTheDay() {
+  // randomly choose either hint or recommended translation
+  if ( Math.random() > 0.5 ) {
+    const indx = Math.floor(Math.random() * 4);
+    const tip = i18n.t(`tip_of_the_day|${indx}`);
+    const title = i18n.t('tip_of_the_day|title');
+    return `💡 ${title} ${tip} 💡`;
+  }
+  // get all words/sentences from current topic
+  const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
+  const allStrs = getTopicData(inputTypes, true, true);
+  // the strings are already filtered by success rate and shuffled
+  const hintData = allStrs[0];
+  const transl = i18n.t('tip_of_the_day|remember_transl');
+  return `💡${transl}💡<BR>${hintData[0]}<BR>${hintData[1]}<BR>[${hintData[2]}]`;
 }
 
 // ------------------------------------------ quiz (find the right one from many)

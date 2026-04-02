@@ -316,6 +316,13 @@ body {
 
 .win-screen.hidden { display: none; opacity: 0; }
 
+#tipOfTheDay {
+    padding-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #888;
+}
+
 .modal-actions {
     margin-top: 20px;
 }

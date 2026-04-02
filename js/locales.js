@@ -23,6 +23,14 @@ const locales = {
       "show-trans-toggle": "Transcription",
       "reset-all-stat": " Reset all stats"
     },
+    "tip_of_the_day" : {
+       "title": "Tip of the day:",
+       "remember_transl": "Remember translation",
+       "0": "Balance Theory and Practice",
+       "1": "Context is King: Learn Phrases, Not Just Words",
+       "2": "Consistency Beats Intensity",
+       "3": "Don't Fear Mistakes — They Are Your Best Teachers"
+    },
     "modal_results": {
       "title": "Completed topic:",
       "words_learned": "Total words: ",
@@ -74,6 +82,14 @@ const locales = {
       "hide-well-learned": "Только невыученное",
       "show-trans-toggle": "Транскрипция",
       "reset-all-stat": " Сбросить статистику"
+    },
+    "tip_of_the_day" : {
+       "title": "Совет дня:",
+       "remember_transl": "Запомни перевод",
+       "0": "Сочетай теорию с практикой",
+       "1": "Учи слова с учётом контекста",
+       "2": "Регулярность — ключ к прогрессу",
+       "3": "Не бойся ошибок — на них учатся"
     },
     "modal_results": {
       "title": "Завершена тема:",
