@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.7';
+const app_code_ver = '2.7.8';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -86,11 +86,11 @@ const SCREENS = [
   { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов',        inputs: ['words'] },
   { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
   { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары',           inputs: ['words'] },
-  { id: 'quiz_ru_ar',      shared: 0, excercise: 1, screen_type: 'quiz_ru_ar', name: 'Викторина: Ru → Ar',   inputs: ['words', 'sentences'] },
-  { id: 'quiz_ar_ru',      shared: 0, excercise: 1, screen_type: 'quiz_ar_ru', name: 'Викторина: Ar → Ru',   inputs: ['words', 'sentences'] },
+  { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',   name: 'Викторина: 👤 → 🌍',   inputs: ['words', 'sentences'] },
+  { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',   name: 'Викторина: 🌍 → 👤',   inputs: ['words', 'sentences'] },
   { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина',      inputs: ['words', 'sentences'] },
-  { id: 'sent_ru_ar',      shared: 0, excercise: 1, screen_type: 'sent_ru_ar', name: 'Предложение: Ru → Ar', inputs: ['sentences'] },
-  { id: 'sent_ar_ru',      shared: 0, excercise: 1, screen_type: 'sent_ar_ru', name: 'Предложение: Ar → Ru', inputs: ['sentences'] },
+  { id: 'sent_u2t',        shared: 0, excercise: 1, screen_type: 'sent_u2t',   name: 'Предложение: 👤 → 🌍', inputs: ['sentences'] },
+  { id: 'sent_t2u',        shared: 0, excercise: 1, screen_type: 'sent_t2u',   name: 'Предложение: 🌍 → 👤', inputs: ['sentences'] },
   { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение',    inputs: ['sentences'] },
   { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы',            inputs: ['words', 'sentences'] }
 ];
@@ -580,13 +580,13 @@ function markAsLearned() {
     cardAnchor.style.opacity = '0';
 
     setTimeout(() => {
-        // 3. Удаляем карточку из текущей сессии
+        // hide this card from current session
         flashcardsData.splice(cardIndex, 1);
 
         if (flashcardsData.length === 0) {
             showCompletionMessage();
         } else {
-            // Если удалили последнюю в списке, переходим к новой "последней"
+            // if removed card was the last in a list - return to the beginning
             if (cardIndex >= flashcardsData.length) {
                 cardIndex = 0;
             }
@@ -646,23 +646,23 @@ function renderMatchingGame() {
     const leftSide = shuffle(pool.map(p => ({ t: p[0], id: p[1], h: p[2] })));
     const rightSide = shuffle(pool.map(p => ({ t: p[1], id: p[1], h: p[2] })));
 
-    leftSide.forEach((item, i) => createTile(item, i, 'left', 'ru', board));
-    rightSide.forEach((item, i) => createTile(item, i, 'right', 'ar', board));
+    leftSide.forEach((item, i) => createTile(item, i, 'left', 'user', board));
+    rightSide.forEach((item, i) => createTile(item, i, 'right', 'target', board));
 }
 
 // Create a single tile for pairs (matching) screen
 function createTile(item, index, side, lang, container) {
     const div = document.createElement('div');
-    div.className = 'card' + (lang === 'ar' ? ' arabic' : '');
+    div.className = 'card' + (lang === 'target' ? ' arabic' : '');
     div.textContent = item.t;
     div.dataset.col = side;
-    div.dataset.target = (lang === 'ar' ? item.t : '');
+    div.dataset.target = (lang === 'target' ? item.t : '');
     div.dataset.id = item.id;
     div.style.gridColumn = side === 'left' ? '1' : '2';
     div.style.gridRow = (index + 1).toString();
 
     div.onclick = () => {
-        if (lang === 'ar') {
+        if (lang === 'target') {
           // perform when option enabled only
           document.getElementById('hint-panel').textContent = `[ ${item.h} ]`;
           speakArabic(item.t);
@@ -780,9 +780,9 @@ function renderQuizGame(screen_id) {
 
     let mainHint = '';
     // 1. Fill the question card
-    if (screenType === 'quiz_ru_ar') {
+    if (screenType === 'quiz_u2t') {
         questionContainer.textContent = quizCorrectStr[0];  // Translation
-    } else if (screenType === 'quiz_ar_ru') {
+    } else if (screenType === 'quiz_t2u') {
         questionContainer.innerHTML = `<span class="arabic">${quizCorrectStr[1]}</span>`;
         mainHint = `[${quizCorrectStr[2]}]`;
     } else if (screenType === 'quiz_audio') {
@@ -808,7 +808,7 @@ function renderQuizGame(screen_id) {
         btn.className = 'card quiz-card';
         btn.dataset.speak = '';
         // According to quiz type determine the cards content
-        if (screenType === 'quiz_ru_ar') {
+        if (screenType === 'quiz_u2t') {
             btn.innerHTML = `<span class="arabic">${word[1]}</span>`;
             btn.dataset.speak = word[1];
         } else {
@@ -919,9 +919,9 @@ function handleQuizChoice(selectedStr, btn) {
 // ---------------------------------------------- sentences build
 
 /*
-    { id: 'sent_ru_ar', name: 'Предложение: Ру → Ар' },
-    { id: 'sent_ar_ru', name: 'Предложение: Ар → Ру' },
-    { id: 'sent_audio', name: 'Аудио-Предложение' },
+    { id: 'sent_u2t', name: 'Sentence: user → target' },
+    { id: 'sent_t2u', name: 'Sentence: target → user' },
+    { id: 'sent_audio', name: 'Audio-Sentence' },
 */
 function renderSent(screen_id) {
     const screenType = getScreenType(screen_id);
@@ -938,12 +938,12 @@ function renderSent(screen_id) {
     // var allWords;
     errors = 0;
     showErrorCount(errors);
-    // 2. draw a random sentence from topic data (X russian and Y arabic words)
+    // 2. draw a random sentence from topic data (X user and Y target words)
     let gameSentence = allData[Math.floor(Math.random() * allData.length)];
-    // 3. for rus->ar game show all X words in top card
-    //    for ar->rus      show all Y words
-    //    for aud->rus     store in div.dataset.ar Y arabic words
-    // 4. store ar/ru in div.dataset.expected
+    // 3. for user->target game show all X words in top card
+    //    for target->user      show all Y words
+    //    for aud->user         store in div.dataset.ar Y target words
+    // 4. store the answer in div.dataset.expected
     const questionContainer = document.getElementById('sent-question-container');
     const bankContainer = document.getElementById('sent-bank');
     const resultContainer = document.getElementById('sent-result');
@@ -953,13 +953,13 @@ function renderSent(screen_id) {
     let speakEnable = 0;
     resultContainer.classList.remove('arabic');
     let mainHint = '';
-    if ( screenType == 'sent_ru_ar' ) {
+    if ( screenType == 'sent_u2t' ) {
         questionHtml = gameSentence[0];
         expected = gameSentence[1];
         extractPosition = 1;
         speakEnable = 1;
         resultContainer.classList.add('arabic');
-    } else if (screenType == 'sent_ar_ru') {
+    } else if (screenType == 'sent_t2u') {
         questionHtml = gameSentence[1];
         mainHint = `[${gameSentence[2]}]`;
     } else {
@@ -988,7 +988,7 @@ function renderSent(screen_id) {
     // 6. create word-buttons in bottom card
     bankContainer.innerText = '';
     let bankWordClass = 'sent-word';
-    if ( screenType == 'sent_ru_ar' ) bankWordClass += ' arabic';
+    if ( screenType == 'sent_u2t' ) bankWordClass += ' arabic';
     for (let i = 0; i < bankWords.length; i++) {
       const bankWord = document.createElement('span');
       bankWord.onclick = () => useBankWord(i);
