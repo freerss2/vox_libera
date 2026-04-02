@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.6';
+const app_code_ver = '2.7.7';
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -463,7 +463,7 @@ function initFlashcards() {
     const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
 
     // Deep copy for dynamic changes
-    flashcardsData = shuffle([...getTopicData(inputTypes)]);
+    flashcardsData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
 
     if (flashcardsData.length === 0) {
         showCompletionMessage();
@@ -638,7 +638,7 @@ function renderMatchingGame() {
 
     // Get all data related to topic
     const inputTypes = getGameInputTypes('matching');
-    const currentData = getTopicData(inputTypes);
+    const currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
@@ -656,7 +656,7 @@ function createTile(item, index, side, lang, container) {
     div.className = 'card' + (lang === 'ar' ? ' arabic' : '');
     div.textContent = item.t;
     div.dataset.col = side;
-    div.dataset.arabic = (lang === 'ar' ? item.t : '');
+    div.dataset.target = (lang === 'ar' ? item.t : '');
     div.dataset.id = item.id;
     div.style.gridColumn = side === 'left' ? '1' : '2';
     div.style.gridRow = (index + 1).toString();
@@ -681,16 +681,16 @@ function handleSelectTile(el, side) {
     if (side === 'left') selectedLeft = el;
     else selectedRight = el;
 
-    if (selectedLeft && selectedRight) checkMatch();
+    if (selectedLeft && selectedRight) checkPairMatch();
 }
 
 // Verify did we got a match
-function checkMatch() {
+function checkPairMatch() {
     const l = selectedLeft, r = selectedRight;
-    const targetWord = l.dataset.arabic || r.dataset.arabic || l.textContent;
+    const targetStr = l.dataset.target || r.dataset.target || l.textContent;
     if (l.dataset.id === r.dataset.id) {
         scrollToTop('app-container');
-        updateStats(targetWord, true);
+        updateStats(targetStr, true);
         triggerSuccessEffect(r);
         triggerSuccessEffect(l);
         document.getElementById('hint-panel').textContent = i18n.t("main|hint-panel");
@@ -704,7 +704,7 @@ function checkMatch() {
             showWin(acc);
         }, 400);
     } else {
-        updateStats(targetWord, false);
+        updateStats(targetStr, false);
         errors++;
         showErrorCount(errors);
         l.classList.add('wrong'); r.classList.add('wrong');
@@ -760,16 +760,16 @@ function showWin(acc) {
 // ------------------------------------------ quiz (find the right one from many)
 
 // status of quiz game
-let quizCorrectWord = null;
+let quizCorrectStr = null;
 let firstAttempt = true;
 
 // Initialize quiz (of all possible types)
 function renderQuizGame(screen_id) {
     const inputTypes = getGameInputTypes(screen_id);
-    const allWords = getTopicData(inputTypes);
+    const allStrs = getTopicData(inputTypes, settings.getHideWellLearned(), true);
     const screenType = getScreenType(screen_id);
     // Take a random word from all words in topic
-    quizCorrectWord = allWords[Math.floor(Math.random() * allWords.length)];
+    quizCorrectStr = allStrs[Math.floor(Math.random() * allStrs.length)];
 
     const questionContainer = document.getElementById('quiz-question-container');
     const optionsGrid = document.getElementById('quiz-options-grid');
@@ -781,26 +781,26 @@ function renderQuizGame(screen_id) {
     let mainHint = '';
     // 1. Fill the question card
     if (screenType === 'quiz_ru_ar') {
-        questionContainer.textContent = quizCorrectWord[0];  // Translation
+        questionContainer.textContent = quizCorrectStr[0];  // Translation
     } else if (screenType === 'quiz_ar_ru') {
-        questionContainer.innerHTML = `<span class="arabic">${quizCorrectWord[1]}</span>`;
-        mainHint = `[${quizCorrectWord[2]}]`;
+        questionContainer.innerHTML = `<span class="arabic">${quizCorrectStr[1]}</span>`;
+        mainHint = `[${quizCorrectStr[2]}]`;
     } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
-            <button class="audio-main-btn" onclick="speakArabic('${quizCorrectWord[1]}')">
+            <button class="audio-main-btn" onclick="speakArabic('${quizCorrectStr[1]}')">
                 <span style="font-size: 50px;">🔊</span>
             </button>
-            <button class="audio-main-btn" onclick="speakArabicSlow('${quizCorrectWord[1]}')">
+            <button class="audio-main-btn" onclick="speakArabicSlow('${quizCorrectStr[1]}')">
                 <span style="font-size: 50px;">🐌</span>
             </button>
             `;
-        mainHint = `[${quizCorrectWord[2]}]`;
-        speakArabic(quizCorrectWord[1]); // Immediately trigger the speak
+        mainHint = `[${quizCorrectStr[2]}]`;
+        speakArabic(quizCorrectStr[1]); // Immediately trigger the speak
     }
     document.getElementById('quiz-main-hint').innerHTML = mainHint;
 
     // 2. Generate options for selection (one correct and rest - random)
-    const options = generateDistractors(quizCorrectWord, allWords, gameSettings.totalChoices);
+    const options = generateDistractors(quizCorrectStr, allStrs, gameSettings.totalChoices);
     firstAttempt = true;
 
     options.forEach(word => {
@@ -869,7 +869,7 @@ function finishSet() {
 }
 
 // Callback for click on quiz button
-function handleQuizChoice(selectedWord, btn) {
+function handleQuizChoice(selectedStr, btn) {
     // if relevant - fill quiz-hint-panel with transliteration
     const translit = btn.dataset.translit;
     if (btn.dataset.speak) speakArabic(btn.dataset.speak);
@@ -877,12 +877,12 @@ function handleQuizChoice(selectedWord, btn) {
     if (hintPanel && translit) {
         hintPanel.textContent = translit;
     }
-    if (selectedWord[1] === quizCorrectWord[1]) {
+    if (selectedStr[1] === quizCorrectStr[1]) {
         // Correct!
         btn.style.borderColor = "var(--primary)";
         scrollToTop('app-container');
 
-        updateStats(quizCorrectWord[1], firstAttempt);
+        updateStats(quizCorrectStr[1], firstAttempt);
         if (firstAttempt) {
           triggerSuccessEffect(btn);
         }
@@ -905,14 +905,14 @@ function handleQuizChoice(selectedWord, btn) {
           showErrorCount(gameSet.errors);
         }
         firstAttempt = false;
-        updateStats(quizCorrectWord[1], firstAttempt);
+        updateStats(quizCorrectStr[1], firstAttempt);
         btn.classList.add('wrong');
         btn.disabled = true; // Disable as already taken
         scrollToTop('app-container');
 
         const screenType = getScreenType(settings.getCurrentScreenId());
         // For audio-based quiz re-run speaking routine
-        if (screenType === 'quiz_audio') speakArabic(quizCorrectWord[1]);
+        if (screenType === 'quiz_audio') speakArabic(quizCorrectStr[1]);
     }
 }
 
@@ -928,7 +928,7 @@ function renderSent(screen_id) {
     document.getElementById('errors-panel').style.display = 'block';
     // 1. get topic data
     const inputTypes = ['sentences'];
-    const currentData = getTopicData(inputTypes);
+    const currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
     const allData = currentData.filter(r => (r[0].includes(' ') && r[1].includes(' ') && !r[0].includes('.')));
     // for wrong topic without sentences - switch to a compatible screen type
     if ( ! allData.length ) {
@@ -1180,7 +1180,8 @@ function showDictionary() {
     showHideSearch(1);
 
     const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
-    const currentData = getTopicData(inputTypes);
+    // for dictionary do not apply neither filtering nor shuffling
+    const currentData = getTopicData(inputTypes, false, false);
 
     const stats = getStats();
 
@@ -1224,8 +1225,8 @@ function showDictionary() {
 }
 
 // universal collector for topic data (including virtual "all")
-// external parameter: hideWellLearned
-function getTopicData(inputTypes) {
+// external parameter: finalGameForTopic
+function getTopicData(inputTypes, hideWellLearned, needShuffle) {
   let currentData = [];
   if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
     for (let key in topics) {
@@ -1250,7 +1251,7 @@ function getTopicData(inputTypes) {
            typeof row[1] === 'string' && row[1].trim() !== "";
   });
 
-  // for 'final' round - try to get data from other completed topics:
+  // special case for 'final' round - try to get data from other completed topics:
   //   iterate over all topics with state != 0, excluding the current one
   //   append to currentData elements of each input type
   if (finalGameForTopic) {
@@ -1268,20 +1269,75 @@ function getTopicData(inputTypes) {
   }
   currentData.forEach((item, index) => { currentData[index] = decodeLearnedItem(item); });
 
-  if ( settings.getHideWellLearned() == 0 ) return currentData;
+  if ( hideWellLearned != 0 ) {
+    // hide well-learned:
+    const candidates = orderByAccuracy(currentData);
+    currentData = getStratifiedBatch(candidates);
+  }
 
-  // hide well-learned:
-  const candidates = currentData.filter(item => {
-        const targetWord = item[1];
-        const stats = wordStats[targetWord];
-        if (!stats) return true; // all new words should be learned
-        const accuracy = (stats.success / stats.attempts) * 100;
-        return accuracy < 90; // threshold (maybe 85?)
+  if ( needShuffle ) return shuffle([...currentData]);
+  return currentData;
+}
+
+// Order currentData list by accuracy rate, assuming entries without stats as most important
+function orderByAccuracy(currentData) {
+  const candidates = currentData
+    .map(item => {
+        const targetStr = item[1]; // take target language string
+        const stats = wordStats[targetStr];
+
+        // Calculate accuracy, considering totally new as "-1" (for sorting)
+        const accuracy = stats && stats.attempts > 0 
+            ? (stats.success / stats.attempts) * 100 
+            : -1;
+
+        return { item, accuracy, attempts: stats ? stats.attempts : 0 };
+    })
+    .sort((a, b) => {
+        // 1. First will appear the candidates with accuracy less than 0 (-1)
+        // 2. The rest are sorted from less to higher success rate
+        if (a.accuracy !== b.accuracy) {
+            return a.accuracy - b.accuracy;
+        }
+        // 3. When the accuracy is the same, take less used candidate
+        return a.attempts - b.attempts;
+    })
+    .map(obj => obj.item); // map back from statistical object to array of strings
+
+  return candidates;
+}
+
+// Stratified random extract from candidates using strates of 60%..30%..10%
+function getStratifiedBatch(candidates) {
+    const total = candidates.length;
+    if (total === 0) return [];
+
+    // 1. Calculate index for each strate beginning
+    const limit60 = Math.floor(total * 0.6);
+    const limit90 = Math.floor(total * 0.9);
+
+    // Extract strates according to indexes
+    const strates = [
+        candidates.slice(0, limit60),           // First 60%
+        candidates.slice(limit60, limit90),     // Next  30%
+        candidates.slice(limit90)               // Last  10%
+    ];
+
+    let finalBatch = [];
+
+    // 2. Randomly take a half from each strate
+    strates.forEach(strate => {
+        if (strate.length > 0) {
+            // shuffle the strate
+            const shuffled = shuffle([...strate]); 
+            
+            // Take half (round up to avoid small strate miscalculation)
+            const halfSize = Math.ceil(shuffled.length / 2);
+            finalBatch.push(...shuffled.slice(0, halfSize));
+        }
     });
 
-  // do not return too less results
-  if (candidates.length < 10) return currentData;
-  return candidates;
+    return finalBatch;
 }
 
 // TODO: move this variable to generic 'settings' too
@@ -1360,18 +1416,18 @@ function resetStats() {
   }
 }
 
-// Word stats update
-function updateStats(targetWord, isCorrect) {
+// Str stats update
+function updateStats(targetStr, isCorrect) {
   let stats = getStats();
-  if (!stats[targetWord]) {
-      stats[targetWord] = { attempts: 0, success: 0 };
+  if (!stats[targetStr]) {
+      stats[targetStr] = { attempts: 0, success: 0 };
   }
-  stats[targetWord].attempts += 1;
+  stats[targetStr].attempts += 1;
   if (isCorrect) {
-      stats[targetWord].success += 1;
+      stats[targetStr].success += 1;
   }
   setStats(stats);
-  wordStats[targetWord] = stats[targetWord];
+  wordStats[targetStr] = stats[targetStr];
 }
 
 function getTopicStats(topicId) {
