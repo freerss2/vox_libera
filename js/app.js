@@ -1,11 +1,13 @@
 /*
- *   "Vox-Libera" Language learning
- *   JS engine functions
+ *   "Vox-Libera" Language learning.
+ *   Main application JS engine
  */
 
 "use strict";
 
-const app_code_ver = '2.7.8';
+const app_code_ver = '2.7.9';
+
+// First, report the components versions
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
@@ -23,13 +25,13 @@ document.getElementById('versions-info').innerHTML =
 const settings = new Settings(
     {
       "userInterfaceLanguage": {"default": "en"},
-      "gameDifficulty": {"default": "easy"},
-      "hideWellLearned": {"default": 0, "type": "int"},
-      "showTranscription": {"default": 0, "type": "int"},
-      "currentTopic": {"default": GENERAL_TOPIC_ID},
-      "currentScreenId": {"default": DEFAULT_SCREEN_ID},
-      "topicsCompletion": {"default": {}, "type": "json"},
-      "wordStats": {"default": {}, "type": "json"}
+      "gameDifficulty":        {"default": "easy"},
+      "hideWellLearned":       {"default": 0, "type": "int"},
+      "showTranscription":     {"default": 0, "type": "int"},
+      "currentTopic":          {"default": GENERAL_TOPIC_ID},
+      "currentScreenId":       {"default": DEFAULT_SCREEN_ID},
+      "topicsCompletion":      {"default": {}, "type": "json"},
+      "wordStats":             {"default": {}, "type": "json"}
     }
 );
 
@@ -456,7 +458,7 @@ function decodeLearnedItem(item) {
 
 let cardIndex = 0;
 let flashcardsData = [];
-let studyMode = 'ar-ru'; // Modes: 'ar-ru' / 'ru-ar'
+let flashcardsMode = 't2u'; // Modes: 't2u' / 'u2t'
 
 function initFlashcards() {
     const container = document.getElementById('flashcards-screen');
@@ -513,7 +515,7 @@ function speakFlashcard(slow=0) {
 }
 
 function toggleStudyMode() {
-    studyMode = (studyMode === 'ar-ru') ? 'ru-ar' : 'ar-ru';
+    flashcardsMode = (flashcardsMode === 't2u') ? 'u2t' : 't2u';
     // Сбрасываем переворот и обновляем текст
     document.getElementById('card-object').classList.remove('flipped');
     updateCardContent();
@@ -530,9 +532,9 @@ function updateCardContent() {
 
     speakArabic(item[1]);
     const trText = `[${item[2]}]`;
-    // [0] - RU, [1] - AR, [2] - Translit
+    // [0] - User, [1] - Target, [2] - Translit
     // TODO: use generic codes and calculated class names
-    if (studyMode === 'ar-ru') {
+    if (flashcardsMode === 't2u') {
         front.innerHTML = `
             <div class="ar-text">${item[1]}</div>
             <div class="tr-text transcription">${trText}</div>`;
@@ -942,7 +944,7 @@ function renderSent(screen_id) {
     let gameSentence = allData[Math.floor(Math.random() * allData.length)];
     // 3. for user->target game show all X words in top card
     //    for target->user      show all Y words
-    //    for aud->user         store in div.dataset.ar Y target words
+    //    for aud->user         store in div.dataset.expected Y target words
     // 4. store the answer in div.dataset.expected
     const questionContainer = document.getElementById('sent-question-container');
     const bankContainer = document.getElementById('sent-bank');
