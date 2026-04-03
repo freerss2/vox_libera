@@ -24,7 +24,7 @@ const locales = {
       "reset-all-stat": " Reset all stats"
     },
     "tip_of_the_day" : {
-       "title": "Tip of the day:",
+       "title": "Tip of the day",
        "remember_transl": "Remember translation",
        "0": "Balance Theory and Practice",
        "1": "Context is King: Learn Phrases, Not Just Words",
@@ -84,7 +84,7 @@ const locales = {
       "reset-all-stat": " Сбросить статистику"
     },
     "tip_of_the_day" : {
-       "title": "Совет дня:",
+       "title": "Совет дня",
        "remember_transl": "Запомни перевод",
        "0": "Сочетай теорию с практикой",
        "1": "Учи слова с учётом контекста",

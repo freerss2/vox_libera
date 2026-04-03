@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9a';
+const app_code_ver = '2.7.9b';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -138,7 +138,7 @@ function renderDrawer() {
             <span class="node-name" data-i18n="screens|${screen.id}">${screen_name}</span>
         `;
 
-        li.onclick = () => loadScreenFromMenu(screen.id);
+        li.onclick = () => renderCurrentScreenFromMenu(screen.id);
 
         pathContainer.appendChild(li);
     });
@@ -219,7 +219,6 @@ function initMenu() {
     renderDrawer();
     // 2. Display topic title
     applyTopicToDisplay();
-    showScreenTitle();
     // 3. Read and apply settings
     const savedDifficulty = settings.getGameDifficulty()
     setGamesDifficulty(savedDifficulty);
@@ -231,9 +230,9 @@ function initMenu() {
 
 // --------------- Screens navigation -------------------------
 
-function loadScreenFromMenu(screen_id) {
+function renderCurrentScreenFromMenu(screen_id) {
   settings.setCurrentScreenId(screen_id);
-  loadScreen();
+  renderCurrentScreen();
   toggleDrawer();
 }
 
@@ -291,17 +290,20 @@ function loadPrevNexScreen(delta) {
       }
     }
     settings.setCurrentScreenId(next_screen_id);
-    loadScreen();
+    renderCurrentScreen();
   } else {
     // if last - move to next topic
     switchTopic(delta);
   }
 }
 
-// load screen by ID
-function loadScreen() {
+// show current screen
+function renderCurrentScreen() {
   showActiveExerciseInMenu();
-  startScreen();
+  applyTopicToDisplay();
+
+  // Render screen according to current type
+  renderScreen(settings.getCurrentScreenId());
 }
 
 // try to find topic key name by given index
@@ -328,22 +330,15 @@ function switchTopic(direction) {
   // find topic with next id
   let nextTopicId = getTopic(topicIndex+direction);
   if (! nextTopicId) return;
+
   // if found - load screen
   settings.setCurrentTopic(nextTopicId);
-  startTopic();
-}
-
-// reset screen to default (first)
-// update display
-// start the game
-function startTopic() {
+  // reset screen to default (first)
   settings.setCurrentScreenId(SCREENS[0].id);
-
-  applyTopicToDisplay();
-  showScreenTitle();
-
-  loadScreen();
+  // start the game
+  renderCurrentScreen();
 }
+
 
 // by screen id get the whole record
 function getScreenRecord(screen_id) {
@@ -357,25 +352,18 @@ function getScreenType(screen_id) {
   return DEFAULT_SCREEN_ID;
 }
 
+// Build and show the screen title
 function showScreenTitle() {
     const record = getScreenRecord(settings.getCurrentScreenId());
     const screenName = record ? i18n.t(`screens|${record.id}`) : "Screen";
 
-    // Build main title
     let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
     document.getElementById('title').textContent = `${topicTitle}: ${screenName}`;
 }
 
-// Start any screen/game from any other context (not from menu)
-function startScreen() {
-    showScreenTitle();
-
-    // Render screen according to type
-    renderScreen(settings.getCurrentScreenId());
-}
-
 // Render screen/game
 function renderScreen(screen_id) {
+    showScreenTitle();
     // for screen 'final' get a random screen from screens with excercise==1
     finalGameForTopic = '';
     if (screen_id == 'final') {
@@ -473,11 +461,10 @@ function initFlashcards() {
     }
 
     cardIndex = 0;
-
     container.innerHTML = `
             <div class="flashcard-header">
                 <span class="mode-toggle-wrapper">
-                  <button class="mode-toggle" onclick="toggleStudyMode()">&nbsp;ذ&nbsp;⇆&nbsp;я&nbsp;</button>
+                  <button class="mode-toggle" onclick="toggleStudyMode()">&nbsp;🌍&nbsp;⇆&nbsp;👤&nbsp;</button>
                 </span>
                 <span id="card-counter">1 / ${flashcardsData.length}</span>
                 <div class="speed-controls">
@@ -769,7 +756,7 @@ function tipOfTheDay() {
     const indx = Math.floor(Math.random() * 4);
     const tip = i18n.t(`tip_of_the_day|${indx}`);
     const title = i18n.t('tip_of_the_day|title');
-    return `💡 ${title} ${tip} 💡`;
+    return `💡${title}💡<BR>${tip}`;
   }
   // get all words/sentences from current topic
   const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
@@ -789,10 +776,11 @@ let firstAttempt = true;
 // Initialize quiz (of all possible types)
 function renderQuizGame(screen_id) {
     const inputTypes = getGameInputTypes(screen_id);
-    const allStrs = getTopicData(inputTypes, settings.getHideWellLearned(), true);
+    const allStrs = getTopicData(inputTypes, settings.getHideWellLearned(), false);
     const screenType = getScreenType(screen_id);
     // Take a random word from all words in topic
-    quizCorrectStr = allStrs[Math.floor(Math.random() * allStrs.length)];
+    const index = settings.getHideWellLearned() ? 0 : Math.floor(Math.random() * allStrs.length);
+    quizCorrectStr = allStrs[index];
 
     const questionContainer = document.getElementById('quiz-question-container');
     const optionsGrid = document.getElementById('quiz-options-grid');
@@ -823,7 +811,7 @@ function renderQuizGame(screen_id) {
     document.getElementById('quiz-main-hint').innerHTML = mainHint;
 
     // 2. Generate options for selection (one correct and rest - random)
-    const options = generateDistractors(quizCorrectStr, allStrs, gameSettings.totalChoices);
+    const options = generateDistractors(quizCorrectStr, shuffle(allStrs), gameSettings.totalChoices);
     firstAttempt = true;
 
     options.forEach(word => {
@@ -951,10 +939,10 @@ function renderSent(screen_id) {
     document.getElementById('errors-panel').style.display = 'block';
     // 1. get topic data
     const inputTypes = ['sentences'];
-    const currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
-    const allData = currentData.filter(r => (r[0].includes(' ') && r[1].includes(' ') && !r[0].includes('.')));
+    let allStrs = getTopicData(inputTypes, settings.getHideWellLearned(), false);
+    allStrs = allStrs.filter(r => (r[0].includes(' ') && r[1].includes(' ') && !r[0].includes('.')));
     // for wrong topic without sentences - switch to a compatible screen type
-    if ( ! allData.length ) {
+    if ( ! allStrs.length ) {
         renderScreen('matching');
         return;
     }
@@ -962,7 +950,8 @@ function renderSent(screen_id) {
     errors = 0;
     showErrorCount(errors);
     // 2. draw a random sentence from topic data (X user and Y target words)
-    let gameSentence = allData[Math.floor(Math.random() * allData.length)];
+    const index = settings.getHideWellLearned() ? 0 : Math.floor(Math.random() * allStrs.length);
+    let gameSentence = allStrs[index];
     // 3. for user->target game show all X words in top card
     //    for target->user      show all Y words
     //    for aud->user         store in div.dataset.expected Y target words
@@ -1005,7 +994,7 @@ function renderSent(screen_id) {
     let factor = gameSettings.sentenceFactor;
     let maxWords = Math.max(bankWords.length, 10);
     let extraWordsCount = Math.min(Math.round(bankWords.length * factor), maxWords);
-    const subset = extractUniqueWordsFromData(allData, extractPosition).filter(w => !bankWords.includes(w)).slice(0, extraWordsCount);
+    const subset = extractUniqueWordsFromData(shuffle(allStrs), extractPosition).filter(w => !bankWords.includes(w)).slice(0, extraWordsCount);
     bankWords.push(...subset);
     bankWords = shuffle(bankWords);
     // 6. create word-buttons in bottom card
@@ -1521,7 +1510,7 @@ function updateDrawerStats() {
 // callback for toggle "Well-learned" checkbox
 function toggleWellLearned() {
   settings.setHideWellLearned(hideWellLearnedElm.checked ? 1 : 0);
-  startScreen();
+  renderCurrentScreen();
 }
 
 // callback for toggle "transcription" checkbox
@@ -1558,7 +1547,7 @@ function changeDifficulty(level) {
     // 3. Restart the game (exclude dictionary)
     const screenType = getScreenType(settings.getCurrentScreenId());
     if (screenType === 'dictionary') {
-      startScreen();
+      renderCurrentScreen();
     }
 }
 
@@ -1644,5 +1633,5 @@ document.addEventListener('keydown', (event) => {
 // On page load initialize the menu and selected screen
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
-    startScreen();
+    renderCurrentScreen();
 });
