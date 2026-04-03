@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9d';
+const app_code_ver = '2.7.9f';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -797,7 +797,7 @@ function getTwoUniqueIndices(maxVal) {
 function trueRandomStr(allStrs, hideWellLearned) {
   let index0 = 0;
   let index1 = 1;
-  if (! hideWellLearned) {
+  if ( hideWellLearned == 0 ) {
     [index0, index1] = getTwoUniqueIndices(allStrs.length);
   }
   if (lastStr == allStrs[index0][1]) {
@@ -807,18 +807,6 @@ function trueRandomStr(allStrs, hideWellLearned) {
     lastStr = allStrs[index0][1];
     return allStrs[index0];
   }
-}
-
-// TODO: use it for getting quiz position select
-function trueRandomPos(maxVal) {
-  let [index0, index1] = getTwoUniqueIndices(maxVal);
-
-  if (lastPos == index0) {
-    lastPos = index1;
-  } else {
-    lastPos = index0;
-  }
-  return lastPos;
 }
 
 // ------------------------------------------ quiz (find the right one from many)
@@ -901,7 +889,13 @@ function generateDistractors(correct, all, totalChoices) {
     filtered = filtered.slice(0, gameSettings.totalChoices-1);
     // shuffle and take out of them (totalChoices-1) answers
 
-    return shuffle(choices.concat(filtered));
+    choices = shuffle(choices.concat(filtered));
+    if (lastPos >= 0 && choices[lastPos][1] == correct[1]) {
+      const newPos = (lastPos+1) % choices.length;
+      [choices[lastPos], choices[newPos]] = [choices[newPos], choices[lastPos]];
+      lastPos = newPos;
+    }
+    return choices;
 }
 
 let gameSet = {
