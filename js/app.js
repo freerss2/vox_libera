@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9b';
+const app_code_ver = '2.7.9d';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -767,6 +767,60 @@ function tipOfTheDay() {
   return `💡${transl}💡<BR>${hintData[0]}<BR>${hintData[1]}<BR>[${hintData[2]}]`;
 }
 
+// ------------------------------------------ avoid repetitive questions
+
+/*
+ * Save last choosen target string and last quiz answer position
+ * When next random selection hits the same string or position - use alternative
+ */
+
+var lastStr = null;
+var lastPos = -1;
+
+// from the range [0..maxval] return two different random values
+function getTwoUniqueIndices(maxVal) {
+    if (maxVal < 2) return [0, 0];
+
+    const first = Math.floor(Math.random() * maxVal);
+    let second = Math.floor(Math.random() * (maxVal - 1));
+
+    // avoid collision by moving out of first range
+    if (second >= first) {
+        second++;
+    }
+
+    return [first, second];
+}
+
+// for regular mode - get random item not matching previous round
+// for hideWellLearned mode - take first or second item
+function trueRandomStr(allStrs, hideWellLearned) {
+  let index0 = 0;
+  let index1 = 1;
+  if (! hideWellLearned) {
+    [index0, index1] = getTwoUniqueIndices(allStrs.length);
+  }
+  if (lastStr == allStrs[index0][1]) {
+    lastStr = allStrs[index1][1];
+    return allStrs[index1];
+  } else {
+    lastStr = allStrs[index0][1];
+    return allStrs[index0];
+  }
+}
+
+// TODO: use it for getting quiz position select
+function trueRandomPos(maxVal) {
+  let [index0, index1] = getTwoUniqueIndices(maxVal);
+
+  if (lastPos == index0) {
+    lastPos = index1;
+  } else {
+    lastPos = index0;
+  }
+  return lastPos;
+}
+
 // ------------------------------------------ quiz (find the right one from many)
 
 // status of quiz game
@@ -779,8 +833,7 @@ function renderQuizGame(screen_id) {
     const allStrs = getTopicData(inputTypes, settings.getHideWellLearned(), false);
     const screenType = getScreenType(screen_id);
     // Take a random word from all words in topic
-    const index = settings.getHideWellLearned() ? 0 : Math.floor(Math.random() * allStrs.length);
-    quizCorrectStr = allStrs[index];
+    quizCorrectStr = trueRandomStr(allStrs, settings.getHideWellLearned());
 
     const questionContainer = document.getElementById('quiz-question-container');
     const optionsGrid = document.getElementById('quiz-options-grid');
@@ -950,8 +1003,7 @@ function renderSent(screen_id) {
     errors = 0;
     showErrorCount(errors);
     // 2. draw a random sentence from topic data (X user and Y target words)
-    const index = settings.getHideWellLearned() ? 0 : Math.floor(Math.random() * allStrs.length);
-    let gameSentence = allStrs[index];
+    let gameSentence = trueRandomStr(allStrs, settings.getHideWellLearned());
     // 3. for user->target game show all X words in top card
     //    for target->user      show all Y words
     //    for aud->user         store in div.dataset.expected Y target words
