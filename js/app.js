@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9j';
+const app_code_ver = '2.8.0';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -45,17 +45,17 @@ showTransToggleElm.checked = settings.getShowTranscription() == 1;
 
 const langSelect = document.getElementById('ui-lang-select');
 // Configure UI selector
-const currentLang = settings.getUserInterfaceLanguage();
+const userLang = settings.getUserInterfaceLanguage();
 langSelect.innerHtml = '';
 Object.keys(locales).forEach(langCode => {
     const langName = locales[langCode].__title__ || langCode;
     const option = document.createElement('option');
     option.value = langCode;
     option.textContent = langName;
-    if (langCode === currentLang) option.selected = true;
+    if (langCode === userLang) option.selected = true;
     langSelect.appendChild(option);
 });
-langSelect.value = currentLang;
+langSelect.value = userLang;
 
 const difficultySettings = {
     easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5},
@@ -79,7 +79,7 @@ if (course_locales) {
 }
 
 const i18n = new I18nManager(locales);
-i18n.setLanguage(currentLang);
+i18n.setLanguage(userLang);
 
 // init speaking engine
 const courseTargetLanguage = manifest.target_language;
@@ -87,6 +87,20 @@ const langSpeakCodes = {
   "ar": "ar-EG" // Language code (ar-SA - arabic Saudi)
   };
 const targetLangSpeakCode = (courseTargetLanguage in langSpeakCodes) ? langSpeakCodes[courseTargetLanguage] : '';
+
+// calculate user/target language directions (LTR/RTL)
+// TODO: move to i18n ?
+const rtlLanguages = ['ar', 'he', 'fa'];
+
+function langDirection(langCode) {
+  if (rtlLanguages.includes(langCode)) {
+    return 'RTL';
+  }
+  return 'LTR';  // Default
+}
+
+const targetDir = langDirection(courseTargetLanguage);
+const userDir = langDirection(userLang);
 
 // Screen types
 const SCREENS = [
@@ -162,7 +176,7 @@ function showActiveExerciseInMenu() {
 
 // Try to apply translation according to course locales
 function i18n_ct(text) {
-  if (i18n.currentLang == 'en') return text;  // by default never translate to English
+  if (i18n.userLang == 'en') return text;  // by default never translate to English
   const translation = i18n.t(`cl|${text}`);
   if (translation.startsWith('cl|')) return text;  // better original English instead of "key"
   return translation;
@@ -495,25 +509,20 @@ function updateCardContent() {
     const cardObject = document.getElementById('card-object');
     cardObject.classList.remove('flipped');
 
-
     speakTargetLang(item[1]);
     const trText = `[${item[2]}]`;
-    // [0] - User, [1] - Target, [2] - Translit
-    // TODO: use generic codes and calculated class names
+    // [0] - User, [1] - Target, [2] - Transcription
+    const targetSide = `
+            <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">${item[1]}</div>
+            <div class="transcr-text transcription">${trText}</div>`;
+    const userSide = `
+            <div class="user-text" dir="${userDir}" lang="${userLang}" style="color: var(--secondary-color);">${item[0]}</div>`;
     if (flashcardsMode === 't2u') {
-        front.innerHTML = `
-            <div class="ar-text">${item[1]}</div>
-            <div class="tr-text transcription">${trText}</div>`;
-        back.innerHTML = `
-            <div class="ru-text">${item[0]}</div>
-        `;
+        front.innerHTML = targetSide;
+        back.innerHTML = userSide;
     } else {
-        front.innerHTML = `
-            <div class="ru-text">${item[0]}</div>`;
-        back.innerHTML = `
-            <div class="ar-text">${item[1]}</div>
-            <div class="tr-text transcription">${trText}</div>
-        `;
+        front.innerHTML = userSide;
+        back.innerHTML = targetSide;
     }
     updateTranscriptionDisplay();
 
@@ -620,7 +629,9 @@ function renderMatchingGame() {
 // Create a single tile for pairs (matching) screen
 function createTile(item, index, side, lang, container) {
     const div = document.createElement('div');
-    div.className = 'card' + (lang === 'target' ? ' arabic' : '');
+    div.className = 'card' + (lang === 'target' ? ' target-text' : ' user-text');
+    div.lang = lang === 'target' ? courseTargetLanguage : userLang;
+    div.dir = lang === 'target' ? targetDir : userDir;
     div.textContent = item.t;
     div.dataset.col = side;
     div.dataset.target = (lang === 'target' ? item.t : '');
@@ -713,8 +724,8 @@ function showWin(acc) {
     const tipEl = document.getElementById('tipOfTheDay');
     const user_lang_feedback = i18n_ct(pick[0]);
     statusEl.innerHTML = `
-        <span class="arabic" style="font-size: 1.5em; display: block; ">${pick[1]}</span>
-        <span style="font-size: 0.5em; color: #888; display: block; margin-top: 5px;">
+        <span class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}" style="font-size: 1.5em; display: block; ">${pick[1]}</span>
+        <span class="user-text" dir="${userDir}" lang="${userLang}" style="font-size: 0.5em; color: #888; display: block; margin-top: 5px;">
             ${pick[2]} — ${user_lang_feedback}
         </span>
     `;
@@ -809,11 +820,13 @@ function renderQuizGame(screen_id) {
     document.getElementById('quiz-hint-panel').textContent = i18n.t("main|hint-panel");
 
     let mainHint = '';
+    const targetTags = `class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}"`;
+    const userTags = `class="user-text" dir="${userDir}" lang="${userLang}"`;
     // 1. Fill the question card
     if (screenType === 'quiz_u2t') {
-        questionContainer.textContent = quizCorrectStr[0];  // Translation
+        questionContainer.innerHTML = `<span ${userTags}>${quizCorrectStr[0]}</span>`;
     } else if (screenType === 'quiz_t2u') {
-        questionContainer.innerHTML = `<span class="arabic">${quizCorrectStr[1]}</span>`;
+        questionContainer.innerHTML = `<span ${targetTags}>${quizCorrectStr[1]}</span>`;
         mainHint = `[${quizCorrectStr[2]}]`;
     } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
@@ -839,10 +852,10 @@ function renderQuizGame(screen_id) {
         btn.dataset.speak = '';
         // According to quiz type determine the cards content
         if (screenType === 'quiz_u2t') {
-            btn.innerHTML = `<span class="arabic">${word[1]}</span>`;
+            btn.innerHTML = `<span ${targetTags}>${word[1]}</span>`;
             btn.dataset.speak = word[1];
         } else {
-            btn.textContent = word[0]; // Translation
+            btn.innerHTML = `<span ${userTags}>${word[0]}</span>`;
         }
         btn.dataset.translit = word[2];
         btn.onclick = () => handleQuizChoice(word, btn);
@@ -987,16 +1000,17 @@ function renderSent(screen_id) {
     let expected = gameSentence[0];
     let extractPosition = 0;
     let speakEnable = 0;
-    resultContainer.classList.remove('arabic');
+    resultContainer.classList.remove('target-text');
     let mainHint = '';
     if ( screenType == 'sent_u2t' ) {
-        questionHtml = gameSentence[0];
+        questionHtml = `<span lang="${userLang}" dir="${userDir}" class="user-text">${gameSentence[0]}</span>`;
         expected = gameSentence[1];
         extractPosition = 1;
         speakEnable = 1;
-        resultContainer.classList.add('arabic');
+        resultContainer.classList.add('target-text');
     } else if (screenType == 'sent_t2u') {
         questionHtml = gameSentence[1];
+        questionHtml = `<span lang="${courseTargetLanguage}" dir="${targetDir}" class="target-text">${gameSentence[1]}</span>`;
         mainHint = `[${gameSentence[2]}]`;
     } else {
         questionHtml = `
@@ -1024,11 +1038,23 @@ function renderSent(screen_id) {
     // 6. create word-buttons in bottom card
     bankContainer.innerText = '';
     let bankWordClass = 'sent-word';
-    if ( screenType == 'sent_u2t' ) bankWordClass += ' arabic';
+    let bankWordLang = '';
+    let bankWordDir = '';
+    if ( screenType == 'sent_u2t' ) {
+      bankWordClass += ' target-text';
+      bankWordLang = courseTargetLanguage;
+      bankWordDir = targetDir;
+    } else {
+      bankWordClass += ' user-text';
+      bankWordLang = userLang;
+      bankWordDir = userDir;
+    }
     for (let i = 0; i < bankWords.length; i++) {
       const bankWord = document.createElement('span');
       bankWord.onclick = () => useBankWord(i);
       bankWord.className = bankWordClass;
+      bankWord.dir = bankWordDir;
+      bankWord.lang = bankWordLang;
       bankWord.textContent = bankWords[i];
       bankWord.dataset.id = i;
       bankWord.dataset.speakEnable = speakEnable;
@@ -1202,7 +1228,7 @@ function speakTargetLang(text, rate=1) {
 
 function changeZoom(delta) {
     currentZoom = Math.min(Math.max(0.8, currentZoom + delta), 1.8);
-    document.documentElement.style.setProperty('--base-font-size', currentZoom + 'rem');
+    document.documentElement.style.setProperty('--app-scale', currentZoom );
 }
 
 function getGameInputTypes(screen_id) {
@@ -1235,22 +1261,22 @@ function showDictionary() {
         let statusColor = 'var(--border-color)'; // по умолчанию серый
         if (wordStat.attempts > 0) {
             if (accuracy < 50) statusColor = 'var(--error-color)';      // Failed
-            else if (accuracy < 85) statusColor = '#ffc107';            // Acceptable
+            else if (accuracy < 85) statusColor = '#ce9b02';            // Acceptable
             else statusColor = 'var(--primary-color)';                  // Good
         }
 
         // Speak the content on click
         card.onclick = () => speakTargetLang(item[1]);
-
+        const cardStat = wordStat.attempts > 0 ? `<span class="stat-badge" style=" color: ${statusColor};"> (${accuracy}%)</span>` : '';
         card.innerHTML = `
             <div style="flex: 1;">
-                <div style="font-weight: bold; color: #777; font-size: var(--base-font-size);">
-                  ${item[0]}
-                  ${wordStat.attempts > 0 ? `<span style="font-size: 0.9em; opacity: 0.7; color: ${statusColor};"> (${accuracy}%)</span>` : ''}
+                <div>
+                  <span style="color: var(--secondary-color);" class="user-text" dir="${userDir}" lang="${userLang}">${item[0]}</span>
+                  ${cardStat}
                 </div>
                 <div class="dictionaryTransl transcription">[${item[2]}]</div>
             </div>
-            <div class="arabic" style="color: var(--text-color);">
+            <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">
                 ${item[1]}
             </div>
         `;

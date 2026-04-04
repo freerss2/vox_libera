@@ -5,12 +5,13 @@
     --primary-color: #4183d0; 
     --primary-rgb: 0, 122, 255;
     --primary-background: #fff;
-    --secondary-color: #1cb0f6;
+    --secondary-color: #0582f1;
     --error-color: #d23a3a;
     --text-color: #4b4b4b;
     --border-color: #888;
     --light-border-color: #E5E5E5;
-    --base-font-size: 1rem; 
+    --app-scale: 1;
+    --font-multiplier: 1; /* language-dependent font multiplier */
 }
         
 body {
@@ -23,6 +24,26 @@ body {
    flex-direction: column;
    align-items: center;
    background-color: #eef2f5;
+}
+
+/* Styles for any RTL lanugage (Arabic, Hebrew, Farsi) */
+[dir="rtl"] {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    text-align: right;
+    line-height: 1.6; /* optional (?) */
+}
+
+/* Specific language styles */
+[lang="ar"] {
+    --font-multiplier: 1.8; /* Due to script-spyle Arabic is shown a bit smaller than Latin */
+}
+
+[lang="ru"] {
+    --font-multiplier: 1.4;
+}
+
+[lang="en"] {
+    --font-multiplier: 1.4;
 }
 
 #app-container {   
@@ -236,9 +257,28 @@ body {
   margin-top: 10px;
 }
 
-.ar-text { direction: rtl; font-size: calc(var(--base-font-size) * 2); color: #222; margin-bottom: 10px; }
-.ru-text { font-size: 1.8rem; color: #2196F3; }
-.tr-text { color: #666; font-style: italic; margin-top: 5px; }
+.target-text {
+  font-size: calc(1.3rem * var(--app-scale) * var(--font-multiplier));
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.user-text {
+  font-size: calc(1.3rem * var(--app-scale) * var(--font-multiplier));
+  color: var(--text-color);
+}
+
+.transcr-text { color: #666; font-style: italic; margin-top: 5px; }
+
+.stat-badge {
+  font-weight: bold; 
+  font-size: 0.9em; 
+  opacity: 0.7;
+  background-color: lightgray;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 #card-anchor { transition: all 0.2s ease; }
 
@@ -334,7 +374,6 @@ body {
     max-width: 300px;
     padding: 20px;
     text-align: center;
-    font-size: calc(var(--base-font-size) * 1.5);
     padding: 15px 10px;
     border: 1px solid var(--border-color);
     border-radius: 15px;
@@ -352,8 +391,6 @@ body {
 .card.correct { opacity: 0.15; pointer-events: none; transform: scale(0.9); border-color: transparent; }
 .card.wrong { background-color: #ffdfe0; border-color: var(--error-color); animation: shake 0.3s; }
 .wrong { border-color: var(--error-color); animation: shake 0.3s; }
-
-.arabic { direction: rtl; font-size: calc(var(--base-font-size) * 2); }
 
 .errors-panel {
     color:#afafaf;
@@ -445,7 +482,6 @@ body {
     padding: 15px 20px;
     margin-bottom: 20px;
     text-align: center;
-    font-size: calc(var(--base-font-size) * 1.5);
     min-height: 120px;
     display: flex;
     flex-direction: column;
@@ -471,7 +507,7 @@ body {
 
 #dictionaryList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 15px;
 }
 
