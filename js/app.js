@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9g';
+const app_code_ver = '2.7.9j';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -80,6 +80,13 @@ if (course_locales) {
 
 const i18n = new I18nManager(locales);
 i18n.setLanguage(currentLang);
+
+// init speaking engine
+const courseTargetLanguage = manifest.target_language;
+const langSpeakCodes = {
+  "ar": "ar-EG" // Language code (ar-SA - arabic Saudi)
+  };
+const targetLangSpeakCode = (courseTargetLanguage in langSpeakCodes) ? langSpeakCodes[courseTargetLanguage] : '';
 
 // Screen types
 const SCREENS = [
@@ -463,18 +470,19 @@ function initFlashcards() {
     cardIndex = 0;
 
     updateCardContent();
+    document.getElementById('flashcards-main').style.display = 'block';
     document.getElementById('card-anchor').style='';
 }
 
 function speakFlashcard(slow=0) {
     const item = flashcardsData[cardIndex];
-    if (slow)  speakArabicSlow(item[1]);
-    else       speakArabic(item[1]);
+    if (slow)  speakTargetLangSlow(item[1]);
+    else       speakTargetLang(item[1]);
 }
 
 function toggleStudyMode() {
     flashcardsMode = (flashcardsMode === 't2u') ? 'u2t' : 't2u';
-    // Сбрасываем переворот и обновляем текст
+    // Cancel any flip and refresh the content
     document.getElementById('card-object').classList.remove('flipped');
     updateCardContent();
 }
@@ -488,7 +496,7 @@ function updateCardContent() {
     cardObject.classList.remove('flipped');
 
 
-    speakArabic(item[1]);
+    speakTargetLang(item[1]);
     const trText = `[${item[2]}]`;
     // [0] - User, [1] - Target, [2] - Translit
     // TODO: use generic codes and calculated class names
@@ -557,14 +565,12 @@ function markAsLearned() {
 }
 
 function showCompletionMessage() {
-    const counter = document.getElementById('card-counter');
-    counter.innerText =  shuffle(successCharacters)[0];
-
     const container = document.getElementById('completion-screen');
-    container.innerHTML = i18n.t('main|flashcards_completed');
+    const success = shuffle(successCharacters)[0];
+    container.innerHTML = success + i18n.t('main|flashcards_completed');
     container.style.display = 'block';
 
-    document.getElementById('card-anchor').style.opacity = 0;
+    document.getElementById('flashcards-main').style.display = 'none';
 
     showWin(100);
 }
@@ -626,7 +632,7 @@ function createTile(item, index, side, lang, container) {
         if (lang === 'target') {
           // perform when option enabled only
           document.getElementById('hint-panel').textContent = `[ ${item.h} ]`;
-          speakArabic(item.t);
+          speakTargetLang(item.t);
         }
         handleSelectTile(div, side);
     };
@@ -717,8 +723,8 @@ function showWin(acc) {
 
     // hide the game board and visualize the popup
     document.getElementById('screen-matching').style.display = 'none';
+    document.getElementById('accuracyStat').textContent = `${acc}%`;
     document.getElementById('winScreen').classList.remove('hidden');
-    document.getElementById('accuracyStat').textContent = acc + "%";
 }
 
 
@@ -736,7 +742,7 @@ function tipOfTheDay() {
   // the strings are already filtered by success rate and shuffled
   const hintData = allStrs[0];
   const transl = i18n.t('tip_of_the_day|remember_transl');
-  return `💡${transl}💡<BR>${hintData[0]}<BR>${hintData[1]}<BR>[${hintData[2]}]`;
+  return `💡${transl}💡<BR>«${hintData[0]}»<BR>${hintData[1]}<BR>[${hintData[2]}]`;
 }
 
 // ------------------------------------------ avoid repetitive questions
@@ -811,15 +817,15 @@ function renderQuizGame(screen_id) {
         mainHint = `[${quizCorrectStr[2]}]`;
     } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
-            <button class="audio-main-btn" onclick="speakArabic('${quizCorrectStr[1]}')">
+            <button class="audio-main-btn" onclick="speakTargetLang('${quizCorrectStr[1]}')">
                 <span style="font-size: 50px;">🔊</span>
             </button>
-            <button class="audio-main-btn" onclick="speakArabicSlow('${quizCorrectStr[1]}')">
+            <button class="audio-main-btn" onclick="speakTargetLangSlow('${quizCorrectStr[1]}')">
                 <span style="font-size: 50px;">🐌</span>
             </button>
             `;
         mainHint = `[${quizCorrectStr[2]}]`;
-        speakArabic(quizCorrectStr[1]); // Immediately trigger the speak
+        speakTargetLang(quizCorrectStr[1]); // Immediately trigger the speak
     }
     document.getElementById('quiz-main-hint').innerHTML = mainHint;
 
@@ -902,7 +908,7 @@ function finishSet() {
 function handleQuizChoice(selectedStr, btn) {
     // if relevant - fill quiz-hint-panel with transliteration
     const translit = btn.dataset.translit;
-    if (btn.dataset.speak) speakArabic(btn.dataset.speak);
+    if (btn.dataset.speak) speakTargetLang(btn.dataset.speak);
     const hintPanel = document.getElementById('quiz-hint-panel');
     if (hintPanel && translit) {
         hintPanel.textContent = translit;
@@ -942,7 +948,7 @@ function handleQuizChoice(selectedStr, btn) {
 
         const screenType = getScreenType(settings.getCurrentScreenId());
         // For audio-based quiz re-run speaking routine
-        if (screenType === 'quiz_audio') speakArabic(quizCorrectStr[1]);
+        if (screenType === 'quiz_audio') speakTargetLang(quizCorrectStr[1]);
     }
 }
 
@@ -994,14 +1000,14 @@ function renderSent(screen_id) {
         mainHint = `[${gameSentence[2]}]`;
     } else {
         questionHtml = `
-            <button class="audio-main-btn" onclick="speakArabic('${gameSentence[1]}')">
+            <button class="audio-main-btn" onclick="speakTargetLang('${gameSentence[1]}')">
                 <span style="font-size: 50px;">🔊</span>
             </button>
-            <button class="audio-main-btn" onclick="speakArabicSlow('${gameSentence[1]}')">
+            <button class="audio-main-btn" onclick="speakTargetLangSlow('${gameSentence[1]}')">
                 <span style="font-size: 50px;">🐌</span>
             </button>`;
         mainHint = `[${gameSentence[2]}]`;
-        speakArabic(gameSentence[1]);
+        speakTargetLang(gameSentence[1]);
     }
     questionContainer.innerHTML = questionHtml;
     document.getElementById('sent-main-hint').innerHTML = mainHint;
@@ -1053,7 +1059,7 @@ function useBankWord(index) {
   const word = bankWordElement.textContent;
   // speak only the relevant content
   if ( bankWordElement.dataset.speakEnable == '1' ) {
-    speakArabic(word);
+    speakTargetLang(word);
   }
   bankWordElement.classList.add('sent-word-used');
   appendWordToResult(bankWordId, word);
@@ -1172,12 +1178,13 @@ function toggleMute() {
         window.speechSynthesis.cancel();
     }
 }
-function speakArabicSlow(text) {
-  speakArabic(text, 0.5);
+function speakTargetLangSlow(text) {
+  speakTargetLang(text, 0.5);
 }
 
-function speakArabic(text, rate=1) {
+function speakTargetLang(text, rate=1) {
     if (isMuted) return;
+    if (! targetLangSpeakCode) return;
     // Check, whether broser supports this API
     if ('speechSynthesis' in window) {
         // Cancel any in-progress speech
@@ -1185,9 +1192,9 @@ function speakArabic(text, rate=1) {
 
         const msg = new SpeechSynthesisUtterance();
         msg.text = text;
-        msg.lang = 'ar-EG'; // Указываем код языка (ar-SA - Саудовская Аравия)
-        msg.rate = rate;    // Скорость
-        msg.pitch = 1;      // Тональность
+        msg.lang = targetLangSpeakCode; // Language code
+        msg.rate = rate;    // Speed rate
+        msg.pitch = 1;      // Pitch
 
         window.speechSynthesis.speak(msg);
     }
@@ -1233,7 +1240,7 @@ function showDictionary() {
         }
 
         // Speak the content on click
-        card.onclick = () => speakArabic(item[1]);
+        card.onclick = () => speakTargetLang(item[1]);
 
         card.innerHTML = `
             <div style="flex: 1;">

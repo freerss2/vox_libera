@@ -5,9 +5,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
-    <title>Vox-Libera - Arabic Lessons v2.7</title>
+    <title>Vox-Libera - Learn Any Language v2.7</title>
     <script>
-      const html_code_ver = '2.7.9';
+      const html_code_ver = '2.7.9a';
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -187,8 +187,9 @@
       </div>
 
       <div id="flashcards-screen" class="game-screen flashcards-screen">
-            <div id="completion-screen">               
-            </div>
+        <div id="completion-screen">               
+        </div>
+        <div id="flashcards-main">
             <div class="flashcard-header">
                 <span class="mode-toggle-wrapper">
                   <button class="mode-toggle" onclick="toggleStudyMode()">&nbsp;🌍&nbsp;⇆&nbsp;👤&nbsp;</button>
@@ -218,7 +219,7 @@
                 <button class="action-btn hard" onclick="changeCard(1)">✘ Повторить</button>
             </div>
 
-
+        </div>
       </div>
 
       <div id="screen-matching" class="game-screen" style="display: none;">
@@ -258,7 +259,6 @@
       </div>
 
     </main>
-
 
     <script src="course/manifest.js?ver=2-7" defer></script>
     <script src="course/lessons.js?ver=2-7" defer></script>
