@@ -51,6 +51,7 @@ const locales = {
       "final":           "Topic final"
     },
     "main": {
+      "flashcards_completed": "You learned all cards in this set.",
       "search_hint": "Search...",
       "errors-count": "Errors: ",
       "go_forward": "GO FORWARD ",
@@ -111,6 +112,7 @@ const locales = {
       "final":           "Итог темы"
     },
     "main": {
+      "flashcards_completed": "Все карточки в этом наборе изучены.",
       "search_hint": "Поиск...",
       "errors-count": "Ошибки: ",
       "go_forward": "ВПЕРЁД ",

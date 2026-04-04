@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
     <title>Vox-Libera - Arabic Lessons v2.7</title>
     <script>
-      const html_code_ver = '2.7.8';
+      const html_code_ver = '2.7.9';
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -187,6 +187,38 @@
       </div>
 
       <div id="flashcards-screen" class="game-screen flashcards-screen">
+            <div id="completion-screen">               
+            </div>
+            <div class="flashcard-header">
+                <span class="mode-toggle-wrapper">
+                  <button class="mode-toggle" onclick="toggleStudyMode()">&nbsp;🌍&nbsp;⇆&nbsp;👤&nbsp;</button>
+                </span>
+                <span id="card-counter">1 / ${flashcardsData.length}</span>
+                <div class="speed-controls">
+                  <button class="mode-toggle" onclick="speakFlashcard()">🐇</button>🔊
+                  <button class="mode-toggle" onclick="speakFlashcard(1)">🐢</button>
+                </div>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <button class="nav-btn prev" onclick="changeCard(-1)">&Lang;</button>
+
+                <div class="card-container" id="card-anchor">
+                    <div class="flashcard" id="card-object" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front" id="card-front-content"></div>
+                        <div class="card-back" id="card-back-content"></div>
+                    </div>
+                </div>
+
+                <button class="nav-btn next" onclick="changeCard(1)">&Rang;</button>
+            </div>
+
+            <div class="card-controls">
+                <button class="action-btn easy" onclick="markAsLearned()">✔ Знаю</button>
+                <button class="action-btn hard" onclick="changeCard(1)">✘ Повторить</button>
+            </div>
+
+
       </div>
 
       <div id="screen-matching" class="game-screen" style="display: none;">

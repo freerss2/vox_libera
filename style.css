@@ -97,7 +97,7 @@ body {
     }
 }
 
-.completion-screen {
+#completion-screen {
     text-align: center;
 }
 
@@ -200,7 +200,8 @@ body {
 
 .nav-btn {
     position: absolute;
-    top: 50%;
+    top: 35px; 
+    opacity: 0.6;
     transform: translateY(-50%);
     z-index: 10;
     background: var(--primary-background);
@@ -215,8 +216,8 @@ body {
     user-select: none;
 }
 
-.nav-btn.prev { left: 0px; top: 165px; }
-.nav-btn.next { right: 0px; top: 165px; }
+.nav-btn.prev { left: 0px; }
+.nav-btn.next { right: 0px; }
 
 .action-btn {
     cursor: pointer;

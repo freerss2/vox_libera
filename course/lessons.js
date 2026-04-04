@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.7.3';
+const lesson_data_ver = '2.7.4';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {

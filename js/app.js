@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.7.9f';
+const app_code_ver = '2.7.9g';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -388,6 +388,7 @@ function renderScreen(screen_id) {
     if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
     document.getElementById('progress-container').style.display = 'none';
     document.getElementById('errors-panel').style.display = 'none';
+    document.getElementById('completion-screen').style.display = 'none';
     // hide the search line
     showHideSearch(0);
     updateTranscriptionDisplay();
@@ -449,7 +450,6 @@ let flashcardsData = [];
 let flashcardsMode = 't2u'; // Modes: 't2u' / 'u2t'
 
 function initFlashcards() {
-    const container = document.getElementById('flashcards-screen');
     const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
 
     // Deep copy for dynamic changes
@@ -461,38 +461,9 @@ function initFlashcards() {
     }
 
     cardIndex = 0;
-    container.innerHTML = `
-            <div class="flashcard-header">
-                <span class="mode-toggle-wrapper">
-                  <button class="mode-toggle" onclick="toggleStudyMode()">&nbsp;🌍&nbsp;⇆&nbsp;👤&nbsp;</button>
-                </span>
-                <span id="card-counter">1 / ${flashcardsData.length}</span>
-                <div class="speed-controls">
-                  <button class="mode-toggle" onclick="speakFlashcard()">🐇</button>🔊
-                  <button class="mode-toggle" onclick="speakFlashcard(1)">🐢</button>
-                </div>
-            </div>
-
-            <div class="flashcard-wrapper">
-                <button class="nav-btn prev" onclick="changeCard(-1)">&Lang;</button>
-
-                <div class="card-container" id="card-anchor">
-                    <div class="flashcard" id="card-object" onclick="this.classList.toggle('flipped')">
-                        <div class="card-front" id="card-front-content"></div>
-                        <div class="card-back" id="card-back-content"></div>
-                    </div>
-                </div>
-
-                <button class="nav-btn next" onclick="changeCard(1)">&Rang;</button>
-            </div>
-
-            <div class="card-controls">
-                <button class="action-btn easy" onclick="markAsLearned()">✔ Знаю</button>
-                <button class="action-btn hard" onclick="changeCard(1)">✘ Повторить</button>
-            </div>
-    `;
 
     updateCardContent();
+    document.getElementById('card-anchor').style='';
 }
 
 function speakFlashcard(slow=0) {
@@ -562,8 +533,6 @@ function markAsLearned() {
     const cardAnchor = document.getElementById('card-anchor');
     const currentItem = flashcardsData[cardIndex];
 
-    // updateStats(currentItem[1], true);
-
     // Animate learned card disappearing
     cardAnchor.style.transform = 'translateY(-100vh) rotate(10deg)';
     cardAnchor.style.opacity = '0';
@@ -579,7 +548,7 @@ function markAsLearned() {
             if (cardIndex >= flashcardsData.length) {
                 cardIndex = 0;
             }
-            // Сбрасываем позицию якоря и обновляем контент
+            // Reset anchor position and refresh the card content
             cardAnchor.style.transform = 'translateY(0) rotate(0)';
             cardAnchor.style.opacity = '1';
             updateCardContent();
@@ -588,12 +557,15 @@ function markAsLearned() {
 }
 
 function showCompletionMessage() {
-    const container = document.getElementById('flashcards-screen');
-    container.innerHTML = `
-        <div class="completion-screen">
-            <p>Все карточки в этом наборе изучены.</p>
-        </div>
-    `;
+    const counter = document.getElementById('card-counter');
+    counter.innerText =  shuffle(successCharacters)[0];
+
+    const container = document.getElementById('completion-screen');
+    container.innerHTML = i18n.t('main|flashcards_completed');
+    container.style.display = 'block';
+
+    document.getElementById('card-anchor').style.opacity = 0;
+
     showWin(100);
 }
 
