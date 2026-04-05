@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.8.0';
+const app_code_ver = '2.8.1';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -724,7 +724,7 @@ function showWin(acc) {
     const tipEl = document.getElementById('tipOfTheDay');
     const user_lang_feedback = i18n_ct(pick[0]);
     statusEl.innerHTML = `
-        <span class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}" style="font-size: 1.5em; display: block; ">${pick[1]}</span>
+        <span class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}" style="font-size: 1.5em; display: block; text-align: center;">${pick[1]}</span>
         <span class="user-text" dir="${userDir}" lang="${userLang}" style="font-size: 0.5em; color: #888; display: block; margin-top: 5px;">
             ${pick[2]} — ${user_lang_feedback}
         </span>
@@ -1001,6 +1001,7 @@ function renderSent(screen_id) {
     let extractPosition = 0;
     let speakEnable = 0;
     resultContainer.classList.remove('target-text');
+    resultContainer.classList.remove('user-text');
     let mainHint = '';
     if ( screenType == 'sent_u2t' ) {
         questionHtml = `<span lang="${userLang}" dir="${userDir}" class="user-text">${gameSentence[0]}</span>`;
@@ -1008,10 +1009,13 @@ function renderSent(screen_id) {
         extractPosition = 1;
         speakEnable = 1;
         resultContainer.classList.add('target-text');
+        resultContainer.dir = targetDir;
     } else if (screenType == 'sent_t2u') {
         questionHtml = gameSentence[1];
         questionHtml = `<span lang="${courseTargetLanguage}" dir="${targetDir}" class="target-text">${gameSentence[1]}</span>`;
         mainHint = `[${gameSentence[2]}]`;
+        resultContainer.classList.add('user-text');
+        resultContainer.dir = userDir;
     } else {
         questionHtml = `
             <button class="audio-main-btn" onclick="speakTargetLang('${gameSentence[1]}')">
@@ -1021,6 +1025,8 @@ function renderSent(screen_id) {
                 <span style="font-size: 50px;">🐌</span>
             </button>`;
         mainHint = `[${gameSentence[2]}]`;
+        resultContainer.classList.add('user-text');
+        resultContainer.dir = userDir;
         speakTargetLang(gameSentence[1]);
     }
     questionContainer.innerHTML = questionHtml;
@@ -1094,6 +1100,7 @@ function useBankWord(index) {
 // append word with given bankId to result display
 function appendWordToResult(bankWordId, word) {
   const resultContainer = document.getElementById('sent-result');
+  const screenType = getScreenType(settings.getCurrentScreenId());
   // append the word to dataset.words
   let wordsList = resultContainer.dataset.words ? resultContainer.dataset.words.split(' ') : [];
   const wordIndex = wordsList.length;
@@ -1105,7 +1112,21 @@ function appendWordToResult(bankWordId, word) {
   resultWord.dataset.bankWordId = bankWordId;
   resultWord.dataset.wordIndex = wordIndex;
   resultWord.id = 'result-' + bankWordId;
-  resultWord.className = 'sent-word sent-word-result';
+  let resultWordClass = 'sent-word sent-word-result';
+  let resultWordLang = '';
+  let resultWordDir = '';
+  if ( screenType == 'sent_u2t' ) {
+      resultWordClass += ' target-text';
+      resultWordLang = courseTargetLanguage;
+      resultWordDir = targetDir;
+  } else {
+      resultWordClass += ' user-text';
+      resultWordLang = userLang;
+      resultWordDir = userDir;
+  }
+  resultWord.className = resultWordClass;
+  resultWord.dir = resultWordDir;
+  resultWord.lang = resultWordLang;
   resultContainer.appendChild(resultWord);
   // set onclick
   resultWord.onclick = () => revokeBankWord(resultWord.id);
