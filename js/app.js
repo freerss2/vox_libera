@@ -1,11 +1,11 @@
 /*
- *   "Vox-Libera" Language learning.
- *   Main application JS engine
+ *   "Vox-Libera" - Learn Any Language
+ *   Application engine
  */
 
 "use strict";
 
-const app_code_ver = '2.8.1';
+const app_code_ver = '2.8.2';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -35,6 +35,7 @@ const settings = new Settings(
     }
 );
 
+// Global flag for special "final" game
 let finalGameForTopic = '';
 
 const hideWellLearnedElm = document.getElementById('hide-well-learned');
@@ -89,33 +90,23 @@ const langSpeakCodes = {
 const targetLangSpeakCode = (courseTargetLanguage in langSpeakCodes) ? langSpeakCodes[courseTargetLanguage] : '';
 
 // calculate user/target language directions (LTR/RTL)
-// TODO: move to i18n ?
-const rtlLanguages = ['ar', 'he', 'fa'];
-
-function langDirection(langCode) {
-  if (rtlLanguages.includes(langCode)) {
-    return 'RTL';
-  }
-  return 'LTR';  // Default
-}
-
 const targetDir = langDirection(courseTargetLanguage);
 const userDir = langDirection(userLang);
 
 // Screen types
 const SCREENS = [
-  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Словарь',              inputs: ['words'] },
-  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Предложения',          inputs: ['sentences'] },
-  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки слов',        inputs: ['words'] },
-  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Карточки предложений', inputs: ['sentences'] },
-  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Поиск пары',           inputs: ['words'] },
-  { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',   name: 'Викторина: 👤 → 🌍',   inputs: ['words', 'sentences'] },
-  { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',   name: 'Викторина: 🌍 → 👤',   inputs: ['words', 'sentences'] },
-  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Аудио-викторина',      inputs: ['words', 'sentences'] },
-  { id: 'sent_u2t',        shared: 0, excercise: 1, screen_type: 'sent_u2t',   name: 'Предложение: 👤 → 🌍', inputs: ['sentences'] },
-  { id: 'sent_t2u',        shared: 0, excercise: 1, screen_type: 'sent_t2u',   name: 'Предложение: 🌍 → 👤', inputs: ['sentences'] },
-  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Аудио-Предложение',    inputs: ['sentences'] },
-  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Итог темы',            inputs: ['words', 'sentences'] }
+  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Dictionary',        inputs: ['words'] },
+  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Sentences',         inputs: ['sentences'] },
+  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Flashcards words',  inputs: ['words'] },
+  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Flashcards sent',   inputs: ['sentences'] },
+  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Matching',          inputs: ['words'] },
+  { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',   name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
+  { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',   name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
+  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
+  { id: 'sent_u2t',        shared: 0, excercise: 1, screen_type: 'sent_u2t',   name: 'Sentence: 👤 → 🌍', inputs: ['sentences'] },
+  { id: 'sent_t2u',        shared: 0, excercise: 1, screen_type: 'sent_t2u',   name: 'Sentence: 🌍 → 👤', inputs: ['sentences'] },
+  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Audio-Sentence',    inputs: ['sentences'] },
+  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Topic final',       inputs: ['words', 'sentences'] }
 ];
 
 // Fisher–Yates shuffle
@@ -182,7 +173,7 @@ function i18n_ct(text) {
   return translation;
 }
 
-// Apply topic to GUI
+// Apply topic to displayed elements
 // - title in menu
 // - completion status
 // - show/hide nodes in excercises path
@@ -238,9 +229,7 @@ document.querySelectorAll('.drawer button').forEach(btn => {
 function initMenu() {
     // 1. Populate list of screens
     renderDrawer();
-    // 2. Display topic title
-    applyTopicToDisplay();
-    // 3. Read and apply settings
+    // 2. Read and apply settings
     const savedDifficulty = settings.getGameDifficulty()
     setGamesDifficulty(savedDifficulty);
     const radioToSelect = document.getElementById(`diff-${savedDifficulty}`);
@@ -456,9 +445,11 @@ function initGameEngine(screen_id) {
     }
 }
 
-// extract from learned item fields:
-// string in user language, string in learned language, transliteration
-function decodeLearnedItem(item) {
+// extract fields from learning item:
+//  - string in user language
+//  - string in learned language
+//  - transliteration
+function decodeLearnItem(item) {
   const user_lang = i18n_ct(item[0]);
   const translit = item[2] || '';
   return [user_lang, item[1], translit];
@@ -468,7 +459,7 @@ function decodeLearnedItem(item) {
 
 let cardIndex = 0;
 let flashcardsData = [];
-let flashcardsMode = 't2u'; // Modes: 't2u' / 'u2t'
+let flashcardsMode = 't2u'; // Modes: 't2u' target-to-user / 'u2t' user-to-target
 
 function initFlashcards() {
     const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
@@ -669,8 +660,8 @@ function checkPairMatch() {
     if (l.dataset.id === r.dataset.id) {
         scrollToTop('app-container');
         updateStats(targetStr, true);
-        triggerSuccessEffect(r);
-        triggerSuccessEffect(l);
+        triggerSuccessEffect(r, true);
+        triggerSuccessEffect(l, true);
         document.getElementById('hint-panel').textContent = i18n.t("main|hint-panel");
 
         l.classList.add('correct'); r.classList.add('correct');
@@ -933,7 +924,7 @@ function handleQuizChoice(selectedStr, btn) {
 
         updateStats(quizCorrectStr[1], firstAttempt);
         if (firstAttempt) {
-          triggerSuccessEffect(btn);
+          triggerSuccessEffect(btn, true);
         }
         gameSet.currentQuestionIndex++;
         const percent = (gameSet.currentQuestionIndex / gameSet.totalQuestions) * 100;
@@ -965,7 +956,7 @@ function handleQuizChoice(selectedStr, btn) {
     }
 }
 
-// ---------------------------------------------- sentences build
+// ---------------------------------------------- build-a-sentence
 
 /*
     { id: 'sent_u2t', name: 'Sentence: user → target' },
@@ -1175,87 +1166,7 @@ function checkSent() {
   showErrorCount(errors);
 }
 
-// Show/hide the "search" bar
-function showHideSearch(show) {
-    const searchBar = document.getElementById('searchBar');
-    searchBar.style.display = show ? 'flex' : 'none';
-
-    if (!show) {
-        document.getElementById('dictSearch').value = '';
-    }
-    filterDictionary();
-}
-
-// filtering by search pattern
-function filterDictionary() {
-    const input = document.getElementById('dictSearch');
-    const filter = input.value.toLowerCase();
-    const cards = document.getElementsByClassName('dictionaryCard');
-
-    document.getElementById('clearSearch').style.display = input.value ? 'block' : 'none';
-    for (let i = 0; i < cards.length; i++) {
-        const cardText = cards[i].textContent.toLowerCase();
-
-        if (cardText.includes(filter)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
-}
-
-function clearInput() {
-    const input = document.getElementById('dictSearch');
-    input.value = '';
-    filterDictionary();
-    document.getElementById('clearSearch').style.display = 'none';
-}
-
-// application state setting
-let isMuted = false;
-let currentZoom = 1.0;
-
-function toggleMute() {
-    isMuted = !isMuted;
-    const btn = document.getElementById('muteBtn');
-    btn.textContent = isMuted ? "‏🔇" : "‏🔊";
-
-    // Immediate cancel of current speech when selected "mute"
-    if (isMuted && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-    }
-}
-function speakTargetLangSlow(text) {
-  speakTargetLang(text, 0.5);
-}
-
-function speakTargetLang(text, rate=1) {
-    if (isMuted) return;
-    if (! targetLangSpeakCode) return;
-    // Check, whether broser supports this API
-    if ('speechSynthesis' in window) {
-        // Cancel any in-progress speech
-        window.speechSynthesis.cancel();
-
-        const msg = new SpeechSynthesisUtterance();
-        msg.text = text;
-        msg.lang = targetLangSpeakCode; // Language code
-        msg.rate = rate;    // Speed rate
-        msg.pitch = 1;      // Pitch
-
-        window.speechSynthesis.speak(msg);
-    }
-}
-
-function changeZoom(delta) {
-    currentZoom = Math.min(Math.max(0.8, currentZoom + delta), 1.8);
-    document.documentElement.style.setProperty('--app-scale', currentZoom );
-}
-
-function getGameInputTypes(screen_id) {
-  const record = getScreenRecord(screen_id);
-  return record.inputs;
-}
+// ------------------------------------------ dictionary
 
 // render dictionary according to selected topic
 function showDictionary() {
@@ -1308,6 +1219,89 @@ function showDictionary() {
     scrollToTop('screen-dictionary');
 }
 
+// Show/hide the "search" bar
+function showHideSearch(show) {
+    const searchBar = document.getElementById('searchBar');
+    searchBar.style.display = show ? 'flex' : 'none';
+
+    if (!show) {
+        document.getElementById('dictSearch').value = '';
+    }
+    filterDictionary();
+}
+
+// filtering by search pattern
+function filterDictionary() {
+    const input = document.getElementById('dictSearch');
+    const filter = input.value.toLowerCase();
+    const cards = document.getElementsByClassName('dictionaryCard');
+
+    document.getElementById('clearSearch').style.display = input.value ? 'block' : 'none';
+    for (let i = 0; i < cards.length; i++) {
+        const cardText = cards[i].textContent.toLowerCase();
+
+        if (cardText.includes(filter)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+function clearInput() {
+    const input = document.getElementById('dictSearch');
+    input.value = '';
+    filterDictionary();
+    document.getElementById('clearSearch').style.display = 'none';
+}
+
+// ---------------------------------------- application state setting
+
+let isMuted = false;
+let currentZoom = 1.0;
+
+function toggleMute() {
+    isMuted = !isMuted;
+    const btn = document.getElementById('muteBtn');
+    btn.textContent = isMuted ? "‏🔇" : "‏🔊";
+
+    // Immediate cancel of current speech when selected "mute"
+    if (isMuted && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+}
+function speakTargetLangSlow(text) {
+  speakTargetLang(text, 0.5);
+}
+
+function speakTargetLang(text, rate=1) {
+    if (isMuted) return;
+    if (! targetLangSpeakCode) return;
+    // Check, whether broser supports this API
+    if ('speechSynthesis' in window) {
+        // Cancel any in-progress speech
+        window.speechSynthesis.cancel();
+
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        msg.lang = targetLangSpeakCode; // Language code
+        msg.rate = rate;    // Speed rate
+        msg.pitch = 1;      // Pitch
+
+        window.speechSynthesis.speak(msg);
+    }
+}
+
+function changeZoom(delta) {
+    currentZoom = Math.min(Math.max(0.8, currentZoom + delta), 1.8);
+    document.documentElement.style.setProperty('--app-scale', currentZoom );
+}
+
+function getGameInputTypes(screen_id) {
+  const record = getScreenRecord(screen_id);
+  return record.inputs;
+}
+
 // universal collector for topic data (including virtual "all")
 // external parameter: finalGameForTopic
 function getTopicData(inputTypes, hideWellLearned, needShuffle) {
@@ -1351,7 +1345,7 @@ function getTopicData(inputTypes, hideWellLearned, needShuffle) {
       });
     }
   }
-  currentData.forEach((item, index) => { currentData[index] = decodeLearnedItem(item); });
+  currentData.forEach((item, index) => { currentData[index] = decodeLearnItem(item); });
 
   if ( hideWellLearned != 0 ) {
     // hide well-learned:
@@ -1490,7 +1484,8 @@ function resetTopicStats() {
   }
 }
 
-// Do we need this?
+// reset all statistics
+// (TODO: must get a confirmation) /!\ 
 function resetStats() {
   setStats({});
   // reload dictionary
@@ -1631,20 +1626,24 @@ function setGamesDifficulty(level) {
 const successCharacters = [
   '✨', '🌟', '🎊', '🎉', '🏆', '🎖️', '💎', '💡', '🚀', '⚡', '🎈', '🔥'];
 
-function triggerSuccessEffect(button) {
-    // button.classList.add('correct-animation');
+function triggerSuccessEffect(element, animateBorder=false) {
+    if (animateBorder)
+        element.classList.add('correct-animation');
 
     // animate random success icons
     const sparkle = document.createElement('span');
     sparkle.innerText = shuffle(successCharacters)[0]+shuffle(successCharacters)[1]+shuffle(successCharacters)[2];
     sparkle.className = 'success-sparkle';
-    button.appendChild(sparkle);
+    element.appendChild(sparkle);
 
     setTimeout(() => {
-        // button.classList.remove('correct-animation');
+        if (animateBorder)
+            element.classList.remove('correct-animation');
         sparkle.remove();
     }, 700);
 }
+
+// Map keyboard shortcuts
 
 document.addEventListener('keydown', (event) => {
     // avoid intervention for active inputs
@@ -1702,8 +1701,11 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// On page load initialize the menu and selected screen
+// On page load:
+//  - initialize the menu
+//  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     renderCurrentScreen();
 });
+

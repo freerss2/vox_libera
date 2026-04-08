@@ -1,6 +1,7 @@
 /*
 ** Settings storage
-** Implemented as based on local storage, but could be seamlessly moved to remote back-end storage
+** Implemented as based on local storage
+** Could be seamlessly moved to remote back-end storage
 */
 
 class Settings {
@@ -33,8 +34,6 @@ class Settings {
                     else       value = '{}';
                 }
                 this.storage.setItem(storageItemName, value);
-                // DEBUG:
-                // console.log(`Setting updated: ${name} = ${value}`);
             };
 
             // 3. Generate getter method

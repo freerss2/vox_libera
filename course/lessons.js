@@ -96,7 +96,7 @@ const topics = {
         "madina"
       ],
       [
-        "country / town",
+        "country",
         "بلد",
         "balad"
       ],

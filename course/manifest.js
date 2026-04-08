@@ -69,7 +69,7 @@ const manifest = {
   "mrs.": "госпожа",
   "miss": "девушка",
   "city": "город",
-  "country / town": "страна / город",
+  "country": "страна",
   "to live": "жить",
   "to work": "работать",
   "congrats!": "поздравляю!",

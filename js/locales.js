@@ -52,6 +52,8 @@ const locales = {
     },
     "main": {
       "flashcards_completed": "You learned all cards in this set.",
+      "card-learned": "✔  Know it",
+      "card-repeat": "✘ Repeat",
       "search_hint": "Search...",
       "errors-count": "Errors: ",
       "go_forward": "GO FORWARD ",
@@ -113,6 +115,8 @@ const locales = {
     },
     "main": {
       "flashcards_completed": "Все карточки в этом наборе изучены.",
+      "card-learned": "✔  Знаю",
+      "card-repeat": "✘ Повторить",
       "search_hint": "Поиск...",
       "errors-count": "Ошибки: ",
       "go_forward": "ВПЕРЁД ",
