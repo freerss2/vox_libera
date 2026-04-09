@@ -54,13 +54,15 @@ const locales = {
       "flashcards_completed": "You learned all cards in this set.",
       "card-learned": "✔  Know it",
       "card-repeat": "✘ Repeat",
+      "quiz-giveup-button": "✘ Give up",
       "search_hint": "Search...",
       "errors-count": "Errors: ",
       "go_forward": "GO FORWARD ",
       "hint-panel": "Click to see transcr",
       "sum-repeat": " REPEAT",
       "sum-next": "NEXT ",
-      "check": " Check "
+      "sent-giveup-btn": "✘ Give up",
+      "check": " ✔  Check "
     }
   },
   "ru": {
@@ -117,13 +119,15 @@ const locales = {
       "flashcards_completed": "Все карточки в этом наборе изучены.",
       "card-learned": "✔  Знаю",
       "card-repeat": "✘ Повторить",
+      "quiz-giveup-button": "✘ Сдаюсь",
       "search_hint": "Поиск...",
       "errors-count": "Ошибки: ",
       "go_forward": "ВПЕРЁД ",
       "hint-panel": "Транскрипция по клику",
       "sum-repeat": " ПОВТОРИТЬ",
       "sum-next": "ДАЛЬШЕ ",
-      "check": " Проверить "
+      "sent-giveup-btn": "✘ Сдаюсь",
+      "check": " ✔  Проверить "
     }
   }
 };

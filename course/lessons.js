@@ -849,7 +849,7 @@ const topics = {
       ],
       [
         "dessert",
-        "حلو",
+        "الحلو",
         "al-hilu"
       ],
       [

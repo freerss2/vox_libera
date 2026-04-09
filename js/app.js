@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.8.2';
+const app_code_ver = '2.8.3';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -196,9 +196,11 @@ function applyTopicToDisplay() {
   const nodes = document.getElementsByClassName('exercise-node');
   [...nodes].forEach(node => {
       const record = getScreenRecord(node.dataset.id);
-      let display = 'flex';
-      if (settings.getCurrentTopic() == GENERAL_TOPIC_ID && record.shared == 0) display = 'none';
-      node.style.display = display;
+      if (settings.getCurrentTopic() == GENERAL_TOPIC_ID && record.shared == 0) {
+        node.classList.add('hidden');
+      } else {
+        node.classList.remove('hidden');
+      }
     }
   );
 }
@@ -389,16 +391,16 @@ function renderScreen(screen_id) {
     }
     // 1. Hide all screen-related DOM elements
     const screens = document.querySelectorAll('.game-screen');
-    screens.forEach(s => s.style.display = 'none');
+    screens.forEach(s => s.classList.add('hidden'));
     // including different panels
     document.getElementById('winScreen').classList.add('hidden');
     document.getElementById('resultsModal').classList.add('hidden');
     // initilize hint panel
     const hintPanelElm = document.getElementById('hint-panel');
     if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
-    document.getElementById('progress-container').style.display = 'none';
-    document.getElementById('errors-panel').style.display = 'none';
-    document.getElementById('completion-screen').style.display = 'none';
+    document.getElementById('progress-container').classList.add('hidden');
+    document.getElementById('errors-panel').classList.add('hidden');
+    document.getElementById('completion-screen').classList.add('hidden');
     // hide the search line
     showHideSearch(0);
     updateTranscriptionDisplay();
@@ -411,7 +413,7 @@ function renderScreen(screen_id) {
     if (screenType == 'flashcards') { screenId = 'flashcards-screen'; }
     const targetScreen = document.getElementById(screenId);
     if (targetScreen) {
-        targetScreen.style.display = 'block';
+        targetScreen.classList.remove('hidden');
     }
 
     // 3. Initialize screen according to type
@@ -568,7 +570,7 @@ function showCompletionMessage() {
     const container = document.getElementById('completion-screen');
     const success = shuffle(successCharacters)[0];
     container.innerHTML = success + i18n.t('main|flashcards_completed');
-    container.style.display = 'block';
+    container.classList.remove('hidden');
 
     document.getElementById('flashcards-main').style.display = 'none';
 
@@ -598,8 +600,8 @@ function renderMatchingGame() {
     matches = 0;
 
     // Reset display elements
-    document.getElementById('progress-container').style.display = 'block';
-    document.getElementById('errors-panel').style.display = 'block';
+    document.getElementById('progress-container').classList.remove('hidden');
+    document.getElementById('errors-panel').classList.remove('hidden');
     showErrorCount(0);
     updateProgress(0);
 
@@ -724,7 +726,7 @@ function showWin(acc) {
     tipEl.innerHTML = tipOfTheDay();
 
     // hide the game board and visualize the popup
-    document.getElementById('screen-matching').style.display = 'none';
+    document.getElementById('screen-matching').classList.add('hidden'); // ?? why ??
     document.getElementById('accuracyStat').textContent = `${acc}%`;
     document.getElementById('winScreen').classList.remove('hidden');
 }
@@ -848,6 +850,7 @@ function renderQuizGame(screen_id) {
         } else {
             btn.innerHTML = `<span ${userTags}>${word[0]}</span>`;
         }
+        btn.dataset.value = word[1];
         btn.dataset.translit = word[2];
         btn.onclick = () => handleQuizChoice(word, btn);
         optionsGrid.appendChild(btn);
@@ -894,8 +897,8 @@ function startNewQuizSet() {
     gameSet.isSetRunning = true;
     firstAttempt = true;
 
-    document.getElementById('progress-container').style.display = 'block';
-    document.getElementById('errors-panel').style.display = 'block';
+    document.getElementById('progress-container').classList.remove('hidden');
+    document.getElementById('errors-panel').classList.remove('hidden');
     showErrorCount(0);
     updateProgress(0);
 
@@ -906,6 +909,18 @@ function finishSet() {
     // show summary
     const acc = Math.round((gameSet.totalQuestions / (gameSet.totalQuestions + gameSet.errors)) * 100);
     showWin(acc);
+}
+
+// user decided to give up:
+//  - show the right card with a highlighted border
+//  - mark this attempt as failed
+function quizGiveup() {
+  [...document.getElementsByClassName('quiz-card')].forEach(e => {
+    if (e.dataset.value === quizCorrectStr[1]) {
+      e.classList.add('quiz-card-giveup');
+    }
+  });
+  updateStats(quizCorrectStr[1], false);
 }
 
 // Callback for click on quiz button
@@ -965,7 +980,7 @@ function handleQuizChoice(selectedStr, btn) {
 */
 function renderSent(screen_id) {
     const screenType = getScreenType(screen_id);
-    document.getElementById('errors-panel').style.display = 'block';
+    document.getElementById('errors-panel').classList.remove('hidden');
     // 1. get topic data
     const inputTypes = ['sentences'];
     let allStrs = getTopicData(inputTypes, settings.getHideWellLearned(), false);
@@ -1070,6 +1085,35 @@ function extractUniqueWordsFromData(allData, pos) {
    realWords = realWords.filter(w => !w.includes(')')).filter(w => !w.includes('(')).filter(w => !w.includes('/'));
    let allWords = [...new Set( realWords )];
    return shuffle(allWords);
+}
+
+// sentence "give up" action:
+//  - remove all elements of class "sent-word-result"
+//  - build a sequence of words from questionContainer.dataset.expected
+//  - update statistics as "failed"
+//  - increment errors and show the updated errors count
+function giveupSent() {
+    const questionContainer = document.getElementById('sent-question-container');
+    [...document.getElementsByClassName('sent-word-result')].forEach(w => {
+        w.click();
+    });
+    const wordMap = {};
+    const bankElements = document.querySelectorAll('[id^="bank-word-"]');
+    bankElements.forEach(el => {
+        const text = el.innerText.trim();
+        if (!wordMap[text]) wordMap[text] = [];
+        wordMap[text].push(el.id);
+    });
+    const expectedWords = questionContainer.dataset.expected.trim().split(/\s+/);
+    expectedWords.forEach(word => {
+        if (wordMap[word] && wordMap[word].length > 0) {
+            const id = wordMap[word].shift();
+            document.getElementById(id).click();
+        }
+    });
+    updateStats(questionContainer.dataset.expected, false);
+    errors++;
+    showErrorCount(errors);
 }
 
 // onClick for bottom card buttons: move word to the end of middle set
