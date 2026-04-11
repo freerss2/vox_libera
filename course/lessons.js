@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.7.4';
+const lesson_data_ver = '2.8.0';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
@@ -11,7 +11,7 @@ const topics = {
     "name": "Tell about yourself 1",
     "words": [
       [
-        "nice to meet you",
+        "pleased to meet you",
         "تشرفنا",
         "tasharrafna"
       ],
@@ -1467,17 +1467,17 @@ const topics = {
         "sahtayn wa afiya"
       ],
       [
-        "be careful / watch out",
+        "be careful",
         "دير بالك",
         "dir balak"
       ],
       [
-        "please / you are welcome",
+        "you are welcome",
         "عفواً",
         "afwan"
       ],
       [
-        "be so kind / please",
+        "be so kind",
         "لو سمحت",
         "law samaht"
       ],
@@ -1512,12 +1512,12 @@ const topics = {
         "truh wa tirja' bis-salama"
       ],
       [
-        "don't worry / no need to worry",
+        "no need to worry",
         "ما في داعي للقلق",
         "ma fi da'i lil-qalaq"
       ],
       [
-        "please / go ahead / take it",
+        "here you go",
         "تفضل",
         "tafaddal"
       ],
@@ -1527,7 +1527,7 @@ const topics = {
         "ala rasi"
       ],
       [
-        "it doesn't matter / never mind",
+        "it doesn't matter",
         "مش مشكلة",
         "mish mushkila"
       ],
@@ -1540,6 +1540,31 @@ const topics = {
         "thanks (reply to mabruk)",
         "الله يبارك فيك",
         "allah yibarik fik"
+      ],
+      [
+        "as luck would have it",
+        "مثل الحظ السيء",
+        "mitl al-hazz as-sayyi"
+      ],
+      [
+        "fortunately",
+        "من حسن الحظ",
+        "min husn al-hazz"
+      ],
+      [
+        "by no means / no way",
+        "مستحيل",
+        "mustahil"
+      ],
+      [
+        "definitely / for sure",
+        "أكيد",
+        "akid"
+      ],
+      [
+        "maybe / perhaps",
+        "ممكن",
+        "mumkin"
       ]
     ],
     "sentences": [
@@ -1622,6 +1647,46 @@ const topics = {
         "it's my pleasure, no need to thank",
         "على راسي ولا يهمك",
         "ala rasi wala yihimmak"
+      ],
+      [
+        "as luck would have it, the bus is late",
+        "مثل الحظ السيء الباص متأخر",
+        "mitl al-hazz as-sayyi al-bas mut'akhir"
+      ],
+      [
+        "fortunately, the passport is here",
+        "من حسن الحظ الجواز هنا",
+        "min husn al-hazz al-jawaz huna"
+      ],
+      [
+        "no way, this is impossible",
+        "مستحيل هذا مش ممكن",
+        "mustahil hadha mish mumkin"
+      ],
+      [
+        "i will definitely come today",
+        "أكيد بجي اليوم",
+        "akid baji al-yawm"
+      ],
+      [
+        "maybe the coffee is hot",
+        "ممكن القهوة سخنة",
+        "mumkin al-qahwa sukhna"
+      ],
+      [
+        "definitely, the food is tasty",
+        "أكيد الأكل زاكي",
+        "akid al-akl zaki"
+      ],
+      [
+        "as luck would have it, the city is far",
+        "مثل الحظ السيء البلد بعيدة",
+        "mitl al-hazz as-sayyi al-balad ba'ida"
+      ],
+      [
+        "fortunately, the hotel is clear",
+        "من حسن الحظ الفندق نظيف",
+        "min husn al-hazz al-funduq nazif"
       ]
     ]
   }
