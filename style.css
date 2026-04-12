@@ -369,6 +369,22 @@ body {
     margin-top: 20px;
 }
 
+.final-progress-bar {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.final-progress-bar-stage {
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    text-align: center;
+    background-color: var(--primary-color);
+    opacity: 50%;
+}
+
 .card {
     flex: 1 1 45%; 
     min-width: 140px; 

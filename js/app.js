@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.8.3';
+const app_code_ver = '2.8.4';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -59,9 +59,9 @@ Object.keys(locales).forEach(langCode => {
 langSelect.value = userLang;
 
 const difficultySettings = {
-    easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5},
-    medium: { itemsPerRound: 6, totalChoices: 6, totalQuestions: 7,  sentenceFactor: 1.7},
-    hard:   { itemsPerRound: 7, totalChoices: 8, totalQuestions: 9,  sentenceFactor: 1.9}
+    easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5, finalGoal: 5},
+    medium: { itemsPerRound: 6, totalChoices: 6, totalQuestions: 7,  sentenceFactor: 1.7, finalGoal: 7},
+    hard:   { itemsPerRound: 7, totalChoices: 8, totalQuestions: 9,  sentenceFactor: 1.9, finalGoal: 9}
 };
 
 // Auto-fix for wrong inputs
@@ -314,8 +314,10 @@ function renderCurrentScreen() {
   showActiveExerciseInMenu();
   applyTopicToDisplay();
 
+  const screen_id = settings.getCurrentScreenId();
+  initFinalProgress(screen_id);
   // Render screen according to current type
-  renderScreen(settings.getCurrentScreenId());
+  renderScreen(screen_id);
 }
 
 // try to find topic key name by given index
@@ -371,6 +373,61 @@ function showScreenTitle() {
 
     let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
     document.getElementById('title').textContent = `${topicTitle}: ${screenName}`;
+}
+
+var finalProgress = 0;
+
+// callback for game start
+function initFinalProgress(screen_id) {
+    const finalProgressElm = document.getElementById('finalProgress');
+    if (screen_id == 'final') {
+        finalProgressElm.classList.remove('hidden');
+        if (finalProgress == 0) {
+          // initialize progress display
+          finalProgressElm.innerHTML = '';
+          for (var i=0; i<gameSettings.finalGoal; i++) {
+            const stageElm = document.createElement('span');
+            stageElm.innerHTML = '&nbsp;';
+            stageElm.className = 'final-progress-bar-stage';
+            stageElm.id = `final-progress-stage-${i}`;
+            finalProgressElm.appendChild(stageElm);
+          }
+        }
+    } else {
+        finalProgress = 0;
+        // hide progress display
+        if (! finalProgressElm.classList.contains('hidden') ){
+          finalProgressElm.classList.add('hidden');
+        }
+    }
+}
+
+// callback for game completion
+// @return: 1 when need to show this game summary
+function updateFinalProgress(screen_id) {
+    const finalProgressElm = document.getElementById('finalProgress');
+    if (screen_id != 'final') {
+      return 1;
+    }
+    // final round - move to next
+    finalProgress += 1;
+    if (finalProgress >= gameSettings.finalGoal) {
+        finalProgress = 0;
+        if (! finalProgressElm.classList.contains('hidden') ){
+          finalProgressElm.classList.add('hidden');
+        }
+        // show final summary
+        showTopicResults();
+        return 0;
+    }
+    // show progress at new stage
+    for (var i=0; i<finalProgress; i++) {
+        document.getElementById(`final-progress-stage-${i}`).innerHTML = '✨';
+    }
+    // show next game
+    renderCurrentScreen();
+    // no need to show popup
+    return 0;
 }
 
 // Render screen/game
@@ -703,6 +760,10 @@ function showErrorCount(errors) {
 
 // Show completion summary per round
 function showWin(acc) {
+
+    // for final rounds increment the counter and check did we completed it
+    const showSummary = updateFinalProgress(settings.getCurrentScreenId());
+    if (! showSummary) return;
 
     // Calculate the success rate
     let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
