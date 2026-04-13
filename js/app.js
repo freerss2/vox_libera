@@ -5,7 +5,7 @@
 
 "use strict";
 
-const app_code_ver = '2.8.4';
+const app_code_ver = '2.8.5';
 
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
@@ -74,7 +74,9 @@ const course_locales = manifest['course_locales'];
 if (course_locales) {
   Object.keys(course_locales).forEach(langCode => {
     if (locales[langCode]) {
-      locales[langCode]['cl'] = course_locales[langCode];
+      const langLocales = course_locales[langCode];
+      locales[langCode]['cl'] =
+          {...langLocales["interface"], ...langLocales["content"]};
     }
   })
 }
@@ -1166,12 +1168,17 @@ function giveupSent() {
         wordMap[text].push(el.id);
     });
     const expectedWords = questionContainer.dataset.expected.trim().split(/\s+/);
+    // disable Speak temporary
+    const saveIsMuted = isMuted;
+    isMuted = true;
+    // TODO: add animation?
     expectedWords.forEach(word => {
         if (wordMap[word] && wordMap[word].length > 0) {
             const id = wordMap[word].shift();
             document.getElementById(id).click();
         }
     });
+    isMuted = saveIsMuted;
     updateStats(questionContainer.dataset.expected, false);
     errors++;
     showErrorCount(errors);

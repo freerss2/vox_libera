@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.8.0';
+const lesson_data_ver = '2.8.1';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
@@ -1687,6 +1687,239 @@ const topics = {
         "fortunately, the hotel is clear",
         "من حسن الحظ الفندق نظيف",
         "min husn al-hazz al-funduq nazif"
+      ]
+    ]
+  },
+  "studying_language_1": {
+    "index": 9,
+    "name": "Studying language 1",
+    "words": [
+      [
+        "self",
+        "لحالي",
+        "la-hali"
+      ],
+      [
+        "application",
+        "تطبيق",
+        "tatbiq"
+      ],
+      [
+        "grammar",
+        "قواعد",
+        "qawa'id"
+      ],
+      [
+        "accent",
+        "لهجة",
+        "lahja"
+      ],
+      [
+        "communication",
+        "تواصل",
+        "tawasul"
+      ],
+      [
+        "vocabulary",
+        "قاموس كلمات",
+        "qamus kalimat"
+      ],
+      [
+        "mistake",
+        "غلط",
+        "ghalat"
+      ],
+      [
+        "news",
+        "أخبار",
+        "akhbar"
+      ],
+      [
+        "slowly",
+        "على مهلك",
+        "ala mahlak"
+      ],
+      [
+        "correcting",
+        "تصليح",
+        "taslih"
+      ],
+      [
+        "study",
+        "بدرس",
+        "badrus"
+      ],
+      [
+        "understand",
+        "بفهم",
+        "bafham"
+      ],
+      [
+        "speak",
+        "بحكي",
+        "bahki"
+      ],
+      [
+        "explain",
+        "يشرح",
+        "yishrah"
+      ],
+      [
+        "to start",
+        "بدأت",
+        "badat"
+      ],
+      [
+        "to need",
+        "لازم",
+        "lazim"
+      ],
+      [
+        "to correct",
+        "يصلح",
+        "yisallih"
+      ],
+      [
+        "to try",
+        "بحاول",
+        "bahawal"
+      ],
+      [
+        "to read",
+        "بقرأ",
+        "baqra"
+      ],
+      [
+        "to connect",
+        "بيجمع",
+        "bijma"
+      ],
+      [
+        "two years",
+        "سنتين",
+        "sanatayn"
+      ],
+      [
+        "word",
+        "كلمة",
+        "kalima"
+      ],
+      [
+        "words",
+        "كلمات",
+        "kalimat"
+      ],
+      [
+        "age",
+        "عمر",
+        "umr"
+      ],
+      [
+        "barrier",
+        "حاجز",
+        "hajaz"
+      ],
+      [
+        "correctly",
+        "صح",
+        "sah"
+      ],
+      [
+        "sometimes",
+        "مرات",
+        "marrat"
+      ]
+    ],
+    "sentences": [
+      [
+        "i study the language on my own",
+        "بدرس اللغة لحالي",
+        "badrus al-lugha la-hali"
+      ],
+      [
+        "i have been studying for two years",
+        "بدرس من سنتين",
+        "badrus min sanatayn"
+      ],
+      [
+        "i started with a phone app",
+        "بدأت بتطبيق على التلفون",
+        "badat bi-tatbiq ala at-talafon"
+      ],
+      [
+        "sometimes i lack words",
+        "مرات بنقصني كلمات",
+        "marrat binqusni kalimat"
+      ],
+      [
+        "i have weak grammar knowledge",
+        "قواعدي ضعيفة",
+        "qawa'idi da'ifa"
+      ],
+      [
+        "can you explain this word?",
+        "ممكن تشرح هذه الكلمة",
+        "mumkin tishrah hadhihi al-kalima"
+      ],
+      [
+        "how to say it correctly?",
+        "كيف بنحكيها صح",
+        "kayf binhkiha sah"
+      ],
+      [
+        "what kind of accent do i have?",
+        "كيف لهجتي",
+        "kayf lahjati"
+      ],
+      [
+        "i study to communicate",
+        "بدرس عشان أتواصل",
+        "badrus ashan atwasal"
+      ],
+      [
+        "it is never too late to learn",
+        "العمر مش حاجز للدراسة",
+        "al-umr mish hajaz lid-dirasa"
+      ],
+      [
+        "language connects people",
+        "اللغة بتجمع الناس",
+        "al-lugha bitijma' an-nas"
+      ],
+      [
+        "speak slower",
+        "احكي على مهلك",
+        "ihki ala mahlak"
+      ],
+      [
+        "i did not understand everything",
+        "ما فهمت كل شيء",
+        "ma fahimt kull shi"
+      ],
+      [
+        "i speak like a child",
+        "بحكي مثل الولد الصغير",
+        "bahki mitl al-walad as-saghir"
+      ],
+      [
+        "i need to expand my vocabulary",
+        "لازم أزيد كلماتي",
+        "lazim azid kalimati"
+      ],
+      [
+        "i try to read the news",
+        "بحاول أقرأ الأخبار",
+        "bahawal aqra al-akhbar"
+      ],
+      [
+        "it is hard to understand by ear",
+        "صعب أفهم سماعي",
+        "sa'b afham sima'i"
+      ],
+      [
+        "please correct my mistakes",
+        "صلح لي أغلاطي لو سمحت",
+        "sallih-li aghlati law samaht"
       ]
     ]
   }
