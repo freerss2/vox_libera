@@ -51,6 +51,8 @@ const locales = {
       "final":           "Topic final"
     },
     "main": {
+      "app-name": "Vox Libera - learn languages FREE",
+      "app-description": "This is a FREE open-source application for students and for language enthusiasts. The course consists of lessons divided into topics. First, you're introduced to the vocabulary and expressions of the new topic. This is followed by a series of games and exercises. The final game trains all skills together. Aim to achieve the highest success rate before moving on to the next topic.",
       "flashcards_completed": "You learned all cards in this set.",
       "card-learned": "✔  Know it",
       "card-repeat": "✘ Repeat",
@@ -116,6 +118,8 @@ const locales = {
       "final":           "Итог темы"
     },
     "main": {
+      "app-name": "Vox Libera - учи языки СВОБОДНО",
+      "app-description": "Это бесплатное приложение с открытым исходным кодом для студентов и любителей языков. Курс состоит из уроков разбитых по темам. Сначала предлагается ознакомиться со словами и выражениями новой темы. После этого идёт серия игр-упражнений. Финальная игра тренирует все навыки вместе. Старайся добиться максимального процента успеха перед переходом к следующей теме.",
       "flashcards_completed": "Все карточки в этом наборе изучены.",
       "card-learned": "✔  Знаю",
       "card-repeat": "✘ Повторить",

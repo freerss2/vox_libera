@@ -87,7 +87,8 @@ i18n.setLanguage(userLang);
 // init speaking engine
 const courseTargetLanguage = manifest.target_language;
 const langSpeakCodes = {
-  "ar": "ar-EG" // Language code (ar-SA - arabic Saudi)
+  "ar": "ar-EG", // Language code (ar-SA - arabic Saudi)
+  "he": "he-IL"
   };
 const targetLangSpeakCode = (courseTargetLanguage in langSpeakCodes) ? langSpeakCodes[courseTargetLanguage] : '';
 
@@ -1813,11 +1814,34 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+// Sources for information:
+// manifest['metadata'] title, description, prerequisites, goals
+function renderAboutScreen() {
+  const aboutElm = document.getElementById('aboutScreen');
+  const manifestMetadata = manifest['metadata'];
+  document.getElementById('aboutTitle').innerText = manifestMetadata.title;
+  document.getElementById('aboutContent').innerText = manifestMetadata.description;
+  aboutElm.classList.remove('hidden');
+}
+
+function closeAboutScreen() {
+  const aboutElm = document.getElementById('aboutScreen');
+  aboutElm.classList.add('hidden');
+  renderCurrentScreen();
+  toggleDrawer();
+}
+
 // On page load:
 //  - initialize the menu
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
-    renderCurrentScreen();
+    if ( settings.getCurrentTopic() == GENERAL_TOPIC_ID &&
+         settings.getCurrentScreenId() == DEFAULT_SCREEN_ID ) {
+      // we are in initial state: show the description screen
+      renderAboutScreen();
+    } else {
+      renderCurrentScreen();
+    }
 });
 
