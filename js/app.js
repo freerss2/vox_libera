@@ -47,7 +47,7 @@ showTransToggleElm.checked = settings.getShowTranscription() == 1;
 const langSelect = document.getElementById('ui-lang-select');
 // Configure UI selector
 const userLang = settings.getUserInterfaceLanguage();
-langSelect.innerHtml = '';
+langSelect.innerHTML = '';
 Object.keys(locales).forEach(langCode => {
     const langName = locales[langCode].__title__ || langCode;
     const option = document.createElement('option');
@@ -77,6 +77,7 @@ if (course_locales) {
       const langLocales = course_locales[langCode];
       locales[langCode]['cl'] =
           {...langLocales["interface"], ...langLocales["content"]};
+      locales[langCode]['explanations'] = {...langLocales["explanations"]};
     }
   })
 }
@@ -98,19 +99,22 @@ const userDir = langDirection(userLang);
 
 // Screen types
 const SCREENS = [
-  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Dictionary',        inputs: ['words'] },
-  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary', name: 'Sentences',         inputs: ['sentences'] },
-  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Flashcards words',  inputs: ['words'] },
-  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards', name: 'Flashcards sent',   inputs: ['sentences'] },
-  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',   name: 'Matching',          inputs: ['words'] },
-  { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',   name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
-  { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',   name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
-  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio', name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
-  { id: 'sent_u2t',        shared: 0, excercise: 1, screen_type: 'sent_u2t',   name: 'Sentence: 👤 → 🌍', inputs: ['sentences'] },
-  { id: 'sent_t2u',        shared: 0, excercise: 1, screen_type: 'sent_t2u',   name: 'Sentence: 🌍 → 👤', inputs: ['sentences'] },
-  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio', name: 'Audio-Sentence',    inputs: ['sentences'] },
-  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',     name: 'Topic final',       inputs: ['words', 'sentences'] }
+  { id: 'explanations',    shared: 1, excercise: 0, screen_type: 'explanations', name: 'Explanations',      inputs: [] },
+  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['words'] },
+  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Sentences',         inputs: ['sentences'] },
+  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards words',  inputs: ['words'] },
+  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards sent',   inputs: ['sentences'] },
+  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
+  { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
+  { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
+  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio',   name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
+  { id: 'sent_u2t',        shared: 0, excercise: 1, screen_type: 'sent_u2t',     name: 'Sentence: 👤 → 🌍', inputs: ['sentences'] },
+  { id: 'sent_t2u',        shared: 0, excercise: 1, screen_type: 'sent_t2u',     name: 'Sentence: 🌍 → 👤', inputs: ['sentences'] },
+  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio',   name: 'Audio-Sentence',    inputs: ['sentences'] },
+  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',       name: 'Topic final',       inputs: ['words', 'sentences'] }
 ];
+
+var topicScreens = [];
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -143,7 +147,7 @@ function renderDrawer() {
     const pathContainer = document.getElementById('exercisePath');
     pathContainer.innerHTML = '';
 
-    SCREENS.forEach((screen, index) => {
+    topicScreens.forEach((screen, index) => {
         const li = document.createElement('li');
         const screen_name = i18n.t(`screens|${screen.id}`);
         li.className = 'exercise-node';
@@ -159,6 +163,7 @@ function renderDrawer() {
     });
 
     showActiveExerciseInMenu(settings.getCurrentScreenId());
+    applyTopicToDisplay();
 }
 
 // show the current screen name in menu as "selected"
@@ -194,18 +199,6 @@ function applyTopicToDisplay() {
   } else {
     topicSettings.classList.remove('hidden');
   }
-  // show/hide relevant items in menu
-  // for topic 'all' hide item that have shared==0
-  const nodes = document.getElementsByClassName('exercise-node');
-  [...nodes].forEach(node => {
-      const record = getScreenRecord(node.dataset.id);
-      if (settings.getCurrentTopic() == GENERAL_TOPIC_ID && record.shared == 0) {
-        node.classList.add('hidden');
-      } else {
-        node.classList.remove('hidden');
-      }
-    }
-  );
 }
 
 // Show-hide side menu
@@ -268,7 +261,7 @@ function loadNextScreen(fromWinDialog=false) {
 function showTopicResults() {
     const data = getTopicStats(settings.getCurrentTopic());
     const modal = document.getElementById('resultsModal');
-    
+
     // Statistics for words
     document.getElementById('res-words-count').textContent = data.wordsCount;
     document.getElementById('res-words-accuracy').textContent = `${Math.round(data.wordsSuccess)}%`;
@@ -291,10 +284,10 @@ function showTopicResults() {
 
 function loadPrevNexScreen(delta) {
   // find current screen index
-  const currGameIndex = SCREENS.findIndex(m => m.id === settings.getCurrentScreenId());
+  const currGameIndex = topicScreens.findIndex(m => m.id === settings.getCurrentScreenId());
   const newGameIndex = currGameIndex+delta;
-  if (newGameIndex >= 0 && newGameIndex < SCREENS.length) {
-    const next_screen_id = SCREENS[newGameIndex].id;
+  if (newGameIndex >= 0 && newGameIndex < topicScreens.length) {
+    const next_screen_id = topicScreens[newGameIndex].id;
     // special case for 'all' topic
     if ( settings.getCurrentTopic() == GENERAL_TOPIC_ID ) {
       const record = getScreenRecord(next_screen_id);
@@ -349,17 +342,43 @@ function switchTopic(direction) {
   if (! nextTopicId) return;
 
   // if found - load screen
-  settings.setCurrentTopic(nextTopicId);
+  initTopic(nextTopicId);
   // reset screen to default (first)
-  settings.setCurrentScreenId(SCREENS[0].id);
+  settings.setCurrentScreenId(topicScreens[0].id);
   // start the game
   renderCurrentScreen();
 }
 
+// initialize topic
+function initTopic(topicId) {
+  settings.setCurrentTopic(topicId);
+  // Copy SCREENS with a relevant screens only
+  // For 'all' topic use only shared == 1
+  // For any topic: check if it contains "sentences" (and skip all screens requiring sentences)
+  // For any topic: check if it contains "explanations" (and skip "explanations" screen if missing)
+  const currTopic = topics[settings.getCurrentTopic()];
+  topicScreens = [];
+  [...SCREENS].forEach(screen => {
+    let useScreen = true;
+    if (topicId == 'all' && screen['shared'] == 0) {
+      useScreen = false;
+    }
+    if (topicId != 'all' && !currTopic['sentences'] && JSON.stringify(screen['inputs']) === JSON.stringify(['sentences']) ) {
+      useScreen = false;
+    }
+    if (!currTopic['explanations'] && screen['screen_type'] == 'explanations') {
+      useScreen = false;
+    }
+    if ( useScreen ) {
+      topicScreens.push(screen);
+    }
+  });
+  initMenu();
+}
 
 // by screen id get the whole record
 function getScreenRecord(screen_id) {
-  return SCREENS.find(r => r.id == screen_id);
+  return topicScreens.find(r => r.id == screen_id);
 }
 
 // get screen_type by screen id
@@ -375,7 +394,7 @@ function showScreenTitle() {
     const screenName = record ? i18n.t(`screens|${record.id}`) : "Screen";
 
     let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
-    document.getElementById('title').textContent = `${topicTitle}: ${screenName}`;
+    document.getElementById('title').innerHTML = `${topicTitle}<BR>${screenName}`;
 }
 
 var finalProgress = 0;
@@ -441,7 +460,7 @@ function renderScreen(screen_id) {
     if (screen_id == 'final') {
         // build a set of candidates:
         // having 'excercise' flag on and excluding 'final' itself
-        const candidates = SCREENS.filter(rec => rec.id != 'final' && rec.excercise == 1);
+        const candidates = topicScreens.filter(rec => rec.id != 'final' && rec.excercise == 1);
         const replacement = candidates[Math.floor(Math.random() * candidates.length)];
         const record = getScreenRecord(screen_id);
         record.screen_type = replacement.screen_type;
@@ -477,8 +496,13 @@ function renderScreen(screen_id) {
     }
 
     // 3. Initialize screen according to type
+    if (screenType === 'explanations') {
+        renderExplanationsScreen();
+        return;
+    }
     if (screenType === 'dictionary') {
         showDictionary();
+        return;
     } else {
         const container = document.getElementById('app-container');
         container.classList.add('hidden-anim');
@@ -1328,7 +1352,7 @@ function showDictionary() {
         updateTranscriptionDisplay();
         listContainer.appendChild(card);
     });
-    
+
     scrollToTop('screen-dictionary');
 }
 
@@ -1478,8 +1502,8 @@ function orderByAccuracy(currentData) {
         const stats = wordStats[targetStr];
 
         // Calculate accuracy, considering totally new as "-1" (for sorting)
-        const accuracy = stats && stats.attempts > 0 
-            ? (stats.success / stats.attempts) * 100 
+        const accuracy = stats && stats.attempts > 0
+            ? (stats.success / stats.attempts) * 100
             : -1;
 
         return { item, accuracy, attempts: stats ? stats.attempts : 0 };
@@ -1520,8 +1544,8 @@ function getStratifiedBatch(candidates) {
     strates.forEach(strate => {
         if (strate.length > 0) {
             // shuffle the strate
-            const shuffled = shuffle([...strate]); 
-            
+            const shuffled = shuffle([...strate]);
+
             // Take half (round up to avoid small strate miscalculation)
             const halfSize = Math.ceil(shuffled.length / 2);
             finalBatch.push(...shuffled.slice(0, halfSize));
@@ -1598,7 +1622,7 @@ function resetTopicStats() {
 }
 
 // reset all statistics
-// (TODO: must get a confirmation) /!\ 
+// (TODO: must get a confirmation) /!\
 function resetStats() {
   setStats({});
   // reload dictionary
@@ -1702,9 +1726,9 @@ function toggleTranscription() {
 // Callback for UI language change
 langSelect.addEventListener('change', (event) => {
     const newLang = event.target.value;
-    
+
     settings.setUserInterfaceLanguage(newLang);
-    
+
     i18n.setLanguage(newLang);
 
     location.reload();
@@ -1816,32 +1840,49 @@ document.addEventListener('keydown', (event) => {
 
 // Sources for information:
 // manifest['metadata'] title, description, prerequisites, goals
-function renderAboutScreen() {
-  const aboutElm = document.getElementById('aboutScreen');
-  const manifestMetadata = manifest['metadata'];
-  document.getElementById('aboutTitle').innerText = manifestMetadata.title;
-  document.getElementById('aboutContent').innerText = manifestMetadata.description;
-  aboutElm.classList.remove('hidden');
+function renderExplanationsScreen() {
+  const explanationsElm = document.getElementById('explanationsScreen');
+  const topicId = settings.getCurrentTopic();
+  const currTopic = topics[topicId]
+  let topicExplanations = currTopic['explanations'];
+  // try to find localized version
+  const i18nKey = `explanations|${topicId}`;
+  const localizedExplanations = i18n.t(i18nKey);
+  if (localizedExplanations && localizedExplanations != i18nKey) {
+    topicExplanations = localizedExplanations;
+  }
+  // Markdown to HTML
+  document.getElementById('explanationsContent').innerHTML = parseMarkdown(topicExplanations);
+  explanationsElm.classList.remove('hidden');
 }
 
-function closeAboutScreen() {
-  const aboutElm = document.getElementById('aboutScreen');
-  aboutElm.classList.add('hidden');
-  renderCurrentScreen();
-  toggleDrawer();
+// Convert "Markdown" text to HTML
+function parseMarkdown(text) {
+  const targetTags = `class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}"`;
+  return text
+      // Headers (### Text)
+      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+
+      // Bold (**text**)
+      .replace(/\*\*([^*]+)\*\*/gim, '<b>$1</b>')
+
+      // Italic (_text_)
+      .replace(/_([^_]+)_/gim, '<i>$1</i>')
+
+      // Target language ('''text''')
+      .replace(/'''([^']+)'''/gim, '<span ' + targetTags +'>$1</span>')
+
+      // Newlines
+      .replace(/\n/gim, '<br>');
 }
 
 // On page load:
 //  - initialize the menu
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
-    initMenu();
-    if ( settings.getCurrentTopic() == GENERAL_TOPIC_ID &&
-         settings.getCurrentScreenId() == DEFAULT_SCREEN_ID ) {
-      // we are in initial state: show the description screen
-      renderAboutScreen();
-    } else {
-      renderCurrentScreen();
-    }
+
+    initTopic(settings.getCurrentTopic());
+    renderCurrentScreen();
+
 });
 

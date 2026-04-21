@@ -4,11 +4,23 @@ const lesson_data_ver = '2.8.1';
 const topics = {
   "all": {
     "name": "All topics",
-    "index": 0
+    "index": 0,
+    "explanations": `
+### The First 200 Words and Basic Sentence Constructions
+The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
+
+The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
+The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
+`
   },
   "describe_yourself_1": {
     "index": 1,
     "name": "Tell about yourself 1",
+    "explanations": `
+The topic of this lesson is talking about yourself: your occupation and family.
+Verbs are given in standard form (third person singular).
+Verb inflections will be the topic of separate lessons.
+`,
     "words": [
       [
         "pleased to meet you",
@@ -262,6 +274,16 @@ const topics = {
   "work_n_learn_1": {
     "index": 2,
     "name": "Professions and studies 1",
+    "explanations": `
+In this lesson, we'll explore job titles, as well as vocabulary related to work and study.
+**Please note:** In colloquial speech, verbs are used with the prefix [be-] '''ب'''.
+Some words may be familiar to us.
+For example:
+[talib] - "student"
+[qumash] - "fabric (qumach)"
+Some words are simply calques: "academy," "cinema."
+The root of the word '''جامعة''' means "gathering," which will be useful when studying words with the same root.
+`,
     "words": [
       [
         "tailor",
@@ -435,6 +457,12 @@ const topics = {
   "everyday_life_1": {
     "index": 3,
     "name": "Everyday life 1",
+    "explanations": `
+This lesson will help us describe everyday objects that surround us.
+Note that the **passive voice** is sometimes used to construct **adjectives**.
+The passive voice construction model looks like this:
+[mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
+`,
     "words": [
       [
         "carpet",
@@ -603,6 +631,11 @@ const topics = {
   "hobby_travel_1": {
     "index": 4,
     "name": "Hobbies and travel 1",
+    "explanations": `
+The word '''بلد''' can be used to mean "country" or "city center."
+Note how the definite article '''ال-''' is used in this lesson.
+Before "solar" letters, it causes the letter to be doubled, but before "lunar" letters, it remains unaltered.
+`,
     "words": [
       [
         "renting",
@@ -801,6 +834,10 @@ const topics = {
   "restaurant_1": {
     "index": 5,
     "name": "Restaurant 1",
+    "explanations": `
+Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
+Note the word "halva" - it shares a root with both "sweet" and "dessert."
+`,
     "words": [
       [
         "tasty / delicious",

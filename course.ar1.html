@@ -144,12 +144,9 @@
 
     <main id="app-container">
 
-      <div class="game-screen hidden" id="aboutScreen">
-        <h2 data-i18n="main|app-name"> </h2>
-        <p data-i18n="main|app-description"></p>
-        <h2 id="aboutTitle"></h2>
-        <p id="aboutContent"></p>
-        <button class="action-btn easy" onclick="closeAboutScreen()">✔ Ok</button>
+      <div class="game-screen hidden" id="explanationsScreen">
+        <p id="explanationsContent"></p>
+        <button class="action-btn easy" onclick="loadNextScreen();">✔ Ok</button>
       </div>
 
       <div class="win-screen hidden" id="winScreen">

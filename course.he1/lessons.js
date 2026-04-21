@@ -4,7 +4,14 @@ const lesson_data_ver = '2.8.1';
 const topics = {
   "all": {
     "name": "All topics",
-    "index": 0
+    "index": 0,
+    "explanations": `
+### The First 200 Words and Basic Sentence Constructions
+The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
+
+The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
+The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
+`
   },
   "describe_yourself_1": {
     "index": 1,

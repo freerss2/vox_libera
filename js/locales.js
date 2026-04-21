@@ -37,6 +37,7 @@ const locales = {
       "words_accuracy": "Accuracy: "
     },
     "screens": {
+      "explanations":    "Explanations",
       "dictionary":      "Dictionary",
       "sentences":       "Sentences",
       "flashcards":      "Words flashcards",
@@ -104,6 +105,7 @@ const locales = {
       "words_accuracy": "Точность: "
     },
     "screens": {
+      "explanations":    "Пояснения",
       "dictionary":      "Словарь",
       "sentences":       "Предложения",
       "flashcards":      "Карточки слов",
