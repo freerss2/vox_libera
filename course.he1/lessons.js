@@ -11,6 +11,9 @@ The course aims to develop a stable **basic vocabulary** necessary for everyday 
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
 The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
+
+### Update 2026-04-22
+Added new lesson "Pronominal prepositions 1"
 `
   },
   "describe_yourself_1": {
@@ -604,6 +607,135 @@ The curriculum and course texts are structured using **artificial intelligence**
         "the kettle is hot",
         "הקומקום חם",
         "ha-kumkum kham"
+      ]
+    ]
+  },
+  "pronominal_prepositions_1": {
+    "index": 4,
+    "name": "Pronominal prepositions 1",
+    "explanations": `
+### Preposition "With" ('''עם''')
+Hebrew has a peculiarity: when suffixes are added to the preposition im (with), it often turns into the form it- (iti, itkha). This is important to remember, as the root changes.
+
+### Preposition "On" ('''על''')
+In Hebrew, it often replaces the preposition "o" (to think of someone = to think of someone, khoshev al).
+
+### Accusative case ('''את'''):
+Remember that oti/otkha is only used when we know who is being referred to. The verbs "to see" (ro'e) and "to love" (ohev) always require this form.
+
+`,
+    "words": [
+      [
+        "with me",
+        "איתי",
+        "iti"
+      ],
+      [
+        "with you (m)",
+        "איתך",
+        "itkha"
+      ],
+      [
+        "with you (f)",
+        "איתך",
+        "itakh"
+      ],
+      [
+        "in me / in it",
+        "בי",
+        "bi"
+      ],
+      [
+        "in you (m)",
+        "בך",
+        "bekha"
+      ],
+      [
+        "on me",
+        "עלי",
+        "alay"
+      ],
+      [
+        "on you (m)",
+        "עליך",
+        "alekha"
+      ],
+      [
+        "me (direct object)",
+        "אותי",
+        "oti"
+      ],
+      [
+        "you (m, direct object)",
+        "אותך",
+        "otkha"
+      ],
+      [
+        "you (f, direct object)",
+        "אותך",
+        "otakh"
+      ],
+      [
+        "with us",
+        "איתנו",
+        "itanu"
+      ],
+      [
+        "on us",
+        "עלינו",
+        "alenu"
+      ]
+    ],
+    "sentences": [
+      [
+        "do you want to go with me?",
+        "אתה רוצה ללכת איתי?",
+        "ata rotze lalekhet iti?"
+      ],
+      [
+        "i love you",
+        "אני אוהב אותך",
+        "ani ohev otkha"
+      ],
+      [
+        "everything is on me",
+        "הכל עלי",
+        "ha-kol alay"
+      ],
+      [
+        "he is speaking with you now",
+        "הוא מדבר איתך עכשיו",
+        "hu medaber itkha akhshav"
+      ],
+      [
+        "i see you",
+        "אני רואה אותך",
+        "ani ro'e otkha"
+      ],
+      [
+        "what is in it?",
+        "מה יש בו?",
+        "ma yesh bo?"
+      ],
+      [
+        "he is thinking about us",
+        "הוא חושב עלינו",
+        "hu khoshev alenu"
+      ],
+      [
+        "do you understand me?",
+        "אתה מבין אותי?",
+        "ata mevin oti?"
+      ],
+      [
+        "wait for me a minute",
+        "חכה לי דקה",
+        "khake li daka"
+      ],
+      [
+        "i am with you",
+        "אני איתך",
+        "ani itkha"
       ]
     ]
   }
