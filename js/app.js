@@ -100,10 +100,13 @@ const userDir = langDirection(userLang);
 // Screen types
 const SCREENS = [
   { id: 'explanations',    shared: 1, excercise: 0, screen_type: 'explanations', name: 'Explanations',      inputs: [] },
+  { id: 'abc',             shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['abc'] },
   { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['words'] },
   { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Sentences',         inputs: ['sentences'] },
+  { id: 'flashcards-abc',  shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards ABC',    inputs: ['abc'] },
   { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards words',  inputs: ['words'] },
   { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards sent',   inputs: ['sentences'] },
+  { id: 'matching-abc',    shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching ABC',      inputs: ['abc'] },
   { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
   { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
   { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
@@ -288,15 +291,6 @@ function loadPrevNexScreen(delta) {
   const newGameIndex = currGameIndex+delta;
   if (newGameIndex >= 0 && newGameIndex < topicScreens.length) {
     const next_screen_id = topicScreens[newGameIndex].id;
-    // special case for 'all' topic
-    if ( settings.getCurrentTopic() == GENERAL_TOPIC_ID ) {
-      const record = getScreenRecord(next_screen_id);
-      if (record.shared == 0) {
-        // if next screen is not 'shared' - move to next topic
-        switchTopic(delta);
-        return;
-      }
-    }
     settings.setCurrentScreenId(next_screen_id);
     renderCurrentScreen();
   } else {
@@ -360,14 +354,37 @@ function initTopic(topicId) {
   topicScreens = [];
   [...SCREENS].forEach(screen => {
     let useScreen = true;
-    if (topicId == 'all' && screen['shared'] == 0) {
-      useScreen = false;
-    }
-    if (topicId != 'all' && !currTopic['sentences'] && JSON.stringify(screen['inputs']) === JSON.stringify(['sentences']) ) {
-      useScreen = false;
-    }
-    if (!currTopic['explanations'] && screen['screen_type'] == 'explanations') {
-      useScreen = false;
+    const screenInputs = screen['inputs'];
+    if (topicId == 'all') {
+      if (screen['shared'] == 1) {
+        if (screen['screen_type'] === 'explanations') {
+          if (!currTopic['explanations']) useScreen = false;
+        } else {
+          // collect from all topics their abc/wors/sentences
+          const inputToCollect = screenInputs[0];
+          let allTopicsInputs = [];
+          for (let key in topics) {
+            let t = topics[key];
+            if (t[inputToCollect]) allTopicsInputs.push(...t[inputToCollect]);
+          }
+          if ( ! allTopicsInputs.length ) useScreen = false;
+        }
+      } else {
+        useScreen = false;
+      }
+    } else {
+      // if this screen require some limited set of inputs, make sure the topic contains them
+      if (screen['screen_type'] === 'explanations') {
+        if (!currTopic['explanations']) useScreen = false;
+      } else {
+        let presentInputs = [];
+        screenInputs.forEach(input => {
+          if (currTopic[input] && currTopic[input].length) presentInputs.push(input);
+        });
+        if (!presentInputs.length) {
+          useScreen = false;
+        }
+      }
     }
     if ( useScreen ) {
       topicScreens.push(screen);
@@ -690,7 +707,7 @@ function renderMatchingGame() {
     updateProgress(0);
 
     // Get all data related to topic
-    const inputTypes = getGameInputTypes('matching');
+    const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
     const currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
 
     // Take a random slice according to itemsPerRound
@@ -1873,7 +1890,11 @@ function parseMarkdown(text) {
       .replace(/'''([^']+)'''/gim, '<span ' + targetTags +'>$1</span>')
 
       // Newlines
-      .replace(/\n/gim, '<br>');
+      .replace(/\n/gim, '<br>')
+
+      // Avoid newline around header
+      .replace(/h3><br>/gim, 'h3>')
+      .replace(/<br><h3/gim, '<h3');
 }
 
 // On page load:

@@ -10,14 +10,41 @@ const topics = {
 The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
+However, to reinforce reading skills, the course has been supplemented with lessons entirely devoted to the alphabet.
 The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
 
 ### Update 2026-04-22
 Added new lesson "Pronominal prepositions 1"
+
+### Update 2026-04-24
+Added new lesson "ABC 1"
 `
   },
-  "describe_yourself_1": {
+  "abc_1": {
     "index": 1,
+    "name": "ABC 1",
+    "explanations": `
+### A little about the language
+The history of Hebrew as a language begins over 3,000 years ago. Hebrew is a Semitic language and is written from right to left. The letterforms and alphabetic composition are similar to those of other ancient languages ​​from the Middle East and Mediterranean regions. Modern scripts differ from the ancient versions, but the rules for reading remain unchanged. The pronunciation does not contain any exotic sounds, unless you intend to imitate traditional accents.
+`,
+    "abc": [
+      ["Aleph (silent consonant)", "א", ""],
+      ["Bet", "בּ", "b"],
+      ["Vet", "ב", "v"],
+      ["Gimel", "ג", "g"],
+      ["Dalet", "ד", "d"],
+      ["Hey", "ה", "h"],
+      ["Waw", "ו", "w"],
+      ["Zayin", "ז", "z"],
+      ["Khet", "ח", "kh"],
+      ["Tet", "ט", "T"],
+      ["Yud", "י", "j"]
+    ],
+    "words": [],
+    "sentences": []
+  },
+  "describe_yourself_1": {
+    "index": 2,
     "name": "Tell about yourself 1",
     "words": [
       [
@@ -270,7 +297,7 @@ Added new lesson "Pronominal prepositions 1"
     ]
   },
   "work_n_learn_1": {
-    "index": 2,
+    "index": 3,
     "name": "Professions and studies 1",
     "words": [
       [
@@ -443,7 +470,7 @@ Added new lesson "Pronominal prepositions 1"
     ]
   },
   "everyday_life_1": {
-    "index": 3,
+    "index": 4,
     "name": "Everyday life 1",
     "words": [
       [
@@ -611,7 +638,7 @@ Added new lesson "Pronominal prepositions 1"
     ]
   },
   "pronominal_prepositions_1": {
-    "index": 4,
+    "index": 5,
     "name": "Pronominal prepositions 1",
     "explanations": `
 ### Preposition "With" ('''עם''')

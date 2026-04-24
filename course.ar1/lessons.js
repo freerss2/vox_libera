@@ -835,6 +835,26 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
     "index": 5,
     "name": "Restaurant 1",
     "explanations": `
+### Usage of some words
+Zaki '''زاكي''': Although this word isn't a literary one, it's precisely this kind of vocabulary that brings people together.
+
+Suhn '''سخن''': Used for both the weather and food. If the soup is too hot, it's suhn.
+
+Al-Hilu '''الحلو''': This word (literally "sweet") is more often used for dessert than halva, which can refer to a specific sweet.
+
+Finjan '''فنجان''': Typically a small cup for coffee. For tea, they often say kasa.
+
+Al-may '''المي''': This is the most common word for water in the Levant (instead of the classic al-ma).
+
+Jib '''جيب''': A very useful word for "bring." It's used constantly in restaurants.
+
+A'tini '''أعطيني''': A polite form of "give me."
+
+Zaki '''زاكي''': When people say "the restaurant is delicious" (al-mat'am zaki), they mean that the food there is delicious—this is a very popular expression.
+
+Kawiya '''قوية''': Literally "strong." This is how they say strong coffee.
+
+### A little grammar
 Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
 Note the word "halva" - it shares a root with both "sweet" and "dessert."
 `,
@@ -1056,6 +1076,17 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
   "airport_1": {
     "index": 6,
     "name": "Airport 1",
+    "explanations": `
+### Lesson Objective
+As the saying goes, "language unites." If you're planning a trip or simply meeting friends from abroad, the materials in this lesson will help you communicate about travel.
+
+### Explanations
+Shanta '''شنطة''': The most common word for any bag or suitcase. Carry-on luggage is more often called shanta id (handbag) in conversation than the formal haqibat yad.
+
+Afsh '''عفش''': A very popular word for luggage in general (things you check in).
+
+Fadi / Mahjuz: These two words will save you when you need to figure out if a seat is free in a lounge or on a plane.
+`,
     "words": [
       [
         "airport",
@@ -1482,6 +1513,33 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
   "polite_language_1": {
     "index": 8,
     "name": "Polite language 1",
+    "explanations": `
+### Lesson Objective
+Arabic politeness is imbued with special expressions that are often not translated literally, but create that very atmosphere of hospitality.
+
+### Conversational nuances
+Sakhtein '''صحتين''': A versatile word. It's used both as "to your health" (when someone sneezes or drinks) and as "bon appétit." Literally, it's "two healths."
+
+Dir balak '''دير بالك''': The most common way to say "be careful" or "take care." The masculine form is balak, and the feminine form is balek.
+
+Lo samaght '''لو سمحت''': The perfect phrase to politely address a waiter, passerby, or coworker.
+
+Al-bayt baytak '''البيت بيتك''': Literally, "the house is your home." This is the warmest "make yourself comfortable" one can hear from a host.
+
+Truh wa tirja bis-salaamah: A beautiful wish for "leaving and returning safely." In colloquial speech, this is the standard "have a safe journey."
+
+Tafaddal '''تفضل''': A magical word. It is used to invite someone into the house and is said when passing an object or giving up a seat.
+
+Ala rasi '''على راسي''': Literally, "on my head." A very polite way of saying "I'll do it with pleasure" or "you're welcome."
+
+Mustahil '''مستحيل''': Literally, "impossible." In Arabic, this is the strongest way to say "absolutely" or "it can't happen."
+
+Aqeed '''أكيد''': One of the most common words. It replaces "absolutely," "certainly," and "definitely."
+
+Mumkin '''ممكن''': A universal "maybe" or "possible."
+
+Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the meaning of "as luck would have it."
+`,
     "words": [
       [
         "thank god",
@@ -1730,6 +1788,23 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
   "studying_language_1": {
     "index": 9,
     "name": "Studying language 1",
+    "explanations": `
+### Lesson Objective
+When communicating with a native speaker, we often find it difficult to express ourselves correctly.
+We lack words, we're unsure of our declensions, and our pronunciation isn't perfect.
+This lesson was created to help explain these difficulties.
+
+### Conversational nuances
+La-khali '''لحالي''': A very important word. Literally "for yourself," it's used in all contexts when you're doing something alone or independently.
+
+Ala makhlaq '''على مهلك''': Literally "at your leisure." This is the most natural way to ask someone to stop talking too fast.
+
+Ashan '''عشان''': Levantine "so that" or "because." In colloquial speech, it's used in every other sentence.
+
+Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the beginning of a conversation with a native speaker so they feel comfortable correcting you.
+
+At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
+`,
     "words": [
       [
         "self",

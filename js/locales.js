@@ -38,11 +38,14 @@ const locales = {
     },
     "screens": {
       "explanations":    "Explanations",
+      "abc":             "ABC",
       "dictionary":      "Dictionary",
       "sentences":       "Sentences",
+      "flashcards-abc":  "Letters flashcards",
       "flashcards":      "Words flashcards",
       "flashcards-sent": "Sentences flashcards",
-      "matching":        "Find a match",
+      "matching-abc":    "Find a match - letters",
+      "matching":        "Find a match - words",
       "quiz_u2t":        "Quiz: 👤 → 🌍",
       "quiz_t2u":        "Quiz: 🌍 → 👤",
       "quiz_audio":      "Audio-quiz",
@@ -53,7 +56,13 @@ const locales = {
     },
     "main": {
       "app-name": "Vox Libera - learn languages FREE",
-      "app-description": "This is a FREE open-source application for students and for language enthusiasts. The course consists of lessons divided into topics. First, you're introduced to the vocabulary and expressions of the new topic. This is followed by a series of games and exercises. The final game trains all skills together. Aim to achieve the highest success rate before moving on to the next topic.",
+      "app-description": `
+This is a FREE open-source application for students and for language enthusiasts.
+The course consists of lessons divided into topics.
+First, you're introduced to the vocabulary and expressions of the new topic.
+This is followed by a series of games and exercises.
+The final game trains all skills together.
+Aim to achieve the highest success rate before moving on to the next topic.`,
       "flashcards_completed": "You learned all cards in this set.",
       "card-learned": "✔  Know it",
       "card-repeat": "✘ Repeat",
@@ -106,11 +115,14 @@ const locales = {
     },
     "screens": {
       "explanations":    "Пояснения",
+      "abc":             "Алфавит",
       "dictionary":      "Словарь",
       "sentences":       "Предложения",
+      "flashcards-abc":  "Карточки букв",
       "flashcards":      "Карточки слов",
       "flashcards-sent": "Карточки предложений",
-      "matching":        "Поиск пары",
+      "matching-abc":    "Поиск пары букв",
+      "matching":        "Поиск пары слов",
       "quiz_u2t":        "Викторина: 👤 → 🌍",
       "quiz_t2u":        "Викторина: 🌍 → 👤",
       "quiz_audio":      "Аудио-викторина",
@@ -121,7 +133,13 @@ const locales = {
     },
     "main": {
       "app-name": "Vox Libera - учи языки СВОБОДНО",
-      "app-description": "Это бесплатное приложение с открытым исходным кодом для студентов и любителей языков. Курс состоит из уроков разбитых по темам. Сначала предлагается ознакомиться со словами и выражениями новой темы. После этого идёт серия игр-упражнений. Финальная игра тренирует все навыки вместе. Старайся добиться максимального процента успеха перед переходом к следующей теме.",
+      "app-description": `
+Это бесплатное приложение с открытым исходным кодом для студентов и любителей языков.
+Курс состоит из уроков разбитых по темам.
+Сначала предлагается ознакомиться со словами и выражениями новой темы.
+После этого идёт серия игр-упражнений.
+Финальная игра тренирует все навыки вместе.
+Старайся добиться максимального процента успеха перед переходом к следующей теме.`,
       "flashcards_completed": "Все карточки в этом наборе изучены.",
       "card-learned": "✔  Знаю",
       "card-repeat": "✘ Повторить",
