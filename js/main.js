@@ -30,6 +30,30 @@ i18n.setLanguage(userLang);
 const userDir = langDirection(userLang);
 
 // TODO: apply direction to "about" window
+const langSelect = document.getElementById('ui-lang-select');
+// Configure UI selector
+langSelect.innerHTML = '';
+Object.keys(locales).forEach(langCode => {
+    const langName = locales[langCode].__title__ || langCode;
+    const option = document.createElement('option');
+    option.value = langCode;
+    option.textContent = langCode;
+    if (langCode === userLang) option.selected = true;
+    langSelect.appendChild(option);
+});
+langSelect.value = userLang;
+
+// Callback for UI language change
+langSelect.addEventListener('change', (event) => {
+    const newLang = event.target.value;
+
+    settings.setUserInterfaceLanguage(newLang);
+
+    i18n.setLanguage(newLang);
+
+    location.reload();
+});
+
 
 window.addEventListener('DOMContentLoaded', async () => {
   const gender = Math.floor(Math.random() * 2) ? 'male' : 'female';

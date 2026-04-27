@@ -71,6 +71,26 @@ body {
     height: auto !important;
 }
 
+.top-nav-main {
+    display: flex;
+    align-items: center;    /* Выравнивает селектор и текст по вертикальной оси */
+    justify-content: center; /* Центрирует содержимое */
+    position: relative;     /* Нужно для позиционирования селектора */
+    padding: 15px 20px;
+    background-color: #f8f9fa; /* Или твой цвет фона */
+    border-bottom: 1px solid #ddd;
+    min-height: 50px;
+    width: 100%;
+}
+
+/* Стили для заголовка */
+.top-nav-main span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
 .top-nav {
     display: flex;
     flex-direction: column;

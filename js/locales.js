@@ -213,7 +213,7 @@ The educational materials are created using artificial intelligence and are cons
       "final":           "Topic final"
     },
     "main": {
-      "app-name": "Vox Libera - learn languages FREE",
+      "app-name": "Vox Libera - learn languages",
       "app-description": `Welcome to "Vox Libera".
 
 This is a FREE open-source application for students and for language enthusiasts.
@@ -466,7 +466,7 @@ To start a course, select the course title and click on it.
       "final":           "Итог темы"
     },
     "main": {
-      "app-name": "Vox Libera - учи языки СВОБОДНО",
+      "app-name": "Vox Libera - учим языки",
       "app-description": `Добро пожаловать в "Vox Libera".
 
 Это бесплатное приложение с открытым исходным кодом для студентов и любителей языков.

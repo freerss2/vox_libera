@@ -1,20 +1,55 @@
+.step-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 24px;
+    padding: 0 15px;
+    transition: color 0.3s;
+}
+
+.nav-item.active {
+    color: #3498db;
+}
+
+.settings-select {
+    position: absolute;
+    left: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    font-family: inherit;
+}
+
 #narrator-container {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 300px; /* Ограничиваем ширину всей конструкции */
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 20px;
     z-index: 9999;
-    pointer-events: none; /* Пропускает клики сквозь пустые зоны */
+    pointer-events: none;
 }
 
 #speech-bubble {
     position: fixed;
-    bottom: 140px; /* Над маскотом */
-    left: 80px;    /* Чуть смещен относительно центра головы */
+    bottom: 140px;
+    left: 80px;
     background: #ffffff;
     border: 2px solid #333;
     border-radius: 15px;
@@ -26,7 +61,6 @@
     cursor: pointer;
 }
 
-/* Хвостик баббла, указывающий на рот персонажа */
 #speech-bubble::after {
     content: '';
     position: absolute;
@@ -75,4 +109,25 @@
     width: 100%;
     height: auto;
     display: block;
+}
+
+.eyebrow {
+    /* --rot-angle should differ per eyebrow */
+    transform: translateY(var(--move-y, 0)) rotate(var(--rot-angle, 0deg));
+    transition: transform 0.2s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#emotion-left-eyebrow { --rot-dir: 1; }
+#emotion-right-eyebrow { --rot-dir: -1; }
+
+/* When applying this class the variables are getting the right values */
+.eyebrow-frown {
+    --move-y: 3px;
+    --rot-angle: calc(10deg * var(--rot-dir));
+}
+
+.eyebrow-raised {
+    transform: translateY(-5px);
 }

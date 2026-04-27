@@ -106,7 +106,7 @@ const getEyelidsByPattern = (pattern) => {
 };
 
 // Usage:  blink('narrator-svg', 'left', 500);
-function blink(mascotId, pattern, delay) {
+function blink(mascotId, pattern, duration) {
     const mascotSvg = document.getElementById(mascotId);
     if (!mascotSvg) return;
     if (mascotSvg.dataset.animation) return;
@@ -124,13 +124,13 @@ function blink(mascotId, pattern, delay) {
           target.style.display = 'none';
           target.classList.remove('animation');
           mascotSvg.dataset.animation = '';
-        }, delay);
+        }, duration);
       }
     });
 }
 
 // usage: randomBlink('narrator-svg', 1500);
-function randomBlink(mascotId, delay) {
+function randomBlink(mascotId, duration) {
     const blinkPatterns = [
       'left', 'right',
       'upper', 'lower',
@@ -138,13 +138,32 @@ function randomBlink(mascotId, delay) {
       'eyelid'
       ];
     const pattern = blinkPatterns[Math.floor(Math.random() * blinkPatterns.length)];
-    blink(mascotId, pattern, delay);
+    blink(mascotId, pattern, duration);
+}
+
+// usage: setExpression('narrator-svg', 'frown' / 'raised', 500);
+function setExpression(mascotId, type, duration) {
+    const mascotSvg = document.getElementById(mascotId);
+    const eyebrows = mascotSvg.querySelectorAll('.animation-eyebrow');
+    
+    const className = `eyebrow-${type}`;
+    
+    eyebrows.forEach(el => {
+        el.classList.add(className);
+        // Return back to normal
+        setTimeout(() => el.classList.remove(className), duration);
+    });
 }
 
 function toggleBubble(event) {
     event.stopPropagation();
     const bubble = document.getElementById('speech-bubble');
-    randomBlink('narrator-svg', 1500);
+    const delay = Math.floor(Math.random()*1500);
+    const duration = Math.floor(Math.random() * 500) + 200;
+    setTimeout(() => {
+      randomBlink('narrator-svg', duration);
+      setExpression('narrator-svg', 'raised', 500);
+    }, delay);
     if ( bubble.classList.contains('hidden') ) {
         if (bubble.dataset.enabled) {
           bubble.classList.remove('hidden');
@@ -259,13 +278,13 @@ const NARRATOR_TEMPLATES = {
     </g>
   </g>
   <g id="Layer_10">
-    <g id="emotion-left-eyebrow"  class="emotion-layer">
+    <g id="emotion-left-eyebrow"  class="emotion-layer animation-eyebrow">
       <path class="st3" d="M595.68,184.47c.08.39-.26,1.04-1.1,1.73-1.13.94-18.72,1.39-21.69.56-4.23-1.17-2.25-7.43,3.19-10.16,5.35-2.66,16.08-1.57,18.85,1.94.81,1.03,1.61,4.83.75,5.93h0Z"/>
       <path class="st7" d="M595.7,181.66c0,1.14-.79,2.56-1.76,3.17-1.74,1.09-18.5,1.41-20.65.39-2.07-.98-1.17-4.43,1.81-6.93,5.54-4.64,20.6-2.18,20.6,3.37h0Z"/>
     </g>
   </g>
   <g id="Layer_9">
-    <g id="emotion-right-eyebrow" class="emotion-layer">
+    <g id="emotion-right-eyebrow" class="emotion-layer animation-eyebrow">
       <path class="st3" d="M548.5,184.1c-.64-2.64-6.19-5.97-9.94-5.95-4.35.03-12.47,3.22-15.64,6.16-2.89,2.67-4.05,6.29-2.51,7.9,1.05,1.08,5.07.63,7.78-.86,2.03-1.13,4.1-1.34,8.99-.93,9.35.79,12.6-1.02,11.32-6.31h0Z"/>
       <path class="st7" d="M546.95,187.64c-.66,1.23-2.37,1.51-9.34,1.54-5.74.02-9.26.46-10.73,1.34-2.39,1.43-4.65,1.73-5.58.77-1.39-1.46-.36-4.06,2.52-6.35,1.71-1.36,5.41-2.64,7.46-3.51,8.51-3.63,18.78.44,15.68,6.21h-.01Z"/>
     </g>
@@ -355,13 +374,13 @@ const NARRATOR_TEMPLATES = {
       <path class="st5" d="M182.16,135.59c-1.79,4.28-5.54,4.91-8.04,1.35-3.19-4.56-1.39-12.78,2.82-12.78,4.76,0,7.49,5.99,5.22,11.43Z"/>
     </g>
   </g>
-  <g id="emotion-left-eyebrow" class="emotion-layer">
+  <g id="emotion-left-eyebrow" class="emotion-layer animation-eyebrow">
     <g>
       <path class="st2" d="M248.42,109.84c.09.42-.29,1.13-1.25,1.89-1.28,1.02-21.27,1.52-24.65.62-4.81-1.28-2.56-8.1,3.62-11.07,6.08-2.9,18.28-1.72,21.42,2.1.92,1.12,1.83,5.26.85,6.46h.01Z"/>
       <path class="st5" d="M248.43,106.78c0,1.24-.89,2.79-1.99,3.45-1.97,1.19-21.02,1.55-23.47.44-2.36-1.06-1.33-4.83,2.05-7.55,6.29-5.06,23.41-2.39,23.41,3.66h0Z"/>
     </g>
   </g>
-  <g id="emotion-right-eyebrow" class="emotion-layer">
+  <g id="emotion-right-eyebrow" class="emotion-layer animation-eyebrow">
     <g>
       <path class="st2" d="M194.8,109.46c-.73-2.88-7.04-6.51-11.3-6.48-4.94.03-14.17,3.52-17.78,6.72-3.29,2.91-4.6,6.86-2.85,8.61,1.19,1.18,5.76.69,8.84-.94,2.31-1.23,4.66-1.46,10.22-1.01,10.63.86,14.32-1.12,12.87-6.89h0Z"/>
       <path class="st5" d="M193.03,113.31c-.75,1.34-2.69,1.65-10.62,1.68-6.52.02-10.52.5-12.2,1.47-2.72,1.56-5.28,1.89-6.34.84-1.58-1.59-.41-4.43,2.86-6.92,1.94-1.48,6.15-2.88,8.48-3.83,9.67-3.96,21.34.47,17.82,6.76h0Z"/>
