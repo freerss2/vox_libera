@@ -1,5 +1,6 @@
 /*
- *   Vox Libera - main screen (selection of available courses)
+ *  Vox Libera - main screen
+ *  explanations and course selection
  */
 
 "use strict";
@@ -29,3 +30,18 @@ i18n.setLanguage(userLang);
 const userDir = langDirection(userLang);
 
 // TODO: apply direction to "about" window
+
+window.addEventListener('DOMContentLoaded', async () => {
+  const gender = Math.floor(Math.random() * 2) ? 'male' : 'female';
+  initMascot(NARRATOR_TEMPLATES[gender], 'mascot-wrapper');
+  const bubble = document.getElementById('speech-bubble');
+  const mascot = document.getElementById('mascot-wrapper');
+  updateCharacterBubble(i18n.t('main|app-description'));
+  bubble.addEventListener('click', toggleBubble);
+  mascot.addEventListener('click', toggleBubble);
+  setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+
+  // TODO: take list of cources and generate buttons dynamically
+  // charToSvg(manifest.icon_code)
+  updateFavicon('🌐');
+});

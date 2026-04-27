@@ -64,7 +64,7 @@ const difficultySettings = {
     hard:   { itemsPerRound: 7, totalChoices: 8, totalQuestions: 9,  sentenceFactor: 1.9, finalGoal: 9}
 };
 
-// Auto-fix for wrong inputs
+// Autofix for wrong inputs
 if ( ! topics.hasOwnProperty(GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
 
 if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOPIC_ID);
@@ -1412,7 +1412,6 @@ function clearInput() {
 // ---------------------------------------- application state setting
 
 let isMuted = false;
-let currentZoom = 1.0;
 
 function toggleMute() {
     isMuted = !isMuted;
@@ -1445,6 +1444,8 @@ function speakTargetLang(text, rate=1) {
         window.speechSynthesis.speak(msg);
     }
 }
+
+let currentZoom = 1.0;
 
 function changeZoom(delta) {
     currentZoom = Math.min(Math.max(0.8, currentZoom + delta), 1.8);
@@ -1869,32 +1870,9 @@ function renderExplanationsScreen() {
     topicExplanations = localizedExplanations;
   }
   // Markdown to HTML
-  document.getElementById('explanationsContent').innerHTML = parseMarkdown(topicExplanations);
+  document.getElementById('explanationsContent').innerHTML = parseMarkdown(
+      topicExplanations, courseTargetLanguage, targetDir);
   explanationsElm.classList.remove('hidden');
-}
-
-// Convert "Markdown" text to HTML
-function parseMarkdown(text) {
-  const targetTags = `class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}"`;
-  return text
-      // Headers (### Text)
-      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-
-      // Bold (**text**)
-      .replace(/\*\*([^*]+)\*\*/gim, '<b>$1</b>')
-
-      // Italic (_text_)
-      .replace(/_([^_]+)_/gim, '<i>$1</i>')
-
-      // Target language ('''text''')
-      .replace(/'''([^']+)'''/gim, '<span ' + targetTags +'>$1</span>')
-
-      // Newlines
-      .replace(/\n/gim, '<br>')
-
-      // Avoid newline around header
-      .replace(/h3><br>/gim, 'h3>')
-      .replace(/<br><h3/gim, '<h3');
 }
 
 // On page load:
@@ -1904,6 +1882,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initTopic(settings.getCurrentTopic());
     renderCurrentScreen();
+    updateFavicon(manifest.icon_code);
 
 });
 

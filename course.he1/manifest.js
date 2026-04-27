@@ -10,6 +10,7 @@ const manifest = {
     "goals": ["Basic Greetings", "Simple Sentences"]
   },
   "target_language": "he",
+  "icon_code": "א",
   "feedback": {
     "perfect": [
       ["Great!", "נהדר!", "Nehedar!"],
