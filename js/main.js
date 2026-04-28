@@ -5,8 +5,6 @@
 
 "use strict";
 
-const app_code_ver = '2.8.5';
-
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
@@ -65,7 +63,19 @@ window.addEventListener('DOMContentLoaded', async () => {
   mascot.addEventListener('click', toggleBubble);
   setMascotEmotion('narrator-svg', mascotNeutralEmotion);
 
-  // TODO: take list of cources and generate buttons dynamically
-  // charToSvg(manifest.icon_code)
+  // take list of cources and generate buttons dynamically
+  const courseSelector = document.getElementById('course-selector');
+  
+  courses.forEach(c => {
+    const btn = document.createElement('button');
+    const ref = `${c.ref}.html`;
+    btn.classList = ['course-btn'];
+    btn.innerHTML = charToSvg(c.code, 'course-icon') + c.title;
+    btn.addEventListener('click', () => {document.location.href=ref});
+    courseSelector.appendChild(btn);
+  });
+/*
+  
+*/
   updateFavicon('🌐');
 });

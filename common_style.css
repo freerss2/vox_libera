@@ -140,3 +140,9 @@
 .eyebrow-serious {
     transform: translateY(3px);
 }
+
+.course-icon {
+    width: 1.2rem;
+    vertical-align: middle;
+    padding-inline: 10px;
+}

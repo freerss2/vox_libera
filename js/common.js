@@ -1,8 +1,39 @@
 /*
  *  Vox Libera
- *  Common service functions
+ *  Common service functions and definitions
  */
 
+// common data
+
+const app_code_ver = '2.8.5';
+
+const courses = [
+  {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
+  {"ref": "course.he1", "code": "א", "title": "Hebrew Basics"}
+];
+
+// compare current URL and current course data with a matching record in "courses"
+// print error on mismatch(es)
+function verifyCourseParameters() {
+  // get a directory name from location
+  const currDir = location.pathname.split('/').pop().replace('.html', '');
+  let found = false;
+  courses.forEach( c => {
+    if (c.ref == currDir) {
+      found = true;
+      // check code and title match
+      if (manifest.icon_code != c.code) {
+        console.log(`ERROR: manifest.icon_code "${manifest.icon_code}" is not matching course.code "${c.code}"`);
+      }
+      if (manifest.metadata.title != c.title) {
+        console.log(`ERROR: manifest.metadata.title "${manifest.metadata.title}" is not matching course.title "${c.title}"`);
+      }
+    }
+  } );
+  if ( ! found ) {
+    console.log(`ERROR: course ${currDir} is not listed in "courses"`);
+  }
+}
 
 // Convert "Markdown" text to HTML
 function parseMarkdown(text, tartgetLanguage='en', targetDirection='ltr') {
@@ -33,10 +64,10 @@ function parseMarkdown(text, tartgetLanguage='en', targetDirection='ltr') {
 }
 
 // Generate SVG icon from character
-function charToSvg(code) {
+function charToSvg(code, className='', id='') {
 
     return `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="${className}" id="${id}" viewBox="0 0 100 100">
             <rect width="100" height="100" rx="20" fill="#0600f9" />
             <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" 
                   fill="white" font-family="Arial" font-size="60">

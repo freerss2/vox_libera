@@ -1129,20 +1129,20 @@ input:checked + .slider:before { transform: translateX(24px); }
 
 .course-selector {
     display: flex;
-    flex-wrap: wrap;      /* Позволяет кнопкам перепрыгивать на новую строку */
-    justify-content: center; /* Центрирует кнопки по горизонтали */
-    gap: 20px;            /* Равномерные отступы между кнопками (вместо margin) */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
-    max-width: 800px;     /* Ограничиваем ширину, чтобы кнопки не разъезжались слишком сильно */
-    margin: 0 auto;       /* Центрируем сам контейнер на странице */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .course-btn {
-    flex: 1 1 200px;      /* Кнопка будет пытаться занять 200px, но может расти */
-    max-width: 300px;     /* Но не шире 300px */
-    min-height: 80px;     /* Чтобы текст (особенно длинный технический) помещался */
-    
-    /* Стили как на твоем макете */
+    flex: 1 1 200px;
+    max-width: 300px;
+    min-height: 80px;
+    min-width: 280px;   
+
     border: 2px solid #4a90e2;
     border-radius: 40px;
     background: transparent;

@@ -5,12 +5,12 @@
 
 "use strict";
 
-const app_code_ver = '2.8.5';
-
 // First, report the components versions
 console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
+
+verifyCourseParameters();
 
 const GENERAL_TOPIC_ID = 'all';
 const DEFAULT_SCREEN_ID = 'dictionary';
