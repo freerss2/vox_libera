@@ -111,7 +111,7 @@
     display: block;
 }
 
-.eyebrow {
+.animation-eyebrow {
     /* --rot-angle should differ per eyebrow */
     transform: translateY(var(--move-y, 0)) rotate(var(--rot-angle, 0deg));
     transition: transform 0.2s ease;
@@ -125,9 +125,18 @@
 /* When applying this class the variables are getting the right values */
 .eyebrow-frown {
     --move-y: 3px;
+    --rot-angle: calc(-10deg * var(--rot-dir));
+}
+
+.eyebrow-sad {
+    --move-y: 3px;
     --rot-angle: calc(10deg * var(--rot-dir));
 }
 
 .eyebrow-raised {
     transform: translateY(-5px);
+}
+
+.eyebrow-serious {
+    transform: translateY(3px);
 }

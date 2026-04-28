@@ -141,20 +141,32 @@ function randomBlink(mascotId, duration) {
     blink(mascotId, pattern, duration);
 }
 
-// usage: setExpression('narrator-svg', 'frown' / 'raised', 500);
-function setExpression(mascotId, type, duration) {
+// usage: setEyebrowExpression('narrator-svg', 'frown' / 'raised' / 'serious' / 'sad', 500);
+function setEyebrowExpression(mascotId, type, duration) {
     const mascotSvg = document.getElementById(mascotId);
     const eyebrows = mascotSvg.querySelectorAll('.animation-eyebrow');
     
     const className = `eyebrow-${type}`;
     
     eyebrows.forEach(el => {
+        el.classList.add('animation');
         el.classList.add(className);
         // Return back to normal
-        setTimeout(() => el.classList.remove(className), duration);
+        setTimeout(() => {
+          el.classList.remove(className);
+          el.classList.remove('animation');
+        }, duration);
     });
 }
 
+// usage: randomEyebrow('narrator-svg', 1200);
+function randomEyebrow(mascotId, duration) {
+  const eyebrowExprTypes = ['frown', 'raised', 'serious', 'sad'];
+  const expr = eyebrowExprTypes[Math.floor(Math.random() * eyebrowExprTypes.length)];
+  setEyebrowExpression(mascotId, expr, duration);
+}
+
+// callback for bubble hide/show
 function toggleBubble(event) {
     event.stopPropagation();
     const bubble = document.getElementById('speech-bubble');
@@ -162,7 +174,7 @@ function toggleBubble(event) {
     const duration = Math.floor(Math.random() * 500) + 200;
     setTimeout(() => {
       randomBlink('narrator-svg', duration);
-      setExpression('narrator-svg', 'raised', 500);
+      randomEyebrow('narrator-svg', duration);
     }, delay);
     if ( bubble.classList.contains('hidden') ) {
         if (bubble.dataset.enabled) {
