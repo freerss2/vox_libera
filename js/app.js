@@ -1878,7 +1878,7 @@ function renderExplanationsScreen() {
     topicExplanations = localizedExplanations;
   }
   // Markdown to HTML
-  markdownConf = buildMarkdownConf(
+  const markdownConf = buildMarkdownConf(
     courseTargetLanguage, targetDir, userLang, userDir);
   document.getElementById('explanationsContent').innerHTML = parseMarkdown(
       topicExplanations, markdownConf);
