@@ -374,6 +374,8 @@ body {
     text-align: center;
     width: 80%;
     max-width: 350px;
+    mix-blend-mode: normal !important;
+    isolation: isolate;
 }
 
 .win-screen.hidden { display: none !important; opacity: 0; }

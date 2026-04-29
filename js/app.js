@@ -489,7 +489,8 @@ function renderScreen(screen_id) {
     const screens = document.querySelectorAll('.game-screen');
     screens.forEach(s => s.classList.add('hidden'));
     // including different panels
-    document.getElementById('winScreen').classList.add('hidden');
+    // document.getElementById('winScreen').classList.add('hidden');
+    document.getElementById('narrator-container').classList.add('hidden');
     document.getElementById('resultsModal').classList.add('hidden');
     // initilize hint panel
     const hintPanelElm = document.getElementById('hint-panel');
@@ -816,24 +817,31 @@ function showWin(acc) {
     let quotes = manifest.feedback[category];
     // For a variety take random phrase
     let pick = quotes[Math.floor(Math.random() * quotes.length)];
-
-    // Fill-in the informal summary
-    const statusEl = document.getElementById('winStatus');
-    const tipEl = document.getElementById('tipOfTheDay');
     const user_lang_feedback = i18n_ct(pick[0]);
-    statusEl.innerHTML = `
-        <span class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}" style="font-size: 1.5em; display: block; text-align: center;">${pick[1]}</span>
-        <span class="user-text" dir="${userDir}" lang="${userLang}" style="font-size: 0.5em; color: #888; display: block; margin-top: 5px;">
-            ${pick[2]} — ${user_lang_feedback}
-        </span>
-    `;
     // generate tip of the day
-    tipEl.innerHTML = tipOfTheDay();
+    const tipText = tipOfTheDay();
 
-    // hide the game board and visualize the popup
-    document.getElementById('screen-matching').classList.add('hidden'); // ?? why ??
-    document.getElementById('accuracyStat').textContent = `${acc}%`;
-    document.getElementById('winScreen').classList.remove('hidden');
+    // visualize the popup
+    document.getElementById('narrator-container').classList.remove('hidden');
+    // message in Markdown format, including two buttons
+    const repeatPrompt = i18n.t('main|sum-repeat');
+    const nextPrompt = i18n.t('main|sum-next');
+    let markdownText = `##text-center## '''${pick[1]}'''
+##text-center## ${pick[2]} — ${user_lang_feedback}
+
+### ##text-center## ${acc}%
+##text-center## ${tipText}
+
+##text-center## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
+
+    const actions = {
+        'repeat': () => {renderCurrentScreen();},
+        'next':   () => {loadNextScreen(true);}
+    };
+    const markdownConf = buildMarkdownConf(
+        courseTargetLanguage, targetDir, userLang, userDir);
+
+    updateCharacterBubble(markdownText, markdownConf, actions);
 }
 
 
@@ -1870,8 +1878,10 @@ function renderExplanationsScreen() {
     topicExplanations = localizedExplanations;
   }
   // Markdown to HTML
+  markdownConf = buildMarkdownConf(
+    courseTargetLanguage, targetDir, userLang, userDir);
   document.getElementById('explanationsContent').innerHTML = parseMarkdown(
-      topicExplanations, courseTargetLanguage, targetDir);
+      topicExplanations, markdownConf);
   explanationsElm.classList.remove('hidden');
 }
 
@@ -1879,6 +1889,15 @@ function renderExplanationsScreen() {
 //  - initialize the menu
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
+
+  const gender = Math.floor(Math.random() * 2) ? 'male' : 'female';
+  initMascot(NARRATOR_TEMPLATES[gender], 'mascot-wrapper');
+  const bubble = document.getElementById('speech-bubble');
+  const mascot = document.getElementById('mascot-wrapper');
+  bubble.addEventListener('click', toggleBubble);
+  mascot.addEventListener('click', toggleBubble);
+  setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+
 
     initTopic(settings.getCurrentTopic());
     renderCurrentScreen();

@@ -23,7 +23,6 @@
 }
 
 .settings-select {
-    position: absolute;
     left: 20px;
     padding: 5px 10px;
     border-radius: 5px;
@@ -31,6 +30,16 @@
     background: white;
     cursor: pointer;
     font-family: inherit;
+}
+
+.settings-select.in-toolbar {
+    position: absolute;
+}
+
+.text-center {
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 #narrator-container {
@@ -42,7 +51,7 @@
     flex-direction: column;
     align-items: flex-end;
     padding: 20px;
-    z-index: 9999;
+    z-index: 999;
     pointer-events: none;
 }
 

@@ -5,7 +5,7 @@
 
 // common data
 
-const app_code_ver = '2.8.5';
+const app_code_ver = '2.9.0';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -35,13 +35,30 @@ function verifyCourseParameters() {
   }
 }
 
-// Convert "Markdown" text to HTML
-function parseMarkdown(text, tartgetLanguage='en', targetDirection='ltr') {
-  const targetTags = `class="target-text" dir="${targetDirection}" lang="${tartgetLanguage}"`;
+// build Markdown configuration:
+// dictionary mapping target and UI tags to be used in generated HTML
+function buildMarkdownConf(targetLanguage, targetDirection, userLanguage, userDirection) {
+  return {
+    'targetTags': `class="target-text" dir="${targetDirection}" lang="${targetLanguage}"`,
+    'userTags': `class="user-text" dir="${userDirection}" lang="${userLanguage}"`
+  };
+}
+
+// Convert "Markdown" text to HTML using conf (optional)
+// usage: markdownConf = buildMarkdownConf(courseTargetLanguage, targetDir, userLang, userDir);
+// domElm.innerHTML = parseMarkdown(text, markdownConf);
+function parseMarkdown(text, conf={}) {
   return text
 
       // Images ![alt-text](/path/to/picture.jpg)
       .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="guide-img">')
+
+      // Links [display text](https://some.url/with/endpoint)
+      .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')
+
+      // Combined header and class (### ##class## Text)
+      // Div with class (##class## Text)
+      .replace(/##([^#]+)## (.*$)/gim, '<div class="$1">$2</div>')
 
       // Headers (### Text)
       .replace(/^### (.*$)/gim, '<h3>$1</h3>')
@@ -53,14 +70,39 @@ function parseMarkdown(text, tartgetLanguage='en', targetDirection='ltr') {
       .replace(/__([^_]+)__/gim, '<i>$1</i>')
 
       // Target language ('''text''')
-      .replace(/'''([^']+)'''/gim, '<span ' + targetTags +'>$1</span>')
+      .replace(/'''([^']+)'''/gim, '<span ' + conf["targetTags"] +'>$1</span>')
 
       // Newlines
       .replace(/\n/gim, '<br>')
 
+      // Avoid newline after div
+      .replace(/div><br>/gim, 'div>')
+
       // Avoid newline around header
       .replace(/h3><br>/gim, 'h3>')
       .replace(/<br><h3/gim, '<h3');
+}
+
+// replace links like href="#repeat" with functions from actions dictionary
+// usage: injectActionsToLinks(container, actions) 
+function injectActionsToLinks(container, actions) {
+    const links = container.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        const action = link.getAttribute('href').substring(1);
+        
+        link.classList.add('action-link');
+        link.removeAttribute('href'); // avoid link-like behavior
+        
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            if ( actions[action] ) {
+                actions[action]();
+            } else {
+                console.log(`ERROR: unsupported action "${action}" in link`);
+            }
+        });
+    });
 }
 
 // Generate SVG icon from character
@@ -218,7 +260,11 @@ function toggleBubble(event) {
     }
 }
 
-function updateCharacterBubble(newHint) {
+// usage: markdownConf = buildMarkdownConf(courseTargetLanguage, targetDir, userLang, userDir);
+// updateCharacterBubble(newHint, markdownConf);
+// optional: actions = {'repeat': () => {some code;}};
+// injectActionsToLinks(document.getElementById('bubble-text'), actions);
+function updateCharacterBubble(newHint, markdownConf={}, actions={}) {
     const bubble = document.getElementById('speech-bubble');
     const textTarget = document.getElementById('bubble-text');
 
@@ -231,7 +277,8 @@ function updateCharacterBubble(newHint) {
     }
 
     setTimeout(() => {
-        textTarget.innerHTML = parseMarkdown(newHint);
+        textTarget.innerHTML = parseMarkdown(newHint, markdownConf);
+        if ( actions ) injectActionsToLinks(textTarget, actions);
         bubble.dataset.enabled = true;
         // Show up after update
         bubble.classList.remove('hidden');
