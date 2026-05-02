@@ -51,29 +51,42 @@ const chapterObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.2 }); // Fire up when the half of section is visible
 
+
+// narrator controller
+const narratorController = {
+  isAutoScroll: true,
+
+  update(slide) {
+    const hint = slide.dataset.hint?.trim();
+    
+    // highlight current slide only
+    document.querySelector('.guide-slide.active')?.classList.remove('active');
+    slide.classList.add('active');
+
+    const bubble = document.getElementById('speech-bubble');
+    if (hint) {
+        bubble.dataset.enabled = 1;
+        updateCharacterBubble(hint);
+        setNarratorEmotion('narrator-svg', narratorSmileEmotion);
+        // show bubble
+        bubble.classList.remove('hidden');
+    } else {
+      bubble.dataset.enabled = '';
+      setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
+      bubble.classList.add('hidden');
+    }
+  }
+};
+
+// configure the Observer
 const slideObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    let narratorMode = 'speak';
+    // Activate when the slide is shown
     if (entry.isIntersecting) {
-      // 1. Update text in floating bubble
-      const hint = entry.target.dataset.hint;
-      updateCharacterBubble(hint);
-
-      // 2. Enable side highlight for this slide only
-      document.querySelectorAll('.guide-slide').forEach(s => s.classList.remove('active'));
-      entry.target.classList.add('active');
-      if (!hint || hint.trim() === "") narratorMode = 'silent';
-    } else {
-      narratorMode = 'silent';
-    }
-
-    if (narratorMode == 'speak') {
-      setNarratorEmotion('narrator-svg', narratorSmileEmotion);
-    } else {
-      setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
+      narratorController.update(entry.target);
     }
   });
-}, { threshold: 0.6, rootMargin: "-10% 0px -10% 0px" }); 
+}, { threshold: 0.7, rootMargin: "-10% 0px -10% 0px" }); 
 
 // fill sections in app_container
 /*
@@ -106,6 +119,11 @@ const appContainerElm = document.getElementById('app-container');
   }
   appContainerElm.appendChild(sectionObj);
   chapterObserver.observe(sectionObj);
+  // Add listener for Hover
+  document.querySelectorAll('.guide-slide').forEach(slide => {
+    slide.addEventListener('mouseenter', () => narratorController.update(slide));
+  });
+
 });
 
 window.addEventListener('DOMContentLoaded', async () => {

@@ -18,7 +18,7 @@
 .guide-slide.active {
     opacity: 1;
     background: rgba(52, 152, 219, 0.03);
-    border-color: #3498db; /* Синие полоски по бокам */
+    border-color: #3498db; /* side highlight TODO: use vars */
     box-shadow: inset 0 0 20px rgba(52, 152, 219, 0.05);
 }
 
@@ -46,15 +46,10 @@
         
         /* Some padding inside, just for better visual effect */
         padding: 0 40px;
-        
-        /* Optional: emphasize the placeholder */
-        /* background: #fdfdfd; */
-        /* border-left: 1px solid #eee; */
-        /* border-right: 1px solid #eee; */
     }
 }
 
-/* Плавный скролл при клике на иконку — всего одна строка! */
+/* smooth scroll */
 html {
     scroll-behavior: smooth;
 }

@@ -5,7 +5,7 @@
 
 // common data
 
-const app_code_ver = '2.9.2';
+const app_code_ver = '2.9.3';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -335,7 +335,8 @@ function getRandomNarrator(searchTags = []) {
 function getNarratorById(id) {
   return narratorsById.get(id).src || null;
 }
-// Narators "database"
+
+// Narrators "database"
 
 const NARRATORS = [
 {
@@ -551,5 +552,5 @@ const NARRATORS = [
 }
 ];
 
+// dictionary for direct access to narrator by ID
 const narratorsById = new Map(NARRATORS.map(n => [n.id, n]));
-
