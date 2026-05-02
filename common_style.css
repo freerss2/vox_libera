@@ -42,40 +42,12 @@
     text-align: center;
 }
 
-#narrator-container {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 20px;
-    z-index: 999;
-    pointer-events: none;
-}
-
-#speech-bubble {
-    position: fixed;
-    bottom: 140px;
-    left: 80px;
-    background: #ffffff;
-    border: 2px solid #333;
-    border-radius: 15px;
-    padding: 15px;
-    min-width: 200px;
-    max-width: 450px;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
-    pointer-events: all;
-    cursor: pointer;
-}
-
 #speech-bubble::after {
     content: '';
     position: absolute;
-    bottom: -20px; /* Выход за нижнюю границу баббла */
-    left: 30px;    /* Сдвиг хвостика влево */
-    border-width: 20px 20px 0 0; /* Формируем уголок, смотрящий влево-вниз */
+    bottom: -19px;
+    left: 66px;
+    border-width: 20px 20px 0 0;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
 }
@@ -83,35 +55,51 @@
 #speech-bubble::before {
     content: '';
     position: absolute;
-    bottom: -23px;
-    left: 29px;
+    bottom: -22px;
+    left: 65px;
     border-width: 21px 21px 0 0;
     border-style: solid;
     border-color: #333 transparent transparent transparent;
 }
 
-.bubble-tail-old {
-    position: absolute;
-    bottom: -12px;
-    right: 35px;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
-    transform: rotate(45deg);
+#narrator-container {
+    position: fixed;
+    bottom: 10px;
+    z-index: 999;
+    pointer-events: none;
+    left: 1vw; 
+}
+
+@media (min-width: 601px) {
+    #narrator-container {
+        left: 30vw;
+    }
 }
 
 #narrator-wrapper {
-    position: fixed;
-    bottom: 10px;
-    left: 20px;
+    position: relative;
     width: 120px;
     height: 130px;
     z-index: 1000;
-    overflow: hidden;
     pointer-events: all;
     cursor: pointer;
+}
+
+#speech-bubble {
+    position: absolute;
+    bottom: 110%;
+    left: 20px;
+    
+    min-width: 300px;
+    max-width: 450px;
+    background: #ffffff;
+    border: 2px solid #333;
+    border-radius: 15px;
+    padding: 15px;
+
+    pointer-events: all;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
 }
 
 #narrator-svg {
