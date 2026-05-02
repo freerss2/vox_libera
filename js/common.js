@@ -5,7 +5,7 @@
 
 // common data
 
-const app_code_ver = '2.9.1';
+const app_code_ver = '2.9.2';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -44,21 +44,32 @@ function buildMarkdownConf(targetLanguage, targetDirection, userLanguage, userDi
   };
 }
 
+// Conver custom markdown to divs with class name
+// usage:  html = parseCustomDivs('##text-center## some prompt: ##stat-value## 12%');
+function parseCustomDivs(text) {
+    // ##className## content
+    const regex = /##([^#\n]+)##\s+(.*)$/gim;
+
+    return text.replace(regex, (match, className, content) => {
+        // call the function recursively for the rest of string (content)
+        let parsedContent = parseCustomDivs(content);
+        
+        return `<div class="${className}">${parsedContent}</div>`;
+    });
+}
+
 // Convert "Markdown" text to HTML using conf (optional)
 // usage: markdownConf = buildMarkdownConf(courseTargetLanguage, targetDir, userLang, userDir);
 // domElm.innerHTML = parseMarkdown(text, markdownConf);
 function parseMarkdown(text, conf={}) {
-  return text
+  const nestedProcessed = parseCustomDivs(text);
+  return nestedProcessed
 
       // Images ![alt-text](/path/to/picture.jpg)
       .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="guide-img">')
 
       // Links [display text](https://some.url/with/endpoint)
       .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')
-
-      // Combined header and class (### ##class## Text)
-      // Div with class (##class## Text)
-      .replace(/##([^#]+)## (.*$)/gim, '<div class="$1">$2</div>')
 
       // Headers (### Text)
       .replace(/^### (.*$)/gim, '<h3>$1</h3>')
@@ -134,24 +145,24 @@ function updateFavicon(langCode) {
     link.href = 'data:image/svg+xml;base64,' + btoa(binString);
 }
 
-const mascotNeutralEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'neutral-mouth'];
-const mascotSmileEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'smile-mouth'];
+const narratorNeutralEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'neutral-mouth'];
+const narratorSmileEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'smile-mouth'];
 
-// usage: initMascot(JS_OBJECT, 'mascot-wrapper');
-async function initMascot(imageCode, containerId) {
+// usage: initNarrator(JS_OBJECT, 'narrator-wrapper');
+async function initNarrator(imageCode, containerId) {
     const wrapper = document.getElementById(containerId);
     if (!wrapper) return;
 
     wrapper.innerHTML = imageCode;
 }
 
-// Usage: setMascotEmotion('narrator-svg', ['right-eye', 'left-eye']);
-function setMascotEmotion(mascotId, emotionIds) {
-    const mascotSvg = document.getElementById(mascotId);
-    if (!mascotSvg) return;
+// Usage: setNarratorEmotion('narrator-svg', ['right-eye', 'left-eye']);
+function setNarratorEmotion(narratorId, emotionIds) {
+    const narratorSvg = document.getElementById(narratorId);
+    if (!narratorSvg) return;
 
     // 1. collect objects by class
-    const allEmotions = mascotSvg.querySelectorAll('.emotion-layer');
+    const allEmotions = narratorSvg.querySelectorAll('.emotion-layer');
     
     allEmotions.forEach(layer => {
         if (!layer.classList.contains('animation')) {
@@ -162,7 +173,7 @@ function setMascotEmotion(mascotId, emotionIds) {
 
     // 2. enable only desired layer
     [...emotionIds].forEach(emotionId => {
-      const target = mascotSvg.querySelector(`#emotion-${emotionId}`);
+      const target = narratorSvg.querySelector(`#emotion-${emotionId}`);
       if (target) {
         target.style.visibility = 'visible';
         target.style.display = 'inline'; // Or use 'block'
@@ -179,15 +190,15 @@ const getEyelidsByPattern = (pattern) => {
 };
 
 // Usage:  blink('narrator-svg', 'left', 500);
-function blink(mascotId, pattern, duration) {
-    const mascotSvg = document.getElementById(mascotId);
-    if (!mascotSvg) return;
-    if (mascotSvg.dataset.animation) return;
+function blink(narratorId, pattern, duration) {
+    const narratorSvg = document.getElementById(narratorId);
+    if (!narratorSvg) return;
+    if (narratorSvg.dataset.animation) return;
 
     const targetIds = getEyelidsByPattern(pattern);
-    mascotSvg.dataset.animation = true;
+    narratorSvg.dataset.animation = true;
     targetIds.forEach(blinkId => {
-      const target = mascotSvg.querySelector(`#emotion-${blinkId}`);
+      const target = narratorSvg.querySelector(`#emotion-${blinkId}`);
       if (target) {
         target.style.visibility = 'visible';
         target.style.display = 'inline';
@@ -196,14 +207,14 @@ function blink(mascotId, pattern, duration) {
           target.style.visibility = 'hidden';
           target.style.display = 'none';
           target.classList.remove('animation');
-          mascotSvg.dataset.animation = '';
+          narratorSvg.dataset.animation = '';
         }, duration);
       }
     });
 }
 
 // usage: randomBlink('narrator-svg', 1500);
-function randomBlink(mascotId, duration) {
+function randomBlink(narratorId, duration) {
     const blinkPatterns = [
       'left', 'right',
       'upper', 'lower',
@@ -211,13 +222,13 @@ function randomBlink(mascotId, duration) {
       'eyelid'
       ];
     const pattern = blinkPatterns[Math.floor(Math.random() * blinkPatterns.length)];
-    blink(mascotId, pattern, duration);
+    blink(narratorId, pattern, duration);
 }
 
 // usage: setEyebrowExpression('narrator-svg', 'frown' / 'raised' / 'serious' / 'sad', 500);
-function setEyebrowExpression(mascotId, type, duration) {
-    const mascotSvg = document.getElementById(mascotId);
-    const eyebrows = mascotSvg.querySelectorAll('.animation-eyebrow');
+function setEyebrowExpression(narratorId, type, duration) {
+    const narratorSvg = document.getElementById(narratorId);
+    const eyebrows = narratorSvg.querySelectorAll('.animation-eyebrow');
     
     const className = `eyebrow-${type}`;
     
@@ -233,10 +244,10 @@ function setEyebrowExpression(mascotId, type, duration) {
 }
 
 // usage: randomEyebrow('narrator-svg', 1200);
-function randomEyebrow(mascotId, duration) {
+function randomEyebrow(narratorId, duration) {
   const eyebrowExprTypes = ['frown', 'raised', 'serious', 'sad'];
   const expr = eyebrowExprTypes[Math.floor(Math.random() * eyebrowExprTypes.length)];
-  setEyebrowExpression(mascotId, expr, duration);
+  setEyebrowExpression(narratorId, expr, duration);
 }
 
 // callback for bubble hide/show
@@ -252,11 +263,11 @@ function toggleBubble(event) {
     if ( bubble.classList.contains('hidden') ) {
         if (bubble.dataset.enabled) {
           bubble.classList.remove('hidden');
-          setMascotEmotion('narrator-svg', mascotSmileEmotion);
+          setNarratorEmotion('narrator-svg', narratorSmileEmotion);
         }
     } else {
         bubble.classList.add('hidden');
-        setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+        setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
     }
 }
 
@@ -285,8 +296,52 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}) {
     }, 300);
 }
 
-const NARRATOR_TEMPLATES = {
-"female": `
+// Narrators lookup
+
+/**
+ * Get a list of IDs for narrators matching a given tags set
+ * @param {string[]} searchTags - search tags set
+ * @param {boolean} matchAll - when True - all search tags should match
+ */
+function narratorIdsByTags(searchTags = [], matchAll = true) {
+  if (searchTags.length === 0) {
+    return NARRATORS.map(n => n.id);
+  }
+
+  return NARRATORS
+    .filter(narrator => {
+      if (matchAll) {
+        return searchTags.every(tag => narrator.tags.includes(tag));
+      } else {
+        return searchTags.some(tag => narrator.tags.includes(tag));
+      }
+    })
+    .map(narrator => narrator.id);
+}
+
+// Get random narrator according to search tags
+function getRandomNarrator(searchTags = []) {
+  let ids = narratorIdsByTags(searchTags);
+  
+  if (ids.length === 0) {
+    // fallback to first as default
+    ids = [NARRATORS[0].id];
+  }
+  
+  const randomIndex = Math.floor(Math.random() * ids.length);
+  return getNarratorById(ids[randomIndex]);
+}
+
+function getNarratorById(id) {
+  return narratorsById.get(id).src || null;
+}
+// Narators "database"
+
+const NARRATORS = [
+{
+  id: "Alice",
+  tags: ["Alice", "human", "classic", "female"],
+  src: `
 <svg id="narrator-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="365 88 347 378">
   <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
   <defs>
@@ -399,9 +454,12 @@ const NARRATOR_TEMPLATES = {
       <path class="st5" d="M539.95,203.94h-12.43c-.02-1.73.54-3.36,1.7-5.35,2.66-4.56,6.14-4.21,9.26.91h0c.86,1.43,1.36,2.91,1.46,4.44h0Z"/>
     </g>
   </g>
-</svg>`,
-
-"male": `
+</svg>`
+},
+{
+  id: "Bob",
+  tags: ["Bob", "human", "classic", "male"],
+  src: `
 <svg id="narrator-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" viewBox="15 0 350 480">
   <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
   <defs>
@@ -490,4 +548,8 @@ const NARRATOR_TEMPLATES = {
   </g>
 
 </svg>`
-};
+}
+];
+
+const narratorsById = new Map(NARRATORS.map(n => [n.id, n]));
+

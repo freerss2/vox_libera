@@ -191,7 +191,6 @@ function i18n_ct(text) {
 function applyTopicToDisplay() {
   const topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
   document.getElementById('currentTopicName').textContent = topicTitle;
-  document.getElementById('currentTopicNameSummary').textContent = topicTitle;
 
   displayTopicCompletionState();
   updateDrawerStats();
@@ -262,27 +261,44 @@ function loadNextScreen(fromWinDialog=false) {
 }
 
 function showTopicResults() {
-    const data = getTopicStats(settings.getCurrentTopic());
-    const modal = document.getElementById('resultsModal');
+    const topicId = settings.getCurrentTopic();
+    const topicTitle = i18n_ct(topics[topicId].name);
+    const data = getTopicStats(topicId);
 
-    // Statistics for words
-    document.getElementById('res-words-count').textContent = data.wordsCount;
-    document.getElementById('res-words-accuracy').textContent = `${Math.round(data.wordsSuccess)}%`;
+    // generate Markdown summary
+    const repeatPrompt = i18n.t('main|sum-repeat');
+    const nextPrompt = i18n.t('main|sum-next');
+    const title = i18n.t('modal_results|title');
+    const wordsLearned = i18n.t('modal_results|words_learned');
+    const sentCount = i18n.t('menu|sent_count');
+    const wordsAccuracy = i18n.t('modal_results|words_accuracy');
 
-    // Statistics for phrases
-    document.getElementById('res-sent-count').textContent = data.sentencesCount;
-    document.getElementById('res-sent-accuracy').textContent = `${Math.round(data.sentencesSuccess)}%`;
+    const markdownText = `### ##text-center## ${title}
+### ##text-center## ${topicTitle}
+##text-center## ${wordsLearned} ##stat-value## ${data.wordsCount}
+##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
+##text-center## ${sentCount} ##stat-value## ${data.sentencesCount}
+##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%
 
-    // hide winScreen
-    const winScreenElm = document.getElementById('winScreen');
-    if (winScreenElm) winScreenElm.classList.add('hidden');
-    // show new screen
-    modal.classList.remove('hidden');
+##text-center## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
+
+    const actions = {
+        'repeat': () => {renderCurrentScreen();},
+        'next':   () => {nextTopic();}
+    };
+
+    const markdownConf = buildMarkdownConf(
+        courseTargetLanguage, targetDir, userLang, userDir);
+    // visualize the popup
+    document.getElementById('narrator-container').classList.remove('hidden');
+    // show as "hint"
+    updateCharacterBubble(markdownText, markdownConf, actions);
 
     // animate success
-    triggerSuccessEffect(modal);
-    setTimeout(() => { triggerSuccessEffect(modal); }, 1500);
-    setTimeout(() => { triggerSuccessEffect(modal); }, 2500);
+    const bubble = document.getElementById('speech-bubble');
+    triggerSuccessEffect(bubble);
+    setTimeout(() => { triggerSuccessEffect(bubble); }, 1500);
+    setTimeout(() => { triggerSuccessEffect(bubble); }, 2500);
 }
 
 function loadPrevNexScreen(delta) {
@@ -826,7 +842,7 @@ function showWin(acc) {
     // message in Markdown format, including two buttons
     const repeatPrompt = i18n.t('main|sum-repeat');
     const nextPrompt = i18n.t('main|sum-next');
-    let markdownText = `##text-center## '''${pick[1]}'''
+    const markdownText = `##text-center## '''${pick[1]}'''
 ##text-center## ${pick[2]} — ${user_lang_feedback}
 
 ### ##text-center## ${acc}%
@@ -1890,13 +1906,12 @@ function renderExplanationsScreen() {
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
 
-  const gender = Math.floor(Math.random() * 2) ? 'male' : 'female';
-  initMascot(NARRATOR_TEMPLATES[gender], 'mascot-wrapper');
+  initNarrator(getRandomNarrator(), 'narrator-wrapper');
   const bubble = document.getElementById('speech-bubble');
-  const mascot = document.getElementById('mascot-wrapper');
+  const narrator = document.getElementById('narrator-wrapper');
   bubble.addEventListener('click', toggleBubble);
-  mascot.addEventListener('click', toggleBubble);
-  setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+  narrator.addEventListener('click', toggleBubble);
+  setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
 
 
     initTopic(settings.getCurrentTopic());

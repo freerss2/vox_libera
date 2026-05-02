@@ -54,14 +54,13 @@ langSelect.addEventListener('change', (event) => {
 
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const gender = Math.floor(Math.random() * 2) ? 'male' : 'female';
-  initMascot(NARRATOR_TEMPLATES[gender], 'mascot-wrapper');
+  initNarrator(getRandomNarrator(), 'narrator-wrapper');
   const bubble = document.getElementById('speech-bubble');
-  const mascot = document.getElementById('mascot-wrapper');
+  const narrator = document.getElementById('narrator-wrapper');
   updateCharacterBubble(i18n.t('main|app-description'));
   bubble.addEventListener('click', toggleBubble);
-  mascot.addEventListener('click', toggleBubble);
-  setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+  narrator.addEventListener('click', toggleBubble);
+  setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
 
   // take list of cources and generate buttons dynamically
   const courseSelector = document.getElementById('course-selector');

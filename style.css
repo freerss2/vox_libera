@@ -751,6 +751,7 @@ body {
     font-weight: bold;
     color: var(--primary);
     margin-left: 4px;
+    display: inline;
 }
 
 .results-stats {

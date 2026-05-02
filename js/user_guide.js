@@ -68,9 +68,9 @@ const slideObserver = new IntersectionObserver((entries) => {
     }
 
     if (narratorMode == 'speak') {
-      setMascotEmotion('narrator-svg', mascotSmileEmotion);
+      setNarratorEmotion('narrator-svg', narratorSmileEmotion);
     } else {
-      setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+      setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
     }
   });
 }, { threshold: 0.6, rootMargin: "-10% 0px -10% 0px" }); 
@@ -109,12 +109,11 @@ const appContainerElm = document.getElementById('app-container');
 });
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const gender = Math.floor(Math.random() * 2) ? 'male' : 'female';
-  initMascot(NARRATOR_TEMPLATES[gender], 'mascot-wrapper');
+  initNarrator(getRandomNarrator(), 'narrator-wrapper');
   const bubble = document.getElementById('speech-bubble');
-  const mascot = document.getElementById('mascot-wrapper');
+  const narrator = document.getElementById('narrator-wrapper');
   bubble.addEventListener('click', toggleBubble);
-  mascot.addEventListener('click', toggleBubble);
-  setMascotEmotion('narrator-svg', mascotNeutralEmotion);
+  narrator.addEventListener('click', toggleBubble);
+  setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
   updateFavicon('🌐');
 });
