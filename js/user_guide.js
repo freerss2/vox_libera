@@ -1,9 +1,14 @@
-﻿/*
+/*
  *   "Vox-Libera" - Learn Any Language
  *   User Guide engine
  */
 
 "use strict";
+
+console.log('app_code_ver='+app_code_ver);
+/* SPECIAL TREAMENT FOR LINTER ONLY: */
+window.courses = courses;
+/* --------------------------------- */
 
 const settings = new Settings({
     "userInterfaceLanguage": {"default": "en"}
@@ -17,7 +22,7 @@ const langSelect = document.getElementById('ui-lang-select');
 // Configure UI selector
 langSelect.innerHTML = '';
 Object.keys(locales).forEach(langCode => {
-    const langName = locales[langCode].__title__ || langCode;
+    // const langName = locales[langCode].__title__ || langCode;
     const option = document.createElement('option');
     option.value = langCode;
     option.textContent = langCode;
@@ -37,7 +42,7 @@ langSelect.addEventListener('change', (event) => {
     location.reload();
 });
 
-const userDir = langDirection(userLang);
+// const userDir = langDirection(userLang);
 // TODO: apply direction to the document (?)
 
 const chapterObserver = new IntersectionObserver((entries) => {

@@ -12,38 +12,6 @@ const courses = [
   {"ref": "course.he1", "code": "א", "title": "Hebrew Basics"}
 ];
 
-// compare current URL and current course data with a matching record in "courses"
-// print error on mismatch(es)
-function verifyCourseParameters() {
-  // get a directory name from location
-  const currDir = location.pathname.split('/').pop().replace('.html', '');
-  let found = false;
-  courses.forEach( c => {
-    if (c.ref == currDir) {
-      found = true;
-      // check code and title match
-      if (manifest.icon_code != c.code) {
-        console.log(`ERROR: manifest.icon_code "${manifest.icon_code}" is not matching course.code "${c.code}"`);
-      }
-      if (manifest.metadata.title != c.title) {
-        console.log(`ERROR: manifest.metadata.title "${manifest.metadata.title}" is not matching course.title "${c.title}"`);
-      }
-    }
-  } );
-  if ( ! found ) {
-    console.log(`ERROR: course ${currDir} is not listed in "courses"`);
-  }
-}
-
-// build Markdown configuration:
-// dictionary mapping target and UI tags to be used in generated HTML
-function buildMarkdownConf(targetLanguage, targetDirection, userLanguage, userDirection) {
-  return {
-    'targetTags': `class="target-text" dir="${targetDirection}" lang="${targetLanguage}"`,
-    'userTags': `class="user-text" dir="${userDirection}" lang="${userLanguage}"`
-  };
-}
-
 // Conver custom markdown to divs with class name
 // usage:  html = parseCustomDivs('##text-center## some prompt: ##stat-value## 12%');
 function parseCustomDivs(text) {

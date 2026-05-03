@@ -45,7 +45,7 @@ class Settings {
                     if (typeof result === 'string')
                         result = JSON.parse(result);
                   } else {
-                    resut = {};
+                    result = {};
                   }
                 }
                 return result;

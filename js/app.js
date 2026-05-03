@@ -10,6 +10,29 @@ console.log('html_code_ver='+html_code_ver);
 console.log('app_code_ver='+app_code_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
 
+// compare current URL and current course data with a matching record in "courses"
+// print error on mismatch(es)
+function verifyCourseParameters() {
+  // get a directory name from location
+  const currDir = location.pathname.split('/').pop().replace('.html', '');
+  let found = false;
+  courses.forEach( c => {
+    if (c.ref == currDir) {
+      found = true;
+      // check code and title match
+      if (manifest.icon_code != c.code) {
+        console.log(`ERROR: manifest.icon_code "${manifest.icon_code}" is not matching course.code "${c.code}"`);
+      }
+      if (manifest.metadata.title != c.title) {
+        console.log(`ERROR: manifest.metadata.title "${manifest.metadata.title}" is not matching course.title "${c.title}"`);
+      }
+    }
+  } );
+  if ( ! found ) {
+    console.log(`ERROR: course ${currDir} is not listed in "courses"`);
+  }
+}
+
 verifyCourseParameters();
 
 const GENERAL_TOPIC_ID = 'all';
@@ -65,7 +88,7 @@ const difficultySettings = {
 };
 
 // Autofix for wrong inputs
-if ( ! topics.hasOwnProperty(GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
+if ( ! Object.hasOwn(topics, GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
 
 if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOPIC_ID);
 
@@ -659,7 +682,6 @@ function changeCard(step) {
 
 function markAsLearned() {
     const cardAnchor = document.getElementById('card-anchor');
-    const currentItem = flashcardsData[cardIndex];
 
     // Animate learned card disappearing
     cardAnchor.style.transform = 'translateY(-100vh) rotate(10deg)';
@@ -702,9 +724,6 @@ let selectedLeft = null, selectedRight = null, errors = 0, matches = 0;
 
 // settings for game according to difficilty
 var gameSettings = {}
-
-// settings for quiz screen(s)
-var totalChoices = 4;
 
 // initialize pairs (matching) screen
 function renderMatchingGame() {
@@ -1000,7 +1019,7 @@ function generateDistractors(correct, all, totalChoices) {
             const diffB = Math.abs(b[1].length - targetLength);
             return diffA - diffB;
         });
-    filtered = filtered.slice(0, gameSettings.totalChoices-1);
+    filtered = filtered.slice(0, totalChoices-1);
     // shuffle and take out of them (totalChoices-1) answers
 
     choices = shuffle(choices.concat(filtered));
@@ -1131,7 +1150,7 @@ function renderSent(screen_id) {
     const questionContainer = document.getElementById('sent-question-container');
     const bankContainer = document.getElementById('sent-bank');
     const resultContainer = document.getElementById('sent-result');
-    let questionHtml = '';
+    let questionHtml;
     let expected = gameSentence[0];
     let extractPosition = 0;
     let speakEnable = 0;
@@ -1146,7 +1165,6 @@ function renderSent(screen_id) {
         resultContainer.classList.add('target-text');
         resultContainer.dir = targetDir;
     } else if (screenType == 'sent_t2u') {
-        questionHtml = gameSentence[1];
         questionHtml = `<span lang="${courseTargetLanguage}" dir="${targetDir}" class="target-text">${gameSentence[1]}</span>`;
         mainHint = `[${gameSentence[2]}]`;
         resultContainer.classList.add('user-text');
@@ -1179,8 +1197,8 @@ function renderSent(screen_id) {
     // 6. create word-buttons in bottom card
     bankContainer.innerText = '';
     let bankWordClass = 'sent-word';
-    let bankWordLang = '';
-    let bankWordDir = '';
+    let bankWordLang;
+    let bankWordDir;
     if ( screenType == 'sent_u2t' ) {
       bankWordClass += ' target-text';
       bankWordLang = courseTargetLanguage;
@@ -1282,8 +1300,8 @@ function appendWordToResult(bankWordId, word) {
   resultWord.dataset.wordIndex = wordIndex;
   resultWord.id = 'result-' + bankWordId;
   let resultWordClass = 'sent-word sent-word-result';
-  let resultWordLang = '';
-  let resultWordDir = '';
+  let resultWordLang;
+  let resultWordDir;
   if ( screenType == 'sent_u2t' ) {
       resultWordClass += ' target-text';
       resultWordLang = courseTargetLanguage;
@@ -1709,8 +1727,8 @@ function getTopicStats(topicId) {
       for (let key in topics) {
         topicData = topics[key];
         if ( topicData ) {
-          if (topicData.hasOwnProperty('words'))     topicWords.push(...topicData.words);
-          if (topicData.hasOwnProperty('sentences')) topicSentences.push(...topicData.sentences);
+          if (Object.hasOwn(topicData, 'words'))     topicWords.push(...topicData.words);
+          if (Object.hasOwn(topicData, 'sentences')) topicSentences.push(...topicData.sentences);
         }
       }
     }
@@ -1879,6 +1897,15 @@ document.addEventListener('keydown', (event) => {
         event.stopPropagation();
     }
 });
+
+// build Markdown configuration:
+// dictionary mapping target and UI tags to be used in generated HTML
+function buildMarkdownConf(targetLanguage, targetDirection, userLanguage, userDirection) {
+  return {
+    'targetTags': `class="target-text" dir="${targetDirection}" lang="${targetLanguage}"`,
+    'userTags': `class="user-text" dir="${userDirection}" lang="${userLanguage}"`
+  };
+}
 
 // Sources for information:
 // manifest['metadata'] title, description, prerequisites, goals

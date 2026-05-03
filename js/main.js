@@ -25,14 +25,14 @@ settings.setUserInterfaceLanguage(userLang);
 const i18n = new I18nManager(locales);
 i18n.setLanguage(userLang);
 
-const userDir = langDirection(userLang);
-
+//const userDir = langDirection(userLang);
 // TODO: apply direction to "about" window
+
 const langSelect = document.getElementById('ui-lang-select');
 // Configure UI selector
 langSelect.innerHTML = '';
 Object.keys(locales).forEach(langCode => {
-    const langName = locales[langCode].__title__ || langCode;
+    // const langName = locales[langCode].__title__ || langCode;
     const option = document.createElement('option');
     option.value = langCode;
     option.textContent = langCode;
