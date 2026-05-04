@@ -51,15 +51,15 @@ function parseMarkdown(text, conf={}) {
       // Target language ('''text''')
       .replace(/'''([^']+)'''/gim, '<span ' + conf["targetTags"] +'>$1</span>')
 
-      // Newlines
-      .replace(/\n/gim, '<br>')
-
       // Avoid newline after div
-      .replace(/div><br>/gim, 'div>')
+      .replaceAll(/div>\n+/gim, 'div>')
 
       // Avoid newline around header
-      .replace(/h3><br>/gim, 'h3>')
-      .replace(/<br><h3/gim, '<h3');
+      .replaceAll(/h3>\n/gim, 'h3>')
+      .replaceAll(/\n<h3/gim, '<h3')
+
+      // Newlines
+      .replace(/\n/gim, '<br>');
 }
 
 // replace links like href="#repeat" with functions from actions dictionary

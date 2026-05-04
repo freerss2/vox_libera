@@ -456,7 +456,7 @@ To start a course, select the course title and click on it.
       "flashcards-abc":  "Карточки букв",
       "flashcards":      "Карточки слов",
       "flashcards-sent": "Карточки предложений",
-      "story":           "Текст",
+      "story":           "Учебный текст",
       "matching-abc":    "Поиск пары букв",
       "matching":        "Поиск пары слов",
       "quiz_u2t":        "Викторина: 👤 → 🌍",

@@ -292,10 +292,6 @@ body {
   margin-bottom: 10px;
 }
 
-.story-line > span {
-  display: flex;
-}
-
 .user-text {
   font-size: calc(1.3rem * var(--app-scale) * var(--font-multiplier));
   color: var(--text-color);
@@ -305,6 +301,49 @@ body {
     color: #666;
     font-style: italic;
     margin-top: 5px;
+}
+
+/* main container for story line */
+.story-line {
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.story-line:hover {
+    background-color: #f9f9f9;
+}
+
+/* internal elements of story (hidden by default) */
+.story-translation {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.95rem;
+    color: #444;
+    padding-left: 10px;
+    border-left: 3px solid #ddd;
+}
+
+/* style for opened story sub-elements */
+.story-line.is-open .story-translation {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+/* trasnscription per story line */
+.story-transcr {
+    font-style: italic;
+    color: #888;
+    margin-top: 4px;
+    font-size: 0.85rem;
+}
+
+/* force story text to use flex display (essential for RTL languages) */
+.story-line > span {
+  display: flex;
 }
 
 .stat-badge {

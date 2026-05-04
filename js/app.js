@@ -1930,7 +1930,29 @@ function renderTextScreen(screenId) {
   document.getElementById('explanationsContent').innerHTML = parseMarkdown(
       topicText, markdownConf);
   wrapperElm.classList.remove('hidden');
-  // TODO: apply hydrateStory()
+  hydrateStory();
+}
+
+// Add to every "story-line" reaction for click (open/close accordion)
+function hydrateStory() {
+    const lines = document.querySelectorAll('.story-line');
+
+    lines.forEach(line => {
+        line.addEventListener('click', function(e) {
+            const isOpen = this.classList.contains('is-open');
+
+            // accordion: close all the rest
+            lines.forEach(l => l.classList.remove('is-open'));
+
+            // open the current content, if it was closed
+            if (!isOpen) {
+                // also, speak the text inside
+                const textToSpeak = line.children[0].textContent;
+                speakTargetLang(textToSpeak);
+                this.classList.add('is-open');
+            }
+        });
+    });
 }
 
 // On page load:
