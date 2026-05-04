@@ -17,9 +17,9 @@
 /* Active section with side highlights */
 .guide-slide.active {
     opacity: 1;
-    background: rgba(52, 152, 219, 0.03);
+    background: rgb(52 152 219 / 3%);
     border-color: #3498db; /* side highlight TODO: use vars */
-    box-shadow: inset 0 0 20px rgba(52, 152, 219, 0.05);
+    box-shadow: inset 0 0 20px rgb(52 152 219 / 5%);
 }
 
 .guide-img {
@@ -28,7 +28,7 @@
     max-width: 100%;    /* Stay inside the screen borders */
     height: auto;
     border-radius: 8px; /* round borders */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Imitate 3-D effect */
+    box-shadow: 0 4px 10px rgb(0 0 0 / 10%); /* Imitate 3-D effect */
 }
 
 #app-container {

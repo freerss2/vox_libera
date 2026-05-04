@@ -122,13 +122,14 @@ const userDir = langDirection(userLang);
 
 // Screen types
 const SCREENS = [
-  { id: 'explanations',    shared: 1, excercise: 0, screen_type: 'explanations', name: 'Explanations',      inputs: [] },
+  { id: 'explanations',    shared: 1, excercise: 0, screen_type: 'text',         name: 'Explanations',      inputs: ['explanations'] },
   { id: 'abc',             shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['abc'] },
   { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['words'] },
   { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Sentences',         inputs: ['sentences'] },
   { id: 'flashcards-abc',  shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards ABC',    inputs: ['abc'] },
   { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards words',  inputs: ['words'] },
   { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards sent',   inputs: ['sentences'] },
+  { id: 'story',           shared: 0, excercise: 0, screen_type: 'text',         name: 'Story',             inputs: ['story'] },
   { id: 'matching-abc',    shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching ABC',      inputs: ['abc'] },
   { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
   { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
@@ -396,7 +397,7 @@ function initTopic(topicId) {
     const screenInputs = screen['inputs'];
     if (topicId == 'all') {
       if (screen['shared'] == 1) {
-        if (screen['screen_type'] === 'explanations') {
+        if (screen['screen_type'] === 'text') {
           if (!currTopic['explanations']) useScreen = false;
         } else {
           // collect from all topics their abc/wors/sentences
@@ -413,8 +414,10 @@ function initTopic(topicId) {
       }
     } else {
       // if this screen require some limited set of inputs, make sure the topic contains them
-      if (screen['screen_type'] === 'explanations') {
-        if (!currTopic['explanations']) useScreen = false;
+      if (screen['screen_type'] === 'text') {
+        // check if currTopic contains respective input
+        const expectedInput = screenInputs[0];
+        if (!currTopic[expectedInput]) useScreen = false;
       } else {
         let presentInputs = [];
         screenInputs.forEach(input => {
@@ -553,8 +556,8 @@ function renderScreen(screen_id) {
     }
 
     // 3. Initialize screen according to type
-    if (screenType === 'explanations') {
-        renderExplanationsScreen();
+    if (screenType === 'text') {
+        renderTextScreen(screen_id);
         return;
     }
     if (screenType === 'dictionary') {
@@ -1907,25 +1910,27 @@ function buildMarkdownConf(targetLanguage, targetDirection, userLanguage, userDi
   };
 }
 
-// Sources for information:
-// manifest['metadata'] title, description, prerequisites, goals
-function renderExplanationsScreen() {
-  const explanationsElm = document.getElementById('explanationsScreen');
+// Show text-based screen
+function renderTextScreen(screenId) {
+  const wrapperElm = document.getElementById('explanationsScreen');
   const topicId = settings.getCurrentTopic();
   const currTopic = topics[topicId]
-  let topicExplanations = currTopic['explanations'];
+  const screen = getScreenRecord(screenId);
+  const textSource = screen.inputs[0];
+  let topicText = currTopic[textSource];
   // try to find localized version
-  const i18nKey = `explanations|${topicId}`;
-  const localizedExplanations = i18n.t(i18nKey);
-  if (localizedExplanations && localizedExplanations != i18nKey) {
-    topicExplanations = localizedExplanations;
+  const i18nKey = `${textSource}|${topicId}`;
+  const localizedText = i18n.t(i18nKey);
+  if (localizedText && localizedText != i18nKey) {
+    topicText = localizedText;
   }
   // Markdown to HTML
   const markdownConf = buildMarkdownConf(
     courseTargetLanguage, targetDir, userLang, userDir);
   document.getElementById('explanationsContent').innerHTML = parseMarkdown(
-      topicExplanations, markdownConf);
-  explanationsElm.classList.remove('hidden');
+      topicText, markdownConf);
+  wrapperElm.classList.remove('hidden');
+  // TODO: apply hydrateStory()
 }
 
 // On page load:

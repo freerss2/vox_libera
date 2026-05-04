@@ -4,7 +4,7 @@
     z-index: 1000;
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgb(255, 255, 255, 90%);
     backdrop-filter: blur(5px);
     padding: 10px;
     border-bottom: 1px solid #eee;
@@ -49,7 +49,7 @@
     left: 66px;
     border-width: 20px 20px 0 0;
     border-style: solid;
-    border-color: #fff transparent transparent transparent;
+    border-color: #fff transparent transparent;
 }
 
 #speech-bubble::before {
@@ -59,7 +59,7 @@
     left: 65px;
     border-width: 21px 21px 0 0;
     border-style: solid;
-    border-color: #333 transparent transparent transparent;
+    border-color: #333 transparent transparent;
 }
 
 #narrator-container {
@@ -89,14 +89,12 @@
     position: absolute;
     bottom: 110%;
     left: 20px;
-    
     min-width: 300px;
     max-width: 450px;
-    background: #ffffff;
+    background: #fff;
     border: 2px solid #333;
     border-radius: 15px;
     padding: 15px;
-
     pointer-events: all;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
