@@ -1,4 +1,4 @@
-﻿:root { 
+:root { 
     --nav-height: 60px;
     --drawer-width: 360px;
     --primary: #4183d0;
@@ -48,7 +48,6 @@ body {
 
 #app-container {   
     flex: 1;
-    flex-grow: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -125,11 +124,11 @@ body {
     padding: 0 10px;
 }
 
-@media (max-width: 360px) {
+@media (width <= 360px) {
     #title { font-size: 0.9em; }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
     #app-container {
         min-width: 80vw;
         margin: 0 auto;
@@ -264,7 +263,7 @@ body {
 
 .action-btn {
     cursor: pointer;
-    margin: 0px 10px 10px 0px;
+    margin: 0 10px 10px 0;
     padding: 15px 25px;
     border-radius: 30px;
     border: solid 3px;
@@ -378,7 +377,6 @@ body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden; /* IMPORTANT: hide backface */
-    -webkit-backface-visibility: hidden;
     display: flex;
     overflow: hidden;
     padding: 10px;
@@ -440,13 +438,6 @@ body {
 .win-screen.hidden {
     display: none !important;
     opacity: 0;
-}
-
-#tipOfTheDay {
-    padding-bottom: 2rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #888;
 }
 
 .modal-actions {
@@ -574,33 +565,6 @@ body {
     padding: 10px;
 }
 
-
-#dictToggleBtn {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-#accuracyStat {
-  font-size: 3rem;
-  color: var(--primary-color);
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-#nextGameBtn { padding:15px 40px; }
-
-.actionBtn {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: larger;
-  padding: 15px;
-}
-
 .sent-words {
     background: var(--primary-background);
     border: 1px solid var(--border-color);
@@ -656,7 +620,7 @@ body {
     gap: 15px;
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
     .options-grid {
        grid-template-columns: 1fr;
        justify-items: center;
@@ -667,7 +631,7 @@ body {
     }
 }
 
-#dictionaryList {
+#dictionary-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 15px;
@@ -679,7 +643,7 @@ body {
     padding-bottom: 50px;
 }
 
-.dictionaryCard {
+.dictionary-card {
   display: block;
   justify-content: space-between;
   align-items: center;
@@ -690,7 +654,7 @@ body {
   cursor: pointer;
 }
 
-.dictionaryTransl {
+.dictionary-transl {
   font-size: 1.1em;
   color: #333;
   margin-top: 4px;
@@ -793,7 +757,7 @@ body {
     gap: 10px;
 }
 
-#currentTopicName {
+#current-topic-name {
     margin: 0;
     font-size: 1.1rem;
     padding-right: 10px;
@@ -922,8 +886,7 @@ body {
     color: #555;
 }
 
-#topicPassedCheckbox {
-    -webkit-appearance: none;
+#topic-passed-checkbox {
     appearance: none;
     width: 18px;
     height: 18px;
@@ -936,17 +899,17 @@ body {
     outline: none;
 }
 
-#topicPassedCheckbox:hover {
+#topic-passed-checkbox:hover {
     border-color: var(--primary);
     background-color: rgb(var(--primary-rgb), 0.03);
 }
 
-#topicPassedCheckbox:checked {
+#topic-passed-checkbox:checked {
     border-color: var(--primary);
     background-color: var(--primary);
 }
 
-#topicPassedCheckbox::after {
+#topic-passed-checkbox::after {
     content: "✓";
     position: absolute;
     top: 50%;
@@ -958,7 +921,7 @@ body {
     transition: transform 0.2s ease-out;
 }
 
-#topicPassedCheckbox:checked::after {
+#topic-passed-checkbox:checked::after {
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -1111,10 +1074,7 @@ body {
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: #ccc;
     transition: .4s;
     border-radius: 34px;
@@ -1192,10 +1152,10 @@ input:checked + .slider::before { transform: translateX(24px); }
     transform: translateX(-50%) scale(2);
     font-size: 24px;
     pointer-events: none;
-    animation: fadeUp 0.5s ease-out forwards;
+    animation: fade-up 0.5s ease-out forwards;
 }
 
-@keyframes fadeUp {
+@keyframes fade-up {
 	0% {
 		opacity: 1;
 		transform: translateX(-50%) translateY(0) scale(2);
@@ -1229,7 +1189,7 @@ input:checked + .slider::before { transform: translateX(24px); }
     box-shadow: 0 0 4px rgb(88 204 2 / 30%);
 }
 
-#dictSearch {
+#dict-search {
     flex: 1;
     border: none;
     outline: none;
@@ -1237,7 +1197,7 @@ input:checked + .slider::before { transform: translateX(24px); }
     font-size: 16px;
 }
 
-#clearSearch {
+#clear-search {
     background: none;
     border: none;
     font-size: 20px;
@@ -1246,7 +1206,7 @@ input:checked + .slider::before { transform: translateX(24px); }
     padding: 0 5px;
 }
 
-.toolbarBtn {
+.toolbar-btn {
     border-width: 1px;
     min-height: 1.8rem;
     border-radius: 3px;

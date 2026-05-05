@@ -18,13 +18,13 @@
         <div class="nav-row">
           <button id="menuBtn" style="font-size: larger;" onclick="toggleDrawer()">☰</button>
           <span id="title">Vox-Libera 📖</span>
-          <button class="toolbarBtn" id="muteBtn" onclick="toggleMute()">🔊</button>
-          <button class="toolbarBtn" onclick="changeZoom(-0.1)">A-</button>
-          <button class="toolbarBtn" onclick="changeZoom(0.1)">A+</button>
+          <button class="toolbar-btn" id="muteBtn" onclick="toggleMute()">🔊</button>
+          <button class="toolbar-btn" onclick="changeZoom(-0.1)">A-</button>
+          <button class="toolbar-btn" onclick="changeZoom(0.1)">A+</button>
         </div>
         <div id="searchBar" class="nav-row search-container" style="display: none; padding: 5px 10px; background: #fdfdfd;">
-          <input type="text" id="dictSearch" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint" style="min-width: 300px; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
-          <button id="clearSearch" onclick="clearInput()" style="display:none;">×</button>
+          <input type="text" id="dict-search" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint" style="min-width: 300px; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+          <button id="clear-search" onclick="clearInput()" style="display:none;">×</button>
         </div>
       <div class="nav-content-wrapper">
 
@@ -40,7 +40,7 @@
 
             <div class="drawer-title">
                 <div class="title-row">
-                  <h3 id="currentTopicName">Topic Name</h3>
+                  <h3 id="current-topic-name">Topic Name</h3>
 
                   <div class="top-actions">
                     <button class="icon-btn" onclick="window.location.reload()" data-i18n-title="menu|reload">↻</button>
@@ -61,7 +61,7 @@
 
                 <div id="topic-settings">
                     <label class="pass-toggle" data-i18n-title="menu|topic_completed_hint">
-                        <input type="checkbox" id="topicPassedCheckbox" onchange="toggleTopicPassed()">
+                        <input type="checkbox" id="topic-passed-checkbox" onchange="toggleTopicPassed()">
                         <span data-i18n="menu|topic_completed">Topic is completed</span>
                     </label>
                     <button class="btn-reset" onclick="resetTopicStats()" data-i18n-title="menu|reset_topic_stats_hint">
@@ -152,9 +152,6 @@
 
       <div class="win-screen hidden" id="winScreen">
         <h1 id="winStatus"></h1>
-        <div id="accuracyStat">100%</div>
-        <div id="tipOfTheDay"></div>
-        <div>
           <button class="action-btn easy" onclick="renderCurrentScreen()">✔ <span data-i18n="main|sum-repeat">Repeat<span></button>
           <button class="action-btn easy" onclick="loadNextScreen(true)"><span data-i18n="main|sum-next">Next</span> ▶▶</button>
         </div>
@@ -191,7 +188,7 @@
 
       <div id="screen-dictionary" class="game-screen hidden">
         <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
-        <div id="dictionaryList"></div>
+        <div id="dictionary-list"></div>
         <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
       </div>
 

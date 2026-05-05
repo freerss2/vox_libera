@@ -214,7 +214,7 @@ function i18n_ct(text) {
 // - show/hide nodes in excercises path
 function applyTopicToDisplay() {
   const topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
-  document.getElementById('currentTopicName').textContent = topicTitle;
+  document.getElementById('current-topic-name').textContent = topicTitle;
 
   displayTopicCompletionState();
   updateDrawerStats();
@@ -304,7 +304,7 @@ function showTopicResults() {
 ##text-center## ${sentCount} ##stat-value## ${data.sentencesCount}
 ##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%
 
-##text-center## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
+##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
 
     const actions = {
         'repeat': () => {renderCurrentScreen();},
@@ -870,7 +870,7 @@ function showWin(acc) {
 ### ##text-center## ${acc}%
 ##text-center## ${tipText}
 
-##text-center## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
+##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
 
     const actions = {
         'repeat': () => {renderCurrentScreen();},
@@ -1369,7 +1369,7 @@ function checkSent() {
 
 // render dictionary according to selected topic
 function showDictionary() {
-    const listContainer = document.getElementById('dictionaryList');
+    const listContainer = document.getElementById('dictionary-list');
     listContainer.innerHTML = '';
     showHideSearch(1);
 
@@ -1382,7 +1382,7 @@ function showDictionary() {
     currentData.forEach(item => {
         // Создаем карточку слова
         const card = document.createElement('div');
-        card.className = "dictionaryCard";
+        card.className = "dictionary-card";
 
         const wordStat = stats[item[1]] || { attempts: 0, success: 0 };
         let accuracy = 0;
@@ -1405,7 +1405,7 @@ function showDictionary() {
                   <span style="color: var(--secondary-color);" class="user-text" dir="${userDir}" lang="${userLang}">${item[0]}</span>
                   ${cardStat}
                 </div>
-                <div class="dictionaryTransl transcription">[${item[2]}]</div>
+                <div class="dictionary-transl transcription">[${item[2]}]</div>
             </div>
             <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">
                 ${item[1]}
@@ -1424,18 +1424,18 @@ function showHideSearch(show) {
     searchBar.style.display = show ? 'flex' : 'none';
 
     if (!show) {
-        document.getElementById('dictSearch').value = '';
+        document.getElementById('dict-search').value = '';
     }
     filterDictionary();
 }
 
 // filtering by search pattern
 function filterDictionary() {
-    const input = document.getElementById('dictSearch');
+    const input = document.getElementById('dict-search');
     const filter = input.value.toLowerCase();
-    const cards = document.getElementsByClassName('dictionaryCard');
+    const cards = document.getElementsByClassName('dictionary-card');
 
-    document.getElementById('clearSearch').style.display = input.value ? 'block' : 'none';
+    document.getElementById('clear-search').style.display = input.value ? 'block' : 'none';
     for (let i = 0; i < cards.length; i++) {
         const cardText = cards[i].textContent.toLowerCase();
 
@@ -1448,10 +1448,10 @@ function filterDictionary() {
 }
 
 function clearInput() {
-    const input = document.getElementById('dictSearch');
+    const input = document.getElementById('dict-search');
     input.value = '';
     filterDictionary();
-    document.getElementById('clearSearch').style.display = 'none';
+    document.getElementById('clear-search').style.display = 'none';
 }
 
 // ---------------------------------------- application state setting
@@ -1645,7 +1645,7 @@ function getTopicState(topic) {
 }
 
 function toggleTopicPassed() {
-    const isChecked = document.getElementById('topicPassedCheckbox').checked;
+    const isChecked = document.getElementById('topic-passed-checkbox').checked;
 
     const titleContainer = document.querySelector('.drawer-title');
     if (isChecked) {
@@ -1659,7 +1659,7 @@ function toggleTopicPassed() {
 
 function displayTopicCompletionState() {
     const state = getTopicState(settings.getCurrentTopic());
-    document.getElementById('topicPassedCheckbox').checked = state;
+    document.getElementById('topic-passed-checkbox').checked = state;
     const titleContainer = document.querySelector('.drawer-title');
     if (state) {
         titleContainer.classList.add('is-passed');
@@ -1939,6 +1939,7 @@ function hydrateStory() {
 
     lines.forEach(line => {
         line.addEventListener('click', function(e) {
+            console.log(e.type);
             const isOpen = this.classList.contains('is-open');
 
             // accordion: close all the rest
