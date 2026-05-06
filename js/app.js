@@ -1956,18 +1956,112 @@ function hydrateStory() {
     });
 }
 
+// data backup (import/export)
+
+// Export
+function exportUserData() {
+    // build data
+    const timestamp = new Date().toISOString().slice(0, 10);
+    const currDir = location.pathname.split('/').pop().replace('.html', '');
+    let courses_settings = {
+    };
+    courses.forEach( c => {
+        if (c.ref == currDir) {
+          courses_settings[c.title] = {
+            "current_topic":      settings.getCurrentTopic(),
+            "current_excercise":  settings.getCurrentScreenId(),
+            "difficulty":         settings.getGameDifficulty(),
+            "hide_well_learned":  settings.getHideWellLearned(),
+            "show_transcription": settings.getShowTranscription(),
+            "topics_completion":  settings.getTopicsCompletion(),
+            "success_stats":      wordStats
+          };
+        }
+    });
+    const data = {
+        "app_version": app_code_ver,
+        "created_at": timestamp,
+        "user_settings": { "interface_lang": userLang },
+        "courses": courses_settings
+    };
+    // export
+    exportData(data, timestamp);
+}
+
+function exportData(data, timestamp) {
+    const filename = `vox_libera_backup_${timestamp}.json`;
+    const jsonStr = JSON.stringify(data, null, 2); // null, 2 for readability
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    
+    document.body.appendChild(link);
+    link.click();
+    
+    // cleanup
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// Import
+function importUserData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+            
+            // validate version
+            if (data.app_version !== app_code_ver) {
+                alert("incompatible version");
+                return;
+            }
+
+            // apply settings and reload app
+            applyImportedSettings(data);
+            location.reload();
+        } catch (err) {
+            alert("Error reading file.");
+        }
+    };
+    reader.readAsText(file);
+}
+
+function applyImportedSettings(data) {
+    settings.setUserInterfaceLanguage(data["user_settings"]["interface_lang"]);
+    const course_data = data["courses"][manifest.metadata.title];
+    settings.setCurrentTopic(     course_data["current_topic"]);
+    settings.setCurrentScreenId(  course_data["current_excercise"]);
+    settings.setGameDifficulty(   course_data["difficulty"]);
+    settings.setHideWellLearned(  course_data["hide_well_learned"]);
+    settings.setShowTranscription(course_data["show_transcription"]);
+    settings.setTopicsCompletion( course_data["topics_completion"]);
+    localStorage.setItem('wordStats', JSON.stringify(course_data["success_stats"]));
+}
+
 // On page load:
 //  - initialize the menu
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
 
-  initNarrator(getRandomNarrator(), 'narrator-wrapper');
-  const bubble = document.getElementById('speech-bubble');
-  const narrator = document.getElementById('narrator-wrapper');
-  bubble.addEventListener('click', toggleBubble);
-  narrator.addEventListener('click', toggleBubble);
-  setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
+    initNarrator(getRandomNarrator(), 'narrator-wrapper');
+    const bubble = document.getElementById('speech-bubble');
+    const narrator = document.getElementById('narrator-wrapper');
+    bubble.addEventListener('click', toggleBubble);
+    narrator.addEventListener('click', toggleBubble);
+    setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
 
+    const hiddenInput = document.getElementById('file-import-input');
+    hiddenInput.addEventListener('change', function(event) {
+        importUserData(event);
+        // Important: clean the value to allow more import (?)
+        this.value = ''; 
+    });
 
     initTopic(settings.getCurrentTopic());
     renderCurrentScreen();
