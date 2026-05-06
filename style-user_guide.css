@@ -39,7 +39,7 @@
 }
 
 /* For wider screens (768px or 1024px) use only central part */
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
     #app-container {
         /* Limit the size. 70% of width */
         max-width: 70vw; 

@@ -1822,6 +1822,17 @@ Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the begi
 
 At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
 `,
+    "story": `
+### My path in language (Monologue)
+##story-line## '''بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون. ''' ##story-translation##  I started studying the language on my own two years ago with a phone app. ##story-transcr## Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
+##story-line## '''مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي. ''' ##story-translation##  Sometimes I lack words and my grammar is weak, and it is hard to understand by ear. ##story-transcr##  Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
+##story-line## '''بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا. ''' ##story-translation##  I try to read the news to communicate with people. Language connects us. ##story-transcr##  Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
+
+### Asking for assistance (Short Dialogue)
+##story-line## '''لو سمحت، احكي على مهلك. ما فهمت كل شيء. ''' ##story-translation##  Please, speak slower. I did not understand everything. ##story-transcr##  Law samaht, ihki ala mahlak. Ma fahimt kull shi.
+##story-line## '''كيف لهجتي؟ صلح لي أغلاطي وكيف بنحكي هذه الكلمة صح؟ ''' ##story-translation##  How is my accent? Correct my mistakes and how to say this word correctly? ##story-transcr##  Kayf lahjati? Sallih-li aghlati wa kayf binhki hadhihi al-kalima sah?
+##story-line## '''لازم أزيد كلماتي. العمر مش حاجز للدراسة! ''' ##story-translation##  I need to expand my vocabulary. Age is not a barrier to study! ##story-transcr##  Lazim azid kalimati. Al-umr mish hajaz lid-dirasa!
+`,
     "words": [
       [
         "self",
