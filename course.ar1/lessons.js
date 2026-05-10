@@ -2062,5 +2062,241 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
         "sallih-li aghlati law samaht"
       ]
     ]
+  },
+  "filling_the_gaps": {
+    "index": 10,
+    "name": "Filling the Gaps",
+    "story": `
+### Table talk
+##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna? 
+##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna. 
+##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh. 
+##story-line## '''ممكن تطبع هذا المستند على ورقة رمادية؟''' ##story-translation## Can you print this document on a grey paper?  ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya? 
+
+### Street scene
+##story-line## '''وين الفندق؟ هو بعيد من هنا؟''' ##story-translation## Where is the hotel? Is it far from here?  ##story-transcr## Wayn al-funduq? Huwa ba'id min huna? 
+##story-line## '''لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light.  ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya. 
+##story-line## '''تمام، هذا بالضبط شو بدي. شكراً!''' ##story-translation## Okay, this is exactly what I want. Thanks!  ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran! 
+##story-line## '''عفواً! اتفقنا، يوم سعيد.''' ##story-translation## You're welcome! Agreed, have a happy day.  ##story-transcr## Afwan! Ittafaqna, yawm sa'id. 
+`,
+    "words": [
+      [
+        "blue",
+        "أزرق",
+        "azraq"
+      ],
+      [
+        "purple",
+        "بنفسجي",
+        "banafsaji"
+      ],
+      [
+        "grey",
+        "رمادي",
+        "ramadi"
+      ],
+      [
+        "paper",
+        "ورقة",
+        "waraqa"
+      ],
+      [
+        "document",
+        "مستند",
+        "mustanad"
+      ],
+      [
+        "to print",
+        "يطبع",
+        "yitba'"
+      ],
+      [
+        "olive oil",
+        "زيت زيتون",
+        "zayt zaytun"
+      ],
+      [
+        "sour cream",
+        "لبنة",
+        "labneh"
+      ],
+      [
+        "cottage cheese",
+        "قريشة",
+        "qarisha"
+      ],
+      [
+        "to fry",
+        "يقلي",
+        "yiqli"
+      ],
+      [
+        "to boil",
+        "يسلق",
+        "yisluq"
+      ],
+      [
+        "waiter",
+        "جرسون",
+        "jarson"
+      ],
+      [
+        "order",
+        "طلب",
+        "talab"
+      ],
+      [
+        "tablecloth",
+        "شرشف طاولة",
+        "sharshaf tawila"
+      ],
+      [
+        "napkin",
+        "محرمة",
+        "mahrameh"
+      ],
+      [
+        "constantly",
+        "دائماً",
+        "da'iman"
+      ],
+      [
+        "exactly",
+        "بالضبط",
+        "bid-dabt"
+      ],
+      [
+        "i agree",
+        "أنا موافق",
+        "ana muwafiq"
+      ],
+      [
+        "deal / agreed",
+        "اتفقنا",
+        "ittafaqna"
+      ],
+      [
+        "straight",
+        "دغري",
+        "dughri"
+      ],
+      [
+        "back / backwards",
+        "لورا",
+        "la-wara"
+      ],
+      [
+        "around the corner",
+        "على الزاوية",
+        "ala az-zawiya"
+      ],
+      [
+        "traffic light",
+        "إشارة ضوئية",
+        "ishara daw'iya"
+      ]
+    ],
+    "sentences": [
+      [
+        "i want a blue paper",
+        "بدي ورقة زرقاء",
+        "biddi waraqa zarqa"
+      ],
+      [
+        "can you print this document?",
+        "ممكن تطبع هذا المستند",
+        "mumkin titba' hadha al-mustanad"
+      ],
+      [
+        "the car is grey",
+        "السيارة رمادية",
+        "as-sayyara ramadiya"
+      ],
+      [
+        "we need olive oil for the salad",
+        "بدنا زيت زيتون للسلطة",
+        "bidna zayt zaytun las-salata"
+      ],
+      [
+        "i want to fry the eggs",
+        "بدي أقلي بيض",
+        "biddi aqli bayd"
+      ],
+      [
+        "boiled chicken is very healthy",
+        "دجاج مسلوق صحي كثير",
+        "djaj masluq sihi kathir"
+      ],
+      [
+        "where is the waiter?",
+        "وين الجرسون",
+        "wayn al-jarson"
+      ],
+      [
+        "this is our order",
+        "هذا طلبنا",
+        "hadha talabna"
+      ],
+      [
+        "please give me a napkin",
+        "لو سمحت اعطيني محرمة",
+        "law samaht a'tini mahrameh"
+      ],
+      [
+        "the tablecloth is purple",
+        "الشرشف بنفسجي",
+        "ash-sharshaf banafsaji"
+      ],
+      [
+        "give me sour cream please",
+        "اعطيني لبنة لو سمحت",
+        "a'tini labneh law samaht"
+      ],
+      [
+        "i love cottage cheese",
+        "بحب القريشة",
+        "bahibb al-qarisha"
+      ],
+      [
+        "go straight and then around the corner",
+        "امشي دغري وبعدين على الزاوية",
+        "imshi dughri wa ba'den ala az-zawiya"
+      ],
+      [
+        "the traffic light is red now",
+        "الإشارة الضوئية حمراء الآن",
+        "al-ishara daw'iya hamra al-an"
+      ],
+      [
+        "i am constantly studying here",
+        "أنا دائماً بدرس هنا",
+        "ana da'iman badrus huna"
+      ],
+      [
+        "this is exactly what i want",
+        "هذا بالضبط شو بدي",
+        "hadha bid-dabt shu biddi"
+      ],
+      [
+        "i agree with you, my friend",
+        "أنا موافق معك يا صاحبي",
+        "ana muwafiq ma'ak ya sahbi"
+      ],
+      [
+        "deal, see you tomorrow",
+        "اتفقنا بشوفك بكرة",
+        "ittafaqna bashufak bukra"
+      ],
+      [
+        "move the car backwards",
+        "حرك السيارة لورا",
+        "harrik as-sayyara la-wara"
+      ],
+      [
+        "the waiter is constantly busy",
+        "الجرسون دائماً مشغول",
+        "al-jarson da'iman mashghul"
+      ]
+    ]
   }
 };
