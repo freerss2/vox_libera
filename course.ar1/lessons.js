@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.8.1';
+const lesson_data_ver = '2.8.2';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
@@ -2066,6 +2066,21 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
   "filling_the_gaps": {
     "index": 10,
     "name": "Filling the Gaps",
+    "explanations": `
+### Important notes about this topic
+
+Сottage cheese: Arabic cuisine doesn't have a complete equivalent to cottage cheese. They typically use either qarisha (a cheese product) or white soft cheeses like jibna bida (white cheese).
+
+Waiter (Jarson): This word comes from French (garçon) and has become firmly established in the Arabic dialect.
+
+Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so I've taken this into account in my sentences.
+
+Dughri ('''دغري'''): Perhaps the most popular word for directions. It comes from Turkish, but Arabic is indispensable.
+
+Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used specifically as "OK, it's done."
+
+Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
+`,
     "story": `
 ### Table talk
 ##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna? 
@@ -2171,7 +2186,7 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
         "ana muwafiq"
       ],
       [
-        "deal / agreed",
+        "agreed",
         "اتفقنا",
         "ittafaqna"
       ],
@@ -2181,7 +2196,7 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
         "dughri"
       ],
       [
-        "back / backwards",
+        "backwards",
         "لورا",
         "la-wara"
       ],
