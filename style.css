@@ -757,6 +757,12 @@ body {
     gap: 10px;
 }
 
+#recap-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
 #current-topic-name {
     margin: 0;
     font-size: 1.1rem;

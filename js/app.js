@@ -142,6 +142,7 @@ const SCREENS = [
 ];
 
 var topicScreens = [];
+var roundRecap = [];
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -285,6 +286,10 @@ function loadNextScreen(fromWinDialog=false) {
 }
 
 function showTopicResults() {
+
+    // hide last played screen
+    hideAllScreens();
+
     const topicId = settings.getCurrentTopic();
     const topicTitle = i18n_ct(topics[topicId].name);
     const data = getTopicStats(topicId);
@@ -511,6 +516,24 @@ function updateFinalProgress(screen_id) {
     return 0;
 }
 
+function hideAllScreens() {
+    // hide all screen-related DOM elements
+    const screens = document.querySelectorAll('.game-screen');
+    screens.forEach(s => s.classList.add('hidden'));
+    // hide summary elements
+    document.getElementById('narrator-container').classList.add('hidden');
+    document.getElementById('resultsModal').classList.add('hidden');
+    // reset hint panel
+    const hintPanelElm = document.getElementById('hint-panel');
+    if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
+    document.getElementById('progress-container').classList.add('hidden');
+    document.getElementById('errors-panel').classList.add('hidden');
+    document.getElementById('completion-screen').classList.add('hidden');
+    // hide the search line
+    showHideSearch(0);
+    updateTranscriptionDisplay();
+}
+
 // Render screen/game
 function renderScreen(screen_id) {
     showScreenTitle();
@@ -527,23 +550,9 @@ function renderScreen(screen_id) {
         // use data from other topics in "completed" state
         finalGameForTopic = settings.getCurrentTopic();
     }
-    // 1. Hide all screen-related DOM elements
-    const screens = document.querySelectorAll('.game-screen');
-    screens.forEach(s => s.classList.add('hidden'));
-    // including different panels
-    // document.getElementById('winScreen').classList.add('hidden');
-    document.getElementById('narrator-container').classList.add('hidden');
-    document.getElementById('resultsModal').classList.add('hidden');
-    // initilize hint panel
-    const hintPanelElm = document.getElementById('hint-panel');
-    if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
-    document.getElementById('progress-container').classList.add('hidden');
-    document.getElementById('errors-panel').classList.add('hidden');
-    document.getElementById('completion-screen').classList.add('hidden');
-    // hide the search line
-    showHideSearch(0);
-    updateTranscriptionDisplay();
-
+    // 1. Hide/reset all screens and surrounding panels
+    hideAllScreens();
+    roundRecap = [];
 
     // 2. Show related screen only
     const screenType = getScreenType(screen_id);
@@ -561,7 +570,7 @@ function renderScreen(screen_id) {
         return;
     }
     if (screenType === 'dictionary') {
-        showDictionary();
+        showTopicDictionary();
         return;
     } else {
         const container = document.getElementById('app-container');
@@ -754,6 +763,7 @@ function renderMatchingGame() {
     // Randomly shaffle pool on both sides
     const leftSide = shuffle(pool.map(p => ({ t: p[0], id: p[1], h: p[2] })));
     const rightSide = shuffle(pool.map(p => ({ t: p[1], id: p[1], h: p[2] })));
+    roundRecap = pool;
 
     leftSide.forEach((item, i) => createTile(item, i, 'left', 'user', board));
     rightSide.forEach((item, i) => createTile(item, i, 'right', 'target', board));
@@ -847,6 +857,14 @@ function showWin(acc) {
     // for final rounds increment the counter and check did we completed it
     const showSummary = updateFinalProgress(settings.getCurrentScreenId());
     if (! showSummary) return;
+
+    // hide all screens
+    hideAllScreens();
+    // if recup is not empty
+    if (roundRecap.length) {
+      // show "dictionary-style" recap list in 'screen-dictionary'
+      showDictionary(roundRecap, true);
+    }
 
     // Calculate the success rate
     let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
@@ -955,6 +973,7 @@ function renderQuizGame(screen_id) {
     const screenType = getScreenType(screen_id);
     // Take a random word from all words in topic
     quizCorrectStr = trueRandomStr(allStrs, settings.getHideWellLearned());
+    roundRecap.push(quizCorrectStr);
 
     const questionContainer = document.getElementById('quiz-question-container');
     const optionsGrid = document.getElementById('quiz-options-grid');
@@ -1146,6 +1165,7 @@ function renderSent(screen_id) {
     showErrorCount(errors);
     // 2. draw a random sentence from topic data (X user and Y target words)
     let gameSentence = trueRandomStr(allStrs, settings.getHideWellLearned());
+    roundRecap.push(gameSentence);
     // 3. for user->target game show all X words in top card
     //    for target->user      show all Y words
     //    for aud->user         store in div.dataset.expected Y target words
@@ -1368,19 +1388,25 @@ function checkSent() {
 // ------------------------------------------ dictionary
 
 // render dictionary according to selected topic
-function showDictionary() {
-    const listContainer = document.getElementById('dictionary-list');
-    listContainer.innerHTML = '';
+function showTopicDictionary() {
     showHideSearch(1);
 
     const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
     // for dictionary do not apply neither filtering nor shuffling
     const currentData = getTopicData(inputTypes, false, false);
 
+    showDictionary(currentData);
+}
+
+// render dictionary using pre-generated data
+function showDictionary(currentData, recapMode=false) {
+    const listContainer = document.getElementById('dictionary-list');
+    listContainer.innerHTML = '';
+
     const stats = getStats();
 
     currentData.forEach(item => {
-        // Создаем карточку слова
+        // Create a card per item
         const card = document.createElement('div');
         card.className = "dictionary-card";
 
@@ -1389,7 +1415,7 @@ function showDictionary() {
         if (wordStat.attempts > 0) {
           accuracy = Math.round((  wordStat.success / wordStat.attempts) * 100);
         }
-        let statusColor = 'var(--border-color)'; // по умолчанию серый
+        let statusColor = 'var(--border-color)'; // no highlight by default
         if (wordStat.attempts > 0) {
             if (accuracy < 50) statusColor = 'var(--error-color)';      // Failed
             else if (accuracy < 85) statusColor = '#ce9b02';            // Acceptable
@@ -1415,6 +1441,17 @@ function showDictionary() {
         listContainer.appendChild(card);
     });
 
+    const targetScreen = document.getElementById('screen-dictionary');
+    const recapTitle = document.getElementById('recap-title');
+    const nextScreenBtn = document.getElementsByClassName('next-screen-btn');
+    if (recapMode) {
+      if (targetScreen) { targetScreen.classList.remove('hidden'); }
+      if (recapTitle) { recapTitle.classList.remove('hidden'); }
+      [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
+    } else {
+      if (recapTitle) { recapTitle.classList.add('hidden'); }
+      [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
+    }
     scrollToTop('screen-dictionary');
 }
 
@@ -1680,7 +1717,7 @@ function resetTopicStats() {
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
-     showDictionary();
+     showTopicDictionary();
   }
 }
 
@@ -1691,7 +1728,7 @@ function resetStats() {
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
-     showDictionary();
+     showTopicDictionary();
   }
 }
 
