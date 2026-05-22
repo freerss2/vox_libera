@@ -1,4 +1,4 @@
-const lesson_data_ver = '2.8.2';
+const lesson_data_ver = '2.8.3';
 // Enabling long word break to next line: insert a special character "Soft Hyphen"
 // "само\u00ADобслуживание"
 const topics = {
@@ -2319,11 +2319,11 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
     "name": "Health 1",
     "explanations": `
 ### Short notes about this topic
-Биужа'ни ('''بيوجعني'''): Сам глагол «болеть» — biwja'. Но когда мы говорим про себя, мы добавляем окончание -ни: «голова болит меня» (rasi biwja'ni).
+Biwja'ni ('''بيوجعني'''): The verb "to be sick" itself is biwja'. But when we talk about ourselves, we add the ending -ni: "my head hurts" (rasi biwja'ni).
 
-Хабба ('''حبة'''): Дословно это «зернышко» или «штука». В аптеке так называют любую таблетку или капсулу.
+Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's used to refer to any pill or capsule.
 
-Истикбаль ('''استقبال'''): Универсальное слово «прием/встреча». Используется и как ресепшен в отеле, и как регистратура в больнице.
+Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
 `,
     "story": `
 ### At the Clinic
