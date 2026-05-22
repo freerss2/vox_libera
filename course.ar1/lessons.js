@@ -2313,5 +2313,173 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
         "al-jarson da'iman mashghul"
       ]
     ]
+  },
+  "health_1": {
+    "index": 11,
+    "name": "Health 1",
+    "explanations": `
+### Short notes about this topic
+Биужа'ни ('''بيوجعني'''): Сам глагол «болеть» — biwja'. Но когда мы говорим про себя, мы добавляем окончание -ни: «голова болит меня» (rasi biwja'ni).
+
+Хабба ('''حبة'''): Дословно это «зернышко» или «штука». В аптеке так называют любую таблетку или капсулу.
+
+Истикбаль ('''استقبال'''): Универсальное слово «прием/встреча». Используется и как ресепшен в отеле, и как регистратура в больнице.
+`,
+    "story": `
+### At the Clinic
+##story-line## '''أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.'''##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever.##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
+##story-line## '''تفضل هنا، الممرضة مع الدكتور في المستشفى.'''##story-translation## Come here please, the nurse is with the doctor in the hospital.##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
+##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
+##story-line## '''نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.'''##story-translation## Yes, and take this pill please. Everything is okay.##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
+`,
+    "words": [
+      [
+        "it hurts",
+        "بيوجع",
+        "biwja'"
+      ],
+      [
+        "it itches",
+        "بيحك",
+        "bihikk"
+      ],
+      [
+        "runny nose",
+        "رشح",
+        "rashah"
+      ],
+      [
+        "fever / temperature",
+        "حرارة",
+        "harara"
+      ],
+      [
+        "bruise",
+        "رضة",
+        "radda"
+      ],
+      [
+        "wound",
+        "جرح",
+        "jurh"
+      ],
+      [
+        "fracture",
+        "كسر",
+        "kasr"
+      ],
+      [
+        "bandage",
+        "ضمادة",
+        "dimada"
+      ],
+      [
+        "pill",
+        "حبة",
+        "habba"
+      ],
+      [
+        "ointment",
+        "مرهم",
+        "marham"
+      ],
+      [
+        "drops",
+        "قطرة",
+        "qatra"
+      ],
+      [
+        "doctor",
+        "دكتور",
+        "duktor"
+      ],
+      [
+        "nurse",
+        "ممرضة",
+        "mumarriḍa"
+      ],
+      [
+        "reception",
+        "استقبال",
+        "istiqbal"
+      ],
+      [
+        "hospital",
+        "مستشفى",
+        "mustashfa"
+      ],
+      [
+        "clinic",
+        "عيادة",
+        "iyada"
+      ]
+    ],
+    "sentences": [
+      [
+        "my head hurts",
+        "راسي بيوجعني",
+        "rasi biwja'ni"
+      ],
+      [
+        "my hand itches",
+        "إيدي بتحكني",
+        "idi btihikkni"
+      ],
+      [
+        "i have a runny nose and fever",
+        "عندي رشح وحرارة",
+        "indi rashah wa harara"
+      ],
+      [
+        "this is a small bruise",
+        "هذه رضة صغيرة",
+        "hadhihi radda saghira"
+      ],
+      [
+        "the wound is clean",
+        "الجرح نظيف",
+        "al-jurh nazif"
+      ],
+      [
+        "he has a leg fracture",
+        "عنده كسر في الرجل",
+        "indo kasr fir-rijl"
+      ],
+      [
+        "where is the bandage?",
+        "وين الضمادة",
+        "wayn ad-dimada"
+      ],
+      [
+        "take this pill please",
+        "خذ هذه الحبة لو سمحت",
+        "khud hadhihi al-habba law samaht"
+      ],
+      [
+        "i need an ointment for the hand",
+        "بدي مرهم للإيد",
+        "biddi marham lil-id"
+      ],
+      [
+        "where are the eye drops?",
+        "وين قطرة العين",
+        "wayn qatrat al-ayn"
+      ],
+      [
+        "the doctor is inside the clinic",
+        "الدكتور جوا العيادة",
+        "ad-duktor juwwa al-iyada"
+      ],
+      [
+        "the nurse is at the reception",
+        "الممرضة في الاستقبال",
+        "al-mumarriḍa fil-istiqbal"
+      ],
+      [
+        "this hospital is big",
+        "هذا المستشفى كبير",
+        "hadha al-mustashfa kabir"
+      ]
+    ]
   }
 };
