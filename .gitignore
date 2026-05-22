@@ -1,0 +1,5 @@
+.gitignore
+attic/
+bin/generate_arabic_lessons/
+courses/
+node_modules/
