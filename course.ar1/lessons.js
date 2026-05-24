@@ -2073,7 +2073,7 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
 
 Waiter (Jarson): This word comes from French (garçon) and has become firmly established in the Arabic dialect.
 
-Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so I've taken this into account in my sentences.
+Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so take this into account in sentences.
 
 Dughri ('''دغري'''): Perhaps the most popular word for directions. It comes from Turkish, but Arabic is indispensable.
 
