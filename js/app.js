@@ -1209,6 +1209,7 @@ function renderSent(screen_id) {
     document.getElementById('sent-main-hint').innerHTML = mainHint;
     let bankWords = (expected.split(/\s+/)).filter(word => word.length > 0);
     questionContainer.dataset.expected = bankWords.join(' ');
+    questionContainer.dataset.target = gameSentence[1];
     // 5. add to expected sentence more words (avoid already contaning words)
     // add 50/70/90% to bank, but total not bigger than 10
     let factor = gameSettings.sentenceFactor;
@@ -1368,14 +1369,14 @@ function checkSent() {
   const questionContainer = document.getElementById('sent-question-container');
   if ( resultContainer.dataset.words == questionContainer.dataset.expected) {
     // count as success
-    updateStats(questionContainer.dataset.expected, true);
+    updateStats(questionContainer.dataset.target, true);
     const acc = Math.round((2 / (2 + errors)) * 100);
     showWin(acc);
   } else {
     // increase errors count
     errors++;
     // count as failure
-    updateStats(questionContainer.dataset.expected, false);
+    updateStats(questionContainer.dataset.target, false);
     resultContainer.classList.add('wrong');
     setTimeout(() => {
         resultContainer.classList.remove('wrong');
