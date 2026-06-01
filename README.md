@@ -67,3 +67,28 @@ Vox-Libera consumes data in a standard JSON format. This makes it easy to genera
       ]
   }
 }
+
+## 6. Troubleshooting: Text-to-Speech (TTS) Is Not Working on Android
+
+If you cannot hear any voice output or text reading within the app, it is usually caused by misconfigured Android system settings, missing voice packs, or battery-saving restrictions.
+
+Please follow these steps to resolve the issue:
+
+### Step 1: Verify Your System TTS Settings
+Our app relies on your device's built-in Text-to-Speech engine. Make sure it is properly configured:
+1. Open your Android device Settings.
+2. Navigate to System > Languages & input (or Additional settings > Accessibility on some devices).
+3. Tap on Text-to-speech output (or Preferred engine).
+4. Ensure that Speech Services by Google is selected as your preferred engine.
+
+### Step 2: Download the Required Language Pack
+If the engine is active but silent, the voice files for your language might not be installed:
+1. In the Text-to-speech output menu, tap the Settings icon (gear) next to your preferred engine.
+2. Tap Install voice data.
+3. Locate your language from the list and make sure the high-quality voice pack is downloaded and installed.
+
+### Step 3: Check "Wi-Fi Only" Restrictions
+If you are using mobile data, the TTS engine might be blocked from downloading voice files on the go:
+1. Go back to the TTS engine settings (the gear icon mentioned in Step 2).
+2. Look for an option like Use Wi-Fi only or Amplify speech volume.
+3. Disable Use Wi-Fi only to allow the engine to function properly over mobile networks.
