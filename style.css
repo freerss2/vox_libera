@@ -26,6 +26,15 @@ body {
    background-color: #eef2f5;
 }
 
+/* By default all is visible */
+.online-only {
+    display: block;
+}
+
+body.offline .online-only {
+    display: none !important;
+}
+
 /* Styles for any RTL lanugage (Arabic, Hebrew, Farsi) */
 [dir="rtl"] {
     font-family: 'Noto Sans Arabic', sans-serif;

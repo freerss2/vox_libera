@@ -11,6 +11,7 @@
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="common_style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
@@ -80,6 +81,7 @@
         <h3>🛠 <span data-i18n="menu|settings">Settings</span></h3>
 
         <div class="setting-group">
+          <div id="google-login-btn" class="online-only"></div>
           <label data-i18n="menu|difficulty">Difficulty</label>
           <div class="segmented-control" id="difficulty-picker">
               <input type="radio" name="diff" id="diff-easy" value="easy" checked onclick="changeDifficulty('easy')">

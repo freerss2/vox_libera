@@ -2107,3 +2107,107 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// ===========================================
+//             Google login
+// ===========================================
+
+
+function isProductionDomain() {
+    const currentHost = window.location.hostname;
+    const allowedHosts = ['freerss2.github.io'];
+    return allowedHosts.includes(currentHost);
+}
+
+// Switch between online/offline modes
+function updateNetworkStatus() {
+    if (navigator.onLine && isProductionDomain()) {
+        document.body.classList.remove('offline');
+        console.log("Vox Libera: Online. Activating cloud functionality...");
+        // Authorize when we are online
+        initGoogleAuth();
+    } else {
+        document.body.classList.add('offline');
+        if (!isProductionDomain()) {
+            console.log("Vox Libera: Non-autorized source. Google Auth is unavailable.");
+        } else {
+            console.log("Vox Libera: Offline mode.");
+        }
+    }
+}
+
+// Initialize Google Auth
+function initGoogleAuth() {
+    // Check 1: In offline do not try to contact Google
+    if (!navigator.onLine) return;
+
+    if (typeof google === 'undefined') {
+        // Wait until script is loaded
+        setTimeout(initGoogleAuth, 500);
+        return;
+    }
+
+    // Check 2: Avoid double-init
+    if (document.getElementById("google-login-btn").children.length > 0) return;
+
+    try {
+        google.accounts.id.initialize({
+            client_id: "481193985537-mcqa1psand4n02ur1i78dmdu8nrn5ohn.apps.googleusercontent.com",
+            callback: handleCredentialResponse,
+            auto_select: false
+        });
+
+        google.accounts.id.renderButton(
+            document.getElementById("google-login-btn"),
+            { theme: "outline", size: "large", text: "signin_with" }
+        );
+    } catch (error) {
+        console.warn("Google Auth init failed:", error);
+    }
+}
+
+// Callback on successfull init
+function handleCredentialResponse(response) {
+    // Inside response.credential we got encrypted JWT-token
+    const token = response.credential;
+    
+    // Decode JWT-token
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    const userData = JSON.parse(jsonPayload);
+
+    // Got it in
+    console.log("User ID in Google:", userData.sub);
+    console.log("Name:", userData.name);
+    console.log("Email:", userData.email);
+    console.log("Avatar:", userData.picture);
+
+    // Save result in memory
+    saveUserSession(userData);
+}
+
+function saveUserSession(userData) {
+    // Save in localStorage, to avoid more requests
+    localStorage.setItem('vox_libera_user', JSON.stringify({
+        id: userData.sub,
+        name: userData.name,
+        email: userData.email,
+        avatar: userData.picture
+    }));
+
+    // TODO: update display, like user name and avatar
+    // updateAuthUI();
+}
+
+// Listen for events
+document.addEventListener("DOMContentLoaded", () => {
+    // Check connection status on load
+    updateNetworkStatus();
+
+    // Get real-time updates
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+});
