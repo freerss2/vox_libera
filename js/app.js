@@ -2198,8 +2198,49 @@ function saveUserSession(userData) {
         avatar: userData.picture
     }));
 
-    // TODO: update display, like user name and avatar
-    // updateAuthUI();
+    // update display: user name and avatar
+    updateAuthUI();
+}
+
+function updateAuthUI() {
+    const sessionData = localStorage.getItem('vox_libera_user');
+    const avatarImg = document.getElementById('user-avatar');
+    const nameSpan = document.getElementById('user-name');
+
+    if (sessionData) {
+        const user = JSON.parse(sessionData);
+        
+        // Fill data from profile
+        if (avatarImg) avatarImg.src = user.avatar;
+        if (nameSpan) nameSpan.textContent = user.name;
+
+        // Turn on the "authorised" mode
+        document.body.classList.add('auth-inside');
+    } else {
+        // Turn off the "authorised" mode
+        document.body.classList.remove('auth-inside');
+        
+        // Display login button (in case we are online)
+        if (navigator.onLine && typeof google !== 'undefined') {
+            initGoogleAuth();
+        }
+    }
+}
+
+function logoutGoogle() {
+    // 1. Clear locally stored data
+    localStorage.removeItem('vox_libera_user');
+
+    // 2. Log-out on Google side
+    if (typeof google !== 'undefined' && google.accounts.id) {
+        // this function disables automatic login on next visit
+        google.accounts.id.disableAutoSelect();
+    }
+
+    // 3. Refresh UI (this will display back the login button)
+    updateAuthUI();
+    
+    console.log("Vox Libera: The user is logged-out.");
 }
 
 // Listen for events
