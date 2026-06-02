@@ -3,9 +3,47 @@
 import os
 import re
 
-VERSION = "2-7"
+VERSION_FILE = "version.txt"
 TEMPLATE_PATH = os.path.join("src", "course.template.html")
 PLACEHOLDER = "__VOX_LIBERA_SCRIPTS_PLACEHOLDER__"
+
+def get_and_increment_version():
+    """
+    Read version from file, increment the lower (patch) version and save back
+    @return: new version value (string)
+    """
+    # Whem missing create new with a default value
+    if not os.path.exists(VERSION_FILE):
+        default_version = "2.7.0"
+        with open(VERSION_FILE, 'w', encoding='utf-8') as f:
+            f.write(default_version)
+        return default_version
+
+    with open(VERSION_FILE, 'r', encoding='utf-8') as f:
+        version_str = f.read().strip()
+
+    try:
+        # Split a version string like this "2.7.14"
+        major, minor, patch = map(int, version_str.split('.'))
+        
+        # Increment the last value
+        new_patch = patch + 1
+        new_version = f"{major}.{minor}.{new_patch}"
+        
+        # Save updated value back to file
+        with open(VERSION_FILE, 'w', encoding='utf-8') as f:
+            f.write(new_version)
+            
+        print(f"📈 Version Vox Libera updated: {version_str} -> {new_version}")
+        return new_version
+
+    except ValueError:
+        # Safety for any manual intervention
+        print(f"⚠️ Warning: Failed to parse version in {VERSION_FILE}. Using it 'as is'.")
+        return version_str
+
+# Get a value for next human-readable version
+VERSION = get_and_increment_version()
 
 def find_courses():
     """
@@ -62,13 +100,16 @@ def build():
         
         # Replace placeholder with generated content
         final_html = template.replace(PLACEHOLDER, scripts_html.strip())
+
+        # Globally replace VERSION template
+        final_html = final_html.replace("{{VERSION}}", VERSION)
         
         # Save the result in CWD
         output_filename = f'course.{course_id}.html'
         with open(output_filename, 'w', encoding='utf-8') as f:
             f.write(final_html)
             
-        print(f"✅  Successfully built course file: {output_filename}")
+        print(f"✅  Successfully built course file: {output_filename} (v{VERSION})")
 
 if __name__ == "__main__":
     build()

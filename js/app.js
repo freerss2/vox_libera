@@ -2153,7 +2153,8 @@ function initGoogleAuth() {
         google.accounts.id.initialize({
             client_id: "481193985537-mcqa1psand4n02ur1i78dmdu8nrn5ohn.apps.googleusercontent.com",
             callback: handleCredentialResponse,
-            auto_select: false
+            auto_select: false,
+            scope: "https://www.googleapis.com/auth/drive.appdata"
         });
 
         google.accounts.id.renderButton(
