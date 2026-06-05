@@ -2155,7 +2155,7 @@ function initVoxLiberaAuth() {
 
     tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: '481193985537-mcqa1psand4n02ur1i78dmdu8nrn5ohn.apps.googleusercontent.com',
-        scope: 'https://www.googleapis.com/auth/drive.appdata',
+        scope: 'https://www.googleapis.com/auth/drive.file',
         prompt: '', 
         callback: async (response) => {
             if (response && response.access_token) {
@@ -2301,8 +2301,8 @@ class CloudSync {
 
     // Extract file from appDataFolder
     async findFile(accessToken) {
-        const q = encodeURIComponent(`name='${this.fileName}' and spaces='appDataFolder'`);
-        const url = `https://www.googleapis.com/drive/v3/files?q=${q}&spaces=appDataFolder`;
+        const q = encodeURIComponent(`name='${this.fileName}' and trashed = false`);
+        const url = `https://www.googleapis.com/drive/v3/files?q=${q}`;
         
         const response = await this.safeFetch(url, { method: 'GET' }, accessToken);
         if (!response) return null;
@@ -2361,8 +2361,7 @@ class CloudSync {
         const closeDelim = `\r\n--${boundary}--`;
         
         const metadata = {
-            name: this.fileName,
-            parents: ['appDataFolder']
+            name: this.fileName
         };
 
         const multipartRequestBody =
