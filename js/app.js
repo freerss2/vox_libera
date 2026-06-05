@@ -2151,6 +2151,10 @@ function initVoxLiberaAuth() {
     if (typeof google === 'undefined') {
         console.warn("Vox Libera: Google API is not loaded. Starting in offline mode.");
         updateCloudStatus('offline');
+        if (navigator.onLine) {
+          console.warn("Vox Libera: Scheduling retry");
+          setTimeout(initVoxLiberaAuth, 100);
+        }
         return;
     }
 
