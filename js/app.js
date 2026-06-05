@@ -2229,7 +2229,7 @@ function updateCloudStatus(status) {
     switch(status) {
         case 'synced': el.innerText = '☁️'; el.title = 'In sync with Google Drive'; break;
         case 'loading': el.innerText = '⏳'; el.title = 'Communicating...'; break;
-        case 'offline': el.innerText = '🔇'; el.title = 'Offline mode'; break;
+        case 'offline': el.innerText = '💾'; el.title = 'Offline mode'; break;
         case 'disconnected': el.innerText = '❌'; el.title = 'Sync is disabled'; break;
     }
 
@@ -2271,7 +2271,7 @@ async function resolveProgressConflict(cloudData, localData) {
     }
 }
 
-class CloudSync 
+class CloudSync {
     constructor() {
         this.fileName = "vox_libera_sync.json";
         this.debounceTimeout = null;
