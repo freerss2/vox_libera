@@ -2031,6 +2031,7 @@ function packProgressData() {
           };
         }
     });
+    const today = Date.now();
     const data = {
         "app_version": app_code_ver,
         "created_timestamp": timestamp,
