@@ -67,19 +67,36 @@ hideWellLearnedElm.checked = settings.getHideWellLearned() == 1;
 const showTransToggleElm = document.getElementById('show-trans-toggle');
 showTransToggleElm.checked = settings.getShowTranscription() == 1;
 
-const langSelect = document.getElementById('ui-lang-select');
-// Configure UI selector
 const userLang = settings.getUserInterfaceLanguage();
-langSelect.innerHTML = '';
-Object.keys(locales).forEach(langCode => {
-    const langName = locales[langCode].__title__ || langCode;
-    const option = document.createElement('option');
-    option.value = langCode;
+
+const langSelectElements = document.getElementsByClassName('ui-lang-select');
+
+[...langSelectElements].forEach(langSelect => {
+
+  // Configure UI selector
+  langSelect.innerHTML = '';
+  Object.keys(locales).forEach(langCode => {
+      const langName = locales[langCode].__title__ || langCode;
+      const option = document.createElement('option');
+      option.value = langCode;
     option.textContent = langName;
     if (langCode === userLang) option.selected = true;
     langSelect.appendChild(option);
+  });
+  langSelect.value = userLang;
+  // Callback for UI language change
+  langSelect.addEventListener('change', (event) => {
+      const newLang = event.target.value;
+  
+    settings.setUserInterfaceLanguage(newLang);
+
+    i18n.setLanguage(newLang);
+
+    location.reload();
+  });
+
 });
-langSelect.value = userLang;
+
 
 const difficultySettings = {
     easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5, finalGoal: 5},
@@ -1824,17 +1841,6 @@ function toggleTranscription() {
   updateTranscriptionDisplay();
 }
 
-// Callback for UI language change
-langSelect.addEventListener('change', (event) => {
-    const newLang = event.target.value;
-
-    settings.setUserInterfaceLanguage(newLang);
-
-    i18n.setLanguage(newLang);
-
-    location.reload();
-});
-
 // show or hide transcription according to global setting
 function updateTranscriptionDisplay() {
   // change visibility for "transcription" class
@@ -1955,6 +1961,12 @@ function renderTextScreen(screenId) {
   const currTopic = topics[topicId]
   const screen = getScreenRecord(screenId);
   const textSource = screen.inputs[0];
+  // for topic 'all' show element 'firstTime' (and hide in others)
+  if (topicId == 'all') {
+    document.getElementById('firstTime').classList.remove('hidden');
+  } else {
+    document.getElementById('firstTime').classList.add('hidden');
+  }
   let topicText = currTopic[textSource];
   // try to find localized version
   const i18nKey = `${textSource}|${topicId}`;

@@ -4,7 +4,7 @@ const manifest = {
   "version": "2.8.3",
   "metadata": {
     "title": "Arabic Basics",
-    "description": "First 200 words and building basic sentences",
+    "description": "First 300 words and building basic sentences",
     "level": "A0",
     "prerequisites": ["Alphabet"],
     "goals": ["Basic Greetings", "Simple Sentences"]
@@ -35,7 +35,7 @@ const manifest = {
       "__title__": "Русский",
       "explanations" : {
         "all": `
-### Первые 200 слов и базовые конструкции предложения.
+### Первые 300 слов и базовые конструкции предложения.
 Цель курса — сформировать устойчивый **базовый лексикон**, необходимый для повседневного общения и понимания обиходной речи. 
 
 Курс ориентирован на учащихся уровня **A0-A1**, уже знакомых с алфавитом и правилами чтения.

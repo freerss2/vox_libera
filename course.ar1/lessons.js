@@ -6,7 +6,7 @@ const topics = {
     "name": "All topics",
     "index": 0,
     "explanations": `
-### The First 200 Words and Basic Sentence Constructions
+### The First 300 Words and Basic Sentence Constructions
 The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.

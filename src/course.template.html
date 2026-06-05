@@ -124,7 +124,7 @@
 
         <div class="settings-item">
             <label>Interface language:</label>
-            <select id="ui-lang-select" class="settings-select">
+            <select id="ui-lang-select" class="ui-lang-select settings-select">
             </select>
         </div>
 
@@ -171,6 +171,14 @@
 
       <div class="game-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>
+        <div id="firstTime" class="hidden">
+            <div id="google-login-btn" class="online-only"></div>
+            <div class="setting-group">
+              <label>Interface language:</label>
+              <select class="ui-lang-select" id="ui-lang-select"></select>
+            </div>
+            <button class="action-btn easy" onclick="window.location='index.html'">❓  Help</button>
+        </div>
         <button class="action-btn easy" onclick="loadNextScreen();">✔ Ok</button>
       </div>
 

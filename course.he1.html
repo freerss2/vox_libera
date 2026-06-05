@@ -9,8 +9,8 @@
     <script>
       const html_code_ver = '2.9.0';
     </script>
-    <link rel="stylesheet" href="style.css?ver=3.0.5">
-    <link rel="stylesheet" href="common_style.css?ver=3.0.5">
+    <link rel="stylesheet" href="style.css?ver=3.0.11">
+    <link rel="stylesheet" href="common_style.css?ver=3.0.11">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -124,7 +124,7 @@
 
         <div class="settings-item">
             <label>Interface language:</label>
-            <select id="ui-lang-select" class="settings-select">
+            <select id="ui-lang-select" class="ui-lang-select settings-select">
             </select>
         </div>
 
@@ -171,6 +171,14 @@
 
       <div class="game-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>
+        <div id="firstTime" class="hidden">
+            <div id="google-login-btn" class="online-only"></div>
+            <div class="setting-group">
+              <label>Interface language:</label>
+              <select class="ui-lang-select" id="ui-lang-select"></select>
+            </div>
+            <button class="action-btn easy" onclick="window.location='index.html'">❓  Help</button>
+        </div>
         <button class="action-btn easy" onclick="loadNextScreen();">✔ Ok</button>
       </div>
 
@@ -313,13 +321,13 @@
       </div>
     </div>
 
-    <script src="course.he1/manifest.js?ver=3.0.5" defer></script>
-    <script src="course.he1/lessons.js?ver=3.0.5" defer></script>
-    <script src="js/common.js?ver=3.0.5" defer></script>
-    <script src="js/settings.js?ver=3.0.5" defer></script>
-    <script src="js/i18n.js?ver=3.0.5" defer></script>
-    <script src="js/locales.js?ver=3.0.5" defer></script>
-    <script src="js/app.js?ver=3.0.5" defer></script>
+    <script src="course.he1/manifest.js?ver=3.0.11" defer></script>
+    <script src="course.he1/lessons.js?ver=3.0.11" defer></script>
+    <script src="js/common.js?ver=3.0.11" defer></script>
+    <script src="js/settings.js?ver=3.0.11" defer></script>
+    <script src="js/i18n.js?ver=3.0.11" defer></script>
+    <script src="js/locales.js?ver=3.0.11" defer></script>
+    <script src="js/app.js?ver=3.0.11" defer></script>
 
 </body>
 </html>

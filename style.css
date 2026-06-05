@@ -116,6 +116,8 @@ body.auth-inside .user-profile-block {
 }
 
 .top-nav {
+    justify-content: center;
+    text-align: center;
     display: flex;
     flex-direction: column;
     height: auto;
