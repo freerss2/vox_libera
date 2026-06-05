@@ -2156,7 +2156,7 @@ function initVoxLiberaAuth() {
 
     tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: '481193985537-mcqa1psand4n02ur1i78dmdu8nrn5ohn.apps.googleusercontent.com',
-        scope: 'https://www.googleapis.com/auth/drive.file',
+        scope: 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/userinfo.email',
         prompt: '', 
         callback: async (response) => {
             if (response && response.access_token) {
@@ -2198,11 +2198,25 @@ function showLoginButton() {
 // 3. Manual click on login
 function handleManualLoginClick() {
     if (!navigator.onLine) {
-        alert("No interner connection!");
+        alert("No internet connection!");
         return;
     }
     // Open standard popup for account selection
-    tokenClient.requestAccessToken(); 
+    tokenClient.callback = async (response) => {
+        if (response.error) {
+            console.log("Vox Libera: Manual login failed or cancelled by user: " + response.error);
+            return;
+        }
+
+        if (response.access_token) {
+            console.log("Vox Libera: Manual login successful!");
+            await handleSuccessfulLogin(response.access_token);
+        }
+    };
+
+    tokenClient.requestAccessToken({
+        hint: localStorage.getItem('vox_libera_user_email') || ''
+    });
 }
 
 // 4. Initial data sync on login
@@ -2240,11 +2254,56 @@ function updateCloudStatus(status) {
 window.onGoogleTokenExpired = function() {
     console.log("Vox Libera: Tocken is not valid. Trying to renew in background...");
     if (navigator.onLine) {
-        tokenClient.requestAccessToken({ prompt: 'none' });
+
+        tokenClient.callback = async (response) => {
+          // If Google returned error
+          if (response.error) {
+              console.log("Vox Libera: Background login failed (" + response.error + "). Showing login button.");
+              showLoginButton(); 
+              return;
+          }
+
+          // If token received in background
+          if (response.access_token) {
+              console.log("Vox Libera: Background login successful!");
+              handleSuccessfulLogin(response.access_token);
+          }
+        };
+
+        tokenClient.requestAccessToken({
+          prompt: 'none',
+          hint: localStorage.getItem('vox_libera_user_email') || ''
+        });
     } else {
         showLoginButton();
     }
 };
+
+async function handleSuccessfulLogin(accessToken) {
+
+    localStorage.setItem('vox_libera_logged_in', 'true');
+    try {
+      // query email
+      const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: { 'Authorization': `Bearer ${accessToken}` }
+      });
+
+      if (userInfoResponse.ok) {
+        const userInfo = await userInfoResponse.json();
+        if (userInfo.email) {
+          // store email in localStorage
+          localStorage.setItem('vox_libera_user_email', userInfo.email);
+          console.log("Vox Libera: Saved user email for background hints:", userInfo.email);
+        }
+      }
+    } catch (err) {
+      console.error("Vox Libera: Failed to fetch user email:", err);
+    }
+
+    // Just start sync
+    const localData = packProgressData(); 
+    syncManager.uploadProgress(accessToken, localData);
+}
 
 async function resolveProgressConflict(cloudData, localData) {
     console.log("Vox Libera: Analyzing versions conflict...");
