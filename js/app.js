@@ -2386,6 +2386,7 @@ function logoutGoogle() {
     localStorage.removeItem('vox_libera_user_email');
     
     showLoginButton();
+    document.getElementById('user-profile-block').classList.add('hidden');
     // Revoke authorization from Google
     if (userEmail) {
         google.accounts.oauth2.revoke(userEmail, (done) => {
