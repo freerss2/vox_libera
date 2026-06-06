@@ -2363,28 +2363,83 @@ async function handleSuccessfulLogin(accessToken) {
 // Compare cloud and local data and perform sync in right direction
 async function resolveProgressConflict(cloudData, localData) {
     console.log("Vox Libera: Analyzing versions conflict...");
+    let direction = '';
 
     if (!cloudData || !cloudData.courses) {
         console.warn("Vox Libera: Cloud data is empty or damaged.");
-        return;
+        direction = 'cloud';
     }
 
-    const localTime = localData.updated_at || 0;
-    const cloudTime = cloudData.updated_at || 0;
+    if (! direction ) {
+      const cloudAttempts = calculateTotalAttempts(cloudData);
+      const localAttempts = calculateTotalAttempts(localData);
+      if (localAttempts > cloudAttempts) {
+        direction = 'cloud';
+      }
+    }
 
-    if (cloudTime > localTime) {
+    if (! direction ) {
+      const localTime = localData.updated_at || 0;
+      const cloudTime = cloudData.updated_at || 0;
+
+      if (cloudTime > localTime) {
+        direction = 'browser';
+      }
+      else if (localTime > cloudTime) {
+        direction = 'cloud';
+      }
+    }
+
+    if (direction === 'browser' ) {
         console.log("🎯 Cloud wins.");
         unpackProgressData(cloudData);
     }
-    else if (localTime > cloudTime) {
-        console.log("🚀 Local settings are newer. Uploading to cloud.");
+    else if (direction === 'cloud') {
+        console.log("🚀 Local settings are newer.");
         if (window.currentAccessToken) {
+            console.log("🚀 Uploading to cloud.");
             syncManager.uploadProgress(window.currentAccessToken, localData);
         }
     }
     else {
         console.log("🤝 Data is in sync.");
     }
+}
+
+// count attempts in progress data
+function calculateTotalAttempts(data) {
+    let totalAttempts = 0;
+
+    // Safety for damaged input
+    if (!data || !data.courses) {
+        return totalAttempts;
+    }
+
+    // Iterate all cources
+    for (const courseName in data.courses) {
+        if (data.courses.hasOwnProperty(courseName)) {
+            const course = data.courses[courseName];
+            
+            // Check if there is a success_stats inside
+            if (course && course.success_stats) {
+                const stats = course.success_stats;
+                
+                // Iterate over words
+                for (const word in stats) {
+                    if (stats.hasOwnProperty(word)) {
+                        const wordData = stats[word];
+                        
+                        // When there is an attempts value - count it
+                        if (wordData && typeof wordData.attempts === 'number') {
+                            totalAttempts += wordData.attempts;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return totalAttempts;
 }
 
 function logoutGoogle() {
