@@ -78,6 +78,19 @@
     left: 1vw; 
 }
 
+#qr-code {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (width <= 430px) {
+    #qr-code {
+        padding-bottom: 130px; 
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 @media (width >= 601px) {
     #narrator-container {
         left: 30vw;
