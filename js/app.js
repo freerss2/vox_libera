@@ -2304,6 +2304,8 @@ async function handleSuccessfulLogin(accessToken) {
       console.error("Vox Libera: Failed to fetch user email:", err);
     }
 
+    window.currentAccessToken = accessToken;
+    isUserLoggedIn = true;
     // Just start sync
     const localData = packProgressData(); 
     syncManager.uploadProgress(accessToken, localData);
