@@ -86,9 +86,11 @@
                   🔄 Sync with Google
               </button>
             </div>
-            <div id="cloud-status" class="cloud-idle" title="Статус синхронизации">☁️</div>
+            <div>
+              <label data-i18n="menu|sync_status">Sync status</label><span id="cloud-status" class="cloud-offline">💾 (offline)</span>
+            </div>
 
-            <div class="user-profile-block">
+            <div id="user-profile-block" class="hidden">
                 <img id="user-avatar" src="" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%;">
                 <span id="user-name"></span>
                 <button onclick="logoutGoogle()" class="nav-arrow">🚪 Logout</button>

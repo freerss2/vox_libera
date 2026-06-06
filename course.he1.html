@@ -9,8 +9,8 @@
     <script>
       const html_code_ver = '2.9.0';
     </script>
-    <link rel="stylesheet" href="style.css?ver=3.1.2">
-    <link rel="stylesheet" href="common_style.css?ver=3.1.2">
+    <link rel="stylesheet" href="style.css?ver=3.1.6">
+    <link rel="stylesheet" href="common_style.css?ver=3.1.6">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -86,9 +86,11 @@
                   🔄 Sync with Google
               </button>
             </div>
-            <div id="cloud-status" class="cloud-idle" title="Статус синхронизации">☁️</div>
+            <div>
+              <label data-i18n="menu|sync_status">Sync status</label><span id="cloud-status" class="cloud-offline">💾 (offline)</span>
+            </div>
 
-            <div class="user-profile-block">
+            <div id="user-profile-block" class="hidden">
                 <img id="user-avatar" src="" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%;">
                 <span id="user-name"></span>
                 <button onclick="logoutGoogle()" class="nav-arrow">🚪 Logout</button>
@@ -330,13 +332,13 @@
       </div>
     </div>
 
-    <script src="course.he1/manifest.js?ver=3.1.2" defer></script>
-    <script src="course.he1/lessons.js?ver=3.1.2" defer></script>
-    <script src="js/common.js?ver=3.1.2" defer></script>
-    <script src="js/settings.js?ver=3.1.2" defer></script>
-    <script src="js/i18n.js?ver=3.1.2" defer></script>
-    <script src="js/locales.js?ver=3.1.2" defer></script>
-    <script src="js/app.js?ver=3.1.2" defer></script>
+    <script src="course.he1/manifest.js?ver=3.1.6" defer></script>
+    <script src="course.he1/lessons.js?ver=3.1.6" defer></script>
+    <script src="js/common.js?ver=3.1.6" defer></script>
+    <script src="js/settings.js?ver=3.1.6" defer></script>
+    <script src="js/i18n.js?ver=3.1.6" defer></script>
+    <script src="js/locales.js?ver=3.1.6" defer></script>
+    <script src="js/app.js?ver=3.1.6" defer></script>
 
 </body>
 </html>

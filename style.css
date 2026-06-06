@@ -35,22 +35,6 @@ body.offline .online-only {
     display: none !important;
 }
 
-/* Hide by default user profile block */
-.user-profile-block {
-    display: none;
-}
-
-/* Change visibility on login */
-body.auth-inside #google-login-btn {
-    display: none !important; /* Hide the login button */
-}
-
-body.auth-inside .user-profile-block {
-    display: flex; /* Show user's profile (name and avatar) */
-    align-items: center;
-    gap: 10px;
-}
-
 /* Styles for any RTL lanugage (Arabic, Hebrew, Farsi) */
 [dir="rtl"] {
     font-family: 'Noto Sans Arabic', sans-serif;

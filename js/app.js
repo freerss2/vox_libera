@@ -87,7 +87,7 @@ const langSelectElements = document.getElementsByClassName('ui-lang-select');
   // Callback for UI language change
   langSelect.addEventListener('change', (event) => {
       const newLang = event.target.value;
-  
+
     settings.setUserInterfaceLanguage(newLang);
 
     i18n.setLanguage(newLang);
@@ -2059,15 +2059,15 @@ function exportData(data, timestamp) {
     const filename = `vox_libera_backup_${timestamp}.json`;
     const jsonStr = JSON.stringify(data, null, 2); // null, 2 for readability
     const blob = new Blob([jsonStr], { type: 'application/json' });
-    
+
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
-    
+
     document.body.appendChild(link);
     link.click();
-    
+
     // cleanup
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
@@ -2082,7 +2082,7 @@ function importUserData(event) {
     reader.onload = (e) => {
         try {
             const data = JSON.parse(e.target.result);
-            
+
             // validate version
             if (data.app_version !== app_code_ver) {
                 alert("incompatible version");
@@ -2127,7 +2127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hiddenInput.addEventListener('change', function(event) {
         importUserData(event);
         // Important: clean the value to allow more import (?)
-        this.value = ''; 
+        this.value = '';
     });
 
     initTopic(settings.getCurrentTopic());
@@ -2135,7 +2135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFavicon(manifest.icon_code);
 
     // Start Google authorization
-    initVoxLiberaAuth();
+    startAppAuth();
 
 });
 
@@ -2146,7 +2146,28 @@ document.addEventListener('DOMContentLoaded', () => {
 let tokenClient;
 let isUserLoggedIn = false;
 
-// 1. Initialization on page load
+
+function startAppAuth() {
+    const currentHost = window.location.hostname;
+
+    // Allowed doaimns that appear in Google Cloud Console -> Authorized JavaScript origins
+    const allowedGoogleOrigins = ['freerss2.github.io'];
+
+    // If current address is not listed there
+    if (!allowedGoogleOrigins.includes(currentHost)) {
+        console.log(`Vox Libera: Google Sync disabled for current origin (${currentHost}). Running in local-only mode.`);
+
+        // Hide anything related to Google login
+        setLoginDisplay(false);
+        return;
+    }
+
+    // When address is supported - just proceed to authorization init
+    console.log("Vox Libera: Valid origin detected. Activating Google API components...");
+    initVoxLiberaAuth();
+}
+
+// Initialization on page load
 function initVoxLiberaAuth() {
     if (typeof google === 'undefined') {
         console.warn("Vox Libera: Google API is not loaded. Starting in offline mode.");
@@ -2157,20 +2178,21 @@ function initVoxLiberaAuth() {
         }
         return;
     }
+    console.log("Vox Libera: Google API loaded.");
 
     tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: '481193985537-mcqa1psand4n02ur1i78dmdu8nrn5ohn.apps.googleusercontent.com',
         scope: 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/userinfo.email',
-        prompt: '', 
+        prompt: '',
         callback: async (response) => {
             if (response && response.access_token) {
                 window.currentAccessToken = response.access_token;
                 isUserLoggedIn = true;
-                
+
                 localStorage.setItem('vox_libera_logged_in', 'true');
                 setLoginDisplay(false);
                 updateCloudStatus('synced');
-                
+
                 // Start checks and conflicts resolving
                 await startInitialSync();
             }
@@ -2191,7 +2213,6 @@ function initVoxLiberaAuth() {
 }
 
 function setLoginDisplay(show) {
-    const authContainers = document.getElementsByClassName('vox-auth-container');
     if (show) {
       [...authContainers].forEach( elm => elm.classList.remove('hidden') );
     } else {
@@ -2199,7 +2220,7 @@ function setLoginDisplay(show) {
     }
 }
 
-// 2. Show the button if background login failed or on initial load
+// Show the button if background login failed or on initial load
 function showLoginButton() {
     isUserLoggedIn = false;
     window.currentAccessToken = null;
@@ -2208,7 +2229,7 @@ function showLoginButton() {
     updateCloudStatus('disconnected');
 }
 
-// 3. Manual click on login
+// Manual click on login
 function handleManualLoginClick() {
     if (!navigator.onLine) {
         alert("No internet connection!");
@@ -2232,12 +2253,12 @@ function handleManualLoginClick() {
     });
 }
 
-// 4. Initial data sync on login
+// Initial data sync on login
 async function startInitialSync() {
     updateCloudStatus('loading');
     const cloudData = await syncManager.downloadProgress(window.currentAccessToken);
-    const localData = packProgressData(); 
-    
+    const localData = packProgressData();
+
     if (cloudData) {
         resolveProgressConflict(cloudData, localData);
     } else {
@@ -2247,18 +2268,18 @@ async function startInitialSync() {
     updateCloudStatus('synced');
 }
 
-// 5. Manage cloud sync status in UI
+// Manage cloud sync status in UI
 function updateCloudStatus(status) {
     const el = document.getElementById('cloud-status');
     if (!el) return;
-    
+
     el.className = 'cloud-' + status;
-    
+
     switch(status) {
-        case 'synced': el.innerText = '☁️'; el.title = 'In sync with Google Drive'; break;
-        case 'loading': el.innerText = '⏳'; el.title = 'Communicating...'; break;
-        case 'offline': el.innerText = '💾'; el.title = 'Offline mode'; break;
-        case 'disconnected': el.innerText = '❌'; el.title = 'Sync is disabled'; break;
+        case 'synced': el.innerText = '☁️ (ok)'; el.title = 'In sync with Google Drive'; break;
+        case 'loading': el.innerText = '⏳ (running...)'; el.title = 'Communicating...'; break;
+        case 'offline': el.innerText = '💾 (offline)'; el.title = 'Offline mode'; break;
+        case 'disconnected': el.innerText = '❌ (disabled)'; el.title = 'Sync is disabled'; break;
     }
 
 }
@@ -2272,7 +2293,7 @@ window.onGoogleTokenExpired = function() {
           // If Google returned error
           if (response.error) {
               console.log("Vox Libera: Background login failed (" + response.error + "). Showing login button.");
-              showLoginButton(); 
+              showLoginButton();
               return;
           }
 
@@ -2292,6 +2313,7 @@ window.onGoogleTokenExpired = function() {
     }
 };
 
+// Callback for successful login with accessToken
 async function handleSuccessfulLogin(accessToken) {
 
     localStorage.setItem('vox_libera_logged_in', 'true');
@@ -2308,6 +2330,11 @@ async function handleSuccessfulLogin(accessToken) {
           localStorage.setItem('vox_libera_user_email', userInfo.email);
           console.log("Vox Libera: Saved user email for background hints:", userInfo.email);
         }
+        const avatarImg = document.getElementById('user-avatar');
+        const nameSpan = document.getElementById('user-name');
+        if (avatarImg && userInfo.picture) { avatarImg.src = userInfo.picture; }
+        if (nameSpan && userInfo.name) { nameSpan.textContent = userInfo.name; }
+        document.getElementById('user-profile-block').classList.remove('hidden');
       }
     } catch (err) {
       console.error("Vox Libera: Failed to fetch user email:", err);
@@ -2318,13 +2345,14 @@ async function handleSuccessfulLogin(accessToken) {
     setLoginDisplay(false);
 
     // Just start sync
-    const localData = packProgressData(); 
+    const localData = packProgressData();
     syncManager.uploadProgress(accessToken, localData);
 }
 
+// Compare cloud and local data and perform sync in right direction
 async function resolveProgressConflict(cloudData, localData) {
     console.log("Vox Libera: Analyzing versions conflict...");
-    
+
     if (!cloudData || !cloudData.courses) {
         console.warn("Vox Libera: Cloud data is empty or damaged.");
         return;
@@ -2336,18 +2364,36 @@ async function resolveProgressConflict(cloudData, localData) {
     if (cloudTime > localTime) {
         console.log("🎯 Cloud wins.");
         unpackProgressData(cloudData);
-    } 
+    }
     else if (localTime > cloudTime) {
         console.log("🚀 Local settings are newer. Uploading to cloud.");
         if (window.currentAccessToken) {
             syncManager.uploadProgress(window.currentAccessToken, localData);
         }
-    } 
+    }
     else {
         console.log("🤝 Data is in sync.");
     }
 }
 
+function logoutGoogle() {
+    // Get the saved email
+    const userEmail = localStorage.getItem('vox_libera_user_email');
+
+    // Clean all login infor from localStorage
+    localStorage.removeItem('vox_libera_logged_in');
+    localStorage.removeItem('vox_libera_user_email');
+    
+    showLoginButton();
+    // Revoke authorization from Google
+    if (userEmail) {
+        google.accounts.oauth2.revoke(userEmail, (done) => {
+            console.log("Vox Libera: Google session revoked successfully:", done.successful);
+        });
+    }
+}
+
+// Sync to cloud (with debounce)
 class CloudSync {
     constructor() {
         this.fileName = "vox_libera_sync.json";
@@ -2380,7 +2426,7 @@ class CloudSync {
     async findFile(accessToken) {
         const q = encodeURIComponent(`name='${this.fileName}' and trashed = false`);
         const url = `https://www.googleapis.com/drive/v3/files?q=${q}`;
-        
+
         const response = await this.safeFetch(url, { method: 'GET' }, accessToken);
         if (!response) return null;
 
@@ -2415,7 +2461,7 @@ class CloudSync {
         // The timer should end only after 30 seconds of "silence"
         this.debounceTimeout = setTimeout(() => {
             console.log("Vox Libera: In silent state. Collecting data for cloud...");
-            
+
             // Calling packer function only when we are ready
             if (typeof packProgressData === 'function') {
                 const freshSnapshot = packProgressData();
@@ -2430,13 +2476,13 @@ class CloudSync {
     // Sending file to cloud (Multipart PATCH/POST)
     async uploadProgress(accessToken, progressData) {
         if (typeof updateCloudStatus === 'function') updateCloudStatus('loading');
-        
+
         const fileId = await this.findFile(accessToken);
-        
+
         const boundary = 'vox_libera_boundary';
         const delimiter = `\r\n--${boundary}\r\n`;
         const closeDelim = `\r\n--${boundary}--`;
-        
+
         const metadata = {
             name: this.fileName
         };
