@@ -2168,7 +2168,7 @@ function initVoxLiberaAuth() {
                 isUserLoggedIn = true;
                 
                 localStorage.setItem('vox_libera_logged_in', 'true');
-                document.getElementById('vox-auth-container').style.display = 'none';
+                setLoginDisplay(false);
                 updateCloudStatus('synced');
                 
                 // Start checks and conflicts resolving
@@ -2190,12 +2190,21 @@ function initVoxLiberaAuth() {
     }
 }
 
+function setLoginDisplay(show) {
+    const authContainers = document.getElementsByClassName('vox-auth-container');
+    if (show) {
+      [...authContainers].forEach( elm => elm.classList.remove('hidden') );
+    } else {
+      [...authContainers].forEach( elm => elm.classList.add('hidden') );
+    }
+}
+
 // 2. Show the button if background login failed or on initial load
 function showLoginButton() {
     isUserLoggedIn = false;
     window.currentAccessToken = null;
     localStorage.removeItem('vox_libera_logged_in');
-    document.getElementById('vox-auth-container').style.display = 'block';
+    setLoginDisplay(true);
     updateCloudStatus('disconnected');
 }
 
@@ -2306,6 +2315,8 @@ async function handleSuccessfulLogin(accessToken) {
 
     window.currentAccessToken = accessToken;
     isUserLoggedIn = true;
+    setLoginDisplay(false);
+
     // Just start sync
     const localData = packProgressData(); 
     syncManager.uploadProgress(accessToken, localData);

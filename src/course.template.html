@@ -81,16 +81,14 @@
         <h3>🛠 <span data-i18n="menu|settings">Settings</span></h3>
 
         <div class="auth-container setting-group">
-            <div id="google-login-btn" class="online-only"></div>
-
-            <div id="vox-auth-container" style="display: none;">
-              <button id="google-login-btn" onclick="handleManualLoginClick()" class="btn-minimal">
-                  🔄 Синхронизировать с Google Диском
+            <div id="vox-auth-container" class="hidden vox-auth-container">
+              <button id="google-login-btn" onclick="handleManualLoginClick()" class="btn-minimal google-login-btn">
+                  🔄 Sync with Google
               </button>
             </div>
             <div id="cloud-status" class="cloud-idle" title="Статус синхронизации">☁️</div>
 
-            <div class="user-profile-block online-only">
+            <div class="user-profile-block">
                 <img id="user-avatar" src="" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%;">
                 <span id="user-name"></span>
                 <button onclick="logoutGoogle()" class="nav-arrow">🚪 Logout</button>
@@ -179,7 +177,11 @@
       <div class="game-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>
         <div id="firstTime" class="hidden">
-            <div id="google-login-btn" class="online-only"></div>
+            <div id="vox-auth-container" class="hidden vox-auth-container">
+              <button id="google-login-btn" onclick="handleManualLoginClick()" class="google-login-btn">
+                  🔄 Sync with Google
+              </button>
+            </div>
             <div class="setting-group">
               <label>Interface language:</label>
               <select class="ui-lang-select" id="ui-lang-select"></select>
