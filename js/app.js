@@ -2213,6 +2213,7 @@ function initVoxLiberaAuth() {
 }
 
 function setLoginDisplay(show) {
+    const authContainers = document.getElementsByClassName('vox-auth-container');
     if (show) {
       [...authContainers].forEach( elm => elm.classList.remove('hidden') );
     } else {
