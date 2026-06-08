@@ -8,6 +8,7 @@
 console.log('engine_ver='+engine_ver);
 /* SPECIAL TREAMENT FOR LINTER ONLY: */
 window.courses = courses;
+window.app_version = app_version;
 /* --------------------------------- */
 
 const settings = new Settings({

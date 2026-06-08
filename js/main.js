@@ -5,6 +5,7 @@
 
 "use strict";
 
+window.html_code_ver = html_code_ver;
 // First, report the components versions
 console.log('app_version='+app_version);
 console.log('engine_ver='+engine_ver);
