@@ -2094,7 +2094,7 @@ function importUserData(event) {
             unpackProgressData(data);
             location.reload();
         } catch (err) {
-            alert("Error reading file.");
+            alert("Error reading file: " + err);
         }
     };
     reader.readAsText(file);
@@ -2418,7 +2418,7 @@ function calculateTotalAttempts(data) {
 
     // Iterate all cources
     for (const courseName in data.courses) {
-        if (data.courses.hasOwnProperty(courseName)) {
+        if (Object.hasOwn(data.courses, courseName)) {
             const course = data.courses[courseName];
             
             // Check if there is a success_stats inside
@@ -2427,7 +2427,7 @@ function calculateTotalAttempts(data) {
                 
                 // Iterate over words
                 for (const word in stats) {
-                    if (stats.hasOwnProperty(word)) {
+                    if (Object.hasOwn(stats, word)) {
                         const wordData = stats[word];
                         
                         // When there is an attempts value - count it
