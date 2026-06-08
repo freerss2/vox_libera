@@ -76,11 +76,42 @@ def find_courses():
                     
     return courses
 
+def update_app_version(version):
+    """
+    Update app_version constant in js/common.js with the new version
+    @param version: new version string
+    """
+    common_js_path = os.path.join("js", "common.js")
+    
+    if not os.path.exists(common_js_path):
+        print(f"⚠️ Warning: {common_js_path} not found!")
+        return
+    
+    # Read the file
+    with open(common_js_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Update app_version inline
+    updated_content = re.sub(
+        r"const app_version = '[^']*';",
+        f"const app_version = '{version}';",
+        content
+    )
+    
+    # Write back if changed
+    if updated_content != content:
+        with open(common_js_path, 'w', encoding='utf-8') as f:
+            f.write(updated_content)
+        print(f"✅  Updated app_version in {common_js_path} to {version}")
+
 def build():
     if not os.path.exists(TEMPLATE_PATH):
         print(f"❌  Error: Template {TEMPLATE_PATH} not found!")
         return
 
+    # Update app_version in js/common.js
+    update_app_version(VERSION)
+    
     # Read the template
     with open(TEMPLATE_PATH, 'r', encoding='utf-8') as f:
         template = f.read()

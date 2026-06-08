@@ -6,8 +6,8 @@
 "use strict";
 
 // First, report the components versions
-console.log('html_code_ver='+html_code_ver);
-console.log('app_code_ver='+app_code_ver);
+console.log('app_version='+app_version);
+console.log('engine_ver='+engine_ver);
 
 const urlParams = new URLSearchParams(window.location.search);
 const userLangDefault = urlParams.get('userLang') || '';

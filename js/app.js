@@ -6,8 +6,8 @@
 "use strict";
 
 // First, report the components versions
-console.log('html_code_ver='+html_code_ver);
-console.log('app_code_ver='+app_code_ver);
+console.log('app_version='+app_version);
+console.log('engine_ver='+engine_ver);
 console.log('lesson_data_ver='+lesson_data_ver);
 
 // compare current URL and current course data with a matching record in "courses"
@@ -40,8 +40,8 @@ const DEFAULT_SCREEN_ID = 'dictionary';
 
 document.getElementById('versions-info').innerHTML =
   '<table>' +
-  '<tr><td>html code</td><td>&nbsp;v' + html_code_ver + '</td></tr>' +
-  '<tr><td>app code</td><td>&nbsp;v' + app_code_ver + '</td></tr>' +
+  '<tr><td>app version</td><td>&nbsp;v' + app_version + '</td></tr>' +
+  '<tr><td>engine version</td><td>&nbsp;v' + engine_ver + '</td></tr>' +
   '<tr><td>lesson data</td><td>&nbsp;v' + lesson_data_ver + '</td></tr></table>'
   ;
 
@@ -2033,7 +2033,7 @@ function packProgressData() {
     });
     const today = Date.now();
     const data = {
-        "app_version": app_code_ver,
+        "engine_version": engine_ver,
         "created_timestamp": timestamp,
         "created_at": localStorage.getItem('vox_libera_created_at') || today,
         "updated_at": Date.now(),
@@ -2084,7 +2084,8 @@ function importUserData(event) {
             const data = JSON.parse(e.target.result);
 
             // validate version
-            if (data.app_version !== app_code_ver) {
+            const savedVersion = data.engine_version ?? data.app_version;
+            if (savedVersion !== engine_ver) {
                 alert("incompatible version");
                 return;
             }

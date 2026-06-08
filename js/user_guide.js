@@ -5,7 +5,7 @@
 
 "use strict";
 
-console.log('app_code_ver='+app_code_ver);
+console.log('engine_ver='+engine_ver);
 /* SPECIAL TREAMENT FOR LINTER ONLY: */
 window.courses = courses;
 /* --------------------------------- */
