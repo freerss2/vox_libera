@@ -1511,6 +1511,7 @@ function clearInput() {
 
 // ---------------------------------------- application state setting
 
+// Control the sound on/off state of the application (for speech synthesis)
 let isMuted = false;
 
 function toggleMute() {
@@ -1523,6 +1524,7 @@ function toggleMute() {
         window.speechSynthesis.cancel();
     }
 }
+
 function speakTargetLangSlow(text) {
   speakTargetLang(text, 0.5);
 }
@@ -1545,6 +1547,7 @@ function speakTargetLang(text, rate=1) {
     }
 }
 
+// control application zoom level (for better readability on different screens)
 let currentZoom = 1.0;
 
 function changeZoom(delta) {
@@ -1552,6 +1555,9 @@ function changeZoom(delta) {
     document.documentElement.style.setProperty('--app-scale', currentZoom );
 }
 
+// Get list of input types for current screen
+// @param screen_id: id of screen (e.g. 'matching', 'sent_u2t')
+// @return list of input types (e.g. ['words', 'sentences'])
 function getGameInputTypes(screen_id) {
   const record = getScreenRecord(screen_id);
   return record.inputs;
@@ -1559,6 +1565,10 @@ function getGameInputTypes(screen_id) {
 
 // universal collector for topic data (including virtual "all")
 // external parameter: finalGameForTopic
+// @param inputTypes: list of input types relevant for current game (e.g. ['words', 'sentences'])
+// @param hideWellLearned: whether to apply filtering of well-known items according to stats
+// @param needShuffle: whether to shuffle the result list
+// @return: list of items of given input types for current topic
 function getTopicData(inputTypes, hideWellLearned, needShuffle) {
   let currentData = [];
   if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
@@ -1620,7 +1630,7 @@ function orderByAccuracy(currentData) {
         const stats = wordStats[targetStr];
 
         // Calculate accuracy, considering totally new as "-1" (for sorting)
-        const accuracy = stats && stats.attempts > 0
+        const accuracy = (stats && stats.attempts > 0)
             ? (stats.success / stats.attempts) * 100
             : -1;
 
@@ -1674,7 +1684,7 @@ function getStratifiedBatch(candidates) {
 }
 
 // TODO: move this variable to generic 'settings' too
-const wordStats = getStats();
+let wordStats = getStats();
 
 // Stats manipulation: read words stats
 function getStats() {
@@ -1789,6 +1799,7 @@ function confirmResetStats() {
 // reset all statistics
 function resetStats() {
   setStats({});
+  wordStats = {};
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
@@ -2185,5 +2196,3 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof startAppAuth === 'function') startAppAuth();
 
 });
-
-// Google login and Drive sync moved to js/google_sync.js
