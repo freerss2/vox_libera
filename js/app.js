@@ -538,7 +538,7 @@ function hideAllScreens() {
     const screens = document.querySelectorAll('.game-screen');
     screens.forEach(s => s.classList.add('hidden'));
     // hide summary elements
-    document.getElementById('narrator-container').classList.add('hidden');
+    hideNarrator();
     document.getElementById('resultsModal').classList.add('hidden');
     // reset hint panel
     const hintPanelElm = document.getElementById('hint-panel');
@@ -1723,6 +1723,30 @@ function displayTopicCompletionState() {
     }
 }
 
+// callback for "Reset topic stats" button - show confirmation popup
+function confirmResetTopicStats() {
+    const confirmRequest = i18n.t('main|confirm_request');
+    const topicStatisticsReset = i18n.t('main|topic_statistics_reset');
+    const dismissText = i18n.t('main|dismiss');
+    const confirmText = i18n.t('main|confirm');
+    const markdownText = `### ##text-center## ${confirmRequest}
+##text-center## ${topicStatisticsReset}
+
+##bubble-buttons## [ ${dismissText} ](#dismiss) &nbsp;|&nbsp; [ ${confirmText} ](#confirm)`;
+
+const actions = {
+        'dismiss': () => { console.log('Dismiss clicked'); },
+        'confirm': () => { resetTopicStats(); }
+    };
+
+    const markdownConf = buildMarkdownConf(
+        courseTargetLanguage, targetDir, userLang, userDir);
+    // visualize the popup
+    document.getElementById('narrator-container').classList.remove('hidden');
+    updateCharacterBubble(markdownText, markdownConf, actions, true);
+}
+
+// reset statistics for current topic
 function resetTopicStats() {
   let stats = getStats();
   // for each word/sentence in current topic
@@ -1739,8 +1763,30 @@ function resetTopicStats() {
   }
 }
 
+// get a confirmation before reset all statistics (for all topics)
+function confirmResetStats() {
+    const confirmRequest = i18n.t('main|confirm_request');
+    const allStatisticsReset = i18n.t('main|all_statistics_reset');
+    const dismissText = i18n.t('main|dismiss');
+    const confirmText = i18n.t('main|confirm');
+    const markdownText = `### ##text-center## ${confirmRequest}
+##text-center## ${allStatisticsReset}
+
+##bubble-buttons## [ ${dismissText} ](#dismiss) &nbsp;|&nbsp; [ ${confirmText} ](#confirm)`;
+
+    const actions = {
+        'dismiss': () => { console.log('Dismiss clicked'); },
+        'confirm': () => { resetStats(); }
+    };
+
+    const markdownConf = buildMarkdownConf(
+        courseTargetLanguage, targetDir, userLang, userDir);
+    // visualize the popup
+    document.getElementById('narrator-container').classList.remove('hidden');
+    updateCharacterBubble(markdownText, markdownConf, actions, true);
+}
+
 // reset all statistics
-// (TODO: must get a confirmation) /!\
 function resetStats() {
   setStats({});
   // reload dictionary

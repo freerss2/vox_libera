@@ -77,6 +77,8 @@ if not verdict:
     # 5. Remove files
     os.remove(temp_file)
     os.remove(log_file)
+    exit(0)
 else:
     print(f"4.1. Summary:\n{verdict}")
     print(f"4.2. Details: {log_file}")
+    exit(1)

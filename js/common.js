@@ -6,12 +6,17 @@
 // common data
 
 const engine_ver = '2.9.3';
-const app_version = '3.1.8';
+const app_version = '3.2.1';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
   {"ref": "course.he1", "code": "א", "title": "Hebrew Basics"}
 ];
+
+// Global variable to store current narrator bubble context
+// Used for context switch during bubble content updates
+var currentNarratorBubbleContext;
+resetSavedBubbleContext();
 
 // Conver custom markdown to divs with class name
 // usage:  html = parseCustomDivs('##text-center## some prompt: ##stat-value## 12%');
@@ -65,7 +70,10 @@ function parseMarkdown(text, conf={}) {
 
 // replace links like href="#repeat" with functions from actions dictionary
 // usage: injectActionsToLinks(container, actions) 
-function injectActionsToLinks(container, actions) {
+// @param container - DOM element to search for links
+// @param actions - dictionary of actionName: function pairs, e.g. {'repeat': () => {some code;}}
+// @param preActionsCallback - optional callback to be called with action execution (e.g. to restore bubble context)
+function injectActionsToLinks(container, actions, preActionsCallback=null) {
     const links = container.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
@@ -77,6 +85,7 @@ function injectActionsToLinks(container, actions) {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             if ( actions[action] ) {
+                preActionsCallback && preActionsCallback();
                 actions[action]();
             } else {
                 console.log(`ERROR: unsupported action "${action}" in link`);
@@ -244,7 +253,7 @@ function toggleBubble(event) {
 // updateCharacterBubble(newHint, markdownConf);
 // optional: actions = {'repeat': () => {some code;}};
 // injectActionsToLinks(document.getElementById('bubble-text'), actions);
-function updateCharacterBubble(newHint, markdownConf={}, actions={}) {
+function updateCharacterBubble(newHint, markdownConf={}, actions={}, temporaryContext=false) {
     const bubble = document.getElementById('speech-bubble');
     const textTarget = document.getElementById('bubble-text');
 
@@ -256,13 +265,53 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}) {
         return;
     }
 
+    let preActionsCallback;
+    if (temporaryContext) {
+      preActionsCallback = restoreBubbleContext;
+    } else {
+      preActionsCallback = hideNarrator;
+      // Save current bubble context for later context switch usage
+      currentNarratorBubbleContext.mdRepresentation = newHint;
+      currentNarratorBubbleContext.markdownConf = markdownConf;
+      currentNarratorBubbleContext.actionsMappings = actions;
+    }
+
     setTimeout(() => {
         textTarget.innerHTML = parseMarkdown(newHint, markdownConf);
-        if ( actions ) injectActionsToLinks(textTarget, actions);
+        if ( actions ) injectActionsToLinks(textTarget, actions, preActionsCallback);
         bubble.dataset.enabled = true;
         // Show up after update
         bubble.classList.remove('hidden');
     }, 300);
+}
+
+// Restore previous bubble context (if exists) or do nothing
+function restoreBubbleContext() {
+  // Check if there is a saved context to restore
+  if (  ! currentNarratorBubbleContext.mdRepresentation ) {
+    document.getElementById('narrator-container').classList.add('hidden');
+    return;
+  }
+  // restore previous context
+  updateCharacterBubble(
+    currentNarratorBubbleContext.mdRepresentation,
+    currentNarratorBubbleContext.markdownConf,
+    currentNarratorBubbleContext.actionsMappings
+  );
+}
+
+function hideNarrator() {
+  document.getElementById('narrator-container').classList.add('hidden');
+  resetSavedBubbleContext();
+}
+
+// clear context to avoid restore in the future
+function resetSavedBubbleContext() {
+  currentNarratorBubbleContext =  {
+    mdRepresentation: '',
+    markdownConf: {},
+    actionsMappings: {}
+  }
 }
 
 // Narrators lookup

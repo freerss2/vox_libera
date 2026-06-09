@@ -62,7 +62,7 @@
                         <input type="checkbox" id="topic-passed-checkbox" onchange="toggleTopicPassed()">
                         <span data-i18n="menu|topic_completed">Topic is completed</span>
                     </label>
-                    <button class="btn-reset" onclick="resetTopicStats()" data-i18n-title="menu|reset_topic_stats_hint">
+                    <button class="btn-reset" onclick="confirmResetTopicStats()" data-i18n-title="menu|reset_topic_stats_hint">
                         <span data-i18n="menu|reset_topic_stats">Reset</span> 🗑️
                     </button>
                 </div>
@@ -141,7 +141,7 @@
         </div>
 
         <div class="setting-item">
-          <span class="action-btn hard" onclick="resetStats()">
+          <span class="action-btn hard" onclick="confirmResetStats()">
               <span>🗑️ <span data-i18n="menu|reset-all-stat">Reset all statistics</span></span>
           </span>
         </div>
