@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
     <title>Vox-Libera - Learn Any Language v2.9</title>
-    <link rel="stylesheet" href="style.css?ver=3.2.2">
-    <link rel="stylesheet" href="common_style.css?ver=3.2.2">
+    <link rel="stylesheet" href="style.css?ver=3.2.5">
+    <link rel="stylesheet" href="common_style.css?ver=3.2.5">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
     <nav class="top-nav">
         <div class="nav-row">
-          <button id="menuBtn" style="font-size: larger;" onclick="toggleDrawer()">☰</button>
+          <button id="menu-btn" class="menu-btn-icon" onclick="toggleDrawer()">☰</button>
           <span id="title">Vox-Libera 📖</span>
           <button class="toolbar-btn" id="muteBtn" onclick="toggleMute()">🔊</button>
           <button class="toolbar-btn" onclick="changeZoom(-0.1)">A-</button>
           <button class="toolbar-btn" onclick="changeZoom(0.1)">A+</button>
         </div>
-        <div id="searchBar" class="nav-row search-container" style="display: none; padding: 5px 10px; background: #fdfdfd;">
-          <input type="text" id="dict-search" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint" style="min-width: 300px; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
-          <button id="clear-search" onclick="clearInput()" style="display:none;">×</button>
+        <div id="searchBar" class="nav-row search-container hidden">
+          <input type="text" id="dict-search" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint">
+          <button id="clear-search" onclick="clearInput()" class="hidden">×</button>
         </div>
       <div class="nav-content-wrapper">
 
@@ -46,7 +46,7 @@
                   </div>
                 </div>
 
-                  <table class="topic-stats" id="topicStatsContainer">
+                  <table class="topic-stats" id="topic-stats-container">
                     <tr><td class="stat-item">
                       <span class="stat-label" data-i18n="menu|words_count">Words:</span>
                       <span class="stat-value" id="statWords">0/0%</span>
@@ -88,9 +88,9 @@
             </div>
 
             <div id="user-profile-block" class="hidden">
-                <img id="user-avatar" src="" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%;">
-                <span id="user-name"></span>
-                <button onclick="logoutGoogle()" class="nav-arrow">🚪 Logout</button>
+              <img id="user-avatar" src="" alt="Avatar">
+              <span id="user-name"></span>
+              <button onclick="logoutGoogle()" class="nav-arrow">🚪 Logout</button>
             </div>
         </div>
 
@@ -135,13 +135,13 @@
         <h3>📈 <span data-i18n="menu|statistics">Statistics</span></h3>
 
         <div class="nav-controls">
-            <button class="nav-arrow" onclick="exportUserData()">📥 <span data-i18n="menu|export">Export</span></button>
-            <input type="file" id="file-import-input" style="display:none" accept=".json">
+            <button class="nav-arrow" onclick="exportUserData();">📥 <span data-i18n="menu|export">Export</span></button>
+            <input type="file" id="file-import-input" class="hidden" accept=".json">
             <button class="nav-arrow" onclick="document.getElementById('file-import-input').click()">📤 <span data-i18n="menu|import">Import</span></button>
         </div>
 
         <div class="setting-item">
-          <span class="action-btn hard" onclick="confirmResetStats()">
+          <span class="action-btn hard" onclick="confirmResetStats();">
               <span>🗑️ <span data-i18n="menu|reset-all-stat">Reset all statistics</span></span>
           </span>
         </div>
@@ -190,8 +190,8 @@
         <button class="action-btn easy" onclick="loadNextScreen();">✔ Ok</button>
       </div>
 
-      <div class="win-screen hidden" id="winScreen">
-        <h1 id="winStatus"></h1>
+      <div class="win-screen hidden" id="win-screen">
+        <h1 id="win-status"></h1>
           <button class="action-btn easy" onclick="renderCurrentScreen()">✔ <span data-i18n="main|sum-repeat">Repeat<span></button>
           <button class="action-btn easy" onclick="loadNextScreen(true)"><span data-i18n="main|sum-next">Next</span> ▶▶</button>
         </div>
@@ -199,7 +199,7 @@
 
       <div class="win-screen hidden" id="resultsModal">
           <h2 data-i18n="modal_results|title">Completed topic:</h2>
-          <h2>«<span id="currentTopicNameSummary"></span>»</h2>
+          <h2>�<span id="current-topic-name-summary"></span>�</h2>
           <table class="results-stats">
               <tr class="stat-item">
                   <td class="stat-label" data-i18n="modal_results|words_learned">Words learned:</td>
@@ -230,14 +230,14 @@
         <span id="recap-title" class="hidden" >
           <div data-i18n="main|recap_title"></div>
           <div style="display:flex;">
-            <button class="action-btn easy row-btn" onclick="renderCurrentScreen();" style="width: 100%;">✔  <span data-i18n="main|sum-repeat">Repeat</span></button>
-            <button class="action-btn easy row-btn" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
+            <button class="action-btn easy row-btn full-width" onclick="renderCurrentScreen();">✔  <span data-i18n="main|sum-repeat">Repeat</span></button>
+            <button class="action-btn easy row-btn full-width" onclick="loadNextScreen();"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
           </div>
         </span>
 
-        <button class="next-screen-btn action-btn easy row-btn hidden" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
+        <button class="next-screen-btn action-btn easy row-btn hidden full-width" onclick="loadNextScreen();"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
         <div id="dictionary-list"></div>
-        <button class="next-screen-btn action-btn easy row-btn hidden" onclick="loadNextScreen();" style="width: 100%;"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
+        <button class="next-screen-btn action-btn easy row-btn hidden full-width" onclick="loadNextScreen();"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
       </div>
 
       <div id="flashcards-screen" class="game-screen flashcards-screen hidden">
@@ -329,14 +329,14 @@
       </div>
     </div>
 
-    <script src="course.he1/manifest.js?ver=3.2.2" defer></script>
-    <script src="course.he1/lessons.js?ver=3.2.2" defer></script>
-    <script src="js/common.js?ver=3.2.2" defer></script>
-    <script src="js/settings.js?ver=3.2.2" defer></script>
-    <script src="js/i18n.js?ver=3.2.2" defer></script>
-    <script src="js/locales.js?ver=3.2.2" defer></script>
-    <script src="js/google_sync.js?ver=3.2.2" defer></script>
-    <script src="js/app.js?ver=3.2.2" defer></script>
+    <script src="course.he1/manifest.js?ver=3.2.5" defer></script>
+    <script src="course.he1/lessons.js?ver=3.2.5" defer></script>
+    <script src="js/common.js?ver=3.2.5" defer></script>
+    <script src="js/settings.js?ver=3.2.5" defer></script>
+    <script src="js/i18n.js?ver=3.2.5" defer></script>
+    <script src="js/locales.js?ver=3.2.5" defer></script>
+    <script src="js/google_sync.js?ver=3.2.5" defer></script>
+    <script src="js/app.js?ver=3.2.5" defer></script>
 
 </body>
 </html>

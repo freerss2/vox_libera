@@ -26,15 +26,6 @@ body {
    background-color: #eef2f5;
 }
 
-/* By default all is visible */
-.online-only {
-    display: block;
-}
-
-body.offline .online-only {
-    display: none !important;
-}
-
 /* Styles for any RTL lanugage (Arabic, Hebrew, Farsi) */
 [dir="rtl"] {
     font-family: 'Noto Sans Arabic', sans-serif;
@@ -123,6 +114,20 @@ body.offline .online-only {
     align-items: center;
     width: 100%;
     gap: 10px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.menu-btn-icon {
+    font-size: larger;
+}
+
+#user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }
 
 #title {
@@ -947,21 +952,6 @@ body.offline .online-only {
     color: var(--primary);
 }
 
-.btn-reset {
-    background: none;
-    border: none;
-    color: var(--error-color);
-    cursor: pointer;
-    font-size: 0.75rem;
-    padding: 2px 5px;
-    opacity: 0.8;
-}
-
-.btn-reset:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
 .nav-controls {
     display: flex;
     justify-content: space-between;
@@ -1090,6 +1080,10 @@ body.offline .online-only {
   height: 0;
 }
 
+#qr-code {
+  width: 200px;
+}
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -1114,17 +1108,6 @@ body.offline .online-only {
 input:checked + .slider { background-color: var(--primary); }
 
 input:checked + .slider::before { transform: translateX(24px); }
-
-.reset-btn {
-    width: 100%;
-    padding: 12px;
-    background: #fff0f0;
-    color: #ff4b4b;
-    border: 1px solid #fcc;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
 
 .drawer-footer {
     margin-top: auto;

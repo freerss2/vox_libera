@@ -1476,7 +1476,7 @@ function showDictionary(currentData, recapMode=false) {
 // Show/hide the "search" bar
 function showHideSearch(show) {
     const searchBar = document.getElementById('searchBar');
-    searchBar.style.display = show ? 'flex' : 'none';
+    searchBar.classList.toggle('hidden', !show);
 
     if (!show) {
         document.getElementById('dict-search').value = '';
@@ -1490,7 +1490,7 @@ function filterDictionary() {
     const filter = input.value.toLowerCase();
     const cards = document.getElementsByClassName('dictionary-card');
 
-    document.getElementById('clear-search').style.display = input.value ? 'block' : 'none';
+    document.getElementById('clear-search').classList.toggle('hidden', !input.value);
     for (let i = 0; i < cards.length; i++) {
         const cardText = cards[i].textContent.toLowerCase();
 
@@ -1506,7 +1506,7 @@ function clearInput() {
     const input = document.getElementById('dict-search');
     input.value = '';
     filterDictionary();
-    document.getElementById('clear-search').style.display = 'none';
+    document.getElementById('clear-search').classList.add('hidden');
 }
 
 // ---------------------------------------- application state setting
