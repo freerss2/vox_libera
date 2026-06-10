@@ -300,6 +300,7 @@ function restoreBubbleContext() {
   );
 }
 
+// Hide bubble and clear saved context to avoid restore in the future
 function hideNarrator() {
   document.getElementById('narrator-container').classList.add('hidden');
   resetSavedBubbleContext();

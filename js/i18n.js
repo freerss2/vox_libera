@@ -24,6 +24,7 @@ const rtlLanguages = ['ar', 'he', 'fa'];
 const DEFAULT_DIRECTION = 'ltr';
 const DEFAULT_LANGUAGE = 'en';
 
+// Determine text direction based on language code
 function langDirection(langCode) {
   if (rtlLanguages.includes(langCode)) {
     return 'rtl';
@@ -31,6 +32,7 @@ function langDirection(langCode) {
   return DEFAULT_DIRECTION;
 }
 
+// Main class to manage internationalization (i18n)
 class I18nManager {
     constructor(locales) {
         this.locales = locales;

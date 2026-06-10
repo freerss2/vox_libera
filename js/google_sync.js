@@ -7,10 +7,11 @@
 let tokenClient;
 let isUserLoggedIn = false;
 
+// Check if current origin is allowed for Google API usage and start auth process
 function startAppAuth() {
     const currentHost = window.location.hostname;
 
-    // Allowed doaimns that appear in Google Cloud Console -> Authorized JavaScript origins
+    // Allowed domains that appear in Google Cloud Console -> Authorized JavaScript origins
     const allowedGoogleOrigins = ['freerss2.github.io'];
 
     // If current address is not listed there
@@ -77,6 +78,7 @@ function initVoxLiberaAuth() {
     }
 }
 
+// Show or hide login button and related UI elements
 function setLoginDisplay(show) {
     const authContainers = document.getElementsByClassName('vox-auth-container');
     if (show) {
@@ -95,7 +97,7 @@ function showLoginButton() {
     updateCloudStatus('disconnected');
 }
 
-// Manual click on login
+// Handle manual click on login
 function handleManualLoginClick() {
     if (!navigator.onLine) {
         alert("No internet connection!");
@@ -302,11 +304,12 @@ function calculateTotalAttempts(data) {
     return totalAttempts;
 }
 
+// Logout: clear local data and revoke Google session
 function logoutGoogle() {
     // Get the saved email
     const userEmail = localStorage.getItem('vox_libera_user_email');
 
-    // Clean all login infor from localStorage
+    // Clean all login information from localStorage
     localStorage.removeItem('vox_libera_logged_in');
     localStorage.removeItem('vox_libera_user_email');
     

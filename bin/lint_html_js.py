@@ -1,10 +1,15 @@
 #! /usr/bin/env python
+"""
+Lint HTML and JS code with ESLint
+Usage: python lint_html_js.py [input_file]
+"""
 
 import os
 import re
 import subprocess
 import sys
 
+NPX_LOC = r"C:\Program Files\nodejs\npx.cmd"  # Adjust if npx is in PATH
 
 def run_cmd_with_tee(command, log_file):
     """
@@ -71,7 +76,7 @@ with open(temp_file, 'w', encoding='utf-8') as bundle:
 print("4. Running ESLint on bundled code...")
 # npx eslint app.js > app.js.log
 log_file = "eslint.log"
-verdict = run_cmd_with_tee([r"C:\Program Files\nodejs\npx.cmd", "eslint", temp_file], log_file)
+verdict = run_cmd_with_tee([NPX_LOC, "eslint", temp_file], log_file)
 if not verdict:
     print("4.1. No errors :-)")
     # 5. Remove files

@@ -7,7 +7,7 @@ Input data structure (JSON)
 """
 import json
 import re
-import pysnooper
+#import pysnooper
 
 input_file = 'lessons_3w.json'
 output_file = 'lessons_4w.js'
