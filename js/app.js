@@ -1745,7 +1745,7 @@ function confirmResetTopicStats() {
 ##bubble-buttons## [ ${dismissText} ](#dismiss) &nbsp;|&nbsp; [ ${confirmText} ](#confirm)`;
 
 const actions = {
-        'dismiss': () => { console.log('Dismiss clicked'); },
+        'dismiss': () => {},
         'confirm': () => { resetTopicStats(); }
     };
 
@@ -1785,7 +1785,7 @@ function confirmResetStats() {
 ##bubble-buttons## [ ${dismissText} ](#dismiss) &nbsp;|&nbsp; [ ${confirmText} ](#confirm)`;
 
     const actions = {
-        'dismiss': () => { console.log('Dismiss clicked'); },
+        'dismiss': () => {},
         'confirm': () => { resetStats(); }
     };
 

@@ -18,9 +18,10 @@ const courses = [
 var currentNarratorBubbleContext;
 resetSavedBubbleContext();
 
-// Global variables for bubble minimization
+// Stack-based bubble minimization state
 var bubbleMinimized = false;
-var originalBubbleContent = '';
+var bubbleStateStack = []; // Stack for storing bubble contexts before minimization
+var currentBubbleState = {}; // Tracks the actual bubble displayed (permanent or temporary)
 
 // Conver custom markdown to divs with class name
 // usage:  html = parseCustomDivs('##text-center## some prompt: ##stat-value## 12%');
@@ -254,13 +255,28 @@ function toggleBubble(event) {
         if (bubbleMinimized) {
             // Restore original bubble after narrator wake animation
             animateNarratorWake(() => {
-                textTarget.innerHTML = originalBubbleContent;
+                // Pop state from stack and restore with proper context
+                if (bubbleStateStack.length > 0) {
+                    const savedState = bubbleStateStack.pop();
+                    updateCharacterBubble(
+                        savedState.mdRepresentation,
+                        savedState.markdownConf,
+                        savedState.actionsMappings,
+                        savedState.isTemporary  // Restore with correct context type
+                    );
+                }
                 bubble.classList.remove('bubble-minimized');
                 bubbleMinimized = false;
             });
         } else {
             // Minimize bubble with animated ellipsis
-            originalBubbleContent = textTarget.innerHTML;
+            // Save current bubble state to stack before minimizing
+            bubbleStateStack.push({
+                mdRepresentation: currentBubbleState.mdRepresentation,
+                markdownConf: currentBubbleState.markdownConf,
+                actionsMappings: currentBubbleState.actionsMappings,
+                isTemporary: currentBubbleState.isTemporary
+            });
             textTarget.innerHTML = '<div class="bubble-ellipsis"><span>•</span><span>•</span><span>•</span></div>';
             bubble.classList.add('bubble-minimized');
             bubbleMinimized = true;
@@ -296,6 +312,7 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}, temporaryCo
     // Reset minimized state when new content is pushed
     bubbleMinimized = false;
     bubble.classList.remove('bubble-minimized');
+    bubbleStateStack = []; // Clear the stack when new content arrives
 
     if (!newHint || newHint.trim() === "") {
         bubble.dataset.enabled = "";
@@ -307,11 +324,16 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}, temporaryCo
       preActionsCallback = restoreBubbleContext;
     } else {
       preActionsCallback = hideNarrator;
-      // Save current bubble context for later context switch usage
+      // Save current bubble context for later context switch usage (only for permanent bubbles)
       currentNarratorBubbleContext.mdRepresentation = newHint;
       currentNarratorBubbleContext.markdownConf = markdownConf;
       currentNarratorBubbleContext.actionsMappings = actions;
     }
+    // Always save to currentBubbleState for minimization support
+    currentBubbleState.mdRepresentation = newHint;
+    currentBubbleState.markdownConf = markdownConf;
+    currentBubbleState.actionsMappings = actions;
+    currentBubbleState.isTemporary = temporaryContext;
 
     setTimeout(() => {
         textTarget.innerHTML = parseMarkdown(newHint, markdownConf);
