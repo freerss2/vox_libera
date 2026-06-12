@@ -18,6 +18,10 @@ const courses = [
 var currentNarratorBubbleContext;
 resetSavedBubbleContext();
 
+// Global variables for bubble minimization
+var bubbleMinimized = false;
+var originalBubbleContent = '';
+
 // Conver custom markdown to divs with class name
 // usage:  html = parseCustomDivs('##text-center## some prompt: ##stat-value## 12%');
 function parseCustomDivs(text) {
@@ -228,26 +232,55 @@ function randomEyebrow(narratorId, duration) {
   setEyebrowExpression(narratorId, expr, duration);
 }
 
-// callback for bubble hide/show
+// callback for bubble minimize/restore or hide/show
 function toggleBubble(event) {
     event.stopPropagation();
     const bubble = document.getElementById('speech-bubble');
+    const textTarget = document.getElementById('bubble-text');
     const delay = Math.floor(Math.random()*1500);
     const duration = Math.floor(Math.random() * 500) + 200;
     setTimeout(() => {
       randomBlink('narrator-svg', duration);
       randomEyebrow('narrator-svg', duration);
     }, delay);
+    
     if ( bubble.classList.contains('hidden') ) {
         if (bubble.dataset.enabled) {
           bubble.classList.remove('hidden');
           setNarratorEmotion('narrator-svg', narratorSmileEmotion);
         }
     } else {
-        bubble.classList.add('hidden');
-        setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
+        // If bubble is visible, check if it's already minimized
+        if (bubbleMinimized) {
+            // Restore original bubble after narrator wake animation
+            animateNarratorWake(() => {
+                textTarget.innerHTML = originalBubbleContent;
+                bubble.classList.remove('bubble-minimized');
+                bubbleMinimized = false;
+            });
+        } else {
+            // Minimize bubble with animated ellipsis
+            originalBubbleContent = textTarget.innerHTML;
+            textTarget.innerHTML = '<div class="bubble-ellipsis"><span>•</span><span>•</span><span>•</span></div>';
+            bubble.classList.add('bubble-minimized');
+            bubbleMinimized = true;
+        }
     }
 }
+
+function animateNarratorWake(callback) {
+    const wrapper = document.getElementById('narrator-wrapper');
+    if (!wrapper) {
+        callback && callback();
+        return;
+    }
+    wrapper.classList.add('narrator-wake');
+    setTimeout(() => {
+        wrapper.classList.remove('narrator-wake');
+        callback && callback();
+    }, 1000);
+}
+
 
 // usage: markdownConf = buildMarkdownConf(courseTargetLanguage, targetDir, userLang, userDir);
 // updateCharacterBubble(newHint, markdownConf);
@@ -259,6 +292,10 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}, temporaryCo
 
     // Hide before update
     bubble.classList.add('hidden');
+
+    // Reset minimized state when new content is pushed
+    bubbleMinimized = false;
+    bubble.classList.remove('bubble-minimized');
 
     if (!newHint || newHint.trim() === "") {
         bubble.dataset.enabled = "";
@@ -385,7 +422,7 @@ const NARRATORS = [
     </style>
   </defs>
   <g id="head">
-    <path class="st0" d="M291.47,68.21l-.35.5-131.38-.08-37.51.04-23.32-.18c-6.3-.05-10.56-6.02-10.44-11.98.11-5.48,4.57-11.39,10.81-11.39l181.92-.04c-.39,8.18,2.39,19.06,10.27,23.14Z"/>
+    <path class="st0" d="M291.47,61.21l-.35.5-131.38-.08-37.51.04-23.32-.18c-6.3-.05-10.56-6.02-10.44-11.98.11-5.48,4.57-11.39,10.81-11.39l181.92-.04c-.39,8.18,2.39,19.06,10.27,23.14Z"/>
     <path class="st1" d="M300.3,62.2v254.38l-67.78.09-135.81-.02c-3.9-.94-10.65-3.02-13.08-5.47-2.04-2.06-4.38-3.64-6.01-6.16-2.3-3.57-5.54-8.44-5.54-13.22l-.07-248.75,1.28-4.03c.9-2.83,3.73-4.62,5.6-6.81,1.42-1.67,2.97-2.48,4.98-3.29,1.03-.41,2.44-1.66,3.91-1.66l32.73-.11h38.06s126.26.15,126.26.15c2.91,0,6.48,3.46,6.49,6.04l.14,27.87c-7.88-4.08-10.66-14.96-10.27-23.14l-181.92.04c-6.24,0-10.7,5.9-10.81,11.39-.12,5.96,4.14,11.94,10.44,11.98l23.32.18,37.51-.04,131.38.08,9.17.48Z"/>
     <path class="st2" d="M227.85,184c-4.41,1.23-6.7,1.35-7.65.41-1.33-1.33-.62-4.29,1.27-5.3,1.07-.57,3.54-1.04,5.5-1.04,3.15,0,3.57-.29,3.57-2.54,0-1.39-.81-3.76-1.79-5.25-8.7-13.15-12.15-23.35-8.83-26.12,2.24-1.86,4.61.24,4.61,4.09,0,3.38,2.52,9.28,7.51,17.54,5.83,9.66,4.42,15.83-4.18,18.21h0Z"/>
     <path class="st2" d="M160.7,69.51l-.06,58.84-18.47-18.4-18.91,18.54-.83-56.89c-.02-1.34-.32-2.67-.87-3.89l-4.93-10.82,39.95.15c3.78,8.17,4.12,12.46,4.12,12.46Z"/>
