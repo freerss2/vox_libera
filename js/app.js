@@ -1304,7 +1304,7 @@ function giveupSent() {
         }
     });
     isMuted = saveIsMuted;
-    updateStats(questionContainer.dataset.expected, false);
+    updateStats(questionContainer.dataset.target || questionContainer.dataset.expected, false);
     errors++;
     showErrorCount(errors);
 }
