@@ -1578,6 +1578,35 @@ function getGameInputTypes(screen_id) {
   return record.inputs;
 }
 
+// Get raw topic data for given topicId and input types
+// @param topicId: id of topic (e.g. 'topic1', 'all')
+// @param inputTypes: list of input types (e.g. ['words', 'sentences'])
+// @return: list of items of given input types for current topic
+function getRawTopicData(topicId, inputTypes) {
+  let collectedData = [];
+  if (topicId == GENERAL_TOPIC_ID) {
+    for (let topic in topics) {
+        let topicData = getRawTopicData(topic, inputTypes);
+        if ( topicData ) {
+          collectedData.push(...topicData);
+        }
+    }
+  } else {
+    inputTypes.forEach( inputType => {
+      let topicData = topics[topicId][inputType];
+      if ( topicData ) {
+        collectedData.push(...topicData);
+      }
+    });
+  }
+  collectedData = collectedData.filter(row => {
+    return row &&
+           typeof row[0] === 'string' && row[0].trim() !== "" &&
+           typeof row[1] === 'string' && row[1].trim() !== "";
+  });
+  return collectedData;
+}
+
 // universal collector for topic data (including virtual "all")
 // external parameter: finalGameForTopic
 // @param inputTypes: list of input types relevant for current game (e.g. ['words', 'sentences'])
@@ -1585,56 +1614,32 @@ function getGameInputTypes(screen_id) {
 // @param needShuffle: whether to shuffle the result list
 // @return: list of items of given input types for current topic
 function getTopicData(inputTypes, hideWellLearned, needShuffle) {
-  let currentData = [];
-  if (settings.getCurrentTopic() == GENERAL_TOPIC_ID) {
-    for (let key in topics) {
-      inputTypes.forEach( inputType => {
-        let topicData = topics[key][inputType];
-        if ( topicData ) {
-          currentData.push(...topicData);
-        }
-      });
-    }
-  } else {
-    inputTypes.forEach( inputType => {
-      let topicData = topics[settings.getCurrentTopic()][inputType];
-      if ( topicData ) {
-        currentData.push(...topicData);
-      }
-    });
-  }
-  currentData = currentData.filter(row => {
-    return row &&
-           typeof row[0] === 'string' && row[0].trim() !== "" &&
-           typeof row[1] === 'string' && row[1].trim() !== "";
-  });
+  let collectedData = getRawTopicData(settings.getCurrentTopic(), inputTypes);
 
   // special case for 'final' round - try to get data from other completed topics:
   //   iterate over all topics with state != 0, excluding the current one
   //   append to currentData elements of each input type
   if (finalGameForTopic) {
-    for (let key in topics) {
-      if (key == finalGameForTopic) continue;
-      let state = getTopicState(key);
+    for (let topicId in topics) {
+      if (topicId == finalGameForTopic) continue;
+      let state = getTopicState(topicId);
       if (! state) continue;
-      inputTypes.forEach( inputType => {
-        let topicData = topics[key][inputType];
-        if ( topicData ) {
-          currentData.push(...topicData);
-        }
-      });
+      let topicData = getRawTopicData(topicId, inputTypes);
+      if ( topicData ) {
+          collectedData.push(...topicData);
+      }
     }
   }
-  currentData.forEach((item, index) => { currentData[index] = decodeLearnItem(item); });
+  collectedData.forEach((item, index) => { collectedData[index] = decodeLearnItem(item); });
 
   if ( hideWellLearned != 0 ) {
     // hide well-learned:
-    const candidates = orderByAccuracy(currentData);
-    currentData = getStratifiedBatch(candidates);
+    const candidates = orderByAccuracy(collectedData);
+    collectedData = getStratifiedBatch(candidates);
   }
 
-  if ( needShuffle ) return shuffle([...currentData]);
-  return currentData;
+  if ( needShuffle ) return shuffle([...collectedData]);
+  return collectedData;
 }
 
 // Order currentData list by accuracy rate, assuming entries without stats as most important
@@ -1699,11 +1704,31 @@ function getStratifiedBatch(candidates) {
 }
 
 // TODO: move this variable to generic 'settings' too
-let wordStats = getStats();
+let wordStats = getStats(true);
 
 // Stats manipulation: read words stats
-function getStats() {
-  return JSON.parse(localStorage.getItem('wordStats') || '{}');
+// @param initial: whether to perform initial cleanup of stats (remove entries not in current course data)
+// @return: object with word statistics
+function getStats(initial = false) {
+  let stats = JSON.parse(localStorage.getItem('wordStats') || '{}');
+  if (initial) {
+    // collect all words and sentences for topicId == "all"
+    console.log('Initial state of stats: ' + Object.keys(stats).length);
+    let changed = false;
+    const allStrs = getRawTopicData(GENERAL_TOPIC_ID, ['words', 'sentences']);
+    // filter out any invalid entries
+    Object.keys(stats).forEach(key => {
+        if (!allStrs.some(item => item[1] === key)) {
+            delete stats[key];
+            changed = true;
+        }
+    });
+    if (changed) {
+        console.log('Initial cleanup of wordStats performed. Updated stats: ' + Object.keys(stats).length);
+        setStats(stats);
+    }
+  }
+  return stats;
 }
 
 // Stats manipulation: save words stats
