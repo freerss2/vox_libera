@@ -89,6 +89,7 @@ const langSelectElements = document.getElementsByClassName('ui-lang-select');
       const newLang = event.target.value;
 
     settings.setUserInterfaceLanguage(newLang);
+    settings.markAsChanged();
 
     i18n.setLanguage(newLang);
 
@@ -106,7 +107,10 @@ const difficultySettings = {
 // Autofix for wrong inputs
 if ( ! Object.hasOwn(topics, GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
 
-if ( ! topics[settings.getCurrentTopic()] ) settings.setCurrentTopic(GENERAL_TOPIC_ID);
+if ( ! topics[settings.getCurrentTopic()] ) {
+    settings.setCurrentTopic(GENERAL_TOPIC_ID);
+    settings.markAsChanged();
+}
 
 // instantiate I18nManager
 const course_locales = manifest['course_locales'];
@@ -283,6 +287,7 @@ function initMenu() {
 
 function renderCurrentScreenFromMenu(screen_id) {
   settings.setCurrentScreenId(screen_id);
+  settings.markAsChanged();
   renderCurrentScreen();
   toggleDrawer();
 }
@@ -353,6 +358,7 @@ function loadPrevNexScreen(delta) {
   if (newGameIndex >= 0 && newGameIndex < topicScreens.length) {
     const next_screen_id = topicScreens[newGameIndex].id;
     settings.setCurrentScreenId(next_screen_id);
+    settings.markAsChanged();
     renderCurrentScreen();
   } else {
     // if last - move to next topic
@@ -400,6 +406,7 @@ function switchTopic(direction) {
   initTopic(nextTopicId);
   // reset screen to default (first)
   settings.setCurrentScreenId(topicScreens[0].id);
+  settings.markAsChanged();
   // start the game
   renderCurrentScreen();
 }
@@ -1742,6 +1749,7 @@ function setTopicState(topic, state) {
   topicStates[topic] = Number(state);
 
   settings.setTopicsCompletion(topicStates);
+  settings.markAsChanged();
 }
 
 function getTopicState(topic) {
@@ -1806,6 +1814,7 @@ function resetTopicStats() {
   [...topicData].forEach(e => {delete stats[e[1]]});
   // save stats back
   setStats(stats);
+  settings.markAsChanged();
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
@@ -1839,6 +1848,7 @@ function confirmResetStats() {
 // reset all statistics
 function resetStats() {
   setStats({});
+  settings.markAsChanged();
   wordStats = {};
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
@@ -1858,6 +1868,7 @@ function updateStats(targetStr, isCorrect) {
       stats[targetStr].success += 1;
   }
   setStats(stats);
+  settings.markAsChanged();
   wordStats[targetStr] = stats[targetStr];
 
   if (isUserLoggedIn && window.currentAccessToken) {
@@ -1933,12 +1944,14 @@ function updateDrawerStats() {
 // callback for toggle "Well-learned" checkbox
 function toggleWellLearned() {
   settings.setHideWellLearned(hideWellLearnedElm.checked ? 1 : 0);
+  settings.markAsChanged();
   renderCurrentScreen();
 }
 
 // callback for toggle "transcription" checkbox
 function toggleTranscription() {
   settings.setShowTranscription(showTransToggleElm.checked ? 1 : 0);
+  settings.markAsChanged();
   updateTranscriptionDisplay();
 }
 
@@ -1954,6 +1967,7 @@ function updateTranscriptionDisplay() {
 function changeDifficulty(level) {
     // 1. Store for future
     settings.setGameDifficulty(level);
+    settings.markAsChanged();
     // 2. Change the games parameters
     setGamesDifficulty(level);
     // 3. Restart the game (exclude dictionary)
@@ -2235,7 +2249,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCurrentScreen();
     updateFavicon(manifest.icon_code);
 
-    settings.enableChangedFlag();
     // Start Google authorization (moved to separate module)
     if (typeof startAppAuth === 'function') startAppAuth();
 
