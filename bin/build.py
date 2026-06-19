@@ -72,6 +72,37 @@ def save_checksums(checksums):
             if checksum:
                 f.write(f"{checksum} {filepath}\n")
 
+def find_courses():
+    """
+    Scan CWD for valid course folders
+    @return: dictionary of cources and their files
+    """
+    courses = {}
+    # Find dirs like course.ar1, course.en_ru
+    course_pattern = re.compile(r'^course\.([a-zA-Z0-9_-]+)$')
+
+    for entry in os.listdir('.'):
+        if os.path.isdir(entry):
+            match = course_pattern.match(entry)
+            if match:
+                course_id = match.group(1)
+
+                # Required files under the course dir
+                manifest_os_path = os.path.join(entry, "manifest.js")
+                lessons_os_path = os.path.join(entry, "lessons.js")
+
+                # Check files existance
+                if os.path.exists(manifest_os_path) and os.path.exists(lessons_os_path):
+                    # Store relative paths for injecting into HTML
+                    courses[course_id] = [
+                        f"course.{course_id}/manifest.js",
+                        f"course.{course_id}/lessons.js"
+                    ]
+                else:
+                    print(f"⚠️ Warning: In dir {entry} missing manifest.js or lessons.js. Skipped.")
+
+    return courses
+
 def get_and_increment_version():
     """
     Read version from file, increment the lower (patch) version if relevant files changed and save back.
@@ -130,37 +161,6 @@ def get_and_increment_version():
 
 # Get a value for next human-readable version
 VERSION = get_and_increment_version()
-
-def find_courses():
-    """
-    Scan CWD for valid course folders
-    @return: dictionary of cources and their files
-    """
-    courses = {}
-    # Find dirs like course.ar1, course.en_ru
-    course_pattern = re.compile(r'^course\.([a-zA-Z0-9_-]+)$')
-
-    for entry in os.listdir('.'):
-        if os.path.isdir(entry):
-            match = course_pattern.match(entry)
-            if match:
-                course_id = match.group(1)
-
-                # Required files under the course dir
-                manifest_os_path = os.path.join(entry, "manifest.js")
-                lessons_os_path = os.path.join(entry, "lessons.js")
-
-                # Check files existance
-                if os.path.exists(manifest_os_path) and os.path.exists(lessons_os_path):
-                    # Store relative paths for injecting into HTML
-                    courses[course_id] = [
-                        f"course.{course_id}/manifest.js",
-                        f"course.{course_id}/lessons.js"
-                    ]
-                else:
-                    print(f"⚠️ Warning: In dir {entry} missing manifest.js or lessons.js. Skipped.")
-
-    return courses
 
 def update_app_version(version):
     """
