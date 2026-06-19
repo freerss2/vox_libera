@@ -97,7 +97,6 @@ const langSelectElements = document.getElementsByClassName('ui-lang-select');
 
 });
 
-
 const difficultySettings = {
     easy:   { itemsPerRound: 5, totalChoices: 4, totalQuestions: 5,  sentenceFactor: 1.5, finalGoal: 5},
     medium: { itemsPerRound: 6, totalChoices: 6, totalQuestions: 7,  sentenceFactor: 1.7, finalGoal: 7},
@@ -2134,7 +2133,7 @@ function packProgressData() {
         "engine_version": engine_ver,
         "created_timestamp": timestamp,
         "created_at": localStorage.getItem('vox_libera_created_at') || today,
-        "updated_at": Date.now(),
+        "updated_at": parseInt(settings.getLastChangedTime()) || today,
         "user_settings": { "interface_lang": userLang },
         "courses": courses_settings
     };
@@ -2199,6 +2198,7 @@ function importUserData(event) {
 }
 
 function unpackProgressData(data) {
+    settings.disableChangedFlag();
     settings.setUserInterfaceLanguage(data["user_settings"]["interface_lang"]);
     const course_data = data["courses"][manifest.metadata.title];
     settings.setCurrentTopic(     course_data["current_topic"]);
@@ -2208,6 +2208,8 @@ function unpackProgressData(data) {
     settings.setShowTranscription(course_data["show_transcription"]);
     settings.setTopicsCompletion( course_data["topics_completion"]);
     localStorage.setItem('wordStats', JSON.stringify(course_data["success_stats"]));
+    settings.markAsChanged();
+    settings.enableChangedFlag()
 }
 
 // On page load:
@@ -2233,6 +2235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCurrentScreen();
     updateFavicon(manifest.icon_code);
 
+    settings.enableChangedFlag();
     // Start Google authorization (moved to separate module)
     if (typeof startAppAuth === 'function') startAppAuth();
 

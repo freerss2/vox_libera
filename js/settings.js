@@ -11,6 +11,7 @@ class Settings {
     constructor(params) {
         this.params = {}; // Storage for values quick access
         this.storage = localStorage;
+        this.markChanges = false;
         
         for (let name in params) {
             // 1. Init with storage value (or "default")
@@ -34,6 +35,9 @@ class Settings {
                     else       value = '{}';
                 }
                 this.storage.setItem(storageItemName, value);
+                if (this.markChanges) {
+                    this.markAsChanged();
+                }
             };
 
             // 3. Generate getter method
@@ -51,5 +55,21 @@ class Settings {
                 return result;
             };
         };
+    }
+
+    markAsChanged() {
+        this.storage.setItem('vox_libera_updated_at', Date.now());
+    }
+
+    getLastChangedTime() {
+        return this.storage.getItem('vox_libera_updated_at').toString() || '0';
+    }
+
+    enableChangedFlag() {
+        this.markChanges = true;
+    }
+
+    disableChangedFlag() {
+        this.markChanges = false;
     }
 }
