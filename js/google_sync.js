@@ -372,8 +372,17 @@ class CloudSync {
             return null;
         }
 
-        const url = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`;
-        const response = await this.safeFetch(url, { method: 'GET' }, accessToken);
+        const url = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&_cb=${Date.now()}`;
+        const response = await this.safeFetch(url,
+            {
+              method: 'GET',
+              cache: 'no-cache',
+              headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+              }
+            }, accessToken);
         if (!response || !response.ok) return null;
 
         return await response.json();

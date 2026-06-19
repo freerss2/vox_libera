@@ -2094,7 +2094,7 @@ function packProgressData() {
         if (c.ref == currDir) {
           courses_settings[c.title] = {
             "current_topic":      settings.getCurrentTopic(),
-            "current_exercise":  settings.getCurrentScreenId(),
+            "current_exercise":   settings.getCurrentScreenId(),
             "difficulty":         settings.getGameDifficulty(),
             "hide_well_learned":  settings.getHideWellLearned(),
             "show_transcription": settings.getShowTranscription(),
@@ -2176,7 +2176,7 @@ function unpackProgressData(data) {
     settings.setUserInterfaceLanguage(data["user_settings"]["interface_lang"]);
     const course_data = data["courses"][manifest.metadata.title];
     settings.setCurrentTopic(     course_data["current_topic"]);
-    settings.setCurrentScreenId(  course_data["current_exercise"] ?? course_data["current_excercise"]);
+    settings.setCurrentScreenId(  course_data["current_exercise"]);
     settings.setGameDifficulty(   course_data["difficulty"]);
     settings.setHideWellLearned(  course_data["hide_well_learned"]);
     settings.setShowTranscription(course_data["show_transcription"]);
