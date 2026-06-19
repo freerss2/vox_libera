@@ -62,7 +62,7 @@ class Settings {
     }
 
     getLastChangedTime() {
-        return this.storage.getItem('vox_libera_updated_at').toString() || '0';
+        return (this.storage.getItem('vox_libera_updated_at') || 0).toString();
     }
 
     enableChangedFlag() {
