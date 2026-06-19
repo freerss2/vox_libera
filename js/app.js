@@ -1586,6 +1586,7 @@ function getRawTopicData(topicId, inputTypes) {
   let collectedData = [];
   if (topicId == GENERAL_TOPIC_ID) {
     for (let topic in topics) {
+        if (topic == GENERAL_TOPIC_ID) continue;
         let topicData = getRawTopicData(topic, inputTypes);
         if ( topicData ) {
           collectedData.push(...topicData);
