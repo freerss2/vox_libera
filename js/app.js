@@ -139,23 +139,23 @@ const userDir = langDirection(userLang);
 
 // Screen types
 const SCREENS = [
-  { id: 'explanations',    shared: 1, excercise: 0, screen_type: 'text',         name: 'Explanations',      inputs: ['explanations'] },
-  { id: 'abc',             shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['abc'] },
-  { id: 'dictionary',      shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['words'] },
-  { id: 'sentences',       shared: 1, excercise: 0, screen_type: 'dictionary',   name: 'Sentences',         inputs: ['sentences'] },
-  { id: 'flashcards-abc',  shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards ABC',    inputs: ['abc'] },
-  { id: 'flashcards',      shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards words',  inputs: ['words'] },
-  { id: 'flashcards-sent', shared: 0, excercise: 0, screen_type: 'flashcards',   name: 'Flashcards sent',   inputs: ['sentences'] },
-  { id: 'story',           shared: 0, excercise: 0, screen_type: 'text',         name: 'Story',             inputs: ['story'] },
-  { id: 'matching-abc',    shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching ABC',      inputs: ['abc'] },
-  { id: 'matching',        shared: 0, excercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
-  { id: 'quiz_u2t',        shared: 0, excercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
-  { id: 'quiz_t2u',        shared: 0, excercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
-  { id: 'quiz_audio',      shared: 0, excercise: 1, screen_type: 'quiz_audio',   name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
-  { id: 'sent_u2t',        shared: 0, excercise: 1, screen_type: 'sent_u2t',     name: 'Sentence: 👤 → 🌍', inputs: ['sentences'] },
-  { id: 'sent_t2u',        shared: 0, excercise: 1, screen_type: 'sent_t2u',     name: 'Sentence: 🌍 → 👤', inputs: ['sentences'] },
-  { id: 'sent_audio',      shared: 0, excercise: 1, screen_type: 'sent_audio',   name: 'Audio-Sentence',    inputs: ['sentences'] },
-  { id: 'final',           shared: 0, excercise: 1, screen_type: 'random',       name: 'Topic final',       inputs: ['words', 'sentences'] }
+  { id: 'explanations',    shared: 1, exercise: 0, screen_type: 'text',         name: 'Explanations',      inputs: ['explanations'] },
+  { id: 'abc',             shared: 1, exercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['abc'] },
+  { id: 'dictionary',      shared: 1, exercise: 0, screen_type: 'dictionary',   name: 'Dictionary',        inputs: ['words'] },
+  { id: 'sentences',       shared: 1, exercise: 0, screen_type: 'dictionary',   name: 'Sentences',         inputs: ['sentences'] },
+  { id: 'flashcards-abc',  shared: 0, exercise: 0, screen_type: 'flashcards',   name: 'Flashcards ABC',    inputs: ['abc'] },
+  { id: 'flashcards',      shared: 0, exercise: 0, screen_type: 'flashcards',   name: 'Flashcards words',  inputs: ['words'] },
+  { id: 'flashcards-sent', shared: 0, exercise: 0, screen_type: 'flashcards',   name: 'Flashcards sent',   inputs: ['sentences'] },
+  { id: 'story',           shared: 0, exercise: 0, screen_type: 'text',         name: 'Story',             inputs: ['story'] },
+  { id: 'matching-abc',    shared: 0, exercise: 1, screen_type: 'matching',     name: 'Matching ABC',      inputs: ['abc'] },
+  { id: 'matching',        shared: 0, exercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
+  { id: 'quiz_u2t',        shared: 0, exercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
+  { id: 'quiz_t2u',        shared: 0, exercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
+  { id: 'quiz_audio',      shared: 0, exercise: 1, screen_type: 'quiz_audio',   name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
+  { id: 'sent_u2t',        shared: 0, exercise: 1, screen_type: 'sent_u2t',     name: 'Sentence: 👤 → 🌍', inputs: ['sentences'] },
+  { id: 'sent_t2u',        shared: 0, exercise: 1, screen_type: 'sent_t2u',     name: 'Sentence: 🌍 → 👤', inputs: ['sentences'] },
+  { id: 'sent_audio',      shared: 0, exercise: 1, screen_type: 'sent_audio',   name: 'Audio-Sentence',    inputs: ['sentences'] },
+  { id: 'final',           shared: 0, exercise: 1, screen_type: 'random',       name: 'Topic final',       inputs: ['words', 'sentences'] }
 ];
 
 var topicScreens = [];
@@ -229,7 +229,7 @@ function i18n_ct(text) {
 // Apply topic to displayed elements
 // - title in menu
 // - completion status
-// - show/hide nodes in excercises path
+// - show/hide nodes in exercises path
 function applyTopicToDisplay() {
   const topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
   document.getElementById('current-topic-name').textContent = topicTitle;
@@ -554,12 +554,12 @@ function hideAllScreens() {
 // Render screen/game
 function renderScreen(screen_id) {
     showScreenTitle();
-    // for screen 'final' get a random screen from screens with excercise==1
+    // for screen 'final' get a random screen from screens with exercise==1
     finalGameForTopic = '';
     if (screen_id == 'final') {
         // build a set of candidates:
-        // having 'excercise' flag on and excluding 'final' itself
-        const candidates = topicScreens.filter(rec => rec.id != 'final' && rec.excercise == 1);
+        // having 'exercise' flag on and excluding 'final' itself
+        const candidates = topicScreens.filter(rec => rec.id != 'final' && rec.exercise == 1);
         const replacement = candidates[Math.floor(Math.random() * candidates.length)];
         const record = getScreenRecord(screen_id);
         record.screen_type = replacement.screen_type;
@@ -601,7 +601,7 @@ function renderScreen(screen_id) {
     }
 }
 
-// Initilize engine for game-type screen
+// Initialize engine for game-type screen
 function initGameEngine(screen_id) {
     let screenType = getScreenType(screen_id);
     if (screenType == 'matching') {
@@ -777,7 +777,7 @@ function renderMatchingGame() {
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
-    // Randomly shaffle pool on both sides
+    // Randomly shuffle pool on both sides
     const leftSide = shuffle(pool.map(p => ({ t: p[0], id: p[1], h: p[2] })));
     const rightSide = shuffle(pool.map(p => ({ t: p[1], id: p[1], h: p[2] })));
     roundRecap = pool;
@@ -856,7 +856,7 @@ function checkPairMatch() {
     }
 }
 
-// Update progres-bar according to matches count
+// Update progress-bar according to matches count
 function updateProgress(percents) {
     const progressBar = document.getElementById('progressBar');
     if (progressBar) progressBar.style.width = percents + "%";
@@ -877,10 +877,10 @@ function showWin(acc) {
 
     // hide all screens
     hideAllScreens();
-    // if recup is not empty
+    // if recap is not empty
     if (roundRecap.length) {
       // show "dictionary-style" recap list in 'screen-dictionary'
-      showDictionary(roundRecap, true);
+      showDictionary(dedupeDictionaryData(roundRecap), true);
     }
 
     // Calculate the success rate
@@ -938,7 +938,7 @@ function tipOfTheDay() {
 // ------------------------------------------ avoid repetitive questions
 
 /*
- * Save last choosen target string and last quiz answer position
+ * Save last chosen target string and last quiz answer position
  * When next random selection hits the same string or position - use alternative
  */
 
@@ -1417,6 +1417,21 @@ function showTopicDictionary() {
 }
 
 // render dictionary using pre-generated data
+function dedupeDictionaryData(currentData) {
+    const seen = new Set();
+    const uniqueData = [];
+
+    currentData.forEach(item => {
+        const key = item.map(value => String(value)).join('\u001f');
+        if (!seen.has(key)) {
+            seen.add(key);
+            uniqueData.push(item);
+        }
+    });
+
+    return uniqueData;
+}
+
 function showDictionary(currentData, recapMode=false) {
     const listContainer = document.getElementById('dictionary-list');
     listContainer.innerHTML = '';
@@ -2079,7 +2094,7 @@ function packProgressData() {
         if (c.ref == currDir) {
           courses_settings[c.title] = {
             "current_topic":      settings.getCurrentTopic(),
-            "current_excercise":  settings.getCurrentScreenId(),
+            "current_exercise":  settings.getCurrentScreenId(),
             "difficulty":         settings.getGameDifficulty(),
             "hide_well_learned":  settings.getHideWellLearned(),
             "show_transcription": settings.getShowTranscription(),
@@ -2161,7 +2176,7 @@ function unpackProgressData(data) {
     settings.setUserInterfaceLanguage(data["user_settings"]["interface_lang"]);
     const course_data = data["courses"][manifest.metadata.title];
     settings.setCurrentTopic(     course_data["current_topic"]);
-    settings.setCurrentScreenId(  course_data["current_excercise"]);
+    settings.setCurrentScreenId(  course_data["current_exercise"] ?? course_data["current_excercise"]);
     settings.setGameDifficulty(   course_data["difficulty"]);
     settings.setHideWellLearned(  course_data["hide_well_learned"]);
     settings.setShowTranscription(course_data["show_transcription"]);
