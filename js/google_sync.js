@@ -238,6 +238,9 @@ async function resolveProgressConflict(cloudData, localData) {
       if (localAttempts > cloudAttempts) {
         direction = 'cloud';
       }
+      if (localAttempts < cloudAttempts) {
+        direction = 'browser';
+      }
     }
 
     if (! direction ) {
