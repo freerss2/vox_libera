@@ -560,11 +560,6 @@ The passive voice construction model looks like this:
         "bakir"
       ],
       [
-        "kitchen",
-        "مطبخ",
-        "matbakh"
-      ],
-      [
         "key",
         "مفتاح",
         "miftah"
@@ -1346,11 +1341,6 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "tadhkira"
       ],
       [
-        "passport",
-        "جواز سفر",
-        "jawaz safar"
-      ],
-      [
         "late",
         "متأخر",
         "muta'akhkhir"
@@ -1813,11 +1803,6 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
         "afwan"
       ],
       [
-        "please",
-        "لَوْ سَمَحْت",
-        "law samaht"
-      ],
-      [
         "nice to meet you",
         "فُرْصَة سَعِيدَة",
         "fursa sa'ida"
@@ -2144,11 +2129,6 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
         "badat"
       ],
       [
-        "to need",
-        "لازم",
-        "lazim"
-      ],
-      [
         "to correct",
         "يصلح",
         "yisallih"
@@ -2388,26 +2368,6 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
         "waiter",
         "جرسون",
         "jarson"
-      ],
-      [
-        "order",
-        "طلب",
-        "talab"
-      ],
-      [
-        "tablecloth",
-        "شرشف طاولة",
-        "sharshaf tawila"
-      ],
-      [
-        "napkin",
-        "محرمة",
-        "mahrameh"
-      ],
-      [
-        "constantly",
-        "دائماً",
-        "da'iman"
       ],
       [
         "exactly",
