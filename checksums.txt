@@ -1,6 +1,6 @@
 a36d6a98efe74cd7ce62716a4d6cc9f8 src\course.template.html
-c27707296edc934598c2c737665890d5 js\common.js
-75872dcfe5e10d2e1ac400583269b747 course.ar1/manifest.js
-ed3cd05952bafef0af4c02ffce275209 course.ar1/lessons.js
+9c846a1fc62f5e7e9f923214a7f76e7b js\common.js
+e6fc22396b4f21af9db8856dbc6bc0f1 course.ar1/manifest.js
+b65a1248e3bd97307ce9b6bf24778262 course.ar1/lessons.js
 fbbd3f1c452e522eee01e8841f3422bd course.he1/manifest.js
 bbe3f31c35649933e1b8db845aaedc4b course.he1/lessons.js

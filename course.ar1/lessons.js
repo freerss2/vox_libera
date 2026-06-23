@@ -1,6 +1,4 @@
-const lesson_data_ver = '2.8.3';
-// Enabling long word break to next line: insert a special character "Soft Hyphen"
-// "само\u00ADобслуживание"
+const lesson_data_ver = '2.9.0';
 const topics = {
   "all": {
     "name": "All topics",
@@ -18,8 +16,8 @@ The curriculum and course texts are structured using **artificial intelligence**
     "name": "Tell about yourself 1",
     "explanations": `
 The topic of this lesson is talking about yourself: your occupation and family.
-Verbs are given in standard form (third person singular).
-Verb inflections will be the topic of separate lessons.
+Verbs are given in their active spoken Levantine form with the prefix [b-].
+Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
 `,
     "story": `
 ##story-line## '''من وين أنت؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn anta?
@@ -72,7 +70,12 @@ Verb inflections will be the topic of separate lessons.
       [
         "company",
         "شركة",
-        "ash-sharika"
+        "sharika"
+      ],
+      [
+        "international",
+        "دولية",
+        "dawliya"
       ],
       [
         "family",
@@ -85,9 +88,19 @@ Verb inflections will be the topic of separate lessons.
         "ab"
       ],
       [
+        "my father",
+        "أبوي",
+        "abuy"
+      ],
+      [
         "mother",
         "أم",
         "umm"
+      ],
+      [
+        "my mother",
+        "أمي",
+        "ummi"
       ],
       [
         "brother",
@@ -100,9 +113,9 @@ Verb inflections will be the topic of separate lessons.
         "ukht"
       ],
       [
-        "house",
-        "بيت",
-        "bayt"
+        "friend (m)",
+        "صاحب",
+        "sahib"
       ],
       [
         "mr.",
@@ -125,64 +138,9 @@ Verb inflections will be the topic of separate lessons.
         "madina"
       ],
       [
-        "country",
-        "بلد",
-        "balad"
-      ],
-      [
-        "to live",
-        "سكن",
-        "sakan"
-      ],
-      [
-        "to work",
-        "عمل",
-        "amal"
-      ],
-      [
-        "congrats!",
-        "مبروك",
-        "mabruk"
-      ],
-      [
-        "ok",
-        "تمام",
-        "tamam"
-      ],
-      [
-        "sorry",
-        "آسف",
-        "asif"
-      ],
-      [
-        "exactly",
-        "تماماً",
-        "tamaman"
-      ],
-      [
-        "thanks",
-        "شكراً",
-        "shukran"
-      ],
-      [
-        "to study",
-        "درس",
-        "daras"
-      ],
-      [
         "now",
         "الآن",
         "al-an"
-      ],
-      [
-        "with",
-        "مع",
-        "ma'a"
-      ],
-      [
-        "in",
-        "في",
-        "fi"
       ]
     ],
     "sentences": [
@@ -217,12 +175,12 @@ Verb inflections will be the topic of separate lessons.
         "ummi mu'allima"
       ],
       [
-        "beautiful house",
+        "a beautiful house",
         "بيت جميل",
         "bayt jamil"
       ],
       [
-        "beautiful new house",
+        "a beautiful new house",
         "بيت جديد جميل",
         "bayt jadid jamil"
       ],
@@ -237,7 +195,7 @@ Verb inflections will be the topic of separate lessons.
         "bashtaghil fi sharika dawliya"
       ],
       [
-        "where are you from?",
+        "where are you from",
         "من وين أنت",
         "min wayn anta"
       ],
@@ -247,27 +205,17 @@ Verb inflections will be the topic of separate lessons.
         "ana min rusiya"
       ],
       [
-        "i don't understand",
-        "مش فاهم",
-        "mish fahim"
-      ],
-      [
-        "once more please",
-        "كمان مرة لو سمحت",
-        "kaman marra law samaht"
-      ],
-      [
-        "where do you live?",
+        "where do you live",
         "وين ساكن",
         "wayn sakin"
       ],
       [
-        "what is your profession?",
+        "what is your profession",
         "شو مهنتك",
         "shu mihnatak"
       ],
       [
-        "i study arabic now",
+        "i study arabic language now",
         "بدرس اللغة العربية الآن",
         "badrus al-lugha al-arabiya al-an"
       ],
@@ -285,6 +233,21 @@ Verb inflections will be the topic of separate lessons.
         "we live together",
         "ساكنين مع بعض",
         "saknin ma' ba'ad"
+      ],
+      [
+        "i speak english",
+        "بحكي إنجليزي",
+        "bahki inglizi"
+      ],
+      [
+        "this is my friend",
+        "هذا صاحبي",
+        "hada sahibi"
+      ],
+      [
+        "my friend lives here",
+        "صاحبتي ساكنة هنا",
+        "sahibti sakna huna"
       ]
     ]
   },
@@ -303,7 +266,7 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
 `,
     "words": [
       [
-        "tailor",
+        "tailor (f)",
         "خياطة",
         "khayyata"
       ],
@@ -313,14 +276,19 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "alim riyadiyat"
       ],
       [
-        "teacher",
-        "معلم",
-        "muallim"
-      ],
-      [
-        "designer",
+        "designer (m)",
         "مصمم",
         "musammim"
+      ],
+      [
+        "student (m)",
+        "طالب",
+        "talib"
+      ],
+      [
+        "student (f)",
+        "طالبة",
+        "taliba"
       ],
       [
         "workshop",
@@ -328,9 +296,24 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "warsha"
       ],
       [
+        "studio",
+        "استوديو",
+        "ustudiyu"
+      ],
+      [
+        "class",
+        "صف",
+        "saff"
+      ],
+      [
         "art",
         "فن",
         "fann"
+      ],
+      [
+        "arts",
+        "فنون",
+        "funun"
       ],
       [
         "academy",
@@ -338,17 +321,12 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "akadimiya"
       ],
       [
-        "student",
-        "طالبة",
-        "taliba"
-      ],
-      [
         "cinema",
         "سينما",
         "sinima"
       ],
       [
-        "faculty / college",
+        "faculty",
         "كلية",
         "kulliya"
       ],
@@ -368,7 +346,7 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "ilm"
       ],
       [
-        "blueprint / drawing",
+        "blueprint",
         "مخطط",
         "mukhattat"
       ],
@@ -376,6 +354,11 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "fabric",
         "قماش",
         "qumash"
+      ],
+      [
+        "dress",
+        "فستان",
+        "fustan"
       ],
       [
         "numbers",
@@ -396,6 +379,11 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "library",
         "مكتبة",
         "maktaba"
+      ],
+      [
+        "tomorrow",
+        "بكرة",
+        "bukra"
       ]
     ],
     "sentences": [
@@ -468,6 +456,36 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "the art lesson starts now",
         "درس الفن بيبدأ الآن",
         "dars al-fann biyabda al-an"
+      ],
+      [
+        "the student reads a book in the library",
+        "الطالب بيقرأ كتاب في المكتبة",
+        "at-talib biqra kitab fil-maktaba"
+      ],
+      [
+        "i have a big project tomorrow",
+        "عندي مشروع كبير بكرة",
+        "indi mashru kabir bukra"
+      ],
+      [
+        "she studies science at the university",
+        "بتدرس علم في الجامعة",
+        "bitadrus ilm fil-jamia"
+      ],
+      [
+        "the teacher writes numbers here",
+        "المعلم بيكتب أرقام هنا",
+        "al-muallim biyaktub arquam huna"
+      ],
+      [
+        "we have a lesson in the academy",
+        "عندنا درس في الأكاديمية",
+        "indna dars fil-akadimiya"
+      ],
+      [
+        "the designer loves beautiful fabric",
+        "المصمم بيحب قماش جميل",
+        "al-musammim bihibb qumash jamil"
       ]
     ]
   },
@@ -479,6 +497,21 @@ This lesson will help us describe everyday objects that surround us.
 Note that the **passive voice** is sometimes used to construct **adjectives**.
 The passive voice construction model looks like this:
 [mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
+`,
+    "story": `
+##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
+
+##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
+
+##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
+
+##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+
+##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
+
+##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
+
+##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
 `,
     "words": [
       [
@@ -512,11 +545,6 @@ The passive voice construction model looks like this:
         "ghurfat nawm"
       ],
       [
-        "window",
-        "شباك",
-        "ash-shubbak"
-      ],
-      [
         "floor",
         "أرضية",
         "al-ardiya"
@@ -527,44 +555,69 @@ The passive voice construction model looks like this:
         "as-saqf"
       ],
       [
-        "kettle",
-        "غلاية",
-        "al-ghallaya"
+        "early",
+        "بكير",
+        "bakir"
       ],
       [
-        "glass / cup",
-        "كاسة",
-        "kasa"
+        "kitchen",
+        "مطبخ",
+        "matbakh"
       ],
       [
-        "plate",
-        "صحن",
-        "sahn"
+        "key",
+        "مفتاح",
+        "miftah"
       ],
       [
-        "knife",
-        "سكين",
-        "as-sikkin"
+        "keys",
+        "مفاتيح",
+        "mafatih"
       ],
       [
-        "fork",
-        "شوكة",
-        "ash-shawka"
+        "money",
+        "مصاري",
+        "masari"
       ],
       [
-        "spoon",
-        "معلقة",
-        "ma'laqa"
+        "water",
+        "مي",
+        "mayy"
       ],
       [
-        "oven / stove",
-        "فرن",
-        "al-furn"
+        "always",
+        "دائماً",
+        "da'iman"
+      ],
+      [
+        "a little",
+        "شوي",
+        "shway"
+      ],
+      [
+        "also",
+        "كمان",
+        "kaman"
+      ],
+      [
+        "must",
+        "لازم",
+        "lazim"
+      ],
+      [
+        "i wake up",
+        "بفيق",
+        "bafiq"
       ],
       [
         "tap / sink",
         "حنفية",
         "al-hanafiya"
+      ],
+      [
+        "i drink",
+        "بشرب",
+        "bashrab"
       ]
     ],
     "sentences": [
@@ -599,24 +652,29 @@ The passive voice construction model looks like this:
         "as-saqf abyad wa 'ali"
       ],
       [
-        "the kettle is on the stove now",
-        "الغلاية على الفرن الآن",
-        "al-ghallaya 'ala al-furn al-an"
+        "every day i wake up early",
+        "كل يوم بفيق بكير",
+        "kull yom bafiq bakir"
       ],
       [
-        "the glass is on the table",
-        "الكاسة على الطاولة",
-        "al-kasa 'ala at-tawila"
+        "i drink coffee with milk",
+        "بشرب قهوة مع حليب",
+        "bashrab qahwa ma halib"
       ],
       [
-        "the spoon and fork are here",
-        "المعلقة والشوكة هنا",
-        "al-ma'laqa wash-shawka huna"
+        "where is the car key",
+        "وين مفتاح السيارة",
+        "wayn miftah as-sayyara"
       ],
       [
-        "the knife and plate are clean",
-        "السكين والصحن نظيفين",
-        "as-sikkin was-sahn nadhifin"
+        "the keys are on the table",
+        "المفاتيح على الطاولة",
+        "al-mafatih ala at-tawila"
+      ],
+      [
+        "i eat breakfast in the kitchen",
+        "بأكل فطور في المطبخ",
+        "bakul futur fil-matbakh"
       ],
       [
         "the tap is in the kitchen",
@@ -634,14 +692,34 @@ The passive voice construction model looks like this:
         "fi shubbak fil-ghurfa"
       ],
       [
-        "where is my knife",
-        "وين سكيني",
-        "wayn sikkini"
+        "the money is in the bag",
+        "المصاري في الشنطة",
+        "al-masari fish-shanta"
       ],
       [
-        "the kettle is hot",
-        "الغلاية سخنة",
-        "al-ghallaya sukhna"
+        "i must go to work now",
+        "لازم أروح على الشغل الآن",
+        "lazim aruh ala ash-shughl al-an"
+      ],
+      [
+        "i always drink water in the evening",
+        "دائماً بشرب مي المساء",
+        "da'iman bashrab mayy al-masa"
+      ],
+      [
+        "she eats breakfast and drinks milk",
+        "بتأكل فطور وبتشرب حليب",
+        "bitakul futur wa bitshrab halib"
+      ],
+      [
+        "i also work every day",
+        "أنا كمان بشتغل كل يوم",
+        "ana kaman bashtaghel kull yom"
+      ],
+      [
+        "i drink water every day",
+        "بشرب مي كل يوم",
+        "bashrab mayy kull yom"
       ]
     ]
   },
@@ -665,24 +743,9 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "dakhil al-bilad"
       ],
       [
-        "city",
-        "مدينة",
-        "madina"
-      ],
-      [
         "abroad",
         "خارج البلاد",
         "kharij al-bilad"
-      ],
-      [
-        "here",
-        "هنا",
-        "huna"
-      ],
-      [
-        "studying",
-        "دراسة",
-        "dirasa"
       ],
       [
         "culture",
@@ -695,19 +758,14 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "afdal"
       ],
       [
-        "car",
-        "سيارة",
-        "as-sayyara"
+        "traveling",
+        "سفر",
+        "safar"
       ],
       [
-        "music",
-        "موسيقى",
-        "al-musiqa"
-      ],
-      [
-        "people / nation",
-        "شعب",
-        "ash-sha'b"
+        "tourism",
+        "سياحة",
+        "siyaha"
       ],
       [
         "public transport",
@@ -715,39 +773,34 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "muwasalat amma"
       ],
       [
-        "trip / flight",
-        "رحلة",
-        "rihla"
+        "passport",
+        "جواز سفر",
+        "jawaz safar"
       ],
       [
-        "travel",
-        "سفر",
-        "safar"
+        "beach",
+        "شاطئ",
+        "shati"
       ],
       [
-        "watching",
-        "مشاهدة",
-        "mushahada"
+        "country",
+        "بلد",
+        "balad"
       ],
       [
-        "visiting / visit",
-        "زيارة",
-        "ziyara"
+        "baggage",
+        "شنط",
+        "shanat"
       ],
       [
-        "free time",
-        "وقت فراغ",
-        "waqt faragh"
+        "photography",
+        "تصوير",
+        "taswir"
       ],
       [
-        "now",
-        "الآن",
-        "al-an"
-      ],
-      [
-        "there",
-        "هناك",
-        "hunaka"
+        "song",
+        "غنوة",
+        "ghinwa"
       ],
       [
         "transport",
@@ -755,71 +808,81 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "muwasalat"
       ],
       [
-        "tourism",
-        "سياحة",
-        "as-siyaha"
+        "sport",
+        "رياضة",
+        "riyada"
       ],
       [
-        "movies",
-        "أفلام",
-        "aflam"
+        "tourist (m)",
+        "سائح",
+        "sa'ih"
       ],
       [
-        "languages",
-        "لغات",
-        "lughat"
+        "tourist (f)",
+        "سائحة",
+        "sa'iha"
       ]
     ],
     "sentences": [
       [
-        "my family loves traveling",
-        "عيلتي بتحب السفر",
-        "ailti bit-hibb as-safar"
+        "i love traveling and tourism",
+        "بحب السفر والسياحة",
+        "bahibb as-safar was-siyaha"
       ],
       [
-        "traveling abroad is fun",
-        "السفر برّة ممتع",
-        "as-safar barra mumti"
+        "where is my passport",
+        "وين جواز سفري",
+        "wayn jawaz safari"
       ],
       [
-        "public transport here is better",
-        "المواصلات هنا أفضل",
-        "al-muwasalat huna afdal"
+        "the tourist is in the hotel",
+        "السائح في الفندق",
+        "as-sa'ih fil-funduq"
       ],
       [
-        "this city is very beautiful",
-        "هذه المدينة جميلة كثير",
-        "hadhihi al-madina jamila kathir"
+        "the tourist has a ticket",
+        "السائحة عندها تذكرة",
+        "as-sa'iha indha tadhkira"
       ],
       [
-        "the car here is better",
-        "السيارة هنا أفضل",
-        "as-sayyara huna afdal"
+        "i always go to the sea",
+        "دائماً بروح على البحر",
+        "da'iman baruh alal-bahr"
       ],
       [
-        "i like listening to music",
-        "بحب سماع الموسيقى",
-        "bahibb sima al-musiqa"
+        "the beach is beautiful today",
+        "الشاطئ جميل اليوم",
+        "ash-shati jamil al-yom"
       ],
       [
-        "i watch movies sometimes",
-        "بشوف أفلام أحياناً",
-        "bashuf aflam ahyanan"
+        "she loves photography and music",
+        "بتحب التصوير والموسيقى",
+        "bitahibb at-taswir wal-musiqa"
       ],
       [
-        "i study different languages",
-        "بدرس لغات مختلفة",
-        "badrus lughat mukhtalifa"
+        "he listens to a beautiful song",
+        "بيسمع غنوة جميلة",
+        "biyasma ghinwa jamila"
       ],
       [
-        "we study different cultures",
-        "بندرس ثقافات مختلفة",
-        "bandrus thaqafat mukhtalifa"
+        "reading is a beautiful hobby",
+        "القراءة هواية جميلة",
+        "al-qira'a hiwaya jamila"
       ],
       [
-        "we love local tourism",
-        "بنحب السياحة المحلية",
-        "bin-hibb as-siyaha al-mahalliya"
+        "i read a book there",
+        "بقرأ كتاب هناك",
+        "baqra kitab hunaak"
+      ],
+      [
+        "my brother plays football",
+        "أخوي بيلعب كرة القدم",
+        "akhuy bilyab kurat al-qadam"
+      ],
+      [
+        "she loves swimming in the sea",
+        "بتحب السباحة في البحر",
+        "bitahibb as-sibaha fil-bahr"
       ],
       [
         "we rent a car there",
@@ -827,9 +890,14 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "bansta'jir sayyara hunaka"
       ],
       [
-        "we visited european countries",
-        "زرنا بلاد أوروبا",
-        "zurna bilad urubba"
+        "we have baggage in the car",
+        "عندنا شنط في السيارة",
+        "andna shanat fis-sayyara"
+      ],
+      [
+        "this country is very big",
+        "هذا البلد كبير كثير",
+        "hada al-balad kabir kathir"
       ],
       [
         "i love this city",
@@ -837,14 +905,24 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "bahibb hadhihi al-madina"
       ],
       [
-        "we get to know nations",
-        "بنتعرف على الشعوب",
-        "banta'arraf ala ash-shu'ub"
+        "the hotel is near the beach",
+        "الفندق قريب من الشاطئ",
+        "al-funduq qarib min ash-shati"
       ],
       [
-        "i am going to the city center",
-        "بروح على البلد",
-        "baruh ala al-balad"
+        "i buy a new book today",
+        "بشتري كتاب جديد اليوم",
+        "bashtari kitab jadid al-yom"
+      ],
+      [
+        "they play sport every day",
+        "بيلعبوا رياضة كل يوم",
+        "bilyabu riyada kull yom"
+      ],
+      [
+        "i listen to music in the hotel",
+        "بسمع موسيقى في الفندق",
+        "basma musiqa fil-funduq"
       ]
     ]
   },
@@ -875,9 +953,20 @@ Kawiya '''قوية''': Literally "strong." This is how they say strong coffee.
 Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
 Note the word "halva" - it shares a root with both "sweet" and "dessert."
 `,
+    "story": `
+##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
+
+##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+
+##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+
+##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
+
+##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
+`,
     "words": [
       [
-        "tasty / delicious",
+        "delicious",
         "زاكي",
         "zaki"
       ],
@@ -887,44 +976,39 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
         "malih"
       ],
       [
-        "sweet",
-        "حلو",
-        "hilu"
-      ],
-      [
         "sour",
         "حامض",
         "hamid"
       ],
       [
-        "hot",
-        "سخن",
-        "sukhn"
+        "bill",
+        "حساب",
+        "hisab"
       ],
       [
-        "cold",
-        "بارد",
-        "barid"
+        "order",
+        "طلب",
+        "talab"
       ],
       [
-        "appetizer / meze",
+        "appetizer",
         "مقبلات",
         "muqabbilat"
       ],
       [
-        "main course",
+        "main dish",
         "وجبة رئيسية",
         "wajba ra'isiya"
       ],
       [
         "side dish",
-        "مقبلات جانبية",
-        "muqabbilat janibiya"
+        "وجبة جانبية",
+        "wajba janibiya"
       ],
       [
-        "dessert",
-        "الحلو",
-        "al-hilu"
+        "sweet / dessert",
+        "حِلْو",
+        "hilw"
       ],
       [
         "the bill / check",
@@ -933,13 +1017,23 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
       ],
       [
         "meat",
-        "لحم",
-        "lahm"
+        "لحمة",
+        "lahma"
       ],
       [
-        "rice",
-        "أرز",
-        "aruzz"
+        "napkin",
+        "محرمة",
+        "mahrama"
+      ],
+      [
+        "tablecloth",
+        "شرشف طاوله",
+        "sharshaf tawila"
+      ],
+      [
+        "plate",
+        "صحن",
+        "sahn"
       ],
       [
         "i want",
@@ -972,6 +1066,36 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
         "badil"
       ],
       [
+        "spoon",
+        "معلقة",
+        "malaqa"
+      ],
+      [
+        "fork",
+        "شوكة",
+        "shawka"
+      ],
+      [
+        "knife",
+        "سكينة",
+        "skinna"
+      ],
+      [
+        "please",
+        "لو سمحت",
+        "law samaht"
+      ],
+      [
+        "i order",
+        "بطلب",
+        "batlub"
+      ],
+      [
+        "he pays",
+        "بيدفع",
+        "biyadfa"
+      ],
+      [
         "i like / love",
         "بحب",
         "bahibb"
@@ -979,84 +1103,104 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
     ],
     "sentences": [
       [
-        "i want a main course",
-        "بدي وجبة رئيسية",
-        "biddi wajba ra'isiya"
+        "the appetizer is very delicious",
+        "المقبلات زاكية كثير",
+        "al-muqabbilat zakya kathir"
       ],
       [
-        "i like meat with rice",
-        "بحب اللحم مع الأرز",
-        "bahibb al-lahm ma' ar-ruzz"
+        "waiter i want a napkin please",
+        "يا جرسون بدي محرمة لو سمحت",
+        "ya garson biddi mahrama law samaht"
       ],
       [
-        "the appetizer is very salty",
-        "المقبلات مالحة كثير",
-        "al-muqabbilat maliha kathir"
+        "i order chicken and a side dish",
+        "بطلب دجاج ووجبة جانبية",
+        "batlub djaj wa wajba janibiya"
       ],
       [
-        "the dessert is too sweet",
-        "الحلاوة حلوة كثير",
-        "al-halawa hilwa kathir"
+        "this soup is very salty",
+        "هذه الشوربة مالحة كثير",
+        "hadhihi ash-shorba maliha kathir"
       ],
       [
-        "the lemon is very sour",
-        "الليمون حامض كثير",
-        "al-laymun hamid kathir"
+        "where is the knife and the fork",
+        "وين السكينة والشوكة",
+        "wayn as-skinna wash-shawka"
       ],
       [
-        "the tea is hot now",
-        "الشاي سخن الآن",
-        "ash-shay sukhn al-an"
+        "the bill please",
+        "الحساب لو سمحت",
+        "al-hisab law samaht"
       ],
       [
-        "the water here is cold",
-        "المي هنا باردة",
-        "al-may huna barida"
+        "where is my order",
+        "وين الطلب تبعي",
+        "wayn at-talab tabai"
       ],
       [
-        "the side dish is very tasty",
-        "المقبلات الجانبية زاكية",
-        "al-muqabbilat al-janibiya zakiya"
+        "the sweet is beautiful and delicious",
+        "الحِلْو جميل وزاكي",
+        "al-hilw jamil wa zaki"
       ],
       [
-        "bring the bill please",
-        "جيب الحساب لو سمحت",
-        "jib al-hisab law samaht"
+        "i want a cup of tea",
+        "بدي فنجان شاي",
+        "biddi finjan shay"
       ],
       [
-        "where is the dessert?",
-        "وين الحلاوة",
-        "wayn al-halawa"
+        "the tablecloth is on the table",
+        "الشرشف على الطاولة",
+        "ash-sharshaf ala at-tawila"
       ],
       [
-        "the meal is very tasty",
-        "الوجبة زاكية كثير",
-        "al-wajba zakiya kathir"
+        "this fish is sour",
+        "هذه السمكة حامضة",
+        "hadhihi as-samaka hamda"
       ],
       [
-        "i want cold juice",
-        "بدي عصير بارد",
-        "biddi asir barid"
+        "my friend wants a clean plate",
+        "صاحبي بده صحن نظيف",
+        "sahibi biddu sahn nadif"
       ],
       [
-        "the rice is very salty",
-        "الأرز مالح كثير",
-        "ar-ruzz malih kathir"
+        "the main dish today is fish",
+        "الوجبة الرئيسية اليوم هي سمك",
+        "al-wajba ar-ra'isiya al-yom hiyya samak"
       ],
       [
-        "i want this dessert",
-        "بدي هذه الحلاوة",
-        "biddi hadhihi al-halawa"
+        "the food here is always delicious",
+        "الأكل هنا دائماً زاكي",
+        "al-akl huna da'iman zaki"
       ],
       [
-        "the restaurant is very tasty",
-        "المطعم زاكي كثير",
-        "al-mat'am zaki kathir"
+        "give me a spoon please",
+        "اعطيني معلقة لو سمحت",
+        "atini malaqa law samaht"
       ],
       [
-        "i want strong coffee",
-        "بدي قهوة قوية",
-        "biddi qahwa qawiya"
+        "i drink juice from this cup",
+        "بشرب عصير من هذا الفنجان",
+        "bashrab asir min hada al-finjan"
+      ],
+      [
+        "where is my spoon",
+        "وين معلقتي",
+        "wayn malaqti"
+      ],
+      [
+        "the side dish is delicious",
+        "الوجبة الجانبية زاكية",
+        "al-wajba al-janibiya zakya"
+      ],
+      [
+        "he pays the bill here",
+        "بيدفع الحساب هنا",
+        "biyadfa al-hisab huna"
+      ],
+      [
+        "i want sweet now",
+        "بدي حِلْو الآن",
+        "biddi hilw al-an"
       ],
       [
         "i want almond milk",
@@ -1069,24 +1213,9 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
         "qahwa bidun sukkar"
       ],
       [
-        "give me a cup",
-        "أعطيني فنجان",
-        "a'tini finjan"
-      ],
-      [
-        "this coffee is strong",
-        "هذه القهوة قوية",
-        "hadhihi al-qahwa qawiya"
-      ],
-      [
         "i want a milk substitute",
         "بدي بديل حليب",
         "biddi badil halib"
-      ],
-      [
-        "this cup is hot",
-        "هذا الفنجان سخن",
-        "hadha al-finjan sukhn"
       ]
     ]
   },
@@ -1104,6 +1233,17 @@ Afsh '''عفش''': A very popular word for luggage in general (things you check 
 
 Fadi / Mahjuz: These two words will save you when you need to figure out if a seat is free in a lounge or on a plane.
 `,
+    "story": `
+##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
+
+##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
+
+##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+
+##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
+
+##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
+`,
     "words": [
       [
         "airport",
@@ -1111,54 +1251,59 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "matar"
       ],
       [
-        "airplane",
-        "طيارة",
-        "at-tayyara"
-      ],
-      [
-        "flight / trip",
+        "flight",
         "رحلة",
         "rihla"
       ],
       [
-        "ticket",
-        "تذكرة",
-        "at-tadhkara"
+        "gate",
+        "بوابة",
+        "bawwaba"
       ],
       [
-        "passport",
-        "جواز سفر",
-        "jawaz safar"
+        "boarding pass",
+        "بطاقة صعود",
+        "bitaqat su'ud"
       ],
       [
-        "baggage / luggage",
+        "luggage",
         "عفش",
         "afsh"
       ],
       [
-        "suitcase / bag",
-        "شنطة",
-        "shanta"
+        "suitcase",
+        "شنطة سفر",
+        "shantat safar"
       ],
       [
         "hand luggage",
-        "شنطة إيد",
-        "shantat id"
+        "حقيبة يد",
+        "haqibat yad"
       ],
       [
-        "inspection / search",
-        "تفتيش",
-        "at-taftish"
+        "weight",
+        "وزن",
+        "wazn"
       ],
       [
-        "security",
-        "أمن",
-        "amn"
+        "excess weight",
+        "وزن زايد",
+        "wazn zayid"
       ],
       [
-        "layover / transit",
-        "ترانزيت",
-        "tranzit"
+        "delay",
+        "تأخير",
+        "ta'khir"
+      ],
+      [
+        "queue",
+        "دور",
+        "dor"
+      ],
+      [
+        "customs",
+        "جمارك",
+        "jamarik"
       ],
       [
         "seat",
@@ -1166,132 +1311,216 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "maq'ad"
       ],
       [
-        "free / empty",
+        "window",
+        "شباك",
+        "shubbak"
+      ],
+      [
+        "aisle",
+        "ممر",
+        "mamarr"
+      ],
+      [
+        "free",
         "فاضي",
         "fadi"
       ],
       [
-        "occupied / reserved",
+        "reserved",
         "محجوز",
         "mahjuz"
       ],
       [
-        "border",
-        "حدود",
-        "hudud"
+        "plane",
+        "طيارة",
+        "tayyara"
       ],
       [
-        "visit",
-        "زيارة",
-        "ziyara"
+        "pilot",
+        "طيار",
+        "tayyar"
       ],
       [
-        "tourism",
-        "سياحة",
-        "as-siyaha"
+        "ticket",
+        "تذكرة",
+        "tadhkira"
       ],
       [
-        "hotel",
-        "فندق",
-        "funduq"
+        "passport",
+        "جواز سفر",
+        "jawaz safar"
       ],
       [
-        "purpose / goal",
-        "هدف",
-        "hadaf"
+        "late",
+        "متأخر",
+        "muta'akhkhir"
+      ],
+      [
+        "security",
+        "أمن",
+        "amn"
+      ],
+      [
+        "searching",
+        "تفتيش",
+        "taftish"
+      ],
+      [
+        "where",
+        "وين",
+        "wayn"
+      ],
+      [
+        "here",
+        "هنا",
+        "huna"
+      ],
+      [
+        "next to",
+        "جنب",
+        "janb"
+      ],
+      [
+        "i travel",
+        "بسافر",
+        "basafir"
+      ],
+      [
+        "i wait",
+        "بстنى",
+        "bastanna"
+      ],
+      [
+        "he checks",
+        "بيفحص",
+        "bifhas"
       ]
     ],
     "sentences": [
       [
-        "where is my passport?",
-        "وين جواز سفري",
-        "wayn jawaz safari"
+        "where is the airport",
+        "وين المطار",
+        "wayn al-matar"
       ],
       [
-        "the flight is delayed now",
-        "الرحلة متأخرة الآن",
-        "ar-rihla mut'akhira al-an"
+        "my flight is late today",
+        "رحلتي متأخرة اليوم",
+        "rihlati muta'akhkhira al-yom"
       ],
       [
-        "the airplane is very big",
+        "i want the boarding pass please",
+        "بدي بطاقة الصعود لو سمحت",
+        "biddi bitaqat as-su'ud law samaht"
+      ],
+      [
+        "where is the boarding gate",
+        "وين بوابة الصعود",
+        "wayn bawwabat as-su'ud"
+      ],
+      [
+        "i have excess weight in the suitcase",
+        "عندي وزن زايد في شنطة السفر",
+        "indi wazn zayid fi shantat as-safar"
+      ],
+      [
+        "the hand luggage is here",
+        "حقيبة اليد هنا",
+        "haqibat al-yad huna"
+      ],
+      [
+        "the security officer checks the passport",
+        "ضابط الأمن بيفحص جواز السفر",
+        "dabit al-amn bifhas jawaz as-safar"
+      ],
+      [
+        "there is a big queue in customs",
+        "في دور كبير في الجمارك",
+        "fi dor kabir fil-jamarik"
+      ],
+      [
+        "i wait for my luggage here",
+        "بستنى العفش تبعي هنا",
+        "bastanna al-afsh tabai huna"
+      ],
+      [
+        "is this seat free",
+        "هذا المقعد فاضي",
+        "hada al-maq'ad fadi"
+      ],
+      [
+        "is this chair free",
+        "هذا الكрسي فاضي",
+        "hada al-kursi fadi"
+      ],
+      [
+        "this seat next to me is reserved",
+        "هذا المقعد جنبي محجوز",
+        "hada al-maq'ad janbi mahjuz"
+      ],
+      [
+        "i want a seat next to the window",
+        "بدي مقعد جنب الشباك",
+        "biddi maq'ad janb ash-shubbak"
+      ],
+      [
+        "where is the aisle seat",
+        "وين المقعد في الممر",
+        "wayn al-maq'ad fil-mamarr"
+      ],
+      [
+        "i fly to russia tomorrow",
+        "بسافر على روسيا بكرة",
+        "basafir ala rusiya bukra"
+      ],
+      [
+        "where is the customs inspection",
+        "وين تفتيش الجمارك",
+        "wayn taftish al-jamarik"
+      ],
+      [
+        "the plane is very big",
         "الطيارة كبيرة كثير",
         "at-tayyara kabira kathir"
       ],
       [
-        "i want a seat by the window",
-        "بدي مقعد عند الشباك",
-        "biddi maq'ad ind ash-shubbak"
+        "the pilot is in the plane now",
+        "الطيار في الطيارة الآن",
+        "at-tayyar fit-tayyara al-an"
       ],
       [
-        "is this seat free?",
-        "هذا المقعد فاضي",
-        "hadha al-maq'ad fadi"
+        "where is my suitcase",
+        "وين شنطة السفر تبعتي",
+        "wayn shantat safari tabati"
       ],
       [
-        "no, this seat is occupied",
-        "لأ هذا المقعد محجوز",
-        "la hadha al-maq'ad mahjuz"
+        "i am late for the flight",
+        "أنا متأخر на الرحلة",
+        "ana muta'akhkhir alar-rihla"
       ],
       [
-        "where is the security check?",
-        "وين تفتيش الأمن",
-        "wayn taftish al-amn"
+        "the delay is from the airport",
+        "التأخير من المطار",
+        "at-ta'khir min al-matar"
       ],
       [
-        "the suitcase is very heavy",
-        "الشنطة ثقيلة كثير",
-        "ash-shanta thaqila kathir"
+        "show me the passport please",
+        "ورجيني جواز السفر لو سمحت",
+        "warjini jawaz as-safar law samaht"
       ],
       [
-        "this is my hand luggage",
-        "هذه شنطة إيدي",
-        "hadhihi shantat idi"
-      ],
-      [
-        "i have a layover",
-        "عندي ترانزيت",
-        "indi tranzit"
-      ],
-      [
-        "where is the boarding pass?",
-        "وين تذكرة الصعود",
-        "wayn tadhkarat as-su'ud"
-      ],
-      [
-        "the luggage is there below",
-        "العفش هناك تحت",
-        "al-afsh hunaka taht"
-      ],
-      [
-        "border control is here",
-        "تفتيش الحدود هنا",
-        "taftish al-hudud huna"
-      ],
-      [
-        "i want to change the seat",
-        "بدي أغير المقعد",
-        "biddi aghayyar al-maq'ad"
-      ],
-      [
-        "the purpose of the visit is tourism",
-        "هدف الزيارة السياحة",
-        "hadaf az-ziyara as-siyaha"
-      ],
-      [
-        "the hotel is in the city center",
-        "الفندق في وسط البلد",
-        "al-funduq fi wast al-balad"
-      ],
-      [
-        "the airport is very beautiful",
-        "المطار جميل كثير",
-        "al-matar jamil kathir"
+        "we wait in the queue now",
+        "بنستنى في الدور الآن",
+        "bnastanna fid-dor al-an"
       ]
     ]
   },
   "names_meaning_1": {
     "index": 7,
     "name": "Names meaning 1",
+    "explanations": `
+### Teaching Anchor: Proper Names
+Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
+`,
     "words": [
       [
         "happy (m)",
@@ -1304,17 +1533,17 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "jamil"
       ],
       [
-        "kind / good (m)",
+        "kind (m)",
         "طيب",
         "tayyib"
       ],
       [
-        "tall / high (m)",
+        "elevated (m)",
         "عالي",
         "ali"
       ],
       [
-        "calm / quiet (m)",
+        "calm (m)",
         "هادي",
         "hadi"
       ],
@@ -1324,24 +1553,24 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "karim"
       ],
       [
-        "loyal / faithful (m)",
+        "faithful (m)",
         "أمين",
         "amin"
       ],
       [
-        "smart / understanding (m)",
+        "understanding (m)",
         "فهيم",
         "fahim"
       ],
       [
         "man / guy",
         "زلمة",
-        "az-zalama"
+        "zalama"
       ],
       [
         "employee (m)",
         "موظف",
-        "am-muwazzaf"
+        "muwazzaf"
       ],
       [
         "bright / shining (m)",
@@ -1349,7 +1578,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "munir"
       ],
       [
-        "strong / tough (m)",
+        "strong (m)",
         "شديد",
         "shadid"
       ],
@@ -1366,27 +1595,27 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       [
         "star",
         "نجمة",
-        "an-najma"
+        "najma"
       ],
       [
-        "light / glow",
+        "glow",
         "نور",
-        "an-nur"
+        "nur"
       ],
       [
         "sun",
         "شمس",
-        "ash-shams"
+        "shams"
       ],
       [
-        "clear / pure (f)",
+        "pure (f)",
         "صافية",
         "safiya"
       ],
       [
         "moon",
         "قمر",
-        "al-qamar"
+        "qamar"
       ],
       [
         "pearl",
@@ -1409,7 +1638,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "sa'ida"
       ],
       [
-        "kind / good (f)",
+        "kind (f)",
         "طيبة",
         "tayyiba"
       ]
@@ -1432,13 +1661,13 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       ],
       [
         "this boy is very tall",
-        "هذا الولد عالي كثير",
-        "hadha al-walad ali kathir"
+        "هذا الولد طويل كثير",
+        "hadha al-walad tawil kathir"
       ],
       [
         "the sea today is very calm",
         "البحر اليوم هادي كثير",
-        "al-bahr al-yawm hadi kathir"
+        "al-bahr al-yom hadi kathir"
       ],
       [
         "your father is very generous",
@@ -1448,7 +1677,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       [
         "this employee is very loyal",
         "هذا الموظف أمين كثير",
-        "hadha am-muwazzaf amin kathir"
+        "hadha al-muwazzaf amin kathir"
       ],
       [
         "my son is very smart",
@@ -1461,9 +1690,9 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "hadha az-zalama tayyib kathir"
       ],
       [
-        "your voice is very bright",
-        "صوتك منير كثير",
-        "sawtak munir kathir"
+        "your room is very bright",
+        "غرفتك منيرة كثير",
+        "ghurfatak munira kathir"
       ],
       [
         "this coffee is very strong",
@@ -1483,17 +1712,12 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       [
         "the sun today is very hot",
         "الشمس اليوم سخنة كثير",
-        "ash-shams al-yawm sukhna kathir"
+        "ash-shams al-yom sukhna kathir"
       ],
       [
         "this star is very bright",
         "هذه النجمة منيرة كثير",
         "hadhihi an-najma munira kathir"
-      ],
-      [
-        "your room is very bright",
-        "غرفتك منيرة كثير",
-        "ghurfatak munira kathir"
       ],
       [
         "this rose is very beautiful",
@@ -1503,7 +1727,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       [
         "the sky today is very clear",
         "السماء اليوم صافية كثير",
-        "as-sama' al-yawm safiya kathir"
+        "as-sama al-yom safiya kathir"
       ],
       [
         "your sister is very happy",
@@ -1518,7 +1742,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       [
         "the moon today is very beautiful",
         "القمر اليوم جميل كثير",
-        "al-qamar al-yawm jamil kathir"
+        "al-qamar al-yom jamil kathir"
       ],
       [
         "this woman is very generous",
@@ -1560,244 +1784,254 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
     "words": [
       [
         "thank god",
-        "الحمد لله",
+        "الحَمْدُ لله",
         "al-hamdu lillah"
       ],
       [
         "god forbid",
-        "لا سمح الله",
+        "لَا سَمَحَ الله",
         "la samah allah"
       ],
       [
-        "to your health (cheers)",
-        "صحتين",
+        "to your health",
+        "صَحْتَيْن",
         "sahtayn"
       ],
       [
         "bon appetit",
-        "صحتين وعافية",
-        "sahtayn wa afiya"
+        "صَحْتَيْن وَعَافْيِة",
+        "sahtayn wa afye"
       ],
       [
-        "be careful",
-        "دير بالك",
+        "take care",
+        "دِير بَالَاك",
         "dir balak"
       ],
       [
         "you are welcome",
-        "عفواً",
+        "عَفْوًا",
         "afwan"
       ],
       [
-        "be so kind",
-        "لو سمحت",
+        "please",
+        "لَوْ سَمَحْت",
         "law samaht"
       ],
       [
         "nice to meet you",
-        "فرصة سعيدة",
+        "فُرْصَة سَعِيدَة",
         "fursa sa'ida"
       ],
       [
-        "unfortunately i can't",
-        "للأسف ما بقدر",
-        "lil-asaf ma baqdar"
+        "unfortunately",
+        "لِلْأَسَف",
+        "lil-asaf"
       ],
       [
-        "i wish you luck",
-        "بتمنى لك التوفيق",
-        "bitmanna lak at-tawfiq"
+        "luck",
+        "تَوْفِيق",
+        "tawfiq"
       ],
       [
         "welcome",
-        "أهلاً وسهلاً",
+        "أَهْلًا وَسَهْلًا",
         "ahlan wa sahlan"
       ],
       [
-        "make yourself at home",
-        "البيت بيتك",
-        "al-bayt baytak"
-      ],
-      [
-        "have a safe trip",
-        "تروح وترجع بالسلامة",
-        "truh wa tirja' bis-salama"
-      ],
-      [
-        "no need to worry",
-        "ما في داعي للقلق",
-        "ma fi da'i lil-qalaq"
-      ],
-      [
-        "here you go",
-        "تفضل",
-        "tafaddal"
-      ],
-      [
-        "it's my pleasure",
-        "على راسي",
+        "with pleasure",
+        "عَلَى رَاسِي",
         "ala rasi"
       ],
       [
-        "it doesn't matter",
-        "مش مشكلة",
-        "mish mushkila"
+        "thank you",
+        "تِسْلَم",
+        "tislam"
+      ],
+      [
+        "safe (m)",
+        "سَالِم",
+        "salim"
+      ],
+      [
+        "worry",
+        "قَلَق",
+        "qalaq"
+      ],
+      [
+        "here you go (m)",
+        "تَفَضَّل",
+        "tafaddal"
+      ],
+      [
+        "never mind",
+        "مَعْلِش",
+        "ma'lesh"
+      ],
+      [
+        "problem",
+        "مُشْكِلِة",
+        "mushkile"
       ],
       [
         "congratulations",
-        "مبروك",
+        "مَبْرُوك",
         "mabruk"
       ],
       [
-        "thanks (reply to mabruk)",
-        "الله يبارك فيك",
-        "allah yibarik fik"
+        "blessed (m)",
+        "مُبَارَك",
+        "mubarak"
       ],
       [
-        "as luck would have it",
-        "مثل الحظ السيء",
-        "mitl al-hazz as-sayyi"
+        "bad (m)",
+        "سَيِّء",
+        "sayyi"
       ],
       [
-        "fortunately",
-        "من حسن الحظ",
-        "min husn al-hazz"
+        "good",
+        "تَمَام",
+        "tamam"
       ],
       [
-        "by no means / no way",
-        "مستحيل",
+        "impossible (m)",
+        "مُسْتَحِيل",
         "mustahil"
       ],
       [
-        "definitely / for sure",
-        "أكيد",
+        "definite (m)",
+        "أَكِيد",
         "akid"
       ],
       [
-        "maybe / perhaps",
-        "ممكن",
+        "possible (m)",
+        "مُمْكِن",
         "mumkin"
+      ],
+      [
+        "honored (m)",
+        "مُحْتَرَم",
+        "muhtaram"
       ]
     ],
     "sentences": [
       [
-        "everything is good, thank god",
-        "كل شيء تمام الحمد لله",
+        "everything is good thank god",
+        "كُلّ شَيْء تَمَام الحَمْدُ لله",
         "kull shi tamam al-hamdu lillah"
       ],
       [
         "bon appetit to everyone",
-        "صحتين وعافية للجميع",
-        "sahtayn wa afiya lil-jami'"
+        "صَحْتَيْن وَعَافْيِة لِلْجَمِيع",
+        "sahtayn wa afye lil-jami"
       ],
       [
         "be careful on the road",
-        "دير بالك على الطريق",
-        "dir balak 'ala at-tariq"
+        "دِير بَالَاك عَلَى الطَّرِيق",
+        "dir balak ala t-tariq"
       ],
       [
-        "please, i want a menu",
-        "لو سمحت بدي المنيو",
-        "law samaht biddi al-minyu"
+        "please i want a menu",
+        "لَوْ سَمَحْت بَدِّي المِنْيُو",
+        "law samaht biddi l-minyu"
       ],
       [
-        "nice to meet you, my friend",
-        "فرصة سعيدة يا صاحبي",
+        "nice to meet you my friend",
+        "فُرْصَة سَعِيدَة يَا صَاحْبِي",
         "fursa sa'ida ya sahbi"
       ],
       [
-        "unfortunately i can't come today",
-        "للأسف ما بقدر أجي اليوم",
-        "lil-asaf ma baqdar aji al-yawm"
+        "unfortunately i can not come today",
+        "لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم",
+        "lil-asaf ma baqdar aji l-yom"
       ],
       [
         "i wish you luck in work",
-        "بتمنى لك التوفيق في الشغل",
-        "bitmanna lak at-tawfiq fish-shughl"
+        "بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل",
+        "batmanna lak at-tawfiq fi sh-shughl"
       ],
       [
-        "no, god forbid",
-        "لأ لا سمح الله",
+        "no god forbid",
+        "لَا لَا سَمَحَ الله",
         "la la samah allah"
       ],
       [
         "welcome to our house",
-        "أهلاً وسهلاً في بيتنا",
+        "أهْلًا وَسَهْلًا فِي بَيْتْنَا",
         "ahlan wa sahlan fi baytna"
       ],
       [
-        "make yourself at home, my friend",
-        "البيت بيتك يا صاحبي",
+        "make yourself at home my friend",
+        "البَيْت بَيْتَاك يَا صَاحْبِي",
         "al-bayt baytak ya sahbi"
       ],
       [
         "have a safe trip to russia",
-        "تروح وترجع بالسلامة لروسيا",
-        "truh wa tirja' bis-salama li-rusiya"
+        "تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا",
+        "truh wa tirja bis-salame la-rusiya"
       ],
       [
-        "don't worry about the money",
-        "ما في داعي للقلق عن المصاري",
-        "ma fi da'i lil-qalaq 'an al-masari"
+        "do not worry about the money",
+        "مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي",
+        "ma fi da'i lil-qalaq an al-masari"
       ],
       [
-        "please, sit here",
-        "تفضل اقعد هنا",
-        "tafaddal uq'ud huna"
+        "please sit here",
+        "تَفَضَّل اِقْعُد هُون",
+        "tafaddal iq'ud hon"
       ],
       [
-        "it's not a problem, never mind",
-        "مش مشكلة بسيطة",
-        "mish mushkila basita"
+        "it is not a problem never mind",
+        "مُش مُشْكِلِة مَعْلِش",
+        "mish mushkile ma'lesh"
       ],
       [
         "congratulations on the new job",
-        "مبروك على الشغل الجديد",
-        "mabruk 'ala ash-shughl al-jadid"
+        "مَبْرُوك عَلَى الشُّغْل جْـدِيد",
+        "mabruk ala sh-shughl j-did"
       ],
       [
-        "it's my pleasure, no need to thank",
-        "على راسي ولا يهمك",
-        "ala rasi wala yihimmak"
+        "it is my pleasure no need to thank",
+        "عَلَى رَاسِي وَلَا يْهِمَّاك",
+        "ala rasi wala yhimmak"
       ],
       [
-        "as luck would have it, the bus is late",
-        "مثل الحظ السيء الباص متأخر",
-        "mitl al-hazz as-sayyi al-bas mut'akhir"
+        "as luck would have it the bus is late",
+        "مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر",
+        "mitl al-hazz as-sayyi l-bas mut'akhkhir"
       ],
       [
-        "fortunately, the passport is here",
-        "من حسن الحظ الجواز هنا",
-        "min husn al-hazz al-jawaz huna"
+        "fortunately the passport is here",
+        "مِن حُسْن الحَظّ الجَوَاز هُون",
+        "min husn al-hazz al-jawaz hon"
       ],
       [
-        "no way, this is impossible",
-        "مستحيل هذا مش ممكن",
-        "mustahil hadha mish mumkin"
+        "no way this is impossible",
+        "مُسْتَحِيل هَادَا مُش مُمْكِن",
+        "mustahil hada mish mumkin"
       ],
       [
         "i will definitely come today",
-        "أكيد بجي اليوم",
-        "akid baji al-yawm"
+        "أَكِيد بَجِي اليَوْم",
+        "akid baji l-yom"
       ],
       [
         "maybe the coffee is hot",
-        "ممكن القهوة سخنة",
-        "mumkin al-qahwa sukhna"
+        "مُمْكِن القَهْوِة سُخْنِة",
+        "mumkin al-qahwe sukhne"
       ],
       [
-        "definitely, the food is tasty",
-        "أكيد الأكل زاكي",
+        "definitely the food is tasty",
+        "أَكِيد الأَكْل زَاكِي",
         "akid al-akl zaki"
       ],
       [
-        "as luck would have it, the city is far",
-        "مثل الحظ السيء البلد بعيدة",
-        "mitl al-hazz as-sayyi al-balad ba'ida"
+        "as luck would have it the city is far",
+        "مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة",
+        "mitl al-hazz as-sayyi l-balad ba'ide"
       ],
       [
-        "fortunately, the hotel is clear",
-        "من حسن الحظ الفندق نظيف",
+        "fortunately the hotel is clean",
+        "مِن حُسْن الحَظّ الفُنْدُق نَظِيف",
         "min husn al-hazz al-funduq nazif"
       ]
     ]

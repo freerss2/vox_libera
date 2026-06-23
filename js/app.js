@@ -1717,7 +1717,7 @@ let wordStats = getStats(true);
 // @param initial: whether to perform initial cleanup of stats (remove entries not in current course data)
 // @return: object with word statistics
 function getStats(initial = false) {
-  let stats = JSON.parse(localStorage.getItem('wordStats') || '{}');
+  let stats = settings.getWordStats() || {};
   if (initial) {
     // collect all words and sentences for topicId == "all"
     console.log('Initial state of stats: ' + Object.keys(stats).length);
@@ -1740,7 +1740,7 @@ function getStats(initial = false) {
 
 // Stats manipulation: save words stats
 function setStats(stats) {
-  localStorage.setItem('wordStats', JSON.stringify(stats));
+    settings.setWordStats(stats);
 }
 
 // Topics state manipulation (read/save)
@@ -2221,7 +2221,8 @@ function unpackProgressData(data) {
     settings.setHideWellLearned(  course_data["hide_well_learned"]);
     settings.setShowTranscription(course_data["show_transcription"]);
     settings.setTopicsCompletion( course_data["topics_completion"]);
-    localStorage.setItem('wordStats', JSON.stringify(course_data["success_stats"]));
+    wordStats = course_data["success_stats"];
+    settings.setWordStats(wordStats);
     settings.markAsChanged();
     settings.enableChangedFlag()
 }
