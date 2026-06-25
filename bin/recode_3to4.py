@@ -7,7 +7,6 @@ Input data structure (JSON)
 """
 import json
 import re
-#import pysnooper
 
 input_file = 'lessons_3w.json'
 output_file = 'lessons_4w.js'
@@ -23,7 +22,6 @@ def quot_escape(line):
     """
     return re.sub("\n", '<BR>', re.sub('"', r'\"', line))
 
-#@pysnooper.snoop('pysnooper.log', watch=('result'))
 def escape_backtics(text):
     """
     Escape quotes inside backticks block

@@ -38,10 +38,10 @@ with open(input_file, 'r', encoding='utf-8') as f:
 print(f"1.1. Got {len(content)} bytes")
 
 # 2. Get all src inside <script>
-internal_scripts = re.findall(r'<script>(.*?)</script>', content, re.DOTALL)
+internal_scripts = re.findall(r'<script>(.*?)</script[^>]*>', content, re.DOTALL)
 print(f"2.1. Found {len(internal_scripts)} internal scripts")
 
-scripts = re.findall(r'<script src="([^"?<>]*)\??.*"[^<>]*></script>', content)
+scripts = re.findall(r'<script src="([^"?<>]*)\??.*"[^<>]*></script[^>]*>', content)
 print(f"2.2. Found {len(scripts)} scripts")
 
 html_calls = re.findall(r'on\w+="(\w+)\(', content)
