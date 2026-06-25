@@ -39,10 +39,10 @@ with open(input_file, 'r', encoding='utf-8') as f:
 print(f"1.1. Got {len(content)} bytes")
 
 print(f"2. Collect all JS code used by this file")
-inline_code = re.findall(r'<script>(.*?)</script[^>]*>', content, re.DOTALL)
+inline_code = re.findall(r'<script\b[^>]*>(.*?)</script[^>]*>', content, re.DOTALL | re.IGNORECASE)
 print(f"2.1. Found {len(inline_code)} inline fragments")
 
-scripts = re.findall(r'<script src="([^"?<>]*)\??.*"[^<>]*></script[^>]*>', content)
+scripts = re.findall(r'<script src="([^"?<>]*)\??.*"[^<>]*></script[^>]*>', content, re.IGNORECASE)
 print(f"2.2. Found {len(scripts)} script references")
 
 html_calls = re.findall(r'on\w+="(\w+)\(', content)

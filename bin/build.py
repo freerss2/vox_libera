@@ -35,9 +35,11 @@ def get_relevant_file_checksums(courses):
     # Template file
     checksums[TEMPLATE_PATH] = calculate_md5(TEMPLATE_PATH)
 
-    # Common JS file
-    common_js_path = os.path.join("js", "common.js")
-    checksums[common_js_path] = calculate_md5(common_js_path)
+    # Common JS files
+    common_files = ['common.js', 'i18n.js', 'settings.js', 'locales.js']
+    for common_file in common_files:
+        common_file_path = os.path.join("js", common_file)
+        checksums[common_file_path] = calculate_md5(common_file_path)
 
     # Course-specific files
     for course_id, web_scripts in courses.items():
@@ -126,16 +128,19 @@ def get_and_increment_version():
     files_changed = False
     if not stored_checksums:
         # If no previous checksums, consider it a change to establish baseline
+        print("⚠️ No previous checksums found. Establishing baseline.")
         files_changed = True
     else:
         for filepath, current_checksum in current_file_checksums.items():
             if stored_checksums.get(filepath) != current_checksum:
+                print(f"⚠️ Detected change in file: {filepath}")
                 files_changed = True
                 break
         # Also check if any files were removed from the relevant list
         if not files_changed:
             for filepath in stored_checksums:
                 if filepath not in current_file_checksums:
+                    print(f"⚠️ Detected removed file: {filepath}")
                     files_changed = True
                     break
 
@@ -158,9 +163,6 @@ def get_and_increment_version():
     else:
         print(f"☑️ No relevant file changes detected. Keeping version: {current_version}")
         return current_version
-
-# Get a value for next human-readable version
-VERSION = get_and_increment_version()
 
 def update_app_version(version):
     """
@@ -194,12 +196,15 @@ def build():
     """
     Main build function to generate course HTML files
     """
+    # Get a value for next human-readable version
+    app_version = get_and_increment_version()
+
     if not os.path.exists(TEMPLATE_PATH):
         print(f"❌  Error: Template {TEMPLATE_PATH} not found!")
         return
 
     # Update app_version in js/common.js
-    update_app_version(VERSION)
+    update_app_version(app_version)
 
     # Read the template
     with open(TEMPLATE_PATH, 'r', encoding='utf-8') as f:
@@ -216,20 +221,20 @@ def build():
     for course_id, web_scripts in courses.items():
         scripts_html = ""
         for script_path in web_scripts:
-            scripts_html += f'    <script src="{script_path}?ver={VERSION}" defer></script>\n'
+            scripts_html += f'    <script src="{script_path}?ver={app_version}" defer></script>\n'
 
         # Replace placeholder with generated content
         final_html = template.replace(PLACEHOLDER, scripts_html.strip())
 
         # Globally replace VERSION template
-        final_html = final_html.replace("{{VERSION}}", VERSION)
+        final_html = final_html.replace("{{VERSION}}", app_version)
 
         # Save the result in CWD
         output_filename = f'course.{course_id}.html'
         with open(output_filename, 'w', encoding='utf-8') as f:
             f.write(final_html)
 
-        print(f"✅  Successfully built course file: {output_filename} (v{VERSION})")
+        print(f"✅  Successfully built course file: {output_filename} (v{app_version})")
 
 if __name__ == "__main__":
     build()
