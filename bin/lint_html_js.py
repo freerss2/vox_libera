@@ -29,6 +29,7 @@ def run_cmd_with_tee(command, log_file):
     return last_line
 
 
+print(f"0. Started HTML JS linter")
 input_file = 'index.html' if len(sys.argv) <= 1 else sys.argv[1]
 # 1. Read HTML
 print(f"1. Parsing {input_file}")
@@ -37,12 +38,12 @@ with open(input_file, 'r', encoding='utf-8') as f:
 
 print(f"1.1. Got {len(content)} bytes")
 
-# 2. Get all src inside <script>
-internal_scripts = re.findall(r'<script>(.*?)</script[^>]*>', content, re.DOTALL)
-print(f"2.1. Found {len(internal_scripts)} internal scripts")
+print(f"2. Collect all JS code used by this file")
+inline_code = re.findall(r'<script>(.*?)</script[^>]*>', content, re.DOTALL)
+print(f"2.1. Found {len(inline_code)} inline fragments")
 
 scripts = re.findall(r'<script src="([^"?<>]*)\??.*"[^<>]*></script[^>]*>', content)
-print(f"2.2. Found {len(scripts)} scripts")
+print(f"2.2. Found {len(scripts)} script references")
 
 html_calls = re.findall(r'on\w+="(\w+)\(', content)
 unique_calls = list(set(html_calls))
@@ -54,11 +55,16 @@ print(f"3. Generating intermediate file {temp_file}")
 with open(temp_file, 'w', encoding='utf-8') as bundle:
 
     # print all sources as one source
-    for i, script_code in enumerate(internal_scripts):
-        bundle.write(f"\n/* --- Internal Script Block #{i+1} --- */\n")
+    print(f"3.1. Writing {len(inline_code)} inline fragments")
+    for i, script_code in enumerate(inline_code):
+        bundle.write(f"\n/* --- Inline Script Block #{i+1} --- */\n")
         bundle.write(script_code)
 
+    print(f"3.2. Writing {len(scripts)} scripts content")
     for script_path in scripts:
+        if script_path.startswith("http://") or script_path.startswith("https://"):
+            print(f"INFO: skipping include-script {script_path}")
+            continue
         if os.path.exists(script_path):
             # print(f"3.1. read {script_path}")
             bundle.write(f"\n/* --- Start of {script_path} --- */\n")
@@ -68,6 +74,7 @@ with open(temp_file, 'w', encoding='utf-8') as bundle:
             print(f"WARNING: missing {script_path}")
 
     # imitate function use
+    print(f"3.3. Writing {len(unique_calls)} dummy function calls")
     for func_name in unique_calls:
         bundle.write(f"window.{func_name} = {func_name}\n")
 
