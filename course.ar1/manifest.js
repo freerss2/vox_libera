@@ -1,7 +1,7 @@
 const manifest = {
   "id": "arabic_1",
   "author": "felixl@rambler.ru",
-  "version": "2.8.3",
+  "version": "2.9.0",
   "metadata": {
     "title": "Arabic Basics",
     "description": "First 300 words and building basic sentences",

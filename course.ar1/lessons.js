@@ -1,4 +1,3 @@
-const lesson_data_ver = '2.9.0';
 const topics = {
   "all": {
     "name": "All topics",

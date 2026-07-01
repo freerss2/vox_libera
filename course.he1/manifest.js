@@ -1,7 +1,7 @@
 const manifest = {
   "id": "hebrew_1",
   "author": "felixl@rambler.ru",
-  "version": "2.7.3",
+  "version": "2.8.1",
   "metadata": {
     "title": "Hebrew Basics",
     "description": "First 200 words and building basic sentences",

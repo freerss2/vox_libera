@@ -8,7 +8,7 @@
 // First, report the components versions
 console.log('app_version='+app_version);
 console.log('engine_ver='+engine_ver);
-console.log('lesson_data_ver='+lesson_data_ver);
+console.log('lesson_data_ver='+manifest['version']);
 
 // compare current URL and current course data with a matching record in "courses"
 // print error on mismatch(es)
@@ -42,7 +42,7 @@ document.getElementById('versions-info').innerHTML =
   '<table>' +
   '<tr><td>app version</td><td>&nbsp;v' + app_version + '</td></tr>' +
   '<tr><td>engine version</td><td>&nbsp;v' + engine_ver + '</td></tr>' +
-  '<tr><td>lesson data</td><td>&nbsp;v' + lesson_data_ver + '</td></tr></table>'
+  '<tr><td>lesson data</td><td>&nbsp;v' + manifest['version'] + '</td></tr></table>'
   ;
 
 const settings = new Settings(
