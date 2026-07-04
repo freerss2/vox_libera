@@ -6,7 +6,7 @@
 // common data
 
 const engine_ver = '2.9.3';
-const app_version = '3.2.8';
+const app_version = '3.2.14';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -267,6 +267,7 @@ function toggleBubble(event) {
                 }
                 bubble.classList.remove('bubble-minimized');
                 bubbleMinimized = false;
+                showHideBackgroundNavigationButtons(false);
             });
         } else {
             // Minimize bubble with animated ellipsis
@@ -280,8 +281,22 @@ function toggleBubble(event) {
             textTarget.innerHTML = '<div class="bubble-ellipsis"><span>•</span><span>•</span><span>•</span></div>';
             bubble.classList.add('bubble-minimized');
             bubbleMinimized = true;
+            showHideBackgroundNavigationButtons(true);
         }
     }
+}
+
+// show/hide navigation buttons on background when bubble is minimized/restored
+// @param show - boolean, true to show, false to hide
+function showHideBackgroundNavigationButtons(show) {
+    const navButtons = document.querySelectorAll('.on-screen-actions');
+    navButtons.forEach(btn => {
+        if (show) {
+            btn.classList.remove('hidden');
+        } else {
+            btn.classList.add('hidden');
+        }
+    });
 }
 
 function animateNarratorWake(callback) {
@@ -311,6 +326,7 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}, temporaryCo
 
     // Reset minimized state when new content is pushed
     bubbleMinimized = false;
+    showHideBackgroundNavigationButtons(false);
     bubble.classList.remove('bubble-minimized');
     bubbleStateStack = []; // Clear the stack when new content arrives
 

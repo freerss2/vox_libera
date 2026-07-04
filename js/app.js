@@ -545,7 +545,6 @@ function hideAllScreens() {
     screens.forEach(s => s.classList.add('hidden'));
     // hide summary elements
     hideNarrator();
-    document.getElementById('resultsModal').classList.add('hidden');
     // reset hint panel
     const hintPanelElm = document.getElementById('hint-panel');
     if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
@@ -1544,6 +1543,14 @@ function toggleMute() {
     if (isMuted && window.speechSynthesis) {
         window.speechSynthesis.cancel();
     }
+
+    // Close the top settings panel shortly after mute toggle
+    setTimeout(() => {
+        const panel = document.getElementById('top-settings-panel');
+        if (panel && !panel.classList.contains('hidden')) {
+            toggleTopSettings();
+        }
+    }, 400);
 }
 
 function speakTargetLangSlow(text) {
@@ -1574,6 +1581,14 @@ let currentZoom = 1.0;
 function changeZoom(delta) {
     currentZoom = Math.min(Math.max(0.8, currentZoom + delta), 1.8);
     document.documentElement.style.setProperty('--app-scale', currentZoom );
+}
+
+function toggleTopSettings() {
+    const panel = document.getElementById('top-settings-panel');
+    const button = document.getElementById('settingsToggleBtn');
+    if (!panel || !button) return;
+    const isHidden = panel.classList.toggle('hidden');
+    button.setAttribute('aria-expanded', String(!isHidden));
 }
 
 // Get list of input types for current screen

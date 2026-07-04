@@ -503,7 +503,7 @@ To start a course, select the course title and click on it.
       "quiz-giveup-button": "✘ Сдаюсь",
       "search_hint": "Поиск...",
       "errors-count": "Ошибки: ",
-      "go_forward": "ВПЕРЁД ",
+      "go_forward": "ДАЛЬШЕ ",
       "recap_title": "Итоги раунда",
       "hint-panel": "Транскрипция по клику",
       "confirm_request": "Вы уверены?",

@@ -140,6 +140,85 @@ body {
     padding: 0 10px;
 }
 
+.toolbar-btn {
+    border-width: 1px;
+    min-height: 1.8rem;
+    border-radius: 3px;
+    font-size: larger;
+}
+
+.toolbar-btn,
+.menu-btn-icon {
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 3px;
+    min-height: 1.8rem;
+    padding: 0 10px;
+    font-size: larger;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover,
+.menu-btn-icon:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #f8faff;
+}
+
+.settings-toggle-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.gear-btn {
+    position: relative;
+    z-index: 2;
+}
+
+.top-settings-panel {
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 5px);
+    display: flex;
+    gap: 5px;
+    padding: 7px;
+    padding-left: 12px;
+    background: rgb(255 255 255 / 98%);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    white-space: nowrap;
+    transform-origin: right center;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    z-index: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.top-settings-panel.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(10px) scale(0.95);
+}
+
+.top-settings-panel:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0) scale(1);
+}
+
+@media (width <= 420px) {
+    .top-settings-panel {
+        align-items: stretch;
+        right: 0;
+        min-width: 200px;
+    }
+}
+
 @media (width <= 360px) {
     #title { font-size: 0.9em; }
 }
@@ -1206,13 +1285,6 @@ input:checked + .slider::before { transform: translateX(24px); }
     cursor: pointer;
     color: var(--primary-color);
     padding: 0 5px;
-}
-
-.toolbar-btn {
-    border-width: 1px;
-    min-height: 1.8rem;
-    border-radius: 3px;
-    font-size: larger;
 }
 
 .course-selector {
