@@ -6,7 +6,7 @@
 // common data
 
 const engine_ver = '2.9.3';
-const app_version = '3.2.14';
+const app_version = '3.3.1';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},

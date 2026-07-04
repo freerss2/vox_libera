@@ -449,7 +449,7 @@ To start a course, select the course title and click on it.
       "show-trans-toggle": "Транскрипция",
       "import": "Импорт",
       "export": "Экспорт",
-      "reset-all-stat": " Сбросить статистику"
+      "reset-all-stat": " Сброс статистики"
     },
     "tip_of_the_day" : {
        "title": "Совет дня",

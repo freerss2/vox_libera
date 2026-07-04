@@ -1536,8 +1536,13 @@ let isMuted = false;
 
 function toggleMute() {
     isMuted = !isMuted;
-    const btn = document.getElementById('muteBtn');
-    btn.textContent = isMuted ? "‏🔇" : "‏🔊";
+    if (isMuted) {
+      document.getElementById('sound-on').classList.add('hidden');
+      document.getElementById('sound-off').classList.remove('hidden');
+    } else {
+      document.getElementById('sound-on').classList.remove('hidden');
+      document.getElementById('sound-off').classList.add('hidden');
+    }
 
     // Immediate cancel of current speech when selected "mute"
     if (isMuted && window.speechSynthesis) {

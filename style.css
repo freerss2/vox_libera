@@ -147,8 +147,18 @@ body {
     font-size: larger;
 }
 
+.text-with-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 .toolbar-btn,
 .menu-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #ccc;
     background: white;
     border-radius: 3px;
