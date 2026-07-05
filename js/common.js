@@ -128,6 +128,24 @@ function updateFavicon(langCode) {
     link.href = 'data:image/svg+xml;base64,' + btoa(binString);
 }
 
+const smiliesMap = {
+    '🌍': 'globe',
+    '👤': 'user',
+    '→': 'arrow-right',
+    '☁': 'online',
+    '💾': 'offline',
+    '❌': 'close',
+    '⏳': 'hourglass'
+};
+
+function replaceSmiliesWithImages(text) {
+   for (const [smiley, imageName] of Object.entries(smiliesMap)) {
+      const imageTag = `<img src="img/${imageName}.svg" class="smiley-icon">`;
+      text = text.replace(new RegExp(`\\${smiley}`, 'g'), imageTag);
+   }
+   return text;
+}
+
 const narratorNeutralEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'neutral-mouth'];
 const narratorSmileEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'smile-mouth'];
 

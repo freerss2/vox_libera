@@ -105,7 +105,7 @@ def find_courses():
 
     return courses
 
-def get_and_increment_version():
+def get_version(no_version_increment=False):
     """
     Read version from file, increment the lower (patch) version if relevant files changed and save back.
     @return: new version value (string)
@@ -118,31 +118,34 @@ def get_and_increment_version():
     # Find courses to determine relevant files for checksums
     courses = find_courses()
 
-    # Calculate current checksums
-    current_file_checksums = get_relevant_file_checksums(courses)
-
-    # Load previously stored checksums
-    stored_checksums = load_checksums()
-
     # Determine if any relevant files have changed
     files_changed = False
-    if not stored_checksums:
-        # If no previous checksums, consider it a change to establish baseline
-        print("⚠️ No previous checksums found. Establishing baseline.")
-        files_changed = True
+
+    if no_version_increment:
+        print("ℹ️  No version increment requested. Skipping checksum comparison.")
     else:
-        for filepath, current_checksum in current_file_checksums.items():
-            if stored_checksums.get(filepath) != current_checksum:
-                print(f"⚠️ Detected change in file: {filepath}")
-                files_changed = True
-                break
-        # Also check if any files were removed from the relevant list
-        if not files_changed:
-            for filepath in stored_checksums:
-                if filepath not in current_file_checksums:
-                    print(f"⚠️ Detected removed file: {filepath}")
+        # Calculate current checksums
+        current_file_checksums = get_relevant_file_checksums(courses)
+
+        # Load previously stored checksums
+        stored_checksums = load_checksums()
+        if not stored_checksums:
+            # If no previous checksums, consider it a change to establish baseline
+            print("⚠️ No previous checksums found. Establishing baseline.")
+            files_changed = True
+        else:
+            for filepath, current_checksum in current_file_checksums.items():
+                if stored_checksums.get(filepath) != current_checksum:
+                    print(f"⚠️ Detected change in file: {filepath}")
                     files_changed = True
                     break
+            # Also check if any files were removed from the relevant list
+            if not files_changed:
+                for filepath in stored_checksums:
+                    if filepath not in current_file_checksums:
+                        print(f"⚠️ Detected removed file: {filepath}")
+                        files_changed = True
+                        break
 
     if files_changed:
         try:
@@ -192,16 +195,28 @@ def update_app_version(version):
             f.write(updated_content)
         print(f"✅  Updated app_version in {common_js_path} to {version}")
 
-def build():
+def parse_arguments():
+    """
+    Parse command-line arguments.
+    @return: parsed arguments
+    """
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Build course HTML files from template and JS files.")
+    parser.add_argument('-n', '--no_version_increment', action='store_true', help="Do not increment version.")
+    return parser.parse_args()
+
+def build(args):
     """
     Main build function to generate course HTML files
+    @return: rc
     """
     # Get a value for next human-readable version
-    app_version = get_and_increment_version()
+    app_version = get_version(args.no_version_increment)
 
     if not os.path.exists(TEMPLATE_PATH):
         print(f"❌  Error: Template {TEMPLATE_PATH} not found!")
-        return
+        return 1
 
     # Update app_version in js/common.js
     update_app_version(app_version)
@@ -215,7 +230,7 @@ def build():
 
     if not courses:
         print("⚠️ Dirs like 'course.<id>' not found.")
-        return
+        return 1
 
     # Generate HTML per course
     for course_id, web_scripts in courses.items():
@@ -235,6 +250,9 @@ def build():
             f.write(final_html)
 
         print(f"✅  Successfully built course file: {output_filename} (v{app_version})")
+    return 0
 
 if __name__ == "__main__":
-    build()
+    args = parse_arguments()
+    rc = build(args)
+    exit(rc)

@@ -141,3 +141,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
   updateFavicon('🌐');
 });
+
+document.replaceSmiliesWithImages = replaceSmiliesWithImages;

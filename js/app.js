@@ -197,7 +197,8 @@ function renderDrawer() {
 
     topicScreens.forEach((screen, index) => {
         const li = document.createElement('li');
-        const screen_name = i18n.t(`screens|${screen.id}`);
+        // replace UTF-8 icons with SVG
+        const screen_name = replaceSmiliesWithImages(i18n.t(`screens|${screen.id}`));
         li.className = 'exercise-node';
         li.setAttribute('data-id', screen.id);
         li.innerHTML = `
@@ -478,7 +479,8 @@ function getScreenType(screen_id) {
 // Build and show the screen title
 function showScreenTitle() {
     const record = getScreenRecord(settings.getCurrentScreenId());
-    const screenName = record ? i18n.t(`screens|${record.id}`) : "Screen";
+    // replace UTF-8 icons with SVG
+    const screenName = record ? replaceSmiliesWithImages(i18n.t(`screens|${record.id}`)) : "Screen";
 
     let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
     document.getElementById('title').innerHTML = `${topicTitle}<BR>${screenName}`;
@@ -541,8 +543,8 @@ function updateFinalProgress(screen_id) {
 
 function hideAllScreens() {
     // hide all screen-related DOM elements
-    const screens = document.querySelectorAll('.game-screen');
-    screens.forEach(s => s.classList.add('hidden'));
+    const screen_elements = document.querySelectorAll('.game-screen');
+    screen_elements.forEach(s => s.classList.add('hidden'));
     // hide summary elements
     hideNarrator();
     // reset hint panel

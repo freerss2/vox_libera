@@ -144,13 +144,14 @@ function updateCloudStatus(status) {
     if (!el) return;
 
     el.className = 'cloud-' + status;
-
+    var statusText = '';
     switch(status) {
-        case 'synced': el.innerText = '☁️ (ok)'; el.title = 'In sync with Google Drive'; break;
-        case 'loading': el.innerText = '⏳ (running...)'; el.title = 'Communicating...'; break;
-        case 'offline': el.innerText = '💾 (offline)'; el.title = 'Offline mode'; break;
-        case 'disconnected': el.innerText = '❌ (disabled)'; el.title = 'Sync is disabled'; break;
+        case 'synced': statusText = '☁️ (ok)'; el.title = 'In sync with Google Drive'; break;
+        case 'loading': statusText = '⏳ (running...)'; el.title = 'Communicating...'; break;
+        case 'offline': statusText = '💾 (offline)'; el.title = 'Offline mode'; break;
+        case 'disconnected': statusText = '❌ (disabled)'; el.title = 'Sync is disabled'; break;
     }
+    el.innerHTML = replaceSmiliesWithImages(statusText);
 
 }
 

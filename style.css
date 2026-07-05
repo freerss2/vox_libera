@@ -154,6 +154,13 @@ body {
     gap: 5px;
 }
 
+.smiley-icon {
+  height: 1em;  /* same as a text */
+  width: auto;  /* automatic adjustment */
+  vertical-align: -0.15em;
+  margin: 0 0.1em;
+}
+
 .toolbar-btn,
 .menu-btn-icon {
     display: inline-flex;

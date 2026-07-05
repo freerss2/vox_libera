@@ -79,3 +79,5 @@ window.addEventListener('DOMContentLoaded', async () => {
 */
   updateFavicon('🌐');
 });
+
+document.replaceSmiliesWithImages = replaceSmiliesWithImages;

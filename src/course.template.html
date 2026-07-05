@@ -17,7 +17,7 @@
           <button id="menu-btn" class="menu-btn-icon" onclick="toggleDrawer()">
             <img src="img/menu.svg" />  
           </button>
-          <span id="title">Vox-Libera 📖</span>
+          <span id="title" class="text-with-icon">Vox-Libera 📖</span>
           <div class="settings-toggle-wrapper">
             <button type="button" id="settingsToggleBtn" class="toolbar-btn gear-btn" onclick="toggleTopSettings()" aria-label="Settings" aria-expanded="false">
               <img src="img/settings.svg" />
@@ -58,10 +58,10 @@
 
                   <div class="top-actions">
                     <button class="icon-btn" onclick="window.location.reload()" data-i18n-title="menu|reload">
-                      <img src="img/reload.svg" />
+                      <img src="img/reload.svg" class="smiley-icon" />
                     </button>
                     <button class="icon-btn" onclick="" data-i18n-title="menu|close">
-                      <img src="img/close.svg" />
+                      <img src="img/close.svg" class="smiley-icon" />
                     </button>
                   </div>
                 </div>
@@ -84,17 +84,17 @@
                     </label>
                     <button class="btn-reset text-with-icon" onclick="confirmResetTopicStats()" data-i18n-title="menu|reset_topic_stats_hint">
                         <span data-i18n="menu|reset_topic_stats">Reset</span>
-                        <img src="img/delete.svg" />
+                        <img src="img/delete.svg" class="smiley-icon" />
                     </button>
                 </div>
                 <div class="nav-controls">
                     <button class="nav-arrow text-with-icon" onclick="prevTopic()">
-                      <img src="img/chevron-left.svg" />
+                      <img src="img/chevron-left.svg" class="smiley-icon" />
                       <span data-i18n="menu|prev_topic">Prev.</span>
                     </button>
                     <button class="nav-arrow text-with-icon" onclick="nextTopic()">
                       <span data-i18n="menu|next_topic">Next</span>
-                      <img src="img/chevron-right.svg" />
+                      <img src="img/chevron-right.svg" class="smiley-icon" />
                     </button>
                 </div>
             </div>
@@ -110,17 +110,21 @@
         <div class="auth-container setting-group">
             <div id="vox-auth-container" class="hidden vox-auth-container">
               <button id="google-login-btn" onclick="handleManualLoginClick()" class="btn-minimal google-login-btn">
-                  🔄 Sync with Google
+                  <img src="img/reload.svg" class="smiley-icon" />
+                  Sync with Google
               </button>
             </div>
             <div>
-              <label data-i18n="menu|sync_status">Sync status</label><span id="cloud-status" class="cloud-offline">💾 (offline)</span>
+              <label data-i18n="menu|sync_status">Sync status</label>
+              <span id="cloud-status" class="cloud-offline"><img src="img/offline.svg" class="smiley-icon" /> (offline)</span>
             </div>
 
             <div id="user-profile-block" class="hidden">
               <img id="user-avatar" src="" alt="Avatar">
               <span id="user-name"></span>
-              <button onclick="logoutGoogle()" class="nav-arrow">🚪 Logout</button>
+              <button onclick="logoutGoogle()" class="nav-arrow">
+                <img src="img/exit.svg" class="smiley-icon" /> Logout
+              </button>
             </div>
         </div>
 
