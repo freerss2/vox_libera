@@ -483,7 +483,8 @@ function showScreenTitle() {
     const screenName = record ? replaceSmiliesWithImages(i18n.t(`screens|${record.id}`)) : "Screen";
 
     let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
-    document.getElementById('title').innerHTML = `${topicTitle}<BR>${screenName}`;
+    document.getElementById('title').innerHTML =
+        `<div>${topicTitle}</div><div class="text-with-icon">${screenName}</div>`;
 }
 
 var finalProgress = 0;
