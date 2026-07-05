@@ -154,6 +154,10 @@ body {
     gap: 5px;
 }
 
+#user-profile-block {
+    padding-top: 8px;
+}
+
 .smiley-icon {
   height: 1em;  /* same as a text */
   width: auto;  /* automatic adjustment */
