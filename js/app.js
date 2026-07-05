@@ -1020,12 +1020,12 @@ function renderQuizGame(screen_id) {
         questionContainer.innerHTML = `
             <button class="audio-main-btn" onclick="speakTargetLang('${quizCorrectStr[1]}')">
                 <span style="font-size: 50px;">
-                  <img src="img/volume-2.svg" class="smiley-icon" />
+                  <svg class="emoji-icon"> <use href="#lucide-volume-2" /> </svg>
                 </span>
             </button>
             <button class="audio-main-btn" onclick="speakTargetLangSlow('${quizCorrectStr[1]}')">
                 <span style="font-size: 50px;">
-                  <img src="img/slow.svg" class="smiley-icon" />
+                  <svg class="emoji-icon"> <use href="#lucide-slow" /> </svg>
                 </span>
             </button>
             `;
@@ -1225,12 +1225,16 @@ function renderSent(screen_id) {
         questionHtml = `
             <button class="audio-main-btn" onclick="speakTargetLang('${gameSentence[1]}')">
                 <span style="font-size: 50px;">
-                  <img src="img/volume-2.svg" class="smiley-icon"/>
+                  <svg class="emoji-icon">
+                    <use href="#lucide-volume-2"/>
+                  </svg>
                 </span>
             </button>
             <button class="audio-main-btn" onclick="speakTargetLangSlow('${gameSentence[1]}')">
                 <span style="font-size: 50px;">
-                  <img src="img/slow.svg" class="smiley-icon"/>
+                  <svg class="emoji-icon">
+                    <use href="#lucide-slow"/>
+                  </svg>
                 </span>
             </button>`;
         mainHint = `[${gameSentence[2]}]`;

@@ -7,11 +7,86 @@ It also manages versioning by reading and updating a version.txt file, and ensur
 import os
 import re
 import hashlib
+import xml.etree.ElementTree as ET
 
 VERSION_FILE = "version.txt"
 CHECKSUMS_FILE = "checksums.txt"
 TEMPLATE_PATH = os.path.join("src", "course.template.html")
+LUCIDE_IMG_DIR = os.path.join("img", "lucide")
 PLACEHOLDER = "__VOX_LIBERA_SCRIPTS_PLACEHOLDER__"
+
+
+def generate_svg_sprite(source_svg_dir, id_prefix="lucide-"):
+    """
+    Generate a single SVG sprite sheet from individual SVG files in the specified directory.
+    Each SVG file is wrapped in a <symbol> tag with an id based on the filename (e.g., 'smile.svg' becomes 'lucide-smile').
+    The resulting sprite sheet is saved as an HTML snippet that can be embedded in web pages.
+    @param source_svg_dir: Directory containing individual SVG files.
+    @return: generted HTML content as a string, or None if an error occurred.
+    """
+    svg_files = [f for f in os.listdir(source_svg_dir) if f.endswith('.svg')]
+    
+    if not svg_files:
+        print(f"No SVG files found in the specified directory: {source_svg_dir}")
+        return ''
+
+    # Initialize the sprite sheet list
+    sprite_elements = []
+    
+    # Standard XML namespaces often found in SVGs
+    ET.register_namespace('', "http://www.w3.org/2000/svg")
+
+    rc = 0
+    for file_name in svg_files:
+        file_path = os.path.join(source_svg_dir, file_name)
+        icon_id = os.path.splitext(file_name)[0] # e.g., 'smile' from 'smile.svg'
+        
+        try:
+            # Parse the SVG file
+            tree = ET.parse(file_path)
+            root = tree.getroot()
+            
+            # Create a new <symbol> element
+            symbol = ET.Element('symbol')
+            symbol.set('id', f"{id_prefix}{icon_id}")
+            
+            # Inherit structural/styling attributes from the root <svg> if they exist
+            # This preserves Lucide's defaults (viewBox, fill, stroke, etc.)
+            attributes_to_keep = [
+                'viewBox', 'fill', 'stroke', 'stroke-width', 
+                'stroke-linecap', 'stroke-linejoin'
+            ]
+            for attr in attributes_to_keep:
+                if attr in root.attrib:
+                    symbol.set(attr, root.attrib[attr])
+            
+            # If viewBox wasn't found, ensure it defaults to Lucide standard
+            if 'viewBox' not in symbol.attrib:
+                symbol.set('viewBox', '0 0 24 24')
+
+            # Append all child paths, circles, lines, etc., into the symbol
+            for child in root:
+                symbol.append(child)
+                
+            # Convert the symbol element back into a beautifully formatted string
+            symbol_str = ET.tostring(symbol, encoding='utf-8').decode('utf-8')
+            sprite_elements.append(f"  {symbol_str}")
+            
+        except ET.ParseError:
+            print(f"Skipping {file_name}: Invalid XML format.")
+        except Exception as e:
+            print(f"Error processing {file_name}: {e}")
+            rc = 1
+
+    # Wrap all symbols into the hidden master SVG container
+    html_output = (
+        '<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">\n'
+        + "\n".join(sprite_elements)
+        + '\n</svg>'
+    )
+
+    return html_output
+
 
 def calculate_md5(filepath):
     """
@@ -206,6 +281,20 @@ def parse_arguments():
     parser.add_argument('-n', '--no_version_increment', action='store_true', help="Do not increment version.")
     return parser.parse_args()
 
+def get_embedded_html(file_name):
+    """
+    Read embedded HTML from file
+    @return: file content (string)
+    """
+    content = ''
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            content = f.read().strip()
+    if not content:
+        print(f"❌  Error: Failed to read embedded HTML {file_name}!")
+    return content
+
+
 def build(args):
     """
     Main build function to generate course HTML files
@@ -232,9 +321,15 @@ def build(args):
         print("⚠️ Dirs like 'course.<id>' not found.")
         return 1
 
+    # Get common embedded data
+    embedded_html = generate_svg_sprite(LUCIDE_IMG_DIR, id_prefix="lucide-")
+    if not embedded_html:
+        print(f"❌  Error: Failed to generate embedded HTML from {LUCIDE_IMG_DIR}!")
+        return 1
+
     # Generate HTML per course
     for course_id, web_scripts in courses.items():
-        scripts_html = ""
+        scripts_html = embedded_html + "\n"
         for script_path in web_scripts:
             scripts_html += f'    <script src="{script_path}?ver={app_version}" defer></script>\n'
 

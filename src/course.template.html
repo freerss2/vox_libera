@@ -15,23 +15,35 @@
     <nav class="top-nav">
         <div class="nav-row">
           <button id="menu-btn" class="menu-btn-icon" onclick="toggleDrawer()">
-            <img src="img/menu.svg" />  
+            <svg class="emoji-icon">
+              <use href="#lucide-menu"></use>
+            </svg>
           </button>
           <span id="title">Vox-Libera 📖</span>
           <div class="settings-toggle-wrapper">
             <button type="button" id="settingsToggleBtn" class="toolbar-btn gear-btn" onclick="toggleTopSettings()" aria-label="Settings" aria-expanded="false">
-              <img src="img/settings.svg" />
+              <svg class="emoji-icon">
+                <use href="#lucide-settings"></use>
+              </svg>
             </button>
             <div id="top-settings-panel" class="top-settings-panel hidden">
               <button type="button" class="toolbar-btn" id="muteBtn" onclick="toggleMute()">
-                <img id="sound-on" src="img/volume-2.svg" />
-                <img id="sound-off" src="img/volume-off.svg" class="hidden" />
+                <svg id="sound-on" class="emoji-icon">
+                  <use href="#lucide-volume-2"></use>
+                </svg>
+                <svg id="sound-off" class="emoji-icon hidden">
+                  <use href="#lucide-volume-off"></use>
+                </svg>
               </button>
               <button class="toolbar-btn" onclick="changeZoom(-0.1)">
-                <img src="img/text-smaller.svg" />
+                <svg class="emoji-icon">
+                  <use href="#lucide-text-smaller"></use>
+                </svg>
               </button>
               <button class="toolbar-btn" onclick="changeZoom(0.1)">
-                <img src="img/text-larger.svg" />
+                <svg class="emoji-icon">
+                  <use href="#lucide-text-larger"></use>
+                </svg>
               </button>
             </div>
           </div>
@@ -58,10 +70,14 @@
 
                   <div class="top-actions">
                     <button class="icon-btn" onclick="window.location.reload()" data-i18n-title="menu|reload">
-                      <img src="img/reload.svg" class="smiley-icon" />
+                      <svg class="emoji-icon">
+                        <use href="#lucide-reload"></use>
+                      </svg>
                     </button>
                     <button class="icon-btn" onclick="" data-i18n-title="menu|close">
-                      <img src="img/close.svg" class="smiley-icon" />
+                      <svg class="emoji-icon">
+                        <use href="#lucide-close"></use>
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -84,17 +100,23 @@
                     </label>
                     <button class="btn-reset text-with-icon" onclick="confirmResetTopicStats()" data-i18n-title="menu|reset_topic_stats_hint">
                         <span data-i18n="menu|reset_topic_stats">Reset</span>
-                        <img src="img/delete.svg" class="smiley-icon" />
+                        <svg class="emoji-icon">
+                          <use href="#lucide-delete"></use>
+                        </svg>
                     </button>
                 </div>
                 <div class="nav-controls">
                     <button class="nav-arrow text-with-icon" onclick="prevTopic()">
-                      <img src="img/chevron-left.svg" class="smiley-icon" />
+                      <svg class="emoji-icon">
+                        <use href="#lucide-chevron-left"></use>
+                      </svg>
                       <span data-i18n="menu|prev_topic">Prev.</span>
                     </button>
                     <button class="nav-arrow text-with-icon" onclick="nextTopic()">
                       <span data-i18n="menu|next_topic">Next</span>
-                      <img src="img/chevron-right.svg" class="smiley-icon" />
+                      <svg class="emoji-icon">
+                        <use href="#lucide-chevron-right"></use>
+                      </svg>
                     </button>
                 </div>
             </div>
@@ -103,27 +125,39 @@
         <div class="drawer-content" id="drawer-content">
             <ul id="exercisePath" class="exercise-path"></ul>
         <h3 class="text-with-icon">
-          <img src="img/settings.svg" />
+          <svg class="emoji-icon">
+            <use href="#lucide-settings"></use>
+          </svg>
           <span data-i18n="menu|settings">Settings</span>
         </h3>
 
         <div class="auth-container setting-group">
             <div id="vox-auth-container" class="hidden vox-auth-container">
               <button id="google-login-btn" onclick="handleManualLoginClick()" class="btn-minimal google-login-btn">
-                  <img src="img/reload.svg" class="smiley-icon" />
+                  <svg class="emoji-icon">
+                    <use href="#lucide-reload"></use>
+                  </svg>
                   Sync with Google
               </button>
             </div>
             <div>
               <label data-i18n="menu|sync_status">Sync status</label>
-              <span id="cloud-status" class="cloud-offline"><img src="img/offline.svg" class="smiley-icon" /> (offline)</span>
+              <span id="cloud-status" class="cloud-offline">
+                <svg class="emoji-icon">
+                  <use href="#lucide-offline"></use>
+                </svg>
+                (offline)
+              </span>
             </div>
 
             <div id="user-profile-block" class="text-with-icon hidden">
               <img id="user-avatar" src="" alt="Avatar">
               <span id="user-name"></span>
               <button onclick="logoutGoogle()" class="nav-arrow">
-                <img src="img/exit.svg" class="smiley-icon" /> Logout
+                <svg class="emoji-icon">
+                  <use href="#lucide-exit"></use>
+                </svg>
+                Logout
               </button>
             </div>
         </div>
@@ -167,18 +201,24 @@
         </div>
 
         <h3 class="text-with-icon">
-          <img src="img/statistics.svg" />
+          <svg class="emoji-icon">
+            <use href="#lucide-statistics"></use>
+          </svg>
           <span data-i18n="menu|statistics">Statistics</span>
         </h3>
 
         <div class="nav-controls">
             <button class="nav-arrow text-with-icon" onclick="exportUserData();">
-              <img src="img/download.svg" />
+              <svg class="emoji-icon">
+                <use href="#lucide-download"></use>
+              </svg>
               <span data-i18n="menu|export">Export</span>
             </button>
             <input type="file" id="file-import-input" class="hidden" accept=".json">
             <button class="nav-arrow text-with-icon" onclick="document.getElementById('file-import-input').click()">
-              <img src="img/upload.svg" />
+              <svg class="emoji-icon">
+                <use href="#lucide-upload"></use>
+              </svg>
               <span data-i18n="menu|import">Import</span>
             </button>
         </div>
@@ -186,14 +226,18 @@
         <div class="setting-item">
           <span class="action-btn hard" onclick="confirmResetStats();">
             <span class="text-with-icon">
-              <img src="img/delete.svg" /> 
+              <svg class="emoji-icon">
+                <use href="#lucide-delete"></use>
+              </svg>
               <span data-i18n="menu|reset-all-stat">Reset all statistics</span>
             </span>
           </span>
         </div>
 
         <h3 class="text-with-icon">
-          <img src="img/code.svg" />
+          <svg class="emoji-icon">
+            <use href="#lucide-code"></use>
+          </svg>
           <span data-i18n="menu|developer">For developers</span>
         </h3>
 
@@ -204,12 +248,16 @@
           </div>
 
           <a href="https://github.com/freerss2/vox_libera"  target="_blank" class="footer-link github-link text-with-icon">
-            <img src="img/book.svg" />
+            <svg class="emoji-icon">
+              <use href="#lucide-book"></use>
+            </svg>
             Help & Sources
           </a>
 
           <a href="https://freerss2.github.io/vox_libera/"  target="_blank" class="footer-link github-link text-with-icon">
-            <img src="img/github.svg" />
+            <svg class="emoji-icon">
+              <use href="#lucide-github"></use>
+            </svg>
             Online version
           </a>
         </div>
@@ -228,33 +276,66 @@
         <div id="firstTime" class="hidden">
             <div id="vox-auth-container" class="hidden vox-auth-container">
               <button id="google-login-btn" onclick="handleManualLoginClick()" class="google-login-btn">
-                  🔄 Sync with Google
+                <svg class="emoji-icon">
+                  <use href="#lucide-reload"></use>
+                </svg>
+                Sync with Google
               </button>
             </div>
             <div class="setting-group">
               <label>Interface language:</label>
               <select class="ui-lang-select" id="ui-lang-select"></select>
             </div>
-            <button class="action-btn easy" onclick="window.location='index.html'">❓  Help</button>
+            <button class="action-btn easy" onclick="window.location='index.html'">
+              <svg class="emoji-icon">
+                <use href="#lucide-book"></use>
+              </svg>
+              Help
+            </button>
         </div>
-        <button class="action-btn easy" onclick="loadNextScreen();">✔ <span data-i18n="main|go_forward">Ok<span></button>
+        <button class="action-btn easy" onclick="loadNextScreen();">
+          <span data-i18n="main|go_forward">Ok</span>
+          <svg class="emoji-icon">
+            <use href="#lucide-chevrons-right"></use>
+          </svg>
+        </button>
       </div>
 
       <div id="screen-dictionary" class="game-screen hidden">
         <span id="recap-title" class="hidden" >
           <div data-i18n="main|recap_title"></div>
           <div style="display:flex;" class="on-screen-actions">
-            <button class="action-btn easy row-btn full-width" onclick="renderCurrentScreen();">✔  <span data-i18n="main|sum-repeat">Repeat</span></button>
-            <button class="action-btn easy row-btn full-width" onclick="loadNextScreen();"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
+            <button class="action-btn easy row-btn full-width" onclick="renderCurrentScreen();">
+              <svg class="emoji-icon">
+                <use href="#lucide-check"></use>
+              </svg>
+              <span data-i18n="main|sum-repeat">Repeat</span>
+            </button>
+            <button class="action-btn easy row-btn full-width" onclick="loadNextScreen();">
+              <span data-i18n="main|go_forward">Forward</span>
+              <svg class="emoji-icon">
+                <use href="#lucide-chevrons-right"></use>
+              </svg>
+            </button>
           </div>
         </span>
 
         <div class="next-screen-btn">
-          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadNextScreen();"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
+          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadNextScreen();">
+            <span data-i18n="main|go_forward">Forward</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-chevrons-right"></use>
+            </svg>
+          </button>
         </div>
         <div id="dictionary-list"></div>
         <div class="next-screen-btn">
-          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadNextScreen();"><span data-i18n="main|go_forward">Forward</span> ▶▶</button>
+          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadNextScreen();">
+            <span data-i18n="main|go_forward">Forward</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-chevrons-right"></use>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -265,20 +346,20 @@
             <div class="flashcard-header">
                 <span class="mode-toggle-wrapper">
                   <button class="mode-toggle text-with-icon" onclick="toggleStudyMode()">
-                    &nbsp;<img src="img/globe.svg">
-                    &nbsp;<img src="img/arrows.svg">
-                    &nbsp;<img src="img/user.svg">
+                    &nbsp;<svg class="emoji-icon"><use href="#lucide-globe"></use></svg>
+                    &nbsp;<svg class="emoji-icon"><use href="#lucide-arrows"></use></svg>
+                    &nbsp;<svg class="emoji-icon"><use href="#lucide-user"></use></svg>
                     &nbsp;
                   </button>
                 </span>
                 <span id="card-counter">1 / ${flashcardsData.length}</span>
                 <div class="speed-controls text-with-icon">
                   <button class="mode-toggle" onclick="speakFlashcard()">
-                    <img src="img/fast.svg">
+                    <svg class="emoji-icon"><use href="#lucide-fast"></use></svg>
                   </button>
-                  <img src="img/volume-2.svg">
+                  <svg class="emoji-icon"><use href="#lucide-volume-2"></use></svg>
                   <button class="mode-toggle" onclick="speakFlashcard(1)">
-                    <img src="img/slow.svg">
+                    <svg class="emoji-icon"><use href="#lucide-slow"></use></svg>
                   </button>
                 </div>
             </div>
@@ -297,8 +378,18 @@
             </div>
 
             <div class="card-controls">
-                <button class="action-btn easy" data-i18n="main|card-learned" onclick="markAsLearned()">✔  Know it</button>
-                <button class="action-btn hard" data-i18n="main|card-repeat" onclick="changeCard(1)">✘ Repeat</button>
+                <button class="action-btn hard" onclick="changeCard(1)">
+                  <svg class="emoji-icon">
+                    <use href="#lucide-sad"></use>
+                  </svg>
+                  <span data-i18n="main|card-repeat">Repeat</span>
+                </button>
+                <button class="action-btn easy" onclick="markAsLearned()">
+                  <svg class="emoji-icon">
+                    <use href="#lucide-check"></use>
+                  </svg>
+                  <span data-i18n="main|card-learned">Know it</span>
+                </button>
             </div>
 
         </div>
@@ -322,7 +413,9 @@
 
         <div id="quiz-hint-panel" class="hint-panel transcription">Click to see</div>
         <button class="quiz-giveup-button text-with-icon" onclick="quizGiveup()">
-          <img src="img/sad.svg">
+          <svg class="emoji-icon">
+            <use href="#lucide-sad"></use>
+          </svg>
           <span data-i18n="main|quiz-giveup-button">Give up!</span>
         </button>
       </div>
@@ -336,11 +429,15 @@
 
         <div class="sent-action-bar">
           <button class="action-btn hard sent-btn-giveup text-with-icon" onclick="giveupSent()">
-            <img src="img/sad.svg" />
+            <svg class="emoji-icon">
+              <use href="#lucide-sad"></use>
+            </svg>
             <span data-i18n="main|sent-giveup-btn"> Give up </span>
           </button>
           <button class="action-btn easy sent-btn-check text-with-icon" onclick="checkSent()">
-            <img src="img/check.svg" />
+            <svg class="emoji-icon">
+              <use href="#lucide-check"></use>
+            </svg>
             <span data-i18n="main|check"> Check </span>
           </button>
         </div>

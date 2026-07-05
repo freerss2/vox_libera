@@ -129,18 +129,20 @@ function updateFavicon(langCode) {
 }
 
 const smiliesMap = {
-    '🌍': 'globe',
-    '👤': 'user',
-    '→': 'arrow-right',
-    '☁': 'online',
-    '💾': 'offline',
-    '❌': 'close',
-    '⏳': 'hourglass'
+    '🌍': 'lucide-globe',
+    '👤': 'lucide-user',
+    '→': 'lucide-arrow-right',
+    '☁': 'lucide-online',
+    '💾': 'lucide-offline',
+    '❌': 'lucide-close',
+    '⏳': 'lucide-hourglass'
 };
 
 function replaceSmiliesWithImages(text) {
    for (const [smiley, imageName] of Object.entries(smiliesMap)) {
-      const imageTag = `<img src="img/${imageName}.svg" class="smiley-icon">`;
+      const imageTag = `<svg class="emoji-icon">
+                            <use href="#${imageName}"></use>
+                        </svg>`;
       text = text.replace(new RegExp(`\\${smiley}`, 'g'), imageTag);
    }
    return text;

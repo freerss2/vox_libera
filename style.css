@@ -158,9 +158,9 @@ body {
     padding-top: 8px;
 }
 
-.smiley-icon {
+.emoji-icon {
   height: 1em;  /* same as a text */
-  width: auto;  /* automatic adjustment */
+  width: 1em;
   vertical-align: -0.15em;
   margin: 0 0.1em;
 }
@@ -337,6 +337,7 @@ body {
   cursor: pointer;
   color: var(--border-color);
   margin: 5px;
+  padding: 0.7rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;}
@@ -350,6 +351,10 @@ body {
 .card-controls {
     display: flex;
     justify-content: center;
+    gap: 12px;
+    padding: 16px 0;
+    align-items: center;
+    width: 100%;
 }
 
 .nav-btn {
@@ -376,7 +381,7 @@ body {
 
 .action-btn {
     cursor: pointer;
-    margin: 0 10px 10px 0;
+    margin: 0;
     padding: 15px 25px;
     border-radius: 30px;
     border: solid 3px;
@@ -392,6 +397,11 @@ body {
 .action-btn.hard {
     border-color: var(--error-color);
     color: var(--error-color);
+}
+
+.card-controls .action-btn {
+  flex: 0 0 auto;
+  min-width: 140px;
 }
 
 .row-btn {
@@ -684,6 +694,7 @@ body {
     border-radius: 15px;
     padding: 15px 30px;
     margin-bottom: 20px;
+    margin-top: 20px;
     font-size: 1.8rem;
     min-height: 80px;	
     display: flex;
