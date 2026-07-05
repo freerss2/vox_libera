@@ -335,11 +335,8 @@ body {
 
 .mode-toggle {
   cursor: pointer;
-  border: 3px solid var(--border-color);
   color: var(--border-color);
-  border-radius: 5px;
   margin: 5px;
-  font-size: 1.2rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;}

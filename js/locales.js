@@ -235,7 +235,7 @@ To start a course, select the course title and click on it.
       "flashcards_completed": "You learned all cards in this set.",
       "card-learned": "✔  Know it",
       "card-repeat": "✘ Repeat",
-      "quiz-giveup-button": "✘ Give up",
+      "quiz-giveup-button": "Give up",
       "search_hint": "Search...",
       "errors-count": "Errors: ",
       "go_forward": "GO FORWARD ",
@@ -248,8 +248,8 @@ To start a course, select the course title and click on it.
       "confirm": "✔ Confirm",
       "sum-repeat": " REPEAT",
       "sum-next": "NEXT ",
-      "sent-giveup-btn": "✘ Give up",
-      "check": " ✔  Check "
+      "sent-giveup-btn": "Give up",
+      "check": " Check "
     }
   },
   "ru": {
@@ -500,7 +500,7 @@ To start a course, select the course title and click on it.
       "flashcards_completed": "Все карточки в этом наборе изучены.",
       "card-learned": "✔  Знаю",
       "card-repeat": "✘ Повторить",
-      "quiz-giveup-button": "✘ Сдаюсь",
+      "quiz-giveup-button": "Сдаюсь",
       "search_hint": "Поиск...",
       "errors-count": "Ошибки: ",
       "go_forward": "ДАЛЬШЕ ",
@@ -513,8 +513,8 @@ To start a course, select the course title and click on it.
       "confirm": "✔ Подтвердить",
       "sum-repeat": " ПОВТОРИТЬ",
       "sum-next": "ДАЛЬШЕ ",
-      "sent-giveup-btn": "✘ Сдаюсь",
-      "check": " ✔  Проверить "
+      "sent-giveup-btn": "Сдаюсь",
+      "check": " Проверить "
     }
   }
 };

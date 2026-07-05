@@ -1019,10 +1019,14 @@ function renderQuizGame(screen_id) {
     } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
             <button class="audio-main-btn" onclick="speakTargetLang('${quizCorrectStr[1]}')">
-                <span style="font-size: 50px;">🔊</span>
+                <span style="font-size: 50px;">
+                  <img src="img/volume-2.svg" class="smiley-icon" />
+                </span>
             </button>
             <button class="audio-main-btn" onclick="speakTargetLangSlow('${quizCorrectStr[1]}')">
-                <span style="font-size: 50px;">🐌</span>
+                <span style="font-size: 50px;">
+                  <img src="img/slow.svg" class="smiley-icon" />
+                </span>
             </button>
             `;
         mainHint = `[${quizCorrectStr[2]}]`;
@@ -1220,10 +1224,14 @@ function renderSent(screen_id) {
     } else {
         questionHtml = `
             <button class="audio-main-btn" onclick="speakTargetLang('${gameSentence[1]}')">
-                <span style="font-size: 50px;">🔊</span>
+                <span style="font-size: 50px;">
+                  <img src="img/volume-2.svg" class="smiley-icon"/>
+                </span>
             </button>
             <button class="audio-main-btn" onclick="speakTargetLangSlow('${gameSentence[1]}')">
-                <span style="font-size: 50px;">🐌</span>
+                <span style="font-size: 50px;">
+                  <img src="img/slow.svg" class="smiley-icon"/>
+                </span>
             </button>`;
         mainHint = `[${gameSentence[2]}]`;
         resultContainer.classList.add('user-text');
