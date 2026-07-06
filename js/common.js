@@ -6,7 +6,7 @@
 // common data
 
 const engine_ver = '2.9.3';
-const app_version = '3.3.7';
+const app_version = '3.3.8';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -150,6 +150,15 @@ function replaceSmiliesWithImages(text) {
 
 const narratorNeutralEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'neutral-mouth'];
 const narratorSmileEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'smile-mouth'];
+const narratorClosedEyesEmotion = [
+    'left-eyebrow',
+    'right-eyebrow',
+    'neutral-mouth',
+    'left-lower-eyelid',
+    'left-upper-eyelid',
+    'right-lower-eyelid',
+    'right-upper-eyelid'
+];
 
 // usage: initNarrator(JS_OBJECT, 'narrator-wrapper');
 async function initNarrator(imageCode, containerId) {
@@ -273,6 +282,7 @@ function toggleBubble(event) {
     } else {
         // If bubble is visible, check if it's already minimized
         if (bubbleMinimized) {
+            setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
             // Restore original bubble after narrator wake animation
             animateNarratorWake(() => {
                 // Pop state from stack and restore with proper context
@@ -302,6 +312,7 @@ function toggleBubble(event) {
             bubble.classList.add('bubble-minimized');
             bubbleMinimized = true;
             showHideBackgroundNavigationButtons(true);
+            setNarratorEmotion('narrator-svg', narratorClosedEyesEmotion);
         }
     }
 }
@@ -343,6 +354,7 @@ function updateCharacterBubble(newHint, markdownConf={}, actions={}, temporaryCo
 
     // Hide before update
     bubble.classList.add('hidden');
+    setNarratorEmotion('narrator-svg', narratorNeutralEmotion);
 
     // Reset minimized state when new content is pushed
     bubbleMinimized = false;

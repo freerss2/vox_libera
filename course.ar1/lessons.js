@@ -2525,6 +2525,44 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
 ##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
 ##story-line## '''نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.'''##story-translation## Yes, and take this pill please. Everything is okay.##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
 `,
+    "pairs_set": [
+      {
+        "title": "Adverbs",
+        "words": [
+          [ "tomorrow", "بكرة", "bukra" ],
+          [ "yesterday", "أمس", "'ams" ],
+          [ "today", "اليوم", "al-yom" ],
+          [ "soon", "قريباً", "qariban"],
+          [ "usually", "عادةً", "'adan" ],
+          [ "away", "بعيد", "ba'id" ],
+          [ "near", "قريب", "qarib" ],
+          [ "early", "بكير", "bakir" ],
+          [ "here", "هنا", "huna" ],
+          [ "next to", "جنب", "janb" ],
+          [ "late", "متأخر", "muta'akhkhir" ],
+          [ "free", "فاضي", "fadi" ],
+          [ "reserved", "محجوز", "mahjuz" ],
+          [ "unfortunately", "لِلْأَسَف", "lil-asaf" ],
+          [ "luck", "تَوْفِيق", "tawfiq" ],
+          [ "impossible (m)", "مُسْتَحِيل", "mustahil" ],
+          [ "definite (m)", "أَكِيد", "akid" ],
+          [ "possible (m)", "مُمْكِن", "mumkin" ],
+          [ "correctly", "صح", "sah" ],
+          [ "sometimes", "مرات", "marrat" ],
+          [ "agreed", "اتفقنا", "ittafaqna" ],
+          [ "straight", "دغري", "dughri" ],
+          [ "backwards", "لورا", "la-wara" ],
+          [ "always", "دائماً", "da'iman" ],
+          [ "only", "فقط", "faqat" ],
+          [ "a little", "شوي", "shway" ],
+          [ "also", "كمان", "kaman" ],
+          [ "must", "لازم", "lazim" ],
+          [ "need", "بدي", "biddi" ],
+          [ "but", "لكن", "lakin" ],
+          [ "now", "الآن", "al-an"] 
+        ]
+      }
+    ],
     "words": [
       [
         "it hurts",

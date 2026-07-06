@@ -152,6 +152,7 @@ const SCREENS = [
   { id: 'story',           shared: 0, exercise: 0, screen_type: 'text',         name: 'Story',             inputs: ['story'] },
   { id: 'matching-abc',    shared: 0, exercise: 1, screen_type: 'matching',     name: 'Matching ABC',      inputs: ['abc'] },
   { id: 'matching',        shared: 0, exercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
+  { id: 'pairs_set',       shared: 0, exercise: 1, screen_type: 'matching',     name: 'Pairs set',         inputs: ['pairs_set'] },
   { id: 'quiz_u2t',        shared: 0, exercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
   { id: 'quiz_t2u',        shared: 0, exercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
   { id: 'quiz_audio',      shared: 0, exercise: 1, screen_type: 'quiz_audio',   name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
@@ -478,11 +479,26 @@ function getScreenType(screen_id) {
 
 // Build and show the screen title
 function showScreenTitle() {
-    const record = getScreenRecord(settings.getCurrentScreenId());
-    // replace UTF-8 icons with SVG
-    const screenName = record ? replaceSmiliesWithImages(i18n.t(`screens|${record.id}`)) : "Screen";
+    const currentScreenId = settings.getCurrentScreenId();
+    const currentTopic = topics[settings.getCurrentTopic()];
+    let screenName = "Screen";
 
-    let topicTitle = i18n_ct(topics[settings.getCurrentTopic()].name);
+    if (currentScreenId === 'pairs_set' && currentTopic && currentTopic.pairs_set) {
+        const pairsSet = Array.isArray(currentTopic.pairs_set)
+            ? (currentTopic.pairs_set.find(entry => entry && entry.title) || currentTopic.pairs_set[0])
+            : currentTopic.pairs_set;
+        if (pairsSet && typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
+            screenName = i18n_ct(pairsSet.title);
+        }
+    }
+
+    if (screenName === 'Screen') {
+        const record = getScreenRecord(currentScreenId);
+        // replace UTF-8 icons with SVG
+        screenName = record ? replaceSmiliesWithImages(i18n.t(`screens|${record.id}`)) : "Screen";
+    }
+
+    let topicTitle = i18n_ct(currentTopic.name);
     document.getElementById('title').innerHTML =
         `<div>${topicTitle}</div><div class="text-with-icon">${screenName}</div>`;
 }
@@ -780,8 +796,22 @@ function renderMatchingGame() {
     updateProgress(0);
 
     // Get all data related to topic
-    const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
-    const currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
+    let currentData = [];
+    const currentScreenId = settings.getCurrentScreenId();
+    if (currentScreenId === 'pairs_set') {
+        const topicData = topics[settings.getCurrentTopic()].pairs_set;
+        const pairsSet = Array.isArray(topicData)
+            ? (topicData.find(entry => entry && Array.isArray(entry.words)) || topicData[0])
+            : topicData;
+        if (pairsSet && Array.isArray(pairsSet.words)) {
+            currentData = pairsSet.words
+                .map(item => decodeLearnItem(item))
+                .filter(item => item && item[0] && item[1]);
+        }
+    } else {
+        const inputTypes = getGameInputTypes(currentScreenId);
+        currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
+    }
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
@@ -939,6 +969,7 @@ function tipOfTheDay() {
   const allStrs = getTopicData(inputTypes, true, true);
   // the strings are already filtered by success rate and shuffled
   const hintData = allStrs[0];
+  if (!hintData) return '';
   const transl = i18n.t('tip_of_the_day|remember_transl');
   return `💡${transl}💡<BR>«${hintData[0]}»<BR>${hintData[1]}<BR>[${hintData[2]}]`;
 }

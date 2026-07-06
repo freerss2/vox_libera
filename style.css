@@ -909,6 +909,10 @@ body {
     font-size: x-large;
 }
 
+.next-screen-btn {
+    margin-bottom: 8px;
+}
+
 #current-topic-name {
     margin: 0;
     font-size: 1.1rem;
