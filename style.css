@@ -399,6 +399,16 @@ body {
     color: var(--error-color);
 }
 
+.btn-reset {
+    border-color: var(--error-color);
+    color: var(--error-color);
+    border-width: 1px;
+    border-style: solid;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 .card-controls .action-btn {
   flex: 0 0 auto;
   min-width: 140px;
@@ -670,16 +680,24 @@ body {
     border-width: thick;
 }
 
+.two-button-bar {
+    display: flex;
+    gap: 4%;        /* between buttons */
+}
+
 .sent-action-bar {
     display: flex;
-    gap: 10px;        /* between buttons */
+    gap: 4%;        /* between buttons */
     width: 100%;
     align-items: stretch;
 }
 
+.sent-action-bar .action-btn {
+    max-width: 48%;
+}
+
 .sent-btn-giveup {
-    flex: 0 0 auto;   /* use exact width */
-    margin-left: 10px;
+    flex: 1;
     padding: 10px 15px;
 }
 
@@ -881,6 +899,10 @@ body {
     gap: 10px;
 }
 
+#recap-summary {
+  margin-bottom: 8px;
+}
+
 #recap-title {
     text-align: center;
     font-weight: bold;
@@ -1067,7 +1089,7 @@ body {
     margin-top: 10px;
 }
 
-.nav-arrow {
+.nav-pair-button {
     border: 1px solid #ddd;
     border-radius: 6px;
     background: white;

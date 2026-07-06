@@ -1495,14 +1495,14 @@ function showDictionary(currentData, recapMode=false) {
     });
 
     const targetScreen = document.getElementById('screen-dictionary');
-    const recapTitle = document.getElementById('recap-title');
+    const recapSummary = document.getElementById('recap-summary');
     const nextScreenBtn = document.getElementsByClassName('next-screen-btn');
     if (recapMode) {
       if (targetScreen) { targetScreen.classList.remove('hidden'); }
-      if (recapTitle) { recapTitle.classList.remove('hidden'); }
+      if (recapSummary) { recapSummary.classList.remove('hidden'); }
       [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
     } else {
-      if (recapTitle) { recapTitle.classList.add('hidden'); }
+      if (recapSummary) { recapSummary.classList.add('hidden'); }
       [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
     }
     scrollToTop('screen-dictionary');

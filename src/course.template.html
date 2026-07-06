@@ -106,13 +106,13 @@
                     </button>
                 </div>
                 <div class="nav-controls">
-                    <button class="nav-arrow text-with-icon" onclick="prevTopic()">
+                    <button class="nav-pair-button text-with-icon" onclick="prevTopic()">
                       <svg class="emoji-icon">
                         <use href="#lucide-chevron-left"></use>
                       </svg>
                       <span data-i18n="menu|prev_topic">Prev.</span>
                     </button>
-                    <button class="nav-arrow text-with-icon" onclick="nextTopic()">
+                    <button class="nav-pair-button text-with-icon" onclick="nextTopic()">
                       <span data-i18n="menu|next_topic">Next</span>
                       <svg class="emoji-icon">
                         <use href="#lucide-chevron-right"></use>
@@ -153,7 +153,7 @@
             <div id="user-profile-block" class="text-with-icon hidden">
               <img id="user-avatar" src="" alt="Avatar">
               <span id="user-name"></span>
-              <button onclick="logoutGoogle()" class="nav-arrow">
+              <button onclick="logoutGoogle()" class="nav-pair-button">
                 <svg class="emoji-icon">
                   <use href="#lucide-exit"></use>
                 </svg>
@@ -208,14 +208,14 @@
         </h3>
 
         <div class="nav-controls">
-            <button class="nav-arrow text-with-icon" onclick="exportUserData();">
+            <button class="nav-pair-button text-with-icon" onclick="exportUserData();">
               <svg class="emoji-icon">
                 <use href="#lucide-download"></use>
               </svg>
               <span data-i18n="menu|export">Export</span>
             </button>
             <input type="file" id="file-import-input" class="hidden" accept=".json">
-            <button class="nav-arrow text-with-icon" onclick="document.getElementById('file-import-input').click()">
+            <button class="nav-pair-button text-with-icon" onclick="document.getElementById('file-import-input').click()">
               <svg class="emoji-icon">
                 <use href="#lucide-upload"></use>
               </svg>
@@ -224,7 +224,7 @@
         </div>
 
         <div class="setting-item">
-          <span class="action-btn hard" onclick="confirmResetStats();">
+          <span class="btn-reset" onclick="confirmResetStats();">
             <span class="text-with-icon">
               <svg class="emoji-icon">
                 <use href="#lucide-delete"></use>
@@ -302,9 +302,9 @@
       </div>
 
       <div id="screen-dictionary" class="game-screen hidden">
-        <span id="recap-title" class="hidden" >
-          <div data-i18n="main|recap_title"></div>
-          <div style="display:flex;" class="on-screen-actions">
+        <div id="recap-summary" class="hidden" >
+          <div id="recap-title" data-i18n="main|recap_title"></div>
+          <div class="on-screen-actions two-button-bar">
             <button class="action-btn easy row-btn full-width" onclick="renderCurrentScreen();">
               <svg class="emoji-icon">
                 <use href="#lucide-check"></use>
@@ -318,7 +318,7 @@
               </svg>
             </button>
           </div>
-        </span>
+        </div>
 
         <div class="next-screen-btn">
           <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadNextScreen();">
