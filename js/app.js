@@ -164,6 +164,7 @@ const SCREENS = [
 
 var topicScreens = [];
 var roundRecap = [];
+let currentPairsSetIndex = null;
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -477,19 +478,32 @@ function getScreenType(screen_id) {
   return DEFAULT_SCREEN_ID;
 }
 
+// Get current pairs_set for the current topic
+// @return: object with "title" and "pairs" or null if not applicable
+function getCurrentPairsSet() {
+    const currentScreenId = settings.getCurrentScreenId();
+    const currentTopic = topics[settings.getCurrentTopic()];
+
+    if (currentScreenId !== 'pairs_set' || !currentTopic || !Array.isArray(currentTopic.pairs_set)) {
+        return null;
+    }
+
+    if (currentPairsSetIndex === null || currentPairsSetIndex >= currentTopic.pairs_set.length) {
+        currentPairsSetIndex = Math.floor(Math.random() * currentTopic.pairs_set.length);
+    }
+
+    return currentTopic.pairs_set[currentPairsSetIndex];
+}
+
 // Build and show the screen title
 function showScreenTitle() {
     const currentScreenId = settings.getCurrentScreenId();
     const currentTopic = topics[settings.getCurrentTopic()];
     let screenName = "Screen";
 
-    if (currentScreenId === 'pairs_set' && currentTopic && currentTopic.pairs_set) {
-        const pairsSet = Array.isArray(currentTopic.pairs_set)
-            ? (currentTopic.pairs_set.find(entry => entry && entry.title) || currentTopic.pairs_set[0])
-            : currentTopic.pairs_set;
-        if (pairsSet && typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
-            screenName = i18n_ct(pairsSet.title);
-        }
+    const pairsSet = getCurrentPairsSet();
+    if (pairsSet && typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
+        screenName = i18n_ct(pairsSet.title);
     }
 
     if (screenName === 'Screen') {
@@ -577,6 +591,9 @@ function hideAllScreens() {
 
 // Render screen/game
 function renderScreen(screen_id) {
+    if (screen_id === 'pairs_set') {
+        currentPairsSetIndex = null;
+    }
     showScreenTitle();
     // for screen 'final' get a random screen from screens with exercise==1
     finalGameForTopic = '';
@@ -799,10 +816,7 @@ function renderMatchingGame() {
     let currentData = [];
     const currentScreenId = settings.getCurrentScreenId();
     if (currentScreenId === 'pairs_set') {
-        const topicData = topics[settings.getCurrentTopic()].pairs_set;
-        const pairsSet = Array.isArray(topicData)
-            ? (topicData.find(entry => entry && Array.isArray(entry.words)) || topicData[0])
-            : topicData;
+        const pairsSet = getCurrentPairsSet();
         if (pairsSet && Array.isArray(pairsSet.words)) {
             currentData = pairsSet.words
                 .map(item => decodeLearnItem(item))
