@@ -1,0 +1,200 @@
+id: describe_yourself_1
+name: Tell about yourself 1
+words:
+- en: pleased to meet you
+  he: נעים מאוד
+  transliteration: na'im me'od
+  ru: рад знакомству
+- en: name
+  he: שם
+  transliteration: shem
+  ru: имя
+- en: profession
+  he: מקצוע
+  transliteration: miktzo'a
+  ru: профессия
+- en: programmer
+  he: מתכנת
+  transliteration: metakhnet
+  ru: программист
+- en: engineer
+  he: מהנדס
+  transliteration: mehandes
+  ru: инженер
+- en: developer
+  he: מפתח
+  transliteration: mifate'akh
+  ru: разработчик
+- en: company
+  he: חברה
+  transliteration: hevra
+  ru: компания
+- en: family
+  he: משפחה
+  transliteration: mishpakha
+  ru: семья
+- en: father
+  he: אבא
+  transliteration: aba
+  ru: отец
+- en: mother
+  he: אמא
+  transliteration: ima
+  ru: мать
+- en: brother
+  he: אח
+  transliteration: akh
+  ru: брат
+- en: sister
+  he: אחות
+  transliteration: akhot
+  ru: сестра
+- en: house
+  he: בית
+  transliteration: bayit
+  ru: дом
+- en: mr.
+  he: מר
+  transliteration: mar
+  ru: господин
+- en: mrs.
+  he: גברת
+  transliteration: geveret
+  ru: госпожа
+- en: miss
+  he: בחורה
+  transliteration: bakhura
+  ru: девушка
+- en: city
+  he: עיר
+  transliteration: ir
+  ru: город
+- en: country
+  he: מדינה
+  transliteration: medina
+  ru: страна
+- en: to live
+  he: לגור
+  transliteration: lagur
+  ru: жить
+- en: to work
+  he: לעבוד
+  transliteration: la'avod
+  ru: работать
+- en: congrats!
+  he: מזל טוב
+  transliteration: mazal tov
+  ru: поздравляю!
+- en: ok
+  he: בסדר
+  transliteration: be-seder
+  ru: хорошо
+- en: sorry
+  he: סליחה
+  transliteration: slikha
+  ru: извини
+- en: exactly
+  he: בדיוק
+  transliteration: bediyuk
+  ru: совершенно верно
+- en: thanks
+  he: תודה
+  transliteration: toda
+  ru: спасибо
+- en: to study
+  he: ללמוד
+  transliteration: lilmod
+  ru: учиться
+- en: now
+  he: עכשיו
+  transliteration: akhshav
+  ru: сейчас
+- en: with
+  he: עם
+  transliteration: im
+  ru: с
+- en: in
+  he: בתוך
+  transliteration: betokh
+  ru: в / внутри
+sentences:
+- en: i work as a programmer
+  he: אני עובד כמתכנת
+  transliteration: ani oved ke-metakhnet
+  ru: я работаю программистом
+- en: i work remotely
+  he: אני עובד מרחוק
+  transliteration: ani oved me-rakhok
+  ru: я работаю удалённо
+- en: i live in a big city
+  he: אני גר בעיר גדולה
+  transliteration: ani gar be-ir gdola
+  ru: я живу в большом городе
+- en: i have a small family
+  he: יש לי משפחה קטנה
+  transliteration: yesh li mishpakha ktana
+  ru: у меня небольшая семья
+- en: my father is an engineer
+  he: אבא שלי מהנדס
+  transliteration: aba sheli mehandes
+  ru: мой отец инженер
+- en: my mother is a teacher
+  he: אמא שלי מורה
+  transliteration: ima sheli mora
+  ru: моя мать учительница
+- en: beautiful house
+  he: בית יפה
+  transliteration: bayit yafe
+  ru: красивый дом
+- en: beautiful new house
+  he: בית חדש ויפה
+  transliteration: bayit khadash ve-yafe
+  ru: красивый новый дом
+- en: i have a brother and a sister
+  he: יש לי אח ואחות
+  transliteration: yesh li akh ve-akhot
+  ru: у меня есть брат и сестра
+- en: i work in an international company
+  he: אני עובד בחברה בינלאומית
+  transliteration: ani oved be-hevra beynle'umit
+  ru: я работаю в международной компании
+- en: where are you from?
+  he: מאיפה אתה?
+  transliteration: me-eyfo ata?
+  ru: откуда ты?
+- en: i am from russia
+  he: אני מרוסיה
+  transliteration: ani me-rusiya
+  ru: я из россии
+- en: i don't understand
+  he: אני לא מבין
+  transliteration: ani lo mevin
+  ru: я не понимаю
+- en: once more please
+  he: עוד פעם בבקשה
+  transliteration: od pa'am be-vakasha
+  ru: ещё раз пожалуйста
+- en: where do you live?
+  he: איפה אתה גר?
+  transliteration: eyfo ata gar?
+  ru: где ты живешь
+- en: what is your profession?
+  he: מה המקצוע שלך?
+  transliteration: ma ha-miktzo'a shelkha?
+  ru: какая твоя профессия
+- en: i study hebrew now
+  he: אני לומד עברית עכשיו
+  transliteration: ani lomed ivrit akhshav
+  ru: я учу иврит сейчас
+- en: my house is here
+  he: הבית שלי פה
+  transliteration: ha-bayit sheli po
+  ru: мой дом здесь
+- en: i love my job
+  he: אני אוהב את העבודה שלי
+  transliteration: ani ohev et ha-avoda sheli
+  ru: я люблю свою работу
+- en: we live together
+  he: אנחנו גרים ביחד
+  transliteration: anakhnu garim be-yakhad
+  ru: мы живем вместе

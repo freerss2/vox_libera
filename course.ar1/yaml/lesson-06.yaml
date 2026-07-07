@@ -1,0 +1,244 @@
+id: airport_1
+name: Airport 1
+explanations:
+  en: |
+    ### Lesson Objective
+    As the saying goes, "language unites." If you're planning a trip or simply meeting friends from abroad, the materials in this lesson will help you communicate about travel.
+
+    ### Explanations
+    Shanta '''شنطة''': The most common word for any bag or suitcase. Carry-on luggage is more often called shanta id (handbag) in conversation than the formal haqibat yad.
+
+    Afsh '''عفش''': A very popular word for luggage in general (things you check in).
+
+    Fadi / Mahjuz: These two words will save you when you need to figure out if a seat is free in a lounge or on a plane.
+  ru: |
+    ### Цель урока
+    Как известно "язык объединяет". Если вы задумаете путешествовать или просто встречаете знакомых из-за границы, материалы этого урока помогут вам в общении на тему путешествий.
+
+    ### Пояснения
+    Шанта '''شنطة''': Самое ходовое слово для любой сумки или чемодана. Ручную кладь в разговоре чаще называют Шантат ид (сумка для руки), чем формальным хакибат яд.
+
+    Афш '''عفش''': Очень популярное слово для обозначения багажа в целом (вещей, которые вы сдаете).
+
+    Фади / Махджуз: Эти два слова спасут вас, если нужно понять, свободно ли место в зале ожидания или в самолете.
+story:
+  en: |
+    ##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
+
+    ##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
+
+    ##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+
+    ##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
+
+    ##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
+words:
+- en: airport
+  ar: مطار
+  transliteration: matar
+  ru: аэропорт
+- en: flight
+  ar: رحلة
+  transliteration: rihla
+  ru: рейс
+- en: gate
+  ar: بوابة
+  transliteration: bawwaba
+  ru: выход
+- en: boarding pass
+  ar: بطاقة صعود
+  transliteration: bitaqat su'ud
+  ru: посадочный талон
+- en: luggage
+  ar: عفش
+  transliteration: afsh
+  ru: багаж
+- en: suitcase
+  ar: شنطة سفر
+  transliteration: shantat safar
+  ru: чемодан
+- en: hand luggage
+  ar: حقيبة يد
+  transliteration: haqibat yad
+  ru: ручная кладь
+- en: weight
+  ar: وزن
+  transliteration: wazn
+  ru: вес
+- en: excess weight
+  ar: وزن زايد
+  transliteration: wazn zayid
+  ru: перевес
+- en: delay
+  ar: تأخير
+  transliteration: ta'khir
+  ru: задержка
+- en: queue
+  ar: دور
+  transliteration: dor
+  ru: очередь
+- en: customs
+  ar: جمارك
+  transliteration: jamarik
+  ru: таможня
+- en: seat
+  ar: مقعد
+  transliteration: maq'ad
+  ru: место
+- en: window
+  ar: شباك
+  transliteration: shubbak
+  ru: окно
+- en: aisle
+  ar: ممر
+  transliteration: mamarr
+  ru: коридор
+- en: free
+  ar: فاضي
+  transliteration: fadi
+  ru: свободный
+- en: reserved
+  ar: محجوز
+  transliteration: mahjuz
+  ru: занятый
+- en: plane
+  ar: طيارة
+  transliteration: tayyara
+  ru: самолет
+- en: pilot
+  ar: طيار
+  transliteration: tayyar
+  ru: пилот
+- en: ticket
+  ar: تذكرة
+  transliteration: tadhkira
+  ru: билет
+- en: late
+  ar: متأخر
+  transliteration: muta'akhkhir
+  ru: опоздавший
+- en: security
+  ar: أمن
+  transliteration: amn
+  ru: безопасность
+- en: searching
+  ar: تفتيش
+  transliteration: taftish
+  ru: досмотр
+- en: where
+  ar: وين
+  transliteration: wayn
+  ru: где
+- en: here
+  ar: هنا
+  transliteration: huna
+  ru: здесь
+- en: next to
+  ar: جنب
+  transliteration: janb
+  ru: возле
+- en: i travel
+  ar: بسافر
+  transliteration: basafir
+  ru: я лечу
+- en: i wait
+  ar: بстنى
+  transliteration: bastanna
+  ru: я жду
+- en: he checks
+  ar: بيفحص
+  transliteration: bifhas
+  ru: он проверяет
+sentences:
+- en: where is the airport
+  ar: وين المطار
+  transliteration: wayn al-matar
+  ru: где аэропорт
+- en: my flight is late today
+  ar: رحلتي متأخرة اليوم
+  transliteration: rihlati muta'akhkhira al-yom
+  ru: мой рейс сегодня задерживается
+- en: i want the boarding pass please
+  ar: بدي بطاقة الصعود لو سمحت
+  transliteration: biddi bitaqat as-su'ud law samaht
+  ru: я хочу посадочный талон пожалуйста
+- en: where is the boarding gate
+  ar: وين بوابة الصعود
+  transliteration: wayn bawwabat as-su'ud
+  ru: где выход на посадку
+- en: i have excess weight in the suitcase
+  ar: عندي وزن زايد في شنطة السفر
+  transliteration: indi wazn zayid fi shantat as-safar
+  ru: у меня перевес в чемодане
+- en: the hand luggage is here
+  ar: حقيبة اليد هنا
+  transliteration: haqibat al-yad huna
+  ru: ручная кладь здесь
+- en: the security officer checks the passport
+  ar: ضابط الأمن بيفحص جواز السفر
+  transliteration: dabit al-amn bifhas jawaz as-safar
+  ru: офицер безопасности проверяет паспорт
+- en: there is a big queue in customs
+  ar: في دور كبير في الجمارك
+  transliteration: fi dor kabir fil-jamarik
+  ru: на таможне большая очередь
+- en: i wait for my luggage here
+  ar: بستنى العفش تبعي هنا
+  transliteration: bastanna al-afsh tabai huna
+  ru: я жду свой багаж здесь
+- en: is this seat free
+  ar: هذا المقعد فاضي
+  transliteration: hada al-maq'ad fadi
+  ru: это место свободное
+- en: is this chair free
+  ar: هذا الكрسي فاضي
+  transliteration: hada al-kursi fadi
+  ru: это кресло свободное
+- en: this seat next to me is reserved
+  ar: هذا المقعد جنبي محجوز
+  transliteration: hada al-maq'ad janbi mahjuz
+  ru: это место рядом со мной занято
+- en: i want a seat next to the window
+  ar: بدي مقعد جنب الشباك
+  transliteration: biddi maq'ad janb ash-shubbak
+  ru: я хочу место у окна
+- en: where is the aisle seat
+  ar: وين المقعد في الممر
+  transliteration: wayn al-maq'ad fil-mamarr
+  ru: где место у прохода
+- en: i fly to russia tomorrow
+  ar: بسافر على روسيا بكرة
+  transliteration: basafir ala rusiya bukra
+  ru: я лечу в россию завтра
+- en: where is the customs inspection
+  ar: وين تفتيش الجمارك
+  transliteration: wayn taftish al-jamarik
+  ru: где таможенный досмотр
+- en: the plane is very big
+  ar: الطيارة كبيرة كثير
+  transliteration: at-tayyara kabira kathir
+  ru: самолет очень большой
+- en: the pilot is in the plane now
+  ar: الطيار في الطيارة الآن
+  transliteration: at-tayyar fit-tayyara al-an
+  ru: пилот сейчас в самолете
+- en: where is my suitcase
+  ar: وين شنطة السفر تبعتي
+  transliteration: wayn shantat safari tabati
+  ru: где мой чемодан
+- en: i am late for the flight
+  ar: أنا متأخر на الرحلة
+  transliteration: ana muta'akhkhir alar-rihla
+  ru: я опаздываю на рейс
+- en: the delay is from the airport
+  ar: التأخير من المطار
+  transliteration: at-ta'khir min al-matar
+  ru: задержка из-за аэропорта
+- en: show me the passport please
+  ar: ورجيني جواز السفر لو سمحت
+  transliteration: warjini jawaz as-safar law samaht
+  ru: покажи мне паспорт пожалуйста
+- en: we wait in the queue now
+  ar: بنستنى في الدور الآن
+  transliteration: bnastanna fid-dor al-an
+  ru: мы ждем в очереди сейчас

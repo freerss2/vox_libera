@@ -1,0 +1,240 @@
+id: health_1
+name: Health 1
+explanations:
+  en: |
+    ### Short notes about this topic
+    Biwja'ni ('''بيوجعني'''): The verb "to be sick" itself is biwja'. But when we talk about ourselves, we add the ending -ni: "my head hurts" (rasi biwja'ni).
+
+    Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's used to refer to any pill or capsule.
+
+    Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
+  ru: |
+    ### Краткие заметки по этой теме
+    Биужа'ни ('''بيوجعني'''): Сам глагол «болеть» — biwja'. Но когда мы говорим про себя, мы добавляем окончание -ни: «голова болит меня» (rasi biwja'ni).
+
+    Хабба ('''حبة'''): Дословно это «зернышко» или «штука». В аптеке так называют любую таблетку или капсулу.
+
+    Истикбаль ('''استقبال'''): Универсальное слово «прием/встреча». Используется и как ресепшен в отеле, и как регистратура в больнице.
+story:
+  en: |
+    ### At the Clinic
+    ##story-line## '''أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.'''##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever.##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
+    ##story-line## '''تفضل هنا، الممرضة مع الدكتور في المستشفى.'''##story-translation## Come here please, the nurse is with the doctor in the hospital.##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
+    ##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
+    ##story-line## '''نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.'''##story-translation## Yes, and take this pill please. Everything is okay.##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
+pairs_set:
+- title: Adverbs
+  words:
+  - - unfortunately
+    - لِلْأَسَف
+    - lil-asaf
+  - - luck
+    - تَوْفِيق
+    - tawfiq
+  - - impossible (m)
+    - مُسْتَحِيل
+    - mustahil
+  - - definite (m)
+    - أَكِيد
+    - akid
+  - - possible (m)
+    - مُمْكِن
+    - mumkin
+  - - correctly
+    - صح
+    - sah
+  - - agreed
+    - اتفقنا
+    - ittafaqna
+  - - straight
+    - دغري
+    - dughri
+  - - backwards
+    - لورا
+    - la-wara
+  - - only
+    - فقط
+    - faqat
+  - - a little
+    - شوي
+    - shway
+  - - also
+    - كمان
+    - kaman
+  - - must
+    - لازم
+    - lazim
+  - - need
+    - بدي
+    - biddi
+  - - but
+    - لكن
+    - lakin
+- title: Time and Place
+  words:
+  - - away
+    - بعيد
+    - ba'id
+  - - near
+    - قريب
+    - qarib
+  - - here
+    - هنا
+    - huna
+  - - next to
+    - جنب
+    - janb
+  - - free
+    - فاضي
+    - fadi
+  - - reserved
+    - محجوز
+    - mahjuz
+  - - tomorrow
+    - بكرة
+    - bukra
+  - - yesterday
+    - أمس
+    - '''ams'
+  - - today
+    - اليوم
+    - al-yom
+  - - soon
+    - قريباً
+    - qariban
+  - - usually
+    - عادةً
+    - '''adan'
+  - - early
+    - بكير
+    - bakir
+  - - late
+    - متأخر
+    - muta'akhkhir
+  - - sometimes
+    - مرات
+    - marrat
+  - - always
+    - دائماً
+    - da'iman
+  - - now
+    - الآن
+    - al-an
+words:
+- en: it hurts
+  ar: بيوجع
+  transliteration: biwja'
+  ru: болит
+- en: it itches
+  ar: بيحك
+  transliteration: bihikk
+  ru: чешется
+- en: runny nose
+  ar: رشح
+  transliteration: rashah
+  ru: насморк
+- en: fever / temperature
+  ar: حرارة
+  transliteration: harara
+  ru: температура
+- en: bruise
+  ar: رضة
+  transliteration: radda
+  ru: ушиб
+- en: wound
+  ar: جرح
+  transliteration: jurh
+  ru: рана
+- en: fracture
+  ar: كسر
+  transliteration: kasr
+  ru: перелом
+- en: bandage
+  ar: ضمادة
+  transliteration: dimada
+  ru: повязка
+- en: pill
+  ar: حبة
+  transliteration: habba
+  ru: таблетка
+- en: ointment
+  ar: مرهم
+  transliteration: marham
+  ru: мазь
+- en: drops
+  ar: قطرة
+  transliteration: qatra
+  ru: капли
+- en: doctor
+  ar: دكتور
+  transliteration: duktor
+  ru: врач
+- en: nurse
+  ar: ممرضة
+  transliteration: mumarriḍa
+  ru: медсестра
+- en: reception
+  ar: استقبال
+  transliteration: istiqbal
+  ru: регистратура
+- en: hospital
+  ar: مستشفى
+  transliteration: mustashfa
+  ru: больница
+- en: clinic
+  ar: عيادة
+  transliteration: iyada
+  ru: клиника
+sentences:
+- en: my head hurts
+  ar: راسي بيوجعني
+  transliteration: rasi biwja'ni
+  ru: у меня болит голова
+- en: my hand itches
+  ar: إيدي بتحكني
+  transliteration: idi btihikkni
+  ru: у меня чешется рука
+- en: i have a runny nose and fever
+  ar: عندي رشح وحرارة
+  transliteration: indi rashah wa harara
+  ru: у меня насморк и температура
+- en: this is a small bruise
+  ar: هذه رضة صغيرة
+  transliteration: hadhihi radda saghira
+  ru: это маленький ушиб
+- en: the wound is clean
+  ar: الجرح نظيف
+  transliteration: al-jurh nazif
+  ru: рана чистая
+- en: he has a leg fracture
+  ar: عنده كسر في الرجل
+  transliteration: indo kasr fir-rijl
+  ru: у него перелом ноги
+- en: where is the bandage?
+  ar: وين الضمادة
+  transliteration: wayn ad-dimada
+  ru: где повязка?
+- en: take this pill please
+  ar: خذ هذه الحبة لو سمحت
+  transliteration: khud hadhihi al-habba law samaht
+  ru: выпей эту таблетку пожалуйста
+- en: i need an ointment for the hand
+  ar: بدي مرهم للإيد
+  transliteration: biddi marham lil-id
+  ru: мне нужна мазь для руки
+- en: where are the eye drops?
+  ar: وين قطرة العين
+  transliteration: wayn qatrat al-ayn
+  ru: где глазные капли?
+- en: the doctor is inside the clinic
+  ar: الدكتور جوا العيادة
+  transliteration: ad-duktor juwwa al-iyada
+  ru: врач внутри клиники
+- en: the nurse is at the reception
+  ar: الممرضة في الاستقبال
+  transliteration: al-mumarriḍa fil-istiqbal
+  ru: медсестра в регистратуре
+- en: this hospital is big
+  ar: هذا المستشفى كبير
+  transliteration: hadha al-mustashfa kabir
+  ru: эта больница большая

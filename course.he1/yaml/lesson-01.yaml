@@ -1,0 +1,56 @@
+id: abc_1
+name: ABC 1
+explanations:
+  en: |
+    ### A little about the language
+    The history of Hebrew as a language begins over 3,000 years ago. Hebrew is a Semitic language and is written from right to left. The letterforms and alphabetic composition are similar to those of other ancient languages ​​from the Middle East and Mediterranean regions. Modern scripts differ from the ancient versions, but the rules for reading remain unchanged. The pronunciation does not contain any exotic sounds, unless you intend to imitate traditional accents.
+  ru: |
+    ### Немного о языке
+    История иврита как языка начинается более 3000 лет тому назад. Иврит относится к семитским языкам и использует написание справа налево. Начертание букв и состав алфавита сходны с другими древними языками из ближневосточного и средиземноморского регионов. Современное начертание отличается от древних вариантов, но правила чтения остались неизменными.  Фонетика не содержит экзотических звуков, если только вы не собираетесь имитировать традиционные акценты.
+abc:
+- en: Aleph (silent consonant)
+  he: א
+  transliteration: ''
+  ru: Алеф (немая согласная)
+- en: Bet
+  he: בּ
+  transliteration: b
+  ru: Бет
+- en: Vet
+  he: ב
+  transliteration: v
+  ru: Вет
+- en: Gimel
+  he: ג
+  transliteration: g
+  ru: Гимел
+- en: Dalet
+  he: ד
+  transliteration: d
+  ru: Далет
+- en: Hey
+  he: ה
+  transliteration: h
+  ru: hей
+- en: Waw
+  he: ו
+  transliteration: w
+  ru: Вав
+- en: Zayin
+  he: ז
+  transliteration: z
+  ru: Зайин
+- en: Khet
+  he: ח
+  transliteration: kh
+  ru: Хет
+- en: Tet
+  he: ט
+  transliteration: T
+  ru: Тет
+- en: Yud
+  he: י
+  transliteration: j
+  ru: Йуд
+words: []
+sentences: []

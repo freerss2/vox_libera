@@ -1,0 +1,132 @@
+id: everyday_life_1
+name: Everyday life 1
+words:
+- en: carpet
+  he: שטיח
+  transliteration: shati'akh
+  ru: ковёр
+- en: bed
+  he: מיטה
+  transliteration: mita
+  ru: кровать
+- en: wardrobe / closet
+  he: ארון
+  transliteration: aron
+  ru: шкаф
+- en: room
+  he: חדר
+  transliteration: kheder
+  ru: комната
+- en: kitchen
+  he: מטבח
+  transliteration: mitbakh
+  ru: кухня
+- en: bedroom
+  he: חדר שינה
+  transliteration: khadar sheyna
+  ru: спальня
+- en: window
+  he: חלון
+  transliteration: khalon
+  ru: окно
+- en: floor
+  he: רצפה
+  transliteration: ritzpa
+  ru: пол
+- en: ceiling
+  he: תקרה
+  transliteration: tikra
+  ru: потолок
+- en: kettle
+  he: קומקום
+  transliteration: kumkum
+  ru: чайник
+- en: glass / cup
+  he: כוס
+  transliteration: kos
+  ru: стакан
+- en: plate
+  he: צלחת
+  transliteration: tzalakhat
+  ru: тарелка
+- en: knife
+  he: סכין
+  transliteration: sakin
+  ru: нож
+- en: fork
+  he: מזלג
+  transliteration: mazleg
+  ru: вилка
+- en: spoon
+  he: כף
+  transliteration: kaf
+  ru: ложка
+- en: oven / stove
+  he: תנור
+  transliteration: tanur
+  ru: печка
+- en: tap / sink
+  he: ברז
+  transliteration: berez
+  ru: кран / раковина
+sentences:
+- en: the carpet is on the floor
+  he: השטיח על הרצפה
+  transliteration: ha-shati'akh al ha-ritzpa
+  ru: ковёр лежит на полу
+- en: the wardrobe is in the room
+  he: הארון בחדר
+  transliteration: ha-aron ba-kheder
+  ru: шкаф стоит в комнате
+- en: the bed is big and comfortable
+  he: המיטה גדולה ונוחה
+  transliteration: ha-mita gdola ve-nukha
+  ru: кровать большая и удобная
+- en: this bedroom is very bright
+  he: חדר השינה הזה מואר מאוד
+  transliteration: khadar ha-sheyna ha-ze mu'ar me'od
+  ru: эта спальня очень светлая
+- en: the kitchen window is open
+  he: החלון במטבח פתוח
+  transliteration: ha-khalon ba-mitbakh patu'akh
+  ru: окно в кухне открыто
+- en: the ceiling is white and high
+  he: התקרה לבנה וגבוהה
+  transliteration: ha-tikra levana ve-gvoha
+  ru: потолок белый и высокий
+- en: the kettle is on the stove now
+  he: הקומקום על התנור עכשיו
+  transliteration: ha-kumkum al ha-tanur akhshav
+  ru: чайник сейчас на печке
+- en: the glass is on the table
+  he: הכוס על השולחן
+  transliteration: ha-kos al ha-shulkhan
+  ru: стакан стоит на столе
+- en: the spoon and fork are here
+  he: הכף והמזלג פה
+  transliteration: ha-kaf ve-ha-mazleg po
+  ru: ложка и вилка здесь
+- en: the knife and plate are clean
+  he: הסכין והצלחת נקיים
+  transliteration: ha-sakin ve-ha-tzalakhat nekiyim
+  ru: нож и тарелка чистые
+- en: the tap is in the kitchen
+  he: הברז במטבח
+  transliteration: ha-beretz ba-mitbakh
+  ru: кран в кухне
+- en: i am going to the bedroom
+  he: אני הולך לחדר השינה
+  transliteration: ani holekh le-khadar ha-sheyna
+  ru: я иду в спальню
+- en: there is a window in the room
+  he: יש חלון בחדר
+  transliteration: yesh khalon ba-kheder
+  ru: в комнате есть окно
+- en: where is my knife
+  he: איפה הסכין שלי?
+  transliteration: eyfo ha-sakin sheli?
+  ru: где лежит мой нож
+- en: the kettle is hot
+  he: הקומקום חם
+  transliteration: ha-kumkum kham
+  ru: чайник горячий

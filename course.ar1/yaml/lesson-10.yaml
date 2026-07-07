@@ -1,0 +1,202 @@
+id: filling_the_gaps
+name: Filling the Gaps
+explanations:
+  en: |
+    ### Important notes about this topic
+
+    Сottage cheese: Arabic cuisine doesn't have a complete equivalent to cottage cheese. They typically use either qarisha (a cheese product) or white soft cheeses like jibna bida (white cheese).
+
+    Waiter (Jarson): This word comes from French (garçon) and has become firmly established in the Arabic dialect.
+
+    Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so take this into account in sentences.
+
+    Dughri ('''دغري'''): Perhaps the most popular word for directions. It comes from Turkish, but Arabic is indispensable.
+
+    Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used specifically as "OK, it's done."
+
+    Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
+  ru: |
+    ### Важные замечания по поводу этой темы
+
+    Творог: В арабской кухне нет полного аналога нашего рассыпчатого творога. Обычно используют либо qarisha (творожный продукт), либо белые мягкие сыры типа jibna bida (белый сыр).
+
+    Официант (Jarson): Это слово пришло из французского (garçon) и прочно закрепилось в арабском диалекте.
+
+    Цвета (Род). Обратите внимание: «синий» — azraq, но «синяя бумага» — waraqa zarqa. У цветов в арабском мужской и женский род образуются специфически, учтите это в предложениях.
+
+    Dughri ('''دغري'''): Пожалуй, самое популярное слово для указания пути. Оно пришло из турецкого, но в арабском без него никуда.
+
+    Ittafaqna ('''اتفقنا'''): Глагол в прошедшем времени («мы договорились»), но используется именно как «ОК, идёт, по рукам».
+
+    Bid-dabt ('''بالضبط'''): Обратите внимание на транскрипцию — буква «Дад» дает тяжелый звук «д», почти переходящий в «з» в некоторых диалектах, но «d» здесь — стандарт.
+story:
+  en: |
+    ### Table talk
+    ##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna?
+    ##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
+    ##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
+    ##story-line## '''ممكن تطبع هذا المستند على ورقة رمادية؟''' ##story-translation## Can you print this document on a grey paper?  ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
+
+    ### Street scene
+    ##story-line## '''وين الفندق؟ هو بعيد من هنا؟''' ##story-translation## Where is the hotel? Is it far from here?  ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
+    ##story-line## '''لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light.  ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
+    ##story-line## '''تمام، هذا بالضبط شو بدي. شكراً!''' ##story-translation## Okay, this is exactly what I want. Thanks!  ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
+    ##story-line## '''عفواً! اتفقنا، يوم سعيد.''' ##story-translation## You're welcome! Agreed, have a happy day.  ##story-transcr## Afwan! Ittafaqna, yawm sa'id.
+words:
+- en: blue
+  ar: أزرق
+  transliteration: azraq
+  ru: синий
+- en: purple
+  ar: بنفسجي
+  transliteration: banafsaji
+  ru: фиолетовый
+- en: grey
+  ar: رمادي
+  transliteration: ramadi
+  ru: серый
+- en: paper
+  ar: ورقة
+  transliteration: waraqa
+  ru: бумага
+- en: document
+  ar: مستند
+  transliteration: mustanad
+  ru: документ
+- en: to print
+  ar: يطبع
+  transliteration: yitba'
+  ru: напечатать
+- en: olive oil
+  ar: زيت زيتون
+  transliteration: zayt zaytun
+  ru: оливковое масло
+- en: sour cream
+  ar: لبنة
+  transliteration: labneh
+  ru: сметана
+- en: cottage cheese
+  ar: قريشة
+  transliteration: qarisha
+  ru: творог
+- en: to fry
+  ar: يقلي
+  transliteration: yiqli
+  ru: поджарить
+- en: to boil
+  ar: يسلق
+  transliteration: yisluq
+  ru: сварить
+- en: waiter
+  ar: جرسون
+  transliteration: jarson
+  ru: официант
+- en: exactly
+  ar: بالضبط
+  transliteration: bid-dabt
+  ru: в точности
+- en: i agree
+  ar: أنا موافق
+  transliteration: ana muwafiq
+  ru: согласен
+- en: agreed
+  ar: اتفقنا
+  transliteration: ittafaqna
+  ru: договорились
+- en: straight
+  ar: دغري
+  transliteration: dughri
+  ru: прямо
+- en: backwards
+  ar: لورا
+  transliteration: la-wara
+  ru: назад
+- en: around the corner
+  ar: على الزاوية
+  transliteration: ala az-zawiya
+  ru: за углом
+- en: traffic light
+  ar: إشارة ضوئية
+  transliteration: ishara daw'iya
+  ru: светофор
+sentences:
+- en: i want a blue paper
+  ar: بدي ورقة زرقاء
+  transliteration: biddi waraqa zarqa
+  ru: я хочу синюю бумагу
+- en: can you print this document?
+  ar: ممكن تطبع هذا المستند
+  transliteration: mumkin titba' hadha al-mustanad
+  ru: можешь напечатать этот документ?
+- en: the car is grey
+  ar: السيارة رمادية
+  transliteration: as-sayyara ramadiya
+  ru: машина серая
+- en: we need olive oil for the salad
+  ar: بدنا زيت زيتون للسلطة
+  transliteration: bidna zayt zaytun las-salata
+  ru: нам нужно оливковое масло для салата
+- en: i want to fry the eggs
+  ar: بدي أقلي بيض
+  transliteration: biddi aqli bayd
+  ru: я хочу поджарить яйца
+- en: boiled chicken is very healthy
+  ar: دجاج مسلوق صحي كثير
+  transliteration: djaj masluq sihi kathir
+  ru: вареная курица — это очень полезно
+- en: where is the waiter?
+  ar: وين الجرسون
+  transliteration: wayn al-jarson
+  ru: где официант?
+- en: this is our order
+  ar: هذا طلبنا
+  transliteration: hadha talabna
+  ru: это наш заказ
+- en: please give me a napkin
+  ar: لو سمحت اعطيني محرمة
+  transliteration: law samaht a'tini mahrameh
+  ru: пожалуйста, дай мне салфетку
+- en: the tablecloth is purple
+  ar: الشرشف بنفسجي
+  transliteration: ash-sharshaf banafsaji
+  ru: скатерть фиолетовая
+- en: give me sour cream please
+  ar: اعطيني لبنة لو سمحت
+  transliteration: a'tini labneh law samaht
+  ru: дай мне сметану пожалуйста
+- en: i love cottage cheese
+  ar: بحب القريشة
+  transliteration: bahibb al-qarisha
+  ru: я люблю творог
+- en: go straight and then around the corner
+  ar: امشي دغري وبعدين على الزاوية
+  transliteration: imshi dughri wa ba'den ala az-zawiya
+  ru: иди прямо, а затем за угол
+- en: the traffic light is red now
+  ar: الإشارة الضوئية حمراء الآن
+  transliteration: al-ishara daw'iya hamra al-an
+  ru: светофор сейчас красный
+- en: i am constantly studying here
+  ar: أنا دائماً بدرس هنا
+  transliteration: ana da'iman badrus huna
+  ru: я постоянно учусь здесь
+- en: this is exactly what i want
+  ar: هذا بالضبط شو بدي
+  transliteration: hadha bid-dabt shu biddi
+  ru: это в точности то, что я хочу
+- en: i agree with you, my friend
+  ar: أنا موافق معك يا صاحبي
+  transliteration: ana muwafiq ma'ak ya sahbi
+  ru: я согласен с тобой, мой друг
+- en: deal, see you tomorrow
+  ar: اتفقنا بشوفك بكرة
+  transliteration: ittafaqna bashufak bukra
+  ru: договорились, увидимся завтра
+- en: move the car backwards
+  ar: حرك السيارة لورا
+  transliteration: harrik as-sayyara la-wara
+  ru: передвинь машину назад
+- en: the waiter is constantly busy
+  ar: الجرسون دائماً مشغول
+  transliteration: al-jarson da'iman mashghul
+  ru: официант постоянно занят

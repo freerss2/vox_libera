@@ -167,12 +167,16 @@ def find_courses():
                 # Required files under the course dir
                 manifest_os_path = os.path.join(entry, "manifest.js")
                 lessons_os_path = os.path.join(entry, "lessons.js")
+                locales_os_path = os.path.join(entry, "locales.js")
 
                 # Check files existance
-                if os.path.exists(manifest_os_path) and os.path.exists(lessons_os_path):
+                if os.path.exists(manifest_os_path) and \
+                   os.path.exists(lessons_os_path) and \
+                   os.path.exists(locales_os_path):
                     # Store relative paths for injecting into HTML
                     courses[course_id] = [
                         f"course.{course_id}/manifest.js",
+                        f"course.{course_id}/locales.js",
                         f"course.{course_id}/lessons.js"
                     ]
                 else:

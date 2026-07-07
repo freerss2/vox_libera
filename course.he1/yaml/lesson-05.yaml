@@ -1,0 +1,111 @@
+id: pronominal_prepositions_1
+name: Pronominal prepositions 1
+explanations:
+  en: |
+    ### Preposition "With" ('''עם''')
+    Hebrew has a peculiarity: when suffixes are added to the preposition im (with), it often turns into the form it- (iti, itkha). This is important to remember, as the root changes.
+
+    ### Preposition "On" ('''על''')
+    In Hebrew, it often replaces the preposition "o" (to think of someone = to think of someone, khoshev al).
+
+    ### Accusative case ('''את'''):
+    Remember that oti/otkha is only used when we know who is being referred to. The verbs "to see" (ro'e) and "to love" (ohev) always require this form.
+  ru: |
+    ### Предлог «С» ('''עם''')
+    В иврите есть особенность — когда к предлогу im (с) добавляются суффиксы, он часто превращается в форму it- (iti, itkha). Это важно для запоминания, так как корень меняется.
+
+    ### Предлог «НА» ('''על''')
+    В иврите он часто заменяет предлог «о» (думать о ком-то = думать на кого-то, khoshev al).
+
+    ### Винительный падеж ('''את''')
+    Помни, что oti/otkha используется только тогда, когда мы знаем, о ком речь. Глаголы «видеть» (ro'e) и «любить» (ohev) всегда требуют этой формы.
+words:
+- en: with me
+  he: איתי
+  transliteration: iti
+  ru: со мной
+- en: with you (m)
+  he: אִתְּךָ
+  transliteration: itkha
+  ru: с тобой (м.р.)
+- en: with you (f)
+  he: אִתָּךְ
+  transliteration: itakh
+  ru: с тобой (ж.р.)
+- en: in me / in it
+  he: בי
+  transliteration: bi
+  ru: во мне / в нем
+- en: in you (m)
+  he: בך
+  transliteration: bekha
+  ru: в тебе (м.р.)
+- en: on me
+  he: עלי
+  transliteration: alay
+  ru: на мне
+- en: on you (m)
+  he: עליך
+  transliteration: alekha
+  ru: на тебе (м.р.)
+- en: me (direct object)
+  he: אותי
+  transliteration: oti
+  ru: меня (кого/что)
+- en: you (m, direct object)
+  he: אוֹתְךָ
+  transliteration: otkha
+  ru: тебя (м.р.)
+- en: you (f, direct object)
+  he: אוֹתָךְ
+  transliteration: otakh
+  ru: тебя (ж.р.)
+- en: with us
+  he: איתנו
+  transliteration: itanu
+  ru: с нами
+- en: on us
+  he: עלינו
+  transliteration: alenu
+  ru: на нас
+sentences:
+- en: do you want to go with me?
+  he: אתה רוצה ללכת איתי?
+  transliteration: ata rotze lalekhet iti?
+  ru: ты хочешь пойти со мной?
+- en: i love you
+  he: אני אוהב אותך
+  transliteration: ani ohev otkha
+  ru: я люблю тебя
+- en: everything is on me
+  he: הכל עלי
+  transliteration: ha-kol alay
+  ru: всё на мне
+- en: he is speaking with you now
+  he: הוא מדבר איתך עכשיו
+  transliteration: hu medaber itkha akhshav
+  ru: он говорит с тобой сейчас
+- en: i see you
+  he: אני רואה אותך
+  transliteration: ani ro'e otkha
+  ru: я вижу тебя
+- en: what is in it?
+  he: מה יש בו?
+  transliteration: ma yesh bo?
+  ru: что в нем?
+- en: he is thinking about us
+  he: הוא חושב עלינו
+  transliteration: hu khoshev alenu
+  ru: он думает о нас
+- en: do you understand me?
+  he: אתה מבין אותי?
+  transliteration: ata mevin oti?
+  ru: ты понимаешь меня?
+- en: wait for me a minute
+  he: חכה לי דקה
+  transliteration: khake li daka
+  ru: подожди меня минуту
+- en: i am with you
+  he: אני איתך
+  transliteration: ani itkha
+  ru: я с тобой

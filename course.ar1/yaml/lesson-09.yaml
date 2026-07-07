@@ -1,0 +1,224 @@
+id: studying_language_1
+name: Studying language 1
+explanations:
+  en: |
+    ### Lesson Objective
+    When communicating with a native speaker, we often find it difficult to express ourselves correctly.
+    We lack words, we're unsure of our declensions, and our pronunciation isn't perfect.
+    This lesson was created to help explain these difficulties.
+
+    ### Conversational nuances
+    La-khali '''لحالي''': A very important word. Literally "for yourself," it's used in all contexts when you're doing something alone or independently.
+
+    Ala makhlaq '''على مهلك''': Literally "at your leisure." This is the most natural way to ask someone to stop talking too fast.
+
+    Ashan '''عشان''': Levantine "so that" or "because." In colloquial speech, it's used in every other sentence.
+
+    Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the beginning of a conversation with a native speaker so they feel comfortable correcting you.
+
+    At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
+  ru: |
+    ### Цель урока
+    Общаясь с носителем языка мы часто затрудняемся изъясниться правильно.
+    Нам не хватает слов, мы неуверенно пользуемся склонениями, наше произношение не идеально.
+    Чтобы помочь объяснить такие трудности и был создан этот урок.
+
+    ### Разговорные нюансы
+    Ля-хали '''لحالي''': Очень важное слово. Дословно "для себя самого", используется во всех контекстах, когда вы делаете что-то один или самостоятельно.
+
+    Ала махлак '''على مهلك''': Дословно "на твоей неспешности". Это самый естественный способ попросить кого-то не тараторить.
+
+    Ашан '''عشان''': Левантийское "чтобы" или "потому что". В разговорной речи оно звучит в каждом втором предложении.
+
+    Саллих-ли '''صلح لي''': "Исправь мне". Полезно сказать это в начале разговора с носителем, чтобы он не стеснялся вас поправлять.
+
+    Ат-талфон '''التلفون''': Несмотря на наличие слова "хатиф" (телефон), в 99% случаев люди используют именно это заимствование.
+story:
+  en: |
+    ### My path in language (Monologue)
+    ##story-line## '''بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون. ''' ##story-translation##  I started studying the language on my own two years ago with a phone app. ##story-transcr## Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
+    ##story-line## '''مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي. ''' ##story-translation##  Sometimes I lack words and my grammar is weak, and it is hard to understand by ear. ##story-transcr##  Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
+    ##story-line## '''بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا. ''' ##story-translation##  I try to read the news to communicate with people. Language connects us. ##story-transcr##  Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
+
+    ### Asking for assistance (Short Dialogue)
+    ##story-line## '''لو سمحت، احكي على مهلك. ما فهمت كل شيء. ''' ##story-translation##  Please, speak slower. I did not understand everything. ##story-transcr##  Law samaht, ihki ala mahlak. Ma fahimt kull shi.
+    ##story-line## '''كيف لهجتي؟ صلح لي أغلاطي وكيف بنحكي هذه الكلمة صح؟ ''' ##story-translation##  How is my accent? Correct my mistakes and how to say this word correctly? ##story-transcr##  Kayf lahjati? Sallih-li aghlati wa kayf binhki hadhihi al-kalima sah?
+    ##story-line## '''لازم أزيد كلماتي. العمر مش حاجز للدراسة! ''' ##story-translation##  I need to expand my vocabulary. Age is not a barrier to study! ##story-transcr##  Lazim azid kalimati. Al-umr mish hajaz lid-dirasa!
+words:
+- en: self
+  ar: لحالي
+  transliteration: la-hali
+  ru: самостоятельно
+- en: application
+  ar: تطبيق
+  transliteration: tatbiq
+  ru: приложение
+- en: grammar
+  ar: قواعد
+  transliteration: qawa'id
+  ru: грамматика
+- en: accent
+  ar: لهجة
+  transliteration: lahja
+  ru: акцент
+- en: communication
+  ar: تواصل
+  transliteration: tawasul
+  ru: общение
+- en: vocabulary
+  ar: قاموس كلمات
+  transliteration: qamus kalimat
+  ru: запас слов
+- en: mistake
+  ar: غلط
+  transliteration: ghalat
+  ru: ошибка
+- en: news
+  ar: أخبار
+  transliteration: akhbar
+  ru: новости
+- en: slowly
+  ar: على مهلك
+  transliteration: ala mahlak
+  ru: медленно
+- en: correcting
+  ar: تصليح
+  transliteration: taslih
+  ru: исправление
+- en: study
+  ar: بدرس
+  transliteration: badrus
+  ru: учить
+- en: understand
+  ar: بفهم
+  transliteration: bafham
+  ru: понимать
+- en: speak
+  ar: بحكي
+  transliteration: bahki
+  ru: говорить
+- en: explain
+  ar: يشرح
+  transliteration: yishrah
+  ru: объяснять
+- en: to start
+  ar: بدأت
+  transliteration: badat
+  ru: начинать
+- en: to correct
+  ar: يصلح
+  transliteration: yisallih
+  ru: исправлять
+- en: to try
+  ar: بحاول
+  transliteration: bahawal
+  ru: стараться
+- en: to read
+  ar: بقرأ
+  transliteration: baqra
+  ru: читать
+- en: to connect
+  ar: بيجمع
+  transliteration: bijma
+  ru: соединять
+- en: two years
+  ar: سنتين
+  transliteration: sanatayn
+  ru: два года
+- en: word
+  ar: كلمة
+  transliteration: kalima
+  ru: слово
+- en: words
+  ar: كلمات
+  transliteration: kalimat
+  ru: слова
+- en: age
+  ar: عمر
+  transliteration: umr
+  ru: возраст
+- en: barrier
+  ar: حاجز
+  transliteration: hajaz
+  ru: преграда
+- en: correctly
+  ar: صح
+  transliteration: sah
+  ru: правильно
+- en: sometimes
+  ar: مرات
+  transliteration: marrat
+  ru: иногда
+sentences:
+- en: i study the language on my own
+  ar: بدرس اللغة لحالي
+  transliteration: badrus al-lugha la-hali
+  ru: учу язык самостоятельно
+- en: i have been studying for two years
+  ar: بدرس من سنتين
+  transliteration: badrus min sanatayn
+  ru: учусь два года
+- en: i started with a phone app
+  ar: بدأت بتطبيق على التلفون
+  transliteration: badat bi-tatbiq ala at-talafon
+  ru: начинал по приложению в телефоне
+- en: sometimes i lack words
+  ar: مرات بنقصني كلمات
+  transliteration: marrat binqusni kalimat
+  ru: иногда мне не хватает слов
+- en: i have weak grammar knowledge
+  ar: قواعدي ضعيفة
+  transliteration: qawa'idi da'ifa
+  ru: слабо знаю грамматику
+- en: can you explain this word?
+  ar: ممكن تشرح هذه الكلمة
+  transliteration: mumkin tishrah hadhihi al-kalima
+  ru: можешь объяснить это слово
+- en: how to say it correctly?
+  ar: كيف بنحكيها صح
+  transliteration: kayf binhkiha sah
+  ru: как правильно сказать
+- en: what kind of accent do i have?
+  ar: كيف لهجتي
+  transliteration: kayf lahjati
+  ru: какой у меня акцент
+- en: i study to communicate
+  ar: بدرس عشان أتواصل
+  transliteration: badrus ashan atwasal
+  ru: учусь чтобы общаться
+- en: it is never too late to learn
+  ar: العمر مش حاجز للدراسة
+  transliteration: al-umr mish hajaz lid-dirasa
+  ru: возраст не преграда учёбе
+- en: language connects people
+  ar: اللغة بتجمع الناس
+  transliteration: al-lugha bitijma' an-nas
+  ru: язык соединяет людей
+- en: speak slower
+  ar: احكي على مهلك
+  transliteration: ihki ala mahlak
+  ru: говори медленнее
+- en: i did not understand everything
+  ar: ما فهمت كل شيء
+  transliteration: ma fahimt kull shi
+  ru: я не всё понял
+- en: i speak like a child
+  ar: بحكي مثل الولد الصغير
+  transliteration: bahki mitl al-walad as-saghir
+  ru: владею языком на уровне ребёнка
+- en: i need to expand my vocabulary
+  ar: لازم أزيد كلماتي
+  transliteration: lazim azid kalimati
+  ru: мне нужно расширить запас слов
+- en: i try to read the news
+  ar: بحاول أقرأ الأخبار
+  transliteration: bahawal aqra al-akhbar
+  ru: стараюсь читать новости
+- en: it is hard to understand by ear
+  ar: صعب أفهم سماعي
+  transliteration: sa'b afham sima'i
+  ru: трудно понимать на слух
+- en: please correct my mistakes
+  ar: صلح لي أغلاطي لو سمحت
+  transliteration: sallih-li aghlati law samaht
+  ru: пожалуйста, исправляй мои ошибки

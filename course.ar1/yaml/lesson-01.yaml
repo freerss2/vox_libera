@@ -1,0 +1,198 @@
+id: describe_yourself_1
+name: Tell about yourself 1
+explanations:
+  en: |
+    The topic of this lesson is talking about yourself: your occupation and family.
+    Verbs are given in their active spoken Levantine form with the prefix [b-].
+    Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
+  ru: |
+    Тема этого урока - рассказ о себе: род занятий, семья.
+    Глаголы приводятся в их активной разговорной форме левантийского диалекта с префиксом [b-].
+    Помните, что в арабском языке прилагательные стоят ПОСЛЕ существительного, которое они описывают (например, «красивый дом»).
+story:
+  en: |
+    ##story-line## '''من وين أنت؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn anta?
+
+    ##story-line## ''' أنا من روسيا، بدرس اللغة العربية الآن.''' ##story-translation## I am from Russia, I study Arabic now. ##story-transcr## Ana min rusiya, badrus al-lugha al-arabiya al-an.
+
+    ##story-line## '''شو مهنتك؟ بتشتغل هنا في الشركة؟''' ##story-translation## What is your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtaghil huna fi ash-sharika?
+
+    ##story-line## '''نعم، بشتغل مطور ومبرمج. بحب شغلي كثير.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Naam, bashtaghil mutawwir wa mubarmij. Bahibb shughli kathir.
+
+    ##story-line## '''مبروك! وين ساكن؟ في مدينة كبيرة؟''' ##story-translation## Congrats! Where do you live? In a big city? ##story-transcr## Mabruk! Wayn sakin? Fi madina kabira?
+
+    ##story-line## '''لا، عندي بيت جديد جميل مع عائلتي. ساكنين مع بعض.''' ##story-translation## No, I have a beautiful new house with my family. We live together. ##story-transcr## La, indi bayt jadid jamil ma’a a'ilati. Saknin ma'a ba'ad.
+
+    ##story-line## '''تماماً! تشرفنا يا سيد.''' ##story-translation## Exactly! Pleased to meet you, sir. ##story-transcr## Tamaman! Tasharrafna ya sayyid.
+
+    ##story-line## '''شكراً! فرصة سعيدة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
+words:
+- en: pleased to meet you
+  ar: تشرفنا
+  transliteration: tasharrafna
+  ru: рад знакомству
+- en: name
+  ar: اسم
+  transliteration: ism
+  ru: имя
+- en: profession
+  ar: مهنة
+  transliteration: mihna
+  ru: профессия
+- en: programmer
+  ar: مبرمج
+  transliteration: mubarmij
+  ru: программист
+- en: engineer
+  ar: مهندس
+  transliteration: muhandis
+  ru: инженер
+- en: developer
+  ar: مطور
+  transliteration: mutawwir
+  ru: разработчик
+- en: company
+  ar: شركة
+  transliteration: sharika
+  ru: компания
+- en: international
+  ar: دولية
+  transliteration: dawliya
+  ru: международная
+- en: family
+  ar: عائلة
+  transliteration: a'ila
+  ru: семья
+- en: father
+  ar: أب
+  transliteration: ab
+  ru: отец
+- en: my father
+  ar: أبوي
+  transliteration: abuy
+  ru: мой отец
+- en: mother
+  ar: أم
+  transliteration: umm
+  ru: мать
+- en: my mother
+  ar: أمي
+  transliteration: ummi
+  ru: моя мать
+- en: brother
+  ar: أخ
+  transliteration: akh
+  ru: брат
+- en: sister
+  ar: أخت
+  transliteration: ukht
+  ru: сестра
+- en: friend (m)
+  ar: صاحب
+  transliteration: sahib
+  ru: друг
+- en: mr.
+  ar: سيد
+  transliteration: sayyid
+  ru: господин
+- en: mrs.
+  ar: سيدة
+  transliteration: sayyida
+  ru: госпожа
+- en: miss
+  ar: آنسة
+  transliteration: anisa
+  ru: девушка
+- en: city
+  ar: مدينة
+  transliteration: madina
+  ru: город
+- en: now
+  ar: الآن
+  transliteration: al-an
+  ru: сейчас
+sentences:
+- en: i work as a programmer
+  ar: بشتغل مبرمج
+  transliteration: bashtaghil mubarmij
+  ru: я работаю программистом
+- en: i work remotely
+  ar: بشتغل عن بعد
+  transliteration: bashtaghil an bu'd
+  ru: я работаю удалённо
+- en: i live in a big city
+  ar: ساكن في مدينة كبيرة
+  transliteration: sakin fi madina kabira
+  ru: я живу в большом городе
+- en: i have a small family
+  ar: عندي عائلة صغيرة
+  transliteration: indi a'ila saghira
+  ru: у меня маленькая семья
+- en: my father is an engineer
+  ar: أبوي مهندس
+  transliteration: abuy muhandis
+  ru: мой отец инженер
+- en: my mother is a teacher
+  ar: أمي معلمة
+  transliteration: ummi mu'allima
+  ru: моя мать учительница
+- en: a beautiful house
+  ar: بيت جميل
+  transliteration: bayt jamil
+  ru: красивый дом
+- en: a beautiful new house
+  ar: بيت جديد جميل
+  transliteration: bayt jadid jamil
+  ru: красивый новый дом
+- en: i have a brother and a sister
+  ar: عندي أخ وأخت
+  transliteration: indi akh wa ukht
+  ru: у меня есть брат и сестра
+- en: i work in an international company
+  ar: بشتغل في شركة دولية
+  transliteration: bashtaghil fi sharika dawliya
+  ru: я работаю в международной компании
+- en: where are you from
+  ar: من وين أنت
+  transliteration: min wayn anta
+  ru: откуда ты
+- en: i am from russia
+  ar: أنا من روسيا
+  transliteration: ana min rusiya
+  ru: я из россии
+- en: where do you live
+  ar: وين ساكن
+  transliteration: wayn sakin
+  ru: где ты живешь
+- en: what is your profession
+  ar: شو مهنتك
+  transliteration: shu mihnatak
+  ru: какая твоя профессия
+- en: i study arabic language now
+  ar: بدرس اللغة العربية الآن
+  transliteration: badrus al-lugha al-arabiya al-an
+  ru: я учу арабский язык сейчас
+- en: my house is here
+  ar: بيتي هنا
+  transliteration: bayti huna
+  ru: мой дом здесь
+- en: i love my job
+  ar: بحب شغلي
+  transliteration: bahibb shughli
+  ru: я люблю свою работу
+- en: we live together
+  ar: ساكنين مع بعض
+  transliteration: saknin ma' ba'ad
+  ru: мы живем вместе
+- en: i speak english
+  ar: بحكي إنجليزي
+  transliteration: bahki inglizi
+  ru: я говорю по-английски
+- en: this is my friend
+  ar: هذا صاحبي
+  transliteration: hada sahibi
+  ru: это мой друг
+- en: my friend lives here
+  ar: صاحبتي ساكنة هنا
+  transliteration: sahibti sakna huna
+  ru: моя подруга живет здесь

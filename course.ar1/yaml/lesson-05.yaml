@@ -1,0 +1,262 @@
+id: restaurant_1
+name: Restaurant 1
+explanations:
+  en: |
+    ### Usage of some words
+    Zaki '''زاكي''': Although this word isn't a literary one, it's precisely this kind of vocabulary that brings people together.
+
+    Suhn '''سخن''': Used for both the weather and food. If the soup is too hot, it's suhn.
+
+    Al-Hilu '''الحلو''': This word (literally "sweet") is more often used for dessert than halva, which can refer to a specific sweet.
+
+    Finjan '''فنجان''': Typically a small cup for coffee. For tea, they often say kasa.
+
+    Al-may '''المي''': This is the most common word for water in the Levant (instead of the classic al-ma).
+
+    Jib '''جيب''': A very useful word for "bring." It's used constantly in restaurants.
+
+    A'tini '''أعطيني''': A polite form of "give me."
+
+    Zaki '''زاكي''': When people say "the restaurant is delicious" (al-mat'am zaki), they mean that the food there is delicious—this is a very popular expression.
+
+    Kawiya '''قوية''': Literally "strong." This is how they say strong coffee.
+
+    ### A little grammar
+    Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
+    Note the word "halva" - it shares a root with both "sweet" and "dessert."
+  ru: |
+    ### Особенности употребления некоторых слов
+    Заки '''زاكي''': Это слово хоть и не литературное, но именно такая лексика сближает.
+
+    Сухн '''سخن''': Используется и для погоды, и для еды. Если суп слишком горячий — он сухн.
+
+    Аль-Хилю '''الحلو''': Для десерта чаще используют именно это слово (буквально «сладкое»), чем халва, которое может означать конкретную сладость.
+
+    Финжан '''فنجان''': Обычно это маленькая чашечка для кофе. Для чая чаще говорят каса.
+
+    Аль-май '''المي''': Это самое распространенное слово для воды в Леванте (вместо классического аль-ма).
+
+    Джиб '''جيب''': Очень полезное слово «принеси». В ресторане звучит постоянно.
+
+    А'тини '''أعطيني''': Вежливая форма «дай мне».
+
+    Заки '''زاكي''': Когда говорят «ресторан вкусный» (al-mat'am zaki), имеют в виду, что там вкусно готовят — это очень популярный оборот.
+
+    Кавия '''قوية''': Буквально «сильная». Именно так говорят про крепкий кофе.
+
+    ### Немного грамматики
+    В описании еды очень много прилагательных образованных из страдательного залога по модели [1a-2i-3] где 1, 2 и 3 - буквы корня.
+    Обратите внимание на слово "халва" - оно однокоренное и со словом "сладкий" и "дессерт".
+story:
+  en: |
+    ##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
+
+    ##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+
+    ##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+
+    ##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
+
+    ##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
+words:
+- en: delicious
+  ar: زاكي
+  transliteration: zaki
+  ru: вкусный
+- en: salty
+  ar: مالح
+  transliteration: malih
+  ru: соленый
+- en: sour
+  ar: حامض
+  transliteration: hamid
+  ru: кислый
+- en: bill
+  ar: حساب
+  transliteration: hisab
+  ru: счет
+- en: order
+  ar: طلب
+  transliteration: talab
+  ru: заказ
+- en: appetizer
+  ar: مقبلات
+  transliteration: muqabbilat
+  ru: закуска
+- en: main dish
+  ar: وجبة رئيسية
+  transliteration: wajba ra'isiya
+  ru: основное блюдо
+- en: side dish
+  ar: وجبة جانبية
+  transliteration: wajba janibiya
+  ru: гарнир
+- en: sweet / dessert
+  ar: حِلْو
+  transliteration: hilw
+  ru: сладкое
+- en: the bill / check
+  ar: الحساب
+  transliteration: al-hisab
+  ru: счёт
+- en: meat
+  ar: لحمة
+  transliteration: lahma
+  ru: мясо
+- en: napkin
+  ar: محرمة
+  transliteration: mahrama
+  ru: салфетка
+- en: tablecloth
+  ar: شرشف طاوله
+  transliteration: sharshaf tawila
+  ru: скатерть
+- en: plate
+  ar: صحن
+  transliteration: sahn
+  ru: тарелка
+- en: i want
+  ar: بدي
+  transliteration: biddi
+  ru: я хочу
+- en: cup
+  ar: فنجان
+  transliteration: finjan
+  ru: чашка
+- en: almonds
+  ar: لوز
+  transliteration: lawz
+  ru: миндаль
+- en: almond milk
+  ar: حليب لوز
+  transliteration: halib lawz
+  ru: миндальное молоко
+- en: no sugar
+  ar: بدون سكر
+  transliteration: bidun sukkar
+  ru: без сахара
+- en: substitute / alternative
+  ar: بديل
+  transliteration: badil
+  ru: заменитель
+- en: spoon
+  ar: معلقة
+  transliteration: malaqa
+  ru: ложка
+- en: fork
+  ar: شوكة
+  transliteration: shawka
+  ru: вилка
+- en: knife
+  ar: سكينة
+  transliteration: skinna
+  ru: нож
+- en: please
+  ar: لو سمحت
+  transliteration: law samaht
+  ru: пожалуйста (просьба)
+- en: i order
+  ar: بطلب
+  transliteration: batlub
+  ru: я заказываю
+- en: he pays
+  ar: بيدفع
+  transliteration: biyadfa
+  ru: он платит
+- en: i like / love
+  ar: بحب
+  transliteration: bahibb
+  ru: люблю
+sentences:
+- en: the appetizer is very delicious
+  ar: المقبلات زاكية كثير
+  transliteration: al-muqabbilat zakya kathir
+  ru: закуска очень вкусная
+- en: waiter i want a napkin please
+  ar: يا جرسون بدي محرمة لو سمحت
+  transliteration: ya garson biddi mahrama law samaht
+  ru: официант я хочу салфетку пожалуйста
+- en: i order chicken and a side dish
+  ar: بطلب دجاج ووجبة جانبية
+  transliteration: batlub djaj wa wajba janibiya
+  ru: я заказываю курицу и гарнир
+- en: this soup is very salty
+  ar: هذه الشوربة مالحة كثير
+  transliteration: hadhihi ash-shorba maliha kathir
+  ru: этот суп очень соленый
+- en: where is the knife and the fork
+  ar: وين السكينة والشوكة
+  transliteration: wayn as-skinna wash-shawka
+  ru: где нож и вилка
+- en: the bill please
+  ar: الحساب لو سمحت
+  transliteration: al-hisab law samaht
+  ru: счет пожалуйста
+- en: where is my order
+  ar: وين الطلب تبعي
+  transliteration: wayn at-talab tabai
+  ru: где мой заказ
+- en: the sweet is beautiful and delicious
+  ar: الحِلْو جميل وزاكي
+  transliteration: al-hilw jamil wa zaki
+  ru: сладкое красивое и вкусное
+- en: i want a cup of tea
+  ar: بدي فنجان شاي
+  transliteration: biddi finjan shay
+  ru: я хочу чашку чая
+- en: the tablecloth is on the table
+  ar: الشرشف على الطاولة
+  transliteration: ash-sharshaf ala at-tawila
+  ru: скатерть находится на столе
+- en: this fish is sour
+  ar: هذه السمكة حامضة
+  transliteration: hadhihi as-samaka hamda
+  ru: эта рыба кислая
+- en: my friend wants a clean plate
+  ar: صاحبي بده صحن نظيف
+  transliteration: sahibi biddu sahn nadif
+  ru: мой друг хочет чистую тарелку
+- en: the main dish today is fish
+  ar: الوجبة الرئيسية اليوم هي سمك
+  transliteration: al-wajba ar-ra'isiya al-yom hiyya samak
+  ru: основное блюдо сегодня это рыба
+- en: the food here is always delicious
+  ar: الأكل هنا دائماً زاكي
+  transliteration: al-akl huna da'iman zaki
+  ru: еда здесь всегда вкусная
+- en: give me a spoon please
+  ar: اعطيني معلقة لو سمحت
+  transliteration: atini malaqa law samaht
+  ru: дай мне ложку пожалуйста
+- en: i drink juice from this cup
+  ar: بشرب عصير من هذا الفنجان
+  transliteration: bashrab asir min hada al-finjan
+  ru: я пью сок из этой чашки
+- en: where is my spoon
+  ar: وين معلقتي
+  transliteration: wayn malaqti
+  ru: где моя ложка
+- en: the side dish is delicious
+  ar: الوجبة الجانبية زاكية
+  transliteration: al-wajba al-janibiya zakya
+  ru: гарнир вкусный
+- en: he pays the bill here
+  ar: بيدفع الحساب هنا
+  transliteration: biyadfa al-hisab huna
+  ru: он оплачивает счет здесь
+- en: i want sweet now
+  ar: بدي حِلْو الآن
+  transliteration: biddi hilw al-an
+  ru: я хочу сладкое сейчас
+- en: i want almond milk
+  ar: بدي حليب لوز
+  transliteration: biddi halib lawz
+  ru: хочу миндальное молоко
+- en: coffee without sugar
+  ar: قهوة بدون سكر
+  transliteration: qahwa bidun sukkar
+  ru: кофе без сахара
+- en: i want a milk substitute
+  ar: بدي بديل حليب
+  transliteration: biddi badil halib
+  ru: хочу заменитель молока

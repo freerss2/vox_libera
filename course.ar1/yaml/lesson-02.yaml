@@ -1,0 +1,199 @@
+id: work_n_learn_1
+name: Professions and studies 1
+explanations:
+  en: |
+    In this lesson, we'll explore job titles, as well as vocabulary related to work and study.
+    **Please note:** In colloquial speech, verbs are used with the prefix [be-] '''ب'''.
+    Some words may be familiar to us.
+    For example:
+    [talib] - "student"
+    [qumash] - "fabric (qumach)"
+    Some words are simply calques: "academy," "cinema."
+    The root of the word '''جامعة''' means "gathering," which will be useful when studying words with the same root.
+  ru: |
+    В этом уроке мы изучаем названия профессий, а также лексику связанную с работой и учёбой.
+    **Обратите внимание:** в разговорном языке глаголы употребляются с приставкой [be-] '''ب'''.
+    Некоторые слова могут быть нам знакомы.
+    Например:
+     [talib]  - "студент"
+     [qumash] - "ткань (кумач)"
+    Некоторые слова - просто калькированы: "академия", "синема".
+    Корень слова '''جامعة''' означает "собрание", это пригодится нам при изучении однокоренных слов.
+words:
+- en: tailor (f)
+  ar: خياطة
+  transliteration: khayyata
+  ru: портная
+- en: mathematician
+  ar: عالم رياضيات
+  transliteration: alim riyadiyat
+  ru: математик
+- en: designer (m)
+  ar: مصمم
+  transliteration: musammim
+  ru: дизайнер
+- en: student (m)
+  ar: طالب
+  transliteration: talib
+  ru: студент
+- en: student (f)
+  ar: طالبة
+  transliteration: taliba
+  ru: студентка
+- en: workshop
+  ar: ورشة
+  transliteration: warsha
+  ru: мастерская
+- en: studio
+  ar: استوديو
+  transliteration: ustudiyu
+  ru: студия
+- en: class
+  ar: صف
+  transliteration: saff
+  ru: класс
+- en: art
+  ar: فن
+  transliteration: fann
+  ru: искусство
+- en: arts
+  ar: فنون
+  transliteration: funun
+  ru: искусства
+- en: academy
+  ar: أكاديمية
+  transliteration: akadimiya
+  ru: академия
+- en: cinema
+  ar: سينما
+  transliteration: sinima
+  ru: кинематография
+- en: faculty
+  ar: كلية
+  transliteration: kulliya
+  ru: факультет
+- en: university
+  ar: جامعة
+  transliteration: jamia
+  ru: университет
+- en: lesson
+  ar: درس
+  transliteration: dars
+  ru: урок
+- en: science
+  ar: علم
+  transliteration: ilm
+  ru: наука
+- en: blueprint
+  ar: مخطط
+  transliteration: mukhattat
+  ru: чертеж
+- en: fabric
+  ar: قماش
+  transliteration: qumash
+  ru: ткань
+- en: dress
+  ar: فستان
+  transliteration: fustan
+  ru: платье
+- en: numbers
+  ar: أرقام
+  transliteration: arqam
+  ru: цифры
+- en: project
+  ar: مشروع
+  transliteration: mashru
+  ru: проект
+- en: exam
+  ar: امتحان
+  transliteration: al-imtihan
+  ru: экзамен
+- en: library
+  ar: مكتبة
+  transliteration: maktaba
+  ru: библиотека
+- en: tomorrow
+  ar: بكرة
+  transliteration: bukra
+  ru: завтра
+sentences:
+- en: she works as a tailor in the workshop
+  ar: بتشتغل خياطة في الورشة
+  transliteration: bitshataghil khayyata fil-warsha
+  ru: она работает портной в мастерской
+- en: the student studies at the faculty of arts
+  ar: الطالبة بتدرس في كلية الفنون
+  transliteration: at-taliba bitadrus fi kulliyat al-funun
+  ru: студентка учится на факультете искусств
+- en: the mathematician works in the academy
+  ar: عالم الرياضيات بيشتغل في الأكاديمية
+  transliteration: alim ar-riyadiyat bishataghil fil-akadimiya
+  ru: математик работает в академии
+- en: the designer is making a project in the studio
+  ar: المصمم بيعمل مشروع في الاستوديو
+  transliteration: al-musammim bi'amal mashru fil-ustudiyu
+  ru: дизайнер создает проект в студии
+- en: the teacher explains the lesson in class
+  ar: المعلم بيشرح الدرس في الصف
+  transliteration: al-muallim bishrah ad-dars fis-saff
+  ru: учитель объясняет урок в классе
+- en: i love cinema and art
+  ar: بحب السينما والفن
+  transliteration: bahibb as-sinima wal-fann
+  ru: я люблю кинематограф и искусство
+- en: she is sewing a dress from beautiful fabric
+  ar: بتخيط فستان من قماش جميل
+  transliteration: bitkhayyit fustan min qumash jamil
+  ru: она шьет платье из красивой ткани
+- en: we study math at the university
+  ar: بندرس رياضيات في الجامعة
+  transliteration: bandrus riyadiyat fil-jamia
+  ru: мы изучаем математику в университете
+- en: this workshop is very big
+  ar: هذه الورشة كبيرة كثير
+  transliteration: hadhihi al-warsha kabira kathir
+  ru: эта мастерская очень большая
+- en: the student has an exam tomorrow
+  ar: الطالبة عندها امتحان بكرة
+  transliteration: at-taliba indha imtihan bukra
+  ru: у студентки завтра экзамен
+- en: the math professor writes numbers
+  ar: أستاذ الرياضيات بيكتب الأرقام
+  transliteration: ustadh ar-riyadiyat biyaktub al-arqam
+  ru: профессор математики пишет цифры
+- en: the academy is open for students
+  ar: الأكاديمية مفتوحة للطلاب
+  transliteration: al-akadimiya maftuha lit-tullab
+  ru: академия открыта для студентов
+- en: the designer works on a new blueprint
+  ar: المصمم بيشتغل على مخطط جديد
+  transliteration: al-musammim bishataghil ala mukhattat jadid
+  ru: дизайнер работает над новым чертежом
+- en: the art lesson starts now
+  ar: درس الفن بيبدأ الآن
+  transliteration: dars al-fann biyabda al-an
+  ru: урок искусства начинается сейчас
+- en: the student reads a book in the library
+  ar: الطالب بيقرأ كتاب في المكتبة
+  transliteration: at-talib biqra kitab fil-maktaba
+  ru: студент читает книгу в библиотеке
+- en: i have a big project tomorrow
+  ar: عندي مشروع كبير بكرة
+  transliteration: indi mashru kabir bukra
+  ru: у меня большой проект завтра
+- en: she studies science at the university
+  ar: بتدرس علم في الجامعة
+  transliteration: bitadrus ilm fil-jamia
+  ru: она изучает науку в университете
+- en: the teacher writes numbers here
+  ar: المعلم بيكتب أرقام هنا
+  transliteration: al-muallim biyaktub arquam huna
+  ru: учитель пишет цифры здесь
+- en: we have a lesson in the academy
+  ar: عندنا درس في الأكاديمية
+  transliteration: indna dars fil-akadimiya
+  ru: у нас урок в академии
+- en: the designer loves beautiful fabric
+  ar: المصمم بيحب قماش جميل
+  transliteration: al-musammim bihibb qumash jamil
+  ru: дизайнер любит красивую ткань

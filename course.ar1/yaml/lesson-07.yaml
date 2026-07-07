@@ -1,0 +1,192 @@
+id: names_meaning_1
+name: Names meaning 1
+explanations:
+  en: |
+    ### Teaching Anchor: Proper Names
+    Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
+  ru: |
+    ### Методический якорь: Имена собственные
+
+    Многие арабские имена — это обычные прилагательные и существительные. Понимание их буквального значения помогает мгновенно связать новое слово с уже знакомым именем (например, имя Али означает "высокий/возвышенный", а Карим — "щедрый").
+words:
+- en: happy (m)
+  ar: سعيد
+  transliteration: sa'id
+  ru: счастливый
+- en: beautiful (m)
+  ar: جميل
+  transliteration: jamil
+  ru: красивый
+- en: kind (m)
+  ar: طيب
+  transliteration: tayyib
+  ru: добрый
+- en: elevated (m)
+  ar: عالي
+  transliteration: ali
+  ru: возвышенный
+- en: calm (m)
+  ar: هادي
+  transliteration: hadi
+  ru: спокойный
+- en: generous (m)
+  ar: كريم
+  transliteration: karim
+  ru: щедрый
+- en: faithful (m)
+  ar: أمين
+  transliteration: amin
+  ru: верный
+- en: understanding (m)
+  ar: فهيم
+  transliteration: fahim
+  ru: понимающий
+- en: man / guy
+  ar: زلمة
+  transliteration: zalama
+  ru: человек / мужчина
+- en: employee (m)
+  ar: موظف
+  transliteration: muwazzaf
+  ru: сотрудник / работник
+- en: bright / shining (m)
+  ar: منير
+  transliteration: munir
+  ru: яркий / светлый
+- en: strong (m)
+  ar: شديد
+  transliteration: shadid
+  ru: крепкий
+- en: flower
+  ar: زهرة
+  transliteration: zahra
+  ru: цветок
+- en: rose
+  ar: وردة
+  transliteration: warda
+  ru: роза
+- en: star
+  ar: نجمة
+  transliteration: najma
+  ru: звезда
+- en: glow
+  ar: نور
+  transliteration: nur
+  ru: сияние
+- en: sun
+  ar: شمس
+  transliteration: shams
+  ru: солнце
+- en: pure (f)
+  ar: صافية
+  transliteration: safiya
+  ru: ясная
+- en: moon
+  ar: قمر
+  transliteration: qamar
+  ru: луна
+- en: pearl
+  ar: لؤلؤة
+  transliteration: lu'lu'a
+  ru: жемчужина
+- en: generous (f)
+  ar: كريمة
+  transliteration: karima
+  ru: щедрая
+- en: beautiful (f)
+  ar: جميلة
+  transliteration: jamila
+  ru: красивая
+- en: happy (f)
+  ar: سعيدة
+  transliteration: sa'ida
+  ru: счастливая
+- en: kind (f)
+  ar: طيبة
+  transliteration: tayyiba
+  ru: добрая
+sentences:
+- en: this man is very happy
+  ar: هذا الزلمة سعيد كثير
+  transliteration: hadha az-zalama sa'id kathir
+  ru: этот человек очень счастливый
+- en: your friend is very handsome
+  ar: صاحبك جميل كثير
+  transliteration: sahbak jamil kathir
+  ru: твой друг очень красивый
+- en: my brother is very kind
+  ar: أخوي طيب كثير
+  transliteration: akhuy tayyib kathir
+  ru: мой брат очень добрый
+- en: this boy is very tall
+  ar: هذا الولد طويل كثير
+  transliteration: hadha al-walad tawil kathir
+  ru: этот парень очень высокий
+- en: the sea today is very calm
+  ar: البحر اليوم هادي كثير
+  transliteration: al-bahr al-yom hadi kathir
+  ru: море сегодня очень спокойное
+- en: your father is very generous
+  ar: أبوك كريم كثير
+  transliteration: abuk karim kathir
+  ru: твой отец очень щедрый
+- en: this employee is very loyal
+  ar: هذا الموظف أمين كثير
+  transliteration: hadha al-muwazzaf amin kathir
+  ru: этот сотрудник очень верный
+- en: my son is very smart
+  ar: ابني فهيم كثير
+  transliteration: ibni fahim kathir
+  ru: мой сын очень умный
+- en: this man is very kind
+  ar: هذا الزلمة طيب كثير
+  transliteration: hadha az-zalama tayyib kathir
+  ru: этот человек очень добрый
+- en: your room is very bright
+  ar: غرفتك منيرة كثير
+  transliteration: ghurfatak munira kathir
+  ru: твоя комната очень светлая
+- en: this coffee is very strong
+  ar: هذه القهوة شديدة كثير
+  transliteration: hadhihi al-qahwa shadida kathir
+  ru: этот кофе очень крепкий
+- en: our neighbor is very calm
+  ar: جارنا هادي كثير
+  transliteration: jarna hadi kathir
+  ru: наш сосед очень спокойный
+- en: this flower is very beautiful
+  ar: هذه الزهرة جميلة كثير
+  transliteration: hadhihi az-zahra jamila kathir
+  ru: этот цветок очень красивый
+- en: the sun today is very hot
+  ar: الشمس اليوم سخنة كثير
+  transliteration: ash-shams al-yom sukhna kathir
+  ru: солнце сегодня очень жаркое
+- en: this star is very bright
+  ar: هذه النجمة منيرة كثير
+  transliteration: hadhihi an-najma munira kathir
+  ru: эта звезда очень яркая
+- en: this rose is very beautiful
+  ar: هذه الوردة جميلة كثير
+  transliteration: hadhihi al-warda jamila kathir
+  ru: эта роза очень красивая
+- en: the sky today is very clear
+  ar: السماء اليوم صافية كثير
+  transliteration: as-sama al-yom safiya kathir
+  ru: небо сегодня очень чистое
+- en: your sister is very happy
+  ar: أختك سعيدة كثير
+  transliteration: ukhtak sa'ida kathir
+  ru: твоя сестра очень счастливая
+- en: my mom is very kind
+  ar: أمي طيبة كثير
+  transliteration: ummi tayyiba kathir
+  ru: моя мама очень добрая
+- en: the moon today is very beautiful
+  ar: القمر اليوم جميل كثير
+  transliteration: al-qamar al-yom jamil kathir
+  ru: луна сегодня очень красивая
+- en: this woman is very generous
+  ar: هذه المرة كريمة كثير
+  transliteration: hadhihi al-mara karima kathir
+  ru: эта женщина очень щедрая

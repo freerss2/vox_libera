@@ -2296,16 +2296,16 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
 `,
     "story": `
 ### Table talk
-##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna? 
-##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna. 
-##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh. 
-##story-line## '''ممكن تطبع هذا المستند على ورقة رمادية؟''' ##story-translation## Can you print this document on a grey paper?  ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya? 
+##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna?
+##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
+##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
+##story-line## '''ممكن تطبع هذا المستند على ورقة رمادية؟''' ##story-translation## Can you print this document on a grey paper?  ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
 
 ### Street scene
-##story-line## '''وين الفندق؟ هو بعيد من هنا؟''' ##story-translation## Where is the hotel? Is it far from here?  ##story-transcr## Wayn al-funduq? Huwa ba'id min huna? 
-##story-line## '''لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light.  ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya. 
-##story-line## '''تمام، هذا بالضبط شو بدي. شكراً!''' ##story-translation## Okay, this is exactly what I want. Thanks!  ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran! 
-##story-line## '''عفواً! اتفقنا، يوم سعيد.''' ##story-translation## You're welcome! Agreed, have a happy day.  ##story-transcr## Afwan! Ittafaqna, yawm sa'id. 
+##story-line## '''وين الفندق؟ هو بعيد من هنا؟''' ##story-translation## Where is the hotel? Is it far from here?  ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
+##story-line## '''لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light.  ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
+##story-line## '''تمام، هذا بالضبط شو بدي. شكراً!''' ##story-translation## Okay, this is exactly what I want. Thanks!  ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
+##story-line## '''عفواً! اتفقنا، يوم سعيد.''' ##story-translation## You're welcome! Agreed, have a happy day.  ##story-transcr## Afwan! Ittafaqna, yawm sa'id.
 `,
     "words": [
       [
@@ -2564,7 +2564,7 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
           [ "late", "متأخر", "muta'akhkhir" ],
           [ "sometimes", "مرات", "marrat" ],
           [ "always", "دائماً", "da'iman" ],
-          [ "now", "الآن", "al-an"] 
+          [ "now", "الآن", "al-an"]
         ]
       }
     ],

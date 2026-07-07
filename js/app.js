@@ -113,7 +113,6 @@ if ( ! topics[settings.getCurrentTopic()] ) {
 }
 
 // instantiate I18nManager
-const course_locales = manifest['course_locales'];
 if (course_locales) {
   Object.keys(course_locales).forEach(langCode => {
     if (locales[langCode]) {

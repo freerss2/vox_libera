@@ -1,0 +1,66 @@
+id: arabic_1
+author: felixl@rambler.ru
+version: 2.9.0
+metadata:
+  title: Arabic Basics
+  description: First 300 words and building basic sentences
+  level: A0
+  prerequisites:
+  - Alphabet
+  goals:
+  - Basic Greetings
+  - Simple Sentences
+target_language: ar
+icon_code: ع
+feedback:
+  perfect:
+  - - Great!
+    - أَحْسَنْتَ!
+    - Aḥsanta!
+  - - Perfect!
+    - مُمْتَاز!
+    - Mumtāz!
+  - - Mashallah!
+    - مَا شَاءَ الله!
+    - Mā shā'a Allāh!
+  good:
+  - - Good job!
+    - عَمَلٌ جَيِّد!
+    - '''Amalun jayyid!'
+  - - Well done!
+    - بَطَل!
+    - Baṭal!
+  tryAgain:
+  - - Try again
+    - حَاوِلْ مَرَّةً أُخْرَى
+    - Ḥāwil marratan ukhrā
+  - - Don't give up!
+    - لَا تَسْتَسْلِم!
+    - Lā tastaslim!
+locales:
+  en:
+    __title__: English
+  ru:
+    __title__: Русский
+    explanations: {}
+    interface:
+      Arabic Basics: Основы арабского
+      Great!: Отлично!
+      Perfect!: Превосходно!
+      Mashallah!: Машалла!
+      Good job!: Хорошая работа!
+      Well done!: Молодец!
+      Try again: Попробуй еще раз
+      Don't give up!: Не сдавайся!
+      All topics: Все темы
+      Tell about yourself 1: Рассказ о себе 1
+      Professions and studies 1: Профессии и учёба 1
+      Everyday life 1: Быт и обиход 1
+      Hobbies and travel 1: Хобби и путешествия 1
+      Restaurant 1: Ресторан 1
+      Airport 1: Аэропорт 1
+      Names meaning 1: Значения имён 1
+      Polite language 1: Вежливые обращения 1
+      Studying language 1: Изучая язык 1
+      Filling the Gaps: Полезные мелочи
+      Health 1: Здоровье 1

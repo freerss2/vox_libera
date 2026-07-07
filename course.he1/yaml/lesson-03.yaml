@@ -1,0 +1,136 @@
+id: work_n_learn_1
+name: Professions and studies 1
+words:
+- en: tailor
+  he: תופרת
+  transliteration: toferet
+  ru: портная
+- en: mathematician
+  he: מתמטיקאי
+  transliteration: matematika'i
+  ru: математик
+- en: teacher
+  he: מורה
+  transliteration: mora
+  ru: учитель
+- en: designer
+  he: מעצב
+  transliteration: me'atzev
+  ru: дизайнер
+- en: workshop
+  he: סדנה
+  transliteration: sadna
+  ru: мастерская
+- en: art
+  he: אמנות
+  transliteration: omanut
+  ru: искусство
+- en: academy
+  he: אקדמיה
+  transliteration: akademya
+  ru: академия
+- en: student
+  he: סטודנטית
+  transliteration: studentit
+  ru: студентка
+- en: cinema
+  he: קולנוע
+  transliteration: kolno'a
+  ru: кинематография
+- en: faculty / college
+  he: פקולטה
+  transliteration: fakulta
+  ru: факультет
+- en: university
+  he: אוניברסיטה
+  transliteration: universita
+  ru: университет
+- en: lesson
+  he: שיעור
+  transliteration: shi'ur
+  ru: урок
+- en: science
+  he: מדע
+  transliteration: mada
+  ru: наука
+- en: blueprint / drawing
+  he: שרטוט
+  transliteration: sirtut
+  ru: чертеж
+- en: fabric
+  he: בד
+  transliteration: bad
+  ru: ткань
+- en: numbers
+  he: מספרים
+  transliteration: misparim
+  ru: цифры
+- en: project
+  he: פרויקט
+  transliteration: proyekt
+  ru: проект
+- en: exam
+  he: מבחן
+  transliteration: mivkhan
+  ru: экзамен
+- en: library
+  he: ספרייה
+  transliteration: sifriya
+  ru: библиотека
+sentences:
+- en: she works as a tailor in the workshop
+  he: היא עובדת כתופרת בסדנה
+  transliteration: hi ovedet ke-toferet ba-sadna
+  ru: она работает портной в мастерской
+- en: the student studies at the faculty of arts
+  he: הסטודנטית לומדת בפקולטה לאמנויות
+  transliteration: ha-studentit lomedet ba-fakulta le-omanuyot
+  ru: студентка учится на факультете искусств
+- en: the mathematician works in the academy
+  he: המתמטיקאי עובד באקדמיה
+  transliteration: ha-matematika'i oved ba-akademya
+  ru: математик работает в академии
+- en: the designer is making a project in the studio
+  he: המעצב יוצר פרויקט בסטודיו
+  transliteration: ha-me'atzev yotzer proyekt be-studio
+  ru: дизайнер создает проект в студии
+- en: the teacher explains the lesson in class
+  he: המורה מסביר את השיעור בכיתה
+  transliteration: ha-more masbir et ha-shi'ur ba-kita
+  ru: учитель объясняет урок в классе
+- en: i love cinema and art
+  he: אני אוהב קולנוע ואמנות
+  transliteration: ani ohev kolno'a ve-omanut
+  ru: я люблю кинематограф и искусство
+- en: she is sewing a dress from beautiful fabric
+  he: היא תופרת שמלה מבד יפה
+  transliteration: hi toferet simla mi-bad yafe
+  ru: она шьет платье из красивой ткани
+- en: we study math at the university
+  he: אנחנו לומדים מתמטיקה באוניברסיטה
+  transliteration: anakhnu lomdim matematika ba-universita
+  ru: мы изучаем математику в университете
+- en: this workshop is very big
+  he: הסדנה הזאת גדולה מאוד
+  transliteration: ha-sadna ha-zot gdola me'od
+  ru: эта мастерская очень большая
+- en: the student has an exam tomorrow
+  he: יש לסטודנטית מבחן מחר
+  transliteration: yesh la-studentit mivkhan makhar
+  ru: у студентки завтра экзамен
+- en: the math professor writes numbers
+  he: הפרופסור למתמטיקה כותב מספרים
+  transliteration: ha-profesor le-matematika kotev misparim
+  ru: профессор математики пишет цифры
+- en: the academy is open for students
+  he: האקדמיה פתוחה לסטודנטים
+  transliteration: ha-akademya ptuha le-studentim
+  ru: академия открыта для студентов
+- en: the designer works on a new blueprint
+  he: המעצב עובד על שרטוט חדש
+  transliteration: ha-me'atzev oved al sirtut khadash
+  ru: дизайнер работает над новым чертежом
+- en: the art lesson starts now
+  he: שיעור אמנות מתחיל עכשю
+  transliteration: shi'ur omanut matkhil akhshav
+  ru: урок искусства начинается сейчас

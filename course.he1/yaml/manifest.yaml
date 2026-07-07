@@ -1,0 +1,65 @@
+id: hebrew_1
+author: felixl@rambler.ru
+version: 2.8.1
+metadata:
+  title: Hebrew Basics
+  description: First 200 words and building basic sentences
+  level: A0
+  prerequisites:
+  - Alphabet
+  goals:
+  - Basic Greetings
+  - Simple Sentences
+target_language: he
+icon_code: א
+feedback:
+  perfect:
+  - - Great!
+    - נהדר!
+    - Nehedar!
+  - - Perfect!
+    - מושלם!
+    - Mushlam!
+  good:
+  - - Good job!
+    - עבודה טובה!
+    - '''Avoda tova!'
+  - - Well done!
+    - כל הכבוד!
+    - Kol hakavod!
+  tryAgain:
+  - - Try again
+    - נסה שוב
+    - Nase shuv
+  - - Don't give up!
+    - אל תוותר!
+    - Al tevater!
+locales:
+  en:
+    __title__: English
+    __dir__: ltr
+  ru:
+    __title__: Русский
+    __dir__: ltr
+    explanations: {}
+    interface:
+      Hebrew Basics: Основы иврита
+      First 200 words and building basic sentences: Первые 200 слов и базовые конструкции предложения.
+      Great!: Отлично!
+      Perfect!: Превосходно!
+      Good job!: Хорошая работа!
+      Well done!: Молодец!
+      Try again: Попробуй еще раз
+      Don't give up!: Не сдавайся!
+      All topics: Все темы
+      ABC 1: Алфавит 1я часть
+      Tell about yourself 1: Рассказ о себе 1
+      Professions and studies 1: Профессии и учёба 1
+      Everyday life 1: Быт и обиход 1
+      Pronominal prepositions 1: Местоимённые предлоги 1
+      Hobbies and travel 1: Хобби и путешествия 1
+      Restaurant 1: Ресторан 1
+      Airport 1: Аэропорт 1
+      Names meaning 1: Значения имён 1
+      Polite language 1: Вежливые обращения 1
+      Studying language 1: Изучая язык 1

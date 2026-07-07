@@ -1,0 +1,190 @@
+id: everyday_life_1
+name: Everyday life 1
+explanations:
+  en: |
+    This lesson will help us describe everyday objects that surround us.
+    Note that the **passive voice** is sometimes used to construct **adjectives**.
+    The passive voice construction model looks like this:
+    [mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
+  ru: |
+    Этот урок поможет нам описать бытовые предметы окружающие нас в повседневной жизни.
+    Обратите внимание на то, что для построения **прилагательного** иногда используется **пассивный залог**.
+    Модель построения пассивного залога выглядит так:
+    [mu-1-2i-3] где 1, 2 и 3 - буквы корня, например [munir] '''منير'''
+story:
+  en: |
+    ##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
+
+    ##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
+
+    ##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
+
+    ##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+
+    ##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
+
+    ##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
+
+    ##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
+words:
+- en: carpet
+  ar: سجادة
+  transliteration: as-sajjada
+  ru: ковёр
+- en: bed
+  ar: سرير
+  transliteration: as-sarir
+  ru: кровать
+- en: wardrobe / closet
+  ar: خزانة
+  transliteration: al-khizana
+  ru: шкаф
+- en: room
+  ar: غرفة
+  transliteration: al-ghurfa
+  ru: комната
+- en: kitchen
+  ar: مطبخ
+  transliteration: al-matbakh
+  ru: кухня
+- en: bedroom
+  ar: غرفة نوم
+  transliteration: ghurfat nawm
+  ru: спальня
+- en: floor
+  ar: أرضية
+  transliteration: al-ardiya
+  ru: пол
+- en: ceiling
+  ar: سقف
+  transliteration: as-saqf
+  ru: потолок
+- en: early
+  ar: بكير
+  transliteration: bakir
+  ru: рано
+- en: key
+  ar: مفتاح
+  transliteration: miftah
+  ru: ключ
+- en: keys
+  ar: مفاتيح
+  transliteration: mafatih
+  ru: ключи
+- en: money
+  ar: مصاري
+  transliteration: masari
+  ru: деньги
+- en: water
+  ar: مي
+  transliteration: mayy
+  ru: вода
+- en: always
+  ar: دائماً
+  transliteration: da'iman
+  ru: всегда
+- en: a little
+  ar: شوي
+  transliteration: shway
+  ru: немного
+- en: also
+  ar: كمان
+  transliteration: kaman
+  ru: тоже
+- en: must
+  ar: لازم
+  transliteration: lazim
+  ru: должен
+- en: i wake up
+  ar: بفيق
+  transliteration: bafiq
+  ru: я просыпаюсь
+- en: tap / sink
+  ar: حنفية
+  transliteration: al-hanafiya
+  ru: кран / раковина
+- en: i drink
+  ar: بشرب
+  transliteration: bashrab
+  ru: я пью
+sentences:
+- en: the carpet is on the floor
+  ar: السجادة على الأرض
+  transliteration: as-sajjada 'ala al-ard
+  ru: ковёр лежит на полу
+- en: the wardrobe is in the room
+  ar: الخزانة في الغرفة
+  transliteration: al-khizana fil-ghurfa
+  ru: шкаф стоит в комнате
+- en: the bed is big and comfortable
+  ar: السرير كبير ومريح
+  transliteration: as-sarir kabir wa murih
+  ru: кровать большая и удобная
+- en: this bedroom is very bright
+  ar: غرفة النوم هذه منيرة كثير
+  transliteration: ghurfat an-nawm hadhihi munira kathir
+  ru: эта спальня очень светлая
+- en: the kitchen window is open
+  ar: شباك المطبح مفتوح
+  transliteration: shubbak al-matbakh maftuh
+  ru: окно в кухне открыто
+- en: the ceiling is white and high
+  ar: السقف أبيض وعالي
+  transliteration: as-saqf abyad wa 'ali
+  ru: потолок белый и высокий
+- en: every day i wake up early
+  ar: كل يوم بفيق بكير
+  transliteration: kull yom bafiq bakir
+  ru: каждый день я просыпаюсь рано
+- en: i drink coffee with milk
+  ar: بشرب قهوة مع حليب
+  transliteration: bashrab qahwa ma halib
+  ru: я пью кофе с молоком
+- en: where is the car key
+  ar: وين مفتاح السيارة
+  transliteration: wayn miftah as-sayyara
+  ru: где ключ от машины
+- en: the keys are on the table
+  ar: المفاتيح على الطاولة
+  transliteration: al-mafatih ala at-tawila
+  ru: ключи на столе
+- en: i eat breakfast in the kitchen
+  ar: بأكل فطور في المطبخ
+  transliteration: bakul futur fil-matbakh
+  ru: я ем завтрак на кухне
+- en: the tap is in the kitchen
+  ar: الحنفية في المطبخ
+  transliteration: al-hanafiya fil-matbakh
+  ru: кран в кухне
+- en: i am going to the bedroom
+  ar: بروح على غرفة النوم
+  transliteration: baruh 'ala ghurfat an-nawm
+  ru: я иду в спальню
+- en: there is a window in the room
+  ar: فيه شباك في الغرفة
+  transliteration: fi shubbak fil-ghurfa
+  ru: в комнате есть окно
+- en: the money is in the bag
+  ar: المصاري في الشنطة
+  transliteration: al-masari fish-shanta
+  ru: деньги в сумке
+- en: i must go to work now
+  ar: لازم أروح على الشغل الآن
+  transliteration: lazim aruh ala ash-shughl al-an
+  ru: я должен идти на работу сейчас
+- en: i always drink water in the evening
+  ar: دائماً بشرب مي المساء
+  transliteration: da'iman bashrab mayy al-masa
+  ru: я всегда пью воду вечером
+- en: she eats breakfast and drinks milk
+  ar: بتأكل فطور وبتشرب حليب
+  transliteration: bitakul futur wa bitshrab halib
+  ru: она ест завтрак и пьет молоко
+- en: i also work every day
+  ar: أنا كمان بشتغل كل يوم
+  transliteration: ana kaman bashtaghel kull yom
+  ru: я также работаю каждый день
+- en: i drink water every day
+  ar: بشرب مي كل يوم
+  transliteration: bashrab mayy kull yom
+  ru: я пью воду каждый день
