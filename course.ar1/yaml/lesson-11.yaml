@@ -1,5 +1,7 @@
 id: health_1
-name: Health 1
+name:
+  en: Health 1
+  ru: Здоровье 1
 explanations:
   en: |
     ### Short notes about this topic
@@ -25,101 +27,132 @@ story:
 pairs_set:
 - title: Adverbs
   words:
-  - - unfortunately
-    - لِلْأَسَف
-    - lil-asaf
-  - - luck
-    - تَوْفِيق
-    - tawfiq
-  - - impossible (m)
-    - مُسْتَحِيل
-    - mustahil
-  - - definite (m)
-    - أَكِيد
-    - akid
-  - - possible (m)
-    - مُمْكِن
-    - mumkin
-  - - correctly
-    - صح
-    - sah
-  - - agreed
-    - اتفقنا
-    - ittafaqna
-  - - straight
-    - دغري
-    - dughri
-  - - backwards
-    - لورا
-    - la-wara
-  - - only
-    - فقط
-    - faqat
-  - - a little
-    - شوي
-    - shway
-  - - also
-    - كمان
-    - kaman
-  - - must
-    - لازم
-    - lazim
-  - - need
-    - بدي
-    - biddi
-  - - but
-    - لكن
-    - lakin
+  - en: unfortunately
+    ar: لِلْأَسَف
+    transliteration: lil-asaf
+    ru: к сожалению
+  - en: luck
+    ar: تَوْفِيق
+    transliteration: tawfiq
+    ru: удача
+  - en: impossible (m)
+    ar: مُسْتَحِيل
+    transliteration: mustahil
+    ru: невозможный
+  - en: definite (m)
+    ar: أَكِيد
+    transliteration: akid
+    ru: определенный
+  - en: possible (m)
+    ar: مُمْكِن
+    transliteration: mumkin
+    ru: возможный
+  - en: correctly
+    ar: صح
+    transliteration: sah
+    ru: правильно
+  - en: agreed
+    ar: اتفقنا
+    transliteration: ittafaqna
+    ru: договорились
+  - en: straight
+    ar: دغري
+    transliteration: dughri
+    ru: прямо
+  - en: backwards
+    ar: لورا
+    transliteration: la-wara
+    ru: назад
+  - en: only
+    ar: فقط
+    transliteration: faqat
+    ru: только
+  - en: a little
+    ar: شوي
+    transliteration: shway
+    ru: немного
+  - en: also
+    ar: كمان
+    transliteration: kaman
+    ru: тоже
+  - en: must
+    ar: لازم
+    transliteration: lazim
+    ru: должен
+  - en: need
+    ar: بدي
+    transliteration: biddi
+    ru: нужно
+  - en: but
+    ar: لكن
+    transliteration: lakin
+    ru: но
 - title: Time and Place
   words:
-  - - away
-    - بعيد
-    - ba'id
-  - - near
-    - قريب
-    - qarib
-  - - here
-    - هنا
-    - huna
-  - - next to
-    - جنب
-    - janb
-  - - free
-    - فاضي
-    - fadi
-  - - reserved
-    - محجوز
-    - mahjuz
-  - - tomorrow
-    - بكرة
-    - bukra
-  - - yesterday
-    - أمس
-    - '''ams'
-  - - today
-    - اليوم
-    - al-yom
-  - - soon
-    - قريباً
-    - qariban
-  - - usually
-    - عادةً
-    - '''adan'
-  - - early
-    - بكير
-    - bakir
-  - - late
-    - متأخر
-    - muta'akhkhir
-  - - sometimes
-    - مرات
-    - marrat
-  - - always
-    - دائماً
-    - da'iman
-  - - now
-    - الآن
-    - al-an
+  - en: away
+    ar: بعيد
+    transliteration: ba'id
+    ru: вдали
+  - en: near
+    ar: قريب
+    transliteration: qarib
+    ru: рядом
+  - en: here
+    ar: هنا
+    transliteration: huna
+    ru: здесь
+  - en: next to
+    ar: جنب
+    transliteration: janb
+    ru: возле
+  - en: free
+    ar: فاضي
+    transliteration: fadi
+    ru: свободный
+  - en: reserved
+    ar: محجوز
+    transliteration: mahjuz
+    ru: занятый
+  - en: tomorrow
+    ar: بكرة
+    transliteration: bukra
+    ru: завтра
+  - en: yesterday
+    ar: أمس
+    transliteration: '''ams'
+    ru: вчера
+  - en: today
+    ar: اليوم
+    transliteration: al-yom
+    ru: сегодня
+  - en: soon
+    ar: قريباً
+    transliteration: qariban
+    ru: скоро
+  - en: usually
+    ar: عادةً
+    transliteration: '''adan'
+    ru: обычно
+  - en: early
+    ar: بكير
+    transliteration: bakir
+    ru: рано
+  - en: late
+    ar: متأخر
+    transliteration: muta'akhkhir
+    ru: опоздавший
+  - en: sometimes
+    ar: مرات
+    transliteration: marrat
+    ru: иногда
+  - en: always
+    ar: دائماً
+    transliteration: da'iman
+    ru: всегда
+  - en: now
+    ar: الآن
+    transliteration: al-an
+    ru: сейчас
 words:
 - en: it hurts
   ar: بيوجع

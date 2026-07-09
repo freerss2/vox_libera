@@ -1,16 +1,23 @@
 ﻿#! /usr/bin/env python
 """
-Recode in lessons four-element lists to three-element and global association dictionary
+Recode YAML representation of lessons and manifest to JS
 
-Input data structure (JSON)
-
+Usage: 
+    recode_yaml2js.py -d course.ar1
 """
-import json
+import os
 import re
+import json
+import yaml
+import argparse
+from pathlib import Path
 
-input_file = 'lessons_4w.js'
-output_file = 'lessons_3w.json'
-output_dict = 'manifest.json'
+
+OUTPUT_LOCALES_FILE = "locales.js"
+OUTPUT_LESSONS_FILE = "lessons.js"
+OUTPUT_MANIFEST_FILE = "manifest.js"
+INPUT_MANIFEST_FILE = "manifest.yaml"
+
 
 def info(msg):
     print("INFO: {}".format(msg))
@@ -31,15 +38,36 @@ def decode_escaped_backtick(text):
         result.append(line)
     return '`'.join(result)
 
-def read_input(fname):
+def read_input(dirname):
+    """
+    Read YAML files from a course directory
+    @return: lessons list and metadata content
+    """
+    lessons = []
+    dirname = os.path.join(dirname, 'yaml')
+    # 1. read all files "lesson-NN.yaml"
+    directory = Path(dirname)
+    lesson_files = list(directory.glob("lesson-*.yaml"))
+    for file in sorted(lesson_files):
+        lessons.append(read_yaml(file))
+    # 2. read the file manifest.yaml
+    manifest_file_name = os.path.join(dirname, INPUT_MANIFEST_FILE)
+    manifest = read_yaml(manifest_file_name)
+    return lessons, manifest
+
+def read_yaml(fname):
+    """
+    Read YAML
+    """
     info("read file << {}".format(fname))
     with open(fname, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+        data = yaml.safe_load(f)
     return data
 
-def save_json(fname, data):
+def save_json(fname, js_variable, data):
     info("write file >> {}".format(fname))
     with open(fname, 'w', encoding='utf-8') as f:
+        f.write("{} = \n".format(js_variable))
         text = json.dumps(data, ensure_ascii=False, indent=2)
         f.write(decode_escaped_backtick(text))
 
@@ -76,12 +104,26 @@ def separate_data(lessons):
             associations.update(d)
     return (lessons, associations)
 
-def main():
-    lessons = read_input(input_file)
-    (updated_lessons, associations) = separate_data(lessons)
-    save_json(output_file, updated_lessons)
-    save_json(output_dict, associations)
+def parse_arguments():
+    """
+    Parse command-line arguments.
+    @return: parsed arguments
+    """
+    parser = argparse.ArgumentParser(description="Decode course JS data into YAML format.")
+    parser.add_argument('-d', '--course_dir', required=True, help="Directory containing course data.")
+    return parser.parse_args()
+
+def main(args):
+    lessons, metadata = read_input(args.course_dir)
+    ### !!! DEBUG:
+    return 0
+    (updated_lessons, associations, updated_metadata) = separate_data(lessons, metadata)
+    save_json(os.path.join(args.course_dir, OUTPUT_LESSONS_FILE), 'const topics', updated_lessons)
+    save_json(os.path.join(args.course_dir, OUTPUT_LOCALES_FILE), 'const course_locales', associations)
+    save_json(os.path.join(args.course_dir, OUTPUT_MANIFEST_FILE), 'const manifest', updated_metadata)
     return 0
 
-rc = main()
-exit(rc)
+if __name__ == "__main__":
+    args = parse_arguments()
+    rc = main(args)
+    exit(rc)

@@ -1,5 +1,7 @@
 id: airport_1
-name: Airport 1
+name:
+  en: Airport 1
+  ru: Аэропорт 1
 explanations:
   en: |
     ### Lesson Objective

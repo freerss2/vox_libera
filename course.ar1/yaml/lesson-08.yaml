@@ -1,5 +1,7 @@
 id: polite_language_1
-name: Polite language 1
+name:
+  en: Polite language 1
+  ru: Вежливые обращения 1
 explanations:
   en: |
     ### Lesson Objective

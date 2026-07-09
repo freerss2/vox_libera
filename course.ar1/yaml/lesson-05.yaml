@@ -1,5 +1,7 @@
 id: restaurant_1
-name: Restaurant 1
+name:
+  en: Restaurant 1
+  ru: Ресторан 1
 explanations:
   en: |
     ### Usage of some words

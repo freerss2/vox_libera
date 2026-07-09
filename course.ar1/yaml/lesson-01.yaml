@@ -1,5 +1,7 @@
 id: describe_yourself_1
-name: Tell about yourself 1
+name:
+  en: Tell about yourself 1
+  ru: Рассказ о себе 1
 explanations:
   en: |
     The topic of this lesson is talking about yourself: your occupation and family.

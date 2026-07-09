@@ -1,5 +1,7 @@
 id: everyday_life_1
-name: Everyday life 1
+name:
+  en: Everyday life 1
+  ru: Быт и обиход 1
 words:
 - en: carpet
   he: שטיח

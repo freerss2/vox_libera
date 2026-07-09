@@ -1,5 +1,7 @@
 id: names_meaning_1
-name: Names meaning 1
+name:
+  en: Names meaning 1
+  ru: Значения имён 1
 explanations:
   en: |
     ### Teaching Anchor: Proper Names

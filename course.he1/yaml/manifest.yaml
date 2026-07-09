@@ -2,7 +2,6 @@ id: hebrew_1
 author: felixl@rambler.ru
 version: 2.8.1
 metadata:
-  title: Hebrew Basics
   description: First 200 words and building basic sentences
   level: A0
   prerequisites:
@@ -10,30 +9,39 @@ metadata:
   goals:
   - Basic Greetings
   - Simple Sentences
+  title:
+    en: Hebrew Basics
+    ru: Основы иврита
 target_language: he
 icon_code: א
 feedback:
   perfect:
-  - - Great!
-    - נהדר!
-    - Nehedar!
-  - - Perfect!
-    - מושלם!
-    - Mushlam!
+  - en: Great!
+    he: נהדר!
+    transliteration: Nehedar!
+    ru: Отлично!
+  - en: Perfect!
+    he: מושלם!
+    transliteration: Mushlam!
+    ru: Превосходно!
   good:
-  - - Good job!
-    - עבודה טובה!
-    - '''Avoda tova!'
-  - - Well done!
-    - כל הכבוד!
-    - Kol hakavod!
+  - en: Good job!
+    he: עבודה טובה!
+    transliteration: '''Avoda tova!'
+    ru: Хорошая работа!
+  - en: Well done!
+    he: כל הכבוד!
+    transliteration: Kol hakavod!
+    ru: Молодец!
   tryAgain:
-  - - Try again
-    - נסה שוב
-    - Nase shuv
-  - - Don't give up!
-    - אל תוותר!
-    - Al tevater!
+  - en: Try again
+    he: נסה שוב
+    transliteration: Nase shuv
+    ru: Попробуй еще раз
+  - en: Don't give up!
+    he: אל תוותר!
+    transliteration: Al tevater!
+    ru: Не сдавайся!
 locales:
   en:
     __title__: English
@@ -43,20 +51,7 @@ locales:
     __dir__: ltr
     explanations: {}
     interface:
-      Hebrew Basics: Основы иврита
       First 200 words and building basic sentences: Первые 200 слов и базовые конструкции предложения.
-      Great!: Отлично!
-      Perfect!: Превосходно!
-      Good job!: Хорошая работа!
-      Well done!: Молодец!
-      Try again: Попробуй еще раз
-      Don't give up!: Не сдавайся!
-      All topics: Все темы
-      ABC 1: Алфавит 1я часть
-      Tell about yourself 1: Рассказ о себе 1
-      Professions and studies 1: Профессии и учёба 1
-      Everyday life 1: Быт и обиход 1
-      Pronominal prepositions 1: Местоимённые предлоги 1
       Hobbies and travel 1: Хобби и путешествия 1
       Restaurant 1: Ресторан 1
       Airport 1: Аэропорт 1

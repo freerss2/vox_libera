@@ -1,5 +1,7 @@
 id: all
-name: All topics
+name:
+  en: All topics
+  ru: Все темы
 explanations:
   en: |
     ### The First 200 Words and Basic Sentence Constructions

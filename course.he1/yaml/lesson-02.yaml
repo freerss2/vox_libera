@@ -1,5 +1,7 @@
 id: describe_yourself_1
-name: Tell about yourself 1
+name:
+  en: Tell about yourself 1
+  ru: Рассказ о себе 1
 words:
 - en: pleased to meet you
   he: נעים מאוד

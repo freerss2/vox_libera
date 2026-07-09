@@ -1,5 +1,7 @@
 id: abc_1
-name: ABC 1
+name:
+  en: ABC 1
+  ru: Алфавит 1я часть
 explanations:
   en: |
     ### A little about the language

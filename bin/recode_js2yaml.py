@@ -2,7 +2,8 @@
 """
 Recode in lessons three-element lists to four-element using global association dictionary
 
-Input data structure (JSON)
+Usage: 
+    recode_js2yaml.py -d course.he1
 
 """
 import os
@@ -10,6 +11,7 @@ import sys
 import re
 import json
 import yaml
+import argparse
 
 INPUT_LOCALES_FILE = "locales.js"
 INPUT_LESSONS_FILE = "lessons.js"
@@ -124,6 +126,14 @@ def aggregate_data(lessons, locales, manifest):
     total_words = 0
     total_sentences = 0
     target_lang = manifest.get('target_language', 'ar')
+    metadata_title = {'en': manifest.get('metadata', {}).pop('title', '')}
+    for lang in locales:
+        if 'interface' not in locales[lang]:
+            continue
+        value = locales[lang].get('interface', {}).pop(metadata_title['en'], '')
+        if value:
+            metadata_title[lang] = value
+    manifest['metadata']['title'] = metadata_title
     for name in lessons:
         topic = lessons[name]
         info_abc = ''
@@ -144,9 +154,40 @@ def aggregate_data(lessons, locales, manifest):
             topic['sentences'] = sentences
             info_sentences = "  sentences: {}".format(len(sentences))
             total_sentences += len(sentences)
+        if 'pairs_set' in topic:
+            pairs_sets = topic['pairs_set']
+            for pairs_set in pairs_sets:
+                # decode words / abc
+                if 'abc' in pairs_set:
+                    set_name = 'abc'
+                elif 'words' in pairs_set:
+                    set_name = 'words'
+                else:
+                    continue
+                pairs_set[set_name] = aggregate_list(pairs_set[set_name], locales, target_lang)
+        topic['name'] = {'en': topic.get('name', name)}
+        for lang in locales:
+            if 'interface' not in locales[lang]:
+                continue
+            value = locales[lang].get('interface', {}).pop(topic['name']['en'], '')
+            if value:
+                topic['name'][lang] = value
         # TODO: implement some mapping for "story" and "explanations"
         info(" * topic '{}' {} {} {}".format(name, info_words, info_sentences, info_abc))
     info("total words: {} sentences: {} abc: {}".format(total_words, total_sentences, total_abc))
+    for feedback_id, feedback in manifest.get('feedback', {}).items():
+        records = []
+        for item in feedback:
+            record = {'en': item[0], target_lang: item[1], 'transliteration': item[2]}
+            record_id = item[0]
+            for lang in locales:
+                if 'interface' not in locales[lang]:
+                    continue
+                value = locales[lang].get('interface', {}).pop(record_id, '')
+                if value:
+                    record[lang] = value
+            records.append(record)
+        manifest['feedback'][feedback_id] = records
     for lang in locales:
         locales[lang].pop('content', None)
     manifest['locales'] = locales
@@ -157,8 +198,6 @@ def parse_arguments():
     Parse command-line arguments.
     @return: parsed arguments
     """
-    import argparse
-
     parser = argparse.ArgumentParser(description="Decode course JS data into YAML format.")
     parser.add_argument('-d', '--course_dir', required=True, help="Directory containing course data.")
     return parser.parse_args()
@@ -171,8 +210,6 @@ def safe_mkdir(path):
     if not os.path.exists(path):
         os.makedirs(path)
         info("created directory {}".format(path))
-    else:
-        info("directory {} already exists".format(path))
 
 def rebuild_lesson(topic, topic_id, locales):
     """

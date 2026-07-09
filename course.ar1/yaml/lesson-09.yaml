@@ -1,5 +1,7 @@
 id: studying_language_1
-name: Studying language 1
+name:
+  en: Studying language 1
+  ru: Изучая язык 1
 explanations:
   en: |
     ### Lesson Objective

@@ -1,5 +1,7 @@
 id: hobby_travel_1
-name: Hobbies and travel 1
+name:
+  en: Hobbies and travel 1
+  ru: Хобби и путешествия 1
 explanations:
   en: |
     The word '''بلد''' can be used to mean "country" or "city center."
