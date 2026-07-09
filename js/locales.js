@@ -1,5 +1,4 @@
-// locales for UI i18n
-const locales = {
+const locales = { // locales for UI i18n
   "en": {
     "__title__": "English",
     "__dir__": "ltr",

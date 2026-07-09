@@ -16,6 +16,7 @@ def run_cmd_with_tee(command, log_file):
     Run command, save log and return summary
     """
     last_line = ""
+    print("Run command: \n{}".format(' '.join(command)))
     with open(log_file, 'w', encoding='utf-8') as f:
         # bufsize=1 means line-based buffering
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
@@ -69,7 +70,12 @@ with open(temp_file, 'w', encoding='utf-8') as bundle:
             # print(f"3.1. read {script_path}")
             bundle.write(f"\n/* --- Start of {script_path} --- */\n")
             with open(script_path, 'r', encoding='utf-8') as s:
-                bundle.write(s.read())
+                if ('js/' not in script_path) or 'locales' in script_path:
+                    first_line = s.readline()
+                    first_line = first_line.split('=')[0] + " = '';\n"
+                    bundle.write(first_line)
+                else:
+                    bundle.write(s.read())
         else:
             print(f"WARNING: missing {script_path}")
 

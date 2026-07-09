@@ -2,6 +2,8 @@
 //             Google login and Drive sync
 // ===========================================
 
+/* global google */
+
 "use strict";
 
 let tokenClient;

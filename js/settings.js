@@ -54,7 +54,7 @@ class Settings {
                 }
                 return result;
             };
-        };
+        }
     }
 
     markAsChanged() {
