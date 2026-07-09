@@ -70,39 +70,103 @@ def save_json(fname, js_variable, data):
         f.write("{} = \n".format(js_variable))
         text = json.dumps(data, ensure_ascii=False, indent=2)
         f.write(decode_escaped_backtick(text))
+        f.write(";\n")
 
-def extract_from_list(materials):
-    d = {}
+def extract_from_list(materials, locales, target_lang):
+    """
+    Using a list of records create pure 3-element arrays and store translations in locales
+    """
     result = []
     for row in materials:
         try:
-            en = row[0]
-            ru = row[1]
-            result.append([row[0], row[2], row[3]])
-            d[en] = ru
+            en = row.pop('en')
+            result.append([en, row.pop(target_lang), row.pop('transliteration')])
+            for lang, translation in row.items():
+                if en in locales[lang]['content'] and translation != locales[lang]['content'][en]:
+                    print("WARNING: overwrite '{}' ~ '{}' with '{}'".format(
+                        en, locales[lang]['content'][en], translation))
+                locales[lang]['content'][en] = translation
         except Exception as e:
             print("Exception for {} - {}".format(row, e))
-    return (result, d)
+    return (result, locales)
 
-def separate_data(lessons):
-    associations = {}
-    for name in lessons:
-        topic = lessons[name]
+def separate_data(lessons, metadata):
+    """
+    Recode lessons content and extract locales
+    """
+    locales = metadata['locales']
+    for lang in locales:
+        locales[lang]['content'] = {}
+        locales[lang]['explanations'] = {}
+        locales[lang]['interface'] = {}
+
+    updated_lessons = []
+    target_lang = metadata['target_language']
+    for index, topic in enumerate(lessons):
+        topic['index'] = index
+        topic_id = topic['id']
+        if 'abc' in topic:
+            (abc, locales) = extract_from_list(topic['abc'], locales, target_lang)
+            topic['abc'] = abc
         if 'words' in topic:
-            (words, d) = extract_from_list(topic['words'])
+            (words, locales) = extract_from_list(topic['words'], locales, target_lang)
             topic['words'] = words
-            for w in d.keys():
-                if w in associations and associations[w] != d[w]:
-                    print("WARNING: overwrite '{}' ~ '{}' with '{}'".format(w, associations[w], d[w]))
-            associations.update(d)
         if 'sentences' in topic:
-            (sentences, d) = extract_from_list(topic['sentences'])
+            (sentences, locales) = extract_from_list(topic['sentences'], locales, target_lang)
             topic['sentences'] = sentences
-            for w in d.keys():
-                if w in associations and associations[w] != d[w]:
-                    print("WARNING: overwrite '{}' ~ '{}' with '{}'".format(w, associations[w], d[w]))
-            associations.update(d)
-    return (lessons, associations)
+        # topic['name'] - replace with 'en', rest - to 'interface'
+        topic_name = topic['name'].pop('en')
+        for lang in topic['name']:
+            locales[lang]['interface'][topic_name] = topic['name'][lang]
+        topic['name'] = topic_name
+        # topic['explanations'] - if exists, use 'en', rest - under each lang 'explanations'[id]
+        explanations = topic.get('explanations')
+        if explanations:
+            new_value = explanations.pop('en')
+            for lang in explanations:
+                locales[lang]['explanations'][topic_id] = explanations.get(lang)
+            topic['explanations'] = new_value
+        # topic['story'] - if exists, use 'en', rest - under each lang 'story'[id]
+        story = topic.get('story')
+        if story:
+            new_value = story.pop('en')
+            for lang in story:
+                locales[lang]['story'][topic_id] = story.get(lang)
+            topic['story'] = new_value
+        # same for pairs_set (list with "words"/"abc" inside)
+        pairs_sets = topic.get('pairs_set')
+        if pairs_sets:
+            new_sets = []
+            for pairs_set in pairs_sets:
+                if 'words' in pairs_set:
+                    key = 'words'
+                elif 'abc' in pairs_set:
+                    key = 'abc'
+                else:
+                    continue
+                (new_value, locales) = extract_from_list(pairs_set[key], locales, target_lang)
+                pairs_set[key] = new_value
+                new_sets.append(pairs_set)
+            topic['pairs_set'] = new_sets
+        updated_lessons.append(topic)
+    # metadata['metadata']['title'] - replace with 'en', rest - to 'interface'
+    new_value = metadata['metadata']['title'].pop('en')
+    for lang in metadata['metadata']['title']:
+        locales[lang]['interface'][new_value] = metadata['metadata']['title'].get(lang)
+    metadata['metadata']['title'] = new_value
+    # TODO: metadata['feedback'] - dictionary of lists - each list to apply extract_from_list - to 'interface'
+    feedback = metadata.pop('feedback')
+    for key in feedback:
+        new_list = []
+        for rec in feedback[key]:
+            en = rec.pop('en')
+            new_list.append([en, rec.pop(target_lang), rec.pop('transliteration')])
+            for lang in rec:
+                locales[lang]['interface'][en] = rec[lang]
+        feedback[key] = new_list
+    metadata['feedback'] = feedback
+    metadata.pop('locales')
+    return (updated_lessons, locales, metadata)
 
 def parse_arguments():
     """
@@ -115,11 +179,10 @@ def parse_arguments():
 
 def main(args):
     lessons, metadata = read_input(args.course_dir)
-    ### !!! DEBUG:
-    return 0
-    (updated_lessons, associations, updated_metadata) = separate_data(lessons, metadata)
+    (updated_lessons, locales, updated_metadata) = separate_data(lessons, metadata)
+    # TODO: for lessons and locales convert single string to multi-line (?)
     save_json(os.path.join(args.course_dir, OUTPUT_LESSONS_FILE), 'const topics', updated_lessons)
-    save_json(os.path.join(args.course_dir, OUTPUT_LOCALES_FILE), 'const course_locales', associations)
+    save_json(os.path.join(args.course_dir, OUTPUT_LOCALES_FILE), 'const course_locales', locales)
     save_json(os.path.join(args.course_dir, OUTPUT_MANIFEST_FILE), 'const manifest', updated_metadata)
     return 0
 
