@@ -20,13 +20,14 @@ def run_cmd_with_tee(command, log_file):
     with open(log_file, 'w', encoding='utf-8') as f:
         # bufsize=1 means line-based buffering
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
-        
+
         for line in process.stdout:
             # sys.stdout.write(line)
             f.write(line)
             if line.strip():
                 last_line = line.strip()
-                
+        if 'error' not in last_line:
+            return ''
     return last_line
 
 
