@@ -104,6 +104,8 @@ const difficultySettings = {
     hard:   { itemsPerRound: 7, totalChoices: 8, totalQuestions: 9,  sentenceFactor: 1.9, finalGoal: 9}
 };
 
+var pairItemsInRound = 0;
+
 // Autofix for wrong inputs
 if ( ! Object.hasOwn(topics, GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"name": "All topics", "index": 0, "words": [], "sentences": []};
 
@@ -829,6 +831,8 @@ function renderMatchingGame() {
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
+    // Fix a case when currentData is too short for selected game settings
+    pairItemsInRound = pool.length;
     // Randomly shuffle pool on both sides
     const leftSide = shuffle(pool.map(p => ({ t: p[0], id: p[1], h: p[2] })));
     const rightSide = shuffle(pool.map(p => ({ t: p[1], id: p[1], h: p[2] })));
@@ -887,10 +891,10 @@ function checkPairMatch() {
 
         l.classList.add('correct'); r.classList.add('correct');
         matches++;
-        updateProgress(matches / gameSettings.itemsPerRound * 100);
+        updateProgress(matches / pairItemsInRound * 100);
         selectedLeft = null; selectedRight = null;
-        if (matches === gameSettings.itemsPerRound) setTimeout(() => {
-            const acc = Math.round((gameSettings.itemsPerRound / (gameSettings.itemsPerRound + errors)) * 100);
+        if (matches === pairItemsInRound) setTimeout(() => {
+            const acc = Math.round((pairItemsInRound / (pairItemsInRound + errors)) * 100);
             showWin(acc);
         }, 400);
     } else {
