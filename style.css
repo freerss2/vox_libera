@@ -35,7 +35,7 @@ body {
 
 /* Specific language styles */
 [lang="ar"] {
-    --font-multiplier: 1.8; /* Due to script-spyle Arabic is shown a bit smaller than Latin */
+    --font-multiplier: 1.6; /* Due to script-spyle Arabic is shown a bit smaller than Latin */
 }
 
 [lang="ru"] {

@@ -14,20 +14,24 @@ explanations:
 story:
   en: |
     ##story-line## '''من وين أنت؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn anta?
-
     ##story-line## ''' أنا من روسيا، بدرس اللغة العربية الآن.''' ##story-translation## I am from Russia, I study Arabic now. ##story-transcr## Ana min rusiya, badrus al-lugha al-arabiya al-an.
-
     ##story-line## '''شو مهنتك؟ بتشتغل هنا في الشركة؟''' ##story-translation## What is your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtaghil huna fi ash-sharika?
-
     ##story-line## '''نعم، بشتغل مطور ومبرمج. بحب شغلي كثير.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Naam, bashtaghil mutawwir wa mubarmij. Bahibb shughli kathir.
-
     ##story-line## '''مبروك! وين ساكن؟ في مدينة كبيرة؟''' ##story-translation## Congrats! Where do you live? In a big city? ##story-transcr## Mabruk! Wayn sakin? Fi madina kabira?
-
     ##story-line## '''لا، عندي بيت جديد جميل مع عائلتي. ساكنين مع بعض.''' ##story-translation## No, I have a beautiful new house with my family. We live together. ##story-transcr## La, indi bayt jadid jamil ma’a a'ilati. Saknin ma'a ba'ad.
-
     ##story-line## '''تماماً! تشرفنا يا سيد.''' ##story-translation## Exactly! Pleased to meet you, sir. ##story-transcr## Tamaman! Tasharrafna ya sayyid.
-
     ##story-line## '''شكراً! فرصة سعيدة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
+
+  ru: |
+    ##story-line## '''من وين أنت؟''' ##story-translation## Откуда ты? ##story-transcr## Min wayn anta?
+    ##story-line## ''' أنا من روسيا، بدرس اللغة العربية الآن.''' ##story-translation## Я из России, Я учу арабский сейчас. ##story-transcr## Ana min rusiya, badrus al-lugha al-arabiya al-an.
+    ##story-line## '''شو مهنتك؟ بتشتغل هنا في الشركة؟''' ##story-translation## Какова ваша профессия? Вы работаете в этой компании? ##story-transcr## Shu mihnatak? Bitishtaghil huna fi ash-sharika?
+    ##story-line## '''نعم، بشتغل مطور ومبرمج. بحب شغلي كثير.''' ##story-translation## Да, я работаю разработчиком и программистом. Мне очень нравится моя работа. ##story-transcr## Naam, bashtaghil mutawwir wa mubarmij. Bahibb shughli kathir.
+    ##story-line## '''مبروك! وين ساكن؟ في مدينة كبيرة؟''' ##story-translation## Поздравляю! Где вы живете? В большом городе? ##story-transcr## Mabruk! Wayn sakin? Fi madina kabira?
+    ##story-line## '''لا، عندي بيت جديد جميل مع عائلتي. ساكنين مع بعض.''' ##story-translation## Нет, у нас с семьёй прекрасный новый дом. Мы живём вместе. ##story-transcr## La, indi bayt jadid jamil ma’a a'ilati. Saknin ma'a ba'ad.
+    ##story-line## '''تماماً! تشرفنا يا سيد.''' ##story-translation## Совершенно верно! Рад знакомству, мистер. ##story-transcr## Tamaman! Tasharrafna ya sayyid.
+    ##story-line## '''شكراً! فرصة سعيدة.''' ##story-translation## Спасибо! Приятно было познакомиться. ##story-transcr## Shukran! Fursa sa'ida.
+
 words:
 - en: pleased to meet you
   ar: تشرفنا

@@ -475,7 +475,7 @@ To start a course, select the course title and click on it.
       "story":           "Учебный текст",
       "matching-abc":    "Поиск пары букв",
       "matching":        "Поиск пары слов",
-      "pairs_set":       "Пары выбранных слов",
+      "pairs_set":       "Тематические пары",
       "quiz_u2t":        "Викторина: 👤 → 🌍",
       "quiz_t2u":        "Викторина: 🌍 → 👤",
       "quiz_audio":      "Аудио-викторина",

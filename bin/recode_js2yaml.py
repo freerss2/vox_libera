@@ -120,7 +120,6 @@ def aggregate_data(lessons, locales, manifest):
     @param manifest: course manifest with metadata
     @return: aggregated lessons with words and sentences, and manifest
     """
-    # TODO: use all metadata, not only associations
     info("processing {} topics".format(len(lessons.keys())))
     total_abc = 0
     total_words = 0
@@ -133,6 +132,10 @@ def aggregate_data(lessons, locales, manifest):
         value = locales[lang].get('interface', {}).pop(metadata_title['en'], '')
         if value:
             metadata_title[lang] = value
+        if 'explanations' not in locales[lang]:
+            locales[lang]['explanations'] = {}
+        if 'story' not in locales[lang]:
+            locales[lang]['story'] = {}
     manifest['metadata']['title'] = metadata_title
     for name in lessons:
         topic = lessons[name]
@@ -165,6 +168,14 @@ def aggregate_data(lessons, locales, manifest):
                 else:
                     continue
                 pairs_set[set_name] = aggregate_list(pairs_set[set_name], locales, target_lang)
+                # split title by languages
+                pairs_set_title = pairs_set['title']
+                pairs_set['title'] = {'en': pairs_set_title}
+                for lang in locales:
+                    value = locales[lang].get('interface', {}).pop(pairs_set_title, '')
+                    if not value:
+                        continue
+                    pairs_set['title'][lang] = value
         topic['name'] = {'en': topic.get('name', name)}
         for lang in locales:
             if 'interface' not in locales[lang]:
@@ -172,7 +183,6 @@ def aggregate_data(lessons, locales, manifest):
             value = locales[lang].get('interface', {}).pop(topic['name']['en'], '')
             if value:
                 topic['name'][lang] = value
-        # TODO: implement some mapping for "story" and "explanations"
         info(" * topic '{}' {} {} {}".format(name, info_words, info_sentences, info_abc))
     info("total words: {} sentences: {} abc: {}".format(total_words, total_sentences, total_abc))
     for feedback_id, feedback in manifest.get('feedback', {}).items():
@@ -232,6 +242,10 @@ def rebuild_lesson(topic, topic_id, locales):
         rebuilt_topic['explanations'] = explanations
     if story:
         story = {'en': decode_escaped_backtick(story)}
+        for lang, content in locales.items():
+            if 'story' in content and topic_id in content['story']:
+                topic_story = locales[lang]['story'].pop(topic_id, '')
+                story[lang] = decode_escaped_backtick(topic_story)
         rebuilt_topic['story'] = story
     return rebuilt_topic, locales
 

@@ -52,14 +52,17 @@ explanations:
 story:
   en: |
     ##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
-
     ##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-
     ##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-
     ##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-
     ##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
+  ru: |
+    ##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## Сегодня мы обедаем в ресторане. ##story-transcr## Bnakul ghada fil-matam al-yom.
+    ##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Официант, я хочу увидеть основное блюдо. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+    ##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## Я заказал курицу с рисом, вот мой заказ. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+    ##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## Я просто хочу салат и воды, я не очень голоден. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
+    ##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Приятного аппетита! Счёт, пожалуйста, я плачу, и мы уходим. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
+
 words:
 - en: delicious
   ar: زاكي

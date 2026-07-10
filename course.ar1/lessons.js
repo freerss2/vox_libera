@@ -1,38 +1,28 @@
-const topics = {
+const topics = 
+{
   "all": {
     "name": "All topics",
-    "index": 0,
-    "explanations": `
-### The First 300 Words and Basic Sentence Constructions
+    "explanations": `### The First 300 Words and Basic Sentence Constructions
 The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
 The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
-`
+`,
+    "index": 0
   },
   "describe_yourself_1": {
-    "index": 1,
     "name": "Tell about yourself 1",
-    "explanations": `
-The topic of this lesson is talking about yourself: your occupation and family.
+    "explanations": `The topic of this lesson is talking about yourself: your occupation and family.
 Verbs are given in their active spoken Levantine form with the prefix [b-].
 Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
 `,
-    "story": `
-##story-line## '''من وين أنت؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn anta?
-
+    "story": `##story-line## '''من وين أنت؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn anta?
 ##story-line## ''' أنا من روسيا، بدرس اللغة العربية الآن.''' ##story-translation## I am from Russia, I study Arabic now. ##story-transcr## Ana min rusiya, badrus al-lugha al-arabiya al-an.
-
 ##story-line## '''شو مهنتك؟ بتشتغل هنا في الشركة؟''' ##story-translation## What is your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtaghil huna fi ash-sharika?
-
 ##story-line## '''نعم، بشتغل مطور ومبرمج. بحب شغلي كثير.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Naam, bashtaghil mutawwir wa mubarmij. Bahibb shughli kathir.
-
 ##story-line## '''مبروك! وين ساكن؟ في مدينة كبيرة؟''' ##story-translation## Congrats! Where do you live? In a big city? ##story-transcr## Mabruk! Wayn sakin? Fi madina kabira?
-
 ##story-line## '''لا، عندي بيت جديد جميل مع عائلتي. ساكنين مع بعض.''' ##story-translation## No, I have a beautiful new house with my family. We live together. ##story-transcr## La, indi bayt jadid jamil ma’a a'ilati. Saknin ma'a ba'ad.
-
 ##story-line## '''تماماً! تشرفنا يا سيد.''' ##story-translation## Exactly! Pleased to meet you, sir. ##story-transcr## Tamaman! Tasharrafna ya sayyid.
-
 ##story-line## '''شكراً! فرصة سعيدة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
 `,
     "words": [
@@ -248,13 +238,12 @@ Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "ho
         "صاحبتي ساكنة هنا",
         "sahibti sakna huna"
       ]
-    ]
+    ],
+    "index": 1
   },
   "work_n_learn_1": {
-    "index": 2,
     "name": "Professions and studies 1",
-    "explanations": `
-In this lesson, we'll explore job titles, as well as vocabulary related to work and study.
+    "explanations": `In this lesson, we'll explore job titles, as well as vocabulary related to work and study.
 **Please note:** In colloquial speech, verbs are used with the prefix [be-] '''ب'''.
 Some words may be familiar to us.
 For example:
@@ -486,30 +475,22 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "المصمم بيحب قماش جميل",
         "al-musammim bihibb qumash jamil"
       ]
-    ]
+    ],
+    "index": 2
   },
   "everyday_life_1": {
-    "index": 3,
     "name": "Everyday life 1",
-    "explanations": `
-This lesson will help us describe everyday objects that surround us.
+    "explanations": `This lesson will help us describe everyday objects that surround us.
 Note that the **passive voice** is sometimes used to construct **adjectives**.
 The passive voice construction model looks like this:
 [mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
 `,
-    "story": `
-##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
-
+    "story": `##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
 ##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-
 ##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-
 ##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-
 ##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
-
 ##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
-
 ##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
 `,
     "words": [
@@ -715,13 +696,12 @@ The passive voice construction model looks like this:
         "بشرب مي كل يوم",
         "bashrab mayy kull yom"
       ]
-    ]
+    ],
+    "index": 3
   },
   "hobby_travel_1": {
-    "index": 4,
     "name": "Hobbies and travel 1",
-    "explanations": `
-The word '''بلد''' can be used to mean "country" or "city center."
+    "explanations": `The word '''بلد''' can be used to mean "country" or "city center."
 Note how the definite article '''ال-''' is used in this lesson.
 Before "solar" letters, it causes the letter to be doubled, but before "lunar" letters, it remains unaltered.
 `,
@@ -918,13 +898,12 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
         "بسمع موسيقى في الفندق",
         "basma musiqa fil-funduq"
       ]
-    ]
+    ],
+    "index": 4
   },
   "restaurant_1": {
-    "index": 5,
     "name": "Restaurant 1",
-    "explanations": `
-### Usage of some words
+    "explanations": `### Usage of some words
 Zaki '''زاكي''': Although this word isn't a literary one, it's precisely this kind of vocabulary that brings people together.
 
 Suhn '''سخن''': Used for both the weather and food. If the soup is too hot, it's suhn.
@@ -947,15 +926,10 @@ Kawiya '''قوية''': Literally "strong." This is how they say strong coffee.
 Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
 Note the word "halva" - it shares a root with both "sweet" and "dessert."
 `,
-    "story": `
-##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
-
+    "story": `##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
 ##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-
 ##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-
 ##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-
 ##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
 `,
     "words": [
@@ -1211,13 +1185,12 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
         "بدي بديل حليب",
         "biddi badil halib"
       ]
-    ]
+    ],
+    "index": 5
   },
   "airport_1": {
-    "index": 6,
     "name": "Airport 1",
-    "explanations": `
-### Lesson Objective
+    "explanations": `### Lesson Objective
 As the saying goes, "language unites." If you're planning a trip or simply meeting friends from abroad, the materials in this lesson will help you communicate about travel.
 
 ### Explanations
@@ -1227,15 +1200,10 @@ Afsh '''عفش''': A very popular word for luggage in general (things you check 
 
 Fadi / Mahjuz: These two words will save you when you need to figure out if a seat is free in a lounge or on a plane.
 `,
-    "story": `
-##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
-
+    "story": `##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
 ##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-
 ##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-
 ##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-
 ##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
 `,
     "words": [
@@ -1501,13 +1469,12 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
         "بنستنى في الدور الآن",
         "bnastanna fid-dor al-an"
       ]
-    ]
+    ],
+    "index": 6
   },
   "names_meaning_1": {
-    "index": 7,
     "name": "Names meaning 1",
-    "explanations": `
-### Teaching Anchor: Proper Names
+    "explanations": `### Teaching Anchor: Proper Names
 Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
 `,
     "words": [
@@ -1738,13 +1705,12 @@ Many Arabic names are common adjectives and nouns. Understanding their literal m
         "هذه المرة كريمة كثير",
         "hadhihi al-mara karima kathir"
       ]
-    ]
+    ],
+    "index": 7
   },
   "polite_language_1": {
-    "index": 8,
     "name": "Polite language 1",
-    "explanations": `
-### Lesson Objective
+    "explanations": `### Lesson Objective
 Arabic politeness is imbued with special expressions that are often not translated literally, but create that very atmosphere of hospitality.
 
 ### Conversational nuances
@@ -2018,13 +1984,12 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
         "مِن حُسْن الحَظّ الفُنْدُق نَظِيف",
         "min husn al-hazz al-funduq nazif"
       ]
-    ]
+    ],
+    "index": 8
   },
   "studying_language_1": {
-    "index": 9,
     "name": "Studying language 1",
-    "explanations": `
-### Lesson Objective
+    "explanations": `### Lesson Objective
 When communicating with a native speaker, we often find it difficult to express ourselves correctly.
 We lack words, we're unsure of our declensions, and our pronunciation isn't perfect.
 This lesson was created to help explain these difficulties.
@@ -2040,8 +2005,7 @@ Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the begi
 
 At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
 `,
-    "story": `
-### My path in language (Monologue)
+    "story": `### My path in language (Monologue)
 ##story-line## '''بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون. ''' ##story-translation##  I started studying the language on my own two years ago with a phone app. ##story-transcr## Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
 ##story-line## '''مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي. ''' ##story-translation##  Sometimes I lack words and my grammar is weak, and it is hard to understand by ear. ##story-transcr##  Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
 ##story-line## '''بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا. ''' ##story-translation##  I try to read the news to communicate with people. Language connects us. ##story-transcr##  Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
@@ -2274,13 +2238,12 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
         "صلح لي أغلاطي لو سمحت",
         "sallih-li aghlati law samaht"
       ]
-    ]
+    ],
+    "index": 9
   },
   "filling_the_gaps": {
-    "index": 10,
     "name": "Filling the Gaps",
-    "explanations": `
-### Important notes about this topic
+    "explanations": `### Important notes about this topic
 
 Сottage cheese: Arabic cuisine doesn't have a complete equivalent to cottage cheese. They typically use either qarisha (a cheese product) or white soft cheeses like jibna bida (white cheese).
 
@@ -2294,8 +2257,7 @@ Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used
 
 Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
 `,
-    "story": `
-### Table talk
+    "story": `### Table talk
 ##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna?
 ##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
 ##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
@@ -2505,21 +2467,19 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
         "الجرسون دائماً مشغول",
         "al-jarson da'iman mashghul"
       ]
-    ]
+    ],
+    "index": 10
   },
   "health_1": {
-    "index": 11,
     "name": "Health 1",
-    "explanations": `
-### Short notes about this topic
+    "explanations": `### Short notes about this topic
 Biwja'ni ('''بيوجعني'''): The verb "to be sick" itself is biwja'. But when we talk about ourselves, we add the ending -ni: "my head hurts" (rasi biwja'ni).
 
 Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's used to refer to any pill or capsule.
 
 Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
 `,
-    "story": `
-### At the Clinic
+    "story": `### At the Clinic
 ##story-line## '''أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.'''##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever.##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
 ##story-line## '''تفضل هنا، الممرضة مع الدكتور في المستشفى.'''##story-translation## Come here please, the nurse is with the doctor in the hospital.##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
 ##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
@@ -2529,42 +2489,166 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
       {
         "title": "Adverbs",
         "words": [
-          [ "unfortunately", "لِلْأَسَف", "lil-asaf" ],
-          [ "luck", "تَوْفِيق", "tawfiq" ],
-          [ "impossible (m)", "مُسْتَحِيل", "mustahil" ],
-          [ "definite (m)", "أَكِيد", "akid" ],
-          [ "possible (m)", "مُمْكِن", "mumkin" ],
-          [ "correctly", "صح", "sah" ],
-          [ "agreed", "اتفقنا", "ittafaqna" ],
-          [ "straight", "دغري", "dughri" ],
-          [ "backwards", "لورا", "la-wara" ],
-          [ "only", "فقط", "faqat" ],
-          [ "a little", "شوي", "shway" ],
-          [ "also", "كمان", "kaman" ],
-          [ "must", "لازم", "lazim" ],
-          [ "need", "بدي", "biddi" ],
-          [ "but", "لكن", "lakin" ]
+          [
+            "unfortunately",
+            "لِلْأَسَف",
+            "lil-asaf"
+          ],
+          [
+            "luck",
+            "تَوْفِيق",
+            "tawfiq"
+          ],
+          [
+            "impossible (m)",
+            "مُسْتَحِيل",
+            "mustahil"
+          ],
+          [
+            "definite (m)",
+            "أَكِيد",
+            "akid"
+          ],
+          [
+            "possible (m)",
+            "مُمْكِن",
+            "mumkin"
+          ],
+          [
+            "correctly",
+            "صح",
+            "sah"
+          ],
+          [
+            "agreed",
+            "اتفقنا",
+            "ittafaqna"
+          ],
+          [
+            "straight",
+            "دغري",
+            "dughri"
+          ],
+          [
+            "backwards",
+            "لورا",
+            "la-wara"
+          ],
+          [
+            "only",
+            "فقط",
+            "faqat"
+          ],
+          [
+            "a little",
+            "شوي",
+            "shway"
+          ],
+          [
+            "also",
+            "كمان",
+            "kaman"
+          ],
+          [
+            "must",
+            "لازم",
+            "lazim"
+          ],
+          [
+            "need",
+            "بدي",
+            "biddi"
+          ],
+          [
+            "but",
+            "لكن",
+            "lakin"
+          ]
         ]
       },
       {
         "title": "Time and Place",
         "words": [
-          [ "away", "بعيد", "ba'id" ],
-          [ "near", "قريب", "qarib" ],
-          [ "here", "هنا", "huna" ],
-          [ "next to", "جنب", "janb" ],
-          [ "free", "فاضي", "fadi" ],
-          [ "reserved", "محجوز", "mahjuz" ],
-          [ "tomorrow", "بكرة", "bukra" ],
-          [ "yesterday", "أمس", "'ams" ],
-          [ "today", "اليوم", "al-yom" ],
-          [ "soon", "قريباً", "qariban"],
-          [ "usually", "عادةً", "'adan" ],
-          [ "early", "بكير", "bakir" ],
-          [ "late", "متأخر", "muta'akhkhir" ],
-          [ "sometimes", "مرات", "marrat" ],
-          [ "always", "دائماً", "da'iman" ],
-          [ "now", "الآن", "al-an"]
+          [
+            "away",
+            "بعيد",
+            "ba'id"
+          ],
+          [
+            "near",
+            "قريب",
+            "qarib"
+          ],
+          [
+            "here",
+            "هنا",
+            "huna"
+          ],
+          [
+            "next to",
+            "جنب",
+            "janb"
+          ],
+          [
+            "free",
+            "فاضي",
+            "fadi"
+          ],
+          [
+            "reserved",
+            "محجوز",
+            "mahjuz"
+          ],
+          [
+            "tomorrow",
+            "بكرة",
+            "bukra"
+          ],
+          [
+            "yesterday",
+            "أمس",
+            "'ams"
+          ],
+          [
+            "today",
+            "اليوم",
+            "al-yom"
+          ],
+          [
+            "soon",
+            "قريباً",
+            "qariban"
+          ],
+          [
+            "usually",
+            "عادةً",
+            "'adan"
+          ],
+          [
+            "early",
+            "بكير",
+            "bakir"
+          ],
+          [
+            "late",
+            "متأخر",
+            "muta'akhkhir"
+          ],
+          [
+            "sometimes",
+            "مرات",
+            "marrat"
+          ],
+          [
+            "always",
+            "دائماً",
+            "da'iman"
+          ],
+          [
+            "now",
+            "الآن",
+            "al-an"
+          ]
         ]
       }
     ],
@@ -2716,6 +2800,7 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
         "هذا المستشفى كبير",
         "hadha al-mustashfa kabir"
       ]
-    ]
+    ],
+    "index": 11
   }
 };

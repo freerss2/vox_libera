@@ -22,6 +22,14 @@ INPUT_MANIFEST_FILE = "manifest.yaml"
 def info(msg):
     print("INFO: {}".format(msg))
 
+def quote_multiline_js(text):
+    """
+    For given text perform pre-dump quotation
+    replace real newlines with <BR>, place backticks ` around the string
+    """
+    text = text.replace("\n", "<BR>")
+    return f"`{text}`"
+
 def decode_escaped_backtick(text):
     """
     in given text replace \" with " inside backticks
@@ -98,13 +106,14 @@ def separate_data(lessons, metadata):
     for lang in locales:
         locales[lang]['content'] = {}
         locales[lang]['explanations'] = {}
+        locales[lang]['story'] = {}
         locales[lang]['interface'] = {}
 
-    updated_lessons = []
+    updated_lessons = {}
     target_lang = metadata['target_language']
     for index, topic in enumerate(lessons):
         topic['index'] = index
-        topic_id = topic['id']
+        topic_id = topic.pop('id')
         if 'abc' in topic:
             (abc, locales) = extract_from_list(topic['abc'], locales, target_lang)
             topic['abc'] = abc
@@ -124,15 +133,15 @@ def separate_data(lessons, metadata):
         if explanations:
             new_value = explanations.pop('en')
             for lang in explanations:
-                locales[lang]['explanations'][topic_id] = explanations.get(lang)
-            topic['explanations'] = new_value
+                locales[lang]['explanations'][topic_id] = quote_multiline_js(explanations.get(lang))
+            topic['explanations'] = quote_multiline_js(new_value)
         # topic['story'] - if exists, use 'en', rest - under each lang 'story'[id]
         story = topic.get('story')
         if story:
             new_value = story.pop('en')
             for lang in story:
-                locales[lang]['story'][topic_id] = story.get(lang)
-            topic['story'] = new_value
+                locales[lang]['story'][topic_id] = quote_multiline_js(story.get(lang))
+            topic['story'] = quote_multiline_js(new_value)
         # same for pairs_set (list with "words"/"abc" inside)
         pairs_sets = topic.get('pairs_set')
         if pairs_sets:
@@ -146,15 +155,20 @@ def separate_data(lessons, metadata):
                     continue
                 (new_value, locales) = extract_from_list(pairs_set[key], locales, target_lang)
                 pairs_set[key] = new_value
+                # split title translations
+                pairs_set_title = pairs_set['title'].pop('en')
+                for lang in pairs_set['title']:
+                    locales[lang]['interface'][pairs_set_title] = pairs_set['title'][lang]
+                pairs_set['title'] = pairs_set_title
                 new_sets.append(pairs_set)
             topic['pairs_set'] = new_sets
-        updated_lessons.append(topic)
+        updated_lessons[topic_id] = topic
     # metadata['metadata']['title'] - replace with 'en', rest - to 'interface'
     new_value = metadata['metadata']['title'].pop('en')
     for lang in metadata['metadata']['title']:
         locales[lang]['interface'][new_value] = metadata['metadata']['title'].get(lang)
     metadata['metadata']['title'] = new_value
-    # TODO: metadata['feedback'] - dictionary of lists - each list to apply extract_from_list - to 'interface'
+    # metadata['feedback'] - dictionary of lists - each list to apply extract_from_list - to 'interface'
     feedback = metadata.pop('feedback')
     for key in feedback:
         new_list = []
@@ -180,7 +194,6 @@ def parse_arguments():
 def main(args):
     lessons, metadata = read_input(args.course_dir)
     (updated_lessons, locales, updated_metadata) = separate_data(lessons, metadata)
-    # TODO: for lessons and locales convert single string to multi-line (?)
     save_json(os.path.join(args.course_dir, OUTPUT_LESSONS_FILE), 'const topics', updated_lessons)
     save_json(os.path.join(args.course_dir, OUTPUT_LOCALES_FILE), 'const course_locales', locales)
     save_json(os.path.join(args.course_dir, OUTPUT_MANIFEST_FILE), 'const manifest', updated_metadata)

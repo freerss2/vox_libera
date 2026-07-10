@@ -120,6 +120,7 @@ if (course_locales) {
       locales[langCode]['cl'] =
           {...langLocales["interface"], ...langLocales["content"]};
       locales[langCode]['explanations'] = {...langLocales["explanations"]};
+      locales[langCode]['story'] = {...langLocales["story"]};
     }
   })
 }

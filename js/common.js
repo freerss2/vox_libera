@@ -151,13 +151,11 @@ function replaceSmiliesWithImages(text) {
 const narratorNeutralEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'neutral-mouth'];
 const narratorSmileEmotion = ['left-eye', 'right-eye', 'left-eyebrow', 'right-eyebrow', 'smile-mouth'];
 const narratorClosedEyesEmotion = [
-    'left-eyebrow',
-    'right-eyebrow',
+    'left-eye', 'right-eye',
+    'left-eyebrow', 'right-eyebrow',
     'neutral-mouth',
-    'left-lower-eyelid',
-    'left-upper-eyelid',
-    'right-lower-eyelid',
-    'right-upper-eyelid'
+    'left-upper-eyelid', 'right-upper-eyelid',
+    'left-lower-eyelid', 'right-lower-eyelid'
 ];
 
 // usage: initNarrator(JS_OBJECT, 'narrator-wrapper');
@@ -269,10 +267,12 @@ function toggleBubble(event) {
     const textTarget = document.getElementById('bubble-text');
     const delay = Math.floor(Math.random()*1500);
     const duration = Math.floor(Math.random() * 500) + 200;
-    setTimeout(() => {
-      randomBlink('narrator-svg', duration);
-      randomEyebrow('narrator-svg', duration);
-    }, delay);
+    if (bubbleMinimized) {
+      setTimeout(() => {
+        randomBlink('narrator-svg', duration);
+        randomEyebrow('narrator-svg', duration);
+      }, delay);
+    }
     
     if ( bubble.classList.contains('hidden') ) {
         if (bubble.dataset.enabled) {
@@ -312,7 +312,10 @@ function toggleBubble(event) {
             bubble.classList.add('bubble-minimized');
             bubbleMinimized = true;
             showHideBackgroundNavigationButtons(true);
-            setNarratorEmotion('narrator-svg', narratorClosedEyesEmotion);
+            setTimeout(
+              () => { setNarratorEmotion('narrator-svg', narratorClosedEyesEmotion); },
+              500
+            );
         }
     }
 }

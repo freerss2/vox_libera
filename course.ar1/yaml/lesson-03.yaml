@@ -16,18 +16,21 @@ explanations:
 story:
   en: |
     ##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
-
     ##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-
     ##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-
     ##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-
     ##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
-
     ##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
-
     ##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
+  ru: |
+    ##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
+    ##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
+    ##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## Ключи лежат на столе на кухне, дорогая. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
+    ##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Спасибо! Моя дорогая соседка тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+    ##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Вы завтракаете перед тем, как идти? ##story-transcr## Btakul futur qabl ma truh?
+    ##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## Нет, я не голоден, просто немного устал. ##story-transcr## La, ana mish jwan, bas taban shway.
+    ##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## Да пребудет с вами Бог! Увидимся вечером дома. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
+
 words:
 - en: carpet
   ar: سجادة

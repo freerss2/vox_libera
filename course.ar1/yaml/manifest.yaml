@@ -49,6 +49,8 @@ feedback:
 locales:
   en:
     __title__: English
+    explanations: {}
+    interface: {}
   ru:
     __title__: Русский
     explanations: {}

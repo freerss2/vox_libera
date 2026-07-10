@@ -25,7 +25,9 @@ story:
     ##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
     ##story-line## '''نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.'''##story-translation## Yes, and take this pill please. Everything is okay.##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
 pairs_set:
-- title: Adverbs
+- title:
+    en: Adverbs
+    ru: Наречия
   words:
   - en: unfortunately
     ar: لِلْأَسَف
@@ -87,7 +89,9 @@ pairs_set:
     ar: لكن
     transliteration: lakin
     ru: но
-- title: Time and Place
+- title:
+    en: Time and Place
+    ru: Время и место
   words:
   - en: away
     ar: بعيد
