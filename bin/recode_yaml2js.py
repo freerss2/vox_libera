@@ -88,7 +88,14 @@ def extract_from_list(materials, locales, target_lang):
     for row in materials:
         try:
             en = row.pop('en')
-            result.append([en, row.pop(target_lang), row.pop('transliteration')])
+            target = row.pop(target_lang)
+            vocalized = row.pop('vocalized', '')
+            # for vocalized option - pack it with a target language visual representation
+            if vocalized:
+                target = f"{target}@{vocalized}"
+            # else:
+            # TODO: when no explicit vocalization - try to apply automatic generator per target language
+            result.append([en, target, row.pop('transliteration')])
             for lang, translation in row.items():
                 if en in locales[lang]['content'] and translation != locales[lang]['content'][en]:
                     print("WARNING: overwrite '{}' ~ '{}' with '{}'".format(

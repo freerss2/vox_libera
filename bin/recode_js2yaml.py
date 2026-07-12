@@ -102,7 +102,14 @@ def aggregate_list(materials, locales, target_lang):
     for row in materials:
         try:
             en = row[0]
-            record = {'en': en, target_lang: row[1], 'transliteration': row[2]}
+            target_str = row[1]
+            if '@' in target_str:
+                (target_str, vocalized) = target_str.split('@')[:2]
+            else:
+                vocalized = None
+            record = {'en': en, target_lang: target_str, 'transliteration': row[2]}
+            if vocalized:
+                record['vocalized'] = vocalized
             for lang in locales:
                 associations = locales[lang].get('content', {})
                 if en in associations:

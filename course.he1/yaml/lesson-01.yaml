@@ -12,46 +12,57 @@ explanations:
 abc:
 - en: Aleph (silent consonant)
   he: א
+  vocalized: אָלֶף
   transliteration: ''
   ru: Алеф (немая согласная)
 - en: Bet
   he: בּ
+  vocalized: בֵּית
   transliteration: b
   ru: Бет
 - en: Vet
   he: ב
+  vocalized: בֵית
   transliteration: v
   ru: Вет
 - en: Gimel
   he: ג
+  vocalized: גִּימֶל
   transliteration: g
   ru: Гимел
 - en: Dalet
   he: ד
+  vocalized: דָּלֶת
   transliteration: d
   ru: Далет
 - en: Hey
   he: ה
+  vocalized: הֵא
   transliteration: h
   ru: hей
 - en: Waw
   he: ו
+  vocalized: וָו
   transliteration: w
   ru: Вав
 - en: Zayin
   he: ז
+  vocalized: זַיִן
   transliteration: z
   ru: Зайин
 - en: Khet
   he: ח
+  vocalized: חֵית
   transliteration: kh
   ru: Хет
 - en: Tet
   he: ט
+  vocalized: טֵית
   transliteration: T
   ru: Тет
 - en: Yud
   he: י
+  vocalized: יוֹד
   transliteration: j
   ru: Йуд
 words: []

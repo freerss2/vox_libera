@@ -717,9 +717,10 @@ function updateCardContent() {
 
     speakTargetLang(item[1]);
     const trText = `[${item[2]}]`;
+    const displayText = wordDisplayText(item[1]);
     // [0] - User, [1] - Target, [2] - Transcription
     const targetSide = `
-            <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">${item[1]}</div>
+            <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">${displayText}</div>
             <div class="transcr-text transcription">${trText}</div>`;
     const userSide = `
             <div class="user-text" dir="${userDir}" lang="${userLang}" style="color: var(--secondary-color);">${item[0]}</div>`;
@@ -848,7 +849,7 @@ function createTile(item, index, side, lang, container) {
     div.className = 'card' + (lang === 'target' ? ' target-text' : ' user-text');
     div.lang = lang === 'target' ? courseTargetLanguage : userLang;
     div.dir = lang === 'target' ? targetDir : userDir;
-    div.textContent = item.t;
+    div.textContent = wordDisplayText(item.t);
     div.dataset.col = side;
     div.dataset.target = (lang === 'target' ? item.t : '');
     div.dataset.id = item.id;
@@ -989,7 +990,8 @@ function tipOfTheDay() {
   const hintData = allStrs[0];
   if (!hintData) return '';
   const transl = i18n.t('tip_of_the_day|remember_transl');
-  return `💡${transl}💡<BR>«${hintData[0]}»<BR>${hintData[1]}<BR>[${hintData[2]}]`;
+  const displayText = wordDisplayText(hintData[1]);
+  return `💡${transl}💡<BR>«${hintData[0]}»<BR>${displayText}<BR>[${hintData[2]}]`;
 }
 
 // ------------------------------------------ avoid repetitive questions
@@ -1063,7 +1065,8 @@ function renderQuizGame(screen_id) {
     if (screenType === 'quiz_u2t') {
         questionContainer.innerHTML = `<span ${userTags}>${quizCorrectStr[0]}</span>`;
     } else if (screenType === 'quiz_t2u') {
-        questionContainer.innerHTML = `<span ${targetTags}>${quizCorrectStr[1]}</span>`;
+        const displayText = itemDisplayText(quizCorrectStr);
+        questionContainer.innerHTML = `<span ${targetTags}>${displayText}</span>`;
         mainHint = `[${quizCorrectStr[2]}]`;
     } else if (screenType === 'quiz_audio') {
         questionContainer.innerHTML = `
@@ -1093,12 +1096,13 @@ function renderQuizGame(screen_id) {
         btn.dataset.speak = '';
         // According to quiz type determine the cards content
         if (screenType === 'quiz_u2t') {
-            btn.innerHTML = `<span ${targetTags}>${word[1]}</span>`;
+            const displayText = itemDisplayText(word);
+            btn.innerHTML = `<span ${targetTags}>${displayText}</span>`;
             btn.dataset.speak = word[1];
         } else {
             btn.innerHTML = `<span ${userTags}>${word[0]}</span>`;
         }
-        btn.dataset.value = word[1];
+        btn.dataset.value = itemDisplayText(word);
         btn.dataset.translit = word[2];
         btn.onclick = () => handleQuizChoice(word, btn);
         optionsGrid.appendChild(btn);
@@ -1109,14 +1113,14 @@ function renderQuizGame(screen_id) {
 function generateDistractors(correct, all, totalChoices) {
     // initialize with the correct answer
     let choices = [correct];
-    const targetLength = correct[1].length;
+    const targetLength = itemDisplayText(correct).length;
     // let filtered = all.filter(w => w[1] !== correct[1]); // Remove the correct one prior to shuffle
 
     let filtered = all
-        .filter(item => item[1] !== correct[1]) // Exclude the answer itself
+        .filter(item => itemDisplayText(item) !== itemDisplayText(correct)) // Exclude the answer itself
         .sort((a, b) => {
-            const diffA = Math.abs(a[1].length - targetLength);
-            const diffB = Math.abs(b[1].length - targetLength);
+            const diffA = Math.abs(itemDisplayText(a).length - targetLength);
+            const diffB = Math.abs(itemDisplayText(b).length - targetLength);
             return diffA - diffB;
         });
     filtered = filtered.slice(0, totalChoices-1);
@@ -1163,12 +1167,13 @@ function finishSet() {
 //  - show the right card with a highlighted border
 //  - mark this attempt as failed
 function quizGiveup() {
+  const displayText = itemDisplayText(quizCorrectStr);
   [...document.getElementsByClassName('quiz-card')].forEach(e => {
-    if (e.dataset.value === quizCorrectStr[1]) {
+    if (e.dataset.value === displayText) {
       e.classList.add('quiz-card-giveup');
     }
   });
-  updateStats(quizCorrectStr[1], false);
+  updateStats(displayText, false);
 }
 
 // Callback for click on quiz button
@@ -1180,7 +1185,7 @@ function handleQuizChoice(selectedStr, btn) {
     if (hintPanel && translit) {
         hintPanel.textContent = translit;
     }
-    if (selectedStr[1] === quizCorrectStr[1]) {
+    if (itemDisplayText(selectedStr) === itemDisplayText(quizCorrectStr)) {
         // Correct!
         btn.style.borderColor = "var(--primary)";
         scrollToTop('app-container');
@@ -1501,6 +1506,22 @@ function dedupeDictionaryData(currentData) {
     return uniqueData;
 }
 
+// get display/vocalized representation (target language)
+// the text is either single string or visual@vocalized version 
+function itemDisplayText(item) {
+    return wordDisplayText(item[1]);
+}
+function wordDisplayText(word) {
+    const text_list = word.split('@');
+    return text_list[0];
+}
+
+// get vocalized display (if any)
+function wordVocalizedText(word) {
+    const text_list = word.split('@');
+    return text_list.at(-1);
+}
+
 function showDictionary(currentData, recapMode=false) {
     const listContainer = document.getElementById('dictionary-list');
     listContainer.innerHTML = '';
@@ -1512,6 +1533,7 @@ function showDictionary(currentData, recapMode=false) {
         const card = document.createElement('div');
         card.className = "dictionary-card";
 
+        // TODO: fix access to stats
         const wordStat = stats[item[1]] || { attempts: 0, success: 0 };
         let accuracy = 0;
         if (wordStat.attempts > 0) {
@@ -1527,6 +1549,7 @@ function showDictionary(currentData, recapMode=false) {
         // Speak the content on click
         card.onclick = () => speakTargetLang(item[1]);
         const cardStat = wordStat.attempts > 0 ? `<span class="stat-badge" style=" color: ${statusColor};"> (${accuracy}%)</span>` : '';
+        const displayText = itemDisplayText(item);
         card.innerHTML = `
             <div style="flex: 1;">
                 <div>
@@ -1536,7 +1559,7 @@ function showDictionary(currentData, recapMode=false) {
                 <div class="dictionary-transl transcription">[${item[2]}]</div>
             </div>
             <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">
-                ${item[1]}
+                ${displayText}
             </div>
         `;
         updateTranscriptionDisplay();
@@ -1635,7 +1658,7 @@ function speakTargetLang(text, rate=1) {
         window.speechSynthesis.cancel();
 
         const msg = new SpeechSynthesisUtterance();
-        msg.text = text;
+        msg.text = wordVocalizedText(text);
         msg.lang = targetLangSpeakCode; // Language code
         msg.rate = rate;    // Speed rate
         msg.pitch = 1;      // Pitch
@@ -1737,7 +1760,7 @@ function getTopicData(inputTypes, hideWellLearned, needShuffle) {
 function orderByAccuracy(currentData) {
   const candidates = currentData
     .map(item => {
-        const targetStr = item[1]; // take target language string
+        const targetStr = itemDisplayText(item); // take target language string
         const stats = wordStats[targetStr];
 
         // Calculate accuracy, considering totally new as "-1" (for sorting)
@@ -1944,16 +1967,17 @@ function resetStats() {
 // Str stats update
 function updateStats(targetStr, isCorrect) {
   let stats = getStats();
-  if (!stats[targetStr]) {
-      stats[targetStr] = { attempts: 0, success: 0 };
+  const displayText = wordDisplayText(targetStr);
+  if (!stats[displayText]) {
+      stats[displayText] = { attempts: 0, success: 0 };
   }
-  stats[targetStr].attempts += 1;
+  stats[displayText].attempts += 1;
   if (isCorrect) {
-      stats[targetStr].success += 1;
+      stats[displayText].success += 1;
   }
   setStats(stats);
   settings.markAsChanged();
-  wordStats[targetStr] = stats[targetStr];
+  wordStats[displayText] = stats[displayText];
 
   if (isUserLoggedIn && window.currentAccessToken) {
       syncManager.queueUpload(window.currentAccessToken);
@@ -1993,7 +2017,7 @@ function getTopicStats(topicId) {
     if (stats.wordsCount > 0) {
       let wordTotalRatio = 0;
       topicWords.forEach(w => {
-          const s = wordStats[w[1]];
+          const s = wordStats[itemDisplayText(w)];
           if (s && s.attempts > 0) {
             wordTotalRatio += (s.success / s.attempts);
           }
@@ -2004,7 +2028,7 @@ function getTopicStats(topicId) {
     if (stats.sentencesCount > 0) {
       let sentTotalRatio = 0;
       topicSentences.forEach(s => {
-          const st = wordStats[s[1]];
+          const st = wordStats[itemDisplayText(s)];
           if (st && st.attempts > 0) {
             sentTotalRatio += (st.success / st.attempts);
           }
