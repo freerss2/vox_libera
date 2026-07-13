@@ -2355,6 +2355,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     initTopic(settings.getCurrentTopic());
+    // fix bug: if current screen ID is not legal - reset it to default
+    const record = getScreenRecord(settings.getCurrentScreenId());
+    if (! record) {
+        settings.setCurrentScreenId(DEFAULT_SCREEN_ID);
+    }
     renderCurrentScreen();
     updateFavicon(manifest.icon_code);
 
