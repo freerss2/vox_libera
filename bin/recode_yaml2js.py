@@ -18,6 +18,10 @@ OUTPUT_LESSONS_FILE = "lessons.js"
 OUTPUT_MANIFEST_FILE = "manifest.js"
 INPUT_MANIFEST_FILE = "manifest.yaml"
 
+VOCALIZATION_PER_LANG = {
+    'he': {'regex': re.compile(r'[\u05B0-\u05BB\u05BD-\u05C4\u05C7]')},
+    'ar': {'regex': re.compile(r'[\u064B-\u0650\u0652\u0653\u0670]')}
+}
 
 def info(msg):
     print("INFO: {}".format(msg))
@@ -80,6 +84,22 @@ def save_json(fname, js_variable, data):
         f.write(decode_escaped_backtick(text))
         f.write(";\n")
 
+def get_visual_from_vocalized(v_text, target_lang):
+    """
+    If target language supports vocalized version - try to get two representations for text
+    @return: visual representation (non-vocalized) or nothing
+    """
+    lang_config = VOCALIZATION_PER_LANG.get(target_lang)
+    if not lang_config:
+        return ''
+    compiled_regex = lang_config['regex']
+    has_vocalization = bool(compiled_regex.search(v_text))
+    # check is there vocalization characters in text
+    if not has_vocalization:
+        return ''
+    # create visual presentation text and return it
+    return compiled_regex.sub('', v_text)
+
 def extract_from_list(materials, locales, target_lang):
     """
     Using a list of records create pure 3-element arrays and store translations in locales
@@ -90,11 +110,15 @@ def extract_from_list(materials, locales, target_lang):
             en = row.pop('en')
             target = row.pop(target_lang)
             vocalized = row.pop('vocalized', '')
-            # for vocalized option - pack it with a target language visual representation
+            # for vocalized version - pack it with a target language visual representation
+            if not vocalized:
+                # when no explicit vocalization - try to apply automatic generator per target language
+                visual = get_visual_from_vocalized(target, target_lang)
+                if visual:
+                    vocalized = target 
+                    target = visual
             if vocalized:
                 target = f"{target}@{vocalized}"
-            # else:
-            # TODO: when no explicit vocalization - try to apply automatic generator per target language
             result.append([en, target, row.pop('transliteration')])
             for lang, translation in row.items():
                 if en in locales[lang]['content'] and translation != locales[lang]['content'][en]:

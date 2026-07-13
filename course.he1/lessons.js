@@ -696,12 +696,12 @@ Remember that oti/otkha is only used when we know who is being referred to. The 
       ],
       [
         "with you (m)",
-        "אִתְּךָ",
+        "אתּך@אִתְּךָ",
         "itkha"
       ],
       [
         "with you (f)",
-        "אִתָּךְ",
+        "אתּך@אִתָּךְ",
         "itakh"
       ],
       [
@@ -731,12 +731,12 @@ Remember that oti/otkha is only used when we know who is being referred to. The 
       ],
       [
         "you (m, direct object)",
-        "אוֹתְךָ",
+        "אותך@אוֹתְךָ",
         "otkha"
       ],
       [
         "you (f, direct object)",
-        "אוֹתָךְ",
+        "אותך@אוֹתָךְ",
         "otakh"
       ],
       [

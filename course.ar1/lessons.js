@@ -561,7 +561,7 @@ The passive voice construction model looks like this:
       ],
       [
         "always",
-        "دائماً",
+        "دائما@دائماً",
         "da'iman"
       ],
       [
@@ -678,7 +678,7 @@ The passive voice construction model looks like this:
       ],
       [
         "i always drink water in the evening",
-        "دائماً بشرب مي المساء",
+        "دائما بشرب مي المساء@دائماً بشرب مي المساء",
         "da'iman bashrab mayy al-masa"
       ],
       [
@@ -820,7 +820,7 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
       ],
       [
         "i always go to the sea",
-        "دائماً بروح على البحر",
+        "دائما بروح على البحر@دائماً بروح على البحر",
         "da'iman baruh alal-bahr"
       ],
       [
@@ -975,7 +975,7 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
       ],
       [
         "sweet / dessert",
-        "حِلْو",
+        "حلو@حِلْو",
         "hilw"
       ],
       [
@@ -1107,7 +1107,7 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
       ],
       [
         "the sweet is beautiful and delicious",
-        "الحِلْو جميل وزاكي",
+        "الحلو جميل وزاكي@الحِلْو جميل وزاكي",
         "al-hilw jamil wa zaki"
       ],
       [
@@ -1137,7 +1137,7 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
       ],
       [
         "the food here is always delicious",
-        "الأكل هنا دائماً زاكي",
+        "الأكل هنا دائما زاكي@الأكل هنا دائماً زاكي",
         "al-akl huna da'iman zaki"
       ],
       [
@@ -1167,7 +1167,7 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
       ],
       [
         "i want sweet now",
-        "بدي حِلْو الآن",
+        "بدي حلو الآن@بدي حِلْو الآن",
         "biddi hilw al-an"
       ],
       [
@@ -1739,249 +1739,249 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
     "words": [
       [
         "thank god",
-        "الحَمْدُ لله",
+        "الحمد لله@الحَمْدُ لله",
         "al-hamdu lillah"
       ],
       [
         "god forbid",
-        "لَا سَمَحَ الله",
+        "لا سمح الله@لَا سَمَحَ الله",
         "la samah allah"
       ],
       [
         "to your health",
-        "صَحْتَيْن",
+        "صحتين@صَحْتَيْن",
         "sahtayn"
       ],
       [
         "bon appetit",
-        "صَحْتَيْن وَعَافْيِة",
+        "صحتين وعافية@صَحْتَيْن وَعَافْيِة",
         "sahtayn wa afye"
       ],
       [
         "take care",
-        "دِير بَالَاك",
+        "دير بالاك@دِير بَالَاك",
         "dir balak"
       ],
       [
         "you are welcome",
-        "عَفْوًا",
+        "عفوا@عَفْوًا",
         "afwan"
       ],
       [
         "nice to meet you",
-        "فُرْصَة سَعِيدَة",
+        "فرصة سعيدة@فُرْصَة سَعِيدَة",
         "fursa sa'ida"
       ],
       [
         "unfortunately",
-        "لِلْأَسَف",
+        "للأسف@لِلْأَسَف",
         "lil-asaf"
       ],
       [
         "luck",
-        "تَوْفِيق",
+        "توفيق@تَوْفِيق",
         "tawfiq"
       ],
       [
         "welcome",
-        "أَهْلًا وَسَهْلًا",
+        "أهلا وسهلا@أَهْلًا وَسَهْلًا",
         "ahlan wa sahlan"
       ],
       [
         "with pleasure",
-        "عَلَى رَاسِي",
+        "على راسي@عَلَى رَاسِي",
         "ala rasi"
       ],
       [
         "thank you",
-        "تِسْلَم",
+        "تسلم@تِسْلَم",
         "tislam"
       ],
       [
         "safe (m)",
-        "سَالِم",
+        "سالم@سَالِم",
         "salim"
       ],
       [
         "worry",
-        "قَلَق",
+        "قلق@قَلَق",
         "qalaq"
       ],
       [
         "here you go (m)",
-        "تَفَضَّل",
+        "تفضّل@تَفَضَّل",
         "tafaddal"
       ],
       [
         "never mind",
-        "مَعْلِش",
+        "معلش@مَعْلِش",
         "ma'lesh"
       ],
       [
         "problem",
-        "مُشْكِلِة",
+        "مشكلة@مُشْكِلِة",
         "mushkile"
       ],
       [
         "congratulations",
-        "مَبْرُوك",
+        "مبروك@مَبْرُوك",
         "mabruk"
       ],
       [
         "blessed (m)",
-        "مُبَارَك",
+        "مبارك@مُبَارَك",
         "mubarak"
       ],
       [
         "bad (m)",
-        "سَيِّء",
+        "سيّء@سَيِّء",
         "sayyi"
       ],
       [
         "good",
-        "تَمَام",
+        "تمام@تَمَام",
         "tamam"
       ],
       [
         "impossible (m)",
-        "مُسْتَحِيل",
+        "مستحيل@مُسْتَحِيل",
         "mustahil"
       ],
       [
         "definite (m)",
-        "أَكِيد",
+        "أكيد@أَكِيد",
         "akid"
       ],
       [
         "possible (m)",
-        "مُمْكِن",
+        "ممكن@مُمْكِن",
         "mumkin"
       ],
       [
         "honored (m)",
-        "مُحْتَرَم",
+        "محترم@مُحْتَرَم",
         "muhtaram"
       ]
     ],
     "sentences": [
       [
         "everything is good thank god",
-        "كُلّ شَيْء تَمَام الحَمْدُ لله",
+        "كلّ شيء تمام الحمد لله@كُلّ شَيْء تَمَام الحَمْدُ لله",
         "kull shi tamam al-hamdu lillah"
       ],
       [
         "bon appetit to everyone",
-        "صَحْتَيْن وَعَافْيِة لِلْجَمِيع",
+        "صحتين وعافية للجميع@صَحْتَيْن وَعَافْيِة لِلْجَمِيع",
         "sahtayn wa afye lil-jami"
       ],
       [
         "be careful on the road",
-        "دِير بَالَاك عَلَى الطَّرِيق",
+        "دير بالاك على الطّريق@دِير بَالَاك عَلَى الطَّرِيق",
         "dir balak ala t-tariq"
       ],
       [
         "please i want a menu",
-        "لَوْ سَمَحْت بَدِّي المِنْيُو",
+        "لو سمحت بدّي المنيو@لَوْ سَمَحْت بَدِّي المِنْيُو",
         "law samaht biddi l-minyu"
       ],
       [
         "nice to meet you my friend",
-        "فُرْصَة سَعِيدَة يَا صَاحْبِي",
+        "فرصة سعيدة يا صاحبي@فُرْصَة سَعِيدَة يَا صَاحْبِي",
         "fursa sa'ida ya sahbi"
       ],
       [
         "unfortunately i can not come today",
-        "لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم",
+        "للأسف ما بقدر أجي اليوم@لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم",
         "lil-asaf ma baqdar aji l-yom"
       ],
       [
         "i wish you luck in work",
-        "بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل",
+        "بتمنّى لاك التّوفيق في الشّغل@بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل",
         "batmanna lak at-tawfiq fi sh-shughl"
       ],
       [
         "no god forbid",
-        "لَا لَا سَمَحَ الله",
+        "لا لا سمح الله@لَا لَا سَمَحَ الله",
         "la la samah allah"
       ],
       [
         "welcome to our house",
-        "أهْلًا وَسَهْلًا فِي بَيْتْنَا",
+        "أهلا وسهلا في بيتنا@أهْلًا وَسَهْلًا فِي بَيْتْنَا",
         "ahlan wa sahlan fi baytna"
       ],
       [
         "make yourself at home my friend",
-        "البَيْت بَيْتَاك يَا صَاحْبِي",
+        "البيت بيتاك يا صاحبي@البَيْت بَيْتَاك يَا صَاحْبِي",
         "al-bayt baytak ya sahbi"
       ],
       [
         "have a safe trip to russia",
-        "تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا",
+        "تروح وترجع بالسّلامة لروسيا@تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا",
         "truh wa tirja bis-salame la-rusiya"
       ],
       [
         "do not worry about the money",
-        "مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي",
+        "ما في داعي للقلق عن المصاري@مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي",
         "ma fi da'i lil-qalaq an al-masari"
       ],
       [
         "please sit here",
-        "تَفَضَّل اِقْعُد هُون",
+        "تفضّل اقعد هون@تَفَضَّل اِقْعُد هُون",
         "tafaddal iq'ud hon"
       ],
       [
         "it is not a problem never mind",
-        "مُش مُشْكِلِة مَعْلِش",
+        "مش مشكلة معلش@مُش مُشْكِلِة مَعْلِش",
         "mish mushkile ma'lesh"
       ],
       [
         "congratulations on the new job",
-        "مَبْرُوك عَلَى الشُّغْل جْـدِيد",
+        "مبروك على الشّغل جـديد@مَبْرُوك عَلَى الشُّغْل جْـدِيد",
         "mabruk ala sh-shughl j-did"
       ],
       [
         "it is my pleasure no need to thank",
-        "عَلَى رَاسِي وَلَا يْهِمَّاك",
+        "على راسي ولا يهمّاك@عَلَى رَاسِي وَلَا يْهِمَّاك",
         "ala rasi wala yhimmak"
       ],
       [
         "as luck would have it the bus is late",
-        "مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر",
+        "مثل الحظّ السّيّء الباص متأخّر@مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر",
         "mitl al-hazz as-sayyi l-bas mut'akhkhir"
       ],
       [
         "fortunately the passport is here",
-        "مِن حُسْن الحَظّ الجَوَاز هُون",
+        "من حسن الحظّ الجواز هون@مِن حُسْن الحَظّ الجَوَاز هُون",
         "min husn al-hazz al-jawaz hon"
       ],
       [
         "no way this is impossible",
-        "مُسْتَحِيل هَادَا مُش مُمْكِن",
+        "مستحيل هادا مش ممكن@مُسْتَحِيل هَادَا مُش مُمْكِن",
         "mustahil hada mish mumkin"
       ],
       [
         "i will definitely come today",
-        "أَكِيد بَجِي اليَوْم",
+        "أكيد بجي اليوم@أَكِيد بَجِي اليَوْم",
         "akid baji l-yom"
       ],
       [
         "maybe the coffee is hot",
-        "مُمْكِن القَهْوِة سُخْنِة",
+        "ممكن القهوة سخنة@مُمْكِن القَهْوِة سُخْنِة",
         "mumkin al-qahwe sukhne"
       ],
       [
         "definitely the food is tasty",
-        "أَكِيد الأَكْل زَاكِي",
+        "أكيد الأكل زاكي@أَكِيد الأَكْل زَاكِي",
         "akid al-akl zaki"
       ],
       [
         "as luck would have it the city is far",
-        "مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة",
+        "مثل الحظّ السّيّء البلد بعيدة@مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة",
         "mitl al-hazz as-sayyi l-balad ba'ide"
       ],
       [
         "fortunately the hotel is clean",
-        "مِن حُسْن الحَظّ الفُنْدُق نَظِيف",
+        "من حسن الحظّ الفندق نظيف@مِن حُسْن الحَظّ الفُنْدُق نَظِيف",
         "min husn al-hazz al-funduq nazif"
       ]
     ],
@@ -2439,7 +2439,7 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
       ],
       [
         "i am constantly studying here",
-        "أنا دائماً بدرس هنا",
+        "أنا دائما بدرس هنا@أنا دائماً بدرس هنا",
         "ana da'iman badrus huna"
       ],
       [
@@ -2464,7 +2464,7 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
       ],
       [
         "the waiter is constantly busy",
-        "الجرسون دائماً مشغول",
+        "الجرسون دائما مشغول@الجرسون دائماً مشغول",
         "al-jarson da'iman mashghul"
       ]
     ],
@@ -2491,27 +2491,27 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
         "words": [
           [
             "unfortunately",
-            "لِلْأَسَف",
+            "للأسف@لِلْأَسَف",
             "lil-asaf"
           ],
           [
             "luck",
-            "تَوْفِيق",
+            "توفيق@تَوْفِيق",
             "tawfiq"
           ],
           [
             "impossible (m)",
-            "مُسْتَحِيل",
+            "مستحيل@مُسْتَحِيل",
             "mustahil"
           ],
           [
             "definite (m)",
-            "أَكِيد",
+            "أكيد@أَكِيد",
             "akid"
           ],
           [
             "possible (m)",
-            "مُمْكِن",
+            "ممكن@مُمْكِن",
             "mumkin"
           ],
           [
@@ -2616,12 +2616,12 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
           ],
           [
             "soon",
-            "قريباً",
+            "قريبا@قريباً",
             "qariban"
           ],
           [
             "usually",
-            "عادةً",
+            "عادة@عادةً",
             "'adan"
           ],
           [
@@ -2641,7 +2641,7 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
           ],
           [
             "always",
-            "دائماً",
+            "دائما@دائماً",
             "da'iman"
           ],
           [
