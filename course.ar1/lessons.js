@@ -16,120 +16,120 @@ The curriculum and course texts are structured using **artificial intelligence**
 Verbs are given in their active spoken Levantine form with the prefix [b-].
 Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
 `,
-    "story": `##story-line## '''من وين أنت؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn anta?
-##story-line## ''' أنا من روسيا، بدرس اللغة العربية الآن.''' ##story-translation## I am from Russia, I study Arabic now. ##story-transcr## Ana min rusiya, badrus al-lugha al-arabiya al-an.
-##story-line## '''شو مهنتك؟ بتشتغل هنا في الشركة؟''' ##story-translation## What is your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtaghil huna fi ash-sharika?
-##story-line## '''نعم، بشتغل مطور ومبرمج. بحب شغلي كثير.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Naam, bashtaghil mutawwir wa mubarmij. Bahibb shughli kathir.
-##story-line## '''مبروك! وين ساكن؟ في مدينة كبيرة؟''' ##story-translation## Congrats! Where do you live? In a big city? ##story-transcr## Mabruk! Wayn sakin? Fi madina kabira?
-##story-line## '''لا، عندي بيت جديد جميل مع عائلتي. ساكنين مع بعض.''' ##story-translation## No, I have a beautiful new house with my family. We live together. ##story-transcr## La, indi bayt jadid jamil ma’a a'ilati. Saknin ma'a ba'ad.
-##story-line## '''تماماً! تشرفنا يا سيد.''' ##story-translation## Exactly! Pleased to meet you, sir. ##story-transcr## Tamaman! Tasharrafna ya sayyid.
-##story-line## '''شكراً! فرصة سعيدة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
+    "story": `##story-line## '''مِنْ وِينْ إِنْتَ؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn inta?
+##story-line## '''أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ.''' ##story-translation## I am from America, I'm studying Arabic now. ##story-transcr## Ana min amirka, badrus 'arabi halla'.
+##story-line## '''شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟''' ##story-translation## What's your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
+##story-line## '''أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+##story-line## '''حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟''' ##story-translation## Nice! Where do you live? In a big city? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
+##story-line## '''لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.''' ##story-translation## No, I have a nice new house with my family. We live together. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+##story-line## '''تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.''' ##story-translation## Great! Pleased to meet you, sir. ##story-transcr## Tamam! Tasharrafna ya sayyid.
+##story-line## '''شُكْراً! فُرْصَة سَعِيدَة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
 `,
     "words": [
       [
         "pleased to meet you",
-        "تشرفنا",
+        "تشرّفنا@تَشَرَّفْنَا",
         "tasharrafna"
       ],
       [
         "name",
-        "اسم",
+        "اسم@اِسْم",
         "ism"
       ],
       [
         "profession",
-        "مهنة",
+        "مهنة@مِهْنَة",
         "mihna"
       ],
       [
-        "programmer",
-        "مبرمج",
+        "programmer (m)",
+        "مبرمج@مُبَرْمِج",
         "mubarmij"
       ],
       [
-        "engineer",
-        "مهندس",
+        "engineer (m)",
+        "مهندس@مُهَنْدِس",
         "muhandis"
       ],
       [
-        "developer",
-        "مطور",
+        "developer (m)",
+        "مطوّر@مُطَوِّر",
         "mutawwir"
       ],
       [
         "company",
-        "شركة",
-        "sharika"
+        "شركة@شِرْكَة",
+        "shirka"
       ],
       [
-        "international",
-        "دولية",
-        "dawliya"
+        "international (f)",
+        "دوليّة@دَوْلِيَّة",
+        "dawliyya"
       ],
       [
         "family",
-        "عائلة",
-        "a'ila"
+        "عيلة@عَيْلَة",
+        "ayla"
       ],
       [
         "father",
-        "أب",
+        "أب@أَب",
         "ab"
       ],
       [
         "my father",
-        "أبوي",
+        "أبوي@أَبُوي",
         "abuy"
       ],
       [
         "mother",
-        "أم",
+        "أمّ@أُمّ",
         "umm"
       ],
       [
         "my mother",
-        "أمي",
+        "أمّي@أُمِّي",
         "ummi"
       ],
       [
         "brother",
-        "أخ",
+        "أخ@أَخ",
         "akh"
       ],
       [
         "sister",
-        "أخت",
+        "أخت@أُخْت",
         "ukht"
       ],
       [
         "friend (m)",
-        "صاحب",
+        "صاحب@صَاحِب",
         "sahib"
       ],
       [
         "mr.",
-        "سيد",
+        "سيّد@سَيِّد",
         "sayyid"
       ],
       [
         "mrs.",
-        "سيدة",
+        "سيّدة@سَيِّدَة",
         "sayyida"
       ],
       [
         "miss",
-        "آنسة",
+        "آنسة@آنِسَة",
         "anisa"
       ],
       [
         "city",
-        "مدينة",
+        "مدينة@مَدِينَة",
         "madina"
       ],
       [
         "now",
-        "الآن",
-        "al-an"
+        "هلّأ@هَلَّأ",
+        "halla'"
       ]
     ],
     "sentences": [

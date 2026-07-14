@@ -252,7 +252,10 @@ def rebuild_lesson(topic, topic_id, locales):
         for lang, content in locales.items():
             if 'story' in content and topic_id in content['story']:
                 topic_story = locales[lang]['story'].pop(topic_id, '')
+                if not topic_story:
+                    continue
                 story[lang] = decode_escaped_backtick(topic_story)
+                print("DEBUG: story[{}]={}".format(lang, story[lang]))
         rebuilt_topic['story'] = story
     return rebuilt_topic, locales
 

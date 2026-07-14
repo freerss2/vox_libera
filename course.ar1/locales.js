@@ -167,11 +167,11 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "pleased to meet you": "рад знакомству",
       "name": "имя",
       "profession": "профессия",
-      "programmer": "программист",
-      "engineer": "инженер",
-      "developer": "разработчик",
+      "programmer (m)": "программист",
+      "engineer (m)": "инженер",
+      "developer (m)": "разработчик",
       "company": "компания",
-      "international": "международная",
+      "international (f)": "международная",
       "family": "семья",
       "father": "отец",
       "my father": "мой отец",
@@ -647,14 +647,14 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "usually": "обычно"
     },
     "story": {
-      "describe_yourself_1": `##story-line## '''من وين أنت؟''' ##story-translation## Откуда ты? ##story-transcr## Min wayn anta?
-##story-line## ''' أنا من روسيا، بدرس اللغة العربية الآن.''' ##story-translation## Я из России, Я учу арабский сейчас. ##story-transcr## Ana min rusiya, badrus al-lugha al-arabiya al-an.
-##story-line## '''شو مهنتك؟ بتشتغل هنا في الشركة؟''' ##story-translation## Какова ваша профессия? Вы работаете в этой компании? ##story-transcr## Shu mihnatak? Bitishtaghil huna fi ash-sharika?
-##story-line## '''نعم، بشتغل مطور ومبرمج. بحب شغلي كثير.''' ##story-translation## Да, я работаю разработчиком и программистом. Мне очень нравится моя работа. ##story-transcr## Naam, bashtaghil mutawwir wa mubarmij. Bahibb shughli kathir.
-##story-line## '''مبروك! وين ساكن؟ في مدينة كبيرة؟''' ##story-translation## Поздравляю! Где вы живете? В большом городе? ##story-transcr## Mabruk! Wayn sakin? Fi madina kabira?
-##story-line## '''لا، عندي بيت جديد جميل مع عائلتي. ساكنين مع بعض.''' ##story-translation## Нет, у нас с семьёй прекрасный новый дом. Мы живём вместе. ##story-transcr## La, indi bayt jadid jamil ma’a a'ilati. Saknin ma'a ba'ad.
-##story-line## '''تماماً! تشرفنا يا سيد.''' ##story-translation## Совершенно верно! Рад знакомству, мистер. ##story-transcr## Tamaman! Tasharrafna ya sayyid.
-##story-line## '''شكراً! فرصة سعيدة.''' ##story-translation## Спасибо! Приятно было познакомиться. ##story-transcr## Shukran! Fursa sa'ida.
+      "describe_yourself_1": `##story-line## '''مِنْ وِينْ إِنْتَ؟''' ##story-translation## Откуда ты? ##story-transcr## Min wayn inta?
+##story-line## '''أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ.''' ##story-translation## Я из России, сейчас учу арабский. ##story-transcr## Ana min rusya, badrus 'arabi halla'.
+##story-line## '''شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟''' ##story-translation## Кем работаешь? Работаешь здесь в компании? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
+##story-line## '''أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.''' ##story-translation## Да, работаю разработчиком и программистом. Очень люблю свою работу. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+##story-line## '''حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟''' ##story-translation## Здорово! Где ты живешь? В большом городе? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
+##story-line## '''لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+##story-line## '''تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
+##story-line## '''شُكْراً! فُرْصَة سَعِيدَة.''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.
 `,
       "everyday_life_1": `##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
 ##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
