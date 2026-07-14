@@ -1451,7 +1451,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       ],
       [
         "i am late for the flight",
-        "أنا متأخر на الرحلة",
+        "أنا متأخر على الرحلة",
         "ana muta'akhkhir alar-rihla"
       ],
       [

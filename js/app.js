@@ -492,6 +492,10 @@ function getCurrentPairsSet() {
 
     if (currentPairsSetIndex === null || currentPairsSetIndex >= currentTopic.pairs_set.length) {
         currentPairsSetIndex = Math.floor(Math.random() * currentTopic.pairs_set.length);
+        if (lastPos >=0 && currentPairsSetIndex == lastPos) {
+            currentPairsSetIndex = (lastPos+1) % currentTopic.pairs_set.length;
+        }
+        lastPos = currentPairsSetIndex;
     }
 
     return currentTopic.pairs_set[currentPairsSetIndex];
@@ -1329,7 +1333,8 @@ function renderSent(screen_id) {
       bankWord.className = bankWordClass;
       bankWord.dir = bankWordDir;
       bankWord.lang = bankWordLang;
-      bankWord.textContent = bankWords[i];
+      bankWord.textContent = wordDisplayText(bankWords[i]);
+      bankWord.dataset.vocalization = bankWords[i]
       bankWord.dataset.id = i;
       bankWord.dataset.speakEnable = speakEnable;
       bankWord.id = "bank-word-" + i;
@@ -1393,7 +1398,7 @@ function useBankWord(index) {
   const word = bankWordElement.textContent;
   // speak only the relevant content
   if ( bankWordElement.dataset.speakEnable == '1' ) {
-    speakTargetLang(word);
+    speakTargetLang(bankWordElement.dataset.vocalization);
   }
   bankWordElement.classList.add('sent-word-used');
   appendWordToResult(bankWordId, word);
@@ -1533,8 +1538,8 @@ function showDictionary(currentData, recapMode=false) {
         const card = document.createElement('div');
         card.className = "dictionary-card";
 
-        // TODO: fix access to stats
-        const wordStat = stats[item[1]] || { attempts: 0, success: 0 };
+        const displayText = itemDisplayText(item);
+        const wordStat = stats[displayText] || { attempts: 0, success: 0 };
         let accuracy = 0;
         if (wordStat.attempts > 0) {
           accuracy = Math.round((  wordStat.success / wordStat.attempts) * 100);
@@ -1549,7 +1554,6 @@ function showDictionary(currentData, recapMode=false) {
         // Speak the content on click
         card.onclick = () => speakTargetLang(item[1]);
         const cardStat = wordStat.attempts > 0 ? `<span class="stat-badge" style=" color: ${statusColor};"> (${accuracy}%)</span>` : '';
-        const displayText = itemDisplayText(item);
         card.innerHTML = `
             <div style="flex: 1;">
                 <div>
