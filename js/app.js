@@ -419,6 +419,7 @@ function switchTopic(direction) {
 // initialize topic
 function initTopic(topicId) {
   settings.setCurrentTopic(topicId);
+  resetTopicScopedState();
   // Copy SCREENS with a relevant screens only
   // For 'all' topic use only shared == 1
   // For any topic: check if it contains "sentences" (and skip all screens requiring sentences)
@@ -1145,6 +1146,30 @@ let gameSet = {
     errors: 0,
     isSetRunning: false
 };
+
+function resetTopicScopedState() {
+    currentPairsSetIndex = null;
+    finalProgress = 0;
+    cardIndex = 0;
+    flashcardsData = [];
+    flashcardsMode = 't2u';
+    lastStr = null;
+    lastPos = -1;
+    quizCorrectStr = null;
+    firstAttempt = true;
+    selectedLeft = null;
+    selectedRight = null;
+    errors = 0;
+    matches = 0;
+    roundRecap = [];
+    pairItemsInRound = 0;
+    gameSet = {
+        totalQuestions: 0,
+        currentQuestionIndex: 0,
+        errors: 0,
+        isSetRunning: false
+    };
+}
 
 function startNewQuizSet() {
     gameSet.totalQuestions = gameSettings.totalQuestions;
