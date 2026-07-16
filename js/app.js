@@ -2196,7 +2196,7 @@ function renderTextScreen(screenId) {
     document.getElementById('firstTime').classList.add('hidden');
   }
   let topicText = currTopic[textSource];
-  // try to find localized version
+  // try to find localized version (obsolete?)
   const i18nKey = `${textSource}|${topicId}`;
   const localizedText = i18n.t(i18nKey);
   if (localizedText && localizedText != i18nKey) {
@@ -2216,6 +2216,11 @@ function hydrateStory() {
     const lines = document.querySelectorAll('.story-line');
 
     lines.forEach(line => {
+        const targetElm = line.children[0];
+        const visual = wordDisplayText(targetElm.textContent);
+        const vocalized = wordVocalizedText(targetElm.textContent) || visual;
+        targetElm.textContent = visual;
+        targetElm.dataset.vocalization = vocalized;
         line.addEventListener('click', function(e) {
             console.log(e.type);
             const isOpen = this.classList.contains('is-open');
@@ -2226,7 +2231,8 @@ function hydrateStory() {
             // open the current content, if it was closed
             if (!isOpen) {
                 // also, speak the text inside
-                const textToSpeak = line.children[0].textContent;
+                // take vocalization from element's dataset
+                const textToSpeak = line.children[0].dataset.vocalization || line.children[0].textContent;
                 speakTargetLang(textToSpeak);
                 this.classList.add('is-open');
             }

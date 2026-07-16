@@ -89,9 +89,15 @@ def decode_story(story_text, user_lang, target_lang):
             continue
         line_rec = {}
         for section_name, body in matches:
+            vocalized = None
             if section_name == 'story-line':
                 body = body.replace("'''", "")
-            line_rec [sections_mapping[section_name]] = body.strip()
+                # try to separate vocalized/visual representation
+                if '@' in body:
+                    (body, vocalized) = body.split('@')[:2]
+            line_rec[sections_mapping[section_name]] = body.strip()
+            if vocalized:
+                line_rec['vocalized'] = vocalized.strip()
         result_list.append(line_rec)
 
     return result_list

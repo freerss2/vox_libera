@@ -16,14 +16,14 @@ The curriculum and course texts are structured using **artificial intelligence**
 Verbs are given in their active spoken Levantine form with the prefix [b-].
 Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
 `,
-    "story": `##story-line## ''' مِنْ وِينْ إِنْتَ؟ ''' ##story-translation## Where are you from? ##story-transcr## Min wayn inta?
-##story-line## ''' أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ. ''' ##story-translation## I am from America, I'm studying Arabic now. ##story-transcr## Ana min amirka, badrus 'arabi halla'.
-##story-line## ''' شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟ ''' ##story-translation## What's your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
-##story-line## ''' أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ. ''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-##story-line## ''' حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟ ''' ##story-translation## Nice! Where do you live? In a big city? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
-##story-line## ''' لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## No, I have a nice new house with my family. We live together. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-##story-line## ''' تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Great! Pleased to meet you, sir. ##story-transcr## Tamam! Tasharrafna ya sayyid.
-##story-line## ''' شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.`,
+    "story": `##story-line## ''' من وين إنت؟@مِنْ وِينْ إِنْتَ؟ ''' ##story-translation## Where are you from? ##story-transcr## Min wayn inta?
+##story-line## ''' أنا من أميركا، بدرس عربي هلّأ.@أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ. ''' ##story-translation## I am from America, I'm studying Arabic now. ##story-transcr## Ana min amirka, badrus 'arabi halla'.
+##story-line## ''' شو مهنتك؟ بتشتغل هون بالشّركة؟@شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟ ''' ##story-translation## What's your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
+##story-line## ''' أيوه، بشتغل مطوّر ومبرمج. بحبّ شغلي كتير.@أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ. ''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+##story-line## ''' حلو! وين ساكن؟ بمدينة كبيرة؟@حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟ ''' ##story-translation## Nice! Where do you live? In a big city? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
+##story-line## ''' لا، عندي بيت جديد حلو مع عيلتي. ساكنين مع بعض.@لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## No, I have a nice new house with my family. We live together. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+##story-line## ''' تمام! تشرّفنا يا سيّد.@تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Great! Pleased to meet you, sir. ##story-transcr## Tamam! Tasharrafna ya sayyid.
+##story-line## ''' شكرا! فرصة سعيدة.@شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.`,
     "words": [
       [
         "pleased to meet you",
@@ -487,7 +487,7 @@ The passive voice construction model looks like this:
     "story": `##story-line## ''' كل يوم بفيق بكير وبشرب قهوة. ''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
 ##story-line## ''' وين مفاتيح السيارة؟ لازم أروح على الشغل الآن. ''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
 ##story-line## ''' المفاتيح على الطاولة في المطبخ يا حبيبي. ''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-##story-line## ''' شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+##story-line## ''' شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.@شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
 ##story-line## ''' بتاكل فطور قبل ما تروح؟ ''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
 ##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي. ''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
 ##story-line## ''' الله معك! بشوفك المساء في البيت. ''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.`,
@@ -2255,8 +2255,8 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
 ##story-line## ''' ممكن تطبع هذا المستند على ورقة رمادية؟ ''' ##story-translation## Can you print this document on a grey paper? ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
 ##story-line## ''' وين الفندق؟ هو بعيد من هنا؟ ''' ##story-translation## Where is the hotel? Is it far from here? ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
 ##story-line## ''' لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية. ''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light. ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-##story-line## ''' تمام، هذا بالضبط شو بدي. شكراً! ''' ##story-translation## Okay, this is exactly what I want. Thanks! ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
-##story-line## ''' عفواً! اتفقنا، يوم سعيد. ''' ##story-translation## You're welcome! Agreed, have a happy day. ##story-transcr## Afwan! Ittafaqna, yawm sa'id.`,
+##story-line## ''' تمام، هذا بالضبط شو بدي. شكرا!@تمام، هذا بالضبط شو بدي. شكراً! ''' ##story-translation## Okay, this is exactly what I want. Thanks! ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
+##story-line## ''' عفوا! اتفقنا، يوم سعيد.@عفواً! اتفقنا، يوم سعيد. ''' ##story-translation## You're welcome! Agreed, have a happy day. ##story-transcr## Afwan! Ittafaqna, yawm sa'id.`,
     "words": [
       [
         "blue",

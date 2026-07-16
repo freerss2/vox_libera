@@ -164,18 +164,18 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "Don't give up!": "Не сдавайся!"
     },
     "story": {
-      "describe_yourself_1": `##story-line## ''' مِنْ وِينْ إِنْتَ؟ ''' ##story-translation## Откуда ты? ##story-transcr## Min wayn inta?
-##story-line## ''' أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ. ''' ##story-translation## Я из России, сейчас учу арабский. ##story-transcr## Ana min rusya, badrus 'arabi halla'.
-##story-line## ''' شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟ ''' ##story-translation## Кем работаешь? Работаешь здесь в компании? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
-##story-line## ''' أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ. ''' ##story-translation## Да, работаю разработчиком и программистом. Очень люблю свою работу. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-##story-line## ''' حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟ ''' ##story-translation## Здорово! Где ты живешь? В большом городе? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
-##story-line## ''' لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-##story-line## ''' تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
-##story-line## ''' شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.`,
+      "describe_yourself_1": `##story-line## ''' من وين إنت؟@مِنْ وِينْ إِنْتَ؟ ''' ##story-translation## Откуда ты? ##story-transcr## Min wayn inta?
+##story-line## ''' أنا من روسيا، بدرس عربي هلّأ.@أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ. ''' ##story-translation## Я из России, сейчас учу арабский. ##story-transcr## Ana min rusya, badrus 'arabi halla'.
+##story-line## ''' شو مهنتك؟ بتشتغل هون بالشّركة؟@شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟ ''' ##story-translation## Кем работаешь? Работаешь здесь в компании? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
+##story-line## ''' أيوه، بشتغل مطوّر ومبرمج. بحبّ شغلي كتير.@أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ. ''' ##story-translation## Да, работаю разработчиком и программистом. Очень люблю свою работу. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+##story-line## ''' حلو! وين ساكن؟ بمدينة كبيرة؟@حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟ ''' ##story-translation## Здорово! Где ты живешь? В большом городе? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
+##story-line## ''' لا، عندي بيت جديد حلو مع عيلتي. ساكنين مع بعض.@لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+##story-line## ''' تمام! تشرّفنا يا سيّد.@تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
+##story-line## ''' شكرا! فرصة سعيدة.@شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.`,
       "everyday_life_1": `##story-line## ''' كل يوم بفيق بكير وبشرب قهوة. ''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
 ##story-line## ''' وين مفاتيح السيارة؟ لازم أروح على الشغل الآن. ''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
 ##story-line## ''' المفاتيح على الطاولة في المطبخ يا حبيبي. ''' ##story-translation## Ключи лежат на столе на кухне, дорогая. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-##story-line## ''' شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Спасибо! Моя дорогая соседка тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+##story-line## ''' شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.@شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Спасибо! Моя дорогая соседка тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
 ##story-line## ''' بتاكل فطور قبل ما تروح؟ ''' ##story-translation## Вы завтракаете перед тем, как идти? ##story-transcr## Btakul futur qabl ma truh?
 ##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي. ''' ##story-translation## Нет, я не голоден, просто немного устал. ##story-transcr## La, ana mish jwan, bas taban shway.
 ##story-line## ''' الله معك! بشوفك المساء في البيت. ''' ##story-translation## Да пребудет с вами Бог! Увидимся вечером дома. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.`,

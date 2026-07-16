@@ -71,6 +71,17 @@ def decode_story(story, user_lang, target_lang):
                 print(f"ERROR: missing section {section} in story {line}")
                 continue
             if section == 'story-line':
+                vocalized = line.get('vocalized')
+                if vocalized:
+                    visual = body
+                else:
+                    # No pre-defined vocalization, let's build visual and vocalized
+                    visual = get_visual_from_vocalized(body, target_lang)
+                    if visual:
+                        vocalized = body
+                # and add vocalized to body
+                if vocalized:
+                    body = f"{visual}@{vocalized}"
                 body = f"''' {body} '''"
             text_line.append(f"##{section}## {body}")
         result_list.append(' '.join(text_line))
