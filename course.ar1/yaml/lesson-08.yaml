@@ -57,199 +57,248 @@ explanations:
     Митль аль-хазз ас-саййи: Дословно «как плохая удача». Именно так передается смысл нашего «как назло».
 words:
 - en: thank god
-  ar: الحَمْدُ لله
+  ar: الحمد لله
   transliteration: al-hamdu lillah
+  vocalized: الحَمْدُ لله
   ru: слава богу
 - en: god forbid
-  ar: لَا سَمَحَ الله
+  ar: لا سمح الله
   transliteration: la samah allah
+  vocalized: لَا سَمَحَ الله
   ru: не дай бог
 - en: to your health
-  ar: صَحْتَيْن
+  ar: صحتين
   transliteration: sahtayn
+  vocalized: صَحْتَيْن
   ru: на здоровье
 - en: bon appetit
-  ar: صَحْتَيْن وَعَافْيِة
+  ar: صحتين وعافية
   transliteration: sahtayn wa afye
+  vocalized: صَحْتَيْن وَعَافْيِة
   ru: приятного аппетита
 - en: take care
-  ar: دِير بَالَاك
+  ar: دير بالاك
   transliteration: dir balak
+  vocalized: دِير بَالَاك
   ru: береги себя
 - en: you are welcome
-  ar: عَفْوًا
+  ar: عفوا
   transliteration: afwan
+  vocalized: عَفْوًا
   ru: пожалуйста (ответ)
 - en: nice to meet you
-  ar: فُرْصَة سَعِيدَة
+  ar: فرصة سعيدة
   transliteration: fursa sa'ida
+  vocalized: فُرْصَة سَعِيدَة
   ru: приятно познакомиться
 - en: unfortunately
-  ar: لِلْأَسَف
+  ar: للأسف
   transliteration: lil-asaf
+  vocalized: لِلْأَسَف
   ru: к сожалению
 - en: luck
-  ar: تَوْفِيق
+  ar: توفيق
   transliteration: tawfiq
+  vocalized: تَوْفِيق
   ru: удача
 - en: welcome
-  ar: أَهْلًا وَسَهْلًا
+  ar: أهلا وسهلا
   transliteration: ahlan wa sahlan
+  vocalized: أَهْلًا وَسَهْلًا
   ru: добро пожаловать
 - en: with pleasure
-  ar: عَلَى رَاسِي
+  ar: على راسي
   transliteration: ala rasi
+  vocalized: عَلَى رَاسِي
   ru: с радостью
 - en: thank you
-  ar: تِسْلَم
+  ar: تسلم
   transliteration: tislam
+  vocalized: تِسْلَم
   ru: спасибо (пожелание здоровья)
 - en: safe (m)
-  ar: سَالِم
+  ar: سالم
   transliteration: salim
+  vocalized: سَالِم
   ru: благополучный
 - en: worry
-  ar: قَلَق
+  ar: قلق
   transliteration: qalaq
+  vocalized: قَلَق
   ru: беспокойство
 - en: here you go (m)
-  ar: تَفَضَّل
+  ar: تفضّل
   transliteration: tafaddal
+  vocalized: تَفَضَّل
   ru: пожалуйста (приглашение)
 - en: never mind
-  ar: مَعْلِش
+  ar: معلش
   transliteration: ma'lesh
+  vocalized: مَعْلِش
   ru: ничего страшного
 - en: problem
-  ar: مُشْكِلِة
+  ar: مشكلة
   transliteration: mushkile
+  vocalized: مُشْكِلِة
   ru: проблема
 - en: congratulations
-  ar: مَبْرُوك
+  ar: مبروك
   transliteration: mabruk
+  vocalized: مَبْرُوك
   ru: поздравляю
 - en: blessed (m)
-  ar: مُبَارَك
+  ar: مبارك
   transliteration: mubarak
+  vocalized: مُبَارَك
   ru: благословенный
 - en: bad (m)
-  ar: سَيِّء
+  ar: سيّء
   transliteration: sayyi
+  vocalized: سَيِّء
   ru: плохой
 - en: good
-  ar: تَمَام
+  ar: تمام
   transliteration: tamam
+  vocalized: تَمَام
   ru: хорошо (согласие)
 - en: impossible (m)
-  ar: مُسْتَحِيل
+  ar: مستحيل
   transliteration: mustahil
+  vocalized: مُسْتَحِيل
   ru: невозможный
 - en: definite (m)
-  ar: أَكِيد
+  ar: أكيد
   transliteration: akid
+  vocalized: أَكِيد
   ru: определенный
 - en: possible (m)
-  ar: مُمْكِن
+  ar: ممكن
   transliteration: mumkin
+  vocalized: مُمْكِن
   ru: возможный
 - en: honored (m)
-  ar: مُحْتَرَم
+  ar: محترم
   transliteration: muhtaram
+  vocalized: مُحْتَرَم
   ru: уважаемый
 sentences:
 - en: everything is good thank god
-  ar: كُلّ شَيْء تَمَام الحَمْدُ لله
+  ar: كلّ شيء تمام الحمد لله
   transliteration: kull shi tamam al-hamdu lillah
+  vocalized: كُلّ شَيْء تَمَام الحَمْدُ لله
   ru: всё хорошо слава богу
 - en: bon appetit to everyone
-  ar: صَحْتَيْن وَعَافْيِة لِلْجَمِيع
+  ar: صحتين وعافية للجميع
   transliteration: sahtayn wa afye lil-jami
+  vocalized: صَحْتَيْن وَعَافْيِة لِلْجَمِيع
   ru: приятного аппетита всем
 - en: be careful on the road
-  ar: دِير بَالَاك عَلَى الطَّرِيق
+  ar: دير بالاك على الطّريق
   transliteration: dir balak ala t-tariq
+  vocalized: دِير بَالَاك عَلَى الطَّرِيق
   ru: осторожно на дороге
 - en: please i want a menu
-  ar: لَوْ سَمَحْت بَدِّي المِنْيُو
+  ar: لو سمحت بدّي المنيو
   transliteration: law samaht biddi l-minyu
+  vocalized: لَوْ سَمَحْت بَدِّي المِنْيُو
   ru: будьте добры я хочу меню
 - en: nice to meet you my friend
-  ar: فُرْصَة سَعِيدَة يَا صَاحْبِي
+  ar: فرصة سعيدة يا صاحبي
   transliteration: fursa sa'ida ya sahbi
+  vocalized: فُرْصَة سَعِيدَة يَا صَاحْبِي
   ru: приятно познакомиться мой друг
 - en: unfortunately i can not come today
-  ar: لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم
+  ar: للأسف ما بقدر أجي اليوم
   transliteration: lil-asaf ma baqdar aji l-yom
+  vocalized: لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم
   ru: к сожалению не могу прийти сегодня
 - en: i wish you luck in work
-  ar: بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل
+  ar: بتمنّى لاك التّوفيق في الشّغل
   transliteration: batmanna lak at-tawfiq fi sh-shughl
+  vocalized: بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل
   ru: желаю тебе удачи в работе
 - en: no god forbid
-  ar: لَا لَا سَمَحَ الله
+  ar: لا لا سمح الله
   transliteration: la la samah allah
+  vocalized: لَا لَا سَمَحَ الله
   ru: нет не дай бог
 - en: welcome to our house
-  ar: أهْلًا وَسَهْلًا فِي بَيْتْنَا
+  ar: أهلا وسهلا في بيتنا
   transliteration: ahlan wa sahlan fi baytna
+  vocalized: أهْلًا وَسَهْلًا فِي بَيْتْنَا
   ru: добро пожаловать в наш дом
 - en: make yourself at home my friend
-  ar: البَيْت بَيْتَاك يَا صَاحْبِي
+  ar: البيت بيتاك يا صاحبي
   transliteration: al-bayt baytak ya sahbi
+  vocalized: البَيْت بَيْتَاك يَا صَاحْبِي
   ru: располагайтесь мой друг
 - en: have a safe trip to russia
-  ar: تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا
+  ar: تروح وترجع بالسّلامة لروسيا
   transliteration: truh wa tirja bis-salame la-rusiya
+  vocalized: تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا
   ru: счастливого пути в Россию
 - en: do not worry about the money
-  ar: مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي
+  ar: ما في داعي للقلق عن المصاري
   transliteration: ma fi da'i lil-qalaq an al-masari
+  vocalized: مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي
   ru: не стоит беспокоиться о деньгах
 - en: please sit here
-  ar: تَفَضَّل اِقْعُد هُون
+  ar: تفضّل اقعد هون
   transliteration: tafaddal iq'ud hon
+  vocalized: تَفَضَّل اِقْعُد هُون
   ru: пожалуйста садись здесь
 - en: it is not a problem never mind
-  ar: مُش مُشْكِلِة مَعْلِش
+  ar: مش مشكلة معلش
   transliteration: mish mushkile ma'lesh
+  vocalized: مُش مُشْكِلِة مَعْلِش
   ru: это не проблема ничего страшного
 - en: congratulations on the new job
-  ar: مَبْرُوك عَلَى الشُّغْل جْـدِيد
+  ar: مبروك على الشّغل جـديد
   transliteration: mabruk ala sh-shughl j-did
+  vocalized: مَبْرُوك عَلَى الشُّغْل جْـدِيد
   ru: поздравляю с новой работой
 - en: it is my pleasure no need to thank
-  ar: عَلَى رَاسِي وَلَا يْهِمَّاك
+  ar: على راسي ولا يهمّاك
   transliteration: ala rasi wala yhimmak
+  vocalized: عَلَى رَاسِي وَلَا يْهِمَّاك
   ru: не стоит благодарности мне в радость
 - en: as luck would have it the bus is late
-  ar: مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر
+  ar: مثل الحظّ السّيّء الباص متأخّر
   transliteration: mitl al-hazz as-sayyi l-bas mut'akhkhir
+  vocalized: مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر
   ru: как назло автобус опаздывает
 - en: fortunately the passport is here
-  ar: مِن حُسْن الحَظّ الجَوَاز هُون
+  ar: من حسن الحظّ الجواز هون
   transliteration: min husn al-hazz al-jawaz hon
+  vocalized: مِن حُسْن الحَظّ الجَوَاز هُون
   ru: к счастью паспорт здесь
 - en: no way this is impossible
-  ar: مُسْتَحِيل هَادَا مُش مُمْكِن
+  ar: مستحيل هادا مش ممكن
   transliteration: mustahil hada mish mumkin
+  vocalized: مُسْتَحِيل هَادَا مُش مُمْكِن
   ru: ни в коем случае это невозможно
 - en: i will definitely come today
-  ar: أَكِيد بَجِي اليَوْم
+  ar: أكيد بجي اليوم
   transliteration: akid baji l-yom
+  vocalized: أَكِيد بَجِي اليَوْم
   ru: я обязательно приду сегодня
 - en: maybe the coffee is hot
-  ar: مُمْكِن القَهْوِة سُخْنِة
+  ar: ممكن القهوة سخنة
   transliteration: mumkin al-qahwe sukhne
+  vocalized: مُمْكِن القَهْوِة سُخْنِة
   ru: возможно кофе горячий
 - en: definitely the food is tasty
-  ar: أَكِيد الأَكْل زَاكِي
+  ar: أكيد الأكل زاكي
   transliteration: akid al-akl zaki
+  vocalized: أَكِيد الأَكْل زَاكِي
   ru: обязательно еда вкусная
 - en: as luck would have it the city is far
-  ar: مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة
+  ar: مثل الحظّ السّيّء البلد بعيدة
   transliteration: mitl al-hazz as-sayyi l-balad ba'ide
+  vocalized: مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة
   ru: как назло город далеко
 - en: fortunately the hotel is clean
-  ar: مِن حُسْن الحَظّ الفُنْدُق نَظِيف
+  ar: من حسن الحظّ الفندق نظيف
   transliteration: min husn al-hazz al-funduq nazif
+  vocalized: مِن حُسْن الحَظّ الفُنْدُق نَظِيف
   ru: к счастью гостиница чистая

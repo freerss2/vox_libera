@@ -12,112 +12,162 @@ explanations:
     Глаголы приводятся в их активной разговорной форме левантийского диалекта с префиксом [b-].
     Помните, что в арабском языке прилагательные стоят ПОСЛЕ существительного, которое они описывают (например, «красивый дом»).
 story:
-  en: |
-    ##story-line## '''مِنْ وِينْ إِنْتَ؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn inta?
-    ##story-line## '''أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ.''' ##story-translation## I am from America, I'm studying Arabic now. ##story-transcr## Ana min amirka, badrus 'arabi halla'.
-    ##story-line## '''شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟''' ##story-translation## What's your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
-    ##story-line## '''أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-    ##story-line## '''حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟''' ##story-translation## Nice! Where do you live? In a big city? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
-    ##story-line## '''لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.''' ##story-translation## No, I have a nice new house with my family. We live together. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-    ##story-line## '''تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.''' ##story-translation## Great! Pleased to meet you, sir. ##story-transcr## Tamam! Tasharrafna ya sayyid.
-    ##story-line## '''شُكْراً! فُرْصَة سَعِيدَة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
-
-  ru: |
-    ##story-line## '''مِنْ وِينْ إِنْتَ؟''' ##story-translation## Откуда ты? ##story-transcr## Min wayn inta?
-    ##story-line## '''أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ.''' ##story-translation## Я из России, сейчас учу арабский. ##story-transcr## Ana min rusya, badrus 'arabi halla'.
-    ##story-line## '''شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟''' ##story-translation## Кем работаешь? Работаешь здесь в компании? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
-    ##story-line## '''أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.''' ##story-translation## Да, работаю разработчиком и программистом. Очень люблю свою работу. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-    ##story-line## '''حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟''' ##story-translation## Здорово! Где ты живешь? В большом городе? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
-    ##story-line## '''لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-    ##story-line## '''تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
-    ##story-line## '''شُكْراً! فُرْصَة سَعِيدَة.''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.
-
+  en:
+  - ar: مِنْ وِينْ إِنْتَ؟
+    en: Where are you from?
+    transliteration: Min wayn inta?
+  - ar: أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ.
+    en: I am from America, I'm studying Arabic now.
+    transliteration: Ana min amirka, badrus 'arabi halla'.
+  - ar: شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟
+    en: What's your profession? Do you work here in the company?
+    transliteration: Shu mihnatak? Bitishtighil hon bish-shirka?
+  - ar: أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.
+    en: Yes, I work as a developer and programmer. I love my job very much.
+    transliteration: Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+  - ar: حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟
+    en: Nice! Where do you live? In a big city?
+    transliteration: Hilu! Wayn sakin? Bi-madina kbira?
+  - ar: لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.
+    en: No, I have a nice new house with my family. We live together.
+    transliteration: La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+  - ar: تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.
+    en: Great! Pleased to meet you, sir.
+    transliteration: Tamam! Tasharrafna ya sayyid.
+  - ar: شُكْراً! فُرْصَة سَعِيدَة.
+    en: Thanks! Nice to meet you.
+    transliteration: Shukran! Fursa sa'ida.
+  ru:
+  - ar: مِنْ وِينْ إِنْتَ؟
+    ru: Откуда ты?
+    transliteration: Min wayn inta?
+  - ar: أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ.
+    ru: Я из России, сейчас учу арабский.
+    transliteration: Ana min rusya, badrus 'arabi halla'.
+  - ar: شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟
+    ru: Кем работаешь? Работаешь здесь в компании?
+    transliteration: Shu mihnatak? Bitishtighil hon bish-shirka?
+  - ar: أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.
+    ru: Да, работаю разработчиком и программистом. Очень люблю свою работу.
+    transliteration: Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+  - ar: حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟
+    ru: Здорово! Где ты живешь? В большом городе?
+    transliteration: Hilu! Wayn sakin? Bi-madina kbira?
+  - ar: لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.
+    ru: Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе.
+    transliteration: La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+  - ar: تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.
+    ru: Отлично! Рад знакомству, господин.
+    transliteration: Tamam! Tasharrafna ya sayyid.
+  - ar: شُكْراً! فُرْصَة سَعِيدَة.
+    ru: Спасибо! Взаимно.
+    transliteration: Shukran! Fursa sa'ida.
 words:
 - en: pleased to meet you
-  ar: تَشَرَّفْنَا
+  ar: تشرّفنا
   transliteration: tasharrafna
+  vocalized: تَشَرَّفْنَا
   ru: рад знакомству
 - en: name
-  ar: اِسْم
+  ar: اسم
   transliteration: ism
+  vocalized: اِسْم
   ru: имя
 - en: profession
-  ar: مِهْنَة
+  ar: مهنة
   transliteration: mihna
+  vocalized: مِهْنَة
   ru: профессия
 - en: programmer (m)
-  ar: مُبَرْمِج
+  ar: مبرمج
   transliteration: mubarmij
+  vocalized: مُبَرْمِج
   ru: программист
 - en: engineer (m)
-  ar: مُهَنْدِس
+  ar: مهندس
   transliteration: muhandis
+  vocalized: مُهَنْدِس
   ru: инженер
 - en: developer (m)
-  ar: مُطَوِّر
+  ar: مطوّر
   transliteration: mutawwir
+  vocalized: مُطَوِّر
   ru: разработчик
 - en: company
-  ar: شِرْكَة
+  ar: شركة
   transliteration: shirka
+  vocalized: شِرْكَة
   ru: компания
 - en: international (f)
-  ar: دَوْلِيَّة
+  ar: دوليّة
   transliteration: dawliyya
+  vocalized: دَوْلِيَّة
   ru: международная
 - en: family
-  ar: عَيْلَة
+  ar: عيلة
   transliteration: ayla
+  vocalized: عَيْلَة
   ru: семья
 - en: father
-  ar: أَب
+  ar: أب
   transliteration: ab
+  vocalized: أَب
   ru: отец
 - en: my father
-  ar: أَبُوي
+  ar: أبوي
   transliteration: abuy
+  vocalized: أَبُوي
   ru: мой отец
 - en: mother
-  ar: أُمّ
+  ar: أمّ
   transliteration: umm
+  vocalized: أُمّ
   ru: мать
 - en: my mother
-  ar: أُمِّي
+  ar: أمّي
   transliteration: ummi
+  vocalized: أُمِّي
   ru: моя мать
 - en: brother
-  ar: أَخ
+  ar: أخ
   transliteration: akh
+  vocalized: أَخ
   ru: брат
 - en: sister
-  ar: أُخْت
+  ar: أخت
   transliteration: ukht
+  vocalized: أُخْت
   ru: сестра
 - en: friend (m)
-  ar: صَاحِب
+  ar: صاحب
   transliteration: sahib
+  vocalized: صَاحِب
   ru: друг
 - en: mr.
-  ar: سَيِّد
+  ar: سيّد
   transliteration: sayyid
+  vocalized: سَيِّد
   ru: господин
 - en: mrs.
-  ar: سَيِّدَة
+  ar: سيّدة
   transliteration: sayyida
+  vocalized: سَيِّدَة
   ru: госпожа
 - en: miss
-  ar: آنِسَة
+  ar: آنسة
   transliteration: anisa
+  vocalized: آنِسَة
   ru: девушка
 - en: city
-  ar: مَدِينَة
+  ar: مدينة
   transliteration: madina
+  vocalized: مَدِينَة
   ru: город
 - en: now
-  ar: هَلَّأ
+  ar: هلّأ
   transliteration: halla'
+  vocalized: هَلَّأ
   ru: сейчас
-
 sentences:
 - en: i work as a programmer
   ar: بشتغل مبرمج

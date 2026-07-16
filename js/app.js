@@ -1269,7 +1269,7 @@ function renderSent(screen_id) {
     let mainHint = '';
     if ( screenType == 'sent_u2t' ) {
         questionHtml = `<span lang="${userLang}" dir="${userDir}" class="user-text">${gameSentence[0]}</span>`;
-        expected = gameSentence[1];
+        expected = itemDisplayText(gameSentence);
         extractPosition = 1;
         speakEnable = 1;
         resultContainer.classList.add('target-text');
@@ -1302,7 +1302,8 @@ function renderSent(screen_id) {
     }
     questionContainer.innerHTML = questionHtml;
     document.getElementById('sent-main-hint').innerHTML = mainHint;
-    let bankWords = (expected.split(/\s+/)).filter(word => word.length > 0);
+    // TODO: extract vocalization and visual per word
+    let bankWords = (wordDisplayText(expected).split(/\s+/)).filter(word => word.length > 0);
     questionContainer.dataset.expected = bankWords.join(' ');
     questionContainer.dataset.target = gameSentence[1];
     // 5. add to expected sentence more words (avoid already contaning words)
@@ -1348,7 +1349,7 @@ function renderSent(screen_id) {
 // from a list of lists allData extract all unique words on position pos
 // randomly shuffle the result
 function extractUniqueWordsFromData(allData, pos) {
-   let realWords = allData.flatMap(row => row[pos].split(/\s+|,/)).filter(w => w.length > 0);
+   let realWords = allData.flatMap(row => wordDisplayText(row[pos]).split(/\s+|,/)).filter(w => w.length > 0);
    realWords = realWords.filter(w => !w.includes(')')).filter(w => !w.includes('(')).filter(w => !w.includes('/'));
    let allWords = [...new Set( realWords )];
    return shuffle(allWords);

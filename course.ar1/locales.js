@@ -4,8 +4,8 @@ const course_locales =
     "__title__": "English",
     "explanations": {},
     "interface": {},
-    "content": {},
-    "story": {}
+    "story": {},
+    "content": {}
   },
   "ru": {
     "__title__": "Русский",
@@ -162,6 +162,33 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "Well done!": "Молодец!",
       "Try again": "Попробуй еще раз",
       "Don't give up!": "Не сдавайся!"
+    },
+    "story": {
+      "describe_yourself_1": `##story-line## ''' مِنْ وِينْ إِنْتَ؟ ''' ##story-translation## Откуда ты? ##story-transcr## Min wayn inta?
+##story-line## ''' أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ. ''' ##story-translation## Я из России, сейчас учу арабский. ##story-transcr## Ana min rusya, badrus 'arabi halla'.
+##story-line## ''' شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟ ''' ##story-translation## Кем работаешь? Работаешь здесь в компании? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
+##story-line## ''' أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ. ''' ##story-translation## Да, работаю разработчиком и программистом. Очень люблю свою работу. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+##story-line## ''' حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟ ''' ##story-translation## Здорово! Где ты живешь? В большом городе? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
+##story-line## ''' لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+##story-line## ''' تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
+##story-line## ''' شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.`,
+      "everyday_life_1": `##story-line## ''' كل يوم بفيق بكير وبشرب قهوة. ''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
+##story-line## ''' وين مفاتيح السيارة؟ لازم أروح على الشغل الآن. ''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
+##story-line## ''' المفاتيح على الطاولة في المطبخ يا حبيبي. ''' ##story-translation## Ключи лежат на столе на кухне, дорогая. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
+##story-line## ''' شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Спасибо! Моя дорогая соседка тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+##story-line## ''' بتاكل فطور قبل ما تروح؟ ''' ##story-translation## Вы завтракаете перед тем, как идти? ##story-transcr## Btakul futur qabl ma truh?
+##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي. ''' ##story-translation## Нет, я не голоден, просто немного устал. ##story-transcr## La, ana mish jwan, bas taban shway.
+##story-line## ''' الله معك! بشوفك المساء في البيت. ''' ##story-translation## Да пребудет с вами Бог! Увидимся вечером дома. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.`,
+      "restaurant_1": `##story-line## ''' بناكل غداء في المطعم اليوم. ''' ##story-translation## Сегодня мы обедаем в ресторане. ##story-transcr## Bnakul ghada fil-matam al-yom.
+##story-line## ''' يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت. ''' ##story-translation## Официант, я хочу увидеть основное блюдо. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+##story-line## ''' أنا بطلب دجاج ورز، وهذا هو الطلب تبعي. ''' ##story-translation## Я заказал курицу с рисом, вот мой заказ. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+##story-line## ''' بدي بس سلطة وماء، أنا مش جوعان كثير. ''' ##story-translation## Я просто хочу салат и воды, я не очень голоден. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
+##story-line## ''' صحتين! الحساب لو سمحت، بدفع وبنمشي. ''' ##story-translation## Приятного аппетита! Счёт, пожалуйста, я плачу, и мы уходим. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.`,
+      "airport_1": `##story-line## ''' رحلتي بكير ولازم أروح على المطار الآن. ''' ##story-translation## Мой рейс рано утром, и мне нужно ехать в аэропорт прямо сейчас. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
+##story-line## ''' وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟ ''' ##story-translation## Где моё место? Это место свободно или занято? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
+##story-line## ''' بدي بطاقة الصعود وجواز السفر لو سمحت. ''' ##story-translation## Предъявите пожалуйста посадочный талон и паспорт. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+##story-line## ''' عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا. ''' ##story-translation## У меня лишний вес в багаже, и я хочу оплатить здесь. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
+##story-line## ''' طير السعادة! جاري العزيز كمان بيسافر معي اليوم. ''' ##story-translation## Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.`
     },
     "content": {
       "pleased to meet you": "рад знакомству",
@@ -645,37 +672,6 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "today": "сегодня",
       "soon": "скоро",
       "usually": "обычно"
-    },
-    "story": {
-      "describe_yourself_1": `##story-line## '''مِنْ وِينْ إِنْتَ؟''' ##story-translation## Откуда ты? ##story-transcr## Min wayn inta?
-##story-line## '''أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ.''' ##story-translation## Я из России, сейчас учу арабский. ##story-transcr## Ana min rusya, badrus 'arabi halla'.
-##story-line## '''شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟''' ##story-translation## Кем работаешь? Работаешь здесь в компании? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
-##story-line## '''أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.''' ##story-translation## Да, работаю разработчиком и программистом. Очень люблю свою работу. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-##story-line## '''حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟''' ##story-translation## Здорово! Где ты живешь? В большом городе? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
-##story-line## '''لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-##story-line## '''تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
-##story-line## '''شُكْراً! فُرْصَة سَعِيدَة.''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.
-`,
-      "everyday_life_1": `##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
-##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## Ключи лежат на столе на кухне, дорогая. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Спасибо! Моя дорогая соседка тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Вы завтракаете перед тем, как идти? ##story-transcr## Btakul futur qabl ma truh?
-##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## Нет, я не голоден, просто немного устал. ##story-transcr## La, ana mish jwan, bas taban shway.
-##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## Да пребудет с вами Бог! Увидимся вечером дома. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
-`,
-      "restaurant_1": `##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## Сегодня мы обедаем в ресторане. ##story-transcr## Bnakul ghada fil-matam al-yom.
-##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Официант, я хочу увидеть основное блюдо. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## Я заказал курицу с рисом, вот мой заказ. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## Я просто хочу салат и воды, я не очень голоден. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Приятного аппетита! Счёт, пожалуйста, я плачу, и мы уходим. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
-`,
-      "airport_1": `##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## Мой рейс рано утром, и мне нужно ехать в аэропорт прямо сейчас. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
-##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Где моё место? Это место свободно или занято? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## Предъявите пожалуйста посадочный талон и паспорт. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## У меня лишний вес в багаже, и я хочу оплатить здесь. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
-`
     }
   }
 };

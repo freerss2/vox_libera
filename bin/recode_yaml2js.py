@@ -50,6 +50,32 @@ def decode_escaped_backtick(text):
         result.append(line)
     return '`'.join(result)
 
+def decode_story(story, user_lang, target_lang):
+    """
+    @param story: list of records
+    @param user_lang: user language code
+    @param target_lang: target language code
+    @return: multi-line string with records encoded to sections ##section-name## section body
+    Sections are: story-line (target lang), story-translation (user lang), story-transcr (transliteration)
+    Target language text is additionally quoted with '''text'''
+    """
+    result_list = []
+    sections_mapping = {
+        'story-line': target_lang, 'story-translation': user_lang, 'story-transcr': 'transliteration'
+    }
+    for line in story:
+        text_line = []
+        for section in ('story-line', 'story-translation', 'story-transcr'):
+            body = line.get(sections_mapping[section])
+            if not body:
+                print(f"ERROR: missing section {section} in story {line}")
+                continue
+            if section == 'story-line':
+                body = f"''' {body} '''"
+            text_line.append(f"##{section}## {body}")
+        result_list.append(' '.join(text_line))
+    return "\n".join(result_list)
+
 def read_input(dirname):
     """
     Read YAML files from a course directory
@@ -109,6 +135,7 @@ def extract_from_list(materials, locales, target_lang):
         try:
             en = row.pop('en')
             target = row.pop(target_lang)
+            # TODO: for target languages like he/ar make sure that all characters inside are legal
             vocalized = row.pop('vocalized', '')
             # for vocalized version - pack it with a target language visual representation
             if not vocalized:
@@ -169,9 +196,10 @@ def separate_data(lessons, metadata):
         # topic['story'] - if exists, use 'en', rest - under each lang 'story'[id]
         story = topic.get('story')
         if story:
-            new_value = story.pop('en')
+            new_value = decode_story(story.pop('en'), 'en', target_lang)
             for lang in story:
-                locales[lang]['story'][topic_id] = quote_multiline_js(story.get(lang))
+                decoded_story = decode_story(story.get(lang), lang, target_lang)
+                locales[lang]['story'][topic_id] = quote_multiline_js(decoded_story)
             topic['story'] = quote_multiline_js(new_value)
         # same for pairs_set (list with "words"/"abc" inside)
         pairs_sets = topic.get('pairs_set')

@@ -24,19 +24,38 @@ explanations:
 
     Фади / Махджуз: Эти два слова спасут вас, если нужно понять, свободно ли место в зале ожидания или в самолете.
 story:
-  en: |
-    ##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
-    ##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-    ##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-    ##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-    ##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
-  ru: |
-    ##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## Мой рейс рано утром, и мне нужно ехать в аэропорт прямо сейчас. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
-    ##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Где моё место? Это место свободно или занято? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-    ##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## Предъявите пожалуйста посадочный талон и паспорт. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-    ##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## У меня лишний вес в багаже, и я хочу оплатить здесь. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-    ##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
-
+  en:
+  - ar: رحلتي بكير ولازم أروح على المطار الآن.
+    en: My flight is early and I must go to the airport now.
+    transliteration: Rihlati bakir wa lazim aruh alal-matar al-an.
+  - ar: وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟
+    en: Where is my seat? Is this chair empty or reserved?
+    transliteration: Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
+  - ar: بدي بطاقة الصعود وجواز السفر لو سمحت.
+    en: I want the boarding pass and the passport please.
+    transliteration: Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+  - ar: عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.
+    en: I have excess weight in the big bag and I want to pay here.
+    transliteration: Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
+  - ar: طير السعادة! جاري العزيز كمان بيسافر معي اليوم.
+    en: Flying of happiness! My dear neighbor also travels with me today.
+    transliteration: Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
+  ru:
+  - ar: رحلتي بكير ولازم أروح على المطار الآن.
+    ru: Мой рейс рано утром, и мне нужно ехать в аэропорт прямо сейчас.
+    transliteration: Rihlati bakir wa lazim aruh alal-matar al-an.
+  - ar: وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟
+    ru: Где моё место? Это место свободно или занято?
+    transliteration: Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
+  - ar: بدي بطاقة الصعود وجواز السفر لو سمحت.
+    ru: Предъявите пожалуйста посадочный талон и паспорт.
+    transliteration: Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+  - ar: عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.
+    ru: У меня лишний вес в багаже, и я хочу оплатить здесь.
+    transliteration: Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
+  - ar: طير السعادة! جاري العزيز كمان بيسافر معي اليوم.
+    ru: Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня.
+    transliteration: Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
 words:
 - en: airport
   ar: مطار

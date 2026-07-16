@@ -16,15 +16,14 @@ The curriculum and course texts are structured using **artificial intelligence**
 Verbs are given in their active spoken Levantine form with the prefix [b-].
 Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
 `,
-    "story": `##story-line## '''مِنْ وِينْ إِنْتَ؟''' ##story-translation## Where are you from? ##story-transcr## Min wayn inta?
-##story-line## '''أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ.''' ##story-translation## I am from America, I'm studying Arabic now. ##story-transcr## Ana min amirka, badrus 'arabi halla'.
-##story-line## '''شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟''' ##story-translation## What's your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
-##story-line## '''أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-##story-line## '''حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟''' ##story-translation## Nice! Where do you live? In a big city? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
-##story-line## '''لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.''' ##story-translation## No, I have a nice new house with my family. We live together. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-##story-line## '''تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.''' ##story-translation## Great! Pleased to meet you, sir. ##story-transcr## Tamam! Tasharrafna ya sayyid.
-##story-line## '''شُكْراً! فُرْصَة سَعِيدَة.''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.
-`,
+    "story": `##story-line## ''' مِنْ وِينْ إِنْتَ؟ ''' ##story-translation## Where are you from? ##story-transcr## Min wayn inta?
+##story-line## ''' أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ. ''' ##story-translation## I am from America, I'm studying Arabic now. ##story-transcr## Ana min amirka, badrus 'arabi halla'.
+##story-line## ''' شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟ ''' ##story-translation## What's your profession? Do you work here in the company? ##story-transcr## Shu mihnatak? Bitishtighil hon bish-shirka?
+##story-line## ''' أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ. ''' ##story-translation## Yes, I work as a developer and programmer. I love my job very much. ##story-transcr## Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
+##story-line## ''' حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟ ''' ##story-translation## Nice! Where do you live? In a big city? ##story-transcr## Hilu! Wayn sakin? Bi-madina kbira?
+##story-line## ''' لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## No, I have a nice new house with my family. We live together. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
+##story-line## ''' تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Great! Pleased to meet you, sir. ##story-transcr## Tamam! Tasharrafna ya sayyid.
+##story-line## ''' شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Thanks! Nice to meet you. ##story-transcr## Shukran! Fursa sa'ida.`,
     "words": [
       [
         "pleased to meet you",
@@ -485,14 +484,13 @@ Note that the **passive voice** is sometimes used to construct **adjectives**.
 The passive voice construction model looks like this:
 [mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
 `,
-    "story": `##story-line## '''كل يوم بفيق بكير وبشرب قهوة.''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
-##story-line## '''وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-##story-line## '''المفاتيح على الطاولة في المطبخ يا حبيبي.''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-##story-line## '''شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-##story-line## '''بتاكل فطور قبل ما تروح؟''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
-##story-line## '''لا، أنا مش جوعان، بس تعبان شوي.''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
-##story-line## '''الله معك! بشوفك المساء في البيت.''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.
-`,
+    "story": `##story-line## ''' كل يوم بفيق بكير وبشرب قهوة. ''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
+##story-line## ''' وين مفاتيح السيارة؟ لازم أروح على الشغل الآن. ''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
+##story-line## ''' المفاتيح على الطاولة في المطبخ يا حبيبي. ''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
+##story-line## ''' شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
+##story-line## ''' بتاكل فطور قبل ما تروح؟ ''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
+##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي. ''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
+##story-line## ''' الله معك! بشوفك المساء في البيت. ''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.`,
     "words": [
       [
         "carpet",
@@ -926,12 +924,11 @@ Kawiya '''قوية''': Literally "strong." This is how they say strong coffee.
 Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
 Note the word "halva" - it shares a root with both "sweet" and "dessert."
 `,
-    "story": `##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
-##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
-`,
+    "story": `##story-line## ''' بناكل غداء في المطعم اليوم. ''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
+##story-line## ''' يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت. ''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+##story-line## ''' أنا بطلب دجاج ورز، وهذا هو الطلب تبعي. ''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+##story-line## ''' بدي بس سلطة وماء، أنا مش جوعان كثير. ''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
+##story-line## ''' صحتين! الحساب لو سمحت، بدفع وبنمشي. ''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.`,
     "words": [
       [
         "delicious",
@@ -1200,12 +1197,11 @@ Afsh '''عفش''': A very popular word for luggage in general (things you check 
 
 Fadi / Mahjuz: These two words will save you when you need to figure out if a seat is free in a lounge or on a plane.
 `,
-    "story": `##story-line## '''رحلتي بكير ولازم أروح على المطار الآن.''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
-##story-line## '''وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-##story-line## '''بدي بطاقة الصعود وجواز السفر لو سمحت.''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-##story-line## '''عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-##story-line## '''طير السعادة! جاري العزيز كمان بيسافر معي اليوم.''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
-`,
+    "story": `##story-line## ''' رحلتي بكير ولازم أروح على المطار الآن. ''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
+##story-line## ''' وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟ ''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
+##story-line## ''' بدي بطاقة الصعود وجواز السفر لو سمحت. ''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+##story-line## ''' عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا. ''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
+##story-line## ''' طير السعادة! جاري العزيز كمان بيسافر معي اليوم. ''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.`,
     "words": [
       [
         "airport",
@@ -2005,16 +2001,12 @@ Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the begi
 
 At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
 `,
-    "story": `### My path in language (Monologue)
-##story-line## '''بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون. ''' ##story-translation##  I started studying the language on my own two years ago with a phone app. ##story-transcr## Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
-##story-line## '''مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي. ''' ##story-translation##  Sometimes I lack words and my grammar is weak, and it is hard to understand by ear. ##story-transcr##  Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
-##story-line## '''بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا. ''' ##story-translation##  I try to read the news to communicate with people. Language connects us. ##story-transcr##  Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
-
-### Asking for assistance (Short Dialogue)
-##story-line## '''لو سمحت، احكي على مهلك. ما فهمت كل شيء. ''' ##story-translation##  Please, speak slower. I did not understand everything. ##story-transcr##  Law samaht, ihki ala mahlak. Ma fahimt kull shi.
-##story-line## '''كيف لهجتي؟ صلح لي أغلاطي وكيف بنحكي هذه الكلمة صح؟ ''' ##story-translation##  How is my accent? Correct my mistakes and how to say this word correctly? ##story-transcr##  Kayf lahjati? Sallih-li aghlati wa kayf binhki hadhihi al-kalima sah?
-##story-line## '''لازم أزيد كلماتي. العمر مش حاجز للدراسة! ''' ##story-translation##  I need to expand my vocabulary. Age is not a barrier to study! ##story-transcr##  Lazim azid kalimati. Al-umr mish hajaz lid-dirasa!
-`,
+    "story": `##story-line## ''' بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون. ''' ##story-translation## I started studying the language on my own two years ago with a phone app. ##story-transcr## Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
+##story-line## ''' مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي. ''' ##story-translation## Sometimes I lack words and my grammar is weak, and it is hard to understand by ear. ##story-transcr## Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
+##story-line## ''' بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا. ''' ##story-translation## I try to read the news to communicate with people. Language connects us. ##story-transcr## Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
+##story-line## ''' لو سمحت، احكي على مهلك. ما فهمت كل شيء. ''' ##story-translation## Please, speak slower. I did not understand everything. ##story-transcr## Law samaht, ihki ala mahlak. Ma fahimt kull shi.
+##story-line## ''' كيف لهجتي؟ صلح لي أغلاطي وكيف بنحكي هذه الكلمة صح؟ ''' ##story-translation## How is my accent? Correct my mistakes and how to say this word correctly? ##story-transcr## Kayf lahjati? Sallih-li aghlati wa kayf binhki hadhihi al-kalima sah?
+##story-line## ''' لازم أزيد كلماتي. العمر مش حاجز للدراسة! ''' ##story-translation## I need to expand my vocabulary. Age is not a barrier to study! ##story-transcr## Lazim azid kalimati. Al-umr mish hajaz lid-dirasa!`,
     "words": [
       [
         "self",
@@ -2257,18 +2249,14 @@ Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used
 
 Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
 `,
-    "story": `### Table talk
-##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna?
-##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
-##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
-##story-line## '''ممكن تطبع هذا المستند على ورقة رمادية؟''' ##story-translation## Can you print this document on a grey paper?  ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
-
-### Street scene
-##story-line## '''وين الفندق؟ هو بعيد من هنا؟''' ##story-translation## Where is the hotel? Is it far from here?  ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
-##story-line## '''لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light.  ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-##story-line## '''تمام، هذا بالضبط شو بدي. شكراً!''' ##story-translation## Okay, this is exactly what I want. Thanks!  ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
-##story-line## '''عفواً! اتفقنا، يوم سعيد.''' ##story-translation## You're welcome! Agreed, have a happy day.  ##story-transcr## Afwan! Ittafaqna, yawm sa'id.
-`,
+    "story": `##story-line## ''' لو سمحت يا جرسون، وين طلبنا؟ ''' ##story-translation## Please waiter, where is our order? ##story-transcr## Law samaht ya jarson, wayn talabna?
+##story-line## ''' الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا. ''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here. ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
+##story-line## ''' بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة. ''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream. ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
+##story-line## ''' ممكن تطبع هذا المستند على ورقة رمادية؟ ''' ##story-translation## Can you print this document on a grey paper? ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
+##story-line## ''' وين الفندق؟ هو بعيد من هنا؟ ''' ##story-translation## Where is the hotel? Is it far from here? ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
+##story-line## ''' لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية. ''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light. ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
+##story-line## ''' تمام، هذا بالضبط شو بدي. شكراً! ''' ##story-translation## Okay, this is exactly what I want. Thanks! ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
+##story-line## ''' عفواً! اتفقنا، يوم سعيد. ''' ##story-translation## You're welcome! Agreed, have a happy day. ##story-transcr## Afwan! Ittafaqna, yawm sa'id.`,
     "words": [
       [
         "blue",
@@ -2479,12 +2467,10 @@ Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's 
 
 Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
 `,
-    "story": `### At the Clinic
-##story-line## '''أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.'''##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever.##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
-##story-line## '''تفضل هنا، الممرضة مع الدكتور في المستشفى.'''##story-translation## Come here please, the nurse is with the doctor in the hospital.##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
-##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
-##story-line## '''نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.'''##story-translation## Yes, and take this pill please. Everything is okay.##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
-`,
+    "story": `##story-line## ''' أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة. ''' ##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever. ##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
+##story-line## ''' تفضل هنا، الممرضة مع الدكتور في المستشفى. ''' ##story-translation## Come here please, the nurse is with the doctor in the hospital. ##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
+##story-line## ''' عندي جرح في الإيد، لازم مرهم وضمادة؟ ''' ##story-translation## I have a wound on the hand, do I need an ointment and a bandage? ##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
+##story-line## ''' نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام. ''' ##story-translation## Yes, and take this pill please. Everything is okay. ##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.`,
     "pairs_set": [
       {
         "title": "Adverbs",

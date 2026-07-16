@@ -50,19 +50,38 @@ explanations:
     В описании еды очень много прилагательных образованных из страдательного залога по модели [1a-2i-3] где 1, 2 и 3 - буквы корня.
     Обратите внимание на слово "халва" - оно однокоренное и со словом "сладкий" и "дессерт".
 story:
-  en: |
-    ##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
-    ##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-    ##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-    ##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-    ##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
-  ru: |
-    ##story-line## '''بناكل غداء في المطعم اليوم.''' ##story-translation## Сегодня мы обедаем в ресторане. ##story-transcr## Bnakul ghada fil-matam al-yom.
-    ##story-line## '''يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.''' ##story-translation## Официант, я хочу увидеть основное блюдо. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-    ##story-line## '''أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.''' ##story-translation## Я заказал курицу с рисом, вот мой заказ. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-    ##story-line## '''بدي بس سلطة وماء، أنا مش جوعان كثير.''' ##story-translation## Я просто хочу салат и воды, я не очень голоден. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-    ##story-line## '''صحتين! الحساب لو سمحت، بدفع وبنمشي.''' ##story-translation## Приятного аппетита! Счёт, пожалуйста, я плачу, и мы уходим. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.
-
+  en:
+  - ar: بناكل غداء في المطعم اليوم.
+    en: We eat lunch in the restaurant today.
+    transliteration: Bnakul ghada fil-matam al-yom.
+  - ar: يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.
+    en: Waiter, I want to see the main dish please.
+    transliteration: Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+  - ar: أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.
+    en: I order chicken and rice, and this is my order.
+    transliteration: Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+  - ar: بدي بس سلطة وماء، أنا مش جوعان كثير.
+    en: I just want salad and water, I am not very hungry.
+    transliteration: Biddi bas salata wa mayy, ana mish jwan kathir.
+  - ar: صحتين! الحساب لو سمحت، بدفع وبنمشي.
+    en: Bon appetit! The bill please, I pay and we leave.
+    transliteration: Sahtein! Al-hisab law samaht, badfa wa bnamshi.
+  ru:
+  - ar: بناكل غداء في المطعم اليوم.
+    ru: Сегодня мы обедаем в ресторане.
+    transliteration: Bnakul ghada fil-matam al-yom.
+  - ar: يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت.
+    ru: Официант, я хочу увидеть основное блюдо.
+    transliteration: Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
+  - ar: أنا بطلب دجاج ورز، وهذا هو الطلب تبعي.
+    ru: Я заказал курицу с рисом, вот мой заказ.
+    transliteration: Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
+  - ar: بدي بس سلطة وماء، أنا مش جوعان كثير.
+    ru: Я просто хочу салат и воды, я не очень голоден.
+    transliteration: Biddi bas salata wa mayy, ana mish jwan kathir.
+  - ar: صحتين! الحساب لو سمحت، بدفع وبنمشي.
+    ru: Приятного аппетита! Счёт, пожалуйста, я плачу, и мы уходим.
+    transliteration: Sahtein! Al-hisab law samaht, badfa wa bnamshi.
 words:
 - en: delicious
   ar: زاكي
@@ -97,8 +116,9 @@ words:
   transliteration: wajba janibiya
   ru: гарнир
 - en: sweet / dessert
-  ar: حِلْو
+  ar: حلو
   transliteration: hilw
+  vocalized: حِلْو
   ru: сладкое
 - en: the bill / check
   ar: الحساب
@@ -202,8 +222,9 @@ sentences:
   transliteration: wayn at-talab tabai
   ru: где мой заказ
 - en: the sweet is beautiful and delicious
-  ar: الحِلْو جميل وزاكي
+  ar: الحلو جميل وزاكي
   transliteration: al-hilw jamil wa zaki
+  vocalized: الحِلْو جميل وزاكي
   ru: сладкое красивое и вкусное
 - en: i want a cup of tea
   ar: بدي فنجان شاي
@@ -226,8 +247,9 @@ sentences:
   transliteration: al-wajba ar-ra'isiya al-yom hiyya samak
   ru: основное блюдо сегодня это рыба
 - en: the food here is always delicious
-  ar: الأكل هنا دائماً زاكي
+  ar: الأكل هنا دائما زاكي
   transliteration: al-akl huna da'iman zaki
+  vocalized: الأكل هنا دائماً زاكي
   ru: еда здесь всегда вкусная
 - en: give me a spoon please
   ar: اعطيني معلقة لو سمحت
@@ -250,8 +272,9 @@ sentences:
   transliteration: biyadfa al-hisab huna
   ru: он оплачивает счет здесь
 - en: i want sweet now
-  ar: بدي حِلْو الآن
+  ar: بدي حلو الآن
   transliteration: biddi hilw al-an
+  vocalized: بدي حِلْو الآن
   ru: я хочу сладкое сейчас
 - en: i want almond milk
   ar: بدي حليب لوز

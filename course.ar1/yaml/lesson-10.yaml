@@ -32,18 +32,31 @@ explanations:
 
     Bid-dabt ('''بالضبط'''): Обратите внимание на транскрипцию — буква «Дад» дает тяжелый звук «д», почти переходящий в «з» в некоторых диалектах, но «d» здесь — стандарт.
 story:
-  en: |
-    ### Table talk
-    ##story-line## '''لو سمحت يا جرسون، وين طلبنا؟''' ##story-translation## Please waiter, where is our order?  ##story-transcr## Law samaht ya jarson, wayn talabna?
-    ##story-line## '''الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here.  ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
-    ##story-line## '''بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream.  ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
-    ##story-line## '''ممكن تطبع هذا المستند على ورقة رمادية؟''' ##story-translation## Can you print this document on a grey paper?  ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
-
-    ### Street scene
-    ##story-line## '''وين الفندق؟ هو بعيد من هنا؟''' ##story-translation## Where is the hotel? Is it far from here?  ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
-    ##story-line## '''لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light.  ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-    ##story-line## '''تمام، هذا بالضبط شو بدي. شكراً!''' ##story-translation## Okay, this is exactly what I want. Thanks!  ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
-    ##story-line## '''عفواً! اتفقنا، يوم سعيد.''' ##story-translation## You're welcome! Agreed, have a happy day.  ##story-transcr## Afwan! Ittafaqna, yawm sa'id.
+  en:
+  - ar: لو سمحت يا جرسون، وين طلبنا؟
+    en: Please waiter, where is our order?
+    transliteration: Law samaht ya jarson, wayn talabna?
+  - ar: الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.
+    en: The tablecloth is purple and the napkin is blue, everything is beautiful here.
+    transliteration: Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
+  - ar: بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.
+    en: I want boiled chicken and a salad with olive oil and sour cream.
+    transliteration: Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
+  - ar: ممكن تطبع هذا المستند على ورقة رمادية؟
+    en: Can you print this document on a grey paper?
+    transliteration: Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
+  - ar: وين الفندق؟ هو بعيد من هنا؟
+    en: Where is the hotel? Is it far from here?
+    transliteration: Wayn al-funduq? Huwa ba'id min huna?
+  - ar: لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.
+    en: No, go straight, the hotel is around the corner after the traffic light.
+    transliteration: La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
+  - ar: تمام، هذا بالضبط شو بدي. شكراً!
+    en: Okay, this is exactly what I want. Thanks!
+    transliteration: Tamam, hadha bid-dabt shu biddi. Shukran!
+  - ar: عفواً! اتفقنا، يوم سعيد.
+    en: You're welcome! Agreed, have a happy day.
+    transliteration: Afwan! Ittafaqna, yawm sa'id.
 words:
 - en: blue
   ar: أزرق
@@ -179,8 +192,9 @@ sentences:
   transliteration: al-ishara daw'iya hamra al-an
   ru: светофор сейчас красный
 - en: i am constantly studying here
-  ar: أنا دائماً بدرس هنا
+  ar: أنا دائما بدرس هنا
   transliteration: ana da'iman badrus huna
+  vocalized: أنا دائماً بدرس هنا
   ru: я постоянно учусь здесь
 - en: this is exactly what i want
   ar: هذا بالضبط شو بدي
@@ -199,6 +213,7 @@ sentences:
   transliteration: harrik as-sayyara la-wara
   ru: передвинь машину назад
 - en: the waiter is constantly busy
-  ar: الجرسون دائماً مشغول
+  ar: الجرسون دائما مشغول
   transliteration: al-jarson da'iman mashghul
+  vocalized: الجرسون دائماً مشغول
   ru: официант постоянно занят

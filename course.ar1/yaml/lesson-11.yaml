@@ -18,36 +18,48 @@ explanations:
 
     Истикбаль ('''استقبال'''): Универсальное слово «прием/встреча». Используется и как ресепшен в отеле, и как регистратура в больнице.
 story:
-  en: |
-    ### At the Clinic
-    ##story-line## '''أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.'''##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever.##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
-    ##story-line## '''تفضل هنا، الممرضة مع الدكتور في المستشفى.'''##story-translation## Come here please, the nurse is with the doctor in the hospital.##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
-    ##story-line## '''عندي جرح في الإيد، لازم مرهم وضمادة؟'''##story-translation## I have a wound on the hand, do I need an ointment and a bandage?##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
-    ##story-line## '''نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.'''##story-translation## Yes, and take this pill please. Everything is okay.##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
+  en:
+  - ar: أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.
+    en: I am at the reception in the clinic now. My head hurts and I have a fever.
+    transliteration: Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
+  - ar: تفضل هنا، الممرضة مع الدكتور في المستشفى.
+    en: Come here please, the nurse is with the doctor in the hospital.
+    transliteration: Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
+  - ar: عندي جرح في الإيد، لازم مرهم وضمادة؟
+    en: I have a wound on the hand, do I need an ointment and a bandage?
+    transliteration: Indi jurh fil-id, lazim marham wa dimada?
+  - ar: نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.
+    en: Yes, and take this pill please. Everything is okay.
+    transliteration: Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
 pairs_set:
 - title:
     en: Adverbs
     ru: Наречия
   words:
   - en: unfortunately
-    ar: لِلْأَسَف
+    ar: للأسف
     transliteration: lil-asaf
+    vocalized: لِلْأَسَف
     ru: к сожалению
   - en: luck
-    ar: تَوْفِيق
+    ar: توفيق
     transliteration: tawfiq
+    vocalized: تَوْفِيق
     ru: удача
   - en: impossible (m)
-    ar: مُسْتَحِيل
+    ar: مستحيل
     transliteration: mustahil
+    vocalized: مُسْتَحِيل
     ru: невозможный
   - en: definite (m)
-    ar: أَكِيد
+    ar: أكيد
     transliteration: akid
+    vocalized: أَكِيد
     ru: определенный
   - en: possible (m)
-    ar: مُمْكِن
+    ar: ممكن
     transliteration: mumkin
+    vocalized: مُمْكِن
     ru: возможный
   - en: correctly
     ar: صح
@@ -130,12 +142,14 @@ pairs_set:
     transliteration: al-yom
     ru: сегодня
   - en: soon
-    ar: قريباً
+    ar: قريبا
     transliteration: qariban
+    vocalized: قريباً
     ru: скоро
   - en: usually
-    ar: عادةً
+    ar: عادة
     transliteration: '''adan'
+    vocalized: عادةً
     ru: обычно
   - en: early
     ar: بكير
@@ -150,8 +164,9 @@ pairs_set:
     transliteration: marrat
     ru: иногда
   - en: always
-    ar: دائماً
+    ar: دائما
     transliteration: da'iman
+    vocalized: دائماً
     ru: всегда
   - en: now
     ar: الآن

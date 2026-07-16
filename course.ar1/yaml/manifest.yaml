@@ -51,7 +51,9 @@ locales:
     __title__: English
     explanations: {}
     interface: {}
+    story: {}
   ru:
     __title__: Русский
     explanations: {}
     interface: {}
+    story: {}

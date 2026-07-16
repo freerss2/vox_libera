@@ -67,6 +67,35 @@ def decode_escaped_backtick(text):
         result.append(line)
     return ''.join(result)
 
+def decode_story(story_text, user_lang, target_lang):
+    """
+    @param story_text: story text, delimited with "\n"
+    Each line contains 3 sections ##SECTION-NAME## SECTION BODY
+    Sections are: story-line (target lang), story-translation (user lang), story-transcr (transliteration)
+    Target language text is additionally quoted with '''text'''
+    @param user_lang: code for user lang
+    @param target_lang: code for target lang
+    @return: list of records having each section under right key
+    """
+    result_list = []
+    pattern = r'##(\S+?)##\s*(.*?)(?=\s*##\S+?##|$)'
+
+    sections_mapping = {
+        'story-line': target_lang, 'story-translation': user_lang, 'story-transcr': 'transliteration'
+    }
+    for line in story_text.split('\n'):
+        matches = re.findall(pattern, line.strip())
+        if not matches:
+            continue
+        line_rec = {}
+        for section_name, body in matches:
+            if section_name == 'story-line':
+                body = body.replace("'''", "")
+            line_rec [sections_mapping[section_name]] = body.strip()
+        result_list.append(line_rec)
+
+    return result_list
+
 def read_input(fname):
     """
     Read input file and return JSON data (without variable name)
@@ -228,7 +257,7 @@ def safe_mkdir(path):
         os.makedirs(path)
         info("created directory {}".format(path))
 
-def rebuild_lesson(topic, topic_id, locales):
+def rebuild_lesson(topic, topic_id, locales, target_lang):
     """
     Rebuild a lesson topic with updated structure.
     @param topic: original topic data
@@ -248,14 +277,15 @@ def rebuild_lesson(topic, topic_id, locales):
                 explanations[lang] = decode_escaped_backtick(topic_explanation)
         rebuilt_topic['explanations'] = explanations
     if story:
-        story = {'en': decode_escaped_backtick(story)}
+        decoded_story = decode_escaped_backtick(story)
+        story = {'en': decode_story(decoded_story, 'en', target_lang)}
         for lang, content in locales.items():
             if 'story' in content and topic_id in content['story']:
                 topic_story = locales[lang]['story'].pop(topic_id, '')
                 if not topic_story:
                     continue
-                story[lang] = decode_escaped_backtick(topic_story)
-                print("DEBUG: story[{}]={}".format(lang, story[lang]))
+                decoded_topic_lang_story = decode_escaped_backtick(topic_story)
+                story[lang] = decode_story(decoded_topic_lang_story, lang, target_lang)
         rebuilt_topic['story'] = story
     return rebuilt_topic, locales
 
@@ -263,6 +293,7 @@ def main(args):
     lessons = read_input(os.path.join(args.course_dir, INPUT_LESSONS_FILE))
     locales = read_input(os.path.join(args.course_dir, INPUT_LOCALES_FILE))
     manifest = read_input(os.path.join(args.course_dir, INPUT_MANIFEST_FILE))
+    target_lang = manifest.get('target_language', 'ar')
     updated_lessons, updated_manifest = aggregate_data(lessons, locales, manifest)
     updated_locales = updated_manifest.get('locales', {})
 
@@ -270,7 +301,7 @@ def main(args):
     safe_mkdir(yaml_dir)
     for id in updated_lessons:
         topic = updated_lessons[id]
-        topic, updated_locales = rebuild_lesson(topic, id, updated_locales)
+        topic, updated_locales = rebuild_lesson(topic, id, updated_locales, target_lang)
         index = topic.pop('index', 0)
         lesson_file = os.path.join(yaml_dir, "lesson-%02.2d.yaml" % int(index))
         save_yaml(lesson_file, topic)
