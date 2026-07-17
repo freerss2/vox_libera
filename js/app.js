@@ -167,6 +167,8 @@ const SCREENS = [
 var topicScreens = [];
 var roundRecap = [];
 let currentPairsSetIndex = null;
+let lastRenderedTopicId = null;
+let lastRenderedScreenId = null;
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -373,6 +375,18 @@ function loadPrevNexScreen(delta) {
 
 // show current screen
 function renderCurrentScreen() {
+  const topicId = settings.getCurrentTopic();
+  const screenId = settings.getCurrentScreenId();
+  const shouldReset = lastRenderedTopicId !== topicId || lastRenderedScreenId !== screenId;
+  const preserveFinalProgress = screenId === 'final' && lastRenderedScreenId === 'final' && lastRenderedTopicId === topicId;
+
+  if (shouldReset) {
+    resetTopicScopedState(preserveFinalProgress);
+  }
+
+  lastRenderedTopicId = topicId;
+  lastRenderedScreenId = screenId;
+
   showActiveExerciseInMenu();
   applyTopicToDisplay();
 
@@ -1147,9 +1161,11 @@ let gameSet = {
     isSetRunning: false
 };
 
-function resetTopicScopedState() {
+function resetTopicScopedState(preserveFinalProgress = false) {
     currentPairsSetIndex = null;
-    finalProgress = 0;
+    if (!preserveFinalProgress) {
+        finalProgress = 0;
+    }
     cardIndex = 0;
     flashcardsData = [];
     flashcardsMode = 't2u';
@@ -2357,6 +2373,10 @@ function importUserData(event) {
 
 function unpackProgressData(data) {
     settings.disableChangedFlag();
+
+    const previousTopic = settings.getCurrentTopic();
+    const previousScreenId = settings.getCurrentScreenId();
+
     settings.setUserInterfaceLanguage(data["user_settings"]["interface_lang"]);
     const course_data = data["courses"][manifest.metadata.title];
     settings.setCurrentTopic(     course_data["current_topic"]);
@@ -2368,7 +2388,18 @@ function unpackProgressData(data) {
     wordStats = course_data["success_stats"];
     settings.setWordStats(wordStats);
     settings.markAsChanged();
-    settings.enableChangedFlag()
+    settings.enableChangedFlag();
+
+    const shouldRefresh = previousTopic !== settings.getCurrentTopic() || previousScreenId !== settings.getCurrentScreenId();
+    if (shouldRefresh) {
+        resetTopicScopedState();
+        initTopic(settings.getCurrentTopic());
+        const record = getScreenRecord(settings.getCurrentScreenId());
+        if (!record) {
+            settings.setCurrentScreenId(DEFAULT_SCREEN_ID);
+        }
+        renderCurrentScreen();
+    }
 }
 
 // On page load:

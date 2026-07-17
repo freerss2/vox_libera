@@ -8,6 +8,7 @@
 
 let tokenClient;
 let isUserLoggedIn = false;
+let cloudSyncGeneration = 0;
 
 // Check if current origin is allowed for Google API usage and start auth process
 function startAppAuth() {
@@ -128,11 +129,17 @@ function handleManualLoginClick() {
 // Initial data sync on login
 async function startInitialSync() {
     updateCloudStatus('loading');
-    const cloudData = await syncManager.downloadProgress(window.currentAccessToken);
+    const syncGeneration = ++cloudSyncGeneration;
     const localData = packProgressData();
+    const cloudData = await syncManager.downloadProgress(window.currentAccessToken);
+
+    if (syncGeneration !== cloudSyncGeneration) {
+        console.log("Vox Libera: Ignoring stale cloud sync response because local state changed.");
+        return;
+    }
 
     if (cloudData) {
-        resolveProgressConflict(cloudData, localData);
+        resolveProgressConflict(cloudData, packProgressData());
     } else {
         // When data is missing in cloud - push there the current progress
         syncManager.uploadProgress(window.currentAccessToken, localData);
@@ -229,6 +236,7 @@ async function handleSuccessfulLogin(accessToken) {
 async function resolveProgressConflict(cloudData, localData) {
     console.log("Vox Libera: Analyzing versions conflict...");
     let direction = '';
+    const currentLocalData = localData || packProgressData();
 
     if (!cloudData || !cloudData.courses) {
         console.warn("Vox Libera: Cloud data is empty or damaged.");
@@ -237,7 +245,7 @@ async function resolveProgressConflict(cloudData, localData) {
 
     if (! direction ) {
       const cloudAttempts = calculateTotalAttempts(cloudData);
-      const localAttempts = calculateTotalAttempts(localData);
+      const localAttempts = calculateTotalAttempts(currentLocalData);
       if (localAttempts > cloudAttempts) {
         direction = 'cloud';
       }
@@ -247,7 +255,7 @@ async function resolveProgressConflict(cloudData, localData) {
     }
 
     if (! direction ) {
-      const localTime = localData.updated_at || 0;
+      const localTime = currentLocalData.updated_at || 0;
       const cloudTime = cloudData.updated_at || 0;
 
       if (cloudTime > localTime) {
@@ -266,7 +274,7 @@ async function resolveProgressConflict(cloudData, localData) {
         console.log("🚀 Local settings are newer.");
         if (window.currentAccessToken) {
             console.log("🚀 Uploading to cloud.");
-            syncManager.uploadProgress(window.currentAccessToken, localData);
+            syncManager.uploadProgress(window.currentAccessToken, currentLocalData);
         }
     }
     else {
