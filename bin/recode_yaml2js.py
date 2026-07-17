@@ -4,6 +4,13 @@ Recode YAML representation of lessons and manifest to JS
 
 Usage: 
     recode_yaml2js.py -d course.ar1
+
+Conversions:
+    abc, words and sentences records are split into "english" "target" "transliteration" triples
+    the rest of languages tanslations are stored in localization dictionaries
+
+Input checks:
+    lesson ID must be unique
 """
 import os
 import re
@@ -23,8 +30,14 @@ VOCALIZATION_PER_LANG = {
     'ar': {'regex': re.compile(r'[\u064B-\u0650\u0652\u0653\u0670]')}
 }
 
+def _report(severity, msg):
+    print(f"{severity}: {msg}")
+
 def info(msg):
-    print("INFO: {}".format(msg))
+    _report("INFO", msg)
+
+def error(msg):
+    _report("ERROR", msg)
 
 def quote_multiline_js(text):
     """
@@ -170,6 +183,10 @@ def extract_from_list(materials, locales, target_lang):
 def separate_data(lessons, metadata):
     """
     Recode lessons content and extract locales
+    @param lessons: topics (lessons) list received from YAML files
+    @param metadata: general definitions for whole course
+    @return: (updated_lessons, locales, metadata)
+    Rise exception on input format errors
     """
     locales = metadata['locales']
     for lang in locales:
@@ -183,6 +200,9 @@ def separate_data(lessons, metadata):
     for index, topic in enumerate(lessons):
         topic['index'] = index
         topic_id = topic.pop('id')
+        # check lesson ID uniquness
+        if topic_id in updated_lessons:
+            raise Exception(f"duplicated topic (lesson) ID: {topic_id}")
         if 'abc' in topic:
             (abc, locales) = extract_from_list(topic['abc'], locales, target_lang)
             topic['abc'] = abc
@@ -222,7 +242,7 @@ def separate_data(lessons, metadata):
                 elif 'abc' in pairs_set:
                     key = 'abc'
                 else:
-                    continue
+                    raise Exception(f"unsupported pairs set data type - {pairs_set}")
                 (new_value, locales) = extract_from_list(pairs_set[key], locales, target_lang)
                 pairs_set[key] = new_value
                 # split title translations
@@ -262,11 +282,15 @@ def parse_arguments():
     return parser.parse_args()
 
 def main(args):
-    lessons, metadata = read_input(args.course_dir)
-    (updated_lessons, locales, updated_metadata) = separate_data(lessons, metadata)
-    save_json(os.path.join(args.course_dir, OUTPUT_LESSONS_FILE), 'const topics', updated_lessons)
-    save_json(os.path.join(args.course_dir, OUTPUT_LOCALES_FILE), 'const course_locales', locales)
-    save_json(os.path.join(args.course_dir, OUTPUT_MANIFEST_FILE), 'const manifest', updated_metadata)
+    try:
+        lessons, metadata = read_input(args.course_dir)
+        (updated_lessons, locales, updated_metadata) = separate_data(lessons, metadata)
+        save_json(os.path.join(args.course_dir, OUTPUT_LESSONS_FILE), 'const topics', updated_lessons)
+        save_json(os.path.join(args.course_dir, OUTPUT_LOCALES_FILE), 'const course_locales', locales)
+        save_json(os.path.join(args.course_dir, OUTPUT_MANIFEST_FILE), 'const manifest', updated_metadata)
+    except Exception as e:
+        error(f"failure - {e}, operation aborted!")
+        return 1
     return 0
 
 if __name__ == "__main__":
