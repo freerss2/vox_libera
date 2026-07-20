@@ -969,7 +969,7 @@ function renderSortingGame() {
     // assign click event to input elements in sent-words
     let bankWords = shuffle([...currentData.set_correct, ...currentData.set_wrong]);
     bankContainer.innerHTML = '';
-    let bankWordClass = 'sent-word target-text';
+    let bankWordClass = 'sent-word target-text sorting-word';
     for (let i = 0; i < bankWords.length; i++) {
         const wordText = bankWords[i];
         const bankWord = document.createElement('span');
@@ -1085,6 +1085,27 @@ function useSortBankWord(index) {
     }, 400);
   }
 }
+
+function giveupSorting() {
+    // out of all bank words find one that is correct
+    const hint_candidates = [...document.getElementsByClassName('sorting-word')].filter(
+        e => e.dataset.correct && ! e.classList.contains('hidden') );
+    if (! hint_candidates) {
+        console.error("missing correct objects");
+        return;
+    }
+    const hint_element = hint_candidates[0];
+    // count it as an error and update errors display
+    errors++;
+    showErrorCount(errors);
+    // show (temporary) special border around this word
+    const saveBorder = hint_element.style.borderColor;
+    hint_element.style.borderColor = "var(--primary)";
+    setTimeout(() => {
+        hint_element.style.borderColor = saveBorder;
+    }, 500);
+}
+
 // ------------------------------------------- game completion popup
 
 // Show completion summary per round

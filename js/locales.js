@@ -236,6 +236,7 @@ To start a course, select the course title and click on it.
       "flashcards_completed": "You learned all cards in this set.",
       "card-learned": "Know it",
       "card-repeat": "Repeat",
+      "hint-btn": "Hint",
       "quiz-giveup-button": "Give up",
       "search_hint": "Search...",
       "errors-count": "Errors: ",
@@ -516,6 +517,7 @@ To start a course, select the course title and click on it.
       "confirm": "✔ Подтвердить",
       "sum-repeat": " ПОВТОРИТЬ",
       "sum-next": "ДАЛЬШЕ ",
+      "hint-btn": "Подсказка",
       "sent-giveup-btn": "Сдаюсь",
       "check": " Проверить "
     }
