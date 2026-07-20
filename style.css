@@ -756,6 +756,15 @@ body {
     justify-content: center;
 }
 
+#sorting-question-container {
+    font-size: x-large;
+}
+
+#recap-subtitle {
+    text-align: center;
+    font-size: x-large;
+}
+
 .options-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2x2 for mobile screen */

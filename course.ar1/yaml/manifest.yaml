@@ -52,8 +52,22 @@ locales:
     explanations: {}
     interface: {}
     story: {}
+    sort_set:
+      sort_set_1:
+        question1: Find feminine words
+        question2: Find masculine words
+      sort_set_2:
+        question1: Find the singular
+        question2: Find the plural
   ru:
     __title__: Русский
     explanations: {}
     interface: {}
     story: {}
+    sort_set:
+      sort_set_1:
+        question1: Найди слова женского рода
+        question2: Найди слова мужского рода
+      sort_set_2:
+        question1: Найди единственное число
+        question2: Найди множественное число

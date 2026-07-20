@@ -5,6 +5,16 @@ const course_locales =
     "explanations": {},
     "interface": {},
     "story": {},
+    "sort_set": {
+      "sort_set_1": {
+        "question1": "Find feminine words",
+        "question2": "Find masculine words"
+      },
+      "sort_set_2": {
+        "question1": "Find the singular",
+        "question2": "Find the plural"
+      }
+    },
     "content": {}
   },
   "ru": {
@@ -195,6 +205,16 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
 ##story-line## ''' بدي بطاقة الصعود وجواز السفر لو سمحت. ''' ##story-translation## Предъявите пожалуйста посадочный талон и паспорт. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
 ##story-line## ''' عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا. ''' ##story-translation## У меня лишний вес в багаже, и я хочу оплатить здесь. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
 ##story-line## ''' طير السعادة! جاري العزيز كمان بيسافر معي اليوم. ''' ##story-translation## Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.`
+    },
+    "sort_set": {
+      "sort_set_1": {
+        "question1": "Найди слова женского рода",
+        "question2": "Найди слова мужского рода"
+      },
+      "sort_set_2": {
+        "question1": "Найди единственное число",
+        "question2": "Найди множественное число"
+      }
     },
     "content": {
       "pleased to meet you": "рад знакомству",

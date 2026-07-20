@@ -63,19 +63,40 @@ def decode_escaped_backtick(text):
         result.append(line)
     return '`'.join(result)
 
-def decode_sort_set(sort_set, user_lang, target_lang, topic_words):
+def extract_sort_question_to_locales(sort_data, key, set_id, locales):
+    """
+    Push question specified by 'key' to locales
+    """
+    if key not in sort_data:
+        return
+    langs = list(sort_data[key].keys());
+    for lang in langs:
+        if set_id not in locales[lang]['sort_set']:
+            locales[lang]['sort_set'][set_id] = {}
+        locales[lang]['sort_set'][set_id][key] = sort_data[key].pop(lang)
+
+def decode_sort_set(sort_set, locales, target_lang, topic_words):
     """
     Decode sort_set: list of excercises of "sort" type
     """
     # read all words in sets
     # make sure all words appear in words dictionary
+    usedSetIds = []
     for sortSetRecord in sort_set:
+        setId = sortSetRecord.get('id')
+        # check setId
+        if not setId or setId in usedSetIds:
+            raise Exception(f"Missing/wrong sort_set id {sortSetRecord}")
+        usedSetIds.append(setId)
         setType = sortSetRecord.get('type')
         if not setType or setType not in ('pairs', 'lists'):
             raise Exception(f"Missing/wrong sort_set type {sortSetRecord}")
         wordsToCheck = []
         if 'question1' not in sortSetRecord:
             raise Exception(f"Missing sort_set question1 {sortSetRecord}")
+        # save each language question in locales
+        extract_sort_question_to_locales(sortSetRecord, 'question1', setId, locales)
+        extract_sort_question_to_locales(sortSetRecord, 'question2', setId, locales)
         if 'data' not in sortSetRecord:
             raise Exception(f"Missing sort_set data {sortSetRecord}")
         sortSetData = sortSetRecord['data']
@@ -228,6 +249,7 @@ def separate_data(lessons, metadata):
         locales[lang]['content'] = {}
         locales[lang]['explanations'] = {}
         locales[lang]['story'] = {}
+        locales[lang]['sort_set'] = {}
         locales[lang]['interface'] = {}
 
     updated_lessons = {}
@@ -273,7 +295,7 @@ def separate_data(lessons, metadata):
             topic['story'] = quote_multiline_js(new_value)
         sort_set = topic.get('sort_set')
         if sort_set:
-            new_sort_set = decode_sort_set(sort_set, 'en', target_lang, topic['words'])
+            new_sort_set = decode_sort_set(sort_set, locales, target_lang, topic['words'])
             # TODO: decode other translations too
             topic['sort_set'] = new_sort_set
         # same for pairs_set (list with "words"/"abc" inside)

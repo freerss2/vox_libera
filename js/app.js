@@ -123,6 +123,7 @@ if (course_locales) {
           {...langLocales["interface"], ...langLocales["content"]};
       locales[langCode]['explanations'] = {...langLocales["explanations"]};
       locales[langCode]['story'] = {...langLocales["story"]};
+      locales[langCode]['sort_set'] = {...langLocales["sort_set"]};
     }
   })
 }
@@ -632,6 +633,7 @@ function renderScreen(screen_id) {
     }
     // 1. Hide/reset all screens and surrounding panels
     hideAllScreens();
+    document.getElementById('recap-subtitle').textContent = '';
     roundRecap = [];
 
     // 2. Show related screen only
@@ -1013,10 +1015,13 @@ function getDataSetForSortingGame() {
     const selectedSet = allSets[setIndex];
     // now determine direction - use first or second question
     let direction = 0;
-    if ( selectedSet['question2'] ) {
+    if ( 'question2' in selectedSet ) {
         direction = Math.floor(Math.random() * 2);
     }
-    const question = direction ? selectedSet['question2'] : selectedSet['question1'];
+    const setId = selectedSet['id'];
+    const localesRec = locales[userLang]['sort_set'][setId];
+    const question = direction ? localesRec['question2'] : localesRec['question1'];
+    document.getElementById('recap-subtitle').textContent = question;
     // build a list of questioned words
     let pairsList = selectedSet['data'];
     if (selectedSet['type'] != 'pairs') {

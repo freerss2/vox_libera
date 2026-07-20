@@ -8,9 +8,9 @@ The course aims to develop a stable **basic vocabulary** necessary for everyday 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
 The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
 `,
-    "index": 0,
     "words": [],
-    "sentences": []
+    "sentences": [],
+    "index": 0
   },
   "describe_yourself_1": {
     "name": "Tell about yourself 1",
@@ -2633,8 +2633,9 @@ The goal is to practice independently in the game format, but without the risk o
 `,
     "sort_set": [
       {
-        "question1": "Find all feminine forms",
-        "question2": "Find all masculine forms",
+        "id": "sort_set_1",
+        "question1": {},
+        "question2": {},
         "type": "pairs",
         "data": [
           [
@@ -2668,8 +2669,9 @@ The goal is to practice independently in the game format, but without the risk o
         ]
       },
       {
-        "question1": "Find all singular forms",
-        "question2": "Find all plural forms",
+        "id": "sort_set_2",
+        "question1": {},
+        "question2": {},
         "type": "lists",
         "data": [
           [

@@ -200,8 +200,21 @@ def aggregate_data(lessons, locales, manifest):
             info_sentences = "  sentences: {}".format(len(sentences))
             total_sentences += len(sentences)
         if 'sort_set' in topic:
-            sort_set = topic['sort_set']
-            # TODO: use locales for user-lang translations
+            # extract translations
+            for sort_set_data in topic['sort_set']:
+                sort_set_id = sort_set_data['id']
+                questions1 = {}
+                questions2 = {}
+                for lang in locales:
+                    rec = locales[lang]['sort_set'].get(sort_set_id)
+                    if not rec:
+                        continue
+                    questions1[lang] = rec['question1']
+                    if 'question2' in rec:
+                        questions2[lang] = rec['question2']
+                sort_set_data['question1'] = questions1
+                if questions2:
+                    sort_set_data['question2'] = questions2
         if 'pairs_set' in topic:
             pairs_sets = topic['pairs_set']
             for pairs_set in pairs_sets:
