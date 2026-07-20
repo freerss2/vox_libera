@@ -24,7 +24,8 @@ story:
   - ar: المفاتيح على الطاولة في المطبخ يا حبيبي.
     en: The keys are on the table in the kitchen, my dear.
     transliteration: Al-mafatih ala at-tawila fil-matbakh ya habibi.
-  - ar: شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
+  - ar: شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
+    vocalized: شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
     en: Thanks! My dear neighbor also goes to work at the same time.
     transliteration: Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
   - ar: بتاكل فطور قبل ما تروح؟
@@ -46,7 +47,8 @@ story:
   - ar: المفاتيح على الطاولة في المطبخ يا حبيبي.
     ru: Ключи лежат на столе на кухне, дорогая.
     transliteration: Al-mafatih ala at-tawila fil-matbakh ya habibi.
-  - ar: شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
+  - ar: شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
+    vocalized: شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
     ru: Спасибо! Моя дорогая соседка тоже ходит на работу в это же время.
     transliteration: Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
   - ar: بتاكل فطور قبل ما تروح؟

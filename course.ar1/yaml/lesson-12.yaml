@@ -1,0 +1,430 @@
+id: training_1
+name:
+  en: Practice the Learned
+  ru: Тренируем Выученное
+explanations:
+  en: |
+    ### This lesson is designed to consolidate what has been learned.
+    Here you'll find exercises that practice grammar and memorize words that are similar in meaning or different variations of the same root.
+    Like flashcards, these exercises don't award success percentages.
+    The goal is to practice independently in the game format, but without the risk of losing winning points.
+
+  ru: |
+    ### Этот урок предназначен для закрепления изученного.
+    Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
+    Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
+    Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
+
+sort_set:
+- question1: Find all feminine forms
+  question2: Find all masculine forms
+  type: pairs
+  data:
+  - - مِهْنَة
+    - اِسْم
+  - - شِرْكَة
+    - مُبَرْمِج
+  - - دَوْلِيَّة
+    - مُهَنْدِس
+  - - عَيْلَة
+    - أَب
+  - - أُمّ
+    - صَاحِب
+  - - آنِسَة
+    - سَيِّد
+  - - أُخْت
+    - أَخ
+- question1: Find all singular forms
+  question2: Find all plural forms
+  type: lists
+  data:
+  - - اِسْم
+    - مِهْنَة
+    - مُبَرْمِج
+    - مُهَنْدِس
+    - دَوْلِيَّة
+    - عَيْلَة
+    - أَب
+  - - فنون
+    - أرقام
+    - مفاتيح
+    - كلمات
+    - طلاب
+    - سيارات
+    - أصدقاء
+
+pairs_set:
+- title:
+    en: Adverbs
+    ru: Наречия
+  words:
+  - en: unfortunately
+    ar: للأسف
+    transliteration: lil-asaf
+    vocalized: لِلْأَسَف
+    ru: к сожалению
+  - en: luck
+    ar: توفيق
+    transliteration: tawfiq
+    vocalized: تَوْفِيق
+    ru: удача
+  - en: impossible (m)
+    ar: مستحيل
+    transliteration: mustahil
+    vocalized: مُسْتَحِيل
+    ru: невозможный
+  - en: definite (m)
+    ar: أكيد
+    transliteration: akid
+    vocalized: أَكِيد
+    ru: определенный
+  - en: possible (m)
+    ar: ممكن
+    transliteration: mumkin
+    vocalized: مُمْكِن
+    ru: возможный
+  - en: correctly
+    ar: صح
+    transliteration: sah
+    ru: правильно
+  - en: agreed
+    ar: اتفقنا
+    transliteration: ittafaqna
+    ru: договорились
+  - en: straight
+    ar: دغري
+    transliteration: dughri
+    ru: прямо
+  - en: backwards
+    ar: لورا
+    transliteration: la-wara
+    ru: назад
+  - en: only
+    ar: فقط
+    transliteration: faqat
+    ru: только
+  - en: a little
+    ar: شوي
+    transliteration: shway
+    ru: немного
+  - en: also
+    ar: كمان
+    transliteration: kaman
+    ru: тоже
+  - en: must
+    ar: لازم
+    transliteration: lazim
+    ru: должен
+  - en: need
+    ar: بدي
+    transliteration: biddi
+    ru: нужно
+  - en: but
+    ar: لكن
+    transliteration: lakin
+    ru: но
+- title:
+    en: Time and Place
+    ru: Время и место
+  words:
+  - en: away
+    ar: بعيد
+    transliteration: ba'id
+    ru: вдали
+  - en: near
+    ar: قريب
+    transliteration: qarib
+    ru: рядом
+  - en: here
+    ar: هنا
+    transliteration: huna
+    ru: здесь
+  - en: next to
+    ar: جنب
+    transliteration: janb
+    ru: возле
+  - en: free
+    ar: فاضي
+    transliteration: fadi
+    ru: свободный
+  - en: reserved
+    ar: محجوز
+    transliteration: mahjuz
+    ru: занятый
+  - en: tomorrow
+    ar: بكرة
+    transliteration: bukra
+    ru: завтра
+  - en: yesterday
+    ar: أمس
+    transliteration: '''ams'
+    ru: вчера
+  - en: today
+    ar: اليوم
+    transliteration: al-yom
+    ru: сегодня
+  - en: soon
+    ar: قريبا
+    transliteration: qariban
+    vocalized: قريباً
+    ru: скоро
+  - en: usually
+    ar: عادة
+    transliteration: '''adan'
+    vocalized: عادةً
+    ru: обычно
+  - en: early
+    ar: بكير
+    transliteration: bakir
+    ru: рано
+  - en: late
+    ar: متأخر
+    transliteration: muta'akhkhir
+    ru: опоздавший
+  - en: sometimes
+    ar: مرات
+    transliteration: marrat
+    ru: иногда
+  - en: always
+    ar: دائما
+    transliteration: da'iman
+    vocalized: دائماً
+    ru: всегда
+  - en: now
+    ar: الآن
+    transliteration: al-an
+    ru: сейчас
+words:
+  - en: unfortunately
+    ar: للأسف
+    transliteration: lil-asaf
+    vocalized: لِلْأَسَف
+    ru: к сожалению
+  - en: luck
+    ar: توفيق
+    transliteration: tawfiq
+    vocalized: تَوْفِيق
+    ru: удача
+  - en: impossible (m)
+    ar: مستحيل
+    transliteration: mustahil
+    vocalized: مُسْتَحِيل
+    ru: невозможный
+  - en: definite (m)
+    ar: أكيد
+    transliteration: akid
+    vocalized: أَكِيد
+    ru: определенный
+  - en: possible (m)
+    ar: ممكن
+    transliteration: mumkin
+    vocalized: مُمْكِن
+    ru: возможный
+  - en: correctly
+    ar: صح
+    transliteration: sah
+    ru: правильно
+  - en: agreed
+    ar: اتفقنا
+    transliteration: ittafaqna
+    ru: договорились
+  - en: straight
+    ar: دغري
+    transliteration: dughri
+    ru: прямо
+  - en: backwards
+    ar: لورا
+    transliteration: la-wara
+    ru: назад
+  - en: only
+    ar: فقط
+    transliteration: faqat
+    ru: только
+  - en: a little
+    ar: شوي
+    transliteration: shway
+    ru: немного
+  - en: also
+    ar: كمان
+    transliteration: kaman
+    ru: тоже
+  - en: must
+    ar: لازم
+    transliteration: lazim
+    ru: должен
+  - en: need
+    ar: بدي
+    transliteration: biddi
+    ru: нужно
+  - en: but
+    ar: لكن
+    transliteration: lakin
+    ru: но
+  - en: away
+    ar: بعيد
+    transliteration: ba'id
+    ru: вдали
+  - en: near
+    ar: قريب
+    transliteration: qarib
+    ru: рядом
+  - en: here
+    ar: هنا
+    transliteration: huna
+    ru: здесь
+  - en: next to
+    ar: جنب
+    transliteration: janb
+    ru: возле
+  - en: free
+    ar: فاضي
+    transliteration: fadi
+    ru: свободный
+  - en: reserved
+    ar: محجوز
+    transliteration: mahjuz
+    ru: занятый
+  - en: tomorrow
+    ar: بكرة
+    transliteration: bukra
+    ru: завтра
+  - en: yesterday
+    ar: أمس
+    transliteration: '''ams'
+    ru: вчера
+  - en: today
+    ar: اليوم
+    transliteration: al-yom
+    ru: сегодня
+  - en: soon
+    ar: قريبا
+    transliteration: qariban
+    vocalized: قريباً
+    ru: скоро
+  - en: usually
+    ar: عادة
+    transliteration: '''adan'
+    vocalized: عادةً
+    ru: обычно
+  - en: early
+    ar: بكير
+    transliteration: bakir
+    ru: рано
+  - en: late
+    ar: متأخر
+    transliteration: muta'akhkhir
+    ru: опоздавший
+  - en: sometimes
+    ar: مرات
+    transliteration: marrat
+    ru: иногда
+  - en: always
+    ar: دائما
+    transliteration: da'iman
+    vocalized: دائماً
+    ru: всегда
+  - en: now
+    ar: الآن
+    transliteration: al-an
+    ru: сейчас
+  - en: students
+    ar: طلاب
+    transliteration: tulaab
+    ru: студенты
+  - en: father
+    ar: أب
+    transliteration: ab
+    vocalized: أَب
+    ru: отец
+  - en: mother
+    ar: أمّ
+    transliteration: umm
+    vocalized: أُمّ
+    ru: мать
+  - en: brother
+    ar: أخ
+    transliteration: akh
+    vocalized: أَخ
+    ru: брат
+  - en: sister
+    ar: أخت
+    transliteration: ukht
+    vocalized: أُخْت
+    ru: сестра
+  - en: friend (m)
+    ar: صاحب
+    transliteration: sahib
+    vocalized: صَاحِب
+    ru: друг
+  - en: name
+    ar: اسم
+    transliteration: ism
+    vocalized: اِسْم
+    ru: имя
+  - en: profession
+    ar: مهنة
+    transliteration: mihna
+    vocalized: مِهْنَة
+    ru: профессия
+  - en: programmer (m)
+    ar: مبرمج
+    transliteration: mubarmij
+    vocalized: مُبَرْمِج
+    ru: программист
+  - en: engineer (m)
+    ar: مهندس
+    transliteration: muhandis
+    vocalized: مُهَنْدِس
+    ru: инженер
+  - en: company
+    ar: شركة
+    transliteration: shirka
+    vocalized: شِرْكَة
+    ru: компания
+  - en: international (f)
+    ar: دوليّة
+    transliteration: dawliyya
+    vocalized: دَوْلِيَّة
+    ru: международная
+  - en: family
+    ar: عيلة
+    transliteration: ayla
+    vocalized: عَيْلَة
+    ru: семья
+  - en: words
+    ar: كلمات
+    transliteration: kalimat
+    ru: слова
+  - en: miss
+    ar: آنسة
+    transliteration: anisa
+    vocalized: آنِسَة
+    ru: девушка
+  - en: mr.
+    ar: سيّد
+    transliteration: sayyid
+    vocalized: سَيِّد
+    ru: господин
+  - en: numbers
+    ar: أرقام
+    transliteration: arqam
+    ru: цифры
+  - en: Keys
+    ar: مفاتيح
+    transliteration: mafatih
+    ru: ключи
+  - en: arts
+    ar: فنون
+    transliteration: funun
+    ru: искусства
+  - en: cars
+    ar: سيارات
+    transliteration: sayaarat
+    ru: автомобили
+  - en: friends
+    ar: أصدقاء
+    transliteration: "'asdiqa'"
+    ru: друзья
+    
+
+sentences:

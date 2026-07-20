@@ -8,7 +8,9 @@ The course aims to develop a stable **basic vocabulary** necessary for everyday 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
 The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
 `,
-    "index": 0
+    "index": 0,
+    "words": [],
+    "sentences": []
   },
   "describe_yourself_1": {
     "name": "Tell about yourself 1",
@@ -2471,6 +2473,226 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
 ##story-line## ''' تفضل هنا، الممرضة مع الدكتور في المستشفى. ''' ##story-translation## Come here please, the nurse is with the doctor in the hospital. ##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
 ##story-line## ''' عندي جرح في الإيد، لازم مرهم وضمادة؟ ''' ##story-translation## I have a wound on the hand, do I need an ointment and a bandage? ##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
 ##story-line## ''' نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام. ''' ##story-translation## Yes, and take this pill please. Everything is okay. ##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.`,
+    "words": [
+      [
+        "it hurts",
+        "بيوجع",
+        "biwja'"
+      ],
+      [
+        "it itches",
+        "بيحك",
+        "bihikk"
+      ],
+      [
+        "runny nose",
+        "رشح",
+        "rashah"
+      ],
+      [
+        "fever / temperature",
+        "حرارة",
+        "harara"
+      ],
+      [
+        "bruise",
+        "رضة",
+        "radda"
+      ],
+      [
+        "wound",
+        "جرح",
+        "jurh"
+      ],
+      [
+        "fracture",
+        "كسر",
+        "kasr"
+      ],
+      [
+        "bandage",
+        "ضمادة",
+        "dimada"
+      ],
+      [
+        "pill",
+        "حبة",
+        "habba"
+      ],
+      [
+        "ointment",
+        "مرهم",
+        "marham"
+      ],
+      [
+        "drops",
+        "قطرة",
+        "qatra"
+      ],
+      [
+        "doctor",
+        "دكتور",
+        "duktor"
+      ],
+      [
+        "nurse",
+        "ممرضة",
+        "mumarriḍa"
+      ],
+      [
+        "reception",
+        "استقبال",
+        "istiqbal"
+      ],
+      [
+        "hospital",
+        "مستشفى",
+        "mustashfa"
+      ],
+      [
+        "clinic",
+        "عيادة",
+        "iyada"
+      ]
+    ],
+    "sentences": [
+      [
+        "my head hurts",
+        "راسي بيوجعني",
+        "rasi biwja'ni"
+      ],
+      [
+        "my hand itches",
+        "إيدي بتحكني",
+        "idi btihikkni"
+      ],
+      [
+        "i have a runny nose and fever",
+        "عندي رشح وحرارة",
+        "indi rashah wa harara"
+      ],
+      [
+        "this is a small bruise",
+        "هذه رضة صغيرة",
+        "hadhihi radda saghira"
+      ],
+      [
+        "the wound is clean",
+        "الجرح نظيف",
+        "al-jurh nazif"
+      ],
+      [
+        "he has a leg fracture",
+        "عنده كسر في الرجل",
+        "indo kasr fir-rijl"
+      ],
+      [
+        "where is the bandage?",
+        "وين الضمادة",
+        "wayn ad-dimada"
+      ],
+      [
+        "take this pill please",
+        "خذ هذه الحبة لو سمحت",
+        "khud hadhihi al-habba law samaht"
+      ],
+      [
+        "i need an ointment for the hand",
+        "بدي مرهم للإيد",
+        "biddi marham lil-id"
+      ],
+      [
+        "where are the eye drops?",
+        "وين قطرة العين",
+        "wayn qatrat al-ayn"
+      ],
+      [
+        "the doctor is inside the clinic",
+        "الدكتور جوا العيادة",
+        "ad-duktor juwwa al-iyada"
+      ],
+      [
+        "the nurse is at the reception",
+        "الممرضة في الاستقبال",
+        "al-mumarriḍa fil-istiqbal"
+      ],
+      [
+        "this hospital is big",
+        "هذا المستشفى كبير",
+        "hadha al-mustashfa kabir"
+      ]
+    ],
+    "index": 11
+  },
+  "training_1": {
+    "name": "Practice the Learned",
+    "explanations": `### This lesson is designed to consolidate what has been learned.
+Here you'll find exercises that practice grammar and memorize words that are similar in meaning or different variations of the same root.
+Like flashcards, these exercises don't award success percentages.
+The goal is to practice independently in the game format, but without the risk of losing winning points.
+`,
+    "sort_set": [
+      {
+        "question1": "Find all feminine forms",
+        "question2": "Find all masculine forms",
+        "type": "pairs",
+        "data": [
+          [
+            "مِهْنَة",
+            "اِسْم"
+          ],
+          [
+            "شِرْكَة",
+            "مُبَرْمِج"
+          ],
+          [
+            "دَوْلِيَّة",
+            "مُهَنْدِس"
+          ],
+          [
+            "عَيْلَة",
+            "أَب"
+          ],
+          [
+            "أُمّ",
+            "صَاحِب"
+          ],
+          [
+            "آنِسَة",
+            "سَيِّد"
+          ],
+          [
+            "أُخْت",
+            "أَخ"
+          ]
+        ]
+      },
+      {
+        "question1": "Find all singular forms",
+        "question2": "Find all plural forms",
+        "type": "lists",
+        "data": [
+          [
+            "اِسْم",
+            "مِهْنَة",
+            "مُبَرْمِج",
+            "مُهَنْدِس",
+            "دَوْلِيَّة",
+            "عَيْلَة",
+            "أَب"
+          ],
+          [
+            "فنون",
+            "أرقام",
+            "مفاتيح",
+            "كلمات",
+            "طلاب",
+            "سيارات",
+            "أصدقاء"
+          ]
+        ]
+      }
+    ],
     "pairs_set": [
       {
         "title": "Adverbs",
@@ -2640,153 +2862,267 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
     ],
     "words": [
       [
-        "it hurts",
-        "بيوجع",
-        "biwja'"
+        "unfortunately",
+        "للأسف@لِلْأَسَف",
+        "lil-asaf"
       ],
       [
-        "it itches",
-        "بيحك",
-        "bihikk"
+        "luck",
+        "توفيق@تَوْفِيق",
+        "tawfiq"
       ],
       [
-        "runny nose",
-        "رشح",
-        "rashah"
+        "impossible (m)",
+        "مستحيل@مُسْتَحِيل",
+        "mustahil"
       ],
       [
-        "fever / temperature",
-        "حرارة",
-        "harara"
+        "definite (m)",
+        "أكيد@أَكِيد",
+        "akid"
       ],
       [
-        "bruise",
-        "رضة",
-        "radda"
+        "possible (m)",
+        "ممكن@مُمْكِن",
+        "mumkin"
       ],
       [
-        "wound",
-        "جرح",
-        "jurh"
+        "correctly",
+        "صح",
+        "sah"
       ],
       [
-        "fracture",
-        "كسر",
-        "kasr"
+        "agreed",
+        "اتفقنا",
+        "ittafaqna"
       ],
       [
-        "bandage",
-        "ضمادة",
-        "dimada"
+        "straight",
+        "دغري",
+        "dughri"
       ],
       [
-        "pill",
-        "حبة",
-        "habba"
+        "backwards",
+        "لورا",
+        "la-wara"
       ],
       [
-        "ointment",
-        "مرهم",
-        "marham"
+        "only",
+        "فقط",
+        "faqat"
       ],
       [
-        "drops",
-        "قطرة",
-        "qatra"
+        "a little",
+        "شوي",
+        "shway"
       ],
       [
-        "doctor",
-        "دكتور",
-        "duktor"
+        "also",
+        "كمان",
+        "kaman"
       ],
       [
-        "nurse",
-        "ممرضة",
-        "mumarriḍa"
+        "must",
+        "لازم",
+        "lazim"
       ],
       [
-        "reception",
-        "استقبال",
-        "istiqbal"
+        "need",
+        "بدي",
+        "biddi"
       ],
       [
-        "hospital",
-        "مستشفى",
-        "mustashfa"
+        "but",
+        "لكن",
+        "lakin"
       ],
       [
-        "clinic",
-        "عيادة",
-        "iyada"
+        "away",
+        "بعيد",
+        "ba'id"
+      ],
+      [
+        "near",
+        "قريب",
+        "qarib"
+      ],
+      [
+        "here",
+        "هنا",
+        "huna"
+      ],
+      [
+        "next to",
+        "جنب",
+        "janb"
+      ],
+      [
+        "free",
+        "فاضي",
+        "fadi"
+      ],
+      [
+        "reserved",
+        "محجوز",
+        "mahjuz"
+      ],
+      [
+        "tomorrow",
+        "بكرة",
+        "bukra"
+      ],
+      [
+        "yesterday",
+        "أمس",
+        "'ams"
+      ],
+      [
+        "today",
+        "اليوم",
+        "al-yom"
+      ],
+      [
+        "soon",
+        "قريبا@قريباً",
+        "qariban"
+      ],
+      [
+        "usually",
+        "عادة@عادةً",
+        "'adan"
+      ],
+      [
+        "early",
+        "بكير",
+        "bakir"
+      ],
+      [
+        "late",
+        "متأخر",
+        "muta'akhkhir"
+      ],
+      [
+        "sometimes",
+        "مرات",
+        "marrat"
+      ],
+      [
+        "always",
+        "دائما@دائماً",
+        "da'iman"
+      ],
+      [
+        "now",
+        "الآن",
+        "al-an"
+      ],
+      [
+        "students",
+        "طلاب",
+        "tulaab"
+      ],
+      [
+        "father",
+        "أب@أَب",
+        "ab"
+      ],
+      [
+        "mother",
+        "أمّ@أُمّ",
+        "umm"
+      ],
+      [
+        "brother",
+        "أخ@أَخ",
+        "akh"
+      ],
+      [
+        "sister",
+        "أخت@أُخْت",
+        "ukht"
+      ],
+      [
+        "friend (m)",
+        "صاحب@صَاحِب",
+        "sahib"
+      ],
+      [
+        "name",
+        "اسم@اِسْم",
+        "ism"
+      ],
+      [
+        "profession",
+        "مهنة@مِهْنَة",
+        "mihna"
+      ],
+      [
+        "programmer (m)",
+        "مبرمج@مُبَرْمِج",
+        "mubarmij"
+      ],
+      [
+        "engineer (m)",
+        "مهندس@مُهَنْدِس",
+        "muhandis"
+      ],
+      [
+        "company",
+        "شركة@شِرْكَة",
+        "shirka"
+      ],
+      [
+        "international (f)",
+        "دوليّة@دَوْلِيَّة",
+        "dawliyya"
+      ],
+      [
+        "family",
+        "عيلة@عَيْلَة",
+        "ayla"
+      ],
+      [
+        "words",
+        "كلمات",
+        "kalimat"
+      ],
+      [
+        "miss",
+        "آنسة@آنِسَة",
+        "anisa"
+      ],
+      [
+        "mr.",
+        "سيّد@سَيِّد",
+        "sayyid"
+      ],
+      [
+        "numbers",
+        "أرقام",
+        "arqam"
+      ],
+      [
+        "Keys",
+        "مفاتيح",
+        "mafatih"
+      ],
+      [
+        "arts",
+        "فنون",
+        "funun"
+      ],
+      [
+        "cars",
+        "سيارات",
+        "sayaarat"
+      ],
+      [
+        "friends",
+        "أصدقاء",
+        "'asdiqa'"
       ]
     ],
-    "sentences": [
-      [
-        "my head hurts",
-        "راسي بيوجعني",
-        "rasi biwja'ni"
-      ],
-      [
-        "my hand itches",
-        "إيدي بتحكني",
-        "idi btihikkni"
-      ],
-      [
-        "i have a runny nose and fever",
-        "عندي رشح وحرارة",
-        "indi rashah wa harara"
-      ],
-      [
-        "this is a small bruise",
-        "هذه رضة صغيرة",
-        "hadhihi radda saghira"
-      ],
-      [
-        "the wound is clean",
-        "الجرح نظيف",
-        "al-jurh nazif"
-      ],
-      [
-        "he has a leg fracture",
-        "عنده كسر في الرجل",
-        "indo kasr fir-rijl"
-      ],
-      [
-        "where is the bandage?",
-        "وين الضمادة",
-        "wayn ad-dimada"
-      ],
-      [
-        "take this pill please",
-        "خذ هذه الحبة لو سمحت",
-        "khud hadhihi al-habba law samaht"
-      ],
-      [
-        "i need an ointment for the hand",
-        "بدي مرهم للإيد",
-        "biddi marham lil-id"
-      ],
-      [
-        "where are the eye drops?",
-        "وين قطرة العين",
-        "wayn qatrat al-ayn"
-      ],
-      [
-        "the doctor is inside the clinic",
-        "الدكتور جوا العيادة",
-        "ad-duktor juwwa al-iyada"
-      ],
-      [
-        "the nurse is at the reception",
-        "الممرضة في الاستقبال",
-        "al-mumarriḍa fil-istiqbal"
-      ],
-      [
-        "this hospital is big",
-        "هذا المستشفى كبير",
-        "hadha al-mustashfa kabir"
-      ]
-    ],
-    "index": 11
+    "sentences": [],
+    "index": 12
   }
 };

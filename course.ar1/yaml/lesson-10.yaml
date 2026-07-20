@@ -51,10 +51,12 @@ story:
   - ar: لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.
     en: No, go straight, the hotel is around the corner after the traffic light.
     transliteration: La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-  - ar: تمام، هذا بالضبط شو بدي. شكراً!
+  - ar: تمام، هذا بالضبط شو بدي. شكرا!
+    vocalized: تمام، هذا بالضبط شو بدي. شكراً!
     en: Okay, this is exactly what I want. Thanks!
     transliteration: Tamam, hadha bid-dabt shu biddi. Shukran!
-  - ar: عفواً! اتفقنا، يوم سعيد.
+  - ar: عفوا! اتفقنا، يوم سعيد.
+    vocalized: عفواً! اتفقنا، يوم سعيد.
     en: You're welcome! Agreed, have a happy day.
     transliteration: Afwan! Ittafaqna, yawm sa'id.
 words:

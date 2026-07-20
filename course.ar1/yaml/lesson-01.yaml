@@ -13,53 +13,69 @@ explanations:
     Помните, что в арабском языке прилагательные стоят ПОСЛЕ существительного, которое они описывают (например, «красивый дом»).
 story:
   en:
-  - ar: مِنْ وِينْ إِنْتَ؟
+  - ar: من وين إنت؟
+    vocalized: مِنْ وِينْ إِنْتَ؟
     en: Where are you from?
     transliteration: Min wayn inta?
-  - ar: أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ.
+  - ar: أنا من أميركا، بدرس عربي هلّأ.
+    vocalized: أَنَا مِنْ أَمِيرْكَا، بَدْرُسْ عَرَبِي هَلَّأ.
     en: I am from America, I'm studying Arabic now.
     transliteration: Ana min amirka, badrus 'arabi halla'.
-  - ar: شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟
+  - ar: شو مهنتك؟ بتشتغل هون بالشّركة؟
+    vocalized: شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟
     en: What's your profession? Do you work here in the company?
     transliteration: Shu mihnatak? Bitishtighil hon bish-shirka?
-  - ar: أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.
+  - ar: أيوه، بشتغل مطوّر ومبرمج. بحبّ شغلي كتير.
+    vocalized: أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.
     en: Yes, I work as a developer and programmer. I love my job very much.
     transliteration: Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-  - ar: حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟
+  - ar: حلو! وين ساكن؟ بمدينة كبيرة؟
+    vocalized: حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟
     en: Nice! Where do you live? In a big city?
     transliteration: Hilu! Wayn sakin? Bi-madina kbira?
-  - ar: لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.
+  - ar: لا، عندي بيت جديد حلو مع عيلتي. ساكنين مع بعض.
+    vocalized: لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.
     en: No, I have a nice new house with my family. We live together.
     transliteration: La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-  - ar: تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.
+  - ar: تمام! تشرّفنا يا سيّد.
+    vocalized: تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.
     en: Great! Pleased to meet you, sir.
     transliteration: Tamam! Tasharrafna ya sayyid.
-  - ar: شُكْراً! فُرْصَة سَعِيدَة.
+  - ar: شكرا! فرصة سعيدة.
+    vocalized: شُكْراً! فُرْصَة سَعِيدَة.
     en: Thanks! Nice to meet you.
     transliteration: Shukran! Fursa sa'ida.
   ru:
-  - ar: مِنْ وِينْ إِنْتَ؟
+  - ar: من وين إنت؟
+    vocalized: مِنْ وِينْ إِنْتَ؟
     ru: Откуда ты?
     transliteration: Min wayn inta?
-  - ar: أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ.
+  - ar: أنا من روسيا، بدرس عربي هلّأ.
+    vocalized: أَنَا مِنْ رُوسْيَا، بَدْرُسْ عَرَبِي هَلَّأ.
     ru: Я из России, сейчас учу арабский.
     transliteration: Ana min rusya, badrus 'arabi halla'.
-  - ar: شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟
+  - ar: شو مهنتك؟ بتشتغل هون بالشّركة؟
+    vocalized: شُو مِهْنَتَكْ؟ بِتِشْتِغِلْ هُونْ بِالشِّرْكَة؟
     ru: Кем работаешь? Работаешь здесь в компании?
     transliteration: Shu mihnatak? Bitishtighil hon bish-shirka?
-  - ar: أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.
+  - ar: أيوه، بشتغل مطوّر ومبرمج. بحبّ شغلي كتير.
+    vocalized: أَيْوَه، بَشْتِغِلْ مُطَوِّرْ وَمُبَرْمِجْ. بِحِبّْ شُغْلِي كْتِيرْ.
     ru: Да, работаю разработчиком и программистом. Очень люблю свою работу.
     transliteration: Aywa, bashtighil mutawwir wa mubarmij. Bihibb shughli ktir.
-  - ar: حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟
+  - ar: حلو! وين ساكن؟ بمدينة كبيرة؟
+    vocalized: حِلُو! وِينْ سَاكِنْ؟ بِمَدِينَة كْبِيرَة؟
     ru: Здорово! Где ты живешь? В большом городе?
     transliteration: Hilu! Wayn sakin? Bi-madina kbira?
-  - ar: لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.
+  - ar: لا، عندي بيت جديد حلو مع عيلتي. ساكنين مع بعض.
+    vocalized: لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ.
     ru: Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе.
     transliteration: La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
-  - ar: تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.
+  - ar: تمام! تشرّفنا يا سيّد.
+    vocalized: تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ.
     ru: Отлично! Рад знакомству, господин.
     transliteration: Tamam! Tasharrafna ya sayyid.
-  - ar: شُكْراً! فُرْصَة سَعِيدَة.
+  - ar: شكرا! فرصة سعيدة.
+    vocalized: شُكْراً! فُرْصَة سَعِيدَة.
     ru: Спасибо! Взаимно.
     transliteration: Shukran! Fursa sa'ida.
 words:

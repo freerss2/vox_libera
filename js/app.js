@@ -158,6 +158,7 @@ const SCREENS = [
   { id: 'quiz_u2t',        shared: 0, exercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
   { id: 'quiz_t2u',        shared: 0, exercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
   { id: 'quiz_audio',      shared: 0, exercise: 1, screen_type: 'quiz_audio',   name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
+  { id: 'sorting',         shared: 0, exercise: 1, screen_type: 'sorting',      name: 'Sort',              inputs: ['sort_set'] },
   { id: 'sent_u2t',        shared: 0, exercise: 1, screen_type: 'sent_u2t',     name: 'Sentence: 👤 → 🌍', inputs: ['sentences'] },
   { id: 'sent_t2u',        shared: 0, exercise: 1, screen_type: 'sent_t2u',     name: 'Sentence: 🌍 → 👤', inputs: ['sentences'] },
   { id: 'sent_audio',      shared: 0, exercise: 1, screen_type: 'sent_audio',   name: 'Audio-Sentence',    inputs: ['sentences'] },
@@ -638,6 +639,7 @@ function renderScreen(screen_id) {
     let screenId = screenType.startsWith('quiz') ? 'screen-quiz' : ('screen-'+screenType);
     if (screenType.startsWith('sent')) { screenId = 'screen-sent'; }
     if (screenType == 'flashcards') { screenId = 'flashcards-screen'; }
+    if (screenType == 'sorting') { screenId = 'screen-sorting'; }
     const targetScreen = document.getElementById(screenId);
     if (targetScreen) {
         targetScreen.classList.remove('hidden');
@@ -668,14 +670,14 @@ function initGameEngine(screen_id) {
     let screenType = getScreenType(screen_id);
     if (screenType == 'matching') {
         renderMatchingGame();
+    } else if (screenType == 'flashcards') {
+        initFlashcards();
+    } else if (screenType == 'sorting') {
+        renderSortingGame();
+    } else if (screenType.startsWith('quiz')) {
+        startNewQuizSet();
     } else {
-        if (screenType == 'flashcards') {
-          initFlashcards();
-        } else if (screenType.startsWith('quiz')) {
-          startNewQuizSet();
-        } else {
-          renderSent(screen_id);
-        }
+        renderSent(screen_id);
     }
 }
 
@@ -942,6 +944,147 @@ function showErrorCount(errors) {
     const errorDisplay = document.getElementById('errorCount');
     if (errorDisplay) errorDisplay.textContent = errors;
 }
+
+// ------------------------------------------- sorting game
+
+// Sorting is based on some definition presented to user and mixed sets of words/letters
+// each element in set belongs to right and wrong subsets
+// user is clicking on remaining in bank elements
+// on right match the element disappears, on wrong - highlighted with red for a moment
+// errors are counted on top
+// match is registered in statistics as "guess" and error as "mismatch"
+// game ends automatically when all rigth elements are sorted-out
+
+let expectedMatches = 0;
+
+function renderSortingGame() {
+
+    const questionContainer = document.getElementById('sorting-question-container');
+    const bankContainer = document.getElementById('sort-bank');
+    // get an input data set
+    const currentData = getDataSetForSortingGame();
+    // show the prompt message
+    questionContainer.innerHTML = currentData.question;
+    // fill the "bank" with the inputs, marking the "right" selections with metadata flag
+    // assign click event to input elements in sent-words
+    let bankWords = shuffle([...currentData.set_correct, ...currentData.set_wrong]);
+    bankContainer.innerHTML = '';
+    let bankWordClass = 'sent-word target-text';
+    for (let i = 0; i < bankWords.length; i++) {
+        const wordText = bankWords[i];
+        const bankWord = document.createElement('span');
+        bankWord.onclick = () => useSortBankWord(i);
+        bankWord.className = bankWordClass;
+        bankWord.dir = targetDir;
+        bankWord.lang = courseTargetLanguage;
+        bankWord.textContent = wordDisplayText(wordText);
+        bankWord.dataset.id = i;
+        bankWord.dataset.correct = currentData.set_correct.includes(wordText) ? 1 : '';
+        bankWord.id = "sort-bank-word-" + i;
+        bankContainer.appendChild(bankWord);
+    }
+    // reset the errors count, set expected matches count
+    errors = 0;
+    matches = 0;
+    expectedMatches = currentData.set_correct.length;
+    // make counter element visible
+    document.getElementById('errors-panel').classList.remove('hidden');
+    showErrorCount(0);
+}
+
+
+// find a random record under the lesson's data "sort_set"
+// if the "type" is not "pairs" - zip a list of random pairs
+// and extract desired number of elements to "set_correct" and "set_wrong"
+// if there are two possible questions (question 1 and question 2) - select randomly a direction
+// return a record with elements: question, set_correct and set_wrong
+function getDataSetForSortingGame() {
+    const topicId = settings.getCurrentTopic();
+    const allSets = topics[topicId]['sort_set'];
+    // first - took randomly a set
+    let setIndex = 0;
+    if (allSets.length > 1 ) {
+       setIndex = Math.floor(Math.random() * allSets.length);
+       if (lastPos >=0 && setIndex == lastPos) {
+           setIndex = (lastPos+1) % allSets.length;
+       }
+    }
+    lastPos = setIndex;
+    const selectedSet = allSets[setIndex];
+    // now determine direction - use first or second question
+    let direction = 0;
+    if ( selectedSet['question2'] ) {
+        direction = Math.floor(Math.random() * 2);
+    }
+    const question = direction ? selectedSet['question2'] : selectedSet['question1'];
+    // build a list of questioned words
+    let pairsList = selectedSet['data'];
+    if (selectedSet['type'] != 'pairs') {
+        pairsList = [];
+        const set0 = shuffle(selectedSet['data'][0]);
+        const set1 = shuffle(selectedSet['data'][1]);
+        for (var i=0; i<set0.length; i++) {
+            pairsList.push([set0[i], set1[i]]);
+        }
+    }
+    // randomize and slice a desired number
+    const desiredNumber = 5;
+    roundRecap = []
+    pairsList = shuffle(pairsList).slice(0, desiredNumber);
+    let set_correct = [];
+    let set_wrong = [];
+    let topicWords = topics[topicId]['words'];
+    for (let i=0; i<pairsList.length; i++) {
+        const correct_word = pairsList[i][direction ? 1 : 0];
+        const wrong_word = pairsList[i][direction ? 0 : 1];
+        set_correct.push( correct_word );
+        set_wrong.push( wrong_word );
+        // push to roundRecap word from words matching correct_word
+        for (const r of topicWords) {
+            if (wordDisplayText(r[1]) == wordDisplayText(correct_word) || wordVocalizedText(r[1]) == wordVocalizedText(correct_word)) {
+                roundRecap.push(r);
+                break;
+            }
+        }
+    }
+    roundRecap.forEach((item, index) => { roundRecap[index] = decodeLearnItem(item); });
+    return {
+        'question': question,
+        'set_correct': set_correct,
+        'set_wrong': set_wrong
+    }
+}
+
+// callback for any sort-bank-word click
+function useSortBankWord(index) {
+  const bankWordId = "sort-bank-word-" + index;
+  const bankWordElement = document.getElementById(bankWordId);
+  if (bankWordElement.dataset.correct) {
+    // increase matches count
+    matches++;
+    // show "correct" animation and hide this word
+    triggerSuccessEffect(bankWordElement, true);
+    setTimeout( () => {
+            bankWordElement.classList.add('hidden')
+            // if we reached expectedMatches - show "Win" screen
+            if (matches == expectedMatches) {
+                setTimeout(() => {
+                    const acc = Math.round((expectedMatches / (expectedMatches + errors)) * 100);
+                    showWin(acc);
+                }, 400)
+            }
+        }, 600 );
+  } else {
+    // increase errors count and show the count
+    errors++;
+    showErrorCount(errors);
+    // show "incorrect" animation
+    bankWordElement.classList.add('wrong');
+    setTimeout(() => {
+        bankWordElement.classList.remove('wrong');
+    }, 400);
+  }
+}
 // ------------------------------------------- game completion popup
 
 // Show completion summary per round
@@ -1177,6 +1320,7 @@ function resetTopicScopedState(preserveFinalProgress = false) {
     selectedRight = null;
     errors = 0;
     matches = 0;
+    expectedMatches = 0;
     roundRecap = [];
     pairItemsInRound = 0;
     gameSet = {
@@ -1343,7 +1487,7 @@ function renderSent(screen_id) {
     }
     questionContainer.innerHTML = questionHtml;
     document.getElementById('sent-main-hint').innerHTML = mainHint;
-    // TODO: extract vocalization and visual per word
+    // TODO: for sent_u2t extract vocalization and visual per word
     let bankWords = (wordDisplayText(expected).split(/\s+/)).filter(word => word.length > 0);
     questionContainer.dataset.expected = bankWords.join(' ');
     questionContainer.dataset.target = gameSentence[1];
@@ -1352,6 +1496,7 @@ function renderSent(screen_id) {
     let factor = gameSettings.sentenceFactor;
     let maxWords = Math.max(bankWords.length, 10);
     let extraWordsCount = Math.min(Math.round(bankWords.length * factor), maxWords);
+    // TODO: for sent_u2t consider vocalization factor in extracted words
     const subset = extractUniqueWordsFromData(shuffle(allStrs), extractPosition).filter(w => !bankWords.includes(w)).slice(0, extraWordsCount);
     bankWords.push(...subset);
     bankWords = shuffle(bankWords);
@@ -1389,6 +1534,7 @@ function renderSent(screen_id) {
 
 // from a list of lists allData extract all unique words on position pos
 // randomly shuffle the result
+// @return: shuffled list of words that present in input sentences
 function extractUniqueWordsFromData(allData, pos) {
    let realWords = allData.flatMap(row => wordDisplayText(row[pos]).split(/\s+|,/)).filter(w => w.length > 0);
    realWords = realWords.filter(w => !w.includes(')')).filter(w => !w.includes('(')).filter(w => !w.includes('/'));

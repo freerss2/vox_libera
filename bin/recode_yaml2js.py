@@ -63,6 +63,41 @@ def decode_escaped_backtick(text):
         result.append(line)
     return '`'.join(result)
 
+def decode_sort_set(sort_set, user_lang, target_lang, topic_words):
+    """
+    Decode sort_set: list of excercises of "sort" type
+    """
+    # read all words in sets
+    # make sure all words appear in words dictionary
+    for sortSetRecord in sort_set:
+        setType = sortSetRecord.get('type')
+        if not setType or setType not in ('pairs', 'lists'):
+            raise Exception(f"Missing/wrong sort_set type {sortSetRecord}")
+        wordsToCheck = []
+        if 'question1' not in sortSetRecord:
+            raise Exception(f"Missing sort_set question1 {sortSetRecord}")
+        if 'data' not in sortSetRecord:
+            raise Exception(f"Missing sort_set data {sortSetRecord}")
+        sortSetData = sortSetRecord['data']
+        if setType == 'pairs':
+            for pair in sortSetData:
+                wordsToCheck.append(pair[0])
+                wordsToCheck.append(pair[1])
+        else:
+            for i, val in enumerate(sortSetData[0]):
+                wordsToCheck.append(val)
+                wordsToCheck.append(sortSetData[1][i])
+        # check that wordsToCheck present in topic_words
+        for word in wordsToCheck:
+            visual = get_visual_from_vocalized(word, target_lang)
+            vocalized = word.split('@')[-1]
+            found = [tw for tw in topic_words
+                     if tw[1].split('@')[0] in (visual, vocalized) or
+                        tw[1].split('@')[-1] in (visual, vocalized)]
+            if not found:
+                topic_words.append(['UNDEFINED', word, 'UNDEFINED'])
+    return sort_set
+
 def decode_story(story, user_lang, target_lang):
     """
     @param story: list of records
@@ -206,12 +241,16 @@ def separate_data(lessons, metadata):
         if 'abc' in topic:
             (abc, locales) = extract_from_list(topic['abc'], locales, target_lang)
             topic['abc'] = abc
-        if 'words' in topic:
+        if 'words' in topic and topic['words']:
             (words, locales) = extract_from_list(topic['words'], locales, target_lang)
             topic['words'] = words
-        if 'sentences' in topic:
+        else:
+            topic['words'] = []
+        if 'sentences' in topic and topic['sentences']:
             (sentences, locales) = extract_from_list(topic['sentences'], locales, target_lang)
             topic['sentences'] = sentences
+        else:
+            topic['sentences'] = []
         # topic['name'] - replace with 'en', rest - to 'interface'
         topic_name = topic['name'].pop('en')
         for lang in topic['name']:
@@ -232,6 +271,11 @@ def separate_data(lessons, metadata):
                 decoded_story = decode_story(story.get(lang), lang, target_lang)
                 locales[lang]['story'][topic_id] = quote_multiline_js(decoded_story)
             topic['story'] = quote_multiline_js(new_value)
+        sort_set = topic.get('sort_set')
+        if sort_set:
+            new_sort_set = decode_sort_set(sort_set, 'en', target_lang, topic['words'])
+            # TODO: decode other translations too
+            topic['sort_set'] = new_sort_set
         # same for pairs_set (list with "words"/"abc" inside)
         pairs_sets = topic.get('pairs_set')
         if pairs_sets:
