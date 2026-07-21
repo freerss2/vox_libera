@@ -6,7 +6,7 @@ const course_locales =
     "interface": {},
     "story": {},
     "sort_set": {
-      "sort_set_1": {
+      "sort_people_pairs_v1": {
         "question1": "Find feminine words",
         "question2": "Find masculine words"
       },
@@ -209,7 +209,7 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
 ##story-line## ''' طير السعادة! جاري العزيز كمان بيسافر معي اليوم. ''' ##story-translation## Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.`
     },
     "sort_set": {
-      "sort_set_1": {
+      "sort_people_pairs_v1": {
         "question1": "Найди слова женского рода",
         "question2": "Найди слова мужского рода"
       },
@@ -725,7 +725,24 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "war": "война",
       "dresses": "платья",
       "a seat": "сиденье",
-      "the seats": "сиденья"
+      "the seats": "сиденья",
+      "girl": "девочка",
+      "boy": "мальчик",
+      "woman": "женщина",
+      "man": "мужчина",
+      "friend (f)": "подруга",
+      "neighbor (f)": "соседка",
+      "neighbor (m)": "сосед",
+      "peer (f)": "сотрудница",
+      "peer (m)": "сотрудник",
+      "policewoman": "полицейская",
+      "policeman": "полицейский",
+      "teacher (f)": "учитель (ж)",
+      "teacher (m)": "учитель (м)",
+      "doctor (f)": "доктор (ж)",
+      "doctor (m)": "доктор (м)",
+      "nurse (f)": "медсестра",
+      "nurse (m)": "медбрат"
     }
   }
 };

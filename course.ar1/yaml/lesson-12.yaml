@@ -14,33 +14,27 @@ explanations:
     Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
     Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
 sort_set:
-- id: sort_set_1
+- id: sort_people_pairs_v1
   question1:
     en: Find feminine words
     ru: Найди слова женского рода
   question2:
-    en: Find masculine words
+    en: Find masculine words  
     ru: Найди слова мужского рода
   type: pairs
   data:
-  - - مِهْنَة
-    - اِسْم
-  - - شِرْكَة
-    - مُبَرْمِج
-  - - دَوْلِيَّة
-    - مُهَنْدِس
-  - - أُمّ
-    - أَب
-  - - عَيْلَة
-    - صَاحِب
-  - - آنِسَة
-    - سَيِّد
-  - - أُخْت
-    - أَخ
-  - - شَمْس
-    - وَلَد
-  - - حَرْب
-    - كِتَاب
+    - [ أُمّ, أَب ]
+    - [ أُخْت, أَخ ] 
+    - [ بِنت, إِبِن ] 
+    - [ مَرَة, زَلَمِة ] 
+    - [ صَاحْبِة, صَاحِب ] 
+    - [ جَارَة, جَار ]     
+    - [ زَمِيلِة, زَمِيل ] 
+    - [ شُرْطِيِّة, شُرْطِي ] 
+    - [ مُعَلِّمِة, مُعَلِّم ] 
+    - [ دُكْتُورَة, دُكْتُور ] 
+    - [ مُمَرِّضَة, مُمَرِّض ] 
+    - [ آنِسَة, سَيِّد ]   
 - id: sort_set_2
   question1:
     en: Find the singular
@@ -466,4 +460,77 @@ words:
   ar: مقاعد
   transliteration: maqaeid
   ru: сиденья
+
+- en: girl
+  ar: بِنت
+  transliteration: bint
+  ru: девочка
+- en: boy
+  ar: إِبِن
+  transliteration: "'iibin"
+  ru: мальчик
+- en: woman
+  ar: مَرَة
+  transliteration: marra
+  ru: женщина
+- en: man
+  ar: زَلَمِة
+  transliteration: zalma
+  ru: мужчина
+
+- en: friend (f)
+  ar: صَاحْبِة
+  transliteration: sahbi
+  ru: подруга
+- en: neighbor (f)
+  ar: جَارَة
+  transliteration: jara
+  ru: соседка
+- en: neighbor (m)
+  ar: جَار
+  transliteration: jar
+  ru: сосед
+- en: peer (f)
+  ar: زَمِيلِة
+  transliteration: zamili
+  ru: сотрудница
+- en: peer (m)
+  ar: زَمِيل
+  transliteration: zamil
+  ru: сотрудник
+- en: policewoman
+  ar: شُرْطِيِّة
+  transliteration: shurtii
+  ru: полицейская
+- en: policeman
+  ar: شُرْطِي
+  transliteration: shurti
+  ru: полицейский
+- en: teacher (f)
+  ar: مُعَلِّمِة
+  transliteration: mueallimi
+  ru: учитель (ж)
+- en: teacher (m)
+  ar: مُعَلِّم
+  transliteration: mueallim
+  ru: учитель (м)
+- en: doctor (f)
+  ar: دُكْتُورَة
+  transliteration: duktura
+  ru: доктор (ж)
+- en: doctor (m)
+  ar: دُكْتُور
+  transliteration: duktur
+  ru: доктор (м)
+- en: nurse (f)
+  ar: مُمَرِّضَة
+  transliteration: mumarrida
+  ru: медсестра
+- en: nurse (m)
+  ar: مُمَرِّض
+  transliteration: mumarrid
+  ru: медбрат
+
+
+
 sentences: []
