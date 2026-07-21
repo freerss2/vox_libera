@@ -730,7 +730,7 @@ body {
     border: 2px solid var(--light-border-color);
     border-bottom: 4px solid var(--light-border-color);
     border-radius: 12px;
-    max-height: 2.5rem;
+    flex-direction: column;
     padding: 5px;
     margin: 5px;
     cursor: pointer;
