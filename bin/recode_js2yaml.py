@@ -239,16 +239,18 @@ def aggregate_data(lessons, locales, manifest):
                 else:
                     continue
                 aggregated_list = aggregate_list(pairs_set[set_type], locales, target_lang)
+                pure_str_list = []
                 # for each record
                 #  - extract target lang word
                 #  - make sure respective record present in topic itself
                 for rec in aggregated_list:
                     target_str = rec.get(target_lang)
+                    pure_str_list.append(target_str)
                     if not target_str:
                         error(f"failed to parse {rec}")
                         continue
                     append_if_missing(topic[set_type], rec, target_str, target_lang)
-                pairs_set[set_type] = aggregated_list
+                pairs_set[set_type] = pure_str_list
                 # split title by languages
                 pairs_set_title = pairs_set['title']
                 pairs_set['title'] = {'en': pairs_set_title}

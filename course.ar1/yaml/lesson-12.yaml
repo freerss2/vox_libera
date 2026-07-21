@@ -73,143 +73,133 @@ pairs_set:
     en: Adverbs
     ru: Наречия
   words:
-  - en: unfortunately
-    ar: للأسف
-    transliteration: lil-asaf
-    vocalized: لِلْأَسَف
-    ru: к сожалению
-  - en: luck
-    ar: توفيق
-    transliteration: tawfiq
-    vocalized: تَوْفِيق
-    ru: удача
-  - en: impossible (m)
-    ar: مستحيل
-    transliteration: mustahil
-    vocalized: مُسْتَحِيل
-    ru: невозможный
-  - en: definite (m)
-    ar: أكيد
-    transliteration: akid
-    vocalized: أَكِيد
-    ru: определенный
-  - en: possible (m)
-    ar: ممكن
-    transliteration: mumkin
-    vocalized: مُمْكِن
-    ru: возможный
-  - en: correctly
-    ar: صح
-    transliteration: sah
-    ru: правильно
-  - en: agreed
-    ar: اتفقنا
-    transliteration: ittafaqna
-    ru: договорились
-  - en: straight
-    ar: دغري
-    transliteration: dughri
-    ru: прямо
-  - en: backwards
-    ar: لورا
-    transliteration: la-wara
-    ru: назад
-  - en: only
-    ar: فقط
-    transliteration: faqat
-    ru: только
-  - en: a little
-    ar: شوي
-    transliteration: shway
-    ru: немного
-  - en: also
-    ar: كمان
-    transliteration: kaman
-    ru: тоже
-  - en: must
-    ar: لازم
-    transliteration: lazim
-    ru: должен
-  - en: need
-    ar: بدي
-    transliteration: biddi
-    ru: нужно
-  - en: but
-    ar: لكن
-    transliteration: lakin
-    ru: но
+  - للأسف
+  - توفيق
+  - مستحيل
+  - أكيد
+  - ممكن
+  - صح
+  - اتفقنا
+  - دغري
+  - لورا
+  - فقط
+  - شوي
+  - كمان
+  - لازم
+  - بدي
+  - لكن
 - title:
     en: Time and Place
     ru: Время и место
   words:
-  - en: away
-    ar: بعيد
-    transliteration: ba'id
-    ru: вдали
-  - en: near
-    ar: قريب
-    transliteration: qarib
-    ru: рядом
-  - en: here
-    ar: هنا
-    transliteration: huna
-    ru: здесь
-  - en: next to
-    ar: جنب
-    transliteration: janb
-    ru: возле
-  - en: free
-    ar: فاضي
-    transliteration: fadi
-    ru: свободный
-  - en: reserved
-    ar: محجوز
-    transliteration: mahjuz
-    ru: занятый
-  - en: tomorrow
-    ar: بكرة
-    transliteration: bukra
-    ru: завтра
-  - en: yesterday
-    ar: أمس
-    transliteration: '''ams'
-    ru: вчера
-  - en: today
-    ar: اليوم
-    transliteration: al-yom
-    ru: сегодня
-  - en: soon
-    ar: قريبا
-    transliteration: qariban
-    vocalized: قريباً
-    ru: скоро
-  - en: usually
-    ar: عادة
-    transliteration: '''adan'
-    vocalized: عادةً
-    ru: обычно
-  - en: early
-    ar: بكير
-    transliteration: bakir
-    ru: рано
-  - en: late
-    ar: متأخر
-    transliteration: muta'akhkhir
-    ru: опоздавший
-  - en: sometimes
-    ar: مرات
-    transliteration: marrat
-    ru: иногда
-  - en: always
-    ar: دائما
-    transliteration: da'iman
-    vocalized: دائماً
-    ru: всегда
-  - en: now
-    ar: الآن
-    transliteration: al-an
-    ru: сейчас
+  - بعيد
+  - قريب
+  - هنا
+  - جنب
+  - فاضي
+  - محجوز
+  - بكرة
+  - أمس
+  - اليوم
+  - قريبا
+  - عادة
+  - بكير
+  - متأخر
+  - مرات
+  - دائما
+  - الآن
+- title:
+    en: Possessive Suffixes "home"
+    ru: Местоимённые суффиксы "дом"
+  words:
+  - بيت
+  - بيتي
+  - بيتك
+  - بَيْتُهُ
+  - بَيْتُهَا
+  - بَيْتُنَا
+  - بَيْتُكُمْ
+  - بَيْتُهُمْ
+- title:
+    en: Possessive Suffixes "friend"
+    ru: Местоимённые суффиксы "друг"
+  words:
+  - صاحب
+  - صاحبي
+  - صاحْبَك
+  - صاحْبِك
+  - صاحْبُو
+  - صاحِبْهَا
+  - صاحِبْنَا
+  - صاحِبْكُن
+  - صاحِبْهُن
+
 words:
+- ar: صاحبي
+  transliteration: saahbi
+  en: my friend
+  ru: мой друг
+- ar: صاحْبَك
+  transliteration: saahbak
+  en: your (m) friend
+  ru: твой (м) друг
+- ar: صاحْبِك
+  transliteration: saahbik
+  en: your (f) friend
+  ru: твой (ж) друг
+- ar: صاحْبُو
+  transliteration: saahbu
+  en: his friend
+  ru: его друг
+- ar: صاحِبْهَا
+  transliteration: saahibha
+  en: her friend
+  ru: её друг
+- ar: صاحِبْنَا
+  transliteration: saahibna
+  en: our friend
+  ru: наш друг
+- ar: صاحِبْكُن
+  transliteration: saahibkun
+  en: your (pl) friend
+  ru: ваш (мн) друг
+- ar: صاحِبْهُن
+  transliteration: saahibhun
+  en: their friend
+  ru: их друг
+
+- en: home
+  ar: بيت
+  transliteration: bayt
+  ru: дом
+- en: my home
+  ar: بيتي
+  transliteration: bayti
+  ru: мой дом
+- en: your (s) home
+  ar: بيتك
+  transliteration: baytuk
+  ru: твой дом
+- en: his home
+  ar: بَيْتُهُ
+  transliteration: baytuhu
+  ru: его дом
+- en: her home
+  ar: بَيْتُهَا
+  transliteration: baytuha
+  ru: её дом
+- en: our home
+  ar: بَيْتُنَا
+  transliteration: baytuna
+  ru: наш дом
+- en: your (pl) home
+  ar: بَيْتُكُمْ
+  transliteration: baytukum
+  ru: ваш (мн) дом
+- en: their home
+  ar: بَيْتُهُمْ
+  transliteration: baytuhum
+  ru: их дом
 - en: unfortunately
   ar: للأسف
   transliteration: lil-asaf

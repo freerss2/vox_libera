@@ -110,14 +110,23 @@ def decode_sort_set(sort_set, locales, target_lang, topic_words):
                 wordsToCheck.append(sortSetData[1][i])
         # check that wordsToCheck present in topic_words
         for word in wordsToCheck:
-            visual = get_visual_from_vocalized(word, target_lang)
-            vocalized = word.split('@')[-1]
-            found = [tw for tw in topic_words
-                     if tw[1].split('@')[0] in (visual, vocalized) or
-                        tw[1].split('@')[-1] in (visual, vocalized)]
+            found = find_matching_record(word, topic_words, target_lang)
             if not found:
                 topic_words.append(['UNDEFINED', word, 'UNDEFINED'])
     return sort_set
+
+def find_matching_record(word, records_set, targe_lang):
+    """
+    Find in records a record matching given word
+    @return: record or None
+    """
+    visual = get_visual_from_vocalized(word, targe_lang)
+    vocalized = word.split('@')[-1]
+    search_set = (visual, vocalized)
+    for r in records_set:
+        if r[1].split('@')[0] in search_set or r[1].split('@')[-1] in search_set:
+            return r
+    return None
 
 def decode_story(story, user_lang, target_lang):
     """
@@ -312,11 +321,21 @@ def separate_data(lessons, metadata):
                     set_type = 'abc'
                 else:
                     raise Exception(f"unsupported pairs set data type - {pairs_set}")
-                (extracted_list, locales) = extract_from_list(pairs_set[set_type], locales, target_lang)
+                # convert list of target words to list of 3-element records
+                topic_records = topic[set_type]
+                extracted_list = []
+                for word in pairs_set[set_type]:
+                    # find this word in abc/words for this lesson
+                    found = find_matching_record(word, topic_records, target_lang)
+                    if found:
+                        rec = found
+                    else:
+                        rec = ['UNDEFINED', word, 'UNDEFINED']
+                        # make sure each target word id present in lesson's dictionary
+                        topic_records.append(rec)
+                    # push the full record in extracted_list
+                    extracted_list.append(rec)
                 pairs_set[set_type] = extracted_list
-                # make sure each target word id present in lesson's dictionary
-                for rec in extracted_list:
-                    append_if_missing(topic[set_type], rec, target_lang)
                 # split title translations
                 pairs_set_title = pairs_set['title'].pop('en')
                 for lang in pairs_set['title']:
@@ -343,21 +362,6 @@ def separate_data(lessons, metadata):
     metadata['feedback'] = feedback
     metadata.pop('locales')
     return (updated_lessons, locales, metadata)
-
-def append_if_missing(topic_list, rec, target_lang):
-    """
-    Lookup in topic list for record with the same string for target language
-    If missing - append this record
-    """
-    visual = rec[1].split('@')[0]
-    vocalized = rec[1].split('@')[-1]
-    lookup_list = (visual, vocalized)
-    for t in topic_list:
-        t_visual = t[1].split('@')[0]
-        t_vocalized = t[1].split('@')[-1]
-        if t_visual in lookup_list or t_vocalized in lookup_list:
-            return
-    topic_list.append(rec)
 
 def parse_arguments():
     """

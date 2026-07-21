@@ -421,7 +421,6 @@ body {
 .target-text {
   font-size: calc(1.3rem * var(--app-scale) * var(--font-multiplier));
   color: var(--text-color);
-  margin-bottom: 10px;
 }
 
 .user-text {

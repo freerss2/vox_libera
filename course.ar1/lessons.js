@@ -2872,9 +2872,184 @@ The goal is to practice independently in the game format, but without the risk o
             "al-an"
           ]
         ]
+      },
+      {
+        "title": "Possessive Suffixes \"home\"",
+        "words": [
+          [
+            "home",
+            "بيت",
+            "bayt"
+          ],
+          [
+            "my home",
+            "بيتي",
+            "bayti"
+          ],
+          [
+            "your (s) home",
+            "بيتك",
+            "baytuk"
+          ],
+          [
+            "his home",
+            "بيته@بَيْتُهُ",
+            "baytuhu"
+          ],
+          [
+            "her home",
+            "بيتها@بَيْتُهَا",
+            "baytuha"
+          ],
+          [
+            "our home",
+            "بيتنا@بَيْتُنَا",
+            "baytuna"
+          ],
+          [
+            "your (pl) home",
+            "بيتكم@بَيْتُكُمْ",
+            "baytukum"
+          ],
+          [
+            "their home",
+            "بيتهم@بَيْتُهُمْ",
+            "baytuhum"
+          ]
+        ]
+      },
+      {
+        "title": "Possessive Suffixes \"friend\"",
+        "words": [
+          [
+            "friend (m)",
+            "صاحب@صَاحِب",
+            "sahib"
+          ],
+          [
+            "my friend",
+            "صاحبي",
+            "saahbi"
+          ],
+          [
+            "your (m) friend",
+            "صاحبك@صاحْبَك",
+            "saahbak"
+          ],
+          [
+            "your (m) friend",
+            "صاحبك@صاحْبَك",
+            "saahbak"
+          ],
+          [
+            "his friend",
+            "صاحبو@صاحْبُو",
+            "saahbu"
+          ],
+          [
+            "her friend",
+            "صاحبها@صاحِبْهَا",
+            "saahibha"
+          ],
+          [
+            "our friend",
+            "صاحبنا@صاحِبْنَا",
+            "saahibna"
+          ],
+          [
+            "your (pl) friend",
+            "صاحبكن@صاحِبْكُن",
+            "saahibkun"
+          ],
+          [
+            "their friend",
+            "صاحبهن@صاحِبْهُن",
+            "saahibhun"
+          ]
+        ]
       }
     ],
     "words": [
+      [
+        "my friend",
+        "صاحبي",
+        "saahbi"
+      ],
+      [
+        "your (m) friend",
+        "صاحبك@صاحْبَك",
+        "saahbak"
+      ],
+      [
+        "your (f) friend",
+        "صاحبك@صاحْبِك",
+        "saahbik"
+      ],
+      [
+        "his friend",
+        "صاحبو@صاحْبُو",
+        "saahbu"
+      ],
+      [
+        "her friend",
+        "صاحبها@صاحِبْهَا",
+        "saahibha"
+      ],
+      [
+        "our friend",
+        "صاحبنا@صاحِبْنَا",
+        "saahibna"
+      ],
+      [
+        "your (pl) friend",
+        "صاحبكن@صاحِبْكُن",
+        "saahibkun"
+      ],
+      [
+        "their friend",
+        "صاحبهن@صاحِبْهُن",
+        "saahibhun"
+      ],
+      [
+        "home",
+        "بيت",
+        "bayt"
+      ],
+      [
+        "my home",
+        "بيتي",
+        "bayti"
+      ],
+      [
+        "your (s) home",
+        "بيتك",
+        "baytuk"
+      ],
+      [
+        "his home",
+        "بيته@بَيْتُهُ",
+        "baytuhu"
+      ],
+      [
+        "her home",
+        "بيتها@بَيْتُهَا",
+        "baytuha"
+      ],
+      [
+        "our home",
+        "بيتنا@بَيْتُنَا",
+        "baytuna"
+      ],
+      [
+        "your (pl) home",
+        "بيتكم@بَيْتُكُمْ",
+        "baytukum"
+      ],
+      [
+        "their home",
+        "بيتهم@بَيْتُهُمْ",
+        "baytuhum"
+      ],
       [
         "unfortunately",
         "للأسف@لِلْأَسَف",
