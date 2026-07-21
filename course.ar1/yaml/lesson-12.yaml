@@ -29,14 +29,18 @@ sort_set:
     - مُبَرْمِج
   - - دَوْلِيَّة
     - مُهَنْدِس
-  - - عَيْلَة
-    - أَب
   - - أُمّ
+    - أَب
+  - - عَيْلَة
     - صَاحِب
   - - آنِسَة
     - سَيِّد
   - - أُخْت
     - أَخ
+  - - وَلَد
+    - شَمْس
+  - - كِتَاب
+    - حَرْب
 - id: sort_set_2
   question1:
     en: Find the singular
@@ -432,4 +436,24 @@ words:
   ar: أصدقاء
   transliteration: '''asdiqa'''
   ru: друзья
+- en: child
+  ar: ولد
+  transliteration: walad
+  vocalized: وَلَد
+  ru: мальчик
+- en: sun
+  ar: شمس
+  transliteration: shams
+  vocalized: شَمْس
+  ru: солнце
+- en: book
+  ar: كتاب
+  transliteration: kitaab
+  vocalized: كِتَاب
+  ru: книга
+- en: war
+  ar: حرب
+  transliteration: harb
+  vocalized: حَرْب
+  ru: война
 sentences: []

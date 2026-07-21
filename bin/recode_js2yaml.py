@@ -27,8 +27,14 @@ def str_presenter(dumper, data):
 
 yaml.add_representer(str, str_presenter) 
 
+def _notify(severity, msg):
+    print(f"{severity}: {msg}")
+
 def info(msg):
-    print("INFO: {}".format(msg))
+    _notify("INFO", msg)
+
+def error(msg):
+    _notify("ERROR", msg)
 
 def quot_escape(line):
     """
@@ -133,6 +139,13 @@ def save_yaml(fname, data):
                   width=4096)
 
 def aggregate_list(materials, locales, target_lang):
+    """
+    Use a list of 3-element sets to build a list of records with all languages translations
+    @param materials: input list
+    @param locales: information for localization per language
+    @param target_lang: target language code
+    @return: list of fully filled records
+    """
     result = []
     for row in materials:
         try:
@@ -151,7 +164,7 @@ def aggregate_list(materials, locales, target_lang):
                    record[lang] = associations[en] 
             result.append(record)
         except Exception as e:
-            print("Exception for {} - {}".format(row, e))
+            error("Exception for {} - {}".format(row, e))
     return result
 
 def aggregate_data(lessons, locales, manifest):
@@ -220,12 +233,22 @@ def aggregate_data(lessons, locales, manifest):
             for pairs_set in pairs_sets:
                 # decode words / abc
                 if 'abc' in pairs_set:
-                    set_name = 'abc'
+                    set_type = 'abc'
                 elif 'words' in pairs_set:
-                    set_name = 'words'
+                    set_type = 'words'
                 else:
                     continue
-                pairs_set[set_name] = aggregate_list(pairs_set[set_name], locales, target_lang)
+                aggregated_list = aggregate_list(pairs_set[set_type], locales, target_lang)
+                # for each record
+                #  - extract target lang word
+                #  - make sure respective record present in topic itself
+                for rec in aggregated_list:
+                    target_str = rec.get(target_lang)
+                    if not target_str:
+                        error(f"failed to parse {rec}")
+                        continue
+                    append_if_missing(topic[set_type], rec, target_str, target_lang)
+                pairs_set[set_type] = aggregated_list
                 # split title by languages
                 pairs_set_title = pairs_set['title']
                 pairs_set['title'] = {'en': pairs_set_title}
@@ -260,6 +283,19 @@ def aggregate_data(lessons, locales, manifest):
         locales[lang].pop('content', None)
     manifest['locales'] = locales
     return lessons, manifest
+
+def append_if_missing(topic_list, rec, target_str, target_lang):
+    """
+    Lookup for target string in topic list
+    If missing - append this record
+    """
+    for t in topic_list:
+        t_visual = t.get(target_lang)
+        t_vocalized = t.get('vocalized')
+        if target_str in (t_visual, t_vocalized):
+            # Found - no need to duplicate
+            return
+    topic_list.append(rec)
 
 def parse_arguments():
     """

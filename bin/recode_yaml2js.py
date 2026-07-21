@@ -209,6 +209,10 @@ def get_visual_from_vocalized(v_text, target_lang):
 def extract_from_list(materials, locales, target_lang):
     """
     Using a list of records create pure 3-element arrays and store translations in locales
+    @param materials: list of records with strings per language code
+    @param locales: locales object (updated with non-'en' languages translations)
+    @param target_lang: target language code
+    @return: list of 3-element sets [eng_str, target_lang_str, transliteration], updated locales
     """
     result = []
     for row in materials:
@@ -233,7 +237,7 @@ def extract_from_list(materials, locales, target_lang):
                         en, locales[lang]['content'][en], translation))
                 locales[lang]['content'][en] = translation
         except Exception as e:
-            print("Exception for {} - {}".format(row, e))
+            raise Exception("extract for {} failed - {}".format(row, e))
     return (result, locales)
 
 def separate_data(lessons, metadata):
@@ -296,7 +300,6 @@ def separate_data(lessons, metadata):
         sort_set = topic.get('sort_set')
         if sort_set:
             new_sort_set = decode_sort_set(sort_set, locales, target_lang, topic['words'])
-            # TODO: decode other translations too
             topic['sort_set'] = new_sort_set
         # same for pairs_set (list with "words"/"abc" inside)
         pairs_sets = topic.get('pairs_set')
@@ -304,13 +307,16 @@ def separate_data(lessons, metadata):
             new_sets = []
             for pairs_set in pairs_sets:
                 if 'words' in pairs_set:
-                    key = 'words'
+                    set_type = 'words'
                 elif 'abc' in pairs_set:
-                    key = 'abc'
+                    set_type = 'abc'
                 else:
                     raise Exception(f"unsupported pairs set data type - {pairs_set}")
-                (new_value, locales) = extract_from_list(pairs_set[key], locales, target_lang)
-                pairs_set[key] = new_value
+                (extracted_list, locales) = extract_from_list(pairs_set[set_type], locales, target_lang)
+                pairs_set[set_type] = extracted_list
+                # make sure each target word id present in lesson's dictionary
+                for rec in extracted_list:
+                    append_if_missing(topic[set_type], rec, target_lang)
                 # split title translations
                 pairs_set_title = pairs_set['title'].pop('en')
                 for lang in pairs_set['title']:
@@ -337,6 +343,21 @@ def separate_data(lessons, metadata):
     metadata['feedback'] = feedback
     metadata.pop('locales')
     return (updated_lessons, locales, metadata)
+
+def append_if_missing(topic_list, rec, target_lang):
+    """
+    Lookup in topic list for record with the same string for target language
+    If missing - append this record
+    """
+    visual = rec[1].split('@')[0]
+    vocalized = rec[1].split('@')[-1]
+    lookup_list = (visual, vocalized)
+    for t in topic_list:
+        t_visual = t[1].split('@')[0]
+        t_vocalized = t[1].split('@')[-1]
+        if t_visual in lookup_list or t_vocalized in lookup_list:
+            return
+    topic_list.append(rec)
 
 def parse_arguments():
     """
