@@ -963,6 +963,8 @@ function renderSortingGame() {
 
     const questionContainer = document.getElementById('sorting-question-container');
     const bankContainer = document.getElementById('sort-bank');
+    const topicId = settings.getCurrentTopic();
+    let topicWords = (topics[topicId]['words'] || []).concat(topics[topicId]['abc']);
     // get an input data set
     const currentData = getDataSetForSortingGame();
     // show the prompt message
@@ -971,15 +973,22 @@ function renderSortingGame() {
     // assign click event to input elements in sent-words
     let bankWords = shuffle([...currentData.set_correct, ...currentData.set_wrong]);
     bankContainer.innerHTML = '';
-    let bankWordClass = 'sent-word target-text sorting-word';
     for (let i = 0; i < bankWords.length; i++) {
         const wordText = bankWords[i];
+        // find matching records in topic abc/words
+        let transcription = '';
+        const matching_record = getMatchingRecord(topicWords, wordText);
+        // use a transcription in the created element
+        if (matching_record) {
+            transcription = `<div class="dictionary-transl transcription">[${matching_record[2]}]</div>`;
+        }
         const bankWord = document.createElement('span');
         bankWord.onclick = () => useSortBankWord(i);
-        bankWord.className = bankWordClass;
+        bankWord.className = 'sent-word sorting-word';
         bankWord.dir = targetDir;
         bankWord.lang = courseTargetLanguage;
-        bankWord.textContent = wordDisplayText(wordText);
+        const wordSpan = `<div class="target-text" >${wordDisplayText(wordText)}</div>`;
+        bankWord.innerHTML = `${wordSpan}${transcription}`;
         bankWord.dataset.id = i;
         bankWord.dataset.correct = currentData.set_correct.includes(wordText) ? 1 : '';
         bankWord.id = "sort-bank-word-" + i;
@@ -989,6 +998,8 @@ function renderSortingGame() {
     errors = 0;
     matches = 0;
     expectedMatches = currentData.set_correct.length;
+    // hide/show transcription data in words
+    updateTranscriptionDisplay();
     // make counter element visible
     document.getElementById('errors-panel').classList.remove('hidden');
     showErrorCount(0);
@@ -1038,19 +1049,16 @@ function getDataSetForSortingGame() {
     pairsList = shuffle(pairsList).slice(0, desiredNumber);
     let set_correct = [];
     let set_wrong = [];
-    let topicWords = topics[topicId]['words'];
+    // use both 'abc' and 'words' for lookups
+    let topicWords = (topics[topicId]['words'] || []).concat(topics[topicId]['abc']);
     for (let i=0; i<pairsList.length; i++) {
         const correct_word = pairsList[i][direction ? 1 : 0];
         const wrong_word = pairsList[i][direction ? 0 : 1];
         set_correct.push( correct_word );
         set_wrong.push( wrong_word );
         // push to roundRecap word from words matching correct_word
-        for (const r of topicWords) {
-            if (wordDisplayText(r[1]) == wordDisplayText(correct_word) || wordVocalizedText(r[1]) == wordVocalizedText(correct_word)) {
-                roundRecap.push(r);
-                break;
-            }
-        }
+        const matching_record = getMatchingRecord(topicWords, correct_word);
+        if (matching_record) { roundRecap.push(matching_record); }
     }
     roundRecap.forEach((item, index) => { roundRecap[index] = decodeLearnItem(item); });
     return {
@@ -1058,6 +1066,16 @@ function getDataSetForSortingGame() {
         'set_correct': set_correct,
         'set_wrong': set_wrong
     }
+}
+
+// in a list of records find one that have same visual/vocalized representation as target_string
+function getMatchingRecord(records, target_string) {
+    for (const r of records) {
+        if (wordDisplayText(r[1]) == wordDisplayText(target_string) || wordVocalizedText(r[1]) == wordVocalizedText(target_string)) {
+            return r;
+        }
+    }
+    return {};
 }
 
 // callback for any sort-bank-word click

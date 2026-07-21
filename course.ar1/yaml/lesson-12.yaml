@@ -37,10 +37,10 @@ sort_set:
     - سَيِّد
   - - أُخْت
     - أَخ
-  - - وَلَد
-    - شَمْس
-  - - كِتَاب
-    - حَرْب
+  - - شَمْس
+    - وَلَد
+  - - حَرْب
+    - كِتَاب
 - id: sort_set_2
   question1:
     en: Find the singular
@@ -57,6 +57,8 @@ sort_set:
     - دَوْلِيَّة
     - عَيْلَة
     - أَب
+    - فستان
+    - مقعد
   - - فنون
     - أرقام
     - مفاتيح
@@ -64,6 +66,8 @@ sort_set:
     - طلاب
     - سيارات
     - أصدقاء
+    - فساتين
+    - مقاعد
 pairs_set:
 - title:
     en: Adverbs
@@ -456,4 +460,20 @@ words:
   transliteration: harb
   vocalized: حَرْب
   ru: война
+- en: dress
+  ar: فستان
+  transliteration: fustan
+  ru: платье
+- en: dresses
+  ar: فساتين
+  transliteration: fasatin
+  ru: платья
+- en: a seat
+  ar: مقعد
+  transliteration: maqead
+  ru: сиденье
+- en: the seats
+  ar: مقاعد
+  transliteration: maqaeid
+  ru: сиденья
 sentences: []

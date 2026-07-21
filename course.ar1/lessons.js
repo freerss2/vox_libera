@@ -2667,12 +2667,12 @@ The goal is to practice independently in the game format, but without the risk o
             "أَخ"
           ],
           [
-            "وَلَد",
-            "شَمْس"
+            "شَمْس",
+            "وَلَد"
           ],
           [
-            "كِتَاب",
-            "حَرْب"
+            "حَرْب",
+            "كِتَاب"
           ]
         ]
       },
@@ -2689,7 +2689,9 @@ The goal is to practice independently in the game format, but without the risk o
             "مُهَنْدِس",
             "دَوْلِيَّة",
             "عَيْلَة",
-            "أَب"
+            "أَب",
+            "فستان",
+            "مقعد"
           ],
           [
             "فنون",
@@ -2698,7 +2700,9 @@ The goal is to practice independently in the game format, but without the risk o
             "كلمات",
             "طلاب",
             "سيارات",
-            "أصدقاء"
+            "أصدقاء",
+            "فساتين",
+            "مقاعد"
           ]
         ]
       }
@@ -3150,6 +3154,26 @@ The goal is to practice independently in the game format, but without the risk o
         "war",
         "حرب@حَرْب",
         "harb"
+      ],
+      [
+        "dress",
+        "فستان",
+        "fustan"
+      ],
+      [
+        "dresses",
+        "فساتين",
+        "fasatin"
+      ],
+      [
+        "a seat",
+        "مقعد",
+        "maqead"
+      ],
+      [
+        "the seats",
+        "مقاعد",
+        "maqaeid"
       ]
     ],
     "sentences": [],
