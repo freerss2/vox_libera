@@ -19,6 +19,9 @@ import yaml
 import argparse
 from pathlib import Path
 
+import sys
+sys.path.append('.')
+from validate_yaml_lesson_structure import validate_with_lines
 
 OUTPUT_LOCALES_FILE = "locales.js"
 OUTPUT_LESSONS_FILE = "lessons.js"
@@ -176,6 +179,9 @@ def read_input(dirname):
     directory = Path(dirname)
     lesson_files = list(directory.glob("lesson-*.yaml"))
     for file in sorted(lesson_files):
+        err_msg = validate_with_lines(file)
+        if err_msg:
+            raise Exception(err_msg)
         lessons.append(read_yaml(file))
     # 2. read the file manifest.yaml
     manifest_file_name = os.path.join(dirname, INPUT_MANIFEST_FILE)
