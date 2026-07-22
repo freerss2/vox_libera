@@ -964,7 +964,7 @@ function renderSortingGame() {
     const questionContainer = document.getElementById('sorting-question-container');
     const bankContainer = document.getElementById('sort-bank');
     const topicId = settings.getCurrentTopic();
-    let topicWords = (topics[topicId]['words'] || []).concat(topics[topicId]['abc']);
+    let topicDict = getTopicDictionary(topics[topicId], ['words', 'abc']);
     // get an input data set
     const currentData = getDataSetForSortingGame();
     // show the prompt message
@@ -977,7 +977,7 @@ function renderSortingGame() {
         const wordText = bankWords[i];
         // find matching records in topic abc/words
         let transcription = '';
-        const matching_record = getMatchingRecord(topicWords, wordText);
+        const matching_record = getMatchingRecord(topicDict, wordText);
         // use a transcription in the created element
         if (matching_record) {
             transcription = `<div class="dictionary-transl transcription">[${matching_record[2]}]</div>`;
@@ -1044,20 +1044,21 @@ function getDataSetForSortingGame() {
         }
     }
     // randomize and slice a desired number
-    const desiredNumber = 5;
+    const desiredNumber = gameSettings.itemsPerRound;
     roundRecap = []
     pairsList = shuffle(pairsList).slice(0, desiredNumber);
     let set_correct = [];
     let set_wrong = [];
     // use both 'abc' and 'words' for lookups
-    let topicWords = (topics[topicId]['words'] || []).concat(topics[topicId]['abc']);
+
+    let topicDict = getTopicDictionary(topics[topicId], ['words', 'abc']);
     for (let i=0; i<pairsList.length; i++) {
         const correct_word = pairsList[i][direction ? 1 : 0];
         const wrong_word = pairsList[i][direction ? 0 : 1];
         set_correct.push( correct_word );
         set_wrong.push( wrong_word );
         // push to roundRecap word from words matching correct_word
-        const matching_record = getMatchingRecord(topicWords, correct_word);
+        const matching_record = getMatchingRecord(topicDict, correct_word);
         if (matching_record) { roundRecap.push(matching_record); }
     }
     roundRecap.forEach((item, index) => { roundRecap[index] = decodeLearnItem(item); });
@@ -1066,6 +1067,16 @@ function getDataSetForSortingGame() {
         'set_correct': set_correct,
         'set_wrong': set_wrong
     }
+}
+
+// for given keys extract records from topic
+function getTopicDictionary(topic, keys) {
+  let result = [];
+  for (const key of keys) {
+    let records = topic[key] || [];
+    result = result.concat(records);
+  }
+  return result;
 }
 
 // in a list of records find one that have same visual/vocalized representation as target_string

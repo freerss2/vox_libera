@@ -10,9 +10,17 @@ const course_locales =
         "question1": "Find feminine words",
         "question2": "Find masculine words"
       },
-      "sort_set_2": {
+      "sort_singular_plural_1": {
         "question1": "Find the singular",
         "question2": "Find the plural"
+      },
+      "sort_adjective_comparative_v1": {
+        "question1": "Find comparative form",
+        "question2": "find non-comparative adjective"
+      },
+      "sort_colors_fem_irregular": {
+        "question1": "Find feminine form",
+        "question2": "Find masculine form"
       }
     },
     "content": {}
@@ -172,6 +180,7 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "Time and Place": "Время и место",
       "Possessive Suffixes \"home\"": "Местоимённые суффиксы \"дом\"",
       "Possessive Suffixes \"friend\"": "Местоимённые суффиксы \"друг\"",
+      "Colors": "Цвета",
       "Arabic Basics": "Основы арабского",
       "Great!": "Отлично!",
       "Perfect!": "Превосходно!",
@@ -213,9 +222,17 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
         "question1": "Найди слова женского рода",
         "question2": "Найди слова мужского рода"
       },
-      "sort_set_2": {
+      "sort_singular_plural_1": {
         "question1": "Найди единственное число",
         "question2": "Найди множественное число"
+      },
+      "sort_adjective_comparative_v1": {
+        "question1": "Найди сравнительную форму",
+        "question2": "Найди обычную форму прилагательного"
+      },
+      "sort_colors_fem_irregular": {
+        "question1": "Найди женскую форму",
+        "question2": "Найди мужскую форму"
       }
     },
     "content": {
@@ -691,6 +708,46 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "the doctor is inside the clinic": "врач внутри клиники",
       "the nurse is at the reception": "медсестра в регистратуре",
       "this hospital is big": "эта больница большая",
+      "white (f)": "белая",
+      "gray (f)": "серая",
+      "black (f)": "чёрная",
+      "red (f)": "красная",
+      "yellow (f)": "жёлтая",
+      "green (f)": "зелёная",
+      "blue (f)": "синяя",
+      "orange (f)": "оранжевая",
+      "purple (f)": "фиолетовая",
+      "brown (f)": "коричневая",
+      "pink (f)": "розовая",
+      "white": "белый",
+      "gray": "серый",
+      "black": "чёрный",
+      "red": "красный",
+      "yellow": "жёлтый",
+      "green": "зелёный",
+      "orange": "оранжевый",
+      "brown": "коричневый",
+      "pink": "розовый",
+      "greater": "больше",
+      "big": "большой",
+      "smaller": "меньше",
+      "small": "маленький",
+      "more expensive": "дороже",
+      "expensive": "дорогой",
+      "cheaper": "дешевле",
+      "cheap": "дешёвый",
+      "newer": "новее",
+      "new": "новый",
+      "older": "старее",
+      "old": "старый",
+      "poorest": "беднее",
+      "poor": "бедный",
+      "richest": "богаче",
+      "rich": "богатый",
+      "near": "близко",
+      "closer": "ближе",
+      "more": "более",
+      "very": "очень",
       "my friend": "мой друг",
       "your (m) friend": "твой (м) друг",
       "your (f) friend": "твой (ж) друг",
@@ -711,7 +768,6 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "need": "нужно",
       "but": "но",
       "away": "вдали",
-      "near": "рядом",
       "yesterday": "вчера",
       "today": "сегодня",
       "soon": "скоро",

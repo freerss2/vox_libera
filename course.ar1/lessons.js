@@ -2689,7 +2689,7 @@ The goal is to practice independently in the game format, but without the risk o
         ]
       },
       {
-        "id": "sort_set_2",
+        "id": "sort_singular_plural_1",
         "question1": {},
         "question2": {},
         "type": "lists",
@@ -2715,6 +2715,106 @@ The goal is to practice independently in the game format, but without the risk o
             "أصدقاء",
             "فساتين",
             "مقاعد"
+          ]
+        ]
+      },
+      {
+        "id": "sort_adjective_comparative_v1",
+        "question1": {},
+        "question2": {},
+        "type": "pairs",
+        "data": [
+          [
+            "أَكْبَر",
+            "كْبِير"
+          ],
+          [
+            "أَزْغَر",
+            "زْغِير"
+          ],
+          [
+            "أَغْلَى",
+            "غَالِي"
+          ],
+          [
+            "أَرْخَص",
+            "رْخِيص"
+          ],
+          [
+            "أَجْدَد",
+            "جْدِيد"
+          ],
+          [
+            "أَقْدَم",
+            "قَدِيم"
+          ],
+          [
+            "أَفْقَر",
+            "فَقِير"
+          ],
+          [
+            "أَغْنَى",
+            "غَنِي"
+          ],
+          [
+            "أَكْتَر",
+            "كْتِير"
+          ],
+          [
+            "أَقْرَب",
+            "قَرِيب"
+          ]
+        ]
+      },
+      {
+        "id": "sort_colors_fem_irregular",
+        "question1": {},
+        "question2": {},
+        "type": "pairs",
+        "data": [
+          [
+            "بَيْضَا",
+            "أبيض"
+          ],
+          [
+            "سَوْدَا",
+            "أسود"
+          ],
+          [
+            "حَمْرَا",
+            "أحمر"
+          ],
+          [
+            "صَفْرَا",
+            "أصفر"
+          ],
+          [
+            "خَضْرَا",
+            "أخضر"
+          ],
+          [
+            "زَرْقَا",
+            "أزرق"
+          ],
+          [
+            "رمادِيِّة",
+            "رمادي"
+          ],
+          [
+            "برتقانِيِّة",
+            "برتقالي"
+          ],
+          [
+            "بنفسجِيِّة",
+            "بنفسجي"
+          ],
+          [
+            "بنِيِّة",
+            "بني"
+          ],
+          [
+            "وردِيِّة",
+            "وردي"
           ]
         ]
       }
@@ -2810,7 +2910,7 @@ The goal is to practice independently in the game format, but without the risk o
           ],
           [
             "near",
-            "قريب",
+            "قريب@قَرِيب",
             "qarib"
           ],
           [
@@ -2979,9 +3079,279 @@ The goal is to practice independently in the game format, but without the risk o
             "saahibhun"
           ]
         ]
+      },
+      {
+        "title": "Colors",
+        "words": [
+          [
+            "white",
+            "أبيض",
+            "abyad"
+          ],
+          [
+            "gray",
+            "رمادي",
+            "rmadi"
+          ],
+          [
+            "black",
+            "أسود",
+            "aswad"
+          ],
+          [
+            "red",
+            "أحمر",
+            "ahmar"
+          ],
+          [
+            "yellow",
+            "أصفر",
+            "asfar"
+          ],
+          [
+            "green",
+            "أخضر",
+            "akhdar"
+          ],
+          [
+            "blue",
+            "أزرق",
+            "azra"
+          ],
+          [
+            "orange",
+            "برتقالي",
+            "burtu'ani"
+          ],
+          [
+            "purple",
+            "بنفسجي",
+            "banafsaji"
+          ],
+          [
+            "brown",
+            "بني",
+            "binni"
+          ],
+          [
+            "pink",
+            "وردي",
+            "wardi"
+          ]
+        ]
       }
     ],
     "words": [
+      [
+        "white (f)",
+        "بيضا@بَيْضَا",
+        "bayda"
+      ],
+      [
+        "gray (f)",
+        "رماديّة@رمادِيِّة",
+        "rmadiyye"
+      ],
+      [
+        "black (f)",
+        "سودا@سَوْدَا",
+        "sawda"
+      ],
+      [
+        "red (f)",
+        "حمرا@حَمْرَا",
+        "hamra"
+      ],
+      [
+        "yellow (f)",
+        "صفرا@صَفْرَا",
+        "safra"
+      ],
+      [
+        "green (f)",
+        "خضرا@خَضْرَا",
+        "khadra"
+      ],
+      [
+        "blue (f)",
+        "زرقا@زَرْقَا",
+        "zarqa"
+      ],
+      [
+        "orange (f)",
+        "برتقانيّة@برتقانِيِّة",
+        "burtu'aniyye"
+      ],
+      [
+        "purple (f)",
+        "بنفسجيّة@بنفسجِيِّة",
+        "banafsajiyye"
+      ],
+      [
+        "brown (f)",
+        "بنيّة@بنِيِّة",
+        "binniyye"
+      ],
+      [
+        "pink (f)",
+        "ورديّة@وردِيِّة",
+        "wardiyye"
+      ],
+      [
+        "white",
+        "أبيض",
+        "abyad"
+      ],
+      [
+        "gray",
+        "رمادي",
+        "rmadi"
+      ],
+      [
+        "black",
+        "أسود",
+        "aswad"
+      ],
+      [
+        "red",
+        "أحمر",
+        "ahmar"
+      ],
+      [
+        "yellow",
+        "أصفر",
+        "asfar"
+      ],
+      [
+        "green",
+        "أخضر",
+        "akhdar"
+      ],
+      [
+        "blue",
+        "أزرق",
+        "azra"
+      ],
+      [
+        "orange",
+        "برتقالي",
+        "burtu'ani"
+      ],
+      [
+        "purple",
+        "بنفسجي",
+        "banafsaji"
+      ],
+      [
+        "brown",
+        "بني",
+        "binni"
+      ],
+      [
+        "pink",
+        "وردي",
+        "wardi"
+      ],
+      [
+        "greater",
+        "أكبر@أَكْبَر",
+        "'akbar"
+      ],
+      [
+        "big",
+        "كبير@كْبِير",
+        "kbir"
+      ],
+      [
+        "smaller",
+        "أزغر@أَزْغَر",
+        "'azghar"
+      ],
+      [
+        "small",
+        "زغير@زْغِير",
+        "zhir"
+      ],
+      [
+        "more expensive",
+        "أغلى@أَغْلَى",
+        "'aghlaa"
+      ],
+      [
+        "expensive",
+        "غالي@غَالِي",
+        "ghali"
+      ],
+      [
+        "cheaper",
+        "أرخص@أَرْخَص",
+        "'arkhas"
+      ],
+      [
+        "cheap",
+        "رخيص@رْخِيص",
+        "rkhis"
+      ],
+      [
+        "newer",
+        "أجدد@أَجْدَد",
+        "'ajdad"
+      ],
+      [
+        "new",
+        "جديد@جْدِيد",
+        "jdid"
+      ],
+      [
+        "older",
+        "أقدم@أَقْدَم",
+        "'aqdam"
+      ],
+      [
+        "old",
+        "قديم@قَدِيم",
+        "qadim"
+      ],
+      [
+        "poorest",
+        "أفقر@أَفْقَر",
+        "'afqar"
+      ],
+      [
+        "poor",
+        "فقير@فَقِير",
+        "faqir"
+      ],
+      [
+        "richest",
+        "أغنى@أَغْنَى",
+        "'aghnaa"
+      ],
+      [
+        "rich",
+        "غني@غَنِي",
+        "ghani"
+      ],
+      [
+        "near",
+        "قريب@قَرِيب",
+        "qarib"
+      ],
+      [
+        "closer",
+        "أقرب@أَقْرَب",
+        "'aqrab"
+      ],
+      [
+        "more",
+        "أكتر@أَكْتَر",
+        "'aktar"
+      ],
+      [
+        "very",
+        "كتير@كْتِير",
+        "ktir"
+      ],
       [
         "my friend",
         "صاحبي",
@@ -3141,11 +3511,6 @@ The goal is to practice independently in the game format, but without the risk o
         "away",
         "بعيد",
         "ba'id"
-      ],
-      [
-        "near",
-        "قريب",
-        "qarib"
       ],
       [
         "here",
@@ -3400,7 +3765,7 @@ The goal is to practice independently in the game format, but without the risk o
       [
         "peer (f)",
         "زميلة@زَمِيلِة",
-        "zamili"
+        "zamilia"
       ],
       [
         "peer (m)",
@@ -3410,7 +3775,7 @@ The goal is to practice independently in the game format, but without the risk o
       [
         "policewoman",
         "شرطيّة@شُرْطِيِّة",
-        "shurtii"
+        "shurtiia"
       ],
       [
         "policeman",
@@ -3420,7 +3785,7 @@ The goal is to practice independently in the game format, but without the risk o
       [
         "teacher (f)",
         "معلّمة@مُعَلِّمِة",
-        "mueallimi"
+        "mueallimia"
       ],
       [
         "teacher (m)",

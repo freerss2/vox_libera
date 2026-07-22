@@ -2,6 +2,7 @@ id: training_1
 name:
   en: Practice the Learned
   ru: Тренируем Выученное
+
 explanations:
   en: |
     ### This lesson is designed to consolidate what has been learned.
@@ -13,6 +14,7 @@ explanations:
     Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
     Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
     Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
+
 sort_set:
 - id: sort_people_pairs_v1
   question1:
@@ -35,7 +37,7 @@ sort_set:
     - [ دُكْتُورَة, دُكْتُور ] 
     - [ مُمَرِّضَة, مُمَرِّض ] 
     - [ آنِسَة, سَيِّد ]   
-- id: sort_set_2
+- id: sort_singular_plural_1
   question1:
     en: Find the singular
     ru: Найди единственное число
@@ -62,6 +64,47 @@ sort_set:
     - أصدقاء
     - فساتين
     - مقاعد
+- id: sort_adjective_comparative_v1
+  question1:
+    en: Find comparative form
+    ru: Найди сравнительную форму
+  question2:
+    en: find non-comparative adjective
+    ru: Найди обычную форму прилагательного
+  type: pairs
+  data:
+    - [ أَكْبَر, كْبِير ]      
+    - [ أَزْغَر, زْغِير ]      
+    - [ أَغْلَى, غَالِي ]      
+    - [ أَرْخَص, رْخِيص ]      
+    - [ أَجْدَد, جْدِيد ]      
+    - [ أَقْدَم, قَدِيم ]      
+    - [ أَفْقَر, فَقِير ]      
+    - [ أَغْنَى, غَنِي ]       
+    - [ أَكْتَر, كْتِير ]      
+    - [ أَقْرَب, قَرِيب ] 
+
+- id: sort_colors_fem_irregular
+  question1:
+    en: Find feminine form
+    ru: Найди женскую форму
+  question2:
+    en: Find masculine form
+    ru: Найди мужскую форму
+  type: pairs
+  data:
+    - [ بَيْضَا, أبيض ]
+    - [ سَوْدَا, أسود ]
+    - [ حَمْرَا, أحمر ]
+    - [ صَفْرَا, أصفر ]
+    - [ خَضْرَا, أخضر ]
+    - [ زَرْقَا, أزرق ]
+    - [ رمادِيِّة, رمادي ]
+    - [ برتقانِيِّة, برتقالي ]
+    - [ بنفسجِيِّة, بنفسجي ]
+    - [ بنِيِّة, بني ]
+    - [ وردِيِّة, وردي ]
+
 pairs_set:
 - title:
     en: Adverbs
@@ -87,7 +130,7 @@ pairs_set:
     ru: Время и место
   words:
   - بعيد
-  - قريب
+  - قَرِيب
   - هنا
   - جنب
   - فاضي
@@ -128,7 +171,195 @@ pairs_set:
   - صاحِبْكُن
   - صاحِبْهُن
 
+- title:
+    en: Colors
+    ru: Цвета
+  words:
+  - أبيض
+  - رمادي
+  - أسود
+  - أحمر
+  - أصفر
+  - أخضر
+  - أزرق
+  - برتقالي
+  - بنفسجي
+  - بني
+  - وردي
+
 words:
+
+- en: white (f)
+  ar: بَيْضَا
+  transliteration: bayda
+  ru: белая
+- en: gray (f)
+  ar: رمادِيِّة
+  transliteration: rmadiyye
+  ru: серая
+- en: black (f)
+  ar: سَوْدَا
+  transliteration: sawda
+  ru: чёрная
+- en: red (f)
+  ar: حَمْرَا
+  transliteration: hamra
+  ru: красная
+- en: yellow (f)
+  ar: صَفْرَا
+  transliteration: safra
+  ru: жёлтая
+- en: green (f)
+  ar: خَضْرَا
+  transliteration: khadra
+  ru: зелёная
+- en: blue (f)
+  ar: زَرْقَا
+  transliteration: zarqa
+  ru: синяя
+- en: orange (f)
+  ar: برتقانِيِّة
+  transliteration: burtu'aniyye
+  ru: оранжевая
+- en: purple (f)
+  ar: بنفسجِيِّة
+  transliteration: banafsajiyye
+  ru: фиолетовая
+- en: brown (f)
+  ar: بنِيِّة
+  transliteration: binniyye
+  ru: коричневая
+- en: pink (f)
+  ar: وردِيِّة
+  transliteration: wardiyye
+  ru: розовая
+
+- en: white
+  ar: أبيض
+  transliteration: abyad
+  ru: белый
+- en: gray
+  ar: رمادي
+  transliteration: rmadi
+  ru: серый
+- en: black
+  ar: أسود
+  transliteration: aswad
+  ru: чёрный
+- en: red
+  ar: أحمر
+  transliteration: ahmar
+  ru: красный
+- en: yellow
+  ar: أصفر
+  transliteration: asfar
+  ru: жёлтый
+- en: green
+  ar: أخضر
+  transliteration: akhdar
+  ru: зелёный
+- en: blue
+  ar: أزرق
+  transliteration: azra
+  ru: синий
+- en: orange
+  ar: برتقالي
+  transliteration: burtu'ani
+  ru: оранжевый
+- en: purple
+  ar: بنفسجي
+  transliteration: banafsaji
+  ru: фиолетовый
+- en: brown
+  ar: بني
+  transliteration: binni
+  ru: коричневый
+- en: pink
+  ar: وردي
+  transliteration: wardi
+  ru: розовый
+
+- ar: أَكْبَر
+  transliteration: "'akbar"
+  en: greater
+  ru: больше
+- ar: كْبِير
+  transliteration: kbir
+  en: big
+  ru: большой
+- ar: أَزْغَر
+  transliteration: "'azghar"
+  en: smaller
+  ru: меньше
+- ar: زْغِير
+  transliteration: zhir
+  en: small
+  ru: маленький
+- ar: أَغْلَى
+  transliteration: "'aghlaa"
+  en: more expensive
+  ru: дороже
+- ar: غَالِي
+  transliteration: ghali
+  en: expensive
+  ru: дорогой
+- ar: أَرْخَص
+  transliteration: "'arkhas"
+  en: cheaper
+  ru: дешевле
+- ar: رْخِيص
+  transliteration: rkhis
+  en: cheap
+  ru: дешёвый
+- ar: أَجْدَد
+  transliteration: "'ajdad"
+  en: newer
+  ru: новее
+- ar: جْدِيد
+  transliteration: jdid
+  en: new
+  ru: новый
+- ar: أَقْدَم
+  transliteration: "'aqdam"
+  en: older
+  ru: старее
+- ar: قَدِيم
+  transliteration: "qadim"
+  en: old
+  ru: старый
+- ar: أَفْقَر
+  transliteration: "'afqar"
+  en: poorest
+  ru: беднее
+- ar: فَقِير
+  transliteration: faqir
+  en: poor
+  ru: бедный
+- ar: أَغْنَى
+  transliteration: "'aghnaa"
+  en: richest
+  ru: богаче
+- ar: غَنِي
+  transliteration: "ghani"
+  en: rich
+  ru: богатый
+- ar: قَرِيب
+  transliteration: "qarib"
+  en: near
+  ru: близко
+- ar: أَقْرَب
+  transliteration: "'aqrab"
+  en: closer
+  ru: ближе
+- ar: أَكْتَر
+  transliteration: "'aktar"
+  en: more
+  ru: более
+- ar: كْتِير
+  transliteration: ktir
+  en: very
+  ru: очень
+
 - ar: صاحبي
   transliteration: saahbi
   en: my friend
@@ -263,10 +494,6 @@ words:
   ar: بعيد
   transliteration: ba'id
   ru: вдали
-- en: near
-  ar: قريب
-  transliteration: qarib
-  ru: рядом
 - en: here
   ar: هنا
   transliteration: huna
@@ -492,7 +719,7 @@ words:
   ru: сосед
 - en: peer (f)
   ar: زَمِيلِة
-  transliteration: zamili
+  transliteration: zamilia
   ru: сотрудница
 - en: peer (m)
   ar: زَمِيل
@@ -500,7 +727,7 @@ words:
   ru: сотрудник
 - en: policewoman
   ar: شُرْطِيِّة
-  transliteration: shurtii
+  transliteration: shurtiia
   ru: полицейская
 - en: policeman
   ar: شُرْطِي
@@ -508,7 +735,7 @@ words:
   ru: полицейский
 - en: teacher (f)
   ar: مُعَلِّمِة
-  transliteration: mueallimi
+  transliteration: mueallimia
   ru: учитель (ж)
 - en: teacher (m)
   ar: مُعَلِّم
@@ -530,7 +757,5 @@ words:
   ar: مُمَرِّض
   transliteration: mumarrid
   ru: медбрат
-
-
 
 sentences: []
