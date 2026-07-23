@@ -861,9 +861,9 @@ function renderMatchingGame() {
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
     
     gameErrorData = [];
-    wordsMappingForSorting = [];
+    wordsMappingForSummary = [];
     // TODO: store each tile record
-    pool.forEach((p, i) => {p.push(i); wordsMappingForSorting.push(p);} );
+    pool.forEach((p, i) => {p.push(i); wordsMappingForSummary.push(p);} );
 
     // Solving the case when currentData is shorter than requested difficulty setting
     pairItemsInRound = pool.length;
@@ -935,10 +935,9 @@ function checkPairMatch() {
     } else {
         updateStats(targetStr, false);
         errors++;
-        // extract associated record from wordsMappingForSorting
         const index = r.dataset.index;
-        // save associated record in gameErrorData
-        gameErrorData = wordsMappingForSorting[index];
+        // save associated record
+        gameErrorData = wordsMappingForSummary[index];
         showErrorCount(errors);
         l.classList.add('wrong'); r.classList.add('wrong');
         setTimeout(() => {
@@ -973,7 +972,7 @@ function showErrorCount(errors) {
 // game ends automatically when all rigth elements are sorted-out
 
 let expectedMatches = 0;
-let wordsMappingForSorting = [];
+let wordsMappingForSummary = [];
 
 function renderSortingGame() {
 
@@ -981,7 +980,7 @@ function renderSortingGame() {
     const bankContainer = document.getElementById('sort-bank');
     const topicId = settings.getCurrentTopic();
     let topicDict = getTopicDictionary(topics[topicId], ['words', 'abc']);
-    wordsMappingForSorting = [];
+    wordsMappingForSummary = [];
     // get an input data set
     const currentData = getDataSetForSortingGame();
     // show the prompt message
@@ -995,7 +994,7 @@ function renderSortingGame() {
         // find matching records in topic abc/words
         let transcription = '';
         const matching_record = getMatchingRecord(topicDict, wordText);
-        wordsMappingForSorting.push(matching_record);
+        wordsMappingForSummary.push(matching_record);
         // use a transcription in the created element
         if (matching_record) {
             transcription = `<div class="dictionary-transl transcription">[${matching_record[2]}]</div>`;
@@ -1130,7 +1129,7 @@ function useSortBankWord(index) {
     // increase errors count and show the count
     errors++;
     showErrorCount(errors);
-    gameErrorData = wordsMappingForSorting[index];
+    gameErrorData = wordsMappingForSummary[index];
     // show "incorrect" animation
     bankWordElement.classList.add('wrong');
     setTimeout(() => {
@@ -1338,6 +1337,8 @@ function renderQuizGame(screen_id) {
     const options = generateDistractors(quizCorrectStr, shuffle(allStrs), gameSettings.totalChoices);
     firstAttempt = true;
 
+    wordsMappingForSummary = [quizCorrectStr];
+
     options.forEach(word => {
         const btn = document.createElement('div');
         btn.className = 'card quiz-card';
@@ -1428,6 +1429,7 @@ function startNewQuizSet() {
     document.getElementById('errors-panel').classList.remove('hidden');
     showErrorCount(0);
     updateProgress(0);
+    gameErrorData = [];
 
     renderQuizGame(settings.getCurrentScreenId());
 }
@@ -1449,6 +1451,12 @@ function quizGiveup() {
     }
   });
   updateStats(displayText, false);
+  gameErrorData = wordsMappingForSummary[0];
+  if (firstAttempt) {
+    gameSet.errors++;
+    showErrorCount(gameSet.errors);
+  }
+  firstAttempt = false;
 }
 
 // Callback for click on quiz button
@@ -1488,6 +1496,7 @@ function handleQuizChoice(selectedStr, btn) {
           showErrorCount(gameSet.errors);
         }
         firstAttempt = false;
+        gameErrorData = wordsMappingForSummary[0];
         updateStats(quizCorrectStr[1], firstAttempt);
         btn.classList.add('wrong');
         btn.disabled = true; // Disable as already taken
