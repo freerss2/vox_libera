@@ -167,7 +167,10 @@ const SCREENS = [
 ];
 
 var topicScreens = [];
+// list of words/phrases that should appear as a dictionary on round completion
 var roundRecap = [];
+// word(s) that caused a trouble during the last game
+var gameErrorData = [];
 let currentPairsSetIndex = null;
 let lastRenderedTopicId = null;
 let lastRenderedScreenId = null;
@@ -635,6 +638,7 @@ function renderScreen(screen_id) {
     hideAllScreens();
     document.getElementById('recap-subtitle').textContent = '';
     roundRecap = [];
+    gameErrorData = [];
 
     // 2. Show related screen only
     const screenType = getScreenType(screen_id);
@@ -855,11 +859,18 @@ function renderMatchingGame() {
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
-    // Fix a case when currentData is too short for selected game settings
+    
+    gameErrorData = [];
+    wordsMappingForSorting = [];
+    // TODO: store each tile record
+    pool.forEach((p, i) => {p.push(i); wordsMappingForSorting.push(p);} );
+
+    // Solving the case when currentData is shorter than requested difficulty setting
     pairItemsInRound = pool.length;
+
     // Randomly shuffle pool on both sides
-    const leftSide = shuffle(pool.map(p => ({ t: p[0], id: p[1], h: p[2] })));
-    const rightSide = shuffle(pool.map(p => ({ t: p[1], id: p[1], h: p[2] })));
+    const leftSide = shuffle(pool.map(p => ({ t: p[0], id: p[1], h: p[2], i: p[3] })));
+    const rightSide = shuffle(pool.map(p => ({ t: p[1], id: p[1], h: p[2], i: p[3] })));
     roundRecap = pool;
 
     leftSide.forEach((item, i) => createTile(item, i, 'left', 'user', board));
@@ -876,12 +887,12 @@ function createTile(item, index, side, lang, container) {
     div.dataset.col = side;
     div.dataset.target = (lang === 'target' ? item.t : '');
     div.dataset.id = item.id;
+    div.dataset.index = item.i;
     div.style.gridColumn = side === 'left' ? '1' : '2';
     div.style.gridRow = (index + 1).toString();
 
     div.onclick = () => {
         if (lang === 'target') {
-          // perform when option enabled only
           document.getElementById('hint-panel').textContent = `[ ${item.h} ]`;
           speakTargetLang(item.t);
         }
@@ -924,6 +935,10 @@ function checkPairMatch() {
     } else {
         updateStats(targetStr, false);
         errors++;
+        // extract associated record from wordsMappingForSorting
+        const index = r.dataset.index;
+        // save associated record in gameErrorData
+        gameErrorData = wordsMappingForSorting[index];
         showErrorCount(errors);
         l.classList.add('wrong'); r.classList.add('wrong');
         setTimeout(() => {
@@ -958,6 +973,7 @@ function showErrorCount(errors) {
 // game ends automatically when all rigth elements are sorted-out
 
 let expectedMatches = 0;
+let wordsMappingForSorting = [];
 
 function renderSortingGame() {
 
@@ -965,6 +981,7 @@ function renderSortingGame() {
     const bankContainer = document.getElementById('sort-bank');
     const topicId = settings.getCurrentTopic();
     let topicDict = getTopicDictionary(topics[topicId], ['words', 'abc']);
+    wordsMappingForSorting = [];
     // get an input data set
     const currentData = getDataSetForSortingGame();
     // show the prompt message
@@ -978,6 +995,7 @@ function renderSortingGame() {
         // find matching records in topic abc/words
         let transcription = '';
         const matching_record = getMatchingRecord(topicDict, wordText);
+        wordsMappingForSorting.push(matching_record);
         // use a transcription in the created element
         if (matching_record) {
             transcription = `<div class="dictionary-transl transcription">[${matching_record[2]}]</div>`;
@@ -1112,6 +1130,7 @@ function useSortBankWord(index) {
     // increase errors count and show the count
     errors++;
     showErrorCount(errors);
+    gameErrorData = wordsMappingForSorting[index];
     // show "incorrect" animation
     bankWordElement.classList.add('wrong');
     setTimeout(() => {
@@ -1165,8 +1184,8 @@ function showWin(acc) {
     // For a variety take random phrase
     let pick = quotes[Math.floor(Math.random() * quotes.length)];
     const user_lang_feedback = i18n_ct(pick[0]);
-    // generate tip of the day
-    const tipText = tipOfTheDay();
+    // generate round recommendation message
+    const tipText = getRoundRecommendation();
 
     // visualize the popup
     document.getElementById('narrator-container').classList.remove('hidden');
@@ -1192,20 +1211,32 @@ function showWin(acc) {
 }
 
 
-function tipOfTheDay() {
-  // randomly choose either hint or recommended translation
-  if ( Math.random() > 0.5 ) {
-    const indx = Math.floor(Math.random() * 4);
-    const tip = i18n.t(`tip_of_the_day|${indx}`);
-    const title = i18n.t('tip_of_the_day|title');
-    return `💡${title}💡<BR>${tip}`;
+function getRoundRecommendation() {
+  const indx = Math.floor(Math.random() * 4);
+  const tip = i18n.t(`tip_of_the_day|${indx}`);
+  const title = i18n.t('tip_of_the_day|title');
+  const tipOfTheDay = `💡${title}💡<BR>${tip}`;
+  var hintData = null;
+
+  // if defined a gameErrorData - use it always for hint
+  if (gameErrorData) {
+    hintData = gameErrorData;
+  } else {
+    // get all words/sentences from current topic
+    const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
+    const allStrs = getTopicData(inputTypes, true, true);
+    // the strings are already filtered by success rate and shuffled
+    hintData = allStrs[0];
+    // randomly choose either hint or recommended translation
+    if ( hintData) {
+        if ( Math.random() > 0.5 ) {
+            hintData = null;
+        }
+    }
   }
-  // get all words/sentences from current topic
-  const inputTypes = getGameInputTypes(settings.getCurrentScreenId());
-  const allStrs = getTopicData(inputTypes, true, true);
-  // the strings are already filtered by success rate and shuffled
-  const hintData = allStrs[0];
-  if (!hintData) return '';
+  if (! hintData || !hintData.length) {
+    return tipOfTheDay;
+  }
   const transl = i18n.t('tip_of_the_day|remember_transl');
   const displayText = wordDisplayText(hintData[1]);
   return `💡${transl}💡<BR>«${hintData[0]}»<BR>${displayText}<BR>[${hintData[2]}]`;
