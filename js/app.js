@@ -2011,6 +2011,17 @@ function getRawTopicData(topicId, inputTypes) {
   });
 }
 
+function dedupeByTargetVisual(items) {
+  const seen = new Set();
+  return items.filter(item => {
+    if (!item || typeof item[1] !== 'string') return false;
+    const key = itemDisplayText(item);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 // universal collector for topic data (including virtual "all")
 // external parameter: finalGameForTopic
 // @param inputTypes: list of input types relevant for current game (e.g. ['words', 'sentences'])
@@ -2033,6 +2044,7 @@ function getTopicData(inputTypes, hideWellLearned, needShuffle) {
           collectedData.push(...topicData);
       }
     }
+    collectedData = dedupeByTargetVisual(collectedData);
   }
   collectedData.forEach((item, index) => { collectedData[index] = decodeLearnItem(item); });
 
