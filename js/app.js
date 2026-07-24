@@ -505,8 +505,9 @@ function getScreenType(screen_id) {
 function getCurrentPairsSet() {
     const currentScreenId = settings.getCurrentScreenId();
     const currentTopic = topics[settings.getCurrentTopic()];
+    const inputTypes = getGameInputTypes(currentScreenId);
 
-    if (currentScreenId !== 'pairs_set' || !currentTopic || !Array.isArray(currentTopic.pairs_set)) {
+    if (! inputTypes.includes('pairs_set') || !currentTopic || !Array.isArray(currentTopic.pairs_set)) {
         return null;
     }
 
@@ -522,15 +523,9 @@ function getCurrentPairsSet() {
 }
 
 // Build and show the screen title
-function showScreenTitle() {
+function showScreenTitle(screenName = "Screen") {
     const currentScreenId = settings.getCurrentScreenId();
     const currentTopic = topics[settings.getCurrentTopic()];
-    let screenName = "Screen";
-
-    const pairsSet = getCurrentPairsSet();
-    if (pairsSet && typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
-        screenName = i18n_ct(pairsSet.title);
-    }
 
     if (screenName === 'Screen') {
         const record = getScreenRecord(currentScreenId);
@@ -845,15 +840,20 @@ function renderMatchingGame() {
     // Get all data related to topic
     let currentData = [];
     const currentScreenId = settings.getCurrentScreenId();
-    if (currentScreenId === 'pairs_set') {
+    const inputTypes = getGameInputTypes(currentScreenId);
+    // 'pairs_set' is a special subset of matching game with pre-built input sets
+    if (currentScreenId === 'pairs_set' || inputTypes.includes('pairs_set')) {
         const pairsSet = getCurrentPairsSet();
         if (pairsSet && Array.isArray(pairsSet.words)) {
             currentData = pairsSet.words
                 .map(item => decodeLearnItem(item))
                 .filter(item => item && item[0] && item[1]);
+            // force main title refresh based on pairsSet title
+            if (typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
+                showScreenTitle(i18n_ct(pairsSet.title));
+            }
         }
     } else {
-        const inputTypes = getGameInputTypes(currentScreenId);
         currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
     }
 
@@ -1984,7 +1984,8 @@ function getGameInputTypes(screen_id) {
 // @return: list of items of given input types for current topic
 function getRawTopicData(topicId, inputTypes) {
   let collectedData = [];
-  if (topicId == GENERAL_TOPIC_ID) {
+  const inputPairsSet = inputTypes.includes('pairs_set');
+  if (topicId == GENERAL_TOPIC_ID && !inputPairsSet) {
     for (let topic in topics) {
         if (topic == GENERAL_TOPIC_ID) continue;
         let topicData = getRawTopicData(topic, inputTypes);
@@ -2000,12 +2001,14 @@ function getRawTopicData(topicId, inputTypes) {
       }
     });
   }
-  collectedData = collectedData.filter(row => {
+  if (inputPairsSet) {
+    return collectedData;
+  }
+  return collectedData.filter(row => {
     return row &&
            typeof row[0] === 'string' && row[0].trim() !== "" &&
            typeof row[1] === 'string' && row[1].trim() !== "";
   });
-  return collectedData;
 }
 
 // universal collector for topic data (including virtual "all")
