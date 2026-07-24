@@ -187,7 +187,93 @@ pairs_set:
   - بني
   - وردي
 
+- title:
+    en: modal verbs conjugation
+    ru: склонение модальных глаголов
+  words:
+    - بحب
+    - بتحب
+    - بتحبي
+    - منحب
+    - بتحبو
+    - بحبو
+    - بدي
+    - بدك
+    - بدو
+    - بدها
+    - بدنا
+    - بدكن
+    - بدهن
+
 words:
+
+# bhibb - люблю
+- en: I love
+  ar: بحب
+  transliteration: bhibb
+  ru: я люблю
+- en: you love m
+  ar: بتحب
+  transliteration: btihibb
+  ru: ты любишь м
+- en: you love f
+  ar: بتحبي
+  transliteration: btihibbe
+  ru: ты любишь ж
+- en: he loves
+  ar: بحب
+  transliteration: byhibb
+  ru: он любит
+- en: she loves
+  ar: بتحب
+  transliteration: btihibb
+  ru: она любит
+- en: we love
+  ar: منحب
+  transliteration: mnihibb
+  ru: мы любим
+- en: you love pl
+  ar: بتحبو
+  transliteration: btihibbu
+  ru: вы любите
+- en: they love
+  ar: بحبو
+  transliteration: byhibbu
+  ru: они любят
+
+# biddi - хочу / желаю
+- en: I want
+  ar: بدي
+  transliteration: biddi
+  ru: я хочу
+- en: you want m
+  ar: بدك
+  transliteration: biddak
+  ru: ты хочешь м
+- en: you want f
+  ar: بدك
+  transliteration: biddik
+  ru: ты хочешь ж
+- en: he wants
+  ar: بدو
+  transliteration: biddo
+  ru: он хочет
+- en: she wants
+  ar: بدها
+  transliteration: biddha
+  ru: она хочет
+- en: we want
+  ar: بدنا
+  transliteration: biddna
+  ru: мы хотим
+- en: you want pl
+  ar: بدكن
+  transliteration: biddkun
+  ru: вы хотите
+- en: they want
+  ar: بدهن
+  transliteration: biddhun
+  ru: они хотят
 
 - en: white (f)
   ar: بَيْضَا
@@ -368,10 +454,6 @@ words:
   transliteration: saahbak
   en: your (m) friend
   ru: твой (м) друг
-- ar: صاحْبِك
-  transliteration: saahbik
-  en: your (f) friend
-  ru: твой (ж) друг
 - ar: صاحْبُو
   transliteration: saahbu
   en: his friend
@@ -736,7 +818,7 @@ words:
 - en: teacher (f)
   ar: مُعَلِّمِة
   transliteration: mueallimia
-  ru: учитель (ж)
+  ru: учительница
 - en: teacher (m)
   ar: مُعَلِّم
   transliteration: mueallim

@@ -9,3 +9,4 @@ package-lock.json
 package.json
 stylelint.config.mjs
 bin/archive_files.bat
+bin/__pycache__

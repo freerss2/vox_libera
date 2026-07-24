@@ -2889,7 +2889,7 @@ The goal is to practice independently in the game format, but without the risk o
             "lazim"
           ],
           [
-            "need",
+            "I want",
             "بدي",
             "biddi"
           ],
@@ -3139,9 +3139,159 @@ The goal is to practice independently in the game format, but without the risk o
             "wardi"
           ]
         ]
+      },
+      {
+        "title": "modal verbs conjugation",
+        "words": [
+          [
+            "I love",
+            "بحب",
+            "bhibb"
+          ],
+          [
+            "you love m",
+            "بتحب",
+            "btihibb"
+          ],
+          [
+            "you love f",
+            "بتحبي",
+            "btihibbe"
+          ],
+          [
+            "we love",
+            "منحب",
+            "mnihibb"
+          ],
+          [
+            "you love pl",
+            "بتحبو",
+            "btihibbu"
+          ],
+          [
+            "they love",
+            "بحبو",
+            "byhibbu"
+          ],
+          [
+            "I want",
+            "بدي",
+            "biddi"
+          ],
+          [
+            "you want m",
+            "بدك",
+            "biddak"
+          ],
+          [
+            "he wants",
+            "بدو",
+            "biddo"
+          ],
+          [
+            "she wants",
+            "بدها",
+            "biddha"
+          ],
+          [
+            "we want",
+            "بدنا",
+            "biddna"
+          ],
+          [
+            "you want pl",
+            "بدكن",
+            "biddkun"
+          ],
+          [
+            "they want",
+            "بدهن",
+            "biddhun"
+          ]
+        ]
       }
     ],
     "words": [
+      [
+        "I love",
+        "بحب",
+        "bhibb"
+      ],
+      [
+        "you love m",
+        "بتحب",
+        "btihibb"
+      ],
+      [
+        "you love f",
+        "بتحبي",
+        "btihibbe"
+      ],
+      [
+        "he loves",
+        "بحب",
+        "byhibb"
+      ],
+      [
+        "she loves",
+        "بتحب",
+        "btihibb"
+      ],
+      [
+        "we love",
+        "منحب",
+        "mnihibb"
+      ],
+      [
+        "you love pl",
+        "بتحبو",
+        "btihibbu"
+      ],
+      [
+        "they love",
+        "بحبو",
+        "byhibbu"
+      ],
+      [
+        "I want",
+        "بدي",
+        "biddi"
+      ],
+      [
+        "you want m",
+        "بدك",
+        "biddak"
+      ],
+      [
+        "you want f",
+        "بدك",
+        "biddik"
+      ],
+      [
+        "he wants",
+        "بدو",
+        "biddo"
+      ],
+      [
+        "she wants",
+        "بدها",
+        "biddha"
+      ],
+      [
+        "we want",
+        "بدنا",
+        "biddna"
+      ],
+      [
+        "you want pl",
+        "بدكن",
+        "biddkun"
+      ],
+      [
+        "they want",
+        "بدهن",
+        "biddhun"
+      ],
       [
         "white (f)",
         "بيضا@بَيْضَا",
@@ -3361,11 +3511,6 @@ The goal is to practice independently in the game format, but without the risk o
         "your (m) friend",
         "صاحبك@صاحْبَك",
         "saahbak"
-      ],
-      [
-        "your (f) friend",
-        "صاحبك@صاحْبِك",
-        "saahbik"
       ],
       [
         "his friend",
