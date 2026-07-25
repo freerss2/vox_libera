@@ -174,6 +174,7 @@ var gameErrorData = [];
 let currentPairsSetIndex = null;
 let lastRenderedTopicId = null;
 let lastRenderedScreenId = null;
+var gameScreenId = null;
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -363,9 +364,13 @@ function showTopicResults() {
     setTimeout(() => { triggerSuccessEffect(bubble); }, 2500);
 }
 
+function getCurrGameIdex() {
+  return topicScreens.findIndex(m => m.id === settings.getCurrentScreenId());
+}
+
 function loadPrevNexScreen(delta) {
   // find current screen index
-  const currGameIndex = topicScreens.findIndex(m => m.id === settings.getCurrentScreenId());
+  const currGameIndex = getCurrGameIdex();
   const newGameIndex = currGameIndex+delta;
   if (newGameIndex >= 0 && newGameIndex < topicScreens.length) {
     const next_screen_id = topicScreens[newGameIndex].id;
@@ -535,7 +540,15 @@ function showScreenTitle(screenName = "Screen") {
 
     let topicTitle = i18n_ct(currentTopic.name);
     document.getElementById('title').innerHTML =
-        `<div>${topicTitle}</div><div class="text-with-icon">${screenName}</div>`;
+        `<div>${topicTitle}</div>
+        <div class="nav-content-wrapper progress-header-wrapper">
+          <span class="progress-header" id="progress-header"></span>
+        </div>
+        <div class="text-with-icon">${screenName}</div>`;
+    // update lesson progress percent
+    const total = topicScreens.length;
+    const currGameIndex = getCurrGameIdex();
+    document.getElementById('progress-header').style.width = `${((currGameIndex+1) / total) * 100}%`;
 }
 
 var finalProgress = 0;
@@ -668,6 +681,10 @@ function renderScreen(screen_id) {
 
 // Initialize engine for game-type screen
 function initGameEngine(screen_id) {
+    // reset the ID of DOM element to be cleaned on round completion
+    // and set this variable value in each rendering function
+    gameScreenId = null;
+
     let screenType = getScreenType(screen_id);
     if (screenType == 'matching') {
         renderMatchingGame();
@@ -822,6 +839,7 @@ var gameSettings = {}
 
 // initialize pairs (matching) screen
 function renderMatchingGame() {
+    gameScreenId = 'matching-grid';
     const board = document.getElementById('matching-grid');
     board.innerHTML = '';
 
@@ -975,6 +993,7 @@ let expectedMatches = 0;
 let wordsMappingForSummary = [];
 
 function renderSortingGame() {
+    gameScreenId = 'sorting-question-container';
 
     const questionContainer = document.getElementById('sorting-question-container');
     const bankContainer = document.getElementById('sort-bank');
@@ -1169,6 +1188,10 @@ function showWin(acc) {
 
     // hide all screens
     hideAllScreens();
+    if (gameScreenId) {
+        const elm = document.getElementById(gameScreenId);
+        if (elm) elm.innerHTML = '';
+    }
     // if recap is not empty
     if (roundRecap.length) {
       // show "dictionary-style" recap list in 'screen-dictionary'
@@ -1297,6 +1320,7 @@ function renderQuizGame(screen_id) {
     // Take a random word from all words in topic
     quizCorrectStr = trueRandomStr(allStrs, settings.getHideWellLearned());
     roundRecap.push(quizCorrectStr);
+    gameScreenId = 'quiz-question-container';
 
     const questionContainer = document.getElementById('quiz-question-container');
     const optionsGrid = document.getElementById('quiz-options-grid');
