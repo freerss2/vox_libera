@@ -346,7 +346,7 @@ words:
   ru: зелёный
 - en: blue
   ar: أزرق
-  transliteration: azra
+  transliteration: azraq
   ru: синий
 - en: orange
   ar: برتقالي
@@ -774,10 +774,10 @@ words:
   ar: بِنت
   transliteration: bint
   ru: девочка
-- en: boy
+- en: son
   ar: إِبِن
   transliteration: "'iibin"
-  ru: мальчик
+  ru: сын
 - en: woman
   ar: مَرَة
   transliteration: marra

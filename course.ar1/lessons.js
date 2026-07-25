@@ -3116,7 +3116,7 @@ The goal is to practice independently in the game format, but without the risk o
           [
             "blue",
             "أزرق",
-            "azra"
+            "azraq"
           ],
           [
             "orange",
@@ -3380,7 +3380,7 @@ The goal is to practice independently in the game format, but without the risk o
       [
         "blue",
         "أزرق",
-        "azra"
+        "azraq"
       ],
       [
         "orange",
@@ -3878,7 +3878,7 @@ The goal is to practice independently in the game format, but without the risk o
         "bint"
       ],
       [
-        "boy",
+        "son",
         "إبن@إِبِن",
         "'iibin"
       ],
