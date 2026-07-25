@@ -3150,8 +3150,8 @@ The goal is to practice independently in the game format, but without the risk o
           ],
           [
             "you love m",
-            "بتحب",
-            "btihibb"
+            "إنت بتحب",
+            "inta btihibb"
           ],
           [
             "you love f",
@@ -3179,9 +3179,9 @@ The goal is to practice independently in the game format, but without the risk o
             "biddi"
           ],
           [
-            "you want m",
-            "بدك",
-            "biddak"
+            "you want f",
+            "إنتي بدك",
+            "inti biddik"
           ],
           [
             "he wants",
@@ -3218,24 +3218,24 @@ The goal is to practice independently in the game format, but without the risk o
         "bhibb"
       ],
       [
-        "you love m",
-        "بتحب",
-        "btihibb"
-      ],
-      [
         "you love f",
         "بتحبي",
         "btihibbe"
       ],
       [
         "he loves",
-        "بحب",
+        "بيحب",
         "byhibb"
       ],
       [
+        "you love m",
+        "إنت بتحب",
+        "inta btihibb"
+      ],
+      [
         "she loves",
-        "بتحب",
-        "btihibb"
+        "هي بتحب",
+        "hiyye btihibb"
       ],
       [
         "we love",
@@ -3259,13 +3259,13 @@ The goal is to practice independently in the game format, but without the risk o
       ],
       [
         "you want m",
-        "بدك",
-        "biddak"
+        "إنت بدك",
+        "inta biddak"
       ],
       [
         "you want f",
-        "بدك",
-        "biddik"
+        "إنتي بدك",
+        "inti biddik"
       ],
       [
         "he wants",
@@ -3641,11 +3641,6 @@ The goal is to practice independently in the game format, but without the risk o
         "must",
         "لازم",
         "lazim"
-      ],
-      [
-        "need",
-        "بدي",
-        "biddi"
       ],
       [
         "but",

@@ -192,13 +192,13 @@ pairs_set:
     ru: склонение модальных глаголов
   words:
     - بحب
-    - بتحب
+    - إنت بتحب
     - بتحبي
     - منحب
     - بتحبو
     - بحبو
     - بدي
-    - بدك
+    - إنتي بدك
     - بدو
     - بدها
     - بدنا
@@ -212,22 +212,24 @@ words:
   ar: بحب
   transliteration: bhibb
   ru: я люблю
-- en: you love m
-  ar: بتحب
-  transliteration: btihibb
-  ru: ты любишь м
 - en: you love f
   ar: بتحبي
   transliteration: btihibbe
   ru: ты любишь ж
 - en: he loves
-  ar: بحب
+  ar: بيحب
   transliteration: byhibb
   ru: он любит
+
+- en: you love m
+  ar: إنت بتحب
+  transliteration: inta btihibb
+  ru: ты любишь м
 - en: she loves
-  ar: بتحب
-  transliteration: btihibb
+  ar: هي بتحب
+  transliteration: hiyye btihibb
   ru: она любит
+
 - en: we love
   ar: منحب
   transliteration: mnihibb
@@ -246,14 +248,16 @@ words:
   ar: بدي
   transliteration: biddi
   ru: я хочу
+
 - en: you want m
-  ar: بدك
-  transliteration: biddak
+  ar: إنت بدك
+  transliteration: inta biddak
   ru: ты хочешь м
 - en: you want f
-  ar: بدك
-  transliteration: biddik
+  ar: إنتي بدك
+  transliteration: inti biddik
   ru: ты хочешь ж
+
 - en: he wants
   ar: بدو
   transliteration: biddo
@@ -564,10 +568,6 @@ words:
   ar: لازم
   transliteration: lazim
   ru: должен
-- en: need
-  ar: بدي
-  transliteration: biddi
-  ru: нужно
 - en: but
   ar: لكن
   transliteration: lakin

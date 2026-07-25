@@ -221,6 +221,20 @@ def get_visual_from_vocalized(v_text, target_lang):
     # create visual presentation text and return it
     return compiled_regex.sub('', v_text)
 
+def check_lang_item_duplication(sets, lang, item):
+    """
+    for given language and item check is it already registered in sets
+    raise an exception when duplicated
+    """
+    if not item:
+        return
+    if lang not in sets:
+        sets[lang] = [item]
+        return
+    if item in sets[lang]:
+        raise Exception(f"duplicated entry {item} in {lang}")
+    sets[lang].append(item)
+
 def extract_from_list(materials, locales, target_lang):
     """
     Using a list of records create pure 3-element arrays and store translations in locales
@@ -230,10 +244,14 @@ def extract_from_list(materials, locales, target_lang):
     @return: list of 3-element sets [eng_str, target_lang_str, transliteration], updated locales
     """
     result = []
+    # collect translations and transliterations to make sure neither set has duplications
+    sets_per_lang = {}
     for row in materials:
         try:
             en = row.pop('en')
+            check_lang_item_duplication(sets_per_lang, 'en', en)
             target = row.pop(target_lang)
+            check_lang_item_duplication(sets_per_lang, target_lang, target)
             # TODO: for target languages like he/ar make sure that all characters inside are legal
             vocalized = row.pop('vocalized', '')
             # for vocalized version - pack it with a target language visual representation
@@ -244,6 +262,7 @@ def extract_from_list(materials, locales, target_lang):
                     vocalized = target 
                     target = visual
             if vocalized:
+                check_lang_item_duplication(sets_per_lang, 'vocalized', vocalized)
                 target = f"{target}@{vocalized}"
             result.append([en, target, row.pop('transliteration')])
             for lang, translation in row.items():
