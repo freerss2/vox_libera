@@ -53,21 +53,33 @@ locales:
     interface: {}
     story: {}
     sort_set:
-      sort_set_1:
+      sort_people_pairs_v1:
         question1: Find feminine words
         question2: Find masculine words
-      sort_set_2:
+      sort_singular_plural_1:
         question1: Find the singular
         question2: Find the plural
+      sort_adjective_comparative_v1:
+        question1: Find comparative form
+        question2: find non-comparative adjective
+      sort_colors_fem_irregular:
+        question1: Find feminine form
+        question2: Find masculine form
   ru:
     __title__: Русский
     explanations: {}
     interface: {}
     story: {}
     sort_set:
-      sort_set_1:
+      sort_people_pairs_v1:
         question1: Найди слова женского рода
         question2: Найди слова мужского рода
-      sort_set_2:
+      sort_singular_plural_1:
         question1: Найди единственное число
         question2: Найди множественное число
+      sort_adjective_comparative_v1:
+        question1: Найди сравнительную форму
+        question2: Найди обычную форму прилагательного
+      sort_colors_fem_irregular:
+        question1: Найди женскую форму
+        question2: Найди мужскую форму

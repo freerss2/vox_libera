@@ -2,7 +2,6 @@ id: training_1
 name:
   en: Practice the Learned
   ru: Тренируем Выученное
-
 explanations:
   en: |
     ### This lesson is designed to consolidate what has been learned.
@@ -16,14 +15,13 @@ explanations:
     Кроме того, существует особый тип упражнений: сортировка по какому-либо общепринятому определению, например, женский род или сравнительная степень.
     Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
     Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
-
 sort_set:
 - id: sort_people_pairs_v1
   question1:
     en: Find feminine words
     ru: Найди слова женского рода
   question2:
-    en: Find masculine words  
+    en: Find masculine words
     ru: Найди слова мужского рода
   type: pairs
   data:
@@ -132,7 +130,7 @@ pairs_set:
     ru: Время и место
   words:
   - بعيد
-  - قَرِيب
+  - قريب
   - هنا
   - جنب
   - فاضي
@@ -154,25 +152,24 @@ pairs_set:
   - بيت
   - بيتي
   - بيتك
-  - بَيْتُهُ
-  - بَيْتُهَا
-  - بَيْتُنَا
-  - بَيْتُكُمْ
-  - بَيْتُهُمْ
+  - بيته
+  - بيتها
+  - بيتنا
+  - بيتكم
+  - بيتهم
 - title:
     en: Possessive Suffixes "friend"
     ru: Местоимённые суффиксы "друг"
   words:
   - صاحب
   - صاحبي
-  - صاحْبَك
-  - صاحْبِك
-  - صاحْبُو
-  - صاحِبْهَا
-  - صاحِبْنَا
-  - صاحِبْكُن
-  - صاحِبْهُن
-
+  - صاحبك
+  - صاحبك
+  - صاحبو
+  - صاحبها
+  - صاحبنا
+  - صاحبكن
+  - صاحبهن
 - title:
     en: Colors
     ru: Цвета
@@ -188,28 +185,24 @@ pairs_set:
   - بنفسجي
   - بني
   - وردي
-
 - title:
     en: modal verbs conjugation
     ru: склонение модальных глаголов
   words:
-    - بحب
-    - إنت بتحب
-    - بتحبي
-    - منحب
-    - بتحبو
-    - بحبو
-    - بدي
-    - إنتي بدك
-    - بدو
-    - بدها
-    - بدنا
-    - بدكن
-    - بدهن
-
+  - بحب
+  - إنت بتحب
+  - بتحبي
+  - منحب
+  - بتحبو
+  - بحبو
+  - بدي
+  - إنتي بدك
+  - بدو
+  - بدها
+  - بدنا
+  - بدكن
+  - بدهن
 words:
-
-# bhibb - люблю
 - en: I love
   ar: بحب
   transliteration: bhibb
@@ -222,7 +215,6 @@ words:
   ar: بيحب
   transliteration: byhibb
   ru: он любит
-
 - en: you love m
   ar: إنت بتحب
   transliteration: inta btihibb
@@ -231,7 +223,6 @@ words:
   ar: هي بتحب
   transliteration: hiyye btihibb
   ru: она любит
-
 - en: we love
   ar: منحب
   transliteration: mnihibb
@@ -244,13 +235,10 @@ words:
   ar: بحبو
   transliteration: byhibbu
   ru: они любят
-
-# biddi - хочу / желаю
 - en: I want
   ar: بدي
   transliteration: biddi
   ru: я хочу
-
 - en: you want m
   ar: إنت بدك
   transliteration: inta biddak
@@ -259,7 +247,6 @@ words:
   ar: إنتي بدك
   transliteration: inti biddik
   ru: ты хочешь ж
-
 - en: he wants
   ar: بدو
   transliteration: biddo
@@ -280,52 +267,61 @@ words:
   ar: بدهن
   transliteration: biddhun
   ru: они хотят
-
 - en: white (f)
-  ar: بَيْضَا
+  ar: بيضا
   transliteration: bayda
+  vocalized: بَيْضَا
   ru: белая
 - en: gray (f)
-  ar: رمادِيِّة
+  ar: رماديّة
   transliteration: rmadiyye
+  vocalized: رمادِيِّة
   ru: серая
 - en: black (f)
-  ar: سَوْدَا
+  ar: سودا
   transliteration: sawda
+  vocalized: سَوْدَا
   ru: чёрная
 - en: red (f)
-  ar: حَمْرَا
+  ar: حمرا
   transliteration: hamra
+  vocalized: حَمْرَا
   ru: красная
 - en: yellow (f)
-  ar: صَفْرَا
+  ar: صفرا
   transliteration: safra
+  vocalized: صَفْرَا
   ru: жёлтая
 - en: green (f)
-  ar: خَضْرَا
+  ar: خضرا
   transliteration: khadra
+  vocalized: خَضْرَا
   ru: зелёная
 - en: blue (f)
-  ar: زَرْقَا
+  ar: زرقا
   transliteration: zarqa
+  vocalized: زَرْقَا
   ru: синяя
 - en: orange (f)
-  ar: برتقانِيِّة
+  ar: برتقانيّة
   transliteration: burtu'aniyye
+  vocalized: برتقانِيِّة
   ru: оранжевая
 - en: purple (f)
-  ar: بنفسجِيِّة
+  ar: بنفسجيّة
   transliteration: banafsajiyye
+  vocalized: بنفسجِيِّة
   ru: фиолетовая
 - en: brown (f)
-  ar: بنِيِّة
+  ar: بنيّة
   transliteration: binniyye
+  vocalized: بنِيِّة
   ru: коричневая
 - en: pink (f)
-  ar: وردِيِّة
+  ar: ورديّة
   transliteration: wardiyye
+  vocalized: وردِيِّة
   ru: розовая
-
 - en: white
   ar: أبيض
   transliteration: abyad
@@ -370,117 +366,140 @@ words:
   ar: وردي
   transliteration: wardi
   ru: розовый
-
-- ar: أَكْبَر
-  transliteration: "'akbar"
-  en: greater
+- en: greater
+  ar: أكبر
+  transliteration: '''akbar'
+  vocalized: أَكْبَر
   ru: больше
-- ar: كْبِير
+- en: big
+  ar: كبير
   transliteration: kbir
-  en: big
+  vocalized: كْبِير
   ru: большой
-- ar: أَزْغَر
-  transliteration: "'azghar"
-  en: smaller
+- en: smaller
+  ar: أزغر
+  transliteration: '''azghar'
+  vocalized: أَزْغَر
   ru: меньше
-- ar: زْغِير
+- en: small
+  ar: زغير
   transliteration: zhir
-  en: small
+  vocalized: زْغِير
   ru: маленький
-- ar: أَغْلَى
-  transliteration: "'aghlaa"
-  en: more expensive
+- en: more expensive
+  ar: أغلى
+  transliteration: '''aghlaa'
+  vocalized: أَغْلَى
   ru: дороже
-- ar: غَالِي
+- en: expensive
+  ar: غالي
   transliteration: ghali
-  en: expensive
+  vocalized: غَالِي
   ru: дорогой
-- ar: أَرْخَص
-  transliteration: "'arkhas"
-  en: cheaper
+- en: cheaper
+  ar: أرخص
+  transliteration: '''arkhas'
+  vocalized: أَرْخَص
   ru: дешевле
-- ar: رْخِيص
+- en: cheap
+  ar: رخيص
   transliteration: rkhis
-  en: cheap
+  vocalized: رْخِيص
   ru: дешёвый
-- ar: أَجْدَد
-  transliteration: "'ajdad"
-  en: newer
+- en: newer
+  ar: أجدد
+  transliteration: '''ajdad'
+  vocalized: أَجْدَد
   ru: новее
-- ar: جْدِيد
+- en: new
+  ar: جديد
   transliteration: jdid
-  en: new
+  vocalized: جْدِيد
   ru: новый
-- ar: أَقْدَم
-  transliteration: "'aqdam"
-  en: older
+- en: older
+  ar: أقدم
+  transliteration: '''aqdam'
+  vocalized: أَقْدَم
   ru: старее
-- ar: قَدِيم
-  transliteration: "qadim"
-  en: old
+- en: old
+  ar: قديم
+  transliteration: qadim
+  vocalized: قَدِيم
   ru: старый
-- ar: أَفْقَر
-  transliteration: "'afqar"
-  en: poorest
+- en: poorest
+  ar: أفقر
+  transliteration: '''afqar'
+  vocalized: أَفْقَر
   ru: беднее
-- ar: فَقِير
+- en: poor
+  ar: فقير
   transliteration: faqir
-  en: poor
+  vocalized: فَقِير
   ru: бедный
-- ar: أَغْنَى
-  transliteration: "'aghnaa"
-  en: richest
+- en: richest
+  ar: أغنى
+  transliteration: '''aghnaa'
+  vocalized: أَغْنَى
   ru: богаче
-- ar: غَنِي
-  transliteration: "ghani"
-  en: rich
+- en: rich
+  ar: غني
+  transliteration: ghani
+  vocalized: غَنِي
   ru: богатый
-- ar: قَرِيب
-  transliteration: "qarib"
-  en: near
+- en: near
+  ar: قريب
+  transliteration: qarib
+  vocalized: قَرِيب
   ru: близко
-- ar: أَقْرَب
-  transliteration: "'aqrab"
-  en: closer
+- en: closer
+  ar: أقرب
+  transliteration: '''aqrab'
+  vocalized: أَقْرَب
   ru: ближе
-- ar: أَكْتَر
-  transliteration: "'aktar"
-  en: more
+- en: more
+  ar: أكتر
+  transliteration: '''aktar'
+  vocalized: أَكْتَر
   ru: более
-- ar: كْتِير
+- en: very
+  ar: كتير
   transliteration: ktir
-  en: very
+  vocalized: كْتِير
   ru: очень
-
-- ar: صاحبي
+- en: my friend
+  ar: صاحبي
   transliteration: saahbi
-  en: my friend
   ru: мой друг
-- ar: صاحْبَك
+- en: your (m) friend
+  ar: صاحبك
   transliteration: saahbak
-  en: your (m) friend
+  vocalized: صاحْبَك
   ru: твой (м) друг
-- ar: صاحْبُو
+- en: his friend
+  ar: صاحبو
   transliteration: saahbu
-  en: his friend
+  vocalized: صاحْبُو
   ru: его друг
-- ar: صاحِبْهَا
+- en: her friend
+  ar: صاحبها
   transliteration: saahibha
-  en: her friend
+  vocalized: صاحِبْهَا
   ru: её друг
-- ar: صاحِبْنَا
+- en: our friend
+  ar: صاحبنا
   transliteration: saahibna
-  en: our friend
+  vocalized: صاحِبْنَا
   ru: наш друг
-- ar: صاحِبْكُن
+- en: your (pl) friend
+  ar: صاحبكن
   transliteration: saahibkun
-  en: your (pl) friend
+  vocalized: صاحِبْكُن
   ru: ваш (мн) друг
-- ar: صاحِبْهُن
+- en: their friend
+  ar: صاحبهن
   transliteration: saahibhun
-  en: their friend
+  vocalized: صاحِبْهُن
   ru: их друг
-
 - en: home
   ar: بيت
   transliteration: bayt
@@ -494,24 +513,29 @@ words:
   transliteration: baytuk
   ru: твой дом
 - en: his home
-  ar: بَيْتُهُ
+  ar: بيته
   transliteration: baytuhu
+  vocalized: بَيْتُهُ
   ru: его дом
 - en: her home
-  ar: بَيْتُهَا
+  ar: بيتها
   transliteration: baytuha
+  vocalized: بَيْتُهَا
   ru: её дом
 - en: our home
-  ar: بَيْتُنَا
+  ar: بيتنا
   transliteration: baytuna
+  vocalized: بَيْتُنَا
   ru: наш дом
 - en: your (pl) home
-  ar: بَيْتُكُمْ
+  ar: بيتكم
   transliteration: baytukum
+  vocalized: بَيْتُكُمْ
   ru: ваш (мн) дом
 - en: their home
-  ar: بَيْتُهُمْ
+  ar: بيتهم
   transliteration: baytuhum
+  vocalized: بَيْتُهُمْ
   ru: их дом
 - en: unfortunately
   ar: للأسف
@@ -771,75 +795,89 @@ words:
   ar: مقاعد
   transliteration: maqaeid
   ru: сиденья
-
 - en: girl
-  ar: بِنت
+  ar: بنت
   transliteration: bint
+  vocalized: بِنت
   ru: девочка
 - en: son
-  ar: إِبِن
-  transliteration: "'iibin"
+  ar: إبن
+  transliteration: '''iibin'
+  vocalized: إِبِن
   ru: сын
 - en: woman
-  ar: مَرَة
+  ar: مرة
   transliteration: marra
+  vocalized: مَرَة
   ru: женщина
 - en: man
-  ar: زَلَمِة
+  ar: زلمة
   transliteration: zalma
+  vocalized: زَلَمِة
   ru: мужчина
-
 - en: friend (f)
-  ar: صَاحْبِة
+  ar: صاحبة
   transliteration: sahbi
+  vocalized: صَاحْبِة
   ru: подруга
 - en: neighbor (f)
-  ar: جَارَة
+  ar: جارة
   transliteration: jara
+  vocalized: جَارَة
   ru: соседка
 - en: neighbor (m)
-  ar: جَار
+  ar: جار
   transliteration: jar
+  vocalized: جَار
   ru: сосед
 - en: peer (f)
-  ar: زَمِيلِة
+  ar: زميلة
   transliteration: zamilia
+  vocalized: زَمِيلِة
   ru: сотрудница
 - en: peer (m)
-  ar: زَمِيل
+  ar: زميل
   transliteration: zamil
+  vocalized: زَمِيل
   ru: сотрудник
 - en: policewoman
-  ar: شُرْطِيِّة
+  ar: شرطيّة
   transliteration: shurtiia
+  vocalized: شُرْطِيِّة
   ru: полицейская
 - en: policeman
-  ar: شُرْطِي
+  ar: شرطي
   transliteration: shurti
+  vocalized: شُرْطِي
   ru: полицейский
 - en: teacher (f)
-  ar: مُعَلِّمِة
+  ar: معلّمة
   transliteration: mueallimia
+  vocalized: مُعَلِّمِة
   ru: учительница
 - en: teacher (m)
-  ar: مُعَلِّم
+  ar: معلّم
   transliteration: mueallim
+  vocalized: مُعَلِّم
   ru: учитель (м)
 - en: doctor (f)
-  ar: دُكْتُورَة
+  ar: دكتورة
   transliteration: duktura
+  vocalized: دُكْتُورَة
   ru: доктор (ж)
 - en: doctor (m)
-  ar: دُكْتُور
+  ar: دكتور
   transliteration: duktur
+  vocalized: دُكْتُور
   ru: доктор (м)
 - en: nurse (f)
-  ar: مُمَرِّضَة
+  ar: ممرّضة
   transliteration: mumarrida
+  vocalized: مُمَرِّضَة
   ru: медсестра
 - en: nurse (m)
-  ar: مُمَرِّض
+  ar: ممرّض
   transliteration: mumarrid
+  vocalized: مُمَرِّض
   ru: медбрат
-
 sentences: []

@@ -327,6 +327,9 @@ function showTopicResults() {
     const topicTitle = i18n_ct(topics[topicId].name);
     const data = getTopicStats(topicId);
 
+    // replace last round title with congratulations
+    showScreenTitle(i18n.t('main|completed'));
+
     // generate Markdown summary
     const repeatPrompt = i18n.t('main|sum-repeat');
     const nextPrompt = i18n.t('main|sum-next');
@@ -1168,6 +1171,7 @@ function giveupSorting() {
 // ------------------------------------------- game completion popup
 
 // Show completion summary per round
+// @param acc: accuracy in this round
 function showWin(acc) {
 
     // for final rounds increment the counter and check did we completed it
@@ -1388,7 +1392,7 @@ function generateDistractors(correct, all, totalChoices) {
     // shuffle and take out of them (totalChoices-1) answers
 
     choices = shuffle(choices.concat(filtered));
-    if (lastPos >= 0 && choices[lastPos][1] == correct[1]) {
+    if (lastPos >= 0 && lastPos < choices.length && choices[lastPos][1] == correct[1]) {
       const newPos = (lastPos+1) % choices.length;
       [choices[lastPos], choices[newPos]] = [choices[newPos], choices[lastPos]];
       lastPos = newPos;
@@ -2403,6 +2407,7 @@ function updateTranscriptionDisplay() {
 
 // callback for GUI change
 function changeDifficulty(level) {
+    lastPos = 0;
     // 1. Store for future
     settings.setGameDifficulty(level);
     settings.markAsChanged();

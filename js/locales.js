@@ -250,7 +250,8 @@ To start a course, select the course title and click on it.
       "sum-repeat": " REPEAT",
       "sum-next": "NEXT ",
       "sent-giveup-btn": "Give up",
-      "check": " Check "
+      "check": " Check ",
+      "completed": "Completed"
     }
   },
   "ru": {
@@ -517,7 +518,8 @@ To start a course, select the course title and click on it.
       "sum-next": "ДАЛЬШЕ ",
       "hint-btn": "Подсказка",
       "sent-giveup-btn": "Сдаюсь",
-      "check": " Проверить "
+      "check": " Проверить ",
+      "completed": "Пройдено"
     }
   }
 };
