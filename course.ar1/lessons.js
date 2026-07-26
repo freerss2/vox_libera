@@ -2628,6 +2628,7 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
     "name": "Practice the Learned",
     "explanations": `### This lesson is designed to consolidate what has been learned.
 Here you'll find exercises that practice grammar and memorize words that are similar in meaning or different variations of the same root.
+Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
 Like flashcards, these exercises don't award success percentages.
 The goal is to practice independently in the game format, but without the risk of losing winning points.
 `,

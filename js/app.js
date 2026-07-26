@@ -155,7 +155,6 @@ const SCREENS = [
   { id: 'story',           shared: 0, exercise: 0, screen_type: 'text',         name: 'Story',             inputs: ['story'] },
   { id: 'matching-abc',    shared: 0, exercise: 1, screen_type: 'matching',     name: 'Matching ABC',      inputs: ['abc'] },
   { id: 'matching',        shared: 0, exercise: 1, screen_type: 'matching',     name: 'Matching',          inputs: ['words'] },
-  { id: 'pairs_set',       shared: 0, exercise: 1, screen_type: 'matching',     name: 'Pairs set',         inputs: ['pairs_set'] },
   { id: 'quiz_u2t',        shared: 0, exercise: 1, screen_type: 'quiz_u2t',     name: 'Quiz: 👤 → 🌍',     inputs: ['words', 'sentences'] },
   { id: 'quiz_t2u',        shared: 0, exercise: 1, screen_type: 'quiz_t2u',     name: 'Quiz: 🌍 → 👤',     inputs: ['words', 'sentences'] },
   { id: 'quiz_audio',      shared: 0, exercise: 1, screen_type: 'quiz_audio',   name: 'Audio-Quiz',        inputs: ['words', 'sentences'] },
@@ -487,6 +486,12 @@ function initTopic(topicId) {
       }
     }
     if ( useScreen ) {
+      // if this topic contains pairs_set, fix input_types for the relevant screens
+      if (Array.isArray(currTopic.pairs_set) && currTopic.pairs_set.length) {
+        if (screen.screen_type == 'matching' || screen.screen_type.startsWith('quiz')) {
+          screen.inputs = ['pairs_set'];
+        }
+      }
       topicScreens.push(screen);
     }
   });
@@ -625,9 +630,6 @@ function hideAllScreens() {
 
 // Render screen/game
 function renderScreen(screen_id) {
-    if (screen_id === 'pairs_set') {
-        currentPairsSetIndex = null;
-    }
     showScreenTitle();
     // for screen 'final' get a random screen from screens with exercise==1
     finalGameForTopic = '';
@@ -859,21 +861,7 @@ function renderMatchingGame() {
     let currentData = [];
     const currentScreenId = settings.getCurrentScreenId();
     const inputTypes = getGameInputTypes(currentScreenId);
-    // 'pairs_set' is a special subset of matching game with pre-built input sets
-    if (currentScreenId === 'pairs_set' || inputTypes.includes('pairs_set')) {
-        const pairsSet = getCurrentPairsSet();
-        if (pairsSet && Array.isArray(pairsSet.words)) {
-            currentData = pairsSet.words
-                .map(item => decodeLearnItem(item))
-                .filter(item => item && item[0] && item[1]);
-            // force main title refresh based on pairsSet title
-            if (typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
-                showScreenTitle(i18n_ct(pairsSet.title));
-            }
-        }
-    } else {
-        currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
-    }
+    currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
@@ -2008,8 +1996,7 @@ function getGameInputTypes(screen_id) {
 // @return: list of items of given input types for current topic
 function getRawTopicData(topicId, inputTypes) {
   let collectedData = [];
-  const inputPairsSet = inputTypes.includes('pairs_set');
-  if (topicId == GENERAL_TOPIC_ID && !inputPairsSet) {
+  if (topicId == GENERAL_TOPIC_ID) {
     for (let topic in topics) {
         if (topic == GENERAL_TOPIC_ID) continue;
         let topicData = getRawTopicData(topic, inputTypes);
@@ -2024,9 +2011,6 @@ function getRawTopicData(topicId, inputTypes) {
         collectedData.push(...topicData);
       }
     });
-  }
-  if (inputPairsSet) {
-    return collectedData;
   }
   return collectedData.filter(row => {
     return row &&
@@ -2053,7 +2037,27 @@ function dedupeByTargetVisual(items) {
 // @param needShuffle: whether to shuffle the result list
 // @return: list of items of given input types for current topic
 function getTopicData(inputTypes, hideWellLearned, needShuffle) {
-  let collectedData = getRawTopicData(settings.getCurrentTopic(), inputTypes);
+  // for inputTypes = 'pairs_set' use a different source
+  let collectedData = [];
+  if (inputTypes.includes('pairs_set')) {
+    // TODO: do not reset when user selected "repeat same set"
+    currentPairsSetIndex = null;
+    const pairsSet = getCurrentPairsSet();
+    if (pairsSet && Array.isArray(pairsSet.words)) {
+        let collectedData = pairsSet.words
+            .map(item => decodeLearnItem(item))
+            .filter(item => item && item[0] && item[1]);
+        // force main title refresh based on pairsSet title
+        if (typeof pairsSet.title === 'string' && pairsSet.title.trim()) {
+            showScreenTitle(i18n_ct(pairsSet.title));
+        }
+        // implied needShuffle
+        return shuffle([...collectedData]);
+    }
+    console.error(`unexpected empty result for screen topic data 'pairs_set'`);
+    return [];
+  }
+  collectedData = getRawTopicData(settings.getCurrentTopic(), inputTypes);
 
   // special case for 'final' round - try to get data from other completed topics:
   //   iterate over all topics with state != 0, excluding the current one
