@@ -107,6 +107,31 @@ sort_set:
 
 pairs_set:
 - title:
+    en: Similar words
+    ru: Похожие слова
+  words:
+  - جار
+  - إيجار
+  - مستأجر
+  - ولد
+  - والد
+  - والدة
+  - مولود
+  - أولاد
+  - سفر
+  - رحلة
+  - سائح
+  - سائحة
+  - سياحة
+  - مكان
+  - مقعد
+  - ولد
+  - إبن
+  - ختيار
+  - قديم
+  - تاريخي
+
+- title:
     en: Adverbs
     ru: Наречия
   words:
@@ -203,6 +228,66 @@ pairs_set:
   - بدكن
   - بدهن
 words:
+
+- en: rent
+  ar: إيجار
+  transliteration: ijaar
+  ru: аренда
+- en: tenant
+  ar: مستأجر
+  transliteration: mustajir
+  ru: арендатор
+
+- en: parent (m)
+  ar: والد
+  transliteration: walid
+  ru: родитель
+- en: parent (f)
+  ar: والدة
+  transliteration: walde
+  ru: родительница
+- en: newborn
+  ar: مولود
+  transliteration: malud
+  ru: новорожденный
+- en: children
+  ar: أولاد
+  transliteration: wlad
+  ru: дети
+
+- en: travel
+  ar: سفر
+  transliteration: safar
+  ru: путешествие
+- en: trip
+  ar: رحلة
+  transliteration: rihle
+  ru: поездка
+- en: tourist (m)
+  ar: سائح
+  transliteration: sayeh
+  ru: турист
+- en: tourist (f)
+  ar: سائحة
+  transliteration: sayha
+  ru: туристка
+- en: tourism
+  ar: سياحة
+  transliteration: siyaha
+  ru: туризм
+- en: place
+  ar: مكان
+  transliteration: makan
+  ru: место
+- en: elderly
+  ar: ختيار
+  transliteration: khtyar
+  ru: пожилой
+- en: historical
+  ar: تاريخي
+  transliteration: tarikhi
+  ru: исторический
+
 - en: I love
   ar: بحب
   transliteration: bhibb
@@ -789,7 +874,7 @@ words:
   ru: платья
 - en: a seat
   ar: مقعد
-  transliteration: maqead
+  transliteration: "maqe'ad"
   ru: сиденье
 - en: the seats
   ar: مقاعد
@@ -822,12 +907,12 @@ words:
   ru: подруга
 - en: neighbor (f)
   ar: جارة
-  transliteration: jara
+  transliteration: jaara
   vocalized: جَارَة
   ru: соседка
 - en: neighbor (m)
   ar: جار
-  transliteration: jar
+  transliteration: jaar
   vocalized: جَار
   ru: сосед
 - en: peer (f)

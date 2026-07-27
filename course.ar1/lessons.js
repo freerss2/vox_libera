@@ -2822,6 +2822,111 @@ The goal is to practice independently in the game format, but without the risk o
     ],
     "pairs_set": [
       {
+        "title": "Similar words",
+        "words": [
+          [
+            "neighbor (m)",
+            "جار@جَار",
+            "jaar"
+          ],
+          [
+            "rent",
+            "إيجار",
+            "ijaar"
+          ],
+          [
+            "tenant",
+            "مستأجر",
+            "mustajir"
+          ],
+          [
+            "child",
+            "ولد@وَلَد",
+            "walad"
+          ],
+          [
+            "parent (m)",
+            "والد",
+            "walid"
+          ],
+          [
+            "parent (f)",
+            "والدة",
+            "walde"
+          ],
+          [
+            "newborn",
+            "مولود",
+            "malud"
+          ],
+          [
+            "children",
+            "أولاد",
+            "wlad"
+          ],
+          [
+            "travel",
+            "سفر",
+            "safar"
+          ],
+          [
+            "trip",
+            "رحلة",
+            "rihle"
+          ],
+          [
+            "tourist (m)",
+            "سائح",
+            "sayeh"
+          ],
+          [
+            "tourist (f)",
+            "سائحة",
+            "sayha"
+          ],
+          [
+            "tourism",
+            "سياحة",
+            "siyaha"
+          ],
+          [
+            "place",
+            "مكان",
+            "makan"
+          ],
+          [
+            "a seat",
+            "مقعد",
+            "maqe'ad"
+          ],
+          [
+            "child",
+            "ولد@وَلَد",
+            "walad"
+          ],
+          [
+            "son",
+            "إبن@إِبِن",
+            "'iibin"
+          ],
+          [
+            "elderly",
+            "ختيار",
+            "khtyar"
+          ],
+          [
+            "old",
+            "قديم@قَدِيم",
+            "qadim"
+          ],
+          [
+            "historical",
+            "تاريخي",
+            "tarikhi"
+          ]
+        ]
+      },
+      {
         "title": "Adverbs",
         "words": [
           [
@@ -3213,6 +3318,76 @@ The goal is to practice independently in the game format, but without the risk o
       }
     ],
     "words": [
+      [
+        "rent",
+        "إيجار",
+        "ijaar"
+      ],
+      [
+        "tenant",
+        "مستأجر",
+        "mustajir"
+      ],
+      [
+        "parent (m)",
+        "والد",
+        "walid"
+      ],
+      [
+        "parent (f)",
+        "والدة",
+        "walde"
+      ],
+      [
+        "newborn",
+        "مولود",
+        "malud"
+      ],
+      [
+        "children",
+        "أولاد",
+        "wlad"
+      ],
+      [
+        "travel",
+        "سفر",
+        "safar"
+      ],
+      [
+        "trip",
+        "رحلة",
+        "rihle"
+      ],
+      [
+        "tourist (m)",
+        "سائح",
+        "sayeh"
+      ],
+      [
+        "tourist (f)",
+        "سائحة",
+        "sayha"
+      ],
+      [
+        "tourism",
+        "سياحة",
+        "siyaha"
+      ],
+      [
+        "place",
+        "مكان",
+        "makan"
+      ],
+      [
+        "elderly",
+        "ختيار",
+        "khtyar"
+      ],
+      [
+        "historical",
+        "تاريخي",
+        "tarikhi"
+      ],
       [
         "I love",
         "بحب",
@@ -3861,7 +4036,7 @@ The goal is to practice independently in the game format, but without the risk o
       [
         "a seat",
         "مقعد",
-        "maqead"
+        "maqe'ad"
       ],
       [
         "the seats",
@@ -3896,12 +4071,12 @@ The goal is to practice independently in the game format, but without the risk o
       [
         "neighbor (f)",
         "جارة@جَارَة",
-        "jara"
+        "jaara"
       ],
       [
         "neighbor (m)",
         "جار@جَار",
-        "jar"
+        "jaar"
       ],
       [
         "peer (f)",
