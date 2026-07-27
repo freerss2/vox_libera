@@ -1490,9 +1490,7 @@ function handleQuizChoice(selectedStr, btn) {
         scrollToTop('app-container');
 
         updateStats(quizCorrectStr[1], firstAttempt);
-        if (firstAttempt) {
-          triggerSuccessEffect(btn, true);
-        }
+        triggerSuccessEffect(btn, true);
         gameSet.currentQuestionIndex++;
         const percent = (gameSet.currentQuestionIndex / gameSet.totalQuestions) * 100;
         updateProgress(percent);
