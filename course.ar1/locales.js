@@ -14,6 +14,10 @@ const course_locales =
         "question1": "Find the singular",
         "question2": "Find the plural"
       },
+      "sort_mish_ma_1": {
+        "question1": "Find where 'مش' fits",
+        "question2": "Find where 'ما' fits"
+      },
       "sort_adjective_comparative_v1": {
         "question1": "Find comparative form",
         "question2": "find non-comparative adjective"
@@ -184,6 +188,7 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "Possessive Suffixes \"friend\"": "Местоимённые суффиксы \"друг\"",
       "Colors": "Цвета",
       "modal verbs conjugation": "склонение модальных глаголов",
+      "Interrogative and function words": "Вопросительные и служебные слова",
       "Arabic Basics": "Основы арабского",
       "Great!": "Отлично!",
       "Perfect!": "Превосходно!",
@@ -228,6 +233,10 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "sort_singular_plural_1": {
         "question1": "Найди единственное число",
         "question2": "Найди множественное число"
+      },
+      "sort_mish_ma_1": {
+        "question1": "Найди где подходит 'مش'",
+        "question2": "Найди где подходит 'ما'"
       },
       "sort_adjective_comparative_v1": {
         "question1": "Найди сравнительную форму",
@@ -476,7 +485,7 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "late": "опоздавший",
       "security": "безопасность",
       "searching": "досмотр",
-      "where": "где",
+      "where": "где?",
       "here": "здесь",
       "next to": "возле",
       "i travel": "я лечу",
@@ -711,6 +720,33 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "the doctor is inside the clinic": "врач внутри клиники",
       "the nurse is at the reception": "медсестра в регистратуре",
       "this hospital is big": "эта больница большая",
+      "well": "хороший",
+      "ready": "готовый",
+      "with me": "со мной",
+      "alone": "сам",
+      "tired": "уставший",
+      "present": "имеющийся",
+      "I know": "я знаю",
+      "I understand": "я понимаю",
+      "I go": "я иду",
+      "I see": "я вижу",
+      "I hear": "я слышу",
+      "I come": "я прихожу",
+      "I sleep": "я сплю",
+      "I find": "я нахожу",
+      "I can": "я могу",
+      "I forget": "я забываю",
+      "who": "кто?",
+      "what": "что?",
+      "where from": "откуда?",
+      "where to": "куда?",
+      "when": "когда?",
+      "how": "как?",
+      "why": "почему?",
+      "in": "в [внутри, `بـ b-` тоже самое]",
+      "from": "из",
+      "with": "с",
+      "or": "или",
       "rent": "аренда",
       "tenant": "арендатор",
       "parent (m)": "родитель",

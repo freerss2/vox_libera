@@ -2720,6 +2720,42 @@ The goal is to practice independently in the game format, but without the risk o
         ]
       },
       {
+        "id": "sort_mish_ma_1",
+        "question1": {},
+        "question2": {},
+        "type": "lists",
+        "data": [
+          [
+            "منيح",
+            "هون",
+            "جاهز",
+            "كبير",
+            "معي",
+            "مشكلة",
+            "لحالي",
+            "فاضي",
+            "تعبان",
+            "غالي",
+            "بعيد",
+            "موجود"
+          ],
+          [
+            "بعرف",
+            "بفهم",
+            "بروح",
+            "بحب",
+            "بدي",
+            "بشوف",
+            "بسمع",
+            "بجي",
+            "بنام",
+            "بلاقي",
+            "بقدر",
+            "بنسى"
+          ]
+        ]
+      },
+      {
         "id": "sort_adjective_comparative_v1",
         "question1": {},
         "question2": {},
@@ -3021,8 +3057,8 @@ The goal is to practice independently in the game format, but without the risk o
           ],
           [
             "here",
-            "هنا",
-            "huna"
+            "هون",
+            "hon"
           ],
           [
             "next to",
@@ -3315,9 +3351,219 @@ The goal is to practice independently in the game format, but without the risk o
             "biddhun"
           ]
         ]
+      },
+      {
+        "title": "Interrogative and function words",
+        "words": [
+          [
+            "who",
+            "مين",
+            "min"
+          ],
+          [
+            "what",
+            "شو",
+            "shu"
+          ],
+          [
+            "where",
+            "وين",
+            "wen"
+          ],
+          [
+            "where from",
+            "من وين",
+            "min wen"
+          ],
+          [
+            "where to",
+            "لوين",
+            "la-wen"
+          ],
+          [
+            "when",
+            "إيمتى",
+            "emta"
+          ],
+          [
+            "how",
+            "كيف",
+            "kif"
+          ],
+          [
+            "why",
+            "ليش",
+            "lesh"
+          ],
+          [
+            "in",
+            "في",
+            "fi"
+          ],
+          [
+            "from",
+            "من",
+            "min"
+          ],
+          [
+            "with",
+            "مع",
+            "ma'a"
+          ],
+          [
+            "or",
+            "أو",
+            "oo"
+          ]
+        ]
       }
     ],
     "words": [
+      [
+        "well",
+        "منيح",
+        "mnih"
+      ],
+      [
+        "ready",
+        "جاهز",
+        "jahiz"
+      ],
+      [
+        "with me",
+        "معي",
+        "ma'i"
+      ],
+      [
+        "problem",
+        "مشكلة",
+        "mushkle"
+      ],
+      [
+        "alone",
+        "لحالي",
+        "lahali"
+      ],
+      [
+        "tired",
+        "تعبان",
+        "ta'ban"
+      ],
+      [
+        "present",
+        "موجود",
+        "mawjud"
+      ],
+      [
+        "I know",
+        "بعرف",
+        "ba'rif"
+      ],
+      [
+        "I understand",
+        "بفهم",
+        "bifham"
+      ],
+      [
+        "I go",
+        "بروح",
+        "bruh"
+      ],
+      [
+        "I see",
+        "بشوف",
+        "bshuf"
+      ],
+      [
+        "I hear",
+        "بسمع",
+        "bisma'"
+      ],
+      [
+        "I come",
+        "بجي",
+        "bji"
+      ],
+      [
+        "I sleep",
+        "بنام",
+        "bnam"
+      ],
+      [
+        "I find",
+        "بلاقي",
+        "blaq'i"
+      ],
+      [
+        "I can",
+        "بقدر",
+        "baq'dir"
+      ],
+      [
+        "I forget",
+        "بنسى",
+        "binsa"
+      ],
+      [
+        "who",
+        "مين",
+        "min"
+      ],
+      [
+        "what",
+        "شو",
+        "shu"
+      ],
+      [
+        "where",
+        "وين",
+        "wen"
+      ],
+      [
+        "where from",
+        "من وين",
+        "min wen"
+      ],
+      [
+        "where to",
+        "لوين",
+        "la-wen"
+      ],
+      [
+        "when",
+        "إيمتى",
+        "emta"
+      ],
+      [
+        "how",
+        "كيف",
+        "kif"
+      ],
+      [
+        "why",
+        "ليش",
+        "lesh"
+      ],
+      [
+        "in",
+        "في",
+        "fi"
+      ],
+      [
+        "from",
+        "من",
+        "min"
+      ],
+      [
+        "with",
+        "مع",
+        "ma'a"
+      ],
+      [
+        "or",
+        "أو",
+        "oo"
+      ],
       [
         "rent",
         "إيجار",
@@ -3830,8 +4076,8 @@ The goal is to practice independently in the game format, but without the risk o
       ],
       [
         "here",
-        "هنا",
-        "huna"
+        "هون",
+        "hon"
       ],
       [
         "next to",

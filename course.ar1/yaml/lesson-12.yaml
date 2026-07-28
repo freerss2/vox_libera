@@ -64,6 +64,18 @@ sort_set:
     - أصدقاء
     - فساتين
     - مقاعد
+- id: sort_mish_ma_1
+  question1:
+    en: Find where 'مش' fits
+    ru: Найди где подходит 'مش'
+  question2:
+    en: Find where 'ما' fits
+    ru: Найди где подходит 'ما'
+  type: lists
+  data:
+    - ["منيح", "هون", "جاهز", "كبير", "معي", "مشكلة", "لحالي", "فاضي", "تعبان", "غالي", "بعيد", "موجود"]
+    - ["بعرف", "بفهم", "بروح", "بحب", "بدي", "بشوف", "بسمع", "بجي", "بنام", "بلاقي", "بقدر", "بنسى"]
+
 - id: sort_adjective_comparative_v1
   question1:
     en: Find comparative form
@@ -156,7 +168,7 @@ pairs_set:
   words:
   - بعيد
   - قريب
-  - هنا
+  - هون
   - جنب
   - فاضي
   - محجوز
@@ -227,7 +239,172 @@ pairs_set:
   - بدنا
   - بدكن
   - بدهن
+
+
+- title:
+    en: Interrogative and function words
+    ru: Вопросительные и служебные слова
+  words:
+  - مين
+  - شو
+  - وين
+  - من وين
+  - لوين
+  - إيمتى
+  - كيف
+  - ليش
+  - في
+  - من
+  - مع
+  - أو
+
 words:
+
+- en: well
+  ar: منيح
+  transliteration: mnih
+  ru: хороший
+
+- en: ready
+  ar: جاهز
+  transliteration: jahiz
+  ru: готовый
+
+- en: with me
+  ar: معي
+  transliteration: ma'i
+  ru: со мной
+
+- en: problem
+  ar: مشكلة
+  transliteration: mushkle
+  ru: проблема
+
+- en: alone
+  ar: لحالي
+  transliteration: lahali
+  ru: сам
+
+- en: tired
+  ar: تعبان
+  transliteration: ta'ban
+  ru: уставший
+
+- en: present
+  ar: موجود
+  transliteration: mawjud
+  ru: имеющийся
+
+
+- en: I know
+  ar: بعرف
+  transliteration: ba'rif
+  ru: я знаю
+
+- en: I understand
+  ar: بفهم
+  transliteration: bifham
+  ru: я понимаю
+
+- en: I go
+  ar: بروح
+  transliteration: bruh
+  ru: я иду
+
+- en: I see
+  ar: بشوف
+  transliteration: bshuf
+  ru: я вижу
+
+- en: I hear
+  ar: بسمع
+  transliteration: bisma'
+  ru: я слышу
+
+- en: I come
+  ar: بجي
+  transliteration: bji
+  ru: я прихожу
+
+- en: I sleep
+  ar: بنام
+  transliteration: bnam
+  ru: я сплю
+
+- en: I find
+  ar: بلاقي
+  transliteration: blaq'i
+  ru: я нахожу
+
+- en: I can
+  ar: بقدر
+  transliteration: baq'dir
+  ru: я могу
+
+- en: I forget
+  ar: بنسى
+  transliteration: binsa
+  ru: я забываю
+
+- en: who
+  ar: مين
+  transliteration: min
+  ru: кто?
+
+- en: what
+  ar: شو
+  transliteration: shu
+  ru: что?
+
+- en: where
+  ar: وين
+  transliteration: wen
+  ru: где?
+
+- en: where from
+  ar: من وين
+  transliteration: min wen
+  ru: откуда?
+
+- en: where to
+  ar: لوين
+  transliteration: la-wen
+  ru: куда?
+
+- en: when
+  ar: إيمتى
+  transliteration: emta
+  ru: когда?
+
+- en: how
+  ar: كيف
+  transliteration: kif
+  ru: как?
+
+- en: why
+  ar: ليش
+  transliteration: lesh
+  ru: почему?
+
+- en: in
+  ar: في
+  transliteration: fi
+  ru: в [внутри, `بـ b-` тоже самое]
+
+- en: from
+  ar: من
+  transliteration: min
+  ru: из
+
+- en: with
+  ar: مع
+  transliteration: ma'a
+  ru: с
+
+- en: or
+  ar: أو
+  transliteration: oo
+  ru: или
 
 - en: rent
   ar: إيجار
@@ -688,8 +865,8 @@ words:
   transliteration: ba'id
   ru: вдали
 - en: here
-  ar: هنا
-  transliteration: huna
+  ar: هون
+  transliteration: hon
   ru: здесь
 - en: next to
   ar: جنب
