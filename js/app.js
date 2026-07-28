@@ -2694,6 +2694,7 @@ function unpackProgressData(data) {
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
 
+    document.getElementById('current-course-name').innerText = i18n.t(manifest.metadata.title);
     initNarrator(getRandomNarrator(), 'narrator-wrapper');
     const bubble = document.getElementById('speech-bubble');
     const narrator = document.getElementById('narrator-wrapper');

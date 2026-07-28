@@ -922,6 +922,20 @@ body {
     gap: 10px;
 }
 
+#current-course-name {
+    color: #888;
+    margin: 0;
+    font-size: 1.1rem;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-left: 20px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    border-top: none;
+    border-bottom: none;
+}
+
 #recap-summary {
   margin-bottom: 8px;
 }
@@ -1160,10 +1174,12 @@ body {
 .drawer h3 {
   font-size: 14px;
   color: #888;
-  text-transform:
-  uppercase;
+  text-transform: uppercase;
   border-top: medium dotted black;
+  border-bottom: 1px solid rgb(238 238 238);
   padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
 }
 
 .setting-group {
@@ -1269,7 +1285,6 @@ input:checked + .slider::before { transform: translateX(24px); }
 .drawer-footer {
     margin-top: auto;
     padding: 20px;
-    border-top: 1px solid #eee;
 }
 
 .github-link {
