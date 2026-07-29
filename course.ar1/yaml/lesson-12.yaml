@@ -9,12 +9,14 @@ explanations:
     Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
     Like flashcards, these exercises don't award success percentages.
     The goal is to practice independently in the game format, but without the risk of losing winning points.
+    ** A little grammar: ** the negative particle '''ما''' is used before verbs, and '''مش''' is used before other parts of speech
   ru: |
     ### Этот урок предназначен для закрепления изученного.
     Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
     Кроме того, существует особый тип упражнений: сортировка по какому-либо общепринятому определению, например, женский род или сравнительная степень.
     Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
     Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
+    ** Немного грамматики: ** отрицательная частица '''ما''' используется перед глаголами, а '''مش''' - перед остальными частями речи
 sort_set:
 - id: sort_people_pairs_v1
   question1:
@@ -121,6 +123,7 @@ pairs_set:
 - title:
     en: Similar words
     ru: Похожие слова
+  id: similar_words
   words:
   - جار
   - إيجار
@@ -142,10 +145,10 @@ pairs_set:
   - ختيار
   - قديم
   - تاريخي
-
 - title:
     en: Adverbs
     ru: Наречия
+  id: adverbs
   words:
   - للأسف
   - توفيق
@@ -165,6 +168,7 @@ pairs_set:
 - title:
     en: Time and Place
     ru: Время и место
+  id: time_and_place
   words:
   - بعيد
   - قريب
@@ -185,6 +189,7 @@ pairs_set:
 - title:
     en: Possessive Suffixes "home"
     ru: Местоимённые суффиксы "дом"
+  id: posessive_home
   words:
   - بيت
   - بيتي
@@ -197,6 +202,7 @@ pairs_set:
 - title:
     en: Possessive Suffixes "friend"
     ru: Местоимённые суффиксы "друг"
+  id: posessive_friend
   words:
   - صاحب
   - صاحبي
@@ -210,6 +216,7 @@ pairs_set:
 - title:
     en: Colors
     ru: Цвета
+  id: colors
   words:
   - أبيض
   - رمادي
@@ -225,6 +232,7 @@ pairs_set:
 - title:
     en: modal verbs conjugation
     ru: склонение модальных глаголов
+  id: modal_conjugation
   words:
   - بحب
   - إنت بتحب
@@ -239,11 +247,10 @@ pairs_set:
   - بدنا
   - بدكن
   - بدهن
-
-
 - title:
     en: Interrogative and function words
     ru: Вопросительные и служебные слова
+  id: question_and_function
   words:
   - مين
   - شو
@@ -257,155 +264,123 @@ pairs_set:
   - من
   - مع
   - أو
-
 words:
-
 - en: well
   ar: منيح
   transliteration: mnih
   ru: хороший
-
 - en: ready
   ar: جاهز
   transliteration: jahiz
   ru: готовый
-
 - en: with me
   ar: معي
   transliteration: ma'i
   ru: со мной
-
 - en: problem
   ar: مشكلة
   transliteration: mushkle
   ru: проблема
-
 - en: alone
   ar: لحالي
   transliteration: lahali
   ru: сам
-
 - en: tired
   ar: تعبان
   transliteration: ta'ban
   ru: уставший
-
 - en: present
   ar: موجود
   transliteration: mawjud
   ru: имеющийся
-
-
 - en: I know
   ar: بعرف
   transliteration: ba'rif
   ru: я знаю
-
 - en: I understand
   ar: بفهم
   transliteration: bifham
   ru: я понимаю
-
 - en: I go
   ar: بروح
   transliteration: bruh
   ru: я иду
-
 - en: I see
   ar: بشوف
   transliteration: bshuf
   ru: я вижу
-
 - en: I hear
   ar: بسمع
   transliteration: bisma'
   ru: я слышу
-
 - en: I come
   ar: بجي
   transliteration: bji
   ru: я прихожу
-
 - en: I sleep
   ar: بنام
   transliteration: bnam
   ru: я сплю
-
 - en: I find
   ar: بلاقي
   transliteration: blaq'i
   ru: я нахожу
-
 - en: I can
   ar: بقدر
   transliteration: baq'dir
   ru: я могу
-
 - en: I forget
   ar: بنسى
   transliteration: binsa
   ru: я забываю
-
 - en: who
   ar: مين
   transliteration: min
   ru: кто?
-
 - en: what
   ar: شو
   transliteration: shu
   ru: что?
-
 - en: where
   ar: وين
   transliteration: wen
   ru: где?
-
 - en: where from
   ar: من وين
   transliteration: min wen
   ru: откуда?
-
 - en: where to
   ar: لوين
   transliteration: la-wen
   ru: куда?
-
 - en: when
   ar: إيمتى
   transliteration: emta
   ru: когда?
-
 - en: how
   ar: كيف
   transliteration: kif
   ru: как?
-
 - en: why
   ar: ليش
   transliteration: lesh
   ru: почему?
-
 - en: in
   ar: في
   transliteration: fi
   ru: в [внутри, `بـ b-` тоже самое]
-
 - en: from
   ar: من
   transliteration: min
   ru: из
-
 - en: with
   ar: مع
   transliteration: ma'a
   ru: с
-
 - en: or
   ar: أو
   transliteration: oo
   ru: или
-
 - en: rent
   ar: إيجار
   transliteration: ijaar
@@ -414,7 +389,6 @@ words:
   ar: مستأجر
   transliteration: mustajir
   ru: арендатор
-
 - en: parent (m)
   ar: والد
   transliteration: walid
@@ -431,7 +405,6 @@ words:
   ar: أولاد
   transliteration: wlad
   ru: дети
-
 - en: travel
   ar: سفر
   transliteration: safar
@@ -464,7 +437,6 @@ words:
   ar: تاريخي
   transliteration: tarikhi
   ru: исторический
-
 - en: I love
   ar: بحب
   transliteration: bhibb
@@ -1051,7 +1023,7 @@ words:
   ru: платья
 - en: a seat
   ar: مقعد
-  transliteration: "maqe'ad"
+  transliteration: maqe'ad
   ru: сиденье
 - en: the seats
   ar: مقاعد

@@ -45,17 +45,47 @@ def quot_escape(line):
 
 def escape_backtics(text):
     """
-    Escape quotes inside backticks block
+    Escape quotes inside JS template literals, while leaving literal backticks
+    inside ordinary quoted strings unchanged.
     """
-    split_lines = text.split('`')
     result = []
-    backtick = False
-    for line in split_lines:
-        if backtick:
-            line = '"`' + quot_escape(line) + '`"'
-        result.append(line)
-        backtick = not backtick
-    return " ".join(result)
+    i = 0
+    in_single_quote = False
+    in_double_quote = False
+
+    while i < len(text):
+        ch = text[i]
+        prev = text[i - 1] if i > 0 else ''
+
+        if ch == "'" and not in_double_quote and prev != "\\":
+            in_single_quote = not in_single_quote
+            result.append(ch)
+            i += 1
+            continue
+
+        if ch == '"' and not in_single_quote and prev != "\\":
+            in_double_quote = not in_double_quote
+            result.append(ch)
+            i += 1
+            continue
+
+        if ch == '`' and not in_single_quote and not in_double_quote:
+            i += 1
+            content = []
+            while i < len(text):
+                if text[i] == '`' and text[i - 1] != "\\":
+                    break
+                content.append(text[i])
+                i += 1
+            result.append('"`' + quot_escape(''.join(content)) + '`"')
+            if i < len(text):
+                i += 1
+            continue
+
+        result.append(ch)
+        i += 1
+
+    return ''.join(result)
 
 def decode_escaped_backtick(text):
     """
@@ -120,7 +150,11 @@ def read_input(fname):
         var_name = text.split('=')[0].strip()
         info("got variable >> {}".format(var_name))
         text = '='.join(text.split('=')[1:]).replace('};', '}')
-        data = json.loads(text)
+        try:
+            data = json.loads(text)
+        except Exception as e:
+            error(f"failed reading JSON input {e}")
+            exit(1)
     return data
 
 def save_json(fname, data):

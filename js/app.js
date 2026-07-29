@@ -174,6 +174,7 @@ let currentPairsSetIndex = null;
 let lastRenderedTopicId = null;
 let lastRenderedScreenId = null;
 var gameScreenId = null;
+var pairsSetId = null;
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -525,6 +526,7 @@ function getCurrentPairsSet() {
     }
 
     if (currentPairsSetIndex === null || currentPairsSetIndex >= currentTopic.pairs_set.length) {
+        // TODO: order elements in currentTopic.pairs_set by their score using "id" in statistics
         currentPairsSetIndex = Math.floor(Math.random() * currentTopic.pairs_set.length);
         if (lastPos >=0 && currentPairsSetIndex == lastPos) {
             currentPairsSetIndex = (lastPos+1) % currentTopic.pairs_set.length;
@@ -937,10 +939,16 @@ function checkPairMatch() {
         matches++;
         updateProgress(matches / pairItemsInRound * 100);
         selectedLeft = null; selectedRight = null;
-        if (matches === pairItemsInRound) setTimeout(() => {
-            const acc = Math.round((pairItemsInRound / (pairItemsInRound + errors)) * 100);
-            showWin(acc);
-        }, 400);
+        if (matches === pairItemsInRound) {
+            if (pairsSetId) {
+                // Special case: register pass/fail for whole set
+                updateStats(`pairs_set|${pairsSetId}`, errors ? false : true);
+            }
+            setTimeout(() => {
+              const acc = Math.round((pairItemsInRound / (pairItemsInRound + errors)) * 100);
+              showWin(acc);
+            }, 400);
+        }
     } else {
         updateStats(targetStr, false);
         errors++;
@@ -952,9 +960,9 @@ function checkPairMatch() {
         setTimeout(() => {
             l.classList.remove('wrong', 'selected');
             r.classList.remove('wrong', 'selected');
-            // Do we need it here?
             selectedLeft = null; selectedRight = null;
-            scrollToTop('app-container');
+            // Do we need it here?
+            // (* removed irrelevant? *) scrollToTop('app-container');
         }, 400);
     }
 }
@@ -1409,6 +1417,7 @@ let gameSet = {
 
 function resetTopicScopedState(preserveFinalProgress = false) {
     currentPairsSetIndex = null;
+    pairsSetId = null;
     if (!preserveFinalProgress) {
         finalProgress = 0;
     }
@@ -2041,11 +2050,13 @@ function dedupeByTargetVisual(items) {
 function getTopicData(inputTypes, hideWellLearned, needShuffle) {
   // for inputTypes = 'pairs_set' use a different source
   let collectedData = [];
+  pairsSetId = null;
   if (inputTypes.includes('pairs_set')) {
     // TODO: do not reset when user selected "repeat same set"
     currentPairsSetIndex = null;
     const pairsSet = getCurrentPairsSet();
     if (pairsSet && Array.isArray(pairsSet.words)) {
+        pairsSetId = pairsSet.id;
         let collectedData = pairsSet.words
             .map(item => decodeLearnItem(item))
             .filter(item => item && item[0] && item[1]);

@@ -2631,6 +2631,7 @@ Here you'll find exercises that practice grammar and memorize words that are sim
 Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
 Like flashcards, these exercises don't award success percentages.
 The goal is to practice independently in the game format, but without the risk of losing winning points.
+** A little grammar: ** the negative particle '''ما''' is used before verbs, and '''مش''' is used before other parts of speech
 `,
     "sort_set": [
       {
@@ -2859,6 +2860,7 @@ The goal is to practice independently in the game format, but without the risk o
     "pairs_set": [
       {
         "title": "Similar words",
+        "id": "similar_words",
         "words": [
           [
             "neighbor (m)",
@@ -2964,6 +2966,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "Adverbs",
+        "id": "adverbs",
         "words": [
           [
             "unfortunately",
@@ -3044,6 +3047,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "Time and Place",
+        "id": "time_and_place",
         "words": [
           [
             "away",
@@ -3129,6 +3133,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "Possessive Suffixes \"home\"",
+        "id": "posessive_home",
         "words": [
           [
             "home",
@@ -3174,6 +3179,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "Possessive Suffixes \"friend\"",
+        "id": "posessive_friend",
         "words": [
           [
             "friend (m)",
@@ -3224,6 +3230,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "Colors",
+        "id": "colors",
         "words": [
           [
             "white",
@@ -3284,6 +3291,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "modal verbs conjugation",
+        "id": "modal_conjugation",
         "words": [
           [
             "I love",
@@ -3354,6 +3362,7 @@ The goal is to practice independently in the game format, but without the risk o
       },
       {
         "title": "Interrogative and function words",
+        "id": "question_and_function",
         "words": [
           [
             "who",

@@ -59,6 +59,9 @@ locales:
       sort_singular_plural_1:
         question1: Find the singular
         question2: Find the plural
+      sort_mish_ma_1:
+        question1: Find where 'مش' fits
+        question2: Find where 'ما' fits
       sort_adjective_comparative_v1:
         question1: Find comparative form
         question2: find non-comparative adjective
@@ -77,6 +80,9 @@ locales:
       sort_singular_plural_1:
         question1: Найди единственное число
         question2: Найди множественное число
+      sort_mish_ma_1:
+        question1: Найди где подходит 'مش'
+        question2: Найди где подходит 'ما'
       sort_adjective_comparative_v1:
         question1: Найди сравнительную форму
         question2: Найди обычную форму прилагательного
