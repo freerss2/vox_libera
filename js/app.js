@@ -175,6 +175,7 @@ let lastRenderedTopicId = null;
 let lastRenderedScreenId = null;
 var gameScreenId = null;
 var pairsSetId = null;
+var sortSetId = null;
 
 // Fisher–Yates shuffle
 function shuffle(array) {
@@ -514,6 +515,84 @@ function getScreenType(screen_id) {
   return DEFAULT_SCREEN_ID;
 }
 
+function getSetElementCount(setRecord) {
+    if (Array.isArray(setRecord?.words)) {
+        return setRecord.words.length;
+    }
+    if (Array.isArray(setRecord?.data)) {
+        if (setRecord.type === 'pairs') {
+            return setRecord.data.length;
+        }
+        return Math.min(...setRecord.data.map(entry => Array.isArray(entry) ? entry.length : 0));
+    }
+    return 0;
+}
+
+function pickSetByStats(sets, statsPrefix, previousIndex = null) {
+    if (!Array.isArray(sets) || sets.length === 0) {
+        return null;
+    }
+
+    const stats = getStats();
+    const scoredSets = sets.map((setRecord, index) => {
+        const statKey = `${statsPrefix}|${setRecord.id}`;
+        const setStats = stats[statKey] || { attempts: 0, success: 0 };
+        const elementCount = getSetElementCount(setRecord);
+        const attempts = Number(setStats.attempts) || 0;
+        const successRate = attempts > 0 ? Number(setStats.success || 0) / attempts : 0;
+
+        return {
+            index,
+            setRecord,
+            attempts,
+            successRate,
+            elementCount,
+            underPracticed: attempts < elementCount
+        };
+    });
+
+    const underPracticed = scoredSets.filter(item => item.underPracticed);
+    let candidates = underPracticed.length ? underPracticed : scoredSets;
+
+    if (candidates.length > 1 && previousIndex !== null) {
+        const preferredCandidates = candidates.filter(item => item.index !== previousIndex);
+        if (preferredCandidates.length) {
+            candidates = preferredCandidates;
+        }
+    }
+
+    if (candidates.length === 0) {
+        return null;
+    }
+
+    const bestPriority = underPracticed.length
+        ? Math.min(...candidates.map(item => item.attempts))
+        : Math.min(...candidates.map(item => item.successRate));
+    const samePriority = candidates.filter(item => (
+        underPracticed.length ? item.attempts : item.successRate
+    ) === bestPriority);
+
+    if (samePriority.length === 0) {
+        return candidates[0].index;
+    }
+
+    const orderedSamePriority = samePriority.slice().sort((a, b) => a.index - b.index);
+    if (previousIndex !== null) {
+        const availableCandidates = orderedSamePriority.filter(item => item.index !== previousIndex);
+        if (availableCandidates.length > 0) {
+            const randomCandidate = availableCandidates[Math.floor(Math.random() * availableCandidates.length)];
+            return randomCandidate.index;
+        }
+
+        const fallbackIndex = (previousIndex + 1) % sets.length;
+        const fallbackCandidate = orderedSamePriority.find(item => item.index === fallbackIndex)
+            || orderedSamePriority[0];
+        return fallbackCandidate.index;
+    }
+
+    return orderedSamePriority[Math.floor(Math.random() * orderedSamePriority.length)].index;
+}
+
 // Get current pairs_set for the current topic
 // @return: object with "title" and "pairs" or null if not applicable
 function getCurrentPairsSet() {
@@ -526,10 +605,12 @@ function getCurrentPairsSet() {
     }
 
     if (currentPairsSetIndex === null || currentPairsSetIndex >= currentTopic.pairs_set.length) {
-        // TODO: order elements in currentTopic.pairs_set by their score using "id" in statistics
-        currentPairsSetIndex = Math.floor(Math.random() * currentTopic.pairs_set.length);
-        if (lastPos >=0 && currentPairsSetIndex == lastPos) {
-            currentPairsSetIndex = (lastPos+1) % currentTopic.pairs_set.length;
+        currentPairsSetIndex = pickSetByStats(currentTopic.pairs_set, 'pairs_set', lastPos);
+        if (currentPairsSetIndex === null || currentPairsSetIndex >= currentTopic.pairs_set.length) {
+           currentPairsSetIndex = Math.floor(Math.random() * currentTopic.pairs_set.length);
+            if (lastPos !== null && lastPos == currentPairsSetIndex) {
+                currentPairsSetIndex = (lastPos + 1) % currentTopic.pairs_set.length;
+            }
         }
         lastPos = currentPairsSetIndex;
     }
@@ -1049,12 +1130,15 @@ function renderSortingGame() {
 function getDataSetForSortingGame() {
     const topicId = settings.getCurrentTopic();
     const allSets = topics[topicId]['sort_set'];
-    // first - took randomly a set
+    // prioritize sets using collected statistics
     let setIndex = 0;
     if (allSets.length > 1 ) {
-       setIndex = Math.floor(Math.random() * allSets.length);
-       if (lastPos >=0 && setIndex == lastPos) {
-           setIndex = (lastPos+1) % allSets.length;
+       setIndex = pickSetByStats(allSets, 'sort_set', lastPos);
+       if (setIndex === null || setIndex >= allSets.length) {
+           setIndex = Math.floor(Math.random() * allSets.length);
+           if (lastPos !== null && lastPos == setIndex) {
+               setIndex = (lastPos + 1) % allSets.length;
+           }
        }
     }
     lastPos = setIndex;
@@ -1065,6 +1149,7 @@ function getDataSetForSortingGame() {
         direction = Math.floor(Math.random() * 2);
     }
     const setId = selectedSet['id'];
+    sortSetId = setId;
     const localesRec = locales[userLang]['sort_set'][setId];
     const question = direction ? localesRec['question2'] : localesRec['question1'];
     document.getElementById('recap-subtitle').textContent = question;
@@ -1137,6 +1222,9 @@ function useSortBankWord(index) {
             bankWordElement.classList.add('hidden')
             // if we reached expectedMatches - show "Win" screen
             if (matches == expectedMatches) {
+                if (sortSetId) {
+                    updateStats(`sort_set|${sortSetId}`, errors ? false : true);
+                }
                 setTimeout(() => {
                     const acc = Math.round((expectedMatches / (expectedMatches + errors)) * 100);
                     showWin(acc);
@@ -1418,6 +1506,7 @@ let gameSet = {
 function resetTopicScopedState(preserveFinalProgress = false) {
     currentPairsSetIndex = null;
     pairsSetId = null;
+    sortSetId = null;
     if (!preserveFinalProgress) {
         finalProgress = 0;
     }
