@@ -53,20 +53,41 @@ Vox-Libera consumes data in a standard JSON format. This makes it easy to genera
 
 ### Example Lesson Structure:
 
-```json
-{
-  "describe_yourself_1": {
-      "index": 1,
-      "name": "About yourself 1",
-      "words": [
-        ["Nice to meet you", "تشرفنا!", "Tasharrafna!"],
-        ["name", "اسم", "Ism"]
-      ],
-      "sentences": [
-        ["I work as a programmer", "أنا أعمل مبرمجاً", "Ana a'mal mubarmijan."]
-      ]
-  }
-}
+```yaml
+id: describe_yourself_1
+name:
+  en: Tell about yourself 1
+  ru: Рассказ о себе 1
+explanations:
+  en: |
+    The topic of this lesson is talking about yourself: your occupation and family.
+    Verbs are given in their active spoken Levantine form with the prefix [b-].
+    Remember that in Arabic, adjectives come AFTER the noun they describe (e.g., "house beautiful").
+  ru: |
+    Тема этого урока - рассказ о себе: род занятий, семья.
+    Глаголы приводятся в их активной разговорной форме левантийского диалекта с префиксом [b-].
+    Помните, что в арабском языке прилагательные стоят ПОСЛЕ существительного, которое они описывают (например, «красивый дом»).
+story:
+  en:
+  - ar: من وين إنت؟
+    vocalized: مِنْ وِينْ إِنْتَ؟
+    en: Where are you from?
+    transliteration: Min wayn inta?
+# ...
+words:
+- en: pleased to meet you
+  ar: تشرّفنا
+  transliteration: tasharrafna
+  vocalized: تَشَرَّفْنَا
+  ru: рад знакомству
+# ...
+sentences:
+- en: i work as a programmer
+  ar: بشتغل مبرمج
+  transliteration: bashtaghil mubarmij
+  ru: я работаю программистом
+# ...
+```
 
 ## 6. Troubleshooting: Text-to-Speech (TTS) Is Not Working on Android
 
