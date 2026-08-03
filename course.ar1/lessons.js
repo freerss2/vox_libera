@@ -2,11 +2,14 @@ const topics =
 {
   "all": {
     "name": "All topics",
-    "explanations": `### The First 300 Words and Basic Sentence Constructions
+    "explanations": `### Hello and Welcome to the Course "The First 300 Words and Basic Sentence Constructions"
 The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
 The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
+
+In a first lesson there is no any excercises. You can use it as a general dictionary of all words and sentences in the course.
+So, just go forward until you reach the real excercises in the next lessons.
 `,
     "words": [],
     "sentences": [],
