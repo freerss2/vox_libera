@@ -503,7 +503,10 @@ function showTopicsCards() {
     const progress_title = i18n.t('main|progress_title');
     const total_progress_text = `${progress_title} ${progress_percents}% (${curr_topic_index}/${total_lessons})`;
     displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
-    document.getElementById('current-topic-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const currentTopicCard = document.getElementById('current-topic-card');
+    if (currentTopicCard) {
+        currentTopicCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    }
 }
 
 // initialize topic
