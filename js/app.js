@@ -322,15 +322,16 @@ function loadNextScreen(fromWinDialog=false) {
 
 function showTopicResults() {
 
-    // hide last played screen
-    hideAllScreens();
+    showTopicsCards();
 
     const topicId = settings.getCurrentTopic();
     const topicTitle = i18n_ct(topics[topicId].name);
     const data = getTopicStats(topicId);
 
+    // hide last played screen
+    // hideAllScreens();
     // replace last round title with congratulations
-    showScreenTitle(i18n.t('main|completed'));
+    // showScreenTitle(i18n.t('main|completed'));
 
     // generate Markdown summary
     const repeatPrompt = i18n.t('main|sum-repeat');
@@ -442,6 +443,67 @@ function switchTopic(direction) {
   settings.markAsChanged();
   // start the game
   renderCurrentScreen();
+}
+
+// show topics cards with current topic highlighted
+function showTopicsCards() {
+    hideAllScreens();
+    document.getElementById('course-map').classList.remove('hidden');
+    const cardsContainer = document.getElementById('course-map-cards');
+    cardsContainer.innerHTML = '';
+    const currentTopicId = settings.getCurrentTopic();
+    const words_stat = i18n.t('menu|words_count');
+    const sent_stat = i18n.t('menu|sent_count');
+    let curr_topic_index = 0;
+    for (let key in topics) {
+        const topic = topics[key];
+        const card = document.createElement('div');
+        const state = getTopicState(key);
+        let icon = state ? '✔' : '🔒';
+        let icon_class = state ? 'completed' : 'locked';
+        card.classList.add('course-map-card');
+        if (key === currentTopicId) {
+            curr_topic_index = topic.index + 1;
+            card.classList.add('active');
+            card.id = 'current-topic-card';
+            icon = '▶';
+            icon_class = 'active';
+        }
+        icon = replaceSmiliesWithImages(icon);
+        const topicName = i18n_ct(topic.name);
+        // statWords statSents
+        const stat_data = getTopicStats(key);
+        let statWords = '';
+        let statSents = '';
+        if (stat_data) {
+            statWords = 
+              `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
+               ${stat_data.wordsCount} / ${Math.round(stat_data.wordsSuccess)}%`;
+            statSents =
+              `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
+               ${stat_data.sentencesCount} / ${Math.round(stat_data.sentencesSuccess)}%`;
+        }
+        card.innerHTML = `
+          <span class="course-map-icon">
+            <span class="topic-progress-icon ${icon_class}">${icon}</span>
+          </span>
+          <span class="course-map-text">
+            <div class="course-map-card-index">Lesson ${topic.index + 1}</div>
+            <div class="course-map-card-title">${topicName}</div>
+            <div> ${statWords} &nbsp; ${statSents} </div>
+          </span>`;
+        card.addEventListener('click', () => {
+            initTopic(key);
+            renderCurrentScreen();
+        });
+        cardsContainer.appendChild(card);
+    }
+    const total_lessons = Object.keys(topics).length;
+    const progress_percents = Math.ceil((curr_topic_index/total_lessons) * 100);
+    const progress_title = i18n.t('main|progress_title');
+    const total_progress_text = `${progress_title} ${progress_percents}% (${curr_topic_index}/${total_lessons})`;
+    displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
+    document.getElementById('current-topic-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // initialize topic
@@ -630,16 +692,21 @@ function showScreenTitle(screenName = "Screen") {
     }
 
     let topicTitle = i18n_ct(currentTopic.name);
-    document.getElementById('title').innerHTML =
-        `<div>${topicTitle}</div>
-        <div class="nav-content-wrapper progress-header-wrapper">
-          <span class="progress-header" id="progress-header"></span>
-        </div>
-        <div class="text-with-icon">${screenName}</div>`;
     // update lesson progress percent
     const total = topicScreens.length;
     const currGameIndex = getCurrGameIdex();
-    document.getElementById('progress-header').style.width = `${((currGameIndex+1) / total) * 100}%`;
+    displayScreenTitleData(topicTitle, screenName, total, currGameIndex+1);
+
+}
+
+function displayScreenTitleData(mainTitle, subtitle, total, currIndex) {
+    document.getElementById('title').innerHTML =
+        `<div>${mainTitle}</div>
+        <div class="nav-content-wrapper progress-header-wrapper">
+          <span class="progress-header" id="progress-header"></span>
+        </div>
+        <div class="text-with-icon">${subtitle}</div>`;
+    document.getElementById('progress-header').style.width = `${(currIndex / total) * 100}%`;
 }
 
 var finalProgress = 0;

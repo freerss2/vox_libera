@@ -10,6 +10,9 @@
     --text-color: #4b4b4b;
     --border-color: #888;
     --light-border-color: #E5E5E5;
+    --card-background: #E5E5E5;
+    --selected-background: #CBDEFE;
+    --locked-color: #888;
     --app-scale: 1;
     --font-multiplier: 1; /* language-dependent font multiplier */
 }
@@ -1345,6 +1348,62 @@ input:checked + .slider::before { transform: translateX(24px); }
     animation: burst 0.4s ease-out;
     border-color: var(--primary) !important;
 }
+
+/* course map */
+
+.course-map-card {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--card-background);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.course-map-card.active {
+    border: 4px solid var(--primary-color);
+    background: var(--selected-background);
+}
+
+.topic-progress-icon {
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    padding: 4px;
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.topic-progress-icon.active {
+    background: var(--primary-color);
+}
+
+.topic-progress-icon.completed {
+    background: green;
+}
+
+.topic-progress-icon.locked {
+    background: var(--locked-color);
+}
+
+.course-map-icon {
+    vertical-align: top;
+}
+
+.course-map-text {
+    display: inline-block;
+}
+
+/* search input */
 
 .search-container {
     display: flex;

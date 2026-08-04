@@ -19,7 +19,7 @@
               <use href="#lucide-menu"></use>
             </svg>
           </button>
-          <span id="title">Vox-Libera 📖</span>
+          <span id="title" onclick="showTopicsCards();">Vox-Libera 📖</span>
           <div class="settings-toggle-wrapper">
             <button type="button" id="settingsToggleBtn" class="toolbar-btn gear-btn" onclick="toggleTopSettings()" aria-label="Settings" aria-expanded="false">
               <svg class="emoji-icon">
@@ -273,6 +273,14 @@
     <div id="overlay" onclick="toggleDrawer()"></div>
 
     <main id="app-container">
+
+      <div class="game-screen hidden" id="course-map">
+        <div class="course-progress" id="course-progress">
+          <div id="course-progress-text"></div>
+          <div id="course-progress-bar"></div>
+        </div>
+        <div id="course-map-cards"></div>
+      </div>
 
       <div class="game-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>

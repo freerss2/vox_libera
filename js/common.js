@@ -129,6 +129,9 @@ function updateFavicon(langCode) {
 }
 
 const smiliesMap = {
+    '✔': 'lucide-check',
+    '▶': 'lucide-play',
+    '🔒': 'lucide-lock',
     '🌍': 'lucide-globe',
     '👤': 'lucide-user',
     '→': 'lucide-arrow-right',

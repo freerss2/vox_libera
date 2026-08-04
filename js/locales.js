@@ -251,7 +251,9 @@ To start a course, select the course title and click on it.
       "sum-next": "NEXT ",
       "sent-giveup-btn": "Give up",
       "check": " Check ",
-      "completed": "Completed"
+      "completed": "Completed",
+      "course_map": "Course map",
+      "progress_title": "Progress:"
     }
   },
   "ru": {
@@ -519,7 +521,9 @@ To start a course, select the course title and click on it.
       "hint-btn": "Подсказка",
       "sent-giveup-btn": "Сдаюсь",
       "check": " Проверить ",
-      "completed": "Пройдено"
+      "completed": "Пройдено",
+      "course_map": "Карта курса",
+      "progress_title": "Пройдено:"
     }
   }
 };
