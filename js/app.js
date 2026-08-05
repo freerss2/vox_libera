@@ -510,26 +510,48 @@ function showTopicsCards() {
     }
 }
 
+// make sure all elements have a right style for "course map" cards scrolling
+function setupCourseMapScroll() {
+  const container = document.getElementById('course-map-cards');
+  const app = document.getElementById('app-container');
+  if (!container || !app) return;
+
+  app.style.display = 'flex';
+  app.style.flexDirection = 'column';
+  app.style.height = '100dvh';
+  app.style.overflow = 'hidden';
+
+  let el = container.parentElement;
+  while (el && el !== app) {
+    el.style.display = 'flex';
+    el.style.flexDirection = 'column';
+    el.style.flex = '1';
+    el.style.minHeight = '0';
+    el.style.overflow = 'hidden';
+    el = el.parentElement;
+  }
+
+  // enable scroll for specific DOM element
+  container.style.flex = '1';
+  container.style.minHeight = '0';
+  container.style.overflowY = 'auto';
+  container.style.overflowX = 'hidden';
+  container.style.maxHeight = 'none';
+}
 
 // Usage:
 // scrollCardInside(currentTopicCard);
 function scrollCardInside(card) {
   const container = card.parentElement;
 
-  const containerRect = container.getBoundingClientRect();
-  const cardRect = card.getBoundingClientRect();
+ if (!container || !card) return;
 
-  // Avoid unnecessary scrolls
-  const isVisible = 
-    cardRect.top >= containerRect.top && 
-    cardRect.bottom <= containerRect.bottom;
-
-  if (isVisible) return;
-
-  const offsetTop = cardRect.top - containerRect.top + container.scrollTop;
+  const containerTop = container.getBoundingClientRect().top;
+  const cardTop = card.getBoundingClientRect().top;
+  const offset = 16;
 
   container.scrollTo({
-    top: offsetTop - 16, // 16px margin for better visual impression
+    top: container.scrollTop + (cardTop - containerTop) - offset,
     behavior: 'smooth'
   });
 }
@@ -538,6 +560,7 @@ function scrollCardInside(card) {
 function initTopic(topicId) {
   settings.setCurrentTopic(topicId);
   resetTopicScopedState();
+  let currentScreenId = settings.getCurrentScreenId();
   // Copy SCREENS with a relevant screens only
   // For 'all' topic use only shared == 1
   // For any topic: check if it contains "sentences" (and skip all screens requiring sentences)
@@ -590,6 +613,11 @@ function initTopic(topicId) {
       topicScreens.push(screen);
     }
   });
+  const tryScreenRecord = getScreenRecord(currentScreenId);
+  if (! tryScreenRecord) {
+    currentScreenId = topicScreens[0].id;
+  }
+  settings.setCurrentScreenId(currentScreenId);
   initMenu();
 }
 
@@ -2913,6 +2941,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCurrentScreen();
     updateFavicon(manifest.icon_code);
 
+    setupCourseMapScroll();
     // Start Google authorization (moved to separate module)
     if (typeof startAppAuth === 'function') startAppAuth();
 
