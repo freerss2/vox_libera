@@ -1345,7 +1345,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       ],
       [
         "i wait",
-        "بстنى",
+        "بستنى",
         "bastanna"
       ],
       [
@@ -1407,7 +1407,7 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
       ],
       [
         "is this chair free",
-        "هذا الكрسي فاضي",
+        "هذا الكرسي فاضي",
         "hada al-kursi fadi"
       ],
       [
