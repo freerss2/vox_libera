@@ -1,5 +1,5 @@
-ba725574531320453151a9b6b30f7c87 src\course.template.html
-25e596995db1bd7dcdb8c00627068adb js\common.js
+03c56f2e4f31f9002930336c347f62c2 src\course.template.html
+072e5c00ac6ef85178bb4c6d90fe1dcd js\common.js
 cd90774944ef9e046120a3a5d6ed9d97 js\i18n.js
 a8716f5506eb1d1c80c091d505736ebf js\settings.js
 3a2659ac8e694e706cb4fc8da897ef3a js\locales.js

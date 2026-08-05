@@ -505,8 +505,33 @@ function showTopicsCards() {
     displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
     const currentTopicCard = document.getElementById('current-topic-card');
     if (currentTopicCard) {
-        currentTopicCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        // currentTopicCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        scrollCardInside(currentTopicCard);
     }
+}
+
+
+// Usage:
+// scrollCardInside(currentTopicCard);
+function scrollCardInside(card) {
+  const container = card.parentElement;
+
+  const containerRect = container.getBoundingClientRect();
+  const cardRect = card.getBoundingClientRect();
+
+  // Avoid unnecessary scrolls
+  const isVisible = 
+    cardRect.top >= containerRect.top && 
+    cardRect.bottom <= containerRect.bottom;
+
+  if (isVisible) return;
+
+  const offsetTop = cardRect.top - containerRect.top + container.scrollTop;
+
+  container.scrollTo({
+    top: offsetTop - 16, // 16px margin for better visual impression
+    behavior: 'smooth'
+  });
 }
 
 // initialize topic
