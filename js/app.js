@@ -311,13 +311,26 @@ function loadPrevScreen() {
 }
 
 function loadNextScreen(fromWinDialog=false) {
-  if (settings.getCurrentScreenId() == 'final' && fromWinDialog) {
-    // if entered this code from WinScreen and current screen is 'final'
-    // open special dialog box for topic summary
-    showTopicResults();
-    return;
-  }
-  loadPrevNexScreen(1);
+    const currentScreenId = settings.getCurrentScreenId();
+    if (currentScreenId == 'final' && fromWinDialog) {
+        // if entered this code from WinScreen and current screen is 'final'
+        // open special dialog box for topic summary
+        showTopicResults();
+        return;
+    }
+    // if this is the first screen of first lesson - open the lessons map
+    const topicId = settings.getCurrentTopic();
+    if ( currentScreenId == 'explanations' && topicId == GENERAL_TOPIC_ID) {
+        // go to next lesson?
+        const nextTopicId = getNextPrevTopicId(1);
+        if (nextTopicId) {
+            settings.setCurrentTopic(nextTopicId);
+            resetTopicScopedState();
+            showTopicsCards();
+            return;
+        }
+    }
+    loadPrevNexScreen(1);
 }
 
 function showTopicResults() {
@@ -430,10 +443,8 @@ function nextTopic() {
 // Move one topic forward (+1) or backward (-1)
 // do nothing if it is impossible
 function switchTopic(direction) {
-  // get topic id
-  let topicIndex = topics[settings.getCurrentTopic()].index;
   // find topic with next id
-  let nextTopicId = getTopic(topicIndex+direction);
+  const nextTopicId = getNextPrevTopicId(direction);
   if (! nextTopicId) return;
 
   // if found - load screen
@@ -443,6 +454,13 @@ function switchTopic(direction) {
   settings.markAsChanged();
   // start the game
   renderCurrentScreen();
+}
+
+function getNextPrevTopicId(direction) {
+  // get topic id
+  let topicIndex = topics[settings.getCurrentTopic()].index;
+  // find topic with next id
+  return getTopic(topicIndex+direction);
 }
 
 // show topics cards with current topic highlighted
@@ -513,7 +531,7 @@ function showTopicsCards() {
 // make sure all elements have a right style for "course map" cards scrolling
 function setupCourseMapScroll() {
   const container = document.getElementById('course-map-cards');
-  const app = document.getElementById('app-container');
+  const app = document.getElementById('course-map');
   if (!container || !app) return;
 
   app.style.display = 'flex';
