@@ -181,7 +181,7 @@ var sortSetId = null;
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
 
-    while (currentIndex != 0) {
+    while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
@@ -489,16 +489,13 @@ function showTopicsCards() {
         }
         icon = replaceSmiliesWithImages(icon);
         const topicName = i18n_ct(topic.name);
-        // statWords statSents
         const stat_data = getTopicStats(key);
         let statWords = '';
         let statSents = '';
         if (stat_data) {
-            statWords = 
-              `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
+            statWords = `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
                ${stat_data.wordsCount} / ${Math.round(stat_data.wordsSuccess)}%`;
-            statSents =
-              `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
+            statSents = `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
                ${stat_data.sentencesCount} / ${Math.round(stat_data.sentencesSuccess)}%`;
         }
         card.innerHTML = `
@@ -523,7 +520,6 @@ function showTopicsCards() {
     displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
     const currentTopicCard = document.getElementById('current-topic-card');
     if (currentTopicCard) {
-        // currentTopicCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
         scrollCardInside(currentTopicCard);
     }
 }
@@ -1311,7 +1307,6 @@ function getDataSetForSortingGame() {
     let set_correct = [];
     let set_wrong = [];
     // use both 'abc' and 'words' for lookups
-
     let topicDict = getTopicDictionary(topics[topicId], ['words', 'abc']);
     for (let i=0; i<pairsList.length; i++) {
         const correct_word = pairsList[i][direction ? 1 : 0];

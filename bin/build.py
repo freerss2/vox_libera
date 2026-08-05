@@ -36,7 +36,6 @@ def generate_svg_sprite(source_svg_dir, id_prefix="lucide-"):
     # Standard XML namespaces often found in SVGs
     ET.register_namespace('', "http://www.w3.org/2000/svg")
 
-    rc = 0
     for file_name in svg_files:
         file_path = os.path.join(source_svg_dir, file_name)
         icon_id = os.path.splitext(file_name)[0] # e.g., 'smile' from 'smile.svg'
@@ -76,7 +75,6 @@ def generate_svg_sprite(source_svg_dir, id_prefix="lucide-"):
             print(f"Skipping {file_name}: Invalid XML format.")
         except Exception as e:
             print(f"Error processing {file_name}: {e}")
-            rc = 1
 
     # Wrap all symbols into the hidden master SVG container
     html_output = (
