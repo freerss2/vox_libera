@@ -73,3 +73,5 @@ class Settings {
         this.markChanges = false;
     }
 }
+
+window.Settings = Settings;

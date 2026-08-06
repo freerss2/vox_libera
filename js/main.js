@@ -5,6 +5,11 @@
 
 "use strict";
 
+/* global app_version, engine_ver, locales, html_code_ver, topics, courses, manifest */ // eslint-disable-line no-unused-vars
+/* global initNarrator, getRandomNarrator, toggleBubble, setNarratorEmotion, narratorNeutralEmotion */ // eslint-disable-line no-unused-vars
+/* global updateFavicon, startAppAuth, langDirection, I18nManager, Settings */ // eslint-disable-line no-unused-vars
+/* global updateCharacterBubble, isUserLoggedIn, syncManager, hideNarrator, parseMarkdown */ // eslint-disable-line no-unused-vars
+
 window.html_code_ver = html_code_ver;
 // First, report the components versions
 console.log('app_version='+app_version);
@@ -55,7 +60,7 @@ langSelect.addEventListener('change', (event) => {
 
 
 window.addEventListener('DOMContentLoaded', async () => {
-  initNarrator(getRandomNarrator(), 'narrator-wrapper');
+  window.initNarrator(getRandomNarrator(), 'narrator-wrapper');
   const bubble = document.getElementById('speech-bubble');
   const narrator = document.getElementById('narrator-wrapper');
   updateCharacterBubble(i18n.t('main|app-description'));
@@ -80,4 +85,3 @@ window.addEventListener('DOMContentLoaded', async () => {
   updateFavicon('🌐');
 });
 
-document.replaceSmiliesWithImages = replaceSmiliesWithImages;

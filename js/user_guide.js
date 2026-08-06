@@ -5,6 +5,11 @@
 
 "use strict";
 
+/* global engine_ver, locales, courses, app_version */ // eslint-disable-line no-unused-vars
+/* global I18nManager, Settings, parseMarkdown, initNarrator, getRandomNarrator */  // eslint-disable-line no-unused-vars
+/* global updateFavicon, toggleBubble */ // eslint-disable-line no-unused-vars
+/* global updateCharacterBubble, setNarratorEmotion, narratorSmileEmotion, narratorNeutralEmotion */  // eslint-disable-line no-unused-vars
+
 console.log('engine_ver='+engine_ver);
 /* SPECIAL TREAMENT FOR LINTER ONLY: */
 window.courses = courses;
@@ -142,4 +147,3 @@ window.addEventListener('DOMContentLoaded', async () => {
   updateFavicon('🌐');
 });
 
-document.replaceSmiliesWithImages = replaceSmiliesWithImages;

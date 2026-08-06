@@ -79,3 +79,5 @@ class I18nManager {
         });
     }
 }
+
+window.I18nManager = I18nManager;

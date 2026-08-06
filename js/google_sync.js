@@ -2,16 +2,17 @@
 //             Google login and Drive sync
 // ===========================================
 
-/* global google */
+/* global google, packProgressData, unpackProgressData, replaceSmiliesWithImages */ // eslint-disable-line no-unused-vars
 
 "use strict";
 
 let tokenClient;
 let isUserLoggedIn = false;
+void isUserLoggedIn;
 let cloudSyncGeneration = 0;
 
 // Check if current origin is allowed for Google API usage and start auth process
-function startAppAuth() {
+window.startAppAuth = function() {
     const currentHost = window.location.hostname;
 
     // Allowed domains that appear in Google Cloud Console -> Authorized JavaScript origins
@@ -101,7 +102,7 @@ function showLoginButton() {
 }
 
 // Handle manual click on login
-function handleManualLoginClick() {
+window.handleManualLoginClick = function() {
     if (!navigator.onLine) {
         alert("No internet connection!");
         return;
@@ -319,7 +320,7 @@ function calculateTotalAttempts(data) {
 }
 
 // Logout: clear local data and revoke Google session
-function logoutGoogle() {
+window.logoutGoogle = function() {
     // Get the saved email
     const userEmail = localStorage.getItem('vox_libera_user_email');
 

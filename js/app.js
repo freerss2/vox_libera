@@ -5,6 +5,11 @@
 
 "use strict";
 
+/* global app_version, engine_ver, locales, course_locales, topics, courses, manifest */ // eslint-disable-line no-unused-vars
+/* global initNarrator, getRandomNarrator, toggleBubble, setNarratorEmotion, narratorNeutralEmotion */ // eslint-disable-line no-unused-vars
+/* global updateFavicon, startAppAuth, langDirection, I18nManager, Settings */ // eslint-disable-line no-unused-vars
+/* global updateCharacterBubble, isUserLoggedIn, syncManager, hideNarrator, parseMarkdown */ // eslint-disable-line no-unused-vars
+
 // First, report the components versions
 console.log('app_version='+app_version);
 console.log('engine_ver='+engine_ver);
@@ -62,10 +67,10 @@ const settings = new Settings(
 let finalGameForTopic = '';
 
 const hideWellLearnedElm = document.getElementById('hide-well-learned');
-hideWellLearnedElm.checked = settings.getHideWellLearned() == 1;
+hideWellLearnedElm.checked = settings.getHideWellLearned() === 1;
 
 const showTransToggleElm = document.getElementById('show-trans-toggle');
-showTransToggleElm.checked = settings.getShowTranscription() == 1;
+showTransToggleElm.checked = settings.getShowTranscription() === 1;
 
 const userLang = settings.getUserInterfaceLanguage();
 
@@ -457,9 +462,9 @@ function switchTopic(direction) {
 }
 
 function getNextPrevTopicId(direction) {
-  // get topic id
+  // get current topic index
   let topicIndex = topics[settings.getCurrentTopic()].index;
-  // find topic with next id
+  // find topic using new index
   return getTopic(topicIndex+direction);
 }
 
@@ -472,16 +477,29 @@ function showTopicsCards() {
     const currentTopicId = settings.getCurrentTopic();
     const words_stat = i18n.t('menu|words_count');
     const sent_stat = i18n.t('menu|sent_count');
-    let curr_topic_index = 0;
+    const curr_topic_index = topics[currentTopicId].index+1;
     for (let key in topics) {
         const topic = topics[key];
+        addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat);
+    }
+    const total_lessons = Object.keys(topics).length;
+    const progress_percents = Math.ceil((curr_topic_index/total_lessons) * 100);
+    const progress_title = i18n.t('main|progress_title');
+    const total_progress_text = `${progress_title} ${progress_percents}% (${curr_topic_index}/${total_lessons})`;
+    displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
+    const currentTopicCard = document.getElementById('current-topic-card');
+    if (currentTopicCard) {
+        scrollCardInside(currentTopicCard);
+    }
+}
+
+function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat) {
         const card = document.createElement('div');
         const state = getTopicState(key);
         let icon = state ? '✔' : '🔒';
         let icon_class = state ? 'completed' : 'locked';
         card.classList.add('course-map-card');
         if (key === currentTopicId) {
-            curr_topic_index = topic.index + 1;
             card.classList.add('active');
             card.id = 'current-topic-card';
             icon = '▶';
@@ -512,16 +530,6 @@ function showTopicsCards() {
             renderCurrentScreen();
         });
         cardsContainer.appendChild(card);
-    }
-    const total_lessons = Object.keys(topics).length;
-    const progress_percents = Math.ceil((curr_topic_index/total_lessons) * 100);
-    const progress_title = i18n.t('main|progress_title');
-    const total_progress_text = `${progress_title} ${progress_percents}% (${curr_topic_index}/${total_lessons})`;
-    displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
-    const currentTopicCard = document.getElementById('current-topic-card');
-    if (currentTopicCard) {
-        scrollCardInside(currentTopicCard);
-    }
 }
 
 // make sure all elements have a right style for "course map" cards scrolling
@@ -958,13 +966,13 @@ function initFlashcards() {
     document.getElementById('card-anchor').style='';
 }
 
-function speakFlashcard(slow=0) {
+window.speakFlashcard = function(slow=0) {
     const item = flashcardsData[cardIndex];
     if (slow)  speakTargetLangSlow(item[1]);
     else       speakTargetLang(item[1]);
 }
 
-function toggleStudyMode() {
+window.toggleStudyMode = function() {
     flashcardsMode = (flashcardsMode === 't2u') ? 'u2t' : 't2u';
     // Cancel any flip and refresh the content
     document.getElementById('card-object').classList.remove('flipped');
@@ -1000,7 +1008,7 @@ function updateCardContent() {
     counter.innerText = `${cardIndex + 1} / ${flashcardsData.length}`;
 }
 
-function changeCard(step) {
+window.changeCard = function(step) {
     const cardAnchor = document.getElementById('card-anchor');
 
     // Animation of sliding
@@ -1017,7 +1025,7 @@ function changeCard(step) {
     }, 200);
 }
 
-function markAsLearned() {
+window.markAsLearned = function() {
     const cardAnchor = document.getElementById('card-anchor');
 
     // Animate learned card disappearing
@@ -1266,25 +1274,9 @@ function renderSortingGame() {
 // return a record with elements: question, set_correct and set_wrong
 function getDataSetForSortingGame() {
     const topicId = settings.getCurrentTopic();
-    const allSets = topics[topicId]['sort_set'];
-    // prioritize sets using collected statistics
-    let setIndex = 0;
-    if (allSets.length > 1 ) {
-       setIndex = pickSetByStats(allSets, 'sort_set', lastPos);
-       if (setIndex === null || setIndex >= allSets.length) {
-           setIndex = Math.floor(Math.random() * allSets.length);
-           if (lastPos !== null && lastPos == setIndex) {
-               setIndex = (lastPos + 1) % allSets.length;
-           }
-       }
-    }
-    lastPos = setIndex;
-    const selectedSet = allSets[setIndex];
-    // now determine direction - use first or second question
     let direction = 0;
-    if ( 'question2' in selectedSet ) {
-        direction = Math.floor(Math.random() * 2);
-    }
+    let selectedSet = {};
+    [direction, selectedSet] = getPairsListForSortingGame(topicId);
     const setId = selectedSet['id'];
     sortSetId = setId;
     const localesRec = locales[userLang]['sort_set'][setId];
@@ -1300,6 +1292,7 @@ function getDataSetForSortingGame() {
             pairsList.push([set0[i], set1[i]]);
         }
     }
+
     // randomize and slice a desired number
     const desiredNumber = gameSettings.itemsPerRound;
     roundRecap = []
@@ -1323,6 +1316,31 @@ function getDataSetForSortingGame() {
         'set_correct': set_correct,
         'set_wrong': set_wrong
     }
+}
+
+// get data for next sorting game round
+// @return: direction and pairsList
+function getPairsListForSortingGame(topicId) {
+    const allSets = topics[topicId]['sort_set'];
+    // prioritize sets using collected statistics
+    let setIndex = 0;
+    if (allSets.length > 1 ) {
+       setIndex = pickSetByStats(allSets, 'sort_set', lastPos);
+       if (setIndex === null || setIndex >= allSets.length) {
+           setIndex = Math.floor(Math.random() * allSets.length);
+           if (lastPos !== null && lastPos == setIndex) {
+               setIndex = (lastPos + 1) % allSets.length;
+           }
+       }
+    }
+    lastPos = setIndex;
+    const selectedSet = allSets[setIndex];
+    // now determine direction - use first or second question
+    let direction = 0;
+    if ( 'question2' in selectedSet ) {
+        direction = Math.floor(Math.random() * 2);
+    }
+    return [direction, selectedSet];
 }
 
 // for given keys extract records from topic
@@ -1380,7 +1398,7 @@ function useSortBankWord(index) {
   }
 }
 
-function giveupSorting() {
+window.giveupSorting = function() {
     // out of all bank words find one that is correct
     const hint_candidates = [...document.getElementsByClassName('sorting-word')].filter(
         e => e.dataset.correct && ! e.classList.contains('hidden') );
@@ -1693,7 +1711,7 @@ function finishSet() {
 // user decided to give up:
 //  - show the right card with a highlighted border
 //  - mark this attempt as failed
-function quizGiveup() {
+window.quizGiveup = function() {
   const displayText = itemDisplayText(quizCorrectStr);
   [...document.getElementsByClassName('quiz-card')].forEach(e => {
     if (e.dataset.value === displayText) {
@@ -1890,7 +1908,7 @@ function extractUniqueWordsFromData(allData, pos) {
 //  - build a sequence of words from questionContainer.dataset.expected
 //  - update statistics as "failed"
 //  - increment errors and show the updated errors count
-function giveupSent() {
+window.giveupSent = function() {
     const questionContainer = document.getElementById('sent-question-container');
     [...document.getElementsByClassName('sent-word-result')].forEach(w => {
         w.click();
@@ -1991,7 +2009,7 @@ function revokeBankWord(resultWordId) {
   resultContainer.dataset.words = wordsList.join(' ');
 }
 
-function checkSent() {
+window.checkSent = function() {
   const resultContainer = document.getElementById('sent-result');
   const questionContainer = document.getElementById('sent-question-container');
   if ( resultContainer.dataset.words == questionContainer.dataset.expected) {
@@ -2144,7 +2162,7 @@ function filterDictionary() {
     }
 }
 
-function clearInput() {
+window.clearInput = function() {
     const input = document.getElementById('dict-search');
     input.value = '';
     filterDictionary();
@@ -2156,7 +2174,7 @@ function clearInput() {
 // Control the sound on/off state of the application (for speech synthesis)
 let isMuted = false;
 
-function toggleMute() {
+window.toggleMute = function() {
     isMuted = !isMuted;
     if (isMuted) {
       document.getElementById('sound-on').classList.add('hidden');
@@ -2205,7 +2223,7 @@ function speakTargetLang(text, rate=1) {
 // control application zoom level (for better readability on different screens)
 let currentZoom = 1.0;
 
-function changeZoom(delta) {
+window.changeZoom = function(delta) {
     currentZoom = Math.min(Math.max(0.8, currentZoom + delta), 1.8);
     document.documentElement.style.setProperty('--app-scale', currentZoom );
 }
@@ -2457,7 +2475,7 @@ function displayTopicCompletionState() {
 }
 
 // callback for "Reset topic stats" button - show confirmation popup
-function confirmResetTopicStats() {
+window.confirmResetTopicStats = function() {
     const confirmRequest = i18n.t('main|confirm_request');
     const topicStatisticsReset = i18n.t('main|topic_statistics_reset');
     const dismissText = i18n.t('main|dismiss');
@@ -2498,7 +2516,7 @@ function resetTopicStats() {
 }
 
 // get a confirmation before reset all statistics (for all topics)
-function confirmResetStats() {
+window.confirmResetStats = function() {
     const confirmRequest = i18n.t('main|confirm_request');
     const allStatisticsReset = i18n.t('main|all_statistics_reset');
     const dismissText = i18n.t('main|dismiss');
@@ -2618,14 +2636,14 @@ function updateDrawerStats() {
 }
 
 // callback for toggle "Well-learned" checkbox
-function toggleWellLearned() {
+window.toggleWellLearned = function() {
   settings.setHideWellLearned(hideWellLearnedElm.checked ? 1 : 0);
   settings.markAsChanged();
   renderCurrentScreen();
 }
 
 // callback for toggle "transcription" checkbox
-function toggleTranscription() {
+window.toggleTranscription = function() {
   settings.setShowTranscription(showTransToggleElm.checked ? 1 : 0);
   settings.markAsChanged();
   updateTranscriptionDisplay();
@@ -2640,7 +2658,7 @@ function updateTranscriptionDisplay() {
 }
 
 // callback for GUI change
-function changeDifficulty(level) {
+window.changeDifficulty = function(level) {
     lastPos = 0;
     // 1. Store for future
     settings.setGameDifficulty(level);
@@ -2842,7 +2860,7 @@ function packProgressData() {
     return data;
 }
 
-function exportUserData() {
+window.exportUserData = function() {
     // build data
     const data = packProgressData();
     // export
@@ -2931,7 +2949,7 @@ function unpackProgressData(data) {
 document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('current-course-name').innerText = i18n.t(manifest.metadata.title);
-    initNarrator(getRandomNarrator(), 'narrator-wrapper');
+    window.initNarrator(getRandomNarrator(), 'narrator-wrapper');
     const bubble = document.getElementById('speech-bubble');
     const narrator = document.getElementById('narrator-wrapper');
     bubble.addEventListener('click', toggleBubble);

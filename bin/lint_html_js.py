@@ -31,7 +31,7 @@ def run_cmd_with_tee(command, log_file):
     return last_line
 
 
-print(f"0. Started HTML JS linter")
+print("0. Started HTML JS linter")
 input_file = 'index.html' if len(sys.argv) <= 1 else sys.argv[1]
 # 1. Read HTML
 print(f"1. Parsing {input_file}")
@@ -40,7 +40,7 @@ with open(input_file, 'r', encoding='utf-8') as f:
 
 print(f"1.1. Got {len(content)} bytes")
 
-print(f"2. Collect all JS code used by this file")
+print("2. Collect all JS code used by this file")
 inline_code = re.findall(r'<script\b[^>]*>(.*?)</script[^>]*>', content, re.DOTALL | re.IGNORECASE)
 print(f"2.1. Found {len(inline_code)} inline fragments")
 
@@ -54,6 +54,7 @@ print(f"2.3. Found {len(unique_calls)} function calls")
 # 3. Build a single JS
 temp_file = 'temp_bundle.js'
 print(f"3. Generating intermediate file {temp_file}")
+global_functions = []
 with open(temp_file, 'w', encoding='utf-8') as bundle:
 
     # print all sources as one source
@@ -76,14 +77,19 @@ with open(temp_file, 'w', encoding='utf-8') as bundle:
                     first_line = first_line.split('=')[0] + " = '';\n"
                     bundle.write(first_line)
                 else:
-                    bundle.write(s.read())
+                    code = s.read()
+                    special_declarations = re.findall(r'window\.(\S+)\s*=\s*function', code)
+                    if special_declarations:
+                        global_functions += special_declarations
+                    bundle.write(code)
         else:
             print(f"WARNING: missing {script_path}")
 
     # imitate function use
     print(f"3.3. Writing {len(unique_calls)} dummy function calls")
     for func_name in unique_calls:
-        bundle.write(f"window.{func_name} = {func_name}\n")
+        if func_name not in global_functions:
+            bundle.write(f"window.{func_name} = {func_name}\n")
 
 
 # 4. Run ESLint

@@ -3,7 +3,7 @@
  *  Common service functions and definitions
  */
 
-// common data
+"use strict";
 
 const engine_ver = '2.9.3';
 const app_version = '3.3.18';
@@ -12,6 +12,10 @@ const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
   {"ref": "course.he1", "code": "א", "title": "Hebrew Basics"}
 ];
+
+void engine_ver;
+void app_version;
+void courses;
 
 // Global variable to store current narrator bubble context
 // Used for context switch during bubble content updates
@@ -41,36 +45,36 @@ function parseCustomDivs(text) {
 // usage: markdownConf = buildMarkdownConf(courseTargetLanguage, targetDir, userLang, userDir);
 // domElm.innerHTML = parseMarkdown(text, markdownConf);
 function parseMarkdown(text, conf={}) {
-  const nestedProcessed = parseCustomDivs(text);
-  return nestedProcessed
-
+    const nestedProcessed = parseCustomDivs(text);
+    return nestedProcessed
+      
       // Images ![alt-text](/path/to/picture.jpg)
-      .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" class="guide-img">')
+      .replace(new RegExp('!\\[(.*?)\\]\\((.*?)\\)', 'gim'), '<img src="$2" alt="$1" class="guide-img">')
 
       // Links [display text](https://some.url/with/endpoint)
-      .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')
+      .replace(new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'gim'), '<a href="$2">$1</a>')
 
       // Headers (### Text)
-      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+      .replace(new RegExp('^### (.*$)', 'gim'), '<h3>$1</h3>')
 
       // Bold (**text**)
-      .replace(/\*\*([^*]+)\*\*/gim, '<b>$1</b>')
+      .replace(new RegExp('\\*\\*([^*]+)\\*\\*', 'gim'), '<b>$1</b>')
 
       // Italic (__text__)
-      .replace(/__([^_]+)__/gim, '<i>$1</i>')
+      .replace(new RegExp('__([^_]+)__', 'gim'), '<i>$1</i>')
 
       // Target language ('''text''')
-      .replace(/'''([^']+)'''/gim, '<span ' + conf["targetTags"] +'>$1</span>')
+      .replace(new RegExp("'''([^']+)'''", 'gim'), '<span ' + conf["targetTags"] +'>$1</span>')
 
       // Avoid newline after div
-      .replaceAll(/div>\n+/gim, 'div>')
+      .replaceAll(new RegExp('div>\\n+', 'gim'), 'div>')
 
       // Avoid newline around header
-      .replaceAll(/h3>\n/gim, 'h3>')
-      .replaceAll(/\n<h3/gim, '<h3')
-
+      .replaceAll(new RegExp('h3>\\n', 'gim'), 'h3>')
+      .replaceAll(new RegExp('\\n<h3', 'gim'), '<h3')
+      
       // Newlines
-      .replace(/\n/gim, '<br>');
+      .replace(new RegExp('\\n', 'gim'), '<br>');
 }
 
 // replace links like href="#repeat" with functions from actions dictionary
@@ -80,7 +84,7 @@ function parseMarkdown(text, conf={}) {
 // @param preActionsCallback - optional callback to be called with action execution (e.g. to restore bubble context)
 function injectActionsToLinks(container, actions, preActionsCallback=null) {
     const links = container.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
         const action = link.getAttribute('href').substring(1);
         
@@ -113,7 +117,7 @@ function charToSvg(code, className='', id='') {
 }
 
 // Set favicon by language letter
-function updateFavicon(langCode) {
+window.updateFavicon = function(langCode) {
     const link = document.querySelector("link[rel='icon']");
     
     /* // Alternative - hard-coded icons (?)
@@ -141,7 +145,7 @@ const smiliesMap = {
     '⏳': 'lucide-hourglass'
 };
 
-function replaceSmiliesWithImages(text) {
+window.replaceSmiliesWithImages = function(text) {
    for (const [smiley, imageName] of Object.entries(smiliesMap)) {
       const imageTag = `<svg class="emoji-icon">
                             <use href="#${imageName}"></use>
@@ -162,7 +166,7 @@ const narratorClosedEyesEmotion = [
 ];
 
 // usage: initNarrator(JS_OBJECT, 'narrator-wrapper');
-async function initNarrator(imageCode, containerId) {
+window.initNarrator = async function(imageCode, containerId) {
     const wrapper = document.getElementById(containerId);
     if (!wrapper) return;
 
@@ -264,7 +268,7 @@ function randomEyebrow(narratorId, duration) {
 }
 
 // callback for bubble minimize/restore or hide/show
-function toggleBubble(event) {
+window.toggleBubble = function(event) {
     event.stopPropagation();
     const bubble = document.getElementById('speech-bubble');
     const textTarget = document.getElementById('bubble-text');
@@ -452,7 +456,7 @@ function narratorIdsByTags(searchTags = [], matchAll = true) {
 }
 
 // Get random narrator according to search tags
-function getRandomNarrator(searchTags = []) {
+window.getRandomNarrator = function(searchTags = []) {
   let ids = narratorIdsByTags(searchTags);
   
   if (ids.length === 0) {
