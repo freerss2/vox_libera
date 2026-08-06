@@ -161,6 +161,8 @@ The educational materials are created using artificial intelligence and are cons
   }
 ],
     "menu": {
+      "words_dict": "Words Dictionary",
+      "sentences_dict": "Sentences Dictionary",
       "words_count": "Words:",
       "sent_count": "Phrases:",
       "topic_completed": "Topic completed",
@@ -183,7 +185,8 @@ The educational materials are created using artificial intelligence and are cons
       "show-trans-toggle": "Transcription",
       "import": "Import",
       "export": "Export",
-      "reset-all-stat": " Reset all stats"
+      "reset-all-stat": " Reset all stats",
+      "map": "Map"
     },
     "tip_of_the_day" : {
        "title": "Tip of the day",
@@ -431,6 +434,8 @@ To start a course, select the course title and click on it.
   }
 ],
     "menu": {
+      "words_dict": "Словарь слов",
+      "sentences_dict": "Словарь предложений",
       "words_count": "Слов:",
       "sent_count": "Фраз:",
       "topic_completed": "Тема пройдена",
@@ -453,7 +458,8 @@ To start a course, select the course title and click on it.
       "show-trans-toggle": "Транскрипция",
       "import": "Импорт",
       "export": "Экспорт",
-      "reset-all-stat": " Сброс статистики"
+      "reset-all-stat": " Сброс статистики",
+      "map": "Карта"
     },
     "tip_of_the_day" : {
        "title": "Совет дня",

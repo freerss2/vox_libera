@@ -6,7 +6,7 @@
 "use strict";
 
 const engine_ver = '2.9.3';
-const app_version = '3.3.18';
+const app_version = '3.3.19';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -133,6 +133,8 @@ window.updateFavicon = function(langCode) {
 }
 
 const smiliesMap = {
+    '📖': 'lucide-book',
+    '💬': 'lucide-message',
     '✔': 'lucide-check',
     '▶': 'lucide-play',
     '🔒': 'lucide-lock',

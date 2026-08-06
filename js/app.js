@@ -210,26 +210,6 @@ function scrollToTop(elementId) {
 // ---------------- Side menu (drawer) control ---------------------
 
 function renderDrawer() {
-    const pathContainer = document.getElementById('exercisePath');
-    pathContainer.innerHTML = '';
-
-    topicScreens.forEach((screen, index) => {
-        const li = document.createElement('li');
-        // replace UTF-8 icons with SVG
-        const screen_name = replaceSmiliesWithImages(i18n.t(`screens|${screen.id}`));
-        li.className = 'exercise-node';
-        li.setAttribute('data-id', screen.id);
-        li.innerHTML = `
-            <div class="node-icon">${index + 1}</div>
-            <span class="node-name" data-i18n="screens|${screen.id}">${screen_name}</span>
-        `;
-
-        li.onclick = () => renderCurrentScreenFromMenu(screen.id);
-
-        pathContainer.appendChild(li);
-    });
-
-    showActiveExerciseInMenu(settings.getCurrentScreenId());
     applyTopicToDisplay();
 }
 
@@ -304,13 +284,6 @@ function initMenu() {
 
 // --------------- Screens navigation -------------------------
 
-function renderCurrentScreenFromMenu(screen_id) {
-  settings.setCurrentScreenId(screen_id);
-  settings.markAsChanged();
-  renderCurrentScreen();
-  toggleDrawer();
-}
-
 function loadPrevScreen() {
   loadPrevNexScreen(-1);
 }
@@ -330,6 +303,7 @@ function loadNextScreen(fromWinDialog=false) {
         const nextTopicId = getNextPrevTopicId(1);
         if (nextTopicId) {
             settings.setCurrentTopic(nextTopicId);
+            initTopic(nextTopicId);
             resetTopicScopedState();
             showTopicsCards();
             return;
@@ -420,7 +394,6 @@ function renderCurrentScreen() {
   lastRenderedTopicId = topicId;
   lastRenderedScreenId = screenId;
 
-  showActiveExerciseInMenu();
   applyTopicToDisplay();
 
   const screen_id = settings.getCurrentScreenId();
@@ -468,9 +441,19 @@ function getNextPrevTopicId(direction) {
   return getTopic(topicIndex+direction);
 }
 
+
+window.toggleTopicCards = function() {
+    const panel = document.getElementById('course-map');
+    if (panel.classList.contains('hidden')) {
+        showTopicsCards();
+    } else {
+       renderCurrentScreen();
+    }
+}
+
 // show topics cards with current topic highlighted
 function showTopicsCards() {
-    hideAllScreens();
+    hideAllScreens('topics');
     document.getElementById('course-map').classList.remove('hidden');
     const cardsContainer = document.getElementById('course-map-cards');
     cardsContainer.innerHTML = '';
@@ -482,54 +465,109 @@ function showTopicsCards() {
         const topic = topics[key];
         addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat);
     }
+    addDictToTopicsList(cardsContainer, 'words');
+    addDictToTopicsList(cardsContainer, 'sentences');
     const total_lessons = Object.keys(topics).length;
     const progress_percents = Math.ceil((curr_topic_index/total_lessons) * 100);
     const progress_title = i18n.t('main|progress_title');
     const total_progress_text = `${progress_title} ${progress_percents}% (${curr_topic_index}/${total_lessons})`;
     displayScreenTitleData(i18n.t('main|course_map'), total_progress_text, total_lessons, curr_topic_index);
     const currentTopicCard = document.getElementById('current-topic-card');
+    showActiveExerciseInMenu();
     if (currentTopicCard) {
         scrollCardInside(currentTopicCard);
     }
 }
 
+// Add ditionary card to topic cards list
+// TODO: show buttons for general words/sentences dictionary
+// inputs: ['words', 'sentences'] },
+function addDictToTopicsList(cardsContainer, inputType) {
+    const card = document.createElement('div');
+    const title = i18n.t(`menu|${inputType}_dict`);
+    let icon = inputType === 'words' ? '📖' : '💬';
+    icon = window.replaceSmiliesWithImages(icon);
+    card.innerHTML = `
+        <span class="course-map-icon">
+        <span class="topic-progress-icon locked">${icon}</span>
+        </span>
+        <span class="course-map-text">
+        <div class="course-map-card-title">${title}</div>
+        </span>`;
+    card.classList.add('course-map-card');
+    card.addEventListener('click', () => {
+        // initTopic(key); 
+        showCourseDictionary([inputType], title);
+    });
+    cardsContainer.appendChild(card);
+}
+
 function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat) {
-        const card = document.createElement('div');
-        const state = getTopicState(key);
-        let icon = state ? '✔' : '🔒';
-        let icon_class = state ? 'completed' : 'locked';
-        card.classList.add('course-map-card');
-        if (key === currentTopicId) {
-            card.classList.add('active');
-            card.id = 'current-topic-card';
-            icon = '▶';
-            icon_class = 'active';
-        }
-        icon = replaceSmiliesWithImages(icon);
-        const topicName = i18n_ct(topic.name);
-        const stat_data = getTopicStats(key);
-        let statWords = '';
-        let statSents = '';
-        if (stat_data) {
-            statWords = `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
-               ${stat_data.wordsCount} / ${Math.round(stat_data.wordsSuccess)}%`;
-            statSents = `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
-               ${stat_data.sentencesCount} / ${Math.round(stat_data.sentencesSuccess)}%`;
-        }
-        card.innerHTML = `
-          <span class="course-map-icon">
-            <span class="topic-progress-icon ${icon_class}">${icon}</span>
-          </span>
-          <span class="course-map-text">
-            <div class="course-map-card-index">Lesson ${topic.index + 1}</div>
-            <div class="course-map-card-title">${topicName}</div>
-            <div> ${statWords} &nbsp; ${statSents} </div>
-          </span>`;
-        card.addEventListener('click', () => {
-            initTopic(key);
+    const card = document.createElement('div');
+    const state = topic.index === 0 ? 1 : getTopicState(key);
+    let icon = state ? '✔' : '🔒';
+    let icon_class = state ? 'completed' : 'locked';
+    card.classList.add('course-map-card');
+    if (key === currentTopicId) {
+        card.classList.add('active');
+        card.id = 'current-topic-card';
+        icon = '▶';
+        icon_class = 'active';
+    }
+    icon = window.replaceSmiliesWithImages(icon);
+    const topicName = i18n_ct(topic.name);
+    const stat_data = getTopicStats(key);
+    let statWords = '';
+    let statSents = '';
+    if (stat_data) {
+        statWords = `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
+            ${stat_data.wordsCount} / ${Math.round(stat_data.wordsSuccess)}%`;
+        statSents = `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
+            ${stat_data.sentencesCount} / ${Math.round(stat_data.sentencesSuccess)}%`;
+    }
+    const lessonNumber = topic.index === 0 ? '' : `<div class="course-map-card-index">Lesson ${topic.index}</div>`;
+    card.innerHTML = `
+        <span class="course-map-icon">
+        <span class="topic-progress-icon ${icon_class}">${icon}</span>
+        </span>
+        <span class="course-map-text">
+        ${lessonNumber}
+        <div class="course-map-card-title">${topicName}</div>
+        <div> ${statWords} &nbsp; ${statSents} </div>
+        </span>`;
+    if (icon_class === 'active' && topic.index !== 0) {
+        showCurrentTopicScreens(card);
+    }
+    card.addEventListener('click', () => {
+        initTopic(key);
+        renderCurrentScreen();
+    });
+    cardsContainer.appendChild(card);
+}
+
+function showCurrentTopicScreens(card) {
+
+    const ul = document.createElement('ul');
+    ul.className = 'exercise-path';
+    topicScreens.forEach((screen, index) => {
+        const li = document.createElement('li');
+        // replace UTF-8 icons with SVG
+        const screen_name = window.replaceSmiliesWithImages(i18n.t(`screens|${screen.id}`));
+        li.className = 'exercise-node';
+        li.setAttribute('data-id', screen.id);
+        li.innerHTML = `
+            <span class="node-icon">${index + 1}</span>
+            <span class="node-name" data-i18n="screens|${screen.id}">${screen_name}</span>
+        `;
+        li.onclick = () => {
+            settings.setCurrentScreenId(screen.id);
+            settings.markAsChanged();
             renderCurrentScreen();
-        });
-        cardsContainer.appendChild(card);
+        };
+
+        ul.appendChild(li);
+    });
+    card.appendChild(ul);
 }
 
 // make sure all elements have a right style for "course map" cards scrolling
@@ -592,7 +630,7 @@ function initTopic(topicId) {
   [...SCREENS].forEach(screen => {
     let useScreen = true;
     const screenInputs = screen['inputs'];
-    if (topicId == 'all') {
+    if (topicId == GENERAL_TOPIC_ID) {
       if (screen['shared'] == 1) {
         if (screen['screen_type'] === 'text') {
           if (!currTopic['explanations']) useScreen = false;
@@ -635,8 +673,7 @@ function initTopic(topicId) {
       topicScreens.push(screen);
     }
   });
-  const tryScreenRecord = getScreenRecord(currentScreenId);
-  if (! tryScreenRecord) {
+  if (topicId == GENERAL_TOPIC_ID) {
     currentScreenId = topicScreens[0].id;
   }
   settings.setCurrentScreenId(currentScreenId);
@@ -766,15 +803,14 @@ function showScreenTitle(screenName = "Screen") {
     if (screenName === 'Screen') {
         const record = getScreenRecord(currentScreenId);
         // replace UTF-8 icons with SVG
-        screenName = record ? replaceSmiliesWithImages(i18n.t(`screens|${record.id}`)) : "Screen";
+        screenName = record ? window.replaceSmiliesWithImages(i18n.t(`screens|${record.id}`)) : "Screen";
     }
 
     let topicTitle = i18n_ct(currentTopic.name);
     // update lesson progress percent
-    const total = topicScreens.length;
+    const total = currentTopic.index === 0 ? 0 : topicScreens.length;
     const currGameIndex = getCurrGameIdex();
     displayScreenTitleData(topicTitle, screenName, total, currGameIndex+1);
-
 }
 
 function displayScreenTitleData(mainTitle, subtitle, total, currIndex) {
@@ -842,7 +878,16 @@ function updateFinalProgress(screen_id) {
     return 0;
 }
 
-function hideAllScreens() {
+function hideAllScreens(context='') {
+    // show settings button depending on context
+    if ( context === 'topics' ) {
+        document.getElementById('menuToggleBtn').classList.remove('hidden');
+        document.getElementById('settingsToggleBtn').classList.add('hidden');
+        document.getElementById('top-settings-panel').classList.add('hidden');
+    } else {
+        document.getElementById('menuToggleBtn').classList.add('hidden');
+        document.getElementById('settingsToggleBtn').classList.remove('hidden');
+    }
     // hide all screen-related DOM elements
     const screen_elements = document.querySelectorAll('.game-screen');
     screen_elements.forEach(s => s.classList.add('hidden'));
@@ -1437,7 +1482,7 @@ function showWin(acc) {
     // if recap is not empty
     if (roundRecap.length) {
       // show "dictionary-style" recap list in 'screen-dictionary'
-      showDictionary(dedupeDictionaryData(roundRecap), true);
+      showDictionary(dedupeDictionaryData(roundRecap), 'recap');
     }
 
     // Calculate the success rate
@@ -2044,6 +2089,24 @@ function showTopicDictionary() {
     showDictionary(currentData);
 }
 
+function showCourseDictionary(inputType, title) {
+    /* Show global dictionary */
+    let collectedData = getRawTopicData(GENERAL_TOPIC_ID, inputType);
+    if (! collectedData) {
+        console.error(`empty result for ${GENERAL_TOPIC_ID} collection ${inputType}`);
+        return;
+    }
+    collectedData = dedupeByTargetVisual(collectedData);
+    collectedData.forEach((item, index) => { collectedData[index] = decodeLearnItem(item); });
+    hideAllScreens();
+    const targetScreen = document.getElementById('screen-dictionary');
+    targetScreen.classList.remove('hidden');
+    const topicTitle = i18n.t(manifest.metadata.title);
+    displayScreenTitleData(topicTitle, title, 0, 1);
+    showHideSearch(1);
+    showDictionary(collectedData, 'all');
+}
+
 // render dictionary using pre-generated data
 function dedupeDictionaryData(currentData) {
     const seen = new Set();
@@ -2076,7 +2139,7 @@ function wordVocalizedText(word) {
     return text_list.at(-1);
 }
 
-function showDictionary(currentData, recapMode=false) {
+function showDictionary(currentData, mode='') {
     const listContainer = document.getElementById('dictionary-list');
     listContainer.innerHTML = '';
 
@@ -2122,13 +2185,17 @@ function showDictionary(currentData, recapMode=false) {
     const targetScreen = document.getElementById('screen-dictionary');
     const recapSummary = document.getElementById('recap-summary');
     const nextScreenBtn = document.getElementsByClassName('next-screen-btn');
-    if (recapMode) {
+    if (mode === 'recap') {
       if (targetScreen) { targetScreen.classList.remove('hidden'); }
       if (recapSummary) { recapSummary.classList.remove('hidden'); }
       [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
     } else {
       if (recapSummary) { recapSummary.classList.add('hidden'); }
-      [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
+      if (mode === 'all') {
+        [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
+      } else {
+        [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
+      }
     }
     scrollToTop('screen-dictionary');
 }
