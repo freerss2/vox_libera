@@ -1355,6 +1355,14 @@ input:checked + .slider::before { transform: translateX(24px); }
     padding-bottom: 0;
 }
 
+#course-map-cards {
+    flex: 1 1 0%;
+    min-height: 0;
+    overflow: hidden auto;
+    max-height: none;
+    padding-bottom: 90px;
+}
+
 .course-map-card {
     display: block;
     justify-content: space-between;
