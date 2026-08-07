@@ -303,7 +303,7 @@ function loadNextScreen(fromWinDialog=false) {
         const nextTopicId = getNextPrevTopicId(1);
         if (nextTopicId) {
             settings.setCurrentTopic(nextTopicId);
-            initTopic(nextTopicId);
+            initTopic(nextTopicId, true);
             resetTopicScopedState();
             showTopicsCards();
             return;
@@ -426,9 +426,8 @@ function switchTopic(direction) {
   if (! nextTopicId) return;
 
   // if found - load screen
-  initTopic(nextTopicId);
   // reset screen to default (first)
-  settings.setCurrentScreenId(topicScreens[0].id);
+  initTopic(nextTopicId, true);
   settings.markAsChanged();
   // start the game
   renderCurrentScreen();
@@ -496,7 +495,6 @@ function addDictToTopicsList(cardsContainer, inputType) {
         </span>`;
     card.classList.add('course-map-card');
     card.addEventListener('click', () => {
-        // initTopic(key); 
         showCourseDictionary([inputType], title);
     });
     cardsContainer.appendChild(card);
@@ -537,12 +535,17 @@ function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_s
         </span>`;
     if (icon_class === 'active' && topic.index !== 0) {
         showCurrentTopicScreens(card);
+    } else {
+        card.addEventListener('click', () => {switchToTopic(key);});
     }
-    card.addEventListener('click', () => {
-        initTopic(key);
-        renderCurrentScreen();
-    });
     cardsContainer.appendChild(card);
+}
+
+// click on topic selection card
+function switchToTopic(topicId) {
+    // pass special parameter - reset to initial screen
+    initTopic(topicId, true);
+    renderCurrentScreen();
 }
 
 function showCurrentTopicScreens(card) {
@@ -617,7 +620,7 @@ function scrollCardInside(card) {
 }
 
 // initialize topic
-function initTopic(topicId) {
+function initTopic(topicId, reset_first_screen) {
   settings.setCurrentTopic(topicId);
   resetTopicScopedState();
   let currentScreenId = settings.getCurrentScreenId();
@@ -673,7 +676,7 @@ function initTopic(topicId) {
       topicScreens.push(screen);
     }
   });
-  if (topicId == GENERAL_TOPIC_ID) {
+  if (reset_first_screen || topicId == GENERAL_TOPIC_ID) {
     currentScreenId = topicScreens[0].id;
   }
   settings.setCurrentScreenId(currentScreenId);
