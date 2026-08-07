@@ -284,10 +284,6 @@ function initMenu() {
 
 // --------------- Screens navigation -------------------------
 
-function loadPrevScreen() {
-  loadPrevNexScreen(-1);
-}
-
 function loadNextScreen(fromWinDialog=false) {
     const currentScreenId = settings.getCurrentScreenId();
     if (currentScreenId == 'final' && fromWinDialog) {
@@ -408,10 +404,6 @@ function getTopic(topicIndex) {
       if (topics[key].index == topicIndex) return key;
     }
     return '';
-}
-
-function prevTopic() {
-  switchTopic(-1);
 }
 
 function nextTopic() {
@@ -2521,7 +2513,7 @@ function getTopicState(topic) {
   return Number(topicStates[topic]);
 }
 
-function toggleTopicPassed() {
+window.toggleTopicPassed = function() {
     const isChecked = document.getElementById('topic-passed-checkbox').checked;
 
     const titleContainer = document.querySelector('.drawer-title');
@@ -2774,50 +2766,11 @@ document.addEventListener('keydown', (event) => {
     // avoid intervention for active inputs
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
 
-    const isMenuOpen = document.getElementById('drawer').classList.contains('open');
-
     let handled = false;
     switch (event.key) {
         case 'Escape':
             toggleDrawer();
             handled = true;
-            break;
-
-        case 'ArrowRight':
-            if (isMenuOpen) {
-                nextTopic();
-                handled = true;
-            }
-            break;
-
-        case 'ArrowLeft':
-            if (isMenuOpen) {
-                prevTopic();
-                handled = true;
-            }
-            break;
-
-        case 'ArrowUp':
-            if (isMenuOpen) {
-                event.preventDefault();
-                loadPrevScreen();
-                handled = true;
-            }
-            break;
-
-        case 'ArrowDown':
-            if (isMenuOpen) {
-                event.preventDefault();
-                loadNextScreen();
-                handled = true;
-            }
-            break;
-
-        case 'Enter':
-            if (isMenuOpen) {
-                toggleTopicPassed();
-                handled = true;
-            }
             break;
     }
     if (handled) {

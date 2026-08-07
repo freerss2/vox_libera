@@ -36,20 +36,11 @@ You are the architect of your own course. Vox-Libera allows you to create and lo
 
 ## 4. Keyboard Shortcuts (Desktop Toolbox)
 
-For maximum efficiency on desktop, Vox-Libera supports a "hands-on-keyboard" workflow:
+On desktop use Key `Esc` to Open / Close the settings menu
 
-| Key | Action |
-| :--- | :--- |
-| `Esc` | Open / Close the topic menu |
-| `←` / `→` | Navigate between topics (Back / Forward) |
-| `↑` / `↓` | Quickly switch between exercises in the menu |
-| `Enter` | Mark "Topic Completed" |
+## 5. For Developers: Input Data Structure
 
----
-
-## 5. For Advanced Learners: Data Structure
-
-Vox-Libera consumes data in a standard JSON format. This makes it easy to generate lessons using scripts, AI, or export them from existing flashcard systems.
+Vox-Libera consumes data in a standard YAML format. This makes it easy to generate lessons using scripts, AI, or export them from existing flashcard systems.
 
 ### Example Lesson Structure:
 
