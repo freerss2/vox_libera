@@ -479,7 +479,7 @@ function showTopicsCards() {
 }
 
 // Add ditionary card to topic cards list
-// TODO: show buttons for general words/sentences dictionary
+// with links for general words/sentences dictionary
 // inputs: ['words', 'sentences'] },
 function addDictToTopicsList(cardsContainer, inputType) {
     const card = document.createElement('div');
@@ -630,7 +630,8 @@ function initTopic(topicId, reset_first_screen) {
   // For any topic: check if it contains "explanations" (and skip "explanations" screen if missing)
   const currTopic = topics[settings.getCurrentTopic()];
   topicScreens = [];
-  [...SCREENS].forEach(screen => {
+  [...SCREENS].forEach(src_screen => {
+    const screen = structuredClone(src_screen);
     let useScreen = true;
     const screenInputs = screen['inputs'];
     if (topicId == GENERAL_TOPIC_ID) {
