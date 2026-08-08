@@ -256,6 +256,10 @@ function toggleDrawer() {
     // if opening - refresh statistics display
     if ( !drawer.classList.contains('open') ) updateDrawerStats();
 
+    // hide the toolbar if still open
+    document.getElementById('top-settings-panel').classList.add('hidden');
+    document.getElementById('nav-settings-lower-panel').classList.add('hidden');
+
     // Toggle classes for both elements
     drawer.classList.toggle('open');
     overlay.classList.toggle('active');
@@ -444,7 +448,7 @@ window.toggleTopicCards = function() {
 
 // show topics cards with current topic highlighted
 function showTopicsCards() {
-    hideAllScreens('topics');
+    hideAllScreens();
     document.getElementById('course-map').classList.remove('hidden');
     const cardsContainer = document.getElementById('course-map-cards');
     cardsContainer.innerHTML = '';
@@ -874,16 +878,10 @@ function updateFinalProgress(screen_id) {
     return 0;
 }
 
-function hideAllScreens(context='') {
-    // show settings button depending on context
-    if ( context === 'topics' ) {
-        document.getElementById('menuToggleBtn').classList.remove('hidden');
-        document.getElementById('settingsToggleBtn').classList.add('hidden');
-        document.getElementById('top-settings-panel').classList.add('hidden');
-    } else {
-        document.getElementById('menuToggleBtn').classList.add('hidden');
-        document.getElementById('settingsToggleBtn').classList.remove('hidden');
-    }
+function hideAllScreens() {
+    // first of all, hide the toolbar if still open
+    document.getElementById('top-settings-panel').classList.add('hidden');
+    document.getElementById('nav-settings-lower-panel').classList.add('hidden');
     // hide all screen-related DOM elements
     const screen_elements = document.querySelectorAll('.game-screen');
     screen_elements.forEach(s => s.classList.add('hidden'));
@@ -2297,6 +2295,8 @@ function toggleTopSettings() {
     if (!panel || !button) return;
     const isHidden = panel.classList.toggle('hidden');
     button.setAttribute('aria-expanded', String(!isHidden));
+    // toggle lower panel
+    document.getElementById('nav-settings-lower-panel').classList.toggle('hidden');
 }
 
 // Get list of input types for current screen

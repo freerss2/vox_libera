@@ -19,13 +19,8 @@
               <use href="#lucide-map"></use>
             </svg>
           </button>
-          <div id="title" onclick="toggleDrawer()">Vox-Libera 📖</div>
+          <div id="title" ">Vox-Libera 📖</div>
           <div class="settings-toggle-wrapper">
-            <button type="button" id="menuToggleBtn" class="toolbar-btn gear-btn hidden" onclick="toggleDrawer()" aria-label="Settings" aria-expanded="false">
-              <svg class="emoji-icon">
-                <use href="#lucide-file-settings"></use>
-              </svg>
-            </button>
             <button type="button" id="settingsToggleBtn" class="toolbar-btn gear-btn" onclick="toggleTopSettings()" aria-label="Settings" aria-expanded="false">
               <svg class="emoji-icon">
                 <use href="#lucide-settings"></use>
@@ -52,6 +47,30 @@
               </button>
             </div>
           </div>
+        </div>
+        <div id="nav-settings-lower-panel" class="nav-row hidden">
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="switchToTopic('all');" aria-label="" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-info"></use>
+            </svg>
+          </button>
+          <!-- data-i18n="menu|words_dict" -->
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="showCourseDictionary(['words'], i18n.t('menu|words_dict'));" aria-label="" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-book"></use>
+            </svg>
+          </button>
+          <!-- data-i18n="menu|words_sentences" -->
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="showCourseDictionary(['sentences'], i18n.t('menu|sentences_dict'));" aria-label="" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-message"></use>
+            </svg>
+          </button>
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="toggleDrawer()" aria-label="Settings" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-file-settings"></use>
+            </svg>
+          </button>
         </div>
         <div id="searchBar" class="nav-row search-container hidden">
           <input type="text" id="dict-search" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint">

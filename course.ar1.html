@@ -5,9 +5,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='50'%20fill='%2358cc02'/%3E%3C/svg%3E">
-    <title>Vox-Libera - Learn Any Language v3.4.0</title>
-    <link rel="stylesheet" href="style.css?ver=3.4.0">
-    <link rel="stylesheet" href="common_style.css?ver=3.4.0">
+    <title>Vox-Libera - Learn Any Language v3.4.1</title>
+    <link rel="stylesheet" href="style.css?ver=3.4.1">
+    <link rel="stylesheet" href="common_style.css?ver=3.4.1">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -19,13 +19,8 @@
               <use href="#lucide-map"></use>
             </svg>
           </button>
-          <div id="title" onclick="toggleDrawer()">Vox-Libera 📖</div>
+          <div id="title" ">Vox-Libera 📖</div>
           <div class="settings-toggle-wrapper">
-            <button type="button" id="menuToggleBtn" class="toolbar-btn gear-btn hidden" onclick="toggleDrawer()" aria-label="Settings" aria-expanded="false">
-              <svg class="emoji-icon">
-                <use href="#lucide-file-settings"></use>
-              </svg>
-            </button>
             <button type="button" id="settingsToggleBtn" class="toolbar-btn gear-btn" onclick="toggleTopSettings()" aria-label="Settings" aria-expanded="false">
               <svg class="emoji-icon">
                 <use href="#lucide-settings"></use>
@@ -52,6 +47,30 @@
               </button>
             </div>
           </div>
+        </div>
+        <div id="nav-settings-lower-panel" class="nav-row hidden">
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="switchToTopic('all');" aria-label="" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-info"></use>
+            </svg>
+          </button>
+          <!-- data-i18n="menu|words_dict" -->
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="showCourseDictionary(['words'], i18n.t('menu|words_dict'));" aria-label="" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-book"></use>
+            </svg>
+          </button>
+          <!-- data-i18n="menu|words_sentences" -->
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="showCourseDictionary(['sentences'], i18n.t('menu|sentences_dict'));" aria-label="" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-message"></use>
+            </svg>
+          </button>
+          <button type="button" id="" class="toolbar-btn gear-btn" onclick="toggleDrawer()" aria-label="Settings" aria-expanded="false">
+            <svg class="emoji-icon">
+              <use href="#lucide-file-settings"></use>
+            </svg>
+          </button>
         </div>
         <div id="searchBar" class="nav-row search-container hidden">
           <input type="text" id="dict-search" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint">
@@ -499,6 +518,7 @@
 </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14" /><path d="M5 2h14" /><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" /><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" /></symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></symbol>
@@ -518,15 +538,15 @@
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-volume-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /><path d="M16 9a5 5 0 0 1 0 6" /><path d="M19.364 18.364a9 9 0 0 0 0-12.728" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-volume-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 9a5 5 0 0 1 .95 2.293" /><path d="M19.364 5.636a9 9 0 0 1 1.889 9.96" /><path d="m2 2 20 20" /><path d="m7 7-.587.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298V11" /><path d="M9.828 4.172A.686.686 0 0 1 11 4.657v.686" /></symbol>
 </svg>
-    <script src="course.ar1/manifest.js?ver=3.4.0" defer></script>
-    <script src="course.ar1/locales.js?ver=3.4.0" defer></script>
-    <script src="course.ar1/lessons.js?ver=3.4.0" defer></script>
-    <script src="js/common.js?ver=3.4.0" defer></script>
-    <script src="js/settings.js?ver=3.4.0" defer></script>
-    <script src="js/i18n.js?ver=3.4.0" defer></script>
-    <script src="js/locales.js?ver=3.4.0" defer></script>
-    <script src="js/google_sync.js?ver=3.4.0" defer></script>
-    <script src="js/app.js?ver=3.4.0" defer></script>
+    <script src="course.ar1/manifest.js?ver=3.4.1" defer></script>
+    <script src="course.ar1/locales.js?ver=3.4.1" defer></script>
+    <script src="course.ar1/lessons.js?ver=3.4.1" defer></script>
+    <script src="js/common.js?ver=3.4.1" defer></script>
+    <script src="js/settings.js?ver=3.4.1" defer></script>
+    <script src="js/i18n.js?ver=3.4.1" defer></script>
+    <script src="js/locales.js?ver=3.4.1" defer></script>
+    <script src="js/google_sync.js?ver=3.4.1" defer></script>
+    <script src="js/app.js?ver=3.4.1" defer></script>
 
 </body>
 </html>

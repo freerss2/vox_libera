@@ -1,8 +1,8 @@
-af3ce8c37960d93e7a60753f052aac88 src\course.template.html
-e5796b7879435c23346a3ddaa6041024 js\common.js
+65ce9a97e8a3239e66e444ea646cc3a8 src\course.template.html
+f6e081464b8edd5e484784a034526da2 js\common.js
 ba4928cf3b0830165b94c3f622fea2ca js\i18n.js
 f1264187440de90a55fc978bda581cfb js\settings.js
-3a2659ac8e694e706cb4fc8da897ef3a js\locales.js
+7eb538d0c7d22ab8f1f6c1a25da2b33c js\locales.js
 17454de0e460b622e4064b175a86b218 course.ar1/manifest.js
 1fa64a318c9dda670e4e196c5f111e74 course.ar1/locales.js
 1daabbc7dc54018fa7851824827a35f3 course.ar1/lessons.js
