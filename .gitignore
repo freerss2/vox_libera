@@ -3,7 +3,6 @@ attic/
 bin/generate_arabic_lessons/
 courses/
 node_modules/
-img/lucide/
 eslint.config.mjs
 package-lock.json
 package.json

@@ -324,6 +324,7 @@ def build(args):
         return 1
 
     # Get common embedded data
+    print("ℹ️ Reading SVG embedded icons")
     embedded_html = generate_svg_sprite(LUCIDE_IMG_DIR, id_prefix="lucide-")
     if not embedded_html:
         print(f"❌  Error: Failed to generate embedded HTML from {LUCIDE_IMG_DIR}!")
