@@ -51,6 +51,12 @@ class Settings {
                   } else {
                     result = {};
                   }
+                } else if (param_type == 'int') {
+                  if (result){
+                    result = Number(result);
+                  } else {
+                    result = 0;
+                  }
                 }
                 return result;
             };
