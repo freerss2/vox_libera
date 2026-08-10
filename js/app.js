@@ -460,8 +460,9 @@ function showTopicsCards() {
         const topic = topics[key];
         addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat);
     }
-    addDictToTopicsList(cardsContainer, 'words');
-    addDictToTopicsList(cardsContainer, 'sentences');
+    const [statWords, statSents] = getTopicStatsHtml(GENERAL_TOPIC_ID, words_stat, sent_stat);
+    addDictToTopicsList(cardsContainer, 'words', statWords);
+    addDictToTopicsList(cardsContainer, 'sentences', statSents);
     const total_lessons = Object.keys(topics).length;
     const progress_percents = Math.ceil((curr_topic_index/total_lessons) * 100);
     const progress_title = i18n.t('main|progress_title');
@@ -477,7 +478,7 @@ function showTopicsCards() {
 // Add ditionary card to topic cards list
 // with links for general words/sentences dictionary
 // inputs: ['words', 'sentences'] },
-function addDictToTopicsList(cardsContainer, inputType) {
+function addDictToTopicsList(cardsContainer, inputType, statHtml) {
     const card = document.createElement('div');
     const title = i18n.t(`menu|${inputType}_dict`);
     let icon = inputType === 'words' ? '📖' : '💬';
@@ -488,12 +489,26 @@ function addDictToTopicsList(cardsContainer, inputType) {
         </span>
         <span class="course-map-text">
         <div class="course-map-card-title">${title}</div>
+        ${statHtml}
         </span>`;
     card.classList.add('course-map-card');
     card.addEventListener('click', () => {
         showCourseDictionary([inputType], title);
     });
     cardsContainer.appendChild(card);
+}
+
+// Get topic stats in two HTML strings
+function getTopicStatsHtml(topic_id, words_stat, sent_stat) {
+    const stat_data = getTopicStats(topic_id);
+    if (! stat_data) {
+        return ['', ''];
+    }
+    const statWords = `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
+        ${stat_data.wordsCount} / ${Math.round(stat_data.wordsSuccess)}%`;
+    const statSents = `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
+        ${stat_data.sentencesCount} / ${Math.round(stat_data.sentencesSuccess)}%`;
+    return [statWords, statSents];
 }
 
 function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat) {
@@ -510,15 +525,7 @@ function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_s
     }
     icon = window.replaceSmiliesWithImages(icon);
     const topicName = i18n_ct(topic.name);
-    const stat_data = getTopicStats(key);
-    let statWords = '';
-    let statSents = '';
-    if (stat_data) {
-        statWords = `<span class="stat-label" data-i18n="menu|words_count">${words_stat}</span>
-            ${stat_data.wordsCount} / ${Math.round(stat_data.wordsSuccess)}%`;
-        statSents = `<span class="stat-label" data-i18n="menu|sent_count">${sent_stat}</span>
-            ${stat_data.sentencesCount} / ${Math.round(stat_data.sentencesSuccess)}%`;
-    }
+    const [statWords, statSents] = getTopicStatsHtml(key, words_stat, sent_stat);
     const lessonNumber = topic.index === 0 ? '' : `<div class="course-map-card-index">Lesson ${topic.index}</div>`;
     card.innerHTML = `
         <span class="course-map-icon">
