@@ -1,3 +1,5 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:system"
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "qodo.codebaseIndexing.excludeGlobs": "**/node_modules/**, **/dist/**, **/.git/**",
+    "qodo.telemetry": false
 }
