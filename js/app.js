@@ -1859,15 +1859,16 @@ function renderSent(screen_id) {
     resultContainer.classList.remove('target-text');
     resultContainer.classList.remove('user-text');
     let mainHint = '';
+    const target_display = itemDisplayText(gameSentence);
     if ( screenType == 'sent_u2t' ) {
         questionHtml = `<span lang="${userLang}" dir="${userDir}" class="user-text">${gameSentence[0]}</span>`;
-        expected = itemDisplayText(gameSentence);
+        expected = target_display;
         extractPosition = 1;
         speakEnable = 1;
         resultContainer.classList.add('target-text');
         resultContainer.dir = targetDir;
     } else if (screenType == 'sent_t2u') {
-        questionHtml = `<span lang="${courseTargetLanguage}" dir="${targetDir}" class="target-text">${gameSentence[1]}</span>`;
+        questionHtml = `<span lang="${courseTargetLanguage}" dir="${targetDir}" class="target-text">${target_display}</span>`;
         mainHint = `[${gameSentence[2]}]`;
         resultContainer.classList.add('user-text');
         resultContainer.dir = userDir;
