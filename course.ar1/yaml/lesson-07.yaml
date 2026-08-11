@@ -4,12 +4,16 @@ name:
   ru: Значения имён 1
 explanations:
   en: |
-    ### Teaching Anchor: Proper Names
+    ### Why is it important to study the meaning of proper names
+
     Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
+    A native speaker will be pleased if you compliment them on the meaning of their name. Furthermore, using names as an example, we learn about word construction patterns in Arabic.
+
   ru: |
-    ### Методический якорь: Имена собственные
+    ### Почему важно изучить значение имён собственных
 
     Многие арабские имена — это обычные прилагательные и существительные. Понимание их буквального значения помогает мгновенно связать новое слово с уже знакомым именем (например, имя Али означает "высокий/возвышенный", а Карим — "щедрый").
+    Носителю языка будет приятно, если вы скажете комплимент связанный со смыслом его имени. Кроме того, на примере имён мы знакомимся с моделями построения слов в арабском языке.
 words:
 - en: happy (m)
   ar: سعيد

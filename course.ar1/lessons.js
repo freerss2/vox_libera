@@ -1475,8 +1475,10 @@ Fadi / Mahjuz: These two words will save you when you need to figure out if a se
   },
   "names_meaning_1": {
     "name": "Names meaning 1",
-    "explanations": `### Teaching Anchor: Proper Names
+    "explanations": `### Why is it important to study the meaning of proper names
+
 Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
+A native speaker will be pleased if you compliment them on the meaning of their name. Furthermore, using names as an example, we learn about word construction patterns in Arabic.
 `,
     "words": [
       [
@@ -1754,6 +1756,16 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
         "sahtayn"
       ],
       [
+        "rest in peace",
+        "الله يرحمه",
+        "Allah yirhamo"
+      ],
+      [
+        "may God grant him health",
+        "الله يعطيه الصحة",
+        "Allah ya'tih is-sahha"
+      ],
+      [
         "bon appetit",
         "صحتين وعافية@صَحْتَيْن وَعَافْيِة",
         "sahtayn wa afye"
@@ -1984,6 +1996,26 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
         "fortunately the hotel is clean",
         "من حسن الحظّ الفندق نظيف@مِن حُسْن الحَظّ الفُنْدُق نَظِيف",
         "min husn al-hazz al-funduq nazif"
+      ],
+      [
+        "rest in peace, he was a good man",
+        "الله يرحمه، كان زلمة منيح",
+        "Allah yirhamo, kan zalame mnih"
+      ],
+      [
+        "my grandfather, rest in peace, taught me this",
+        "جدي الله يرحمه علمني هالشي",
+        "jiddi Allah yirhamo 'allamni ha-shi"
+      ],
+      [
+        "may God grant him health, he helped me a lot",
+        "الله يعطيه الصحة، ساعدني كتير",
+        "Allah ya'tih is-sahha, sa'adni ktir"
+      ],
+      [
+        "our neighbor is sick, may God grant him health",
+        "جارنا مريض، الله يعطيه الصحة",
+        "jarna marid, Allah ya'tih is-sahha"
       ]
     ],
     "index": 8

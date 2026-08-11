@@ -71,6 +71,14 @@ words:
   transliteration: sahtayn
   vocalized: صَحْتَيْن
   ru: на здоровье
+- en: rest in peace
+  ar: الله يرحمه
+  transliteration: Allah yirhamo
+  ru: царство ему небесное
+- en: may God grant him health
+  ar: الله يعطيه الصحة
+  transliteration: Allah ya'tih is-sahha
+  ru: дай бог ему здоровья
 - en: bon appetit
   ar: صحتين وعافية
   transliteration: sahtayn wa afye
@@ -302,3 +310,19 @@ sentences:
   transliteration: min husn al-hazz al-funduq nazif
   vocalized: مِن حُسْن الحَظّ الفُنْدُق نَظِيف
   ru: к счастью гостиница чистая
+- en: rest in peace, he was a good man
+  ar: الله يرحمه، كان زلمة منيح
+  transliteration: Allah yirhamo, kan zalame mnih
+  ru: царство ему небесное, он был хорошим человеком
+- en: my grandfather, rest in peace, taught me this
+  ar: جدي الله يرحمه علمني هالشي
+  transliteration: jiddi Allah yirhamo 'allamni ha-shi
+  ru: мой дед, царство ему небесное, научил меня этому
+- en: may God grant him health, he helped me a lot
+  ar: الله يعطيه الصحة، ساعدني كتير
+  transliteration: Allah ya'tih is-sahha, sa'adni ktir
+  ru: дай бог ему здоровья, он мне очень помог
+- en: our neighbor is sick, may God grant him health
+  ar: جارنا مريض، الله يعطيه الصحة
+  transliteration: jarna marid, Allah ya'tih is-sahha
+  ru: наш сосед болеет, дай бог ему здоровья
