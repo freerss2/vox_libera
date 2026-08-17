@@ -289,9 +289,15 @@
 
       <div class="game-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>
+        <button class="action-btn easy" onclick="loadNextScreen();">
+          <span data-i18n="main|go_forward">Ok</span>
+          <svg class="emoji-icon">
+            <use href="#lucide-chevrons-right"></use>
+          </svg>
+        </button>
         <div id="firstTime" class="hidden">
-            <div id="vox-auth-container" class="hidden vox-auth-container">
-              <button id="google-login-btn" onclick="handleManualLoginClick()" class="google-login-btn">
+            <div id="vox-auth-container" class="vox-auth-container">
+              <button id="google-login-btn" onclick="handleManualLoginClick()" class="action-btn easy google-login-btn">
                 <svg class="emoji-icon">
                   <use href="#lucide-reload"></use>
                 </svg>
@@ -306,15 +312,9 @@
               <svg class="emoji-icon">
                 <use href="#lucide-book"></use>
               </svg>
-              Help
+              App explanations and courses
             </button>
         </div>
-        <button class="action-btn easy" onclick="loadNextScreen();">
-          <span data-i18n="main|go_forward">Ok</span>
-          <svg class="emoji-icon">
-            <use href="#lucide-chevrons-right"></use>
-          </svg>
-        </button>
       </div>
 
       <div id="screen-dictionary" class="game-screen hidden">

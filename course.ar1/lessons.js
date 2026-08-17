@@ -2,14 +2,13 @@ const topics =
 {
   "all": {
     "name": "All topics",
-    "explanations": `### Hello and Welcome to the Course "The First 300 Words and Basic Sentence Constructions"
-The course aims to develop a stable **basic vocabulary** necessary for everyday communication and understanding of everyday speech.
+    "explanations": `### Hello! Welcome to the Conversational Arabic (Levantine) course.
+The goal of the course is to develop a solid **basic vocabulary** necessary for everyday communication and understanding of everyday speech, as well as to master some grammar rules and sentence structures.
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
-The curriculum and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequently used language structures.
+The program and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequent language structures.
 
-In a first lesson there is no any excercises. You can use it as a general dictionary of all words and sentences in the course.
-So, just go forward until you reach the real excercises in the next lessons.
+On this screen, you can select the interface language. To save this and other settings, as well as track your learning progress, you can connect your Google account.
 `,
     "words": [],
     "sentences": [],
