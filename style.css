@@ -412,9 +412,19 @@ body {
     color: var(--primary);
 }
 
+.action-btn.easy.default {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--primary-background);
+}
+
 .action-btn.hard {
     border-color: var(--error-color);
     color: var(--error-color);
+}
+
+.wide-btn {
+    min-width: 300px;
 }
 
 .btn-reset {

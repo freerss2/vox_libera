@@ -289,15 +289,15 @@
 
       <div class="game-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>
-        <button class="action-btn easy" onclick="loadNextScreen();">
+        <button class="action-btn easy default wide-btn" onclick="loadNextScreen();">
           <span data-i18n="main|go_forward">Ok</span>
           <svg class="emoji-icon">
             <use href="#lucide-chevrons-right"></use>
           </svg>
         </button>
         <div id="firstTime" class="hidden">
-            <div id="vox-auth-container" class="vox-auth-container">
-              <button id="google-login-btn" onclick="handleManualLoginClick()" class="action-btn easy google-login-btn">
+            <div id="vox-auth-container" class="vox-auth-container setting-group">
+              <button id="google-login-btn" onclick="handleManualLoginClick()" class="action-btn easy google-login-btn wide-btn">
                 <svg class="emoji-icon">
                   <use href="#lucide-reload"></use>
                 </svg>
@@ -305,10 +305,10 @@
               </button>
             </div>
             <div class="setting-group">
-              <label>Interface language:</label>
-              <select class="ui-lang-select" id="ui-lang-select"></select>
+              <div>Interface language:</div>
+              <select class="ui-lang-select action-btn easy wide-btn" id="ui-lang-select"></select>
             </div>
-            <button class="action-btn easy" onclick="window.location='index.html'">
+            <button class="action-btn easy wide-btn" onclick="window.location='index.html'">
               <svg class="emoji-icon">
                 <use href="#lucide-book"></use>
               </svg>
