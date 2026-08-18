@@ -92,6 +92,17 @@ describe('Settings', () => {
     expect(Number(t)).toBe(before);
   });
 
+  it('keeps a dedicated progress timestamp for sync decisions', () => {
+    const s = new Settings({ a: { default: 'v' } });
+    const before = Number(s.getProgressUpdatedTime()) || 0;
+
+    s.markAsChanged();
+
+    const t = s.getProgressUpdatedTime();
+    expect(Number(t)).toBeGreaterThan(before);
+    expect(Number(s.getLastChangedTime())).toBe(Number(t));
+  });
+
   it('updates last-changed time when markChanges is enabled', () => {
     const s = new Settings({ a: { default: 'v' } });
     s.enableChangedFlag();

@@ -2875,11 +2875,17 @@ function packProgressData() {
         }
     });
     const today = Date.now();
+    const latestLocalUpdateTs = Math.max(
+        Number(settings.getProgressUpdatedTime()) || 0,
+        Number(settings.getLastChangedTime()) || 0
+    );
+
     const data = {
         "engine_version": engine_ver,
         "created_timestamp": timestamp,
         "created_at": localStorage.getItem('vox_libera_created_at') || today,
-        "updated_at": parseInt(settings.getLastChangedTime()) || today,
+        "updated_at": latestLocalUpdateTs || today,
+        "settings_updated_at": Number(settings.getLastChangedTime()) || latestLocalUpdateTs || today,
         "user_settings": { "interface_lang": userLang },
         "courses": courses_settings
     };

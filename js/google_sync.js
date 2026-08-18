@@ -267,11 +267,14 @@ async function resolveProgressConflict(cloudData, localData) {
     }
 
     if (!direction) {
-      const localTime = Number(currentLocalData.updated_at || 0);
-      const cloudTime = Number(cloudData.updated_at || 0);
+      const localProgressTs = Number(currentLocalData.updated_at || 0);
+      const localSettingsTs = Number(localStorage.getItem('vox_libera_updated_at') || 0);
+      const cloudProgressTs = Number(cloudData.updated_at || 0);
+      const cloudSettingsTs = Number(cloudData.settings_updated_at || 0);
 
-      // Prefer the more recently changed snapshot when timestamps are both available.
-      // Attempt counts are only a fallback when the timestamps are missing or equal.
+      const localTime = Math.max(localProgressTs, localSettingsTs);
+      const cloudTime = Math.max(cloudProgressTs, cloudSettingsTs);
+
       if (localTime && cloudTime && localTime !== cloudTime) {
         direction = localTime > cloudTime ? 'cloud' : 'browser';
       } else {

@@ -64,11 +64,17 @@ class Settings {
     }
 
     markAsChanged() {
-        this.storage.setItem('vox_libera_updated_at', Date.now());
+        const ts = Date.now();
+        this.storage.setItem('vox_libera_updated_at', ts);
+        this.storage.setItem('vox_libera_progress_updated_at', ts);
     }
 
     getLastChangedTime() {
-        return (this.storage.getItem('vox_libera_updated_at') || 0).toString();
+        return (this.storage.getItem('vox_libera_updated_at') || this.storage.getItem('vox_libera_progress_updated_at') || 0).toString();
+    }
+
+    getProgressUpdatedTime() {
+        return (this.storage.getItem('vox_libera_progress_updated_at') || this.storage.getItem('vox_libera_updated_at') || 0).toString();
     }
 
     enableChangedFlag() {
