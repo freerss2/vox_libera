@@ -1300,6 +1300,15 @@ input:checked + .slider::before { transform: translateX(24px); }
     padding: 20px;
 }
 
+.sync-info {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #5d6b82;
+    font-family: monospace;
+    overflow-wrap: anywhere;
+}
+
 .github-link {
     display: flex;
     align-items: center;

@@ -116,7 +116,6 @@ if ( ! Object.hasOwn(topics, GENERAL_TOPIC_ID) ) topics[GENERAL_TOPIC_ID] = {"na
 
 if ( ! topics[settings.getCurrentTopic()] ) {
     settings.setCurrentTopic(GENERAL_TOPIC_ID);
-    settings.markAsChanged();
 }
 
 // instantiate I18nManager

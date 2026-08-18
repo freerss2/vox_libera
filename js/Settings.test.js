@@ -82,6 +82,16 @@ describe('Settings', () => {
     expect(s2.getK()).toBe('x');
   });
 
+  it('does not update last-changed time before the initial sync cycle enables tracking', () => {
+    const s = new Settings({ a: { default: 'v' } });
+    const before = Number(s.getLastChangedTime()) || 0;
+
+    s.setA('z');
+
+    const t = s.getLastChangedTime();
+    expect(Number(t)).toBe(before);
+  });
+
   it('updates last-changed time when markChanges is enabled', () => {
     const s = new Settings({ a: { default: 'v' } });
     s.enableChangedFlag();

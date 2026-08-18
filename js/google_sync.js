@@ -2,7 +2,7 @@
 //             Google login and Drive sync
 // ===========================================
 
-/* global google, packProgressData, unpackProgressData, replaceSmiliesWithImages */ // eslint-disable-line no-unused-vars
+/* global google, packProgressData, unpackProgressData, replaceSmiliesWithImages, settings */ // eslint-disable-line no-unused-vars
 
 "use strict";
 
@@ -145,7 +145,10 @@ async function startInitialSync() {
         // When data is missing in cloud - push there the current progress
         syncManager.uploadProgress(window.currentAccessToken, localData);
     }
+
+    settings.enableChangedFlag();
     updateCloudStatus('synced');
+    updateSyncDirectionIndicator('in sync', Date.now());
 }
 
 // Manage cloud sync status in UI
@@ -163,6 +166,25 @@ function updateCloudStatus(status) {
     }
     el.innerHTML = replaceSmiliesWithImages(statusText);
 
+}
+
+function updateSyncDirectionIndicator(direction, timeValue) {
+    const el = document.getElementById('sync-info');
+    if (!el) return;
+
+    const timestamp = Number(timeValue || 0);
+    const when = timestamp ? new Date(timestamp).toLocaleString() : 'n/a';
+
+    const labelMap = {
+        'to cloud': '→ cloud',
+        'from cloud': '← cloud',
+        'in sync': '↔ synced',
+        'offline': 'offline'
+    };
+
+    const label = labelMap[direction] || 'sync';
+    el.textContent = `Sync: ${label} · ${when}`;
+    el.title = `Last sync direction: ${direction || 'unknown'} at ${when}`;
 }
 
 // Hook for rejected token, when server returned 491
@@ -244,42 +266,41 @@ async function resolveProgressConflict(cloudData, localData) {
         direction = 'cloud';
     }
 
-    if (! direction ) {
-      const cloudAttempts = calculateTotalAttempts(cloudData);
-      const localAttempts = calculateTotalAttempts(currentLocalData);
-      if (localAttempts > cloudAttempts) {
-        direction = 'cloud';
-      }
-      if (localAttempts < cloudAttempts) {
-        direction = 'browser';
-      }
-    }
+    if (!direction) {
+      const localTime = Number(currentLocalData.updated_at || 0);
+      const cloudTime = Number(cloudData.updated_at || 0);
 
-    if (! direction ) {
-      const localTime = currentLocalData.updated_at || 0;
-      const cloudTime = cloudData.updated_at || 0;
-
-      if (cloudTime > localTime) {
-        direction = 'browser';
-      }
-      else if (localTime > cloudTime) {
-        direction = 'cloud';
+      // Prefer the more recently changed snapshot when timestamps are both available.
+      // Attempt counts are only a fallback when the timestamps are missing or equal.
+      if (localTime && cloudTime && localTime !== cloudTime) {
+        direction = localTime > cloudTime ? 'cloud' : 'browser';
+      } else {
+        const cloudAttempts = calculateTotalAttempts(cloudData);
+        const localAttempts = calculateTotalAttempts(currentLocalData);
+        if (localAttempts > cloudAttempts) {
+          direction = 'cloud';
+        } else if (localAttempts < cloudAttempts) {
+          direction = 'browser';
+        }
       }
     }
 
     if (direction === 'browser' ) {
         console.log("🎯 Cloud wins.");
         unpackProgressData(cloudData);
+        updateSyncDirectionIndicator('from cloud', cloudData.updated_at || Date.now());
     }
     else if (direction === 'cloud') {
         console.log("🚀 Local settings are newer.");
         if (window.currentAccessToken) {
             console.log("🚀 Uploading to cloud.");
             syncManager.uploadProgress(window.currentAccessToken, currentLocalData);
+            updateSyncDirectionIndicator('to cloud', currentLocalData.updated_at || Date.now());
         }
     }
     else {
         console.log("🤝 Data is in sync.");
+        updateSyncDirectionIndicator('in sync', Math.max(Number(currentLocalData.updated_at || 0), Number(cloudData.updated_at || 0)) || Date.now());
     }
 }
 
@@ -459,8 +480,10 @@ class CloudSync {
         if (response && response.ok) {
             console.log("Vox Libera: Cloud data is updated.");
             if (typeof updateCloudStatus === 'function') updateCloudStatus('synced');
+            updateSyncDirectionIndicator('to cloud', Date.now());
         } else {
             if (typeof updateCloudStatus === 'function') updateCloudStatus('offline');
+            updateSyncDirectionIndicator('offline', Date.now());
         }
     }
 }
