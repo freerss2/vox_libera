@@ -2943,7 +2943,13 @@ function importUserData(event) {
 
             // apply settings and reload app
             unpackProgressData(data);
-            location.reload();
+            // immediate upload to cloud
+            if (window.currentAccessToken) {
+                syncManager.queueUpload(window.currentAccessToken);
+            } else {
+                console.log("Vox Libera: Progress changed locally; cloud upload is waiting for login.");
+            }
+            // location.reload();
         } catch (err) {
             alert("Error reading file: " + err);
         }
