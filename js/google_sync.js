@@ -203,10 +203,8 @@ window.onGoogleTokenExpired = function() {
           // If token received in background
           if (response.access_token) {
               console.log("Vox Libera: Background login successful!");
-              handleSuccessfulLogin(response.access_token);
-              // Just start sync (?)
-              //    const localData = packProgressData();
-              //    syncManager.uploadProgress(accessToken, localData);
+              await handleSuccessfulLogin(response.access_token);
+              await startInitialSync();
           }
         };
 
@@ -367,7 +365,7 @@ class CloudSync {
     constructor() {
         this.fileName = "vox_libera_sync.json";
         this.debounceTimeout = null;
-        this.debounceDelay = 30000; // 30 seconds for silence
+        this.debounceDelay = 5000; // 5 seconds for silence
     }
 
     // Universal fetch with handling of timed-out token (401)
@@ -430,14 +428,14 @@ class CloudSync {
             return;
         }
 
-        console.log("Vox Libera: Progress upload queued; waiting for 30 seconds of silence.");
+        console.log(`Vox Libera: Progress upload queued; waiting for ${this.debounceDelay / 1000} seconds of silence.`);
 
         // When user still sending more updates - reset the timer to avoid UI slowness
         if (this.debounceTimeout) {
             clearTimeout(this.debounceTimeout);
         }
 
-        // The timer should end only after 30 seconds of "silence"
+        // The timer should end only after the configured silence period.
         this.debounceTimeout = setTimeout(() => {
             console.log("Vox Libera: In silent state. Collecting data for cloud...");
 
