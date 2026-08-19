@@ -2635,8 +2635,10 @@ function updateStats(targetStr, isCorrect) {
   settings.markAsChanged();
   wordStats[displayText] = stats[displayText];
 
-  if (isUserLoggedIn && window.currentAccessToken) {
+  if (window.currentAccessToken) {
       syncManager.queueUpload(window.currentAccessToken);
+  } else {
+      console.log("Vox Libera: Progress changed locally; cloud upload is waiting for login.");
   }
 }
 

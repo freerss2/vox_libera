@@ -140,10 +140,10 @@ async function startInitialSync() {
     }
 
     if (cloudData) {
-        resolveProgressConflict(cloudData, packProgressData());
+        await resolveProgressConflict(cloudData, packProgressData());
     } else {
         // When data is missing in cloud - push there the current progress
-        syncManager.uploadProgress(window.currentAccessToken, localData);
+        await syncManager.uploadProgress(window.currentAccessToken, localData);
     }
 
     settings.enableChangedFlag();
@@ -421,7 +421,16 @@ class CloudSync {
 
     // Lazy debounce: schedule sending to cloud
     queueUpload(accessToken) {
-        if (!navigator.onLine || !accessToken) return;
+        if (!navigator.onLine) {
+            console.log("Vox Libera: Upload queued but skipped because the browser is offline.");
+            return;
+        }
+        if (!accessToken) {
+            console.log("Vox Libera: Upload queued but skipped because no access token is available.");
+            return;
+        }
+
+        console.log("Vox Libera: Progress upload queued; waiting for 30 seconds of silence.");
 
         // When user still sending more updates - reset the timer to avoid UI slowness
         if (this.debounceTimeout) {
@@ -436,6 +445,7 @@ class CloudSync {
             if (typeof packProgressData === 'function') {
                 const freshSnapshot = packProgressData();
                 if (freshSnapshot) {
+                    console.log("Vox Libera: Upload debounce expired; sending progress to cloud.");
                     freshSnapshot.updated_at = Date.now(); // Refreshing timestamp
                     this.uploadProgress(accessToken, freshSnapshot);
                 }
