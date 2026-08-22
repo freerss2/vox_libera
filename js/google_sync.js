@@ -10,6 +10,7 @@ let tokenClient;
 let isUserLoggedIn = false;
 void isUserLoggedIn;
 let cloudSyncGeneration = 0;
+let initialSyncPromise = null;
 
 // Check if current origin is allowed for Google API usage and start auth process
 window.startAppAuth = function() {
@@ -129,6 +130,20 @@ window.handleManualLoginClick = function() {
 
 // Initial data sync on login
 async function startInitialSync() {
+    if (initialSyncPromise) {
+        console.log("Vox Libera: Sync already in progress; joining existing sync.");
+        return initialSyncPromise;
+    }
+
+    initialSyncPromise = performInitialSync();
+    try {
+        return await initialSyncPromise;
+    } finally {
+        initialSyncPromise = null;
+    }
+}
+
+async function performInitialSync() {
     updateCloudStatus('loading');
     const syncGeneration = ++cloudSyncGeneration;
     const localData = packProgressData();
@@ -150,6 +165,21 @@ async function startInitialSync() {
     updateCloudStatus('synced');
     updateSyncDirectionIndicator('in sync', Date.now());
 }
+
+function syncWhenPageWakes() {
+    if (document.visibilityState !== 'visible' || !navigator.onLine || !window.currentAccessToken) {
+        return;
+    }
+
+    void startInitialSync().catch((error) => {
+        console.error("Vox Libera: Wake-up sync failed:", error);
+        updateCloudStatus('offline');
+    });
+}
+
+document.addEventListener('visibilitychange', syncWhenPageWakes);
+window.addEventListener('pageshow', syncWhenPageWakes);
+window.addEventListener('online', syncWhenPageWakes);
 
 // Manage cloud sync status in UI
 function updateCloudStatus(status) {
@@ -265,13 +295,12 @@ async function resolveProgressConflict(cloudData, localData) {
     }
 
     if (!direction) {
-      const localProgressTs = Number(currentLocalData.updated_at || 0);
-      const localSettingsTs = Number(localStorage.getItem('vox_libera_updated_at') || 0);
-      const cloudProgressTs = Number(cloudData.updated_at || 0);
-      const cloudSettingsTs = Number(cloudData.settings_updated_at || 0);
-
-      const localTime = Math.max(localProgressTs, localSettingsTs);
-      const cloudTime = Math.max(cloudProgressTs, cloudSettingsTs);
+            const localTime = Number(currentLocalData.updated_at || 0);
+            // Accept settings_updated_at only for compatibility with older cloud files.
+            const cloudTime = Math.max(
+                    Number(cloudData.updated_at || 0),
+                    Number(cloudData.settings_updated_at || 0)
+            );
 
       if (localTime && cloudTime && localTime !== cloudTime) {
         direction = localTime > cloudTime ? 'cloud' : 'browser';
@@ -295,7 +324,7 @@ async function resolveProgressConflict(cloudData, localData) {
         console.log("🚀 Local settings are newer.");
         if (window.currentAccessToken) {
             console.log("🚀 Uploading to cloud.");
-            syncManager.uploadProgress(window.currentAccessToken, currentLocalData);
+            await syncManager.uploadProgress(window.currentAccessToken, currentLocalData);
             updateSyncDirectionIndicator('to cloud', currentLocalData.updated_at || Date.now());
         }
     }
