@@ -2185,16 +2185,20 @@ function showDictionary(currentData, mode='') {
 
     const targetScreen = document.getElementById('screen-dictionary');
     const recapSummary = document.getElementById('recap-summary');
+    const lastScreenBtn = document.getElementsByClassName('last-screen-btn');
     const nextScreenBtn = document.getElementsByClassName('next-screen-btn');
     if (mode === 'recap') {
       if (targetScreen) { targetScreen.classList.remove('hidden'); }
       if (recapSummary) { recapSummary.classList.remove('hidden'); }
+      [...lastScreenBtn].forEach(e => { e.classList.add('hidden'); });
       [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
     } else {
       if (recapSummary) { recapSummary.classList.add('hidden'); }
       if (mode === 'all') {
+        [...lastScreenBtn].forEach(e => { e.classList.remove('hidden'); });
         [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
       } else {
+        [...lastScreenBtn].forEach(e => { e.classList.add('hidden'); });
         [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
       }
     }

@@ -305,7 +305,7 @@
                 <span data-i18n="main|sync-with-google">Sync with Google</span>
               </button>
             </div>
-            <div class="setting-group">
+            <div class="setting-group inline">
               <div>Interface language:</div>
               <select class="ui-lang-select action-btn easy wide-btn" id="ui-lang-select"></select>
             </div>
@@ -319,6 +319,7 @@
       </div>
 
       <div id="screen-dictionary" class="game-screen hidden">
+
         <div id="recap-summary" class="hidden" >
           <div id="recap-title" data-i18n="main|recap_title"></div>
           <div id="recap-subtitle" ></div>
@@ -338,6 +339,14 @@
           </div>
         </div>
 
+        <div class="last-screen-btn">
+          <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="renderCurrentScreen();">
+            <span data-i18n="main|go_back">Back</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-back"></use>
+            </svg>
+          </button>
+        </div>
         <div class="next-screen-btn">
           <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="loadNextScreen();">
             <span data-i18n="main|go_forward">Forward</span>
@@ -355,6 +364,15 @@
             </svg>
           </button>
         </div>
+        <div class="last-screen-btn">
+          <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="renderCurrentScreen();">
+            <span data-i18n="main|go_back">Back</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-back"></use>
+            </svg>
+          </button>
+        </div>
+
       </div>
 
       <div id="flashcards-screen" class="game-screen flashcards-screen hidden">
@@ -503,6 +521,7 @@
     <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-arrows" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4" /><path d="M4 7h16" /><path d="m16 21 4-4-4-4" /><path d="M20 17H4" /></symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5" /><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14" /><path d="M16 12h2" /><path d="M16 8h2" /><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /><path d="M6 12h2" /><path d="M6 8h2" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="lucide-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></symbol>
