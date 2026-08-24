@@ -330,14 +330,14 @@ function showTopicResults() {
     const title = i18n.t('modal_results|title');
     const wordsLearned = i18n.t('modal_results|words_learned');
     const sentCount = i18n.t('menu|sent_count');
-    const wordsAccuracy = i18n.t('modal_results|words_accuracy');
+    const accuracy = i18n.t('modal_results|accuracy');
 
     const markdownText = `### ##text-center## ${title}
 ### ##text-center## ${topicTitle}
 ##text-center## ${wordsLearned} ##stat-value## ${data.wordsCount}
-##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
+##text-center## ${accuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
 ##text-center## ${sentCount} ##stat-value## ${data.sentencesCount}
-##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%
+##text-center## ${accuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%
 
 ##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
 
@@ -1487,6 +1487,14 @@ function showWin(acc) {
     if (typeof (acc) === 'string') {
         mainText = acc;
     } else {
+        // Get topic statistics
+        const data = getTopicStats(settings.getCurrentTopic());
+        const excerciseAccuracy = i18n.t('modal_results|excercise_accuracy');
+        const wordsAccuracy = i18n.t('modal_results|words_accuracy');
+        const sentAccuracy = i18n.t('modal_results|sent_accuracy');
+        const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
+##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%`;
+
         // Calculate the success rate
         let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
 
@@ -1501,8 +1509,11 @@ function showWin(acc) {
         mainText = `##text-center## '''${pick[1]}'''
 ##text-center## ${pick[2]} — ${user_lang_feedback}
 
-### ##text-center## ${acc}%
-##text-center## ${tipText}`;
+### ##text-center## ${excerciseAccuracy} ${acc}%
+${topic_stats_info}
+
+### ##text-center## 💡${tipText[0]}💡
+##text-center## ${tipText[1]}`;
     }
     // message in Markdown format, including two buttons
     const repeatPrompt = i18n.t('main|sum-repeat');
@@ -1524,12 +1535,13 @@ ${mainText}
     updateCharacterBubble(markdownText, markdownConf, actions);
 }
 
-
+// get either direct recommendation about most errors in last game or random tip of the day
+// return: array(title, content)
 function getRoundRecommendation() {
   const indx = Math.floor(Math.random() * 4);
   const tip = i18n.t(`tip_of_the_day|${indx}`);
   const title = i18n.t('tip_of_the_day|title');
-  const tipOfTheDay = `💡${title}💡<BR>${tip}`;
+  const tipOfTheDay = [title, tip];
   var hintData = null;
 
   // if defined a gameErrorData - use it always for hint
@@ -1552,8 +1564,8 @@ function getRoundRecommendation() {
     return tipOfTheDay;
   }
   const transl = i18n.t('tip_of_the_day|remember_transl');
-  const displayText = wordDisplayText(hintData[1]);
-  return `💡${transl}💡<BR>«${hintData[0]}»<BR>${displayText}<BR>[${hintData[2]}]`;
+  const displayText = itemDisplayText(hintData);
+  return [transl, `«${hintData[0]}»<BR>${displayText}<BR>[${hintData[2]}]`];
 }
 
 // ------------------------------------------ avoid repetitive questions

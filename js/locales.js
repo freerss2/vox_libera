@@ -199,7 +199,10 @@ The educational materials are created using artificial intelligence and are cons
     "modal_results": {
       "title": "Completed topic:",
       "words_learned": "Total words: ",
-      "words_accuracy": "Accuracy: "
+      "excercise_accuracy": "Excercise accuracy: ",
+      "words_accuracy": "Words accuracy: ",
+      "sent_accuracy": "Sentences accuracy: ",
+      "accuracy": "Accuracy: "
     },
     "screens": {
       "explanations":    "Explanations",
@@ -475,7 +478,10 @@ To start a course, select the course title and click on it.
     "modal_results": {
       "title": "Завершена тема:",
       "words_learned": "Всего слов: ",
-      "words_accuracy": "Точность: "
+      "excercise_accuracy": "Точность упражнения: ",
+      "words_accuracy": "Точность слов: ",
+      "sent_accuracy": "Точность предложений: ",
+      "accuracy": "Точность: "
     },
     "screens": {
       "explanations":    "Пояснения",
