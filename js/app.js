@@ -1000,7 +1000,7 @@ function initFlashcards() {
     flashcardsData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
 
     if (flashcardsData.length === 0) {
-        showCompletionMessage();
+        completeFlashcardsRound();
         return;
     }
 
@@ -1082,7 +1082,7 @@ window.markAsLearned = function() {
         flashcardsData.splice(cardIndex, 1);
 
         if (flashcardsData.length === 0) {
-            showCompletionMessage();
+            completeFlashcardsRound();
         } else {
             // if removed card was the last in a list - return to the beginning
             if (cardIndex >= flashcardsData.length) {
@@ -1096,15 +1096,13 @@ window.markAsLearned = function() {
     }, 400);
 }
 
-function showCompletionMessage() {
-    const container = document.getElementById('completion-screen');
-    const success = shuffle(successCharacters)[0];
-    container.innerHTML = success + i18n.t('main|flashcards_completed');
-    container.classList.remove('hidden');
+// Callback for flashcards round completion
+function completeFlashcardsRound() {
+    const success = shuffle(successCharacters)[0] + i18n.t('main|flashcards_completed');
 
     document.getElementById('flashcards-main').style.display = 'none';
 
-    showWin(100);
+    showWin(success);
 }
 
 // --------------------------------- pairs
@@ -1485,29 +1483,36 @@ function showWin(acc) {
       showDictionary(dedupeDictionaryData(roundRecap), 'recap');
     }
 
-    // Calculate the success rate
-    let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
+    let mainText;
+    if (typeof (acc) === 'string') {
+        mainText = acc;
+    } else {
+        // Calculate the success rate
+        let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
 
-    // Text summary on completed round (according to reached grade)
-    let quotes = manifest.feedback[category];
-    // For a variety take random phrase
-    let pick = quotes[Math.floor(Math.random() * quotes.length)];
-    const user_lang_feedback = i18n_ct(pick[0]);
-    // generate round recommendation message
-    const tipText = getRoundRecommendation();
+        // Text summary on completed round (according to reached grade)
+        let quotes = manifest.feedback[category];
+        // For a variety take random phrase
+        let pick = quotes[Math.floor(Math.random() * quotes.length)];
+        const user_lang_feedback = i18n_ct(pick[0]);
+        // generate round recommendation message
+        const tipText = getRoundRecommendation();
 
-    // visualize the popup
-    document.getElementById('narrator-container').classList.remove('hidden');
-    // message in Markdown format, including two buttons
-    const repeatPrompt = i18n.t('main|sum-repeat');
-    const nextPrompt = i18n.t('main|sum-next');
-    const markdownText = `##text-center## '''${pick[1]}'''
+        mainText = `##text-center## '''${pick[1]}'''
 ##text-center## ${pick[2]} — ${user_lang_feedback}
 
 ### ##text-center## ${acc}%
-##text-center## ${tipText}
-
+##text-center## ${tipText}`;
+    }
+    // message in Markdown format, including two buttons
+    const repeatPrompt = i18n.t('main|sum-repeat');
+    const nextPrompt = i18n.t('main|sum-next');
+    const markdownText = `
+${mainText}
 ##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
+
+    // visualize the popup
+    document.getElementById('narrator-container').classList.remove('hidden');
 
     const actions = {
         'repeat': () => {renderCurrentScreen();},
