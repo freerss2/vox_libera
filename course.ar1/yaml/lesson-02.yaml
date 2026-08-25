@@ -23,179 +23,187 @@ explanations:
     Корень слова '''جامعة''' означает "собрание", это пригодится нам при изучении однокоренных слов.
 words:
 - en: tailor (f)
-  ar: خياطة
+  ar: خَيَّاطَة
   transliteration: khayyata
   ru: портная
-- en: mathematician
-  ar: عالم رياضيات
-  transliteration: alim riyadiyat
+- en: mathematician (m)
+  ar: عَالِمْ رِيَاضِيَّات
+  transliteration: alim riyadiyyat
   ru: математик
 - en: designer (m)
-  ar: مصمم
+  ar: مُصَمِّم
   transliteration: musammim
   ru: дизайнер
 - en: student (m)
-  ar: طالب
+  ar: طَالِب
   transliteration: talib
   ru: студент
 - en: student (f)
-  ar: طالبة
-  transliteration: taliba
+  ar: طَالْبَة
+  transliteration: talba
   ru: студентка
 - en: workshop
-  ar: ورشة
+  ar: وَرْشَة
   transliteration: warsha
   ru: мастерская
 - en: studio
-  ar: استوديو
-  transliteration: ustudiyu
+  ar: اِسْتُودْيُو
+  transliteration: istudyu
   ru: студия
 - en: class
-  ar: صف
+  ar: صَفّ
   transliteration: saff
   ru: класс
 - en: art
-  ar: فن
+  ar: فَنّ
   transliteration: fann
   ru: искусство
 - en: arts
-  ar: فنون
+  ar: فُنُون
   transliteration: funun
   ru: искусства
 - en: academy
-  ar: أكاديمية
-  transliteration: akadimiya
+  ar: أَكَادِيمِيَّة
+  transliteration: akadimiyya
   ru: академия
 - en: cinema
-  ar: سينما
-  transliteration: sinima
-  ru: кинематография
+  ar: سِينَمَا
+  transliteration: sinama
+  ru: кино
 - en: faculty
-  ar: كلية
-  transliteration: kulliya
+  ar: كُلِّيَّة
+  transliteration: kulliyya
   ru: факультет
 - en: university
-  ar: جامعة
-  transliteration: jamia
+  ar: جَامْعَة
+  transliteration: "jam'a"
   ru: университет
 - en: lesson
-  ar: درس
+  ar: دَرْس
   transliteration: dars
   ru: урок
-- en: science
-  ar: علم
-  transliteration: ilm
-  ru: наука
+- en: sciences
+  ar: عُلُوم
+  transliteration: "'ulum"
+  ru: науки
 - en: blueprint
-  ar: مخطط
+  ar: مُخَطَّط
   transliteration: mukhattat
   ru: чертеж
 - en: fabric
-  ar: قماش
+  ar: قُمَاش
   transliteration: qumash
   ru: ткань
 - en: dress
-  ar: فستان
+  ar: فُسْتَان
   transliteration: fustan
   ru: платье
 - en: numbers
-  ar: أرقام
+  ar: أَرْقَام
   transliteration: arqam
   ru: цифры
 - en: project
-  ar: مشروع
-  transliteration: mashru
+  ar: مَشْرُوع
+  transliteration: "mashru'"
   ru: проект
+- en: book
+  ar: كْتَاب
+  transliteration: ktab
+  ru: книга
 - en: exam
-  ar: امتحان
-  transliteration: al-imtihan
+  ar: اِمْتِحَان
+  transliteration: imtihan
   ru: экзамен
 - en: library
-  ar: مكتبة
+  ar: مَكْتَبَة
   transliteration: maktaba
   ru: библиотека
+- en: sweet / nice
+  ar: حِلُو
+  transliteration: hilu
+  ru: сладкий / классный
 - en: tomorrow
-  ar: بكرة
+  ar: بُكْرَة
   transliteration: bukra
   ru: завтра
 sentences:
 - en: she works as a tailor in the workshop
-  ar: بتشتغل خياطة في الورشة
-  transliteration: bitshataghil khayyata fil-warsha
+  ar: بِتِشْتِغِلْ خَيَّاطَة بِالْوَرْشَة
+  transliteration: bitishtighil khayyata bil-warsha
   ru: она работает портной в мастерской
 - en: the student studies at the faculty of arts
-  ar: الطالبة بتدرس في كلية الفنون
-  transliteration: at-taliba bitadrus fi kulliyat al-funun
+  ar: اَلطَّالْبَة بِتِدْرُسْ بِكُلِّيَّةِ الْفُنُون
+  transliteration: at-talba bitidrus bi-kulliyyat il-funun
   ru: студентка учится на факультете искусств
 - en: the mathematician works in the academy
-  ar: عالم الرياضيات بيشتغل في الأكاديمية
-  transliteration: alim ar-riyadiyat bishataghil fil-akadimiya
+  ar: عَالِمْ الرِّيَاضِيَّات بْيِشْتِغِلْ بِالْأَكَادِيمِيَّة
+  transliteration: alim ir-riyadiyyat byishtighil bil-akadimiyya
   ru: математик работает в академии
 - en: the designer is making a project in the studio
-  ar: المصمم بيعمل مشروع في الاستوديو
-  transliteration: al-musammim bi'amal mashru fil-ustudiyu
+  ar: اَلْمُصَمِّمْ بْيِعْمَلْ مَشْرُوعْ بِالِاسْتُودْيُو
+  transliteration: il-musammim byi'mal mashru' bil-istudyu
   ru: дизайнер создает проект в студии
 - en: the teacher explains the lesson in class
-  ar: المعلم بيشرح الدرس في الصف
-  transliteration: al-muallim bishrah ad-dars fis-saff
+  ar: اَلْمُعَلِّمْ بْيِشْرَحْ الدَّرْسْ بِالصَّفّ
+  transliteration: il-m'allim byishrah id-dars bis-saff
   ru: учитель объясняет урок в классе
 - en: i love cinema and art
-  ar: بحب السينما والفن
-  transliteration: bahibb as-sinima wal-fann
-  ru: я люблю кинематограф и искусство
+  ar: بْحِبّْ السِّينَمَا وَالْفَنّ
+  transliteration: bhibb is-sinama wal-fann
+  ru: я люблю кино и искусство
 - en: she is sewing a dress from beautiful fabric
-  ar: بتخيط فستان من قماش جميل
-  transliteration: bitkhayyit fustan min qumash jamil
+  ar: بِتْخَيِّطْ فُسْتَانْ مِنْ قُمَاشْ حِلُو
+  transliteration: bitkhayyit fustan min qumash hilu
   ru: она шьет платье из красивой ткани
 - en: we study math at the university
-  ar: بندرس رياضيات في الجامعة
-  transliteration: bandrus riyadiyat fil-jamia
+  ar: بْنِدْرُسْ رِيَاضِيَّات بِالْجَامْعَة
+  transliteration: bnidrus riyadiyyat bil-jam'a
   ru: мы изучаем математику в университете
 - en: this workshop is very big
-  ar: هذه الورشة كبيرة كثير
-  transliteration: hadhihi al-warsha kabira kathir
+  ar: هَايْ الْوَرْشَة كْبِيرَة كْتِيرْ
+  transliteration: hayy il-warsha kbira ktir
   ru: эта мастерская очень большая
 - en: the student has an exam tomorrow
-  ar: الطالبة عندها امتحان بكرة
-  transliteration: at-taliba indha imtihan bukra
+  ar: اَلطَّالْبَة عِنْدْهَا امْتِحَانْ بُكْرَة
+  transliteration: at-talba indha mtihan bukra
   ru: у студентки завтра экзамен
 - en: the math professor writes numbers
-  ar: أستاذ الرياضيات بيكتب الأرقام
-  transliteration: ustadh ar-riyadiyat biyaktub al-arqam
+  ar: أُسْتَاذْ الرِّيَاضِيَّات بْيِكْتُبْ الْأَرْقَامْ
+  transliteration: ustaz ir-riyadiyyat byiktub il-arqam
   ru: профессор математики пишет цифры
 - en: the academy is open for students
-  ar: الأكاديمية مفتوحة للطلاب
-  transliteration: al-akadimiya maftuha lit-tullab
+  ar: اَلْأَكَادِيمِيَّة مَفْتُوحَة لَلطُّلَّاب
+  transliteration: il-akadimiyya maftuha lat-tullab
   ru: академия открыта для студентов
 - en: the designer works on a new blueprint
-  ar: المصمم بيشتغل على مخطط جديد
-  transliteration: al-musammim bishataghil ala mukhattat jadid
+  ar: اَلْمُصَمِّمْ بْيِشْتِغِلْ عَلَى مُخَطَّطْ جْدِيدْ
+  transliteration: il-musammim byishtighil ala mukhattat jdid
   ru: дизайнер работает над новым чертежом
 - en: the art lesson starts now
-  ar: درس الفن بيبدأ الآن
-  transliteration: dars al-fann biyabda al-an
+  ar: دَرْسْ الْفَنّ بِيبَلِّشْ هَلَّأ
+  transliteration: dars il-fann biballish halla'
   ru: урок искусства начинается сейчас
 - en: the student reads a book in the library
-  ar: الطالب بيقرأ كتاب في المكتبة
-  transliteration: at-talib biqra kitab fil-maktaba
+  ar: اَلطَّالِبْ بْيِقْرَأ كْتَابْ بِالْمَكْتَبَة
+  transliteration: at-talib byiqra ktab bil-maktaba
   ru: студент читает книгу в библиотеке
 - en: i have a big project tomorrow
-  ar: عندي مشروع كبير بكرة
-  transliteration: indi mashru kabir bukra
-  ru: у меня большой проект завтра
+  ar: عِنْدِي مَشْرُوعْ كْبِيرْ بُكْرَة
+  transliteration: indi mashru' kbir bukra
+  ru: у меня завтра большой проект
 - en: she studies science at the university
-  ar: بتدرس علم في الجامعة
-  transliteration: bitadrus ilm fil-jamia
-  ru: она изучает науку в университете
+  ar: بِتِدْرُسْ عُلُومْ بِالْجَامْعَة
+  transliteration: bitidrus 'ulum bil-jam'a
+  ru: она изучает науки в университете
 - en: the teacher writes numbers here
-  ar: المعلم بيكتب أرقام هنا
-  transliteration: al-muallim biyaktub arquam huna
+  ar: اَلْمُعَلِّمْ بْيِكْتُبْ أَرْقَامْ هُونْ
+  transliteration: il-m'allim byiktub arqam hon
   ru: учитель пишет цифры здесь
 - en: we have a lesson in the academy
-  ar: عندنا درس في الأكاديمية
-  transliteration: indna dars fil-akadimiya
+  ar: عِنْدْنَا دَرْسْ بِالْأَكَادِيمِيَّة
+  transliteration: indna dars bil-akadimiyya
   ru: у нас урок в академии
 - en: the designer loves beautiful fabric
-  ar: المصمم بيحب قماش جميل
-  transliteration: al-musammim bihibb qumash jamil
+  ar: اَلْمُصَمِّمْ بْيِحِبّْ قُمَاشْ حِلُو
+  transliteration: il-musammim byihibb qumash hilu
   ru: дизайнер любит красивую ткань

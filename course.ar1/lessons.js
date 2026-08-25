@@ -258,225 +258,235 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
     "words": [
       [
         "tailor (f)",
-        "خياطة",
+        "خيّاطة@خَيَّاطَة",
         "khayyata"
       ],
       [
-        "mathematician",
-        "عالم رياضيات",
-        "alim riyadiyat"
+        "mathematician (m)",
+        "عالم رياضيّات@عَالِمْ رِيَاضِيَّات",
+        "alim riyadiyyat"
       ],
       [
         "designer (m)",
-        "مصمم",
+        "مصمّم@مُصَمِّم",
         "musammim"
       ],
       [
         "student (m)",
-        "طالب",
+        "طالب@طَالِب",
         "talib"
       ],
       [
         "student (f)",
-        "طالبة",
-        "taliba"
+        "طالبة@طَالْبَة",
+        "talba"
       ],
       [
         "workshop",
-        "ورشة",
+        "ورشة@وَرْشَة",
         "warsha"
       ],
       [
         "studio",
-        "استوديو",
-        "ustudiyu"
+        "استوديو@اِسْتُودْيُو",
+        "istudyu"
       ],
       [
         "class",
-        "صف",
+        "صفّ@صَفّ",
         "saff"
       ],
       [
         "art",
-        "فن",
+        "فنّ@فَنّ",
         "fann"
       ],
       [
         "arts",
-        "فنون",
+        "فنون@فُنُون",
         "funun"
       ],
       [
         "academy",
-        "أكاديمية",
-        "akadimiya"
+        "أكاديميّة@أَكَادِيمِيَّة",
+        "akadimiyya"
       ],
       [
         "cinema",
-        "سينما",
-        "sinima"
+        "سينما@سِينَمَا",
+        "sinama"
       ],
       [
         "faculty",
-        "كلية",
-        "kulliya"
+        "كلّيّة@كُلِّيَّة",
+        "kulliyya"
       ],
       [
         "university",
-        "جامعة",
-        "jamia"
+        "جامعة@جَامْعَة",
+        "jam'a"
       ],
       [
         "lesson",
-        "درس",
+        "درس@دَرْس",
         "dars"
       ],
       [
-        "science",
-        "علم",
-        "ilm"
+        "sciences",
+        "علوم@عُلُوم",
+        "'ulum"
       ],
       [
         "blueprint",
-        "مخطط",
+        "مخطّط@مُخَطَّط",
         "mukhattat"
       ],
       [
         "fabric",
-        "قماش",
+        "قماش@قُمَاش",
         "qumash"
       ],
       [
         "dress",
-        "فستان",
+        "فستان@فُسْتَان",
         "fustan"
       ],
       [
         "numbers",
-        "أرقام",
+        "أرقام@أَرْقَام",
         "arqam"
       ],
       [
         "project",
-        "مشروع",
-        "mashru"
+        "مشروع@مَشْرُوع",
+        "mashru'"
+      ],
+      [
+        "book",
+        "كتاب@كْتَاب",
+        "ktab"
       ],
       [
         "exam",
-        "امتحان",
-        "al-imtihan"
+        "امتحان@اِمْتِحَان",
+        "imtihan"
       ],
       [
         "library",
-        "مكتبة",
+        "مكتبة@مَكْتَبَة",
         "maktaba"
       ],
       [
+        "sweet / nice",
+        "حلو@حِلُو",
+        "hilu"
+      ],
+      [
         "tomorrow",
-        "بكرة",
+        "بكرة@بُكْرَة",
         "bukra"
       ]
     ],
     "sentences": [
       [
         "she works as a tailor in the workshop",
-        "بتشتغل خياطة في الورشة",
-        "bitshataghil khayyata fil-warsha"
+        "بتشتغل خيّاطة بالورشة@بِتِشْتِغِلْ خَيَّاطَة بِالْوَرْشَة",
+        "bitishtighil khayyata bil-warsha"
       ],
       [
         "the student studies at the faculty of arts",
-        "الطالبة بتدرس في كلية الفنون",
-        "at-taliba bitadrus fi kulliyat al-funun"
+        "الطّالبة بتدرس بكلّيّة الفنون@اَلطَّالْبَة بِتِدْرُسْ بِكُلِّيَّةِ الْفُنُون",
+        "at-talba bitidrus bi-kulliyyat il-funun"
       ],
       [
         "the mathematician works in the academy",
-        "عالم الرياضيات بيشتغل في الأكاديمية",
-        "alim ar-riyadiyat bishataghil fil-akadimiya"
+        "عالم الرّياضيّات بيشتغل بالأكاديميّة@عَالِمْ الرِّيَاضِيَّات بْيِشْتِغِلْ بِالْأَكَادِيمِيَّة",
+        "alim ir-riyadiyyat byishtighil bil-akadimiyya"
       ],
       [
         "the designer is making a project in the studio",
-        "المصمم بيعمل مشروع في الاستوديو",
-        "al-musammim bi'amal mashru fil-ustudiyu"
+        "المصمّم بيعمل مشروع بالاستوديو@اَلْمُصَمِّمْ بْيِعْمَلْ مَشْرُوعْ بِالِاسْتُودْيُو",
+        "il-musammim byi'mal mashru' bil-istudyu"
       ],
       [
         "the teacher explains the lesson in class",
-        "المعلم بيشرح الدرس في الصف",
-        "al-muallim bishrah ad-dars fis-saff"
+        "المعلّم بيشرح الدّرس بالصّفّ@اَلْمُعَلِّمْ بْيِشْرَحْ الدَّرْسْ بِالصَّفّ",
+        "il-m'allim byishrah id-dars bis-saff"
       ],
       [
         "i love cinema and art",
-        "بحب السينما والفن",
-        "bahibb as-sinima wal-fann"
+        "بحبّ السّينما والفنّ@بْحِبّْ السِّينَمَا وَالْفَنّ",
+        "bhibb is-sinama wal-fann"
       ],
       [
         "she is sewing a dress from beautiful fabric",
-        "بتخيط فستان من قماش جميل",
-        "bitkhayyit fustan min qumash jamil"
+        "بتخيّط فستان من قماش حلو@بِتْخَيِّطْ فُسْتَانْ مِنْ قُمَاشْ حِلُو",
+        "bitkhayyit fustan min qumash hilu"
       ],
       [
         "we study math at the university",
-        "بندرس رياضيات في الجامعة",
-        "bandrus riyadiyat fil-jamia"
+        "بندرس رياضيّات بالجامعة@بْنِدْرُسْ رِيَاضِيَّات بِالْجَامْعَة",
+        "bnidrus riyadiyyat bil-jam'a"
       ],
       [
         "this workshop is very big",
-        "هذه الورشة كبيرة كثير",
-        "hadhihi al-warsha kabira kathir"
+        "هاي الورشة كبيرة كتير@هَايْ الْوَرْشَة كْبِيرَة كْتِيرْ",
+        "hayy il-warsha kbira ktir"
       ],
       [
         "the student has an exam tomorrow",
-        "الطالبة عندها امتحان بكرة",
-        "at-taliba indha imtihan bukra"
+        "الطّالبة عندها امتحان بكرة@اَلطَّالْبَة عِنْدْهَا امْتِحَانْ بُكْرَة",
+        "at-talba indha mtihan bukra"
       ],
       [
         "the math professor writes numbers",
-        "أستاذ الرياضيات بيكتب الأرقام",
-        "ustadh ar-riyadiyat biyaktub al-arqam"
+        "أستاذ الرّياضيّات بيكتب الأرقام@أُسْتَاذْ الرِّيَاضِيَّات بْيِكْتُبْ الْأَرْقَامْ",
+        "ustaz ir-riyadiyyat byiktub il-arqam"
       ],
       [
         "the academy is open for students",
-        "الأكاديمية مفتوحة للطلاب",
-        "al-akadimiya maftuha lit-tullab"
+        "الأكاديميّة مفتوحة للطّلّاب@اَلْأَكَادِيمِيَّة مَفْتُوحَة لَلطُّلَّاب",
+        "il-akadimiyya maftuha lat-tullab"
       ],
       [
         "the designer works on a new blueprint",
-        "المصمم بيشتغل على مخطط جديد",
-        "al-musammim bishataghil ala mukhattat jadid"
+        "المصمّم بيشتغل على مخطّط جديد@اَلْمُصَمِّمْ بْيِشْتِغِلْ عَلَى مُخَطَّطْ جْدِيدْ",
+        "il-musammim byishtighil ala mukhattat jdid"
       ],
       [
         "the art lesson starts now",
-        "درس الفن بيبدأ الآن",
-        "dars al-fann biyabda al-an"
+        "درس الفنّ بيبلّش هلّأ@دَرْسْ الْفَنّ بِيبَلِّشْ هَلَّأ",
+        "dars il-fann biballish halla'"
       ],
       [
         "the student reads a book in the library",
-        "الطالب بيقرأ كتاب في المكتبة",
-        "at-talib biqra kitab fil-maktaba"
+        "الطّالب بيقرأ كتاب بالمكتبة@اَلطَّالِبْ بْيِقْرَأ كْتَابْ بِالْمَكْتَبَة",
+        "at-talib byiqra ktab bil-maktaba"
       ],
       [
         "i have a big project tomorrow",
-        "عندي مشروع كبير بكرة",
-        "indi mashru kabir bukra"
+        "عندي مشروع كبير بكرة@عِنْدِي مَشْرُوعْ كْبِيرْ بُكْرَة",
+        "indi mashru' kbir bukra"
       ],
       [
         "she studies science at the university",
-        "بتدرس علم في الجامعة",
-        "bitadrus ilm fil-jamia"
+        "بتدرس علوم بالجامعة@بِتِدْرُسْ عُلُومْ بِالْجَامْعَة",
+        "bitidrus 'ulum bil-jam'a"
       ],
       [
         "the teacher writes numbers here",
-        "المعلم بيكتب أرقام هنا",
-        "al-muallim biyaktub arquam huna"
+        "المعلّم بيكتب أرقام هون@اَلْمُعَلِّمْ بْيِكْتُبْ أَرْقَامْ هُونْ",
+        "il-m'allim byiktub arqam hon"
       ],
       [
         "we have a lesson in the academy",
-        "عندنا درس في الأكاديمية",
-        "indna dars fil-akadimiya"
+        "عندنا درس بالأكاديميّة@عِنْدْنَا دَرْسْ بِالْأَكَادِيمِيَّة",
+        "indna dars bil-akadimiyya"
       ],
       [
         "the designer loves beautiful fabric",
-        "المصمم بيحب قماش جميل",
-        "al-musammim bihibb qumash jamil"
+        "المصمّم بيحبّ قماش حلو@اَلْمُصَمِّمْ بْيِحِبّْ قُمَاشْ حِلُو",
+        "il-musammim byihibb qumash hilu"
       ]
     ],
     "index": 2
