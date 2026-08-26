@@ -295,23 +295,25 @@ async function resolveProgressConflict(cloudData, localData) {
     }
 
     if (!direction) {
-            const localTime = Number(currentLocalData.updated_at || 0);
-            // Accept settings_updated_at only for compatibility with older cloud files.
-            const cloudTime = Math.max(
-                    Number(cloudData.updated_at || 0),
-                    Number(cloudData.settings_updated_at || 0)
-            );
+            const cloudHits = calculateTotalHits(cloudData);
+            const localHits = calculateTotalHits(currentLocalData);
 
-      if (localTime && cloudTime && localTime !== cloudTime) {
-        direction = localTime > cloudTime ? 'cloud' : 'browser';
-      } else {
-        const cloudAttempts = calculateTotalAttempts(cloudData);
-        const localAttempts = calculateTotalAttempts(currentLocalData);
-        if (localAttempts > cloudAttempts) {
-          direction = 'cloud';
-        } else if (localAttempts < cloudAttempts) {
-          direction = 'browser';
-        }
+            if (localHits > cloudHits) {
+                direction = 'cloud';
+            } else if (localHits < cloudHits) {
+                direction = 'browser';
+            } else {
+                const localTime = Number(currentLocalData.updated_at || 0);
+                const cloudTime = Number(cloudData.updated_at || 0);
+
+                // Use timestamps only when both values are present and different.
+                if (localTime > 0 && cloudTime > 0) {
+                    if (localTime > cloudTime) {
+                        direction = 'cloud';
+                    } else if (cloudTime > localTime) {
+                        direction = 'browser';
+                    }
+                }
       }
     }
 
@@ -321,7 +323,7 @@ async function resolveProgressConflict(cloudData, localData) {
         updateSyncDirectionIndicator('from cloud', cloudData.updated_at || Date.now());
     }
     else if (direction === 'cloud') {
-        console.log("🚀 Local settings are newer.");
+        console.log("🚀 Local progress has more hits or is newer.");
         if (window.currentAccessToken) {
             console.log("🚀 Uploading to cloud.");
             await syncManager.uploadProgress(window.currentAccessToken, currentLocalData);
@@ -334,13 +336,13 @@ async function resolveProgressConflict(cloudData, localData) {
     }
 }
 
-// count attempts in progress data
-function calculateTotalAttempts(data) {
-    let totalAttempts = 0;
+// Count relevant exercise hits in progress data.
+function calculateTotalHits(data) {
+    let totalHits = 0;
 
     // Safety for damaged input
     if (!data || !data.courses) {
-        return totalAttempts;
+        return totalHits;
     }
 
     // Iterate all cources
@@ -359,7 +361,7 @@ function calculateTotalAttempts(data) {
                         
                         // When there is an attempts value - count it
                         if (wordData && typeof wordData.attempts === 'number') {
-                            totalAttempts += wordData.attempts;
+                            totalHits += wordData.attempts;
                         }
                     }
                 }
@@ -367,7 +369,7 @@ function calculateTotalAttempts(data) {
         }
     }
 
-    return totalAttempts;
+    return totalHits;
 }
 
 // Logout: clear local data and revoke Google session
@@ -395,6 +397,7 @@ class CloudSync {
         this.fileName = "vox_libera_sync.json";
         this.debounceTimeout = null;
         this.debounceDelay = 5000; // 5 seconds for silence
+        this.uploadPromise = Promise.resolve();
     }
 
     // Universal fetch with handling of timed-out token (401)
@@ -482,6 +485,12 @@ class CloudSync {
 
     // Sending file to cloud (Multipart PATCH/POST)
     async uploadProgress(accessToken, progressData) {
+        const uploadTask = this.uploadPromise.then(() => this.performUpload(accessToken, progressData));
+        this.uploadPromise = uploadTask.catch(() => {});
+        return uploadTask;
+    }
+
+    async performUpload(accessToken, progressData) {
         if (typeof updateCloudStatus === 'function') updateCloudStatus('loading');
 
         const fileId = await this.findFile(accessToken);
