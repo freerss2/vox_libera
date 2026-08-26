@@ -8,219 +8,224 @@ explanations:
     Note that the **passive voice** is sometimes used to construct **adjectives**.
     The passive voice construction model looks like this:
     [mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
+
+    ### Colloquial use of the preposition of direction
+    In colloquial Levantine, the short preposition '''عَ''' ('a) is a contraction of the classical '''عَلَى''' ('ala - "on"). 
+    It is used not only to indicate a location (where?), but also completely replaces the literary '''إِلَى''' ('ila) when indicating the direction of movement (where?). 
+    In living speech, '''عَ''' always merges with the following word and its article: for example, '''عَ الطَّاوْلَة''' ('a-t-tavle - "on the table") or '''عَ الشُّغُل''' ('a-sh-shugul - “on work").
+
   ru: |
     Этот урок поможет нам описать бытовые предметы окружающие нас в повседневной жизни.
     Обратите внимание на то, что для построения **прилагательного** иногда используется **пассивный залог**.
     Модель построения пассивного залога выглядит так:
     [mu-1-2i-3] где 1, 2 и 3 - буквы корня, например [munir] '''منير'''
+
+    ### Разговорное употребление предлога направления
+    В разговорном левантийском диалекте короткий предлог '''عَ''' ('a) — это сокращение от классического '''عَلَى''' ('ala — «на»). 
+    Он используется не только для указания местоположения (где?), но и полностью заменяет литературное '''إِلَى''' ('ila) при указании направления движения (куда?). 
+    В живой речи '''عَ''' всегда сливается со следующим словом и его артиклем: например, '''عَ الطَّاوْلَة''' (‘а-т-тавле — «на столе») или '''عَ الشُّغُل''' (‘а-ш-шугуль — «на работу»).
+
 story:
   en:
-  - ar: كل يوم بفيق بكير وبشرب قهوة.
+  - ar: كُلّ يَوْم بِفِيق بَكِّير وِبِشْرَب قَهْوَة.
     en: Every day I wake up early and drink coffee.
-    transliteration: Kull yom bafiq bakir wa bashrab qahwa.
-  - ar: وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.
+    transliteration: Kull yom bfiq bakkir w-bishrab qahwa.
+  - ar: وِين مَفَاتِيح السَّيَّارَة؟ لَازِم رُوح عَ الشُّغُل هَلَّق.
     en: Where are the car keys? I must go to work now.
-    transliteration: Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-  - ar: المفاتيح على الطاولة في المطبخ يا حبيبي.
+    transliteration: Wen mafatih as-sayyara? Lazim ruh a-sh-shughul hallaq.
+  - ar: الْمَفَاتِيح عَ الطَّاوْلَة بِالْمَطْبَخ يَا حَبِيبِي.
     en: The keys are on the table in the kitchen, my dear.
-    transliteration: Al-mafatih ala at-tawila fil-matbakh ya habibi.
-  - ar: شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
-    vocalized: شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
-    en: Thanks! My dear neighbor also goes to work at the same time.
-    transliteration: Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-  - ar: بتاكل فطور قبل ما تروح؟
+    transliteration: Al-mafatih a-t-tawle b-il-matbakh ya habibi.
+  - ar: شُكْراً! جَارِي كَمَان بِيرُوح عَ الشُّغُل بِنَفْس الْوَقْت.
+    en: Thanks! My neighbor also goes to work at the same time.
+    transliteration: Shukran! Jari kaman biruh a-sh-shughul b-nafs al-waqt.
+  - ar: بِتَاكُل فْطُور قَبِل مَا تْرُوح؟
     en: Do you eat breakfast before you go?
-    transliteration: Btakul futur qabl ma truh?
-  - ar: لا، أنا مش جوعان، بس تعبان شوي.
+    transliteration: Btakul ftur qabil ma truh?
+  - ar: لَا، أَنَا مِش جُوعَان، بَس تَعْبَان شْوَي.
     en: No, I am not hungry, just a bit tired.
-    transliteration: La, ana mish jwan, bas taban shway.
-  - ar: الله معك! بشوفك المساء في البيت.
+    transliteration: La, ana mish juan, bas taban shway.
+  - ar: الله مَعَك! بِشُوفَك الْمَسَا بِالْبِيت.
     en: May God be with you! See you in the evening at home.
-    transliteration: Alla maak! Bashufak al-masa fil-bayt.
+    transliteration: Allah maak! Bshufak al-masa b-il-bet.
   ru:
-  - ar: كل يوم بفيق بكير وبشرب قهوة.
+  - ar: كُلّ يَوْم بِفِيق بَكِّير وِبِشْرَب قَهْوَة.
     ru: Каждый день я просыпаюсь рано и пью кофе.
-    transliteration: Kull yom bafiq bakir wa bashrab qahwa.
-  - ar: وين مفاتيح السيارة؟ لازم أروح على الشغل الآن.
+    transliteration: Kull yom bfiq bakkir w-bishrab qahwa.
+  - ar: وِين مَفَاتِيح السَّيَّارَة؟ لَازِم رُوح عَ الشُّغُل هَلَّق.
     ru: Где ключи от машины? Мне пора на работу.
-    transliteration: Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-  - ar: المفاتيح على الطاولة في المطبخ يا حبيبي.
-    ru: Ключи лежат на столе на кухне, дорогая.
-    transliteration: Al-mafatih ala at-tawila fil-matbakh ya habibi.
-  - ar: شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
-    vocalized: شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت.
-    ru: Спасибо! Моя дорогая соседка тоже ходит на работу в это же время.
-    transliteration: Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-  - ar: بتاكل فطور قبل ما تروح؟
-    ru: Вы завтракаете перед тем, как идти?
-    transliteration: Btakul futur qabl ma truh?
-  - ar: لا، أنا مش جوعان، بس تعبان شوي.
+    transliteration: Wen mafatih as-sayyara? Lazim ruh a-sh-shughul hallaq.
+  - ar: الْمَفَاتِيح عَ الطَّاوْلَة بِالْمَطْبَخ يَا حَبِيبِي.
+    ru: Ключи лежат на столе на кухне, дорогой.
+    transliteration: Al-mafatih a-t-tawle b-il-matbakh ya habibi.
+  - ar: شُكْراً! جَارِي كَمَان بِيرُوح عَ الشُّغُل بِنَفْس الْوَقْت.
+    ru: Спасибо! Мой сосед тоже ходит на работу в это же время.
+    transliteration: Shukran! Jari kaman biruh a-sh-shughul b-nafs al-waqt.
+  - ar: بِتَاكُل فْطُور قَبِل مَا تْرُوح؟
+    ru: Ты завтракаешь перед тем, как идти?
+    transliteration: Btakul ftur qabil ma truh?
+  - ar: لَا، أَنَا مِش جُوعَان، بَس تَعْبَان شْوَي.
     ru: Нет, я не голоден, просто немного устал.
-    transliteration: La, ana mish jwan, bas taban shway.
-  - ar: الله معك! بشوفك المساء في البيت.
-    ru: Да пребудет с вами Бог! Увидимся вечером дома.
-    transliteration: Alla maak! Bashufak al-masa fil-bayt.
+    transliteration: La, ana mish juan, bas taban shway.
+  - ar: الله مَعَك! بِشُوفَك الْمَسَا بِالْبِيت.
+    ru: С Богом! Увидимся вечером дома.
+    transliteration: Allah maak! Bshufak al-masa b-il-bet.
+
 words:
 - en: carpet
-  ar: سجادة
-  transliteration: as-sajjada
+  ar: سَجَّادَة
+  transliteration: sajjada
   ru: ковёр
 - en: bed
-  ar: سرير
-  transliteration: as-sarir
+  ar: تَخْت
+  transliteration: takht
   ru: кровать
 - en: wardrobe / closet
-  ar: خزانة
-  transliteration: al-khizana
+  ar: خِزَانَة
+  transliteration: khizane
   ru: шкаф
 - en: room
-  ar: غرفة
-  transliteration: al-ghurfa
+  ar: غُرْفَة
+  transliteration: ghurfa
   ru: комната
-- en: kitchen
-  ar: مطبخ
-  transliteration: al-matbakh
-  ru: кухня
 - en: bedroom
-  ar: غرفة نوم
-  transliteration: ghurfat nawm
+  ar: غُرْفَة نَوْم
+  transliteration: ghurfat nom
   ru: спальня
 - en: floor
-  ar: أرضية
-  transliteration: al-ardiya
+  ar: أَرْض
+  transliteration: ard
   ru: пол
 - en: ceiling
-  ar: سقف
-  transliteration: as-saqf
+  ar: سَقِف
+  transliteration: saqif
   ru: потолок
-- en: early
-  ar: بكير
-  transliteration: bakir
-  ru: рано
-- en: key
-  ar: مفتاح
-  transliteration: miftah
-  ru: ключ
-- en: keys
-  ar: مفاتيح
-  transliteration: mafatih
-  ru: ключи
+- en: window
+  ar: شُبَّاك
+  transliteration: shubbak
+  ru: окно
+- en: tap / sink
+  ar: حَنَفِيَّة
+  transliteration: hanafiyya
+  ru: кран / раковина
+
 - en: money
-  ar: مصاري
+  ar: مَصَارِي
   transliteration: masari
   ru: деньги
 - en: water
-  ar: مي
+  ar: مَيّ
   transliteration: mayy
   ru: вода
-- en: always
-  ar: دائما
-  transliteration: da'iman
-  vocalized: دائماً
-  ru: всегда
+- en: comfortable
+  ar: مْرِيح
+  transliteration: mrih
+  ru: удобный
+- en: bright / illuminated
+  ar: مْنَوَّر
+  transliteration: mnawwar
+  ru: светлый
+
 - en: a little
-  ar: شوي
-  transliteration: shway
+  ar: شْوَيّ
+  transliteration: shwayy
   ru: немного
 - en: also
-  ar: كمان
+  ar: كَمَان
   transliteration: kaman
   ru: тоже
-- en: must
-  ar: لازم
-  transliteration: lazim
-  ru: должен
+- en: there is / are
+  ar: فِيه
+  transliteration: fih
+  ru: есть / имеется
+
 - en: i wake up
-  ar: بفيق
-  transliteration: bafiq
+  ar: بِفِيق
+  transliteration: bfiq
   ru: я просыпаюсь
-- en: tap / sink
-  ar: حنفية
-  transliteration: al-hanafiya
-  ru: кран / раковина
-- en: i drink
-  ar: بشرب
-  transliteration: bashrab
-  ru: я пью
+- en: i go
+  ar: بَرُوح
+  transliteration: baruh
+  ru: я иду / еду
+
 sentences:
 - en: the carpet is on the floor
-  ar: السجادة على الأرض
-  transliteration: as-sajjada 'ala al-ard
+  ar: السَّجَّادَة عَ الْأَرْض
+  transliteration: "as-sajjada 'a-l-ard"
   ru: ковёр лежит на полу
 - en: the wardrobe is in the room
-  ar: الخزانة في الغرفة
-  transliteration: al-khizana fil-ghurfa
+  ar: الْخِزَانَة بِالْغُرْفَة
+  transliteration: il-khizane bil-ghurfa
   ru: шкаф стоит в комнате
 - en: the bed is big and comfortable
-  ar: السرير كبير ومريح
-  transliteration: as-sarir kabir wa murih
+  ar: التَّخْت كْبِير وِمْرِيح
+  transliteration: it-takht kbir w-mrih
   ru: кровать большая и удобная
 - en: this bedroom is very bright
-  ar: غرفة النوم هذه منيرة كثير
-  transliteration: ghurfat an-nawm hadhihi munira kathir
+  ar: هَاي غُرْفَة النَّوْم مْنَوَّرَة كْتِير
+  transliteration: hayy ghurfat in-nom mnawwara ktir
   ru: эта спальня очень светлая
 - en: the kitchen window is open
-  ar: شباك المطبح مفتوح
-  transliteration: shubbak al-matbakh maftuh
-  ru: окно в кухне открыто
+  ar: شُبَّاك الْمَطْبَخ مَفْتُوح
+  transliteration: shubbak il-matbakh maftuh
+  ru: окно на кухне открыто
 - en: the ceiling is white and high
-  ar: السقف أبيض وعالي
-  transliteration: as-saqf abyad wa 'ali
+  ar: السَّقِف أَبْيَض وِعَالِي
+  transliteration: "is-saqif abyad w-'ali"
   ru: потолок белый и высокий
 - en: every day i wake up early
-  ar: كل يوم بفيق بكير
-  transliteration: kull yom bafiq bakir
+  ar: كُلّ يَوْم بِفِيق بَكِّير
+  transliteration: kull yom bfiq bakkir
   ru: каждый день я просыпаюсь рано
 - en: i drink coffee with milk
-  ar: بشرب قهوة مع حليب
-  transliteration: bashrab qahwa ma halib
+  ar: بِشْرَب قَهْوَة مَع حَلِيب
+  transliteration: "bishrab qahwa ma' halib"
   ru: я пью кофе с молоком
 - en: where is the car key
-  ar: وين مفتاح السيارة
-  transliteration: wayn miftah as-sayyara
+  ar: وِين مِفْتَاح السَّيَّارَة؟
+  transliteration: wen miftah as-sayyara?
   ru: где ключ от машины
 - en: the keys are on the table
-  ar: المفاتيح على الطاولة
-  transliteration: al-mafatih ala at-tawila
+  ar: الْمَفَاتِيح عَ الطَّاوْلَة
+  transliteration: "al-mafatih 'a-t-tawle"
   ru: ключи на столе
 - en: i eat breakfast in the kitchen
-  ar: بأكل فطور في المطبخ
-  transliteration: bakul futur fil-matbakh
-  ru: я ем завтрак на кухне
+  ar: بَاكُل فْطُور بِالْمَطْبَخ
+  transliteration: bakul ftur bil-matbakh
+  ru: я завтракаю на кухне
 - en: the tap is in the kitchen
-  ar: الحنفية في المطبخ
-  transliteration: al-hanafiya fil-matbakh
-  ru: кран в кухне
+  ar: الْحَنَفِيَّة بِالْمَطْبَخ
+  transliteration: il-hanafiyya bil-matbakh
+  ru: кран на кухне
 - en: i am going to the bedroom
-  ar: بروح على غرفة النوم
-  transliteration: baruh 'ala ghurfat an-nawm
+  ar: بَرُوح عَ غُرْفَة النَّوْم
+  transliteration: "baruh 'a-ghurfat in-nom"
   ru: я иду в спальню
 - en: there is a window in the room
-  ar: فيه شباك في الغرفة
-  transliteration: fi shubbak fil-ghurfa
+  ar: فِيه شُبَّاك بِالْغُرْفَة
+  transliteration: fih shubbak bil-ghurfa
   ru: в комнате есть окно
 - en: the money is in the bag
-  ar: المصاري في الشنطة
-  transliteration: al-masari fish-shanta
+  ar: الْمَصَارِي بِالشَّنْطَة
+  transliteration: il-masari bish-shanta
   ru: деньги в сумке
 - en: i must go to work now
-  ar: لازم أروح على الشغل الآن
-  transliteration: lazim aruh ala ash-shughl al-an
+  ar: لَازِم رُوح عَ الشُّغُل هَلَّأ
+  transliteration: "lazim ruh 'a-sh-shughul halla'"
   ru: я должен идти на работу сейчас
 - en: i always drink water in the evening
-  ar: دائما بشرب مي المساء
-  transliteration: da'iman bashrab mayy al-masa
-  vocalized: دائماً بشرب مي المساء
+  ar: دَائِمَاً بِشْرَب مَيّ الْمَسَا
+  transliteration: "da'iman bishrab mayy il-masa"
   ru: я всегда пью воду вечером
 - en: she eats breakfast and drinks milk
-  ar: بتأكل فطور وبتشرب حليب
-  transliteration: bitakul futur wa bitshrab halib
-  ru: она ест завтрак и пьет молоко
+  ar: بِتَاكُل فْطُور وِبِتِشْرَب حَلِيب
+  transliteration: bitakul ftur w-bitishrab halib
+  ru: она завтракает и пьёт молоко
 - en: i also work every day
-  ar: أنا كمان بشتغل كل يوم
-  transliteration: ana kaman bashtaghel kull yom
-  ru: я также работаю каждый день
+  ar: أَنَا كَمَان بَشْتِغِل كُلّ يَوْم
+  transliteration: ana kaman bashtighil kull yom
+  ru: я тоже работаю каждый день
 - en: i drink water every day
-  ar: بشرب مي كل يوم
-  transliteration: bashrab mayy kull yom
+  ar: بِشْرَب مَيّ كُلّ يَوْم
+  transliteration: bishrab mayy kull yom
   ru: я пью воду каждый день

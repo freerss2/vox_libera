@@ -3,10 +3,12 @@ const topics =
   "all": {
     "name": "All topics",
     "explanations": `### Hello! Welcome to the Conversational Arabic (Levantine) course.
+Conversational language isn't something you'll find in numerous textbooks and apps. But it's essential for communicating with native speakers.
 The goal of the course is to develop a solid **basic vocabulary** necessary for everyday communication and understanding of everyday speech, as well as to master some grammar rules and sentence structures.
 
 The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
 The program and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequent language structures.
+If you have any comments or suggestions regarding the style and content of the lessons, please contact the author.
 
 On this screen, you can select the interface language. To save this and other settings, as well as track your learning progress, you can connect your Google account.
 `,
@@ -385,6 +387,11 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
         "tomorrow",
         "بكرة@بُكْرَة",
         "bukra"
+      ],
+      [
+        "to start",
+        "بلّش@بَلَّش",
+        "ballash"
       ]
     ],
     "sentences": [
@@ -497,216 +504,211 @@ The root of the word '''جامعة''' means "gathering," which will be useful wh
 Note that the **passive voice** is sometimes used to construct **adjectives**.
 The passive voice construction model looks like this:
 [mu-1-2i-3] where 1, 2, and 3 are the letters of the root, for example [munir] '''منير'''
+
+### Colloquial use of the preposition of direction
+In colloquial Levantine, the short preposition '''عَ''' ('a) is a contraction of the classical '''عَلَى''' ('ala - "on"). 
+It is used not only to indicate a location (where?), but also completely replaces the literary '''إِلَى''' ('ila) when indicating the direction of movement (where?). 
+In living speech, '''عَ''' always merges with the following word and its article: for example, '''عَ الطَّاوْلَة''' ('a-t-tavle - "on the table") or '''عَ الشُّغُل''' ('a-sh-shugul - “on work").
 `,
-    "story": `##story-line## ''' كل يوم بفيق بكير وبشرب قهوة. ''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
-##story-line## ''' وين مفاتيح السيارة؟ لازم أروح على الشغل الآن. ''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-##story-line## ''' المفاتيح على الطاولة في المطبخ يا حبيبي. ''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-##story-line## ''' شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.@شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Thanks! My dear neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-##story-line## ''' بتاكل فطور قبل ما تروح؟ ''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul futur qabl ma truh?
-##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي. ''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish jwan, bas taban shway.
-##story-line## ''' الله معك! بشوفك المساء في البيت. ''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.`,
+    "story": `##story-line## ''' كلّ يوم بفيق بكّير وبشرب قهوة.@كُلّ يَوْم بِفِيق بَكِّير وِبِشْرَب قَهْوَة. ''' ##story-translation## Every day I wake up early and drink coffee. ##story-transcr## Kull yom bfiq bakkir w-bishrab qahwa.
+##story-line## ''' وين مفاتيح السّيّارة؟ لازم روح ع الشّغل هلّق.@وِين مَفَاتِيح السَّيَّارَة؟ لَازِم رُوح عَ الشُّغُل هَلَّق. ''' ##story-translation## Where are the car keys? I must go to work now. ##story-transcr## Wen mafatih as-sayyara? Lazim ruh a-sh-shughul hallaq.
+##story-line## ''' المفاتيح ع الطّاولة بالمطبخ يا حبيبي.@الْمَفَاتِيح عَ الطَّاوْلَة بِالْمَطْبَخ يَا حَبِيبِي. ''' ##story-translation## The keys are on the table in the kitchen, my dear. ##story-transcr## Al-mafatih a-t-tawle b-il-matbakh ya habibi.
+##story-line## ''' شكرا! جاري كمان بيروح ع الشّغل بنفس الوقت.@شُكْراً! جَارِي كَمَان بِيرُوح عَ الشُّغُل بِنَفْس الْوَقْت. ''' ##story-translation## Thanks! My neighbor also goes to work at the same time. ##story-transcr## Shukran! Jari kaman biruh a-sh-shughul b-nafs al-waqt.
+##story-line## ''' بتاكل فطور قبل ما تروح؟@بِتَاكُل فْطُور قَبِل مَا تْرُوح؟ ''' ##story-translation## Do you eat breakfast before you go? ##story-transcr## Btakul ftur qabil ma truh?
+##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي.@لَا، أَنَا مِش جُوعَان، بَس تَعْبَان شْوَي. ''' ##story-translation## No, I am not hungry, just a bit tired. ##story-transcr## La, ana mish juan, bas taban shway.
+##story-line## ''' الله معك! بشوفك المسا بالبيت.@الله مَعَك! بِشُوفَك الْمَسَا بِالْبِيت. ''' ##story-translation## May God be with you! See you in the evening at home. ##story-transcr## Allah maak! Bshufak al-masa b-il-bet.`,
     "words": [
       [
         "carpet",
-        "سجادة",
-        "as-sajjada"
+        "سجّادة@سَجَّادَة",
+        "sajjada"
       ],
       [
         "bed",
-        "سرير",
-        "as-sarir"
+        "تخت@تَخْت",
+        "takht"
       ],
       [
         "wardrobe / closet",
-        "خزانة",
-        "al-khizana"
+        "خزانة@خِزَانَة",
+        "khizane"
       ],
       [
         "room",
-        "غرفة",
-        "al-ghurfa"
-      ],
-      [
-        "kitchen",
-        "مطبخ",
-        "al-matbakh"
+        "غرفة@غُرْفَة",
+        "ghurfa"
       ],
       [
         "bedroom",
-        "غرفة نوم",
-        "ghurfat nawm"
+        "غرفة نوم@غُرْفَة نَوْم",
+        "ghurfat nom"
       ],
       [
         "floor",
-        "أرضية",
-        "al-ardiya"
+        "أرض@أَرْض",
+        "ard"
       ],
       [
         "ceiling",
-        "سقف",
-        "as-saqf"
+        "سقف@سَقِف",
+        "saqif"
       ],
       [
-        "early",
-        "بكير",
-        "bakir"
+        "window",
+        "شبّاك@شُبَّاك",
+        "shubbak"
       ],
       [
-        "key",
-        "مفتاح",
-        "miftah"
-      ],
-      [
-        "keys",
-        "مفاتيح",
-        "mafatih"
+        "tap / sink",
+        "حنفيّة@حَنَفِيَّة",
+        "hanafiyya"
       ],
       [
         "money",
-        "مصاري",
+        "مصاري@مَصَارِي",
         "masari"
       ],
       [
         "water",
-        "مي",
+        "ميّ@مَيّ",
         "mayy"
       ],
       [
-        "always",
-        "دائما@دائماً",
-        "da'iman"
+        "comfortable",
+        "مريح@مْرِيح",
+        "mrih"
+      ],
+      [
+        "bright / illuminated",
+        "منوّر@مْنَوَّر",
+        "mnawwar"
       ],
       [
         "a little",
-        "شوي",
-        "shway"
+        "شويّ@شْوَيّ",
+        "shwayy"
       ],
       [
         "also",
-        "كمان",
+        "كمان@كَمَان",
         "kaman"
       ],
       [
-        "must",
-        "لازم",
-        "lazim"
+        "there is / are",
+        "فيه@فِيه",
+        "fih"
       ],
       [
         "i wake up",
-        "بفيق",
-        "bafiq"
+        "بفيق@بِفِيق",
+        "bfiq"
       ],
       [
-        "tap / sink",
-        "حنفية",
-        "al-hanafiya"
-      ],
-      [
-        "i drink",
-        "بشرب",
-        "bashrab"
+        "i go",
+        "بروح@بَرُوح",
+        "baruh"
       ]
     ],
     "sentences": [
       [
         "the carpet is on the floor",
-        "السجادة على الأرض",
-        "as-sajjada 'ala al-ard"
+        "السّجّادة ع الأرض@السَّجَّادَة عَ الْأَرْض",
+        "as-sajjada 'a-l-ard"
       ],
       [
         "the wardrobe is in the room",
-        "الخزانة في الغرفة",
-        "al-khizana fil-ghurfa"
+        "الخزانة بالغرفة@الْخِزَانَة بِالْغُرْفَة",
+        "il-khizane bil-ghurfa"
       ],
       [
         "the bed is big and comfortable",
-        "السرير كبير ومريح",
-        "as-sarir kabir wa murih"
+        "التّخت كبير ومريح@التَّخْت كْبِير وِمْرِيح",
+        "it-takht kbir w-mrih"
       ],
       [
         "this bedroom is very bright",
-        "غرفة النوم هذه منيرة كثير",
-        "ghurfat an-nawm hadhihi munira kathir"
+        "هاي غرفة النّوم منوّرة كتير@هَاي غُرْفَة النَّوْم مْنَوَّرَة كْتِير",
+        "hayy ghurfat in-nom mnawwara ktir"
       ],
       [
         "the kitchen window is open",
-        "شباك المطبح مفتوح",
-        "shubbak al-matbakh maftuh"
+        "شبّاك المطبخ مفتوح@شُبَّاك الْمَطْبَخ مَفْتُوح",
+        "shubbak il-matbakh maftuh"
       ],
       [
         "the ceiling is white and high",
-        "السقف أبيض وعالي",
-        "as-saqf abyad wa 'ali"
+        "السّقف أبيض وعالي@السَّقِف أَبْيَض وِعَالِي",
+        "is-saqif abyad w-'ali"
       ],
       [
         "every day i wake up early",
-        "كل يوم بفيق بكير",
-        "kull yom bafiq bakir"
+        "كلّ يوم بفيق بكّير@كُلّ يَوْم بِفِيق بَكِّير",
+        "kull yom bfiq bakkir"
       ],
       [
         "i drink coffee with milk",
-        "بشرب قهوة مع حليب",
-        "bashrab qahwa ma halib"
+        "بشرب قهوة مع حليب@بِشْرَب قَهْوَة مَع حَلِيب",
+        "bishrab qahwa ma' halib"
       ],
       [
         "where is the car key",
-        "وين مفتاح السيارة",
-        "wayn miftah as-sayyara"
+        "وين مفتاح السّيّارة؟@وِين مِفْتَاح السَّيَّارَة؟",
+        "wen miftah as-sayyara?"
       ],
       [
         "the keys are on the table",
-        "المفاتيح على الطاولة",
-        "al-mafatih ala at-tawila"
+        "المفاتيح ع الطّاولة@الْمَفَاتِيح عَ الطَّاوْلَة",
+        "al-mafatih 'a-t-tawle"
       ],
       [
         "i eat breakfast in the kitchen",
-        "بأكل فطور في المطبخ",
-        "bakul futur fil-matbakh"
+        "باكل فطور بالمطبخ@بَاكُل فْطُور بِالْمَطْبَخ",
+        "bakul ftur bil-matbakh"
       ],
       [
         "the tap is in the kitchen",
-        "الحنفية في المطبخ",
-        "al-hanafiya fil-matbakh"
+        "الحنفيّة بالمطبخ@الْحَنَفِيَّة بِالْمَطْبَخ",
+        "il-hanafiyya bil-matbakh"
       ],
       [
         "i am going to the bedroom",
-        "بروح على غرفة النوم",
-        "baruh 'ala ghurfat an-nawm"
+        "بروح ع غرفة النّوم@بَرُوح عَ غُرْفَة النَّوْم",
+        "baruh 'a-ghurfat in-nom"
       ],
       [
         "there is a window in the room",
-        "فيه شباك في الغرفة",
-        "fi shubbak fil-ghurfa"
+        "فيه شبّاك بالغرفة@فِيه شُبَّاك بِالْغُرْفَة",
+        "fih shubbak bil-ghurfa"
       ],
       [
         "the money is in the bag",
-        "المصاري في الشنطة",
-        "al-masari fish-shanta"
+        "المصاري بالشّنطة@الْمَصَارِي بِالشَّنْطَة",
+        "il-masari bish-shanta"
       ],
       [
         "i must go to work now",
-        "لازم أروح على الشغل الآن",
-        "lazim aruh ala ash-shughl al-an"
+        "لازم روح ع الشّغل هلّأ@لَازِم رُوح عَ الشُّغُل هَلَّأ",
+        "lazim ruh 'a-sh-shughul halla'"
       ],
       [
         "i always drink water in the evening",
-        "دائما بشرب مي المساء@دائماً بشرب مي المساء",
-        "da'iman bashrab mayy al-masa"
+        "دائما بشرب ميّ المسا@دَائِمَاً بِشْرَب مَيّ الْمَسَا",
+        "da'iman bishrab mayy il-masa"
       ],
       [
         "she eats breakfast and drinks milk",
-        "بتأكل فطور وبتشرب حليب",
-        "bitakul futur wa bitshrab halib"
+        "بتاكل فطور وبتشرب حليب@بِتَاكُل فْطُور وِبِتِشْرَب حَلِيب",
+        "bitakul ftur w-bitishrab halib"
       ],
       [
         "i also work every day",
-        "أنا كمان بشتغل كل يوم",
-        "ana kaman bashtaghel kull yom"
+        "أنا كمان بشتغل كلّ يوم@أَنَا كَمَان بَشْتِغِل كُلّ يَوْم",
+        "ana kaman bashtighil kull yom"
       ],
       [
         "i drink water every day",
-        "بشرب مي كل يوم",
-        "bashrab mayy kull yom"
+        "بشرب ميّ كلّ يوم@بِشْرَب مَيّ كُلّ يَوْم",
+        "bishrab mayy kull yom"
       ]
     ],
     "index": 3

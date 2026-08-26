@@ -33,10 +33,12 @@ const course_locales =
     "__title__": "Русский",
     "explanations": {
       "all": `### Здравствуйте! Добро пожаловать на курс разговорного арабского языка (левантийский диалект)
+Разговорный язык - это, что вы не найдёте в многочисленных пособиях и приложениях. Но именно он важен для общения с носителями языка.
 Цель курса — сформировать устойчивый **базовый лексикон**, необходимый для повседневного общения и понимания обиходной речи, а также освоить некоторые грамматические правила и конструкции предложения.
 
 Курс ориентирован на учащихся уровня **A0-A1**, уже знакомых с алфавитом и правилами чтения.
 Программа и учебные тексты структурированы с применением технологий **искусственного интеллекта**, что позволило отобрать наиболее актуальные и частотные языковые конструкции.
+Если у вас есть замечания или пожелания по поводу стиля и содержания уроков, свяжитесь с автором.
 
 На этом экране вы можете выбрать язык интерфейса. Для сохранения этой и других настроек, а также прогресса обучения, можно подключить свой Google-аккаунт.
 `,
@@ -57,6 +59,11 @@ const course_locales =
 Обратите внимание на то, что для построения **прилагательного** иногда используется **пассивный залог**.
 Модель построения пассивного залога выглядит так:
 [mu-1-2i-3] где 1, 2 и 3 - буквы корня, например [munir] '''منير'''
+
+### Разговорное употребление предлога направления
+В разговорном левантийском диалекте короткий предлог '''عَ''' ('a) — это сокращение от классического '''عَلَى''' ('ala — «на»). 
+Он используется не только для указания местоположения (где?), но и полностью заменяет литературное '''إِلَى''' ('ila) при указании направления движения (куда?). 
+В живой речи '''عَ''' всегда сливается со следующим словом и его артиклем: например, '''عَ الطَّاوْلَة''' (‘а-т-тавле — «на столе») или '''عَ الشُّغُل''' (‘а-ш-шугуль — «на работу»).
 `,
       "hobby_travel_1": `Слово '''بلد''' может употребляться в значении "страна" или "центр города".
 Обратите внимание как в этом уроке используется определённый артикль '''ال-'''.
@@ -211,13 +218,13 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
 ##story-line## ''' لا، عندي بيت جديد حلو مع عيلتي. ساكنين مع بعض.@لَا، عِنْدِي بَيْتْ جْدِيدْ حِلُو مَعْ عَيْلْتِي. سَاكْنِينْ مَعْ بَعْضْ. ''' ##story-translation## Нет, у меня новый красивый дом, где я живу с семьей. Мы живем вместе. ##story-transcr## La, 'indi bayt jdid hilu ma' 'aylti. Saknin ma' ba'd.
 ##story-line## ''' تمام! تشرّفنا يا سيّد.@تَمَامْ! تَشَرَّفْنَا يَا سَيِّدْ. ''' ##story-translation## Отлично! Рад знакомству, господин. ##story-transcr## Tamam! Tasharrafna ya sayyid.
 ##story-line## ''' شكرا! فرصة سعيدة.@شُكْراً! فُرْصَة سَعِيدَة. ''' ##story-translation## Спасибо! Взаимно. ##story-transcr## Shukran! Fursa sa'ida.`,
-      "everyday_life_1": `##story-line## ''' كل يوم بفيق بكير وبشرب قهوة. ''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bafiq bakir wa bashrab qahwa.
-##story-line## ''' وين مفاتيح السيارة؟ لازم أروح على الشغل الآن. ''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wayn mafatih as-sayyara? Lazim aruh ala ash-shughl al-an.
-##story-line## ''' المفاتيح على الطاولة في المطبخ يا حبيبي. ''' ##story-translation## Ключи лежат на столе на кухне, дорогая. ##story-transcr## Al-mafatih ala at-tawila fil-matbakh ya habibi.
-##story-line## ''' شكرا! جاري العزيز كمان بيروح على الشغل بنفس الوقت.@شكراً! جاري العزيز كمان بيروح على الشغل بنفس الوقت. ''' ##story-translation## Спасибо! Моя дорогая соседка тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari al-aziz kaman biruh ala ash-shughl b-nafs al-waqt.
-##story-line## ''' بتاكل فطور قبل ما تروح؟ ''' ##story-translation## Вы завтракаете перед тем, как идти? ##story-transcr## Btakul futur qabl ma truh?
-##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي. ''' ##story-translation## Нет, я не голоден, просто немного устал. ##story-transcr## La, ana mish jwan, bas taban shway.
-##story-line## ''' الله معك! بشوفك المساء في البيت. ''' ##story-translation## Да пребудет с вами Бог! Увидимся вечером дома. ##story-transcr## Alla maak! Bashufak al-masa fil-bayt.`,
+      "everyday_life_1": `##story-line## ''' كلّ يوم بفيق بكّير وبشرب قهوة.@كُلّ يَوْم بِفِيق بَكِّير وِبِشْرَب قَهْوَة. ''' ##story-translation## Каждый день я просыпаюсь рано и пью кофе. ##story-transcr## Kull yom bfiq bakkir w-bishrab qahwa.
+##story-line## ''' وين مفاتيح السّيّارة؟ لازم روح ع الشّغل هلّق.@وِين مَفَاتِيح السَّيَّارَة؟ لَازِم رُوح عَ الشُّغُل هَلَّق. ''' ##story-translation## Где ключи от машины? Мне пора на работу. ##story-transcr## Wen mafatih as-sayyara? Lazim ruh a-sh-shughul hallaq.
+##story-line## ''' المفاتيح ع الطّاولة بالمطبخ يا حبيبي.@الْمَفَاتِيح عَ الطَّاوْلَة بِالْمَطْبَخ يَا حَبِيبِي. ''' ##story-translation## Ключи лежат на столе на кухне, дорогой. ##story-transcr## Al-mafatih a-t-tawle b-il-matbakh ya habibi.
+##story-line## ''' شكرا! جاري كمان بيروح ع الشّغل بنفس الوقت.@شُكْراً! جَارِي كَمَان بِيرُوح عَ الشُّغُل بِنَفْس الْوَقْت. ''' ##story-translation## Спасибо! Мой сосед тоже ходит на работу в это же время. ##story-transcr## Shukran! Jari kaman biruh a-sh-shughul b-nafs al-waqt.
+##story-line## ''' بتاكل فطور قبل ما تروح؟@بِتَاكُل فْطُور قَبِل مَا تْرُوح؟ ''' ##story-translation## Ты завтракаешь перед тем, как идти? ##story-transcr## Btakul ftur qabil ma truh?
+##story-line## ''' لا، أنا مش جوعان، بس تعبان شوي.@لَا، أَنَا مِش جُوعَان، بَس تَعْبَان شْوَي. ''' ##story-translation## Нет, я не голоден, просто немного устал. ##story-transcr## La, ana mish juan, bas taban shway.
+##story-line## ''' الله معك! بشوفك المسا بالبيت.@الله مَعَك! بِشُوفَك الْمَسَا بِالْبِيت. ''' ##story-translation## С Богом! Увидимся вечером дома. ##story-transcr## Allah maak! Bshufak al-masa b-il-bet.`,
       "restaurant_1": `##story-line## ''' بناكل غداء في المطعم اليوم. ''' ##story-translation## Сегодня мы обедаем в ресторане. ##story-transcr## Bnakul ghada fil-matam al-yom.
 ##story-line## ''' يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت. ''' ##story-translation## Официант, я хочу увидеть основное блюдо. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
 ##story-line## ''' أنا بطلب دجاج ورز، وهذا هو الطلب تبعي. ''' ##story-translation## Я заказал курицу с рисом, вот мой заказ. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
@@ -320,6 +327,7 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "library": "библиотека",
       "sweet / nice": "сладкий / классный",
       "tomorrow": "завтра",
+      "to start": "начинать",
       "she works as a tailor in the workshop": "она работает портной в мастерской",
       "the student studies at the faculty of arts": "студентка учится на факультете искусств",
       "the mathematician works in the academy": "математик работает в академии",
@@ -344,41 +352,39 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "bed": "кровать",
       "wardrobe / closet": "шкаф",
       "room": "комната",
-      "kitchen": "кухня",
       "bedroom": "спальня",
       "floor": "пол",
       "ceiling": "потолок",
-      "early": "рано",
-      "key": "ключ",
-      "keys": "ключи",
+      "window": "окно",
+      "tap / sink": "кран / раковина",
       "money": "деньги",
       "water": "вода",
-      "always": "всегда",
+      "comfortable": "удобный",
+      "bright / illuminated": "светлый",
       "a little": "немного",
       "also": "тоже",
-      "must": "должен",
+      "there is / are": "есть / имеется",
       "i wake up": "я просыпаюсь",
-      "tap / sink": "кран / раковина",
-      "i drink": "я пью",
+      "i go": "я иду / еду",
       "the carpet is on the floor": "ковёр лежит на полу",
       "the wardrobe is in the room": "шкаф стоит в комнате",
       "the bed is big and comfortable": "кровать большая и удобная",
       "this bedroom is very bright": "эта спальня очень светлая",
-      "the kitchen window is open": "окно в кухне открыто",
+      "the kitchen window is open": "окно на кухне открыто",
       "the ceiling is white and high": "потолок белый и высокий",
       "every day i wake up early": "каждый день я просыпаюсь рано",
       "i drink coffee with milk": "я пью кофе с молоком",
       "where is the car key": "где ключ от машины",
       "the keys are on the table": "ключи на столе",
-      "i eat breakfast in the kitchen": "я ем завтрак на кухне",
-      "the tap is in the kitchen": "кран в кухне",
+      "i eat breakfast in the kitchen": "я завтракаю на кухне",
+      "the tap is in the kitchen": "кран на кухне",
       "i am going to the bedroom": "я иду в спальню",
       "there is a window in the room": "в комнате есть окно",
       "the money is in the bag": "деньги в сумке",
       "i must go to work now": "я должен идти на работу сейчас",
       "i always drink water in the evening": "я всегда пью воду вечером",
-      "she eats breakfast and drinks milk": "она ест завтрак и пьет молоко",
-      "i also work every day": "я также работаю каждый день",
+      "she eats breakfast and drinks milk": "она завтракает и пьёт молоко",
+      "i also work every day": "я тоже работаю каждый день",
       "i drink water every day": "я пью воду каждый день",
       "renting": "аренда",
       "inside the country": "внутри страны",
@@ -481,7 +487,6 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "queue": "очередь",
       "customs": "таможня",
       "seat": "место",
-      "window": "окно",
       "aisle": "коридор",
       "free": "свободный",
       "reserved": "занятый",
@@ -634,7 +639,6 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "understand": "понимать",
       "speak": "говорить",
       "explain": "объяснять",
-      "to start": "начинать",
       "to correct": "исправлять",
       "to try": "стараться",
       "to read": "читать",
@@ -842,12 +846,15 @@ Bid-dabt ('''بالضبط'''): Обратите внимание на транс
       "your (pl) home": "ваш (мн) дом",
       "their home": "их дом",
       "only": "только",
+      "must": "должен",
       "but": "но",
       "away": "вдали",
       "yesterday": "вчера",
       "today": "сегодня",
       "soon": "скоро",
       "usually": "обычно",
+      "early": "рано",
+      "always": "всегда",
       "students": "студенты",
       "Keys": "ключи",
       "cars": "автомобили",
