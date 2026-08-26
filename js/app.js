@@ -512,15 +512,21 @@ function getTopicStatsHtml(topic_id, words_stat, sent_stat) {
 
 function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat) {
     const card = document.createElement('div');
-    const state = topic.index === 0 ? 1 : getTopicState(key);
+    const state = getTopicState(key);
     let icon = state ? '✔' : '🔒';
     let icon_class = state ? 'completed' : 'locked';
+    if (topic.index === 0) {
+        icon_class = 'locked';
+    }
     card.classList.add('course-map-card');
     if (key === currentTopicId) {
         card.classList.add('active');
         card.id = 'current-topic-card';
         icon = '▶';
         icon_class = 'active';
+    }
+    if (topic.index === 0) {
+        icon = '📚';
     }
     icon = window.replaceSmiliesWithImages(icon);
     const topicName = i18n_ct(topic.name);

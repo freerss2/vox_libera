@@ -133,6 +133,7 @@ window.updateFavicon = function(langCode) {
 }
 
 const smiliesMap = {
+    '📚': 'lucide-book-check',
     '📖': 'lucide-book',
     '💬': 'lucide-message',
     '✔': 'lucide-check',
