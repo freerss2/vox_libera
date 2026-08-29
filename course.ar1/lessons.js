@@ -2,15 +2,15 @@ const topics =
 {
   "all": {
     "name": "All topics",
-    "explanations": `### Hello! Welcome to the Conversational Arabic (Levantine) course.
-Conversational language isn't something you'll find in numerous textbooks and apps. But it's essential for communicating with native speakers.
-The goal of the course is to develop a solid **basic vocabulary** necessary for everyday communication and understanding of everyday speech, as well as to master some grammar rules and sentence structures.
+    "explanations": `### ### Welcome to the course on living Arabic (Levantine dialect)!
 
-The course is designed for students at levels **A0-A1** who are already familiar with the alphabet and reading rules.
-The program and course texts are structured using **artificial intelligence** technologies, which allowed us to select the most relevant and frequent language structures.
-If you have any comments or suggestions regarding the style and content of the lessons, please contact the author.
+Conversational Arabic is something often missing from classic textbooks and popular apps, but it opens the door to real communication. Our goal is not to memorize dry theory, but to give you a foundation that really works in real life. We'll build a solid vocabulary for everyday situations and easily cover grammar, so you can understand native speakers and speak confidently.
 
-On this screen, you can select the interface language. To save this and other settings, as well as track your learning progress, you can connect your Google account.
+The course is ideal for beginners (levels **A0-A1**) who already know the alphabet and can read.
+
+To avoid wasting time on outdated, word-for-word phrases, the learning materials are **compiled using AI** — we've selected only the most relevant and common expressions in modern speech. I always welcome feedback: if you have ideas on how to improve the lessons, don't hesitate to contact us!
+
+On this screen, you can select the interface language. To securely sync your settings and progress via your Google Drive, simply connect your account.
 `,
     "words": [],
     "sentences": [],

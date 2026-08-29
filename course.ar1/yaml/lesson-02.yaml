@@ -12,6 +12,7 @@ explanations:
     [qumash] - "fabric (qumach)"
     Some words are simply calques: "academy," "cinema."
     The root of the word '''جامعة''' means "gathering," which will be useful when studying words with the same root.
+
   ru: |
     В этом уроке мы изучаем названия профессий, а также лексику связанную с работой и учёбой.
     **Обратите внимание:** в разговорном языке глаголы употребляются с приставкой [be-] '''ب'''.
@@ -21,6 +22,7 @@ explanations:
      [qumash] - "ткань (кумач)"
     Некоторые слова - просто калькированы: "академия", "синема".
     Корень слова '''جامعة''' означает "собрание", это пригодится нам при изучении однокоренных слов.
+
 words:
 - en: tailor (f)
   ar: خَيَّاطَة
@@ -145,11 +147,11 @@ sentences:
   ru: математик работает в академии
 - en: the designer is making a project in the studio
   ar: اَلْمُصَمِّمْ بْيِعْمَلْ مَشْرُوعْ بِالِاسْتُودْيُو
-  transliteration: il-musammim byi'mal mashru' bil-istudyu
+  transliteration: "il-musammim byi'mal mashru' bil-istudyu"
   ru: дизайнер создает проект в студии
 - en: the teacher explains the lesson in class
   ar: اَلْمُعَلِّمْ بْيِشْرَحْ الدَّرْسْ بِالصَّفّ
-  transliteration: il-m'allim byishrah id-dars bis-saff
+  transliteration: "il-m'allim byishrah id-dars bis-saff"
   ru: учитель объясняет урок в классе
 - en: i love cinema and art
   ar: بْحِبّْ السِّينَمَا وَالْفَنّ
@@ -161,7 +163,7 @@ sentences:
   ru: она шьет платье из красивой ткани
 - en: we study math at the university
   ar: بْنِدْرُسْ رِيَاضِيَّات بِالْجَامْعَة
-  transliteration: bnidrus riyadiyyat bil-jam'a
+  transliteration: "bnidrus riyadiyyat bil-jam'a"
   ru: мы изучаем математику в университете
 - en: this workshop is very big
   ar: هَايْ الْوَرْشَة كْبِيرَة كْتِيرْ
@@ -185,7 +187,7 @@ sentences:
   ru: дизайнер работает над новым чертежом
 - en: the art lesson starts now
   ar: دَرْسْ الْفَنّ بِيبَلِّشْ هَلَّأ
-  transliteration: dars il-fann biballish halla'
+  transliteration: "dars il-fann biballish halla'"
   ru: урок искусства начинается сейчас
 - en: the student reads a book in the library
   ar: اَلطَّالِبْ بْيِقْرَأ كْتَابْ بِالْمَكْتَبَة
@@ -193,15 +195,15 @@ sentences:
   ru: студент читает книгу в библиотеке
 - en: i have a big project tomorrow
   ar: عِنْدِي مَشْرُوعْ كْبِيرْ بُكْرَة
-  transliteration: indi mashru' kbir bukra
+  transliteration: "indi mashru' kbir bukra"
   ru: у меня завтра большой проект
 - en: she studies science at the university
   ar: بِتِدْرُسْ عُلُومْ بِالْجَامْعَة
-  transliteration: bitidrus 'ulum bil-jam'a
+  transliteration: "bitidrus 'ulum bil-jam'a"
   ru: она изучает науки в университете
 - en: the teacher writes numbers here
   ar: اَلْمُعَلِّمْ بْيِكْتُبْ أَرْقَامْ هُونْ
-  transliteration: il-m'allim byiktub arqam hon
+  transliteration: "il-m'allim byiktub arqam hon"
   ru: учитель пишет цифры здесь
 - en: we have a lesson in the academy
   ar: عِنْدْنَا دَرْسْ بِالْأَكَادِيمِيَّة
