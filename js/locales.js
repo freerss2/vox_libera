@@ -161,6 +161,12 @@ The educational materials are created using artificial intelligence and are cons
   }
 ],
     "menu": {
+      "speak": "Speak",
+      "smaller": "Smaller",
+      "larger": "Larger",
+      "about": "About",
+      "words": "Words",
+      "sentences": "Sentences",
       "words_dict": "Words Dictionary",
       "sentences_dict": "Sentences Dictionary",
       "words_count": "Words:",
@@ -440,6 +446,12 @@ To start a course, select the course title and click on it.
   }
 ],
     "menu": {
+      "speak": "Озвучка",
+      "smaller": "Мельче",
+      "larger": "Крупнее",
+      "about": "О курсе",
+      "words": "Слова",
+      "sentences": "Предложения",
       "words_dict": "Словарь слов",
       "sentences_dict": "Словарь предложений",
       "words_count": "Слов:",

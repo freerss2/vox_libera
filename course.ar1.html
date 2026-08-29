@@ -19,58 +19,61 @@
               <use href="#lucide-map"></use>
             </svg>
           </button>
-          <div id="title" ">Vox-Libera 📖</div>
+          <div id="title">Vox-Libera 📖</div>
           <div class="settings-toggle-wrapper">
             <button type="button" id="settingsToggleBtn" class="toolbar-btn gear-btn" onclick="toggleTopSettings()" aria-label="Settings" aria-expanded="false">
               <svg class="emoji-icon">
                 <use href="#lucide-settings"></use>
               </svg>
             </button>
-            <div id="top-settings-panel" class="top-settings-panel hidden">
-              <button type="button" class="toolbar-btn" id="muteBtn" onclick="toggleMute()">
-                <svg id="sound-on" class="emoji-icon">
+            <div id="nav-settings-lower-panel" class="nav-settings-panel hidden" role="menu" aria-label="Quick actions">
+              <button type="button" class="menu-popup-item" id="muteBtn" onclick="toggleMute()" aria-label="Toggle sound" aria-expanded="false">
+                <svg id="sound-on" class="emoji-icon" aria-hidden="true">
                   <use href="#lucide-volume-2"></use>
                 </svg>
-                <svg id="sound-off" class="emoji-icon hidden">
+                <svg id="sound-off" class="emoji-icon hidden" aria-hidden="true">
                   <use href="#lucide-volume-off"></use>
                 </svg>
+                <span data-i18n="menu|speak">Sound</span>
               </button>
-              <button class="toolbar-btn" onclick="changeZoom(-0.1)">
-                <svg class="emoji-icon">
+              <button type="button" class="menu-popup-item" onclick="changeZoom(-0.1)" aria-label="Reduce text size" aria-expanded="false">
+                <svg class="emoji-icon" aria-hidden="true">
                   <use href="#lucide-text-smaller"></use>
                 </svg>
+                <span data-i18n="menu|smaller">Smaller</span>
               </button>
-              <button class="toolbar-btn" onclick="changeZoom(0.1)">
-                <svg class="emoji-icon">
+              <button type="button" class="menu-popup-item" onclick="changeZoom(0.1)" aria-label="Increase text size" aria-expanded="false">
+                <svg class="emoji-icon" aria-hidden="true">
                   <use href="#lucide-text-larger"></use>
                 </svg>
+                <span data-i18n="menu|larger">Larger</span>
+              </button>
+              <button type="button" class="menu-popup-item" onclick="switchToTopic('all');" aria-label="Main info" aria-expanded="false">
+                <svg class="emoji-icon" aria-hidden="true">
+                  <use href="#lucide-info"></use>
+                </svg>
+                <span data-i18n="menu|about">About</span>
+              </button>
+              <button type="button" class="menu-popup-item" onclick="showCourseDictionary(['words'], i18n.t('menu|words_dict'));" aria-label="Word dictionary" aria-expanded="false">
+                <svg class="emoji-icon" aria-hidden="true">
+                  <use href="#lucide-book"></use>
+                </svg>
+                <span data-i18n="menu|words">Words</span>
+              </button>
+              <button type="button" class="menu-popup-item" onclick="showCourseDictionary(['sentences'], i18n.t('menu|sentences_dict'));" aria-label="Sentence dictionary" aria-expanded="false">
+                <svg class="emoji-icon" aria-hidden="true">
+                  <use href="#lucide-message"></use>
+                </svg>
+                <span data-i18n="menu|sentences">Sentences</span>
+              </button>
+              <button type="button" class="menu-popup-item" onclick="toggleDrawer()" aria-label="Open settings" aria-expanded="false">
+                <svg class="emoji-icon" aria-hidden="true">
+                  <use href="#lucide-file-settings"></use>
+                </svg>
+                <span data-i18n="menu|settings">Settings</span>
               </button>
             </div>
           </div>
-        </div>
-        <div id="nav-settings-lower-panel" class="nav-row hidden">
-          <button type="button" id="" class="toolbar-btn gear-btn" onclick="switchToTopic('all');" aria-label="" aria-expanded="false">
-            <svg class="emoji-icon">
-              <use href="#lucide-info"></use>
-            </svg>
-          </button>
-          <!-- data-i18n="menu|words_dict" -->
-          <button type="button" id="" class="toolbar-btn gear-btn" onclick="showCourseDictionary(['words'], i18n.t('menu|words_dict'));" aria-label="" aria-expanded="false">
-            <svg class="emoji-icon">
-              <use href="#lucide-book"></use>
-            </svg>
-          </button>
-          <!-- data-i18n="menu|words_sentences" -->
-          <button type="button" id="" class="toolbar-btn gear-btn" onclick="showCourseDictionary(['sentences'], i18n.t('menu|sentences_dict'));" aria-label="" aria-expanded="false">
-            <svg class="emoji-icon">
-              <use href="#lucide-message"></use>
-            </svg>
-          </button>
-          <button type="button" id="" class="toolbar-btn gear-btn" onclick="toggleDrawer()" aria-label="Settings" aria-expanded="false">
-            <svg class="emoji-icon">
-              <use href="#lucide-file-settings"></use>
-            </svg>
-          </button>
         </div>
         <div id="searchBar" class="nav-row search-container hidden">
           <input type="text" id="dict-search" oninput="filterDictionary()" data-i18n-placeholder="main|search_hint">

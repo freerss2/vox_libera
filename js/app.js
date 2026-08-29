@@ -256,7 +256,6 @@ function toggleDrawer() {
     if ( !drawer.classList.contains('open') ) updateDrawerStats();
 
     // hide the toolbar if still open
-    document.getElementById('top-settings-panel').classList.add('hidden');
     document.getElementById('nav-settings-lower-panel').classList.add('hidden');
 
     // Toggle classes for both elements
@@ -511,43 +510,43 @@ function getTopicStatsHtml(topic_id, words_stat, sent_stat) {
 }
 
 function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_stat, sent_stat) {
-    const card = document.createElement('div');
-    const state = getTopicState(key);
-    let icon = state ? '✔' : '🔒';
-    let icon_class = state ? 'completed' : 'locked';
+        const card = document.createElement('div');
+        const state = getTopicState(key);
+        let icon = state ? '✔' : '🔒';
+        let icon_class = state ? 'completed' : 'locked';
     if (topic.index === 0) {
         icon_class = 'locked';
     }
-    card.classList.add('course-map-card');
-    if (key === currentTopicId) {
-        card.classList.add('active');
-        card.id = 'current-topic-card';
-        icon = '▶';
-        icon_class = 'active';
-    }
+        card.classList.add('course-map-card');
+        if (key === currentTopicId) {
+            card.classList.add('active');
+            card.id = 'current-topic-card';
+            icon = '▶';
+            icon_class = 'active';
+        }
     if (topic.index === 0) {
         icon = '📚';
     }
     icon = window.replaceSmiliesWithImages(icon);
-    const topicName = i18n_ct(topic.name);
+        const topicName = i18n_ct(topic.name);
     const [statWords, statSents] = getTopicStatsHtml(key, words_stat, sent_stat);
     const lessonNumber = topic.index === 0 ? '' : `<div class="course-map-card-index">Lesson ${topic.index}</div>`;
-    card.innerHTML = `
-        <span class="course-map-icon">
-        <span class="topic-progress-icon ${icon_class}">${icon}</span>
-        </span>
-        <span class="course-map-text">
+        card.innerHTML = `
+          <span class="course-map-icon">
+            <span class="topic-progress-icon ${icon_class}">${icon}</span>
+          </span>
+          <span class="course-map-text">
         ${lessonNumber}
-        <div class="course-map-card-title">${topicName}</div>
-        <div> ${statWords} &nbsp; ${statSents} </div>
-        </span>`;
+            <div class="course-map-card-title">${topicName}</div>
+            <div> ${statWords} &nbsp; ${statSents} </div>
+          </span>`;
     if (icon_class === 'active' && topic.index !== 0) {
         showCurrentTopicScreens(card);
     } else {
         card.addEventListener('click', () => {switchToTopic(key);});
     }
-    cardsContainer.appendChild(card);
-}
+        cardsContainer.appendChild(card);
+    }
 
 // click on topic selection card
 function switchToTopic(topicId) {
@@ -892,7 +891,6 @@ function updateFinalProgress(screen_id) {
 
 function hideAllScreens() {
     // first of all, hide the toolbar if still open
-    document.getElementById('top-settings-panel').classList.add('hidden');
     document.getElementById('nav-settings-lower-panel').classList.add('hidden');
     // hide all screen-related DOM elements
     const screen_elements = document.querySelectorAll('.game-screen');
@@ -1501,16 +1499,16 @@ function showWin(acc) {
         const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
 ##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%`;
 
-        // Calculate the success rate
-        let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
+    // Calculate the success rate
+    let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
 
-        // Text summary on completed round (according to reached grade)
-        let quotes = manifest.feedback[category];
-        // For a variety take random phrase
-        let pick = quotes[Math.floor(Math.random() * quotes.length)];
-        const user_lang_feedback = i18n_ct(pick[0]);
-        // generate round recommendation message
-        const tipText = getRoundRecommendation();
+    // Text summary on completed round (according to reached grade)
+    let quotes = manifest.feedback[category];
+    // For a variety take random phrase
+    let pick = quotes[Math.floor(Math.random() * quotes.length)];
+    const user_lang_feedback = i18n_ct(pick[0]);
+    // generate round recommendation message
+    const tipText = getRoundRecommendation();
 
         mainText = `##text-center## '''${pick[1]}'''
 ##text-center## ${pick[2]} — ${user_lang_feedback}
@@ -2222,7 +2220,7 @@ function showDictionary(currentData, mode='') {
         [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
       } else {
         [...lastScreenBtn].forEach(e => { e.classList.add('hidden'); });
-        [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
+      [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
       }
     }
     scrollToTop('screen-dictionary');
@@ -2286,7 +2284,7 @@ window.toggleMute = function() {
 
     // Close the top settings panel shortly after mute toggle
     setTimeout(() => {
-        const panel = document.getElementById('top-settings-panel');
+        const panel = document.getElementById('nav-settings-lower-panel');
         if (panel && !panel.classList.contains('hidden')) {
             toggleTopSettings();
         }
@@ -2324,13 +2322,11 @@ window.changeZoom = function(delta) {
 }
 
 function toggleTopSettings() {
-    const panel = document.getElementById('top-settings-panel');
+    const panel = document.getElementById('nav-settings-lower-panel');
     const button = document.getElementById('settingsToggleBtn');
     if (!panel || !button) return;
     const isHidden = panel.classList.toggle('hidden');
     button.setAttribute('aria-expanded', String(!isHidden));
-    // toggle lower panel
-    document.getElementById('nav-settings-lower-panel').classList.toggle('hidden');
 }
 
 // Get list of input types for current screen

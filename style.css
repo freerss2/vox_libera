@@ -212,7 +212,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 10;
 }
 
 .gear-btn {
@@ -220,37 +220,77 @@ body {
     z-index: 2;
 }
 
-.top-settings-panel {
+.top-settings-panel,
+.nav-settings-panel {
     position: absolute;
-    top: 50%;
-    right: calc(100% + 5px);
+    right: 0;
+    top: calc(100% + 8px);
     display: flex;
-    gap: 10px;
-    padding: 7px;
-    padding-left: 12px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
     background: rgb(255 255 255 / 98%);
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 12px 26px rgb(0 0 0 / 12%);
     white-space: nowrap;
-    transform-origin: right center;
+    transform-origin: top right;
     transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-    z-index: 1;
-    transform: translateY(-50%) translateX(0) scale(1);
+    z-index: 50;
 }
 
-.top-settings-panel.hidden {
+.top-settings-panel {
+    top: calc(100% + 6px);
+}
+
+#nav-settings-lower-panel {
+    top: calc(100% + 10px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 180px;
+    padding: 6px;
+    z-index: 49;
+}
+
+.menu-popup-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+.menu-popup-item:hover {
+    background: #f3f6fb;
+}
+
+.menu-popup-item .emoji-icon {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.top-settings-panel.hidden,
+.nav-settings-panel.hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-50%) translateX(10px) scale(0.95);
+    transform: translateY(-4px) scale(0.98);
 }
 
-.top-settings-panel:not(.hidden) {
+.top-settings-panel:not(.hidden),
+.nav-settings-panel:not(.hidden) {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(-50%) translateX(0) scale(1);
+    transform: translateY(0) scale(1);
 }
 
 @media (width <= 420px) {
@@ -1375,11 +1415,6 @@ input:checked + .slider::before { transform: translateX(24px); }
 .correct-animation {
     animation: burst 0.4s ease-out;
     border-color: var(--primary) !important;
-}
-
-#nav-settings-lower-panel {
-    justify-content: flex-end;
-    gap: 10px;
 }
 
 /* course map */
