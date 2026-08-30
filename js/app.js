@@ -256,7 +256,11 @@ function toggleDrawer() {
     if ( !drawer.classList.contains('open') ) updateDrawerStats();
 
     // hide the toolbar if still open
-    document.getElementById('nav-settings-lower-panel').classList.add('hidden');
+    const quickMenuPanel = document.getElementById('nav-settings-lower-panel');
+    if (! quickMenuPanel.classList.contains('hidden') ) {
+        quickMenuPanel.classList.add('hidden');
+        window.changeBubbleState('wakeup');
+    }
 
     // Toggle classes for both elements
     drawer.classList.toggle('open');
@@ -2286,7 +2290,7 @@ window.toggleMute = function() {
     setTimeout(() => {
         const panel = document.getElementById('nav-settings-lower-panel');
         if (panel && !panel.classList.contains('hidden')) {
-            toggleTopSettings();
+            toggleQuickSettings();
         }
     }, 400);
 }
@@ -2321,12 +2325,13 @@ window.changeZoom = function(delta) {
     document.documentElement.style.setProperty('--app-scale', currentZoom );
 }
 
-function toggleTopSettings() {
+function toggleQuickSettings() {
     const panel = document.getElementById('nav-settings-lower-panel');
     const button = document.getElementById('settingsToggleBtn');
     if (!panel || !button) return;
     const isHidden = panel.classList.toggle('hidden');
     button.setAttribute('aria-expanded', String(!isHidden));
+    window.changeBubbleState(isHidden ? 'wakeup' : 'minimize');
 }
 
 // Get list of input types for current screen

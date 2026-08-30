@@ -270,9 +270,26 @@ function randomEyebrow(narratorId, duration) {
   setEyebrowExpression(narratorId, expr, duration);
 }
 
+// actions for bubble: minimize or wakeup
+window.changeBubbleState = function(desiredState) {
+    const bubble = document.getElementById('speech-bubble');
+    if ( bubble.classList.contains('hidden') ) {
+        return;
+    }
+    if (bubbleMinimized && desiredState !== 'minimize') {
+      window.toggleBubble(null);
+      return;
+    }
+    if (! bubbleMinimized && desiredState !== 'wakeup') {
+      window.toggleBubble(null);
+      return;
+    }
+    console.warn(`Requested bubble state change to ${desiredState} while minimized=${bubbleMinimized}`);
+}
+
 // callback for bubble minimize/restore or hide/show
 window.toggleBubble = function(event) {
-    event.stopPropagation();
+    if (event) event.stopPropagation();
     const bubble = document.getElementById('speech-bubble');
     const textTarget = document.getElementById('bubble-text');
     const delay = Math.floor(Math.random()*1500);
