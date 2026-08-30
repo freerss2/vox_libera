@@ -11,6 +11,7 @@ let isUserLoggedIn = false;
 void isUserLoggedIn;
 let cloudSyncGeneration = 0;
 let initialSyncPromise = null;
+let silentLoginInProgress = false;
 
 // Check if current origin is allowed for Google API usage and start auth process
 window.startAppAuth = function() {
@@ -51,7 +52,13 @@ function initVoxLiberaAuth() {
         scope: 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/userinfo.email',
         error_callback: (err) => {
             console.error("Auth error:", err);
-            showLoginButton();
+            if (err.type === 'popup_closed' && localStorage.getItem('vox_libera_logged_in') === 'true') {
+                silentLoginInProgress = false;
+                console.warn("Vox Libera: Authentication popup closed during recovery; retrying silently.");
+                setTimeout(requestSilentLogin, 1000);
+            } else {
+                showLoginButton();
+            }
         }
     });
 
@@ -59,25 +66,7 @@ function initVoxLiberaAuth() {
     if (localStorage.getItem('vox_libera_logged_in') === 'true' && navigator.onLine) {
         console.log("Vox Libera: Trying background login...");
 
-        tokenClient.callback = async (response) => {
-            if (response.error) {
-                console.log("Vox Libera: Background login failed (" + response.error + "). Showing login button.");
-                showLoginButton();
-                return;
-            }
-
-            if (response.access_token) {
-                await handleSuccessfulLogin(response.access_token);
-                // Start checks and conflicts resolving
-                await startInitialSync();
-            }
-        };
-
-        const savedEmail = localStorage.getItem('vox_libera_user_email') || '';
-        tokenClient.requestAccessToken({
-          prompt: 'none',
-          hint: savedEmail
-        });
+        requestSilentLogin();
     } else {
         showLoginButton();
     }
@@ -128,6 +117,36 @@ window.handleManualLoginClick = function() {
     });
 }
 
+function requestSilentLogin() {
+    if (silentLoginInProgress || !tokenClient || !navigator.onLine) {
+        return;
+    }
+
+    silentLoginInProgress = true;
+    tokenClient.callback = async (response) => {
+        silentLoginInProgress = false;
+        if (response.error) {
+            console.log("Vox Libera: Background login failed (" + response.error + ").");
+            if (response.error === 'popup_closed' && localStorage.getItem('vox_libera_logged_in') === 'true') {
+                setTimeout(requestSilentLogin, 1000);
+            } else {
+                showLoginButton();
+            }
+            return;
+        }
+
+        if (response.access_token) {
+            await handleSuccessfulLogin(response.access_token);
+            await startInitialSync();
+        }
+    };
+
+    tokenClient.requestAccessToken({
+        prompt: 'none',
+        hint: localStorage.getItem('vox_libera_user_email') || ''
+    });
+}
+
 // Initial data sync on login
 async function startInitialSync() {
     if (initialSyncPromise) {
@@ -167,7 +186,14 @@ async function performInitialSync() {
 }
 
 function syncWhenPageWakes() {
-    if (document.visibilityState !== 'visible' || !navigator.onLine || !window.currentAccessToken) {
+    if (document.visibilityState !== 'visible' || !navigator.onLine) {
+        return;
+    }
+
+    if (!window.currentAccessToken) {
+        if (localStorage.getItem('vox_libera_logged_in') === 'true') {
+            requestSilentLogin();
+        }
         return;
     }
 
@@ -221,27 +247,7 @@ function updateSyncDirectionIndicator(direction, timeValue) {
 window.onGoogleTokenExpired = function() {
     console.log("Vox Libera: Tocken is not valid. Trying to renew in background...");
     if (navigator.onLine) {
-
-        tokenClient.callback = async (response) => {
-          // If Google returned error
-          if (response.error) {
-              console.log("Vox Libera: Background login failed (" + response.error + "). Showing login button.");
-              showLoginButton();
-              return;
-          }
-
-          // If token received in background
-          if (response.access_token) {
-              console.log("Vox Libera: Background login successful!");
-              await handleSuccessfulLogin(response.access_token);
-              await startInitialSync();
-          }
-        };
-
-        tokenClient.requestAccessToken({
-          prompt: 'none',
-          hint: localStorage.getItem('vox_libera_user_email') || ''
-        });
+                requestSilentLogin();
     } else {
         showLoginButton();
     }
