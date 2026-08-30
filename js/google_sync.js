@@ -54,8 +54,9 @@ function initVoxLiberaAuth() {
             console.error("Auth error:", err);
             if (err.type === 'popup_closed' && localStorage.getItem('vox_libera_logged_in') === 'true') {
                 silentLoginInProgress = false;
-                console.warn("Vox Libera: Authentication popup closed during recovery; retrying silently.");
-                setTimeout(requestSilentLogin, 1000);
+                console.warn("Vox Libera: Silent authentication was unavailable; manual login is available.");
+                setLoginDisplay(true);
+                updateCloudStatus('disconnected');
             } else {
                 showLoginButton();
             }
@@ -86,7 +87,6 @@ function setLoginDisplay(show) {
 function showLoginButton() {
     isUserLoggedIn = false;
     window.currentAccessToken = null;
-    localStorage.removeItem('vox_libera_logged_in');
     setLoginDisplay(true);
     updateCloudStatus('disconnected');
 }
@@ -127,11 +127,7 @@ function requestSilentLogin() {
         silentLoginInProgress = false;
         if (response.error) {
             console.log("Vox Libera: Background login failed (" + response.error + ").");
-            if (response.error === 'popup_closed' && localStorage.getItem('vox_libera_logged_in') === 'true') {
-                setTimeout(requestSilentLogin, 1000);
-            } else {
-                showLoginButton();
-            }
+            showLoginButton();
             return;
         }
 
