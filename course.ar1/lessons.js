@@ -721,196 +721,301 @@ Before "solar" letters, it causes the letter to be doubled, but before "lunar" l
 `,
     "words": [
       [
-        "renting",
-        "استئجار",
-        "isti'jar"
-      ],
-      [
-        "inside the country",
-        "داخل البلاد",
-        "dakhil al-bilad"
-      ],
-      [
-        "abroad",
-        "خارج البلاد",
-        "kharij al-bilad"
-      ],
-      [
-        "culture",
-        "ثقافة",
-        "thaqafa"
-      ],
-      [
-        "better",
-        "أفضل",
-        "afdal"
-      ],
-      [
         "traveling",
-        "سفر",
+        "سفر@سَفَر",
         "safar"
       ],
       [
         "tourism",
-        "سياحة",
+        "سياحة@سِيَاحَة",
         "siyaha"
       ],
       [
-        "public transport",
-        "مواصلات عامة",
-        "muwasalat amma"
-      ],
-      [
         "passport",
-        "جواز سفر",
+        "جواز سفر@جَوَاز سَفَر",
         "jawaz safar"
       ],
       [
-        "beach",
-        "شاطئ",
-        "shati"
-      ],
-      [
-        "country",
-        "بلد",
-        "balad"
-      ],
-      [
-        "baggage",
-        "شنط",
-        "shanat"
-      ],
-      [
-        "photography",
-        "تصوير",
-        "taswir"
-      ],
-      [
-        "song",
-        "غنوة",
-        "ghinwa"
-      ],
-      [
-        "transport",
-        "مواصلات",
-        "muwasalat"
-      ],
-      [
-        "sport",
-        "رياضة",
-        "riyada"
-      ],
-      [
         "tourist (m)",
-        "سائح",
-        "sa'ih"
+        "سايح@سَايِح",
+        "sayih"
       ],
       [
         "tourist (f)",
-        "سائحة",
-        "sa'iha"
+        "سايحة@سَايْحَة",
+        "sayha"
+      ],
+      [
+        "hotel",
+        "فندق@فُنْدُق",
+        "funduq"
+      ],
+      [
+        "ticket",
+        "تذكرة@تَذْكَرَة",
+        "tazkara"
+      ],
+      [
+        "sea",
+        "بحر@بَحِر",
+        "bahir"
+      ],
+      [
+        "beach",
+        "شطّ@شَطّ",
+        "shatt"
+      ],
+      [
+        "baggage",
+        "شنط@شَنَط",
+        "shanat"
+      ],
+      [
+        "renting",
+        "استئجار@اسْتِئْجَار",
+        "isti'jar"
+      ],
+      [
+        "country",
+        "بلد@بَلَد",
+        "balad"
+      ],
+      [
+        "city",
+        "مدينة@مَدِينَة",
+        "madina"
+      ],
+      [
+        "transport",
+        "مواصلات@مَوَاصَلَات",
+        "muwasalat"
+      ],
+      [
+        "public transport",
+        "مواصلات عامّة@مَوَاصَلَات عَامَّة",
+        "muwasalat 'amma"
+      ],
+      [
+        "inside the country",
+        "جوّا البلد@جُوَّا الْبَلَد",
+        "juwwa il-balad"
+      ],
+      [
+        "abroad",
+        "برّا البلد@بَرَّا الْبَلَد",
+        "barra il-balad"
+      ],
+      [
+        "hobby",
+        "هواية@هِوَايَة",
+        "hiwaye"
+      ],
+      [
+        "photography",
+        "تصوير@تَصْوِير",
+        "taswir"
+      ],
+      [
+        "music",
+        "موسيقى@مُوسِيقَى",
+        "musiqa"
+      ],
+      [
+        "song",
+        "غنيّة@غْنِيَّة",
+        "ghniyye"
+      ],
+      [
+        "reading",
+        "قراءة@قِرَاءَة",
+        "qira'a"
+      ],
+      [
+        "book",
+        "كتاب@كْتَاب",
+        "ktab"
+      ],
+      [
+        "sport",
+        "رياضة@رِيَاضَة",
+        "riyada"
+      ],
+      [
+        "football",
+        "كرة قدم@كُرَة قَدَم",
+        "kurat qadam"
+      ],
+      [
+        "swimming",
+        "سباحة@سِبَاحَة",
+        "sibaha"
+      ],
+      [
+        "culture",
+        "ثقافة@ثَقَافَة",
+        "thaqafa"
+      ],
+      [
+        "beautiful",
+        "حلو@حِلُو",
+        "hilu"
+      ],
+      [
+        "new",
+        "جديد@جْدِيد",
+        "jdid"
+      ],
+      [
+        "better",
+        "أحسن@أَحْسَن",
+        "ahsan"
+      ],
+      [
+        "near",
+        "قريب@قَرِيب",
+        "qarib"
+      ],
+      [
+        "there",
+        "هنيك@هُنِيك",
+        "honik"
+      ],
+      [
+        "i like",
+        "بحبّ@بِحِبّ",
+        "bhibb"
+      ],
+      [
+        "i go",
+        "بروح@بَرُوح",
+        "baruh"
+      ],
+      [
+        "i listen",
+        "بسمع@بِسْمَع",
+        "bisma'"
+      ],
+      [
+        "i read",
+        "بقرأ@بَقْرَأ",
+        "baqra"
+      ],
+      [
+        "he plays",
+        "بيلعب@بْيِلْعَب",
+        "byil'ab"
+      ],
+      [
+        "we rent",
+        "بنستأجر@بْنِسْتَأْجِر",
+        "bnista'jir"
+      ],
+      [
+        "i buy",
+        "بشتري@بَشْتَرِي",
+        "bashtari"
       ]
     ],
     "sentences": [
       [
         "i love traveling and tourism",
-        "بحب السفر والسياحة",
-        "bahibb as-safar was-siyaha"
+        "بحبّ السّفر والسّياحة@بِحِبّ السَّفَر وِالسِّيَاحَة",
+        "bhibb is-safar w-is-siyaha"
       ],
       [
         "where is my passport",
-        "وين جواز سفري",
-        "wayn jawaz safari"
+        "وين جواز سفري؟@وِين جَوَاز سَفَرِي؟",
+        "wen jawaz safari?"
       ],
       [
         "the tourist is in the hotel",
-        "السائح في الفندق",
-        "as-sa'ih fil-funduq"
+        "السّايح بالفندق@السَّايِح بِالْفُنْدُق",
+        "is-sayih bil-funduq"
       ],
       [
         "the tourist has a ticket",
-        "السائحة عندها تذكرة",
-        "as-sa'iha indha tadhkira"
+        "السّايحة عندها تذكرة@السَّايْحَة عِنْدْهَا تَذْكَرَة",
+        "is-sayha 'indha tazkara"
       ],
       [
         "i always go to the sea",
-        "دائما بروح على البحر@دائماً بروح على البحر",
-        "da'iman baruh alal-bahr"
+        "دائما بروح ع البحر@دَائِمَاً بَرُوح عَ الْبَحِر",
+        "da'iman baruh 'a-l-bahir"
       ],
       [
         "the beach is beautiful today",
-        "الشاطئ جميل اليوم",
-        "ash-shati jamil al-yom"
+        "الشّطّ حلو اليوم@الشَّطّ حِلُو الْيَوْم",
+        "ish-shatt hilu il-yom"
       ],
       [
         "she loves photography and music",
-        "بتحب التصوير والموسيقى",
-        "bitahibb at-taswir wal-musiqa"
+        "بتحبّ التّصوير والموسيقى@بِتِحِبّ التَّصْوِير وِالْمُوسِيقَى",
+        "bitihibb it-taswir w-il-musiqa"
       ],
       [
         "he listens to a beautiful song",
-        "بيسمع غنوة جميلة",
-        "biyasma ghinwa jamila"
+        "بيسمع غنيّة حلوة@بْيِسْمَع غْنِيَّة حِلْوَة",
+        "byisma' ghniyye hilwa"
       ],
       [
         "reading is a beautiful hobby",
-        "القراءة هواية جميلة",
-        "al-qira'a hiwaya jamila"
+        "القراءة هواية حلوة@الْقِرَاءَة هِوَايَة حِلْوَة",
+        "il-qira'a hiwaye hilwa"
       ],
       [
         "i read a book there",
-        "بقرأ كتاب هناك",
-        "baqra kitab hunaak"
+        "بقرأ كتاب هنيك@بَقْرَأ كْتَاب هُنِيك",
+        "baqra ktab honik"
       ],
       [
         "my brother plays football",
-        "أخوي بيلعب كرة القدم",
-        "akhuy bilyab kurat al-qadam"
+        "أخوي بيلعب كرة قدم@أَخُوي بْيِلْعَب كُرَة قَدَم",
+        "akhuy byil'ab kurat qadam"
       ],
       [
         "she loves swimming in the sea",
-        "بتحب السباحة في البحر",
-        "bitahibb as-sibaha fil-bahr"
+        "بتحبّ السّباحة بالبحر@بِتِحِبّ السِّبَاحَة بِالْبَحِر",
+        "bitihibb is-sibaha bil-bahir"
       ],
       [
         "we rent a car there",
-        "بنستأجر سيارة هناك",
-        "bansta'jir sayyara hunaka"
+        "بنستأجر سيّارة هنيك@بْنِسْتَأْجِر سَيَّارَة هُنِيك",
+        "bnista'jir sayyara honik"
       ],
       [
         "we have baggage in the car",
-        "عندنا شنط في السيارة",
-        "andna shanat fis-sayyara"
+        "عندنا شنط بالسّيّارة@عِنْدْنَا شَنَط بِالسَّيَّارَة",
+        "'indna shanat bis-sayyara"
       ],
       [
         "this country is very big",
-        "هذا البلد كبير كثير",
-        "hada al-balad kabir kathir"
+        "هاد البلد كبير كتير@هَاد الْبَلَد كْبِير كْتِير",
+        "had il-balad kbir ktir"
       ],
       [
         "i love this city",
-        "بحب هذه المدينة",
-        "bahibb hadhihi al-madina"
+        "بحبّ هاي المدينة@بِحِبّ هَاي الْمَدِينَة",
+        "bhibb hayy il-madina"
       ],
       [
         "the hotel is near the beach",
-        "الفندق قريب من الشاطئ",
-        "al-funduq qarib min ash-shati"
+        "الفندق قريب من الشّطّ@الْفُنْدُق قَرِيب مِنْ الشَّطّ",
+        "il-funduq qarib min ish-shatt"
       ],
       [
         "i buy a new book today",
-        "بشتري كتاب جديد اليوم",
-        "bashtari kitab jadid al-yom"
+        "بشتري كتاب جديد اليوم@بَشْتَرِي كْتَاب جْدِيد الْيَوْم",
+        "bashtari ktab jdid il-yom"
       ],
       [
         "they play sport every day",
-        "بيلعبوا رياضة كل يوم",
-        "bilyabu riyada kull yom"
+        "بيلعبوا رياضة كلّ يوم@بْيِلْعَبُوا رِيَاضَة كُلّ يَوْم",
+        "byil'abu riyada kull yom"
       ],
       [
         "i listen to music in the hotel",
-        "بسمع موسيقى في الفندق",
-        "basma musiqa fil-funduq"
+        "بسمع موسيقى بالفندق@بِسْمَع مُوسِيقَى بِالْفُنْدُق",
+        "bisma' musiqa bil-funduq"
       ]
     ],
     "index": 4

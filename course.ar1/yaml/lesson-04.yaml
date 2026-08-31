@@ -12,78 +12,169 @@ explanations:
     Обратите внимание как в этом уроке используется определённый артикль '''ال-'''.
     Перед "солнечными" буквами он вызывает удвоение буквы, а перед "лунными" буквами остаётся в чистом виде.
 words:
-- en: renting
-  ar: استئجار
-  transliteration: isti'jar
-  ru: аренда
-- en: inside the country
-  ar: داخل البلاد
-  transliteration: dakhil al-bilad
-  ru: внутри страны
-- en: abroad
-  ar: خارج البلاد
-  transliteration: kharij al-bilad
-  ru: за рубеж
-- en: culture
-  ar: ثقافة
-  transliteration: thaqafa
-  ru: культура
-- en: better
-  ar: أفضل
-  transliteration: afdal
-  ru: лучше
+# Путешествия и транспорт
 - en: traveling
-  ar: سفر
+  ar: سَفَر
   transliteration: safar
   ru: путешествие
 - en: tourism
-  ar: سياحة
+  ar: سِيَاحَة
   transliteration: siyaha
   ru: туризм
-- en: public transport
-  ar: مواصلات عامة
-  transliteration: muwasalat amma
-  ru: общественный транспорт
 - en: passport
-  ar: جواز سفر
+  ar: جَوَاز سَفَر
   transliteration: jawaz safar
   ru: паспорт
-- en: beach
-  ar: شاطئ
-  transliteration: shati
-  ru: пляж
-- en: country
-  ar: بلد
-  transliteration: balad
-  ru: страна
-- en: baggage
-  ar: شنط
-  transliteration: shanat
-  ru: багаж
-- en: photography
-  ar: تصوير
-  transliteration: taswir
-  ru: фотография
-- en: song
-  ar: غنوة
-  transliteration: ghinwa
-  ru: песня
-- en: transport
-  ar: مواصلات
-  transliteration: muwasalat
-  ru: транспорт
-- en: sport
-  ar: رياضة
-  transliteration: riyada
-  ru: спорт
 - en: tourist (m)
-  ar: سائح
-  transliteration: sa'ih
+  ar: سَايِح
+  transliteration: sayih
   ru: турист
 - en: tourist (f)
-  ar: سائحة
-  transliteration: sa'iha
+  ar: سَايْحَة
+  transliteration: sayha
   ru: туристка
+- en: hotel
+  ar: فُنْدُق
+  transliteration: funduq
+  ru: отель
+- en: ticket
+  ar: تَذْكَرَة
+  transliteration: tazkara
+  ru: билет
+- en: sea
+  ar: بَحِر
+  transliteration: bahir
+  ru: море
+- en: beach
+  ar: شَطّ
+  transliteration: shatt
+  ru: пляж
+- en: baggage
+  ar: شَنَط
+  transliteration: shanat
+  ru: багаж
+- en: renting
+  ar: اسْتِئْجَار
+  transliteration: "isti'jar"
+  ru: аренда
+- en: country
+  ar: بَلَد
+  transliteration: balad
+  ru: страна
+- en: city
+  ar: مَدِينَة
+  transliteration: madina
+  ru: город
+- en: transport
+  ar: مَوَاصَلَات
+  transliteration: muwasalat
+  ru: транспорт
+- en: public transport
+  ar: مَوَاصَلَات عَامَّة
+  transliteration: "muwasalat 'amma"
+  ru: общественный транспорт
+- en: inside the country
+  ar: جُوَّا الْبَلَد
+  transliteration: juwwa il-balad
+  ru: внутри страны
+- en: abroad
+  ar: بَرَّا الْبَلَد
+  transliteration: barra il-balad
+  ru: за рубеж / за границу
+
+# Хобби и досуг
+- en: hobby
+  ar: هِوَايَة
+  transliteration: hiwaye
+  ru: хобби
+- en: photography
+  ar: تَصْوِير
+  transliteration: taswir
+  ru: фотография
+- en: music
+  ar: مُوسِيقَى
+  transliteration: musiqa
+  ru: музыка
+- en: song
+  ar: غْنِيَّة
+  transliteration: ghniyye
+  ru: песня
+- en: reading
+  ar: قِرَاءَة
+  transliteration: "qira'a"
+  ru: чтение
+- en: book
+  ar: كْتَاب
+  transliteration: ktab
+  ru: книга
+- en: sport
+  ar: رِيَاضَة
+  transliteration: riyada
+  ru: спорт
+- en: football
+  ar: كُرَة قَدَم
+  transliteration: kurat qadam
+  ru: футбол
+- en: swimming
+  ar: سِبَاحَة
+  transliteration: sibaha
+  ru: плавание
+- en: culture
+  ar: ثَقَافَة
+  transliteration: thaqafa
+  ru: культура
+
+# Прилагательные, наречия и качества
+- en: beautiful
+  ar: حِلُو
+  transliteration: hilu
+  ru: красивый
+- en: new
+  ar: جْدِيد
+  transliteration: jdid
+  ru: новый
+- en: better
+  ar: أَحْسَن
+  transliteration: ahsan
+  ru: лучше
+- en: near
+  ar: قَرِيب
+  transliteration: qarib
+  ru: рядом
+- en: there
+  ar: هُنِيك
+  transliteration: honik
+  ru: там
+
+- en: i like
+  ar: بِحِبّ
+  transliteration: bhibb
+  ru: я люблю
+- en: i go
+  ar: بَرُوح
+  transliteration: baruh
+  ru: я иду
+- en: i listen
+  ar: بِسْمَع
+  transliteration: "bisma'"
+  ru: я слушаю
+- en: i read
+  ar: بَقْرَأ
+  transliteration: baqra
+  ru: я читаю
+- en: he plays
+  ar: بْيِلْعَب
+  transliteration: "byil'ab"
+  ru: он играет
+- en: we rent
+  ar: بْنِسْتَأْجِر
+  transliteration: "bnista'jir"
+  ru: мы арендуем
+- en: i buy
+  ar: بَشْتَرِي
+  transliteration: bashtari
+  ru: я покупаю
+
 sentences:
 - en: i love traveling and tourism
   ar: بحب السفر والسياحة
@@ -95,15 +186,15 @@ sentences:
   ru: где мой паспорт
 - en: the tourist is in the hotel
   ar: السائح في الفندق
-  transliteration: as-sa'ih fil-funduq
+  transliteration: "as-sa'ih fil-funduq"
   ru: турист находится в отеле
 - en: the tourist has a ticket
   ar: السائحة عندها تذكرة
-  transliteration: as-sa'iha indha tadhkira
+  transliteration: "as-sa'iha indha tadhkira"
   ru: у туристки есть билет
 - en: i always go to the sea
   ar: دائما بروح على البحر
-  transliteration: da'iman baruh alal-bahr
+  transliteration: "da'iman baruh alal-bahr"
   vocalized: دائماً بروح على البحر
   ru: я всегда хожу на море
 - en: the beach is beautiful today
@@ -120,7 +211,7 @@ sentences:
   ru: он слушает красивую песню
 - en: reading is a beautiful hobby
   ar: القراءة هواية جميلة
-  transliteration: al-qira'a hiwaya jamila
+  transliteration: "al-qira'a hiwaya jamila"
   ru: чтение это прекрасное хобби
 - en: i read a book there
   ar: بقرأ كتاب هناك
@@ -136,7 +227,7 @@ sentences:
   ru: она любит плавание в море
 - en: we rent a car there
   ar: بنستأجر سيارة هناك
-  transliteration: bansta'jir sayyara hunaka
+  transliteration: "bansta'jir sayyara hunaka"
   ru: арендуем машину там
 - en: we have baggage in the car
   ar: عندنا شنط في السيارة
@@ -165,4 +256,85 @@ sentences:
 - en: i listen to music in the hotel
   ar: بسمع موسيقى في الفندق
   transliteration: basma musiqa fil-funduq
+  ru: я слушаю музыку в отеле
+sentences:
+- en: i love traveling and tourism
+  ar: بِحِبّ السَّفَر وِالسِّيَاحَة
+  transliteration: bhibb is-safar w-is-siyaha
+  ru: я люблю путешествия и туризм
+- en: where is my passport
+  ar: وِين جَوَاز سَفَرِي؟
+  transliteration: wen jawaz safari?
+  ru: где мой паспорт
+- en: the tourist is in the hotel
+  ar: السَّايِح بِالْفُنْدُق
+  transliteration: is-sayih bil-funduq
+  ru: турист находится в отеле
+- en: the tourist has a ticket
+  ar: السَّايْحَة عِنْدْهَا تَذْكَرَة
+  transliteration: "is-sayha 'indha tazkara"
+  ru: у туристки есть билет
+- en: i always go to the sea
+  ar: دَائِمَاً بَرُوح عَ الْبَحِر
+  transliteration: "da'iman baruh 'a-l-bahir"
+  ru: я всегда хожу на море
+- en: the beach is beautiful today
+  ar: الشَّطّ حِلُو الْيَوْم
+  transliteration: ish-shatt hilu il-yom
+  ru: пляж сегодня красивый
+- en: she loves photography and music
+  ar: بِتِحِبّ التَّصْوِير وِالْمُوسِيقَى
+  transliteration: bitihibb it-taswir w-il-musiqa
+  ru: она любит фотографию и музыку
+- en: he listens to a beautiful song
+  ar: بْيِسْمَع غْنِيَّة حِلْوَة
+  transliteration: "byisma' ghniyye hilwa"
+  ru: он слушает красивую песню
+- en: reading is a beautiful hobby
+  ar: الْقِرَاءَة هِوَايَة حِلْوَة
+  transliteration: "il-qira'a hiwaye hilwa"
+  ru: чтение — это прекрасное хобби
+- en: i read a book there
+  ar: بَقْرَأ كْتَاب هُنِيك
+  transliteration: baqra ktab honik
+  ru: я читаю книгу там
+- en: my brother plays football
+  ar: أَخُوي بْيِلْعَب كُرَة قَدَم
+  transliteration: "akhuy byil'ab kurat qadam"
+  ru: мой брат играет в футбол
+- en: she loves swimming in the sea
+  ar: بِتِحِبّ السِّبَاحَة بِالْبَحِر
+  transliteration: bitihibb is-sibaha bil-bahir
+  ru: она любит плавание в море
+- en: we rent a car there
+  ar: بْنِسْتَأْجِر سَيَّارَة هُنِيك
+  transliteration: "bnista'jir sayyara honik"
+  ru: мы арендуем машину там
+- en: we have baggage in the car
+  ar: عِنْدْنَا شَنَط بِالسَّيَّارَة
+  transliteration: "'indna shanat bis-sayyara"
+  ru: у нас багаж в машине
+- en: this country is very big
+  ar: هَاد الْبَلَد كْبِير كْتِير
+  transliteration: had il-balad kbir ktir
+  ru: эта страна очень большая
+- en: i love this city
+  ar: بِحِبّ هَاي الْمَدِينَة
+  transliteration: bhibb hayy il-madina
+  ru: люблю этот город
+- en: the hotel is near the beach
+  ar: الْفُنْدُق قَرِيب مِنْ الشَّطّ
+  transliteration: il-funduq qarib min ish-shatt
+  ru: отель находится рядом с пляжем
+- en: i buy a new book today
+  ar: بَشْتَرِي كْتَاب جْدِيد الْيَوْم
+  transliteration: bashtari ktab jdid il-yom
+  ru: я покупаю новую книгу сегодня
+- en: they play sport every day
+  ar: بْيِلْعَبُوا رِيَاضَة كُلّ يَوْم
+  transliteration: "byil'abu riyada kull yom"
+  ru: они занимаются спортом каждый день
+- en: i listen to music in the hotel
+  ar: بِسْمَع مُوسِيقَى بِالْفُنْدُق
+  transliteration: "bisma' musiqa bil-funduq"
   ru: я слушаю музыку в отеле

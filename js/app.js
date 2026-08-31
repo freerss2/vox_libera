@@ -532,7 +532,7 @@ function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_s
         icon = '📚';
     }
     icon = window.replaceSmiliesWithImages(icon);
-        const topicName = i18n_ct(topic.name);
+    const topicName = (topic.index === 0) ? manifest.metadata.title : i18n_ct(topic.name);
     const [statWords, statSents] = getTopicStatsHtml(key, words_stat, sent_stat);
     const lessonNumber = topic.index === 0 ? '' : `<div class="course-map-card-index">Lesson ${topic.index}</div>`;
         card.innerHTML = `
