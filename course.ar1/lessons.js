@@ -1045,262 +1045,357 @@ Kawiya '''قوية''': Literally "strong." This is how they say strong coffee.
 Food descriptions are filled with adjectives formed from the passive voice using the pattern [1a-2i-3], where 1, 2, and 3 are the root letters.
 Note the word "halva" - it shares a root with both "sweet" and "dessert."
 `,
-    "story": `##story-line## ''' بناكل غداء في المطعم اليوم. ''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada fil-matam al-yom.
-##story-line## ''' يا جرسون، بدي أشوف الوجبة الرئيسية لو سمحت. ''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi ashuf al-wajba ar-ra'isiya law samaht.
-##story-line## ''' أنا بطلب دجاج ورز، وهذا هو الطلب تبعي. ''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub djaj wa ruzz, wa hada huwa at-talab tabai.
-##story-line## ''' بدي بس سلطة وماء، أنا مش جوعان كثير. ''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata wa mayy, ana mish jwan kathir.
-##story-line## ''' صحتين! الحساب لو سمحت، بدفع وبنمشي. ''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Al-hisab law samaht, badfa wa bnamshi.`,
+    "story": `##story-line## ''' بناكل غدا بالمطعم اليوم.@بْنَاكُل غَدَا بِالْمَطْعَم الْيَوْم. ''' ##story-translation## We eat lunch in the restaurant today. ##story-transcr## Bnakul ghada bil-mat'am il-yom.
+##story-line## ''' يا غرسون، بدّي شوف الوجبة الرّئيسيّة لو سمحت.@يَا غَرْسُون، بِدِّي شُوف الْوَجْبَة الرَّئِيسِيَّة لَوْ سَمَحْت. ''' ##story-translation## Waiter, I want to see the main dish please. ##story-transcr## Ya garson, biddi shuf il-wajbe ir-ra'isiyye law samaht.
+##story-line## ''' أنا بطلب جاج ورزّ، وهاد هوّ الطّلب تبعي.@أَنَا بَطْلُب جَاج وِرُزّ، وِهَاد هُوَّ الطَّلَب تَبَعِي. ''' ##story-translation## I order chicken and rice, and this is my order. ##story-transcr## Ana batlub jaj w-ruzz, w-had huwwa it-talab taba'i.
+##story-line## ''' بدّي بس سلطة وميّ، أنا مش جوعان كتير.@بِدِّي بَس سَلَطَة وِمَيّ، أَنَا مِش جُوعَان كْتِير. ''' ##story-translation## I just want salad and water, I am not very hungry. ##story-transcr## Biddi bas salata w-mayy, ana mish ju'an ktir.
+##story-line## ''' صحتين! الحساب لو سمحت، بدفع وبنمشي.@صَحْتَيْن! الْحِسَاب لَوْ سَمَحْت، بَدْفَع وِبْنِمْشِي. ''' ##story-translation## Bon appetit! The bill please, I pay and we leave. ##story-transcr## Sahtein! Il-hisab law samaht, badfa' w-bnimshi.`,
     "words": [
       [
-        "delicious",
-        "زاكي",
-        "zaki"
+        "food",
+        "أكل@أَكِل",
+        "akil"
       ],
       [
-        "salty",
-        "مالح",
-        "malih"
+        "lunch",
+        "غدا@غَدَا",
+        "ghada"
       ],
       [
-        "sour",
-        "حامض",
-        "hamid"
+        "chicken",
+        "جاج@جَاج",
+        "jaj"
       ],
       [
-        "bill",
-        "حساب",
-        "hisab"
+        "meat",
+        "لحمة@لَحْمَة",
+        "lahme"
       ],
       [
-        "order",
-        "طلب",
-        "talab"
+        "fish",
+        "سمك@سَمَك",
+        "samak"
       ],
       [
-        "appetizer",
-        "مقبلات",
-        "muqabbilat"
+        "rice",
+        "رزّ@رُزّ",
+        "ruzz"
       ],
       [
-        "main dish",
-        "وجبة رئيسية",
-        "wajba ra'isiya"
+        "soup",
+        "شوربة@شَوْرَبَة",
+        "shoraba"
       ],
       [
-        "side dish",
-        "وجبة جانبية",
-        "wajba janibiya"
+        "salad",
+        "سلطة@سَلَطَة",
+        "salata"
       ],
       [
         "sweet / dessert",
         "حلو@حِلْو",
-        "hilw"
+        "hilu"
       ],
       [
-        "the bill / check",
-        "الحساب",
-        "al-hisab"
+        "tea",
+        "شاي@شَاي",
+        "shay"
       ],
       [
-        "meat",
-        "لحمة",
-        "lahma"
-      ],
-      [
-        "napkin",
-        "محرمة",
-        "mahrama"
-      ],
-      [
-        "tablecloth",
-        "شرشف طاوله",
-        "sharshaf tawila"
-      ],
-      [
-        "plate",
-        "صحن",
-        "sahn"
-      ],
-      [
-        "i want",
-        "بدي",
-        "biddi"
-      ],
-      [
-        "cup",
-        "فنجان",
-        "finjan"
+        "juice",
+        "عصير@عَصِير",
+        "'asir"
       ],
       [
         "almonds",
-        "لوز",
+        "لوز@لَوْز",
         "lawz"
       ],
       [
         "almond milk",
-        "حليب لوز",
+        "حليب لوز@حَلِيب لَوْز",
         "halib lawz"
       ],
       [
-        "no sugar",
-        "بدون سكر",
-        "bidun sukkar"
-      ],
-      [
         "substitute / alternative",
-        "بديل",
+        "بديل@بَدِيل",
         "badil"
       ],
       [
+        "restaurant",
+        "مطعم@مَطْعَم",
+        "mat'am"
+      ],
+      [
+        "waiter",
+        "غرسون@غَرْسُون",
+        "garson"
+      ],
+      [
+        "bill / check",
+        "حساب@حِسَاب",
+        "hisab"
+      ],
+      [
+        "order",
+        "طلب@طَلَب",
+        "talab"
+      ],
+      [
+        "appetizer",
+        "مقبّلات@مُقَبِّلَات",
+        "muqabbilat"
+      ],
+      [
+        "main dish",
+        "وجبة رئيسيّة@وَجْبَة رَئِيسِيَّة",
+        "wajbe ra'isiyye"
+      ],
+      [
+        "side dish",
+        "وجبة جانبيّة@وَجْبَة جَانِبِيَّة",
+        "wajbe janibiyye"
+      ],
+      [
+        "bon appetit",
+        "صحتين@صَحْتَيْن",
+        "sahtein"
+      ],
+      [
+        "plate",
+        "صحن@صَحِن",
+        "sahin"
+      ],
+      [
+        "cup",
+        "فنجان@فِنْجَان",
+        "finjan"
+      ],
+      [
         "spoon",
-        "معلقة",
-        "malaqa"
+        "معلقة@مَعْلَقَة",
+        "ma'laqa"
       ],
       [
         "fork",
-        "شوكة",
-        "shawka"
+        "شوكة@شَوْكَة",
+        "showke"
       ],
       [
         "knife",
-        "سكينة",
-        "skinna"
+        "سكّينة@سِكِّينَة",
+        "skinne"
+      ],
+      [
+        "napkin",
+        "محرمة@مَحْرَمَة",
+        "mahrama"
+      ],
+      [
+        "tablecloth",
+        "شرشف طاولة@شَرْشَف طَاوْلَة",
+        "sharshaf tawle"
+      ],
+      [
+        "delicious",
+        "زاكي@زَاكِي",
+        "zaki"
+      ],
+      [
+        "salty",
+        "مالح@مَالِح",
+        "malih"
+      ],
+      [
+        "sour",
+        "حامض@حَامِض",
+        "hamid"
+      ],
+      [
+        "hungry",
+        "جوعان@جُوعَان",
+        "ju'an"
+      ],
+      [
+        "clean",
+        "نظيف@نَظِيف",
+        "nadif"
+      ],
+      [
+        "without sugar",
+        "بدون سكّر@بِدُون سُكَّر",
+        "bidun sukkar"
+      ],
+      [
+        "here",
+        "هون@هُون",
+        "hon"
       ],
       [
         "please",
-        "لو سمحت",
+        "لو سمحت@لَوْ سَمَحْت",
         "law samaht"
       ],
       [
+        "i want",
+        "بدّي@بِدِّي",
+        "biddi"
+      ],
+      [
         "i order",
-        "بطلب",
+        "بطلب@بَطْلُب",
         "batlub"
       ],
       [
-        "he pays",
-        "بيدفع",
-        "biyadfa"
+        "we eat",
+        "بناكل@بْنَاكُل",
+        "bnakul"
       ],
       [
-        "i like / love",
-        "بحب",
-        "bahibb"
+        "i pay",
+        "بدفع@بَدْفَع",
+        "badfa'"
+      ],
+      [
+        "he pays",
+        "بيدفع@بْيِدْفَع",
+        "byidfa'"
+      ],
+      [
+        "give me",
+        "اعطيني@اعْطِينِي",
+        "a'tini"
+      ],
+      [
+        "we leave / walk",
+        "بنمشي@بْنِمْشِي",
+        "bnimshi"
+      ],
+      [
+        "i see",
+        "شوف@شُوف",
+        "shuf"
+      ],
+      [
+        "i love / like",
+        "بحبّ@بِحِبّ",
+        "bhibb"
       ]
     ],
     "sentences": [
       [
         "the appetizer is very delicious",
-        "المقبلات زاكية كثير",
-        "al-muqabbilat zakya kathir"
+        "المقبّلات زاكية كتير@الْمُقَبِّلَات زَاكْيَة كْتِير",
+        "il-muqabbilat zakye ktir"
       ],
       [
         "waiter i want a napkin please",
-        "يا جرسون بدي محرمة لو سمحت",
-        "ya garson biddi mahrama law samaht"
+        "يا غرسون، بدّي محرمة لو سمحت@يَا غَرْسُون، بِدِّي مَحْرَمَة لَوْ سَمَحْت",
+        "ya garson, biddi mahrama law samaht"
       ],
       [
         "i order chicken and a side dish",
-        "بطلب دجاج ووجبة جانبية",
-        "batlub djaj wa wajba janibiya"
+        "بطلب جاج ووجبة جانبيّة@بَطْلُب جَاج وِوَجْبَة جَانِبِيَّة",
+        "batlub jaj w-wajbe janibiyye"
       ],
       [
         "this soup is very salty",
-        "هذه الشوربة مالحة كثير",
-        "hadhihi ash-shorba maliha kathir"
+        "هاي الشّوربة مالحة كتير@هَاي الشَّوْرَبَة مَالْحَة كْتِير",
+        "hayy ish-shoraba malha ktir"
       ],
       [
         "where is the knife and the fork",
-        "وين السكينة والشوكة",
-        "wayn as-skinna wash-shawka"
+        "وين السّكّينة والشّوكة؟@وِين السِّكِّينَة وِالشَّوْكَة؟",
+        "wen is-skinne w-ish-showke?"
       ],
       [
         "the bill please",
-        "الحساب لو سمحت",
-        "al-hisab law samaht"
+        "الحساب لو سمحت@الْحِسَاب لَوْ سَمَحْت",
+        "il-hisab law samaht"
       ],
       [
         "where is my order",
-        "وين الطلب تبعي",
-        "wayn at-talab tabai"
+        "وين الطّلب تبعي؟@وِين الطَّلَب تَبَعِي؟",
+        "wen it-talab taba'i?"
       ],
       [
         "the sweet is beautiful and delicious",
-        "الحلو جميل وزاكي@الحِلْو جميل وزاكي",
-        "al-hilw jamil wa zaki"
+        "الحلو حلو وزاكي@الْحِلْو حِلُو وِزَاكِي",
+        "il-hilu hilu w-zaki"
       ],
       [
         "i want a cup of tea",
-        "بدي فنجان شاي",
+        "بدّي فنجان شاي@بِدِّي فِنْجَان شَاي",
         "biddi finjan shay"
       ],
       [
         "the tablecloth is on the table",
-        "الشرشف على الطاولة",
-        "ash-sharshaf ala at-tawila"
+        "الشّرشف ع الطّاولة@الشَّرْشَف عَ الطَّاوْلَة",
+        "ish-sharshaf 'a-t-tawle"
       ],
       [
         "this fish is sour",
-        "هذه السمكة حامضة",
-        "hadhihi as-samaka hamda"
+        "هاي السّمكة حامضة@هَاي السَّمَكَة حَامْضَة",
+        "hayy is-samake hamda"
       ],
       [
         "my friend wants a clean plate",
-        "صاحبي بده صحن نظيف",
-        "sahibi biddu sahn nadif"
+        "صاحبي بدّه صحن نظيف@صَاحْبِي بِدُّه صَحِن نَظِيف",
+        "sahbi biddu sahin nadif"
       ],
       [
         "the main dish today is fish",
-        "الوجبة الرئيسية اليوم هي سمك",
-        "al-wajba ar-ra'isiya al-yom hiyya samak"
+        "الوجبة الرّئيسيّة اليوم هيّ سمك@الْوَجْبَة الرَّئِيسِيَّة الْيَوْم هِيَّ سَمَك",
+        "il-wajbe ir-ra'isiyye il-yom hiyye samak"
       ],
       [
         "the food here is always delicious",
-        "الأكل هنا دائما زاكي@الأكل هنا دائماً زاكي",
-        "al-akl huna da'iman zaki"
+        "الأكل هون دائما زاكي@الأَكِل هُون دَائِمَاً زَاكِي",
+        "il-akil hon da'iman zaki"
       ],
       [
         "give me a spoon please",
-        "اعطيني معلقة لو سمحت",
-        "atini malaqa law samaht"
+        "اعطيني معلقة لو سمحت@اعْطِينِي مَعْلَقَة لَوْ سَمَحْت",
+        "a'tini ma'laqa law samaht"
       ],
       [
         "i drink juice from this cup",
-        "بشرب عصير من هذا الفنجان",
-        "bashrab asir min hada al-finjan"
+        "بشرب عصير من هاد الفنجان@بِشْرَب عَصِير مِنْ هَاد الْفِنْجَان",
+        "bishrab 'asir min had il-finjan"
       ],
       [
         "where is my spoon",
-        "وين معلقتي",
-        "wayn malaqti"
+        "وين معلقتي؟@وِين مَعْلَقْتِي؟",
+        "wen ma'laqti?"
       ],
       [
         "the side dish is delicious",
-        "الوجبة الجانبية زاكية",
-        "al-wajba al-janibiya zakya"
+        "الوجبة الجانبيّة زاكية@الْوَجْبَة الجَانِبِيَّة زَاكْيَة",
+        "il-wajbe il-janibiyye zakye"
       ],
       [
         "he pays the bill here",
-        "بيدفع الحساب هنا",
-        "biyadfa al-hisab huna"
+        "بيدفع الحساب هون@بْيِدْفَع الْحِسَاب هُون",
+        "byidfa' il-hisab hon"
       ],
       [
         "i want sweet now",
-        "بدي حلو الآن@بدي حِلْو الآن",
-        "biddi hilw al-an"
+        "بدّي حلو هلّأ@بِدِّي حِلْو هَلَّأ",
+        "biddi hilu halla'"
       ],
       [
         "i want almond milk",
-        "بدي حليب لوز",
+        "بدّي حليب لوز@بِدِّي حَلِيب لَوْز",
         "biddi halib lawz"
       ],
       [
         "coffee without sugar",
-        "قهوة بدون سكر",
+        "قهوة بدون سكّر@قَهْوَة بِدُون سُكَّر",
         "qahwa bidun sukkar"
       ],
       [
         "i want a milk substitute",
-        "بدي بديل حليب",
+        "بدّي بديل حليب@بِدِّي بَدِيل حَلِيب",
         "biddi badil halib"
       ]
     ],
