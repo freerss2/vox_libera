@@ -545,7 +545,7 @@ function addCardToTopicsList(topic, key, cardsContainer, currentTopicId, words_s
             <div> ${statWords} &nbsp; ${statSents} </div>
           </span>`;
     if (icon_class === 'active' && topic.index !== 0) {
-        showCurrentTopicScreens(card);
+        showCurrentTopicScreens(card, key);
     } else {
         card.addEventListener('click', () => {switchToTopic(key);});
     }
@@ -559,7 +559,21 @@ function switchToTopic(topicId) {
     renderCurrentScreen();
 }
 
-function showCurrentTopicScreens(card) {
+function showCurrentTopicScreens(card, topicId) {
+    const state = getTopicState(topicId);
+
+    // Add "Mark as completed" switch
+    const settingItem = document.createElement('div');
+    settingItem.className = 'setting-item card-completion-setting';
+    const completionPrompt = i18n.t('menu|topic_completed');
+    settingItem.innerHTML = `
+        <span data-i18n="menu|topic_completed">${completionPrompt}</span>
+        <label class="switch">
+            <input type="checkbox" onchange="toggleTopicPassedFromCard('${topicId}')" ${state ? 'checked' : ''}>
+            <span class="slider round"></span>
+        </label>
+    `;
+    card.appendChild(settingItem);
 
     const ul = document.createElement('ul');
     ul.className = 'exercise-path';
@@ -1147,7 +1161,7 @@ function renderMatchingGame() {
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
-    
+
     gameErrorData = [];
     wordsMappingForSummary = [];
     // TODO: store each tile record
@@ -1496,23 +1510,38 @@ function showWin(acc) {
         mainText = acc;
     } else {
         // Get topic statistics
-        const data = getTopicStats(settings.getCurrentTopic());
+        const topicId = settings.getCurrentTopic();
+        const data = getTopicStats(topicId);
         const excerciseAccuracy = i18n.t('modal_results|excercise_accuracy');
         const wordsAccuracy = i18n.t('modal_results|words_accuracy');
         const sentAccuracy = i18n.t('modal_results|sent_accuracy');
+
+        // suggest check/uncheck "completed" state in case it does not match the current state
+        const currentTopicState = getTopicState(topicId);
+        const topicSuccess = (data.wordsSuccess > 90) && (data.sentencesSuccess > 90);
+        let suggestion = '';
+        // let extra_action = null;
+        if (topicSuccess && ! currentTopicState) {
+            suggestion = '\n##text-center## Mark as completed, to see this topic words in future excercises?';
+        }
+        if (! topicSuccess && currentTopicState) {
+            suggestion = '\n##text-center## Mark as incompleted?';
+        }
+        console.log(`Suggested action for topic ${topicId} "${suggestion}"`);
+
         const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
-##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%`;
+##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}% ${suggestion}`;
 
-    // Calculate the success rate
-    let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
+        // Calculate the success rate
+        let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
 
-    // Text summary on completed round (according to reached grade)
-    let quotes = manifest.feedback[category];
-    // For a variety take random phrase
-    let pick = quotes[Math.floor(Math.random() * quotes.length)];
-    const user_lang_feedback = i18n_ct(pick[0]);
-    // generate round recommendation message
-    const tipText = getRoundRecommendation();
+        // Text summary on completed round (according to reached grade)
+        let quotes = manifest.feedback[category];
+        // For a variety take random phrase
+        let pick = quotes[Math.floor(Math.random() * quotes.length)];
+        const user_lang_feedback = i18n_ct(pick[0]);
+        // generate round recommendation message
+        const tipText = getRoundRecommendation();
 
         mainText = `##text-center## '''${pick[1]}'''
 ##text-center## ${pick[2]} — ${user_lang_feedback}
@@ -2150,7 +2179,7 @@ function dedupeDictionaryData(currentData) {
 }
 
 // get display/vocalized representation (target language)
-// the text is either single string or visual@vocalized version 
+// the text is either single string or visual@vocalized version
 function itemDisplayText(item) {
     return wordDisplayText(item[1]);
 }
@@ -2559,6 +2588,30 @@ window.toggleTopicPassed = function() {
     }
 
     setTopicState(settings.getCurrentTopic(), Number(isChecked));
+}
+
+window.toggleTopicPassedFromCard = function(topicId) {
+    const cardSettingItem = document.querySelector('.card-completion-setting');
+    const cardCheckbox = cardSettingItem?.querySelector('input[type="checkbox"]');
+    if (!cardCheckbox) return;
+
+    const isChecked = cardCheckbox.checked;
+
+    // Update sidebar checkbox if this is the current topic
+    if (topicId === settings.getCurrentTopic()) {
+        const sidebarCheckbox = document.getElementById('topic-passed-checkbox');
+        if (sidebarCheckbox) {
+            sidebarCheckbox.checked = isChecked;
+        }
+        const titleContainer = document.querySelector('.drawer-title');
+        if (isChecked) {
+            titleContainer.classList.add('is-passed');
+        } else {
+            titleContainer.classList.remove('is-passed');
+        }
+    }
+
+    setTopicState(topicId, Number(isChecked));
 }
 
 function displayTopicCompletionState() {
