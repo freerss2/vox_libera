@@ -6,7 +6,7 @@
 "use strict";
 
 const engine_ver = '2.9.3';
-const app_version = '3.4.1';
+const app_version = '3.4.2';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -87,7 +87,7 @@ function injectActionsToLinks(container, actions, preActionsCallback=null) {
 
     links.forEach(link => {
         const action = link.getAttribute('href').substring(1);
-        
+        link.innerHTML = window.replaceSmiliesWithImages(link.innerHTML);
         link.classList.add('action-link');
         link.removeAttribute('href'); // avoid link-like behavior
         
@@ -138,6 +138,7 @@ const smiliesMap = {
     '💬': 'lucide-message',
     '✔': 'lucide-check',
     '▶': 'lucide-play',
+    '⏩': 'lucide-chevrons-right',
     '🔒': 'lucide-lock',
     '🌍': 'lucide-globe',
     '👤': 'lucide-user',
@@ -145,6 +146,7 @@ const smiliesMap = {
     '☁': 'lucide-online',
     '💾': 'lucide-offline',
     '❌': 'lucide-close',
+    '✘': 'lucide-close',
     '⏳': 'lucide-hourglass'
 };
 

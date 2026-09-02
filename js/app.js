@@ -1506,6 +1506,8 @@ function showWin(acc) {
     }
 
     let mainText;
+    let suggestion = '';
+    let extra_action = null;
     if (typeof (acc) === 'string') {
         mainText = acc;
     } else {
@@ -1519,15 +1521,19 @@ function showWin(acc) {
         // suggest check/uncheck "completed" state in case it does not match the current state
         const currentTopicState = getTopicState(topicId);
         const topicSuccess = (data.wordsSuccess > 90) && (data.sentencesSuccess > 90);
-        let suggestion = '';
-        // let extra_action = null;
         if (topicSuccess && ! currentTopicState) {
-            suggestion = '\n##text-center## Mark as completed, to see this topic words in future excercises?';
+            suggestion = i18n.t('main|mark-completed');
+            extra_action = function() {setTopicState(topicId, 1); setTimeout( () => {showWin(acc);}, 300) };
         }
         if (! topicSuccess && currentTopicState) {
-            suggestion = '\n##text-center## Mark as incompleted?';
+            suggestion = i18n.t('main|mark-incompleted');
+            extra_action = function() {setTopicState(topicId, 0); setTimeout( () => {showWin(acc);}, 300) };
         }
         console.log(`Suggested action for topic ${topicId} "${suggestion}"`);
+        if (suggestion) {
+            const recommended = i18n.t('main|recommended-action');
+            suggestion = `\n### ##text-center## ${recommended}\n##bubble-buttons-no-margin## [${suggestion}](#suggestion)`;
+        }
 
         const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
 ##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}% ${suggestion}`;
@@ -1557,7 +1563,7 @@ ${topic_stats_info}
     const nextPrompt = i18n.t('main|sum-next');
     const markdownText = `
 ${mainText}
-##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
+##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ⏩](#next)`;
 
     // visualize the popup
     document.getElementById('narrator-container').classList.remove('hidden');
@@ -1566,6 +1572,9 @@ ${mainText}
         'repeat': () => {renderCurrentScreen();},
         'next':   () => {loadNextScreen(true);}
     };
+    if (suggestion) {
+        actions['suggestion'] = extra_action;
+    }
     const markdownConf = buildMarkdownConf(
         courseTargetLanguage, targetDir, userLang, userDir);
 
@@ -2241,6 +2250,7 @@ function showDictionary(currentData, mode='') {
     const recapSummary = document.getElementById('recap-summary');
     const lastScreenBtn = document.getElementsByClassName('last-screen-btn');
     const nextScreenBtn = document.getElementsByClassName('next-screen-btn');
+    const onScreenActions = document.getElementsByClassName('on-screen-actions');
     if (mode === 'recap') {
       if (targetScreen) { targetScreen.classList.remove('hidden'); }
       if (recapSummary) { recapSummary.classList.remove('hidden'); }
@@ -2248,12 +2258,13 @@ function showDictionary(currentData, mode='') {
       [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
     } else {
       if (recapSummary) { recapSummary.classList.add('hidden'); }
+      [...onScreenActions].forEach(e => { e.classList.remove('hidden'); });
       if (mode === 'all') {
         [...lastScreenBtn].forEach(e => { e.classList.remove('hidden'); });
         [...nextScreenBtn].forEach(e => { e.classList.add('hidden'); });
       } else {
         [...lastScreenBtn].forEach(e => { e.classList.add('hidden'); });
-      [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
+        [...nextScreenBtn].forEach(e => { e.classList.remove('hidden'); });
       }
     }
     scrollToTop('screen-dictionary');

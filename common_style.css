@@ -50,6 +50,14 @@
     text-align: center;
 }
 
+.bubble-buttons-no-margin {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 #speech-bubble::after {
     content: '';
     position: absolute;
