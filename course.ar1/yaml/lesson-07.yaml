@@ -1,198 +1,834 @@
-id: names_meaning_1
+id: training_0
 name:
-  en: Names meaning 1
-  ru: Значения имён 1
+  en: Practice (intermediate)
+  ru: Тренировка (промежуточная)
 explanations:
   en: |
-    ### Why is it important to study the meaning of proper names
-
-    Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
-    A native speaker will be pleased if you compliment them on the meaning of their name. Furthermore, using names as an example, we learn about word construction patterns in Arabic.
+    ### This lesson is designed to consolidate what has been learned.
+    Here you'll find exercises that practice grammar and memorize words that are similar in meaning or different variations of the same root.
+    Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
+    Like flashcards, these exercises don't award success percentages.
+    The goal is to practice independently in the game format, but without the risk of losing winning points.
 
   ru: |
-    ### Почему важно изучить значение имён собственных
+    ### Этот урок предназначен для закрепления изученного.
+    Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
+    Кроме того, существует особый тип упражнений: сортировка по какому-либо общепринятому определению, например, женский род или сравнительная степень.
+    Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
+    Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
 
-    Многие арабские имена — это обычные прилагательные и существительные. Понимание их буквального значения помогает мгновенно связать новое слово с уже знакомым именем (например, имя Али означает "высокий/возвышенный", а Карим — "щедрый").
-    Носителю языка будет приятно, если вы скажете комплимент связанный со смыслом его имени. Кроме того, на примере имён мы знакомимся с моделями построения слов в арабском языке.
+sort_set:
+- id: verb_gender_pairs_present_3p
+  question1:
+    en: Find verbs in feminine form (she)
+    ru: Найди глаголы женского рода (она)
+  question2:
+    en: Find verbs in masculine form (he)
+    ru: Найди глаголы мужского рода (он)
+  type: pairs
+  data:
+    - [ "بْتِكْتُب", "بْيِكْتُب" ]
+    - [ "بْتِشْرَب", "بْيِشْرَب" ]
+    - [ "بْتِعْرِف", "بْيِعْرِف" ]
+    - [ "بْتِشُوف", "بْيِشُوف" ]
+    - [ "بْتَأْكُل", "بْيَأْكُل" ]
+    - [ "بْتِدْفَع", "بْيِدْفَع" ]
+    - [ "بْتَطْلُب", "بْيَطْلُب" ]
+    - [ "بْتِسَافِر", "بْيِسَافِر" ]
+    - [ "بْتَسْتَنَّى", "بْيَسْتَنَّى" ]
+    - [ "بْتِحِبّ", "بْيِحِبّ" ]
+    - [ "بْتِفْحَص", "بْيِفْحَص" ]
+    - [ "بْتِرُوح", "بْيِرُوح" ]
+
+- id: verb_gender_pairs_imperative
+  question1:
+    en: Find imperative for a woman
+    ru: Найди повелительную форму (к женщине)
+  question2:
+    en: Find imperative for a man
+    ru: Найди повелительную форму (к мужчине)
+  type: pairs
+  data:
+    - [ "اِكْتِبِي", "اِكْتِب" ]
+    - [ "اِشْرَبِي", "اِشْرَب" ]
+    - [ "شُوفِي", "شُوف" ]
+    - [ "تَعَالِي", "تَعَال" ]
+    - [ "اِدْفَعِي", "اِدْفَع" ]
+    - [ "اُطْلُبِي", "اُطْلُب" ]
+    - [ "اِسْتَنِّي", "اِسْتَنَّى" ]
+    - [ "رُوحِي", "رُوح" ]
+    - [ "اِعْطِينِي", "اِعْطِينِي" ]
+    - [ "اِفْحَصِي", "اِفْحَص" ]
+
+- id: adj_gender_pairs
+  question1:
+    en: Find feminine adjectives
+    ru: Найди прилагательные женского рода
+  question2:
+    en: Find masculine adjectives
+    ru: Найди прилагательные мужского рода
+  type: pairs
+  data:
+    - [ "كَبِيرَة", "كَبِير" ]
+    - [ "زَكِيَّة", "زَاكِي" ]
+    - [ "مَالْحَة", "مَالِح" ]
+    - [ "حَامْضَة", "حَامِض" ]
+    - [ "جُوعَانَة", "جُوعَان" ]
+    - [ "نَظِيفَة", "نَظِيف" ]
+    - [ "مْتَأَخِّرَة", "مْتَأَخِّر" ]
+    - [ "مَحْجُوزَة", "مَحْجُوز" ]
+    - [ "فَاضْيَة", "فَاضِي" ]
+    - [ "سَعِيدَة", "سَعِيد" ]
+    - [ "جَدِيدَة", "جَدِيد" ]
+    - [ "قَدِيمَة", "قَدِيم" ]
+
+- id: sort_singular_plural_1
+  question1:
+    en: Find the singular
+    ru: Найди единственное число
+  question2:
+    en: Find the plural
+    ru: Найди множественное число
+  type: lists
+  data:
+    - - "اِسْم"
+      - "مِهْنَة"
+      - "مُبَرْمِج"
+      - "مُهَنْدِس"
+      - "دَوْلَة"
+      - "عَيْلَة"
+      - "أَب"
+      - "فُسْتَان"
+      - "مَقْعَد"
+      - "كُرْسِي"
+      - "كَلِمَة"
+      - "شَنْتَة"
+      - "طَالِب"
+      - "سَيَّارَة"
+      - "صَاحِب"
+      - "مَطْعَم"
+      - "طَيَّارَة"
+    - - "أَسْمَاء"
+      - "مِهَن"
+      - "مُبَرْمِجِين"
+      - "مُهَنْدِسِين"
+      - "دُوَل"
+      - "عِيَل"
+      - "أَبَهَات"
+      - "فَسَاتِين"
+      - "مَقَاعِد"
+      - "كَرَاسِي"
+      - "كَلِمَات"
+      - "شُنَط"
+      - "طُلَّاب"
+      - "سَيَّارَات"
+      - "صُحَاب"
+      - "مَطَاعِم"
+      - "طَيَّارَات"
+
+
+pairs_set:
+
+- title:
+    en: "Travel & Tourism Family"
+    ru: "Однокоренные: Туризм и путешествия"
+  id: root_travel_tourism
+  words:
+    - "سَفَر"
+    - "مُسَافِر"
+    - "سِيَاحَة"
+    - "سَايِح"
+    - "سَايْحَة"
+    - "سِيَاحِي"
+    - "طَيَّارَة"
+    - "طَيَّار"
+    - "مَطَار"
+    - "طَيَرَان"
+    - "بْيِطِير"
+
+- title:
+    en: "Writing & Office Family"
+    ru: "Однокоренные: Книга, офис, писатель"
+  id: root_write_office
+  words:
+    - "كْتَاب"
+    - "مَكْتَب"
+    - "مَكْتَبَة"
+    - "كَاتِب"
+    - "كِتَابَة"
+    - "بَكْتُب"
+    - "دَرْس"
+    - "دِرَاسَة"
+    - "مَدْرَسَة"
+    - "مُدَرِّس"
+    - "مُدَرِّسَة"
+    - "بَدْرُس"
+
+- title:
+    en: "Cooking & Kitchen Family"
+    ru: "Однокоренные: Кухня, повар, блюдо"
+  id: root_cooking_kitchen
+  words:
+    - "مَطْبَخ"
+    - "طَبَّاخ"
+    - "طَبْخَة"
+    - "بَطْبُخ"
+    - "مَطْبُوخ"
+    - "أَكِل"
+    - "بَاكُل"
+    - "مَطْعَم"
+    - "طَعْمَة"
+    - "أَكَّال"
+
+- title:
+    en: "Work & Busyness Family"
+    ru: "Однокоренные: Работа, занят, работаю"
+  id: root_work_busy
+  words:
+    - "شُغُل"
+    - "بَشْتِغِل"
+    - "مَشْغُول"
+    - "مَشْغُولَة"
+    - "شَغَّال"
+    - "طَلَب"
+    - "طَالِب"
+    - "طَالْبَة"
+    - "بَطْلُب"
+    - "مَطْلُوب"
+
+
 words:
+
+- en: travel / traveling
+  ar: سَفَر
+  transliteration: "safar"
+  ru: путешествие
+- en: traveler / passenger
+  ar: مُسَافِر
+  transliteration: "musafir"
+  ru: путешественник / пассажир
+- en: tourism
+  ar: سِيَاحَة
+  transliteration: "siyaha"
+  ru: туризм
+- en: tourist (m)
+  ar: سَايِح
+  transliteration: "sayih"
+  ru: турист
+- en: tourist (f)
+  ar: سَايْحَة
+  transliteration: "sayha"
+  ru: туристка
+- en: touristy / touristic
+  ar: سِيَاحِي
+  transliteration: "siyahi"
+  ru: туристический
+
+
+- en: airplane
+  ar: طَيَّارَة
+  transliteration: "tayyara"
+  ru: самолёт
+- en: pilot
+  ar: طَيَّار
+  transliteration: "tayyar"
+  ru: пилот
+- en: airport
+  ar: مَطَار
+  transliteration: "matar"
+  ru: аэропорт
+- en: aviation / flying
+  ar: طَيَرَان
+  transliteration: "tayaran"
+  ru: авиация / полёт
+- en: he flies
+  ar: بْيِطِير
+  transliteration: "byitir"
+  ru: он летает
+
+
+- en: book
+  ar: كْتَاب
+  transliteration: "ktab"
+  ru: книга
+- en: office / desk
+  ar: مَكْتَب
+  transliteration: "maktab"
+  ru: офис / письменный стол
+- en: library / bookstore
+  ar: مَكْتَبَة
+  transliteration: "maktaba"
+  ru: библиотека / книжный магазин
+- en: writer / author
+  ar: كَاتِب
+  transliteration: "katib"
+  ru: писатель
+- en: writing
+  ar: كِتَابَة
+  transliteration: "kitaba"
+  ru: письмо / письменность
+- en: i write
+  ar: بَكْتُب
+  transliteration: "baktub"
+  ru: я пишу
+
+
+- en: lesson
+  ar: دَرْس
+  transliteration: "dars"
+  ru: урок
+- en: studies / studying
+  ar: دِرَاسَة
+  transliteration: "dirasa"
+  ru: учёба
+- en: school
+  ar: مَدْرَسَة
+  transliteration: "madrasa"
+  ru: школа
+- en: teacher
+  ar: مُدَرِّس
+  transliteration: "mudarris"
+  ru: учитель
+- en: teacher (f)
+  ar: مُدَرِّسَة
+  transliteration: "mudarrisa"
+  ru: учительница
+- en: i study
+  ar: بَدْرُس
+  transliteration: "badrus"
+  ru: я учусь / изучаю
+
+
+- en: kitchen
+  ar: مَطْبَخ
+  transliteration: "matbakh"
+  ru: кухня
+- en: cook / chef
+  ar: طَبَّاخ
+  transliteration: "tabbakh"
+  ru: повар
+- en: cooked dish
+  ar: طَبْخَة
+  transliteration: "tabkha"
+  ru: приготовленное блюдо
+- en: i cook
+  ar: بَطْبُخ
+  transliteration: "batbukh"
+  ru: я готовлю
+- en: cooked
+  ar: مَطْبُوخ
+  transliteration: "matbukh"
+  ru: варёный / приготовленный
+
+
+- en: work / job
+  ar: شُغُل
+  transliteration: "shughul"
+  ru: работа
+- en: i work
+  ar: بَشْتِغِل
+  transliteration: "bashtighil"
+  ru: я работаю
+- en: busy (m)
+  ar: مَشْغُول
+  transliteration: "mashghul"
+  ru: занятый
+- en: busy (f)
+  ar: مَشْغُولَة
+  transliteration: "mashghula"
+  ru: занятая
+- en: working / functioning
+  ar: شَغَّال
+  transliteration: "shagghal"
+  ru: работающий / исправный
+
+
+- en: food
+  ar: أَكِل
+  transliteration: "akil"
+  ru: еда
+- en: i eat
+  ar: بَاكُل
+  transliteration: "bakul"
+  ru: я ем
+- en: restaurant
+  ar: مَطْعَم
+  transliteration: "mat'am"
+  ru: ресторан
+- en: taste / flavor
+  ar: طَعْمَة
+  transliteration: "ta'ma"
+  ru: вкус
+- en: foodie / glutton
+  ar: أَكَّال
+  transliteration: "akkal"
+  ru: любитель поесть / обжора
+
+
+- en: order / request
+  ar: طَلَب
+  transliteration: "talab"
+  ru: заказ / просьба
+- en: student (m)
+  ar: طَالِب
+  transliteration: "talib"
+  ru: студент
+- en: student (f)
+  ar: طَالْبَة
+  transliteration: "talba"
+  ru: студентка
+- en: i order
+  ar: بَطْلُب
+  transliteration: "batlub"
+  ru: я заказываю
+- en: required / wanted
+  ar: مَطْلُوب
+  transliteration: "matlub"
+  ru: требуемый / разыскиваемый
+
+- en: write! (to a man)
+  ar: اِكْتِب
+  transliteration: "iktib"
+  ru: пиши! (м)
+- en: write! (to a woman)
+  ar: اِكْتِبِي
+  transliteration: "iktibi"
+  ru: пиши! (ж)
+
+- en: drink! (to a man)
+  ar: اِشْرَب
+  transliteration: "ishrab"
+  ru: пей! (м)
+- en: drink! (to a woman)
+  ar: اِشْرَبِي
+  transliteration: "ishrabi"
+  ru: пей! (ж)
+
+- en: look / see! (to a man)
+  ar: شُوف
+  transliteration: "shuf"
+  ru: смотри! (м)
+- en: look / see! (to a woman)
+  ar: شُوفِي
+  transliteration: "shufi"
+  ru: смотри! (ж)
+
+- en: come! (to a man)
+  ar: تَعَال
+  transliteration: "ta'al"
+  ru: приходи! (м)
+- en: come! (to a woman)
+  ar: تَعَالِي
+  transliteration: "ta'ali"
+  ru: приходи! (ж)
+
+- en: pay! (to a man)
+  ar: اِدْفَع
+  transliteration: "idfa'"
+  ru: плати! (м)
+- en: pay! (to a woman)
+  ar: اِدْفَعِي
+  transliteration: "idfa'i"
+  ru: плати! (ж)
+
+- en: order! (to a man)
+  ar: اُطْلُب
+  transliteration: "utlub"
+  ru: заказывай! (м)
+- en: order! (to a woman)
+  ar: اُطْلُبِي
+  transliteration: "utlubi"
+  ru: заказывай! (ж)
+
+- en: wait! (to a man)
+  ar: اِسْتَنَّى
+  transliteration: "istanna"
+  ru: жди! (м)
+- en: wait! (to a woman)
+  ar: اِسْتَنِّي
+  transliteration: "istanni"
+  ru: жди! (ж)
+
+- en: go! (to a man)
+  ar: رُوح
+  transliteration: "ruh"
+  ru: иди! (м)
+- en: go! (to a woman)
+  ar: رُوحِي
+  transliteration: "ruhi"
+  ru: иди! (ж)
+
+- en: give me!
+  ar: اِعْطِينِي
+  transliteration: "i'tini"
+  ru: дай мне!
+
+- en: check! (to a man)
+  ar: اِفْحَص
+  transliteration: "ifhas"
+  ru: проверяй! (м)
+- en: check! (to a woman)
+  ar: اِفْحَصِي
+  transliteration: "ifhasi"
+  ru: проверяй! (ж)
+
+
+- en: she writes / you write (m)
+  ar: بْتِكْتُب
+  transliteration: "btiktub"
+  ru: она пишет / ты пишешь (м)
+- en: he writes
+  ar: بْيِكْتُب
+  transliteration: "byiktub"
+  ru: он пишет
+
+- en: she drinks / you drink (m)
+  ar: بْتِشْرَب
+  transliteration: "btishrab"
+  ru: она пьёт / ты пьёшь (м)
+- en: he drinks
+  ar: بْيِشْرَب
+  transliteration: "byishrab"
+  ru: он пьёт
+
+- en: she knows / you know (m)
+  ar: بْتِعْرِف
+  transliteration: "bti'rif"
+  ru: она знает / ты знаешь (м)
+- en: he knows
+  ar: بْيِعْرِف
+  transliteration: "byi'rif"
+  ru: он знает
+
+- en: she sees / you see (m)
+  ar: بْتِشُوف
+  transliteration: "btishuf"
+  ru: она видит / ты видишь (м)
+- en: he sees
+  ar: بْيِشُوف
+  transliteration: "byishuf"
+  ru: он видит
+
+- en: she eats / you eat (m)
+  ar: بْتَأْكُل
+  transliteration: "btatkul"
+  ru: она ест / ты ешь (м)
+- en: he eats
+  ar: بْيَأْكُل
+  transliteration: "byatkul"
+  ru: он ест
+
+- en: she pays / you pay (m)
+  ar: بْتِدْفَع
+  transliteration: "btidfa'"
+  ru: она платит / ты платишь (м)
+- en: he pays
+  ar: بْيِدْفَع
+  transliteration: "byidfa'"
+  ru: он платит
+
+- en: she orders / you order (m)
+  ar: بْتَطْلُب
+  transliteration: "btatlub"
+  ru: она заказывает / ты заказываешь (м)
+- en: he orders
+  ar: بْيَطْلُب
+  transliteration: "byatlub"
+  ru: он заказывает
+
+- en: she travels / you travel (m)
+  ar: بْتِسَافِر
+  transliteration: "btisafir"
+  ru: она летит / ты летишь (м)
+- en: he travels
+  ar: بْيِسَافِر
+  transliteration: "byisafir"
+  ru: он летит / путешествует
+
+- en: she waits / you wait (m)
+  ar: بْتَسْتَنَّى
+  transliteration: "btastanna"
+  ru: она ждёт / ты ждёшь (м)
+- en: he waits
+  ar: بْيَسْتَنَّى
+  transliteration: "byastanna"
+  ru: он ждёт
+
+- en: she loves / you love (m)
+  ar: بْتِحِبّ
+  transliteration: "btihibb"
+  ru: она любит / ты любишь (м)
+- en: he loves
+  ar: بْيِحِبّ
+  transliteration: "byihibb"
+  ru: он любит
+
+- en: she checks / you check (m)
+  ar: بْتِفْحَص
+  transliteration: "btifhas"
+  ru: она проверяет / ты проверяешь (м)
+- en: he checks
+  ar: بْيِفْحَص
+  transliteration: "byifhas"
+  ru: он проверяет
+
+- en: she goes / you go (m)
+  ar: بْتِرُوح
+  transliteration: "btiruh"
+  ru: она идёт / ты идёшь (м)
+- en: he goes
+  ar: بْيِرُوح
+  transliteration: "byiruh"
+  ru: он идёт
+
+
+- en: big (m)
+  ar: كَبِير
+  transliteration: "kabir"
+  ru: большой
+- en: big (f)
+  ar: كَبِيرَة
+  transliteration: "kabira"
+  ru: большая
+
+- en: delicious (m)
+  ar: زَاكِي
+  transliteration: "zaki"
+  ru: вкусный
+- en: delicious (f)
+  ar: زَكِيَّة
+  transliteration: "zakiyya"
+  ru: вкусная
+
+- en: salty (m)
+  ar: مَالِح
+  transliteration: "malih"
+  ru: солёный
+- en: salty (f)
+  ar: مَالْحَة
+  transliteration: "malha"
+  ru: солёная
+
+- en: sour (m)
+  ar: حَامِض
+  transliteration: "hamid"
+  ru: кислый
+- en: sour (f)
+  ar: حَامْضَة
+  transliteration: "hamda"
+  ru: кислая
+
+- en: hungry (m)
+  ar: جُوعَان
+  transliteration: "ju'an"
+  ru: голодный
+- en: hungry (f)
+  ar: جُوعَانَة
+  transliteration: "ju'ana"
+  ru: голодная
+
+- en: clean (m)
+  ar: نَظِيف
+  transliteration: "nazif"
+  ru: чистый
+- en: clean (f)
+  ar: نَظِيفَة
+  transliteration: "nazifa"
+  ru: чистая
+
+- en: late (m)
+  ar: مْتَأَخِّر
+  transliteration: "mt'akhkhir"
+  ru: опоздавший
+- en: late (f)
+  ar: مْتَأَخِّرَة
+  transliteration: "mt'akhkhira"
+  ru: опоздавшая
+
+- en: reserved (m)
+  ar: مَحْجُوز
+  transliteration: "mahjuz"
+  ru: занятый
+- en: reserved (f)
+  ar: مَحْجُوزَة
+  transliteration: "mahjuza"
+  ru: занятая
+
+- en: free / empty (m)
+  ar: فَاضِي
+  transliteration: "fadi"
+  ru: свободный
+- en: free / empty (f)
+  ar: فَاضْيَة
+  transliteration: "fadya"
+  ru: свободная
+
 - en: happy (m)
-  ar: سعيد
-  transliteration: sa'id
+  ar: سَعِيد
+  transliteration: "sa'id"
   ru: счастливый
-- en: beautiful (m)
-  ar: جميل
-  transliteration: jamil
-  ru: красивый
-- en: kind (m)
-  ar: طيب
-  transliteration: tayyib
-  ru: добрый
-- en: elevated (m)
-  ar: عالي
-  transliteration: ali
-  ru: возвышенный
-- en: calm (m)
-  ar: هادي
-  transliteration: hadi
-  ru: спокойный
-- en: generous (m)
-  ar: كريم
-  transliteration: karim
-  ru: щедрый
-- en: faithful (m)
-  ar: أمين
-  transliteration: amin
-  ru: верный
-- en: understanding (m)
-  ar: فهيم
-  transliteration: fahim
-  ru: понимающий
-- en: man / guy
-  ar: زلمة
-  transliteration: zalama
-  ru: человек / мужчина
-- en: employee (m)
-  ar: موظف
-  transliteration: muwazzaf
-  ru: сотрудник / работник
-- en: bright / shining (m)
-  ar: منير
-  transliteration: munir
-  ru: яркий / светлый
-- en: strong (m)
-  ar: شديد
-  transliteration: shadid
-  ru: крепкий
-- en: flower
-  ar: زهرة
-  transliteration: zahra
-  ru: цветок
-- en: rose
-  ar: وردة
-  transliteration: warda
-  ru: роза
-- en: star
-  ar: نجمة
-  transliteration: najma
-  ru: звезда
-- en: glow
-  ar: نور
-  transliteration: nur
-  ru: сияние
-- en: sun
-  ar: شمس
-  transliteration: shams
-  ru: солнце
-- en: pure (f)
-  ar: صافية
-  transliteration: safiya
-  ru: ясная
-- en: moon
-  ar: قمر
-  transliteration: qamar
-  ru: луна
-- en: pearl
-  ar: لؤلؤة
-  transliteration: lu'lu'a
-  ru: жемчужина
-- en: generous (f)
-  ar: كريمة
-  transliteration: karima
-  ru: щедрая
-- en: beautiful (f)
-  ar: جميلة
-  transliteration: jamila
-  ru: красивая
 - en: happy (f)
-  ar: سعيدة
-  transliteration: sa'ida
+  ar: سَعِيدَة
+  transliteration: "sa'ida"
   ru: счастливая
-- en: kind (f)
-  ar: طيبة
-  transliteration: tayyiba
-  ru: добрая
-sentences:
-- en: this man is very happy
-  ar: هذا الزلمة سعيد كثير
-  transliteration: hadha az-zalama sa'id kathir
-  ru: этот человек очень счастливый
-- en: your friend is very handsome
-  ar: صاحبك جميل كثير
-  transliteration: sahbak jamil kathir
-  ru: твой друг очень красивый
-- en: my brother is very kind
-  ar: أخوي طيب كثير
-  transliteration: akhuy tayyib kathir
-  ru: мой брат очень добрый
-- en: this boy is very tall
-  ar: هذا الولد طويل كثير
-  transliteration: hadha al-walad tawil kathir
-  ru: этот парень очень высокий
-- en: the sea today is very calm
-  ar: البحر اليوم هادي كثير
-  transliteration: al-bahr al-yom hadi kathir
-  ru: море сегодня очень спокойное
-- en: your father is very generous
-  ar: أبوك كريم كثير
-  transliteration: abuk karim kathir
-  ru: твой отец очень щедрый
-- en: this employee is very loyal
-  ar: هذا الموظف أمين كثير
-  transliteration: hadha al-muwazzaf amin kathir
-  ru: этот сотрудник очень верный
-- en: my son is very smart
-  ar: ابني فهيم كثير
-  transliteration: ibni fahim kathir
-  ru: мой сын очень умный
-- en: this man is very kind
-  ar: هذا الزلمة طيب كثير
-  transliteration: hadha az-zalama tayyib kathir
-  ru: этот человек очень добрый
-- en: your room is very bright
-  ar: غرفتك منيرة كثير
-  transliteration: ghurfatak munira kathir
-  ru: твоя комната очень светлая
-- en: this coffee is very strong
-  ar: هذه القهوة شديدة كثير
-  transliteration: hadhihi al-qahwa shadida kathir
-  ru: этот кофе очень крепкий
-- en: our neighbor is very calm
-  ar: جارنا هادي كثير
-  transliteration: jarna hadi kathir
-  ru: наш сосед очень спокойный
-- en: this flower is very beautiful
-  ar: هذه الزهرة جميلة كثير
-  transliteration: hadhihi az-zahra jamila kathir
-  ru: этот цветок очень красивый
-- en: the sun today is very hot
-  ar: الشمس اليوم سخنة كثير
-  transliteration: ash-shams al-yom sukhna kathir
-  ru: солнце сегодня очень жаркое
-- en: this star is very bright
-  ar: هذه النجمة منيرة كثير
-  transliteration: hadhihi an-najma munira kathir
-  ru: эта звезда очень яркая
-- en: this rose is very beautiful
-  ar: هذه الوردة جميلة كثير
-  transliteration: hadhihi al-warda jamila kathir
-  ru: эта роза очень красивая
-- en: the sky today is very clear
-  ar: السماء اليوم صافية كثير
-  transliteration: as-sama al-yom safiya kathir
-  ru: небо сегодня очень чистое
-- en: your sister is very happy
-  ar: أختك سعيدة كثير
-  transliteration: ukhtak sa'ida kathir
-  ru: твоя сестра очень счастливая
-- en: my mom is very kind
-  ar: أمي طيبة كثير
-  transliteration: ummi tayyiba kathir
-  ru: моя мама очень добрая
-- en: the moon today is very beautiful
-  ar: القمر اليوم جميل كثير
-  transliteration: al-qamar al-yom jamil kathir
-  ru: луна сегодня очень красивая
-- en: this woman is very generous
-  ar: هذه المرة كريمة كثير
-  transliteration: hadhihi al-mara karima kathir
-  ru: эта женщина очень щедрая
+
+- en: new (m)
+  ar: جَدِيد
+  transliteration: "jadid"
+  ru: новый
+- en: new (f)
+  ar: جَدِيدَة
+  transliteration: "jadida"
+  ru: новая
+
+- en: old (m)
+  ar: قَدِيم
+  transliteration: "qadim"
+  ru: старый
+- en: old (f)
+  ar: قَدِيمَة
+  transliteration: "qadima"
+  ru: старая
+
+- en: name
+  ar: اِسْم
+  transliteration: "ism"
+  ru: имя
+- en: names
+  ar: أَسْمَاء
+  transliteration: "asma'"
+  ru: имена
+
+- en: profession
+  ar: مِهْنَة
+  transliteration: "mihna"
+  ru: профессия
+- en: professions
+  ar: مِهَن
+  transliteration: "mihan"
+  ru: профессии
+
+- en: programmer
+  ar: مُبَرْمِج
+  transliteration: "mubarmij"
+  ru: программист
+- en: programmers
+  ar: مُبَرْمِجِين
+  transliteration: "mubarmijin"
+  ru: программисты
+
+- en: engineer
+  ar: مُهَنْدِس
+  transliteration: "muhandis"
+  ru: инженер
+- en: engineers
+  ar: مُهَنْدِسِين
+  transliteration: "muhandisin"
+  ru: инженеры
+
+- en: country / state
+  ar: دَوْلَة
+  transliteration: "dawla"
+  ru: страна / государство
+- en: countries
+  ar: دُوَل
+  transliteration: "duwal"
+  ru: страны
+
+- en: family
+  ar: عَيْلَة
+  transliteration: "'ayla"
+  ru: семья
+- en: families
+  ar: عِيَل
+  transliteration: "'iyal"
+  ru: семьи
+
+- en: father
+  ar: أَب
+  transliteration: "ab"
+  ru: отец
+- en: fathers
+  ar: أَبَهَات
+  transliteration: "abahat"
+  ru: отцы
+
+- en: dress
+  ar: فُسْتَان
+  transliteration: "fustan"
+  ru: платье
+- en: dresses
+  ar: فَسَاتِين
+  transliteration: "fasatin"
+  ru: платья
+
+- en: seat
+  ar: مَقْعَد
+  transliteration: "maq'ad"
+  ru: место
+- en: seats
+  ar: مَقَاعِد
+  transliteration: "maqa'id"
+  ru: места
+
+- en: chair
+  ar: كُرْسِي
+  transliteration: "kursi"
+  ru: стул
+- en: chairs
+  ar: كَرَاسِي
+  transliteration: "karasi"
+  ru: стулья
+
+- en: word
+  ar: كَلِمَة
+  transliteration: "kalima"
+  ru: слово
+- en: words
+  ar: كَلِمَات
+  transliteration: "kalimat"
+  ru: слова
+
+- en: bag / suitcase
+  ar: شَنْتَة
+  transliteration: "shanta"
+  ru: сумка / чемодан
+- en: bags
+  ar: شُنَط
+  transliteration: "shunat"
+  ru: сумки
+
+- en: students
+  ar: طُلَّاب
+  transliteration: "tullab"
+  ru: студенты
+
+- en: car
+  ar: سَيَّارَة
+  transliteration: "sayyara"
+  ru: автомобиль
+- en: cars
+  ar: سَيَّارَات
+  transliteration: "sayyarat"
+  ru: автомобили
+
+- en: friend
+  ar: صَاحِب
+  transliteration: "sahib"
+  ru: друг
+- en: friends
+  ar: صُحَاب
+  transliteration: "suhab"
+  ru: друзья
+
+- en: restaurants
+  ar: مَطَاعِم
+  transliteration: "mata'im"
+  ru: рестораны
+
+- en: planes
+  ar: طَيَّارَات
+  transliteration: "tayyarat"
+  ru: самолёты
+
+sentences: []

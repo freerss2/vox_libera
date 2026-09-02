@@ -23,246 +23,300 @@ explanations:
     Афш '''عفش''': Очень популярное слово для обозначения багажа в целом (вещей, которые вы сдаете).
 
     Фади / Махджуз: Эти два слова спасут вас, если нужно понять, свободно ли место в зале ожидания или в самолете.
+
 story:
   en:
-  - ar: رحلتي بكير ولازم أروح على المطار الآن.
-    en: My flight is early and I must go to the airport now.
-    transliteration: Rihlati bakir wa lazim aruh alal-matar al-an.
-  - ar: وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟
-    en: Where is my seat? Is this chair empty or reserved?
-    transliteration: Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-  - ar: بدي بطاقة الصعود وجواز السفر لو سمحت.
-    en: I want the boarding pass and the passport please.
-    transliteration: Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-  - ar: عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.
-    en: I have excess weight in the big bag and I want to pay here.
-    transliteration: Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-  - ar: طير السعادة! جاري العزيز كمان بيسافر معي اليوم.
-    en: Flying of happiness! My dear neighbor also travels with me today.
-    transliteration: Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
+    - ar: رِحْلْتِي بَكِّير وِلَازِم أَرُوح عَلَى الْمَطَار هَلَّق.
+      en: My flight is early and I must go to the airport now.
+      transliteration: Rihlati bakir wa lazim aruh alal-matar hallaq.
+    - ar: وَيْن الْمَقْعَد تَبَعِي؟ هَاد الْكُرْسِي فَاضِي وَلَّا مَحْجُوز؟
+      en: Where is my seat? Is this chair empty or reserved?
+      transliteration: "Wayn al-maq'ad tabai? Had al-kursi fadi walla mahjuz?"
+    - ar: بِدِّي بِطَاقَة الصُّعُود وَجَوَاز السَّفَر لَوْ سَمَحْت.
+      en: I need the boarding pass and the passport, please.
+      transliteration: "Biddi bitaqat as-su'ud wa jawaz as-safar law samaht."
+    - ar: عِنْدِي وَزْن زَايِد بِالشَّنْطَة الْكَبِيرَة وِبِدِّي أَدْفَع هُون.
+      en: I have excess weight in the big bag and I want to pay here.
+      transliteration: Indi wazn zayid bish-shanta al-kabira wa biddi adfa hon.
+    - ar: رِحْلَة سَعِيدَة! جَارِي الْعَزِيز كَمَان بْيِسَافِر مَعِي الْيَوْم.
+      en: Have a nice flight! My dear neighbor is also traveling with me today.
+      transliteration: "Rihla sa'ida! Jari al-aziz kaman byisafir ma'i al-yom."
   ru:
-  - ar: رحلتي بكير ولازم أروح على المطار الآن.
-    ru: Мой рейс рано утром, и мне нужно ехать в аэропорт прямо сейчас.
-    transliteration: Rihlati bakir wa lazim aruh alal-matar al-an.
-  - ar: وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟
-    ru: Где моё место? Это место свободно или занято?
-    transliteration: Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-  - ar: بدي بطاقة الصعود وجواز السفر لو سمحت.
-    ru: Предъявите пожалуйста посадочный талон и паспорт.
-    transliteration: Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-  - ar: عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا.
-    ru: У меня лишний вес в багаже, и я хочу оплатить здесь.
-    transliteration: Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-  - ar: طير السعادة! جاري العزيز كمان بيسافر معي اليوم.
-    ru: Счастливого полёта! Мой дорогой сосед тоже путешествует со мной сегодня.
-    transliteration: Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.
+    - ar: رِحْلْتِي بَكِّير وِلَازِم أَرُوح عَلَى الْمَطَار هَلَّق.
+      ru: Мой рейс рано утром, и мне нужно ехать в аэропорт прямо сейчас.
+      transliteration: Rihlati bakir wa lazim aruh alal-matar hallaq.
+    - ar: وَيْن الْمَقْعَد تَبَعِي؟ هَاد الْكُرْسِي فَاضِي وَلَّا مَحْجُوز؟
+      ru: Где моё место? Это сиденье свободно или занято?
+      transliteration: "Wayn al-maq'ad tabai? Had al-kursi fadi walla mahjuz?"
+    - ar: بِدِّي بِطَاقَة الصُّعُود وَجَوَاز السَّفَر لَوْ سَمَحْت.
+      ru: Мне нужен ваш посадочный талон и загранпаспорт, пожалуйста.
+      transliteration: "Biddi bitaqat as-su'ud wa jawaz as-safar law samaht."
+    - ar: عِنْدِي وَزْن زَايِد بِالشَّنْطَة الْكَبِيرَة وِبِدِّي أَدْفَع هُون.
+      ru: У меня перевес в большом чемодане, и я хочу оплатить здесь.
+      transliteration: Indi wazn zayid bish-shanta al-kabira wa biddi adfa hon.
+    - ar: رِحْلَة سَعِيدَة! جَارِي الْعَزِيز كَمَان بْيِسَافِر مَعِي الْيَوْم.
+      ru: Счастливого полёта! Мой дорогой сосед тоже летит со мной сегодня.
+      transliteration: "Rihla sa'ida! Jari al-aziz kaman byisafir ma'i al-yom."
+
 words:
+# places
 - en: airport
-  ar: مطار
-  transliteration: matar
+  ar: مَطَار
+  transliteration: "matar"
   ru: аэропорт
-- en: flight
-  ar: رحلة
-  transliteration: rihla
-  ru: рейс
+- en: flight / trip
+  ar: رِحْلَة
+  transliteration: "rihle"
+  ru: рейс / поездка
 - en: gate
-  ar: بوابة
-  transliteration: bawwaba
-  ru: выход
+  ar: بَوَّابَة
+  transliteration: "bawwaba"
+  ru: выход на посадку
+- en: boarding
+  ar: صُعُود
+  transliteration: "su'ud"
+  ru: посадка
 - en: boarding pass
-  ar: بطاقة صعود
-  transliteration: bitaqat su'ud
+  ar: بِطَاقَة صُعُود
+  transliteration: "bitaqat su'ud"
   ru: посадочный талон
+- en: seat
+  ar: مَقْعَد
+  transliteration: "maq'ad"
+  ru: место
+- en: chair / seat
+  ar: كُرْسِي
+  transliteration: "kursi"
+  ru: кресло / стул
+- en: window
+  ar: شُبَّاك
+  transliteration: "shubbak"
+  ru: окно
+- en: aisle / passage
+  ar: مَمَرّ
+  transliteration: "mamarr"
+  ru: проход / коридор
+- en: customs
+  ar: جَمَارِك
+  transliteration: "jamarik"
+  ru: таможня
+- en: security
+  ar: أَمْن
+  transliteration: "amn"
+  ru: безопасность
+- en: inspection / search
+  ar: تَفْتِيش
+  transliteration: "taftish"
+  ru: досмотр
+
+# Luggage
 - en: luggage
-  ar: عفش
-  transliteration: afsh
+  ar: عَفْش
+  transliteration: "'afsh"
   ru: багаж
 - en: suitcase
-  ar: شنطة سفر
-  transliteration: shantat safar
+  ar: شَنْتَة سَفَر
+  transliteration: "shantat safar"
   ru: чемодан
 - en: hand luggage
-  ar: حقيبة يد
-  transliteration: haqibat yad
+  ar: شَنْتَة إِيد
+  transliteration: "shantat id"
   ru: ручная кладь
 - en: weight
-  ar: وزن
-  transliteration: wazn
+  ar: وَزْن
+  transliteration: "wazn"
   ru: вес
 - en: excess weight
-  ar: وزن زايد
-  transliteration: wazn zayid
+  ar: وَزْن زَايِد
+  transliteration: "wazn zayid"
   ru: перевес
+
+# Transport and personnel
+- en: plane
+  ar: طَيَّارَة
+  transliteration: "tayyara"
+  ru: самолёт
+- en: pilot
+  ar: طَيَّار
+  transliteration: "tayyar"
+  ru: пилот
+- en: security officer
+  ar: ضَابِط أَمْن
+  transliteration: "dabit amn"
+  ru: офицер безопасности
+- en: neighbor
+  ar: جَار
+  transliteration: "jar"
+  ru: сосед
+- en: ticket
+  ar: تَذْكَرَة
+  transliteration: "tazkara"
+  ru: билет
+
+# Descriptions
 - en: delay
-  ar: تأخير
-  transliteration: ta'khir
+  ar: تَأْخِير
+  transliteration: "ta'khir"
   ru: задержка
-- en: queue
-  ar: دور
-  transliteration: dor
+- en: queue / turn
+  ar: دَوْر
+  transliteration: "dor"
   ru: очередь
-- en: customs
-  ar: جمارك
-  transliteration: jamarik
-  ru: таможня
-- en: seat
-  ar: مقعد
-  transliteration: maq'ad
-  ru: место
-- en: window
-  ar: شباك
-  transliteration: shubbak
-  ru: окно
-- en: aisle
-  ar: ممر
-  transliteration: mamarr
-  ru: коридор
-- en: free
-  ar: فاضي
-  transliteration: fadi
+- en: late
+  ar: مْتَأَخِّر
+  transliteration: "mt'akhkhir"
+  ru: опоздавший
+- en: free / empty
+  ar: فَاضِي
+  transliteration: "fadi"
   ru: свободный
 - en: reserved
-  ar: محجوز
-  transliteration: mahjuz
+  ar: مَحْجُوز
+  transliteration: "mahjuz"
   ru: занятый
-- en: plane
-  ar: طيارة
-  transliteration: tayyara
-  ru: самолет
-- en: pilot
-  ar: طيار
-  transliteration: tayyar
-  ru: пилот
-- en: ticket
-  ar: تذكرة
-  transliteration: tadhkira
-  ru: билет
-- en: late
-  ar: متأخر
-  transliteration: muta'akhkhir
-  ru: опоздавший
-- en: security
-  ar: أمن
-  transliteration: amn
-  ru: безопасность
-- en: searching
-  ar: تفتيش
-  transliteration: taftish
-  ru: досмотр
+- en: excess / extra
+  ar: زَايِد
+  transliteration: "zayid"
+  ru: лишний / избыточный
+- en: dear
+  ar: عَزِيز
+  transliteration: "'aziz"
+  ru: дорогой
+- en: have a nice flight!
+  ar: رِحْلَة سَعِيدَة
+  transliteration: "rihle sa'ide"
+  ru: счастливого полёта!
+
+# Directions
 - en: where
-  ar: وين
-  transliteration: wayn
+  ar: وِين
+  transliteration: "wen"
   ru: где?
 - en: here
-  ar: هنا
-  transliteration: huna
+  ar: هُون
+  transliteration: "hon"
   ru: здесь
 - en: next to
-  ar: جنب
-  transliteration: janb
+  ar: جَنْب
+  transliteration: "janb"
   ru: возле
-- en: i travel
-  ar: بسافر
-  transliteration: basafir
-  ru: я лечу
+
+# Verbs
+- en: i travel / fly
+  ar: بَسَافِر
+  transliteration: "basafir"
+  ru: я лечу / путешествую
+- en: he travels
+  ar: بْيِسَافِر
+  transliteration: "byisafir"
+  ru: он летит / путешествует
 - en: i wait
-  ar: بستنى
-  transliteration: bastanna
+  ar: بَسْتَنَّى
+  transliteration: "bastanna"
   ru: я жду
+- en: we wait
+  ar: بْنَسْتَنَّى
+  transliteration: "bnastanna"
+  ru: мы ждём
 - en: he checks
-  ar: بيفحص
-  transliteration: bifhas
+  ar: بْيِفْحَص
+  transliteration: "byifhas"
   ru: он проверяет
+- en: show me
+  ar: وَرَّجِينِي
+  transliteration: "warrajini"
+  ru: покажи мне
+
 sentences:
 - en: where is the airport
-  ar: وين المطار
-  transliteration: wayn al-matar
+  ar: وِين الْمَطَار؟
+  transliteration: wen il-matar?
   ru: где аэропорт
 - en: my flight is late today
-  ar: رحلتي متأخرة اليوم
-  transliteration: rihlati muta'akhkhira al-yom
+  ar: رِحْلْتِي مْتَأَخِّرَة الْيَوْم
+  transliteration: "rihlti mt'akhkhra il-yom"
   ru: мой рейс сегодня задерживается
 - en: i want the boarding pass please
-  ar: بدي بطاقة الصعود لو سمحت
-  transliteration: biddi bitaqat as-su'ud law samaht
+  ar: بِدِّي بِطَاقَة الصُّعُود لَوْ سَمَحْت
+  transliteration: "biddi bitaqat is-su'ud law samaht"
   ru: я хочу посадочный талон пожалуйста
 - en: where is the boarding gate
-  ar: وين بوابة الصعود
-  transliteration: wayn bawwabat as-su'ud
+  ar: وِين بَوَّابَة الصُّعُود؟
+  transliteration: "wen bawwabat is-su'ud?"
   ru: где выход на посадку
 - en: i have excess weight in the suitcase
-  ar: عندي وزن زايد في شنطة السفر
-  transliteration: indi wazn zayid fi shantat as-safar
+  ar: عِنْدِي وَزْن زَايِد بِشَنْتَة السَّفَر
+  transliteration: "'indi wazn zayid bish-shantat is-safar"
   ru: у меня перевес в чемодане
 - en: the hand luggage is here
-  ar: حقيبة اليد هنا
-  transliteration: haqibat al-yad huna
+  ar: شَنْتَة الإِيد هُون
+  transliteration: shantat il-id hon
   ru: ручная кладь здесь
 - en: the security officer checks the passport
-  ar: ضابط الأمن بيفحص جواز السفر
-  transliteration: dabit al-amn bifhas jawaz as-safar
+  ar: ضَابِط الأَمْن بْيِفْحَص جَوَاز السَّفَر
+  transliteration: dabit il-amn byifhas jawaz is-safar
   ru: офицер безопасности проверяет паспорт
 - en: there is a big queue in customs
-  ar: في دور كبير في الجمارك
-  transliteration: fi dor kabir fil-jamarik
+  ar: فِيه دَوْر كْبِير بِالْجَمَارِك
+  transliteration: fih dor kbir bil-jamarik
   ru: на таможне большая очередь
 - en: i wait for my luggage here
-  ar: بستنى العفش تبعي هنا
-  transliteration: bastanna al-afsh tabai huna
+  ar: بَسْتَنَّى الْعَفْش تَبَعِي هُون
+  transliteration: "bastanna il-'afsh taba'i hon"
   ru: я жду свой багаж здесь
 - en: is this seat free
-  ar: هذا المقعد فاضي
-  transliteration: hada al-maq'ad fadi
+  ar: هَاد الْمَقْعَد فَاضِي؟
+  transliteration: "had il-maq'ad fadi?"
   ru: это место свободное
 - en: is this chair free
-  ar: هذا الكرسي فاضي
-  transliteration: hada al-kursi fadi
+  ar: هَاد الْكُرْسِي فَاضِي؟
+  transliteration: had il-kursi fadi?
   ru: это кресло свободное
 - en: this seat next to me is reserved
-  ar: هذا المقعد جنبي محجوز
-  transliteration: hada al-maq'ad janbi mahjuz
+  ar: هَاد الْمَقْعَد جَنْبِي مَحْجُوز
+  transliteration: "had il-maq'ad janbi mahjuz"
   ru: это место рядом со мной занято
 - en: i want a seat next to the window
-  ar: بدي مقعد جنب الشباك
-  transliteration: biddi maq'ad janb ash-shubbak
+  ar: بِدِّي مَقْعَد جَنْب الشُّبَّاك
+  transliteration: "biddi maq'ad janb ish-shubbak"
   ru: я хочу место у окна
 - en: where is the aisle seat
-  ar: وين المقعد في الممر
-  transliteration: wayn al-maq'ad fil-mamarr
+  ar: وِين الْمَقْعَد بِالْمَمَرّ؟
+  transliteration: "wen il-maq'ad bil-mamarr?"
   ru: где место у прохода
 - en: i fly to russia tomorrow
-  ar: بسافر على روسيا بكرة
-  transliteration: basafir ala rusiya bukra
+  ar: بَسَافِر عَ رُوسْيَا بُكْرَة
+  transliteration: "basafir 'a-rusiya bukra"
   ru: я лечу в россию завтра
 - en: where is the customs inspection
-  ar: وين تفتيش الجمارك
-  transliteration: wayn taftish al-jamarik
+  ar: وِين تَفْتِيش الْجَمَارِك؟
+  transliteration: wen taftish il-jamarik?
   ru: где таможенный досмотр
 - en: the plane is very big
-  ar: الطيارة كبيرة كثير
-  transliteration: at-tayyara kabira kathir
+  ar: الطَّيَّارَة كْبِيرَة كْتِير
+  transliteration: it-tayyara kbira ktir
   ru: самолет очень большой
 - en: the pilot is in the plane now
-  ar: الطيار في الطيارة الآن
-  transliteration: at-tayyar fit-tayyara al-an
+  ar: الطَّيَّار بِالطَّيَّارَة هَلَّأ
+  transliteration: "it-tayyar bit-tayyara halla'"
   ru: пилот сейчас в самолете
 - en: where is my suitcase
-  ar: وين شنطة السفر تبعتي
-  transliteration: wayn shantat safari tabati
+  ar: وِين شَنْتَة السَّفَر تَبَعْتِي؟
+  transliteration: "wen shantat is-safar taba'ti?"
   ru: где мой чемодан
 - en: i am late for the flight
-  ar: أنا متأخر على الرحلة
-  transliteration: ana muta'akhkhir alar-rihla
+  ar: أَنَا مْتَأَخِّر عَ الرِّحْلَة
+  transliteration: "ana mt'akhkhir 'a-r-rihle"
   ru: я опаздываю на рейс
 - en: the delay is from the airport
-  ar: التأخير من المطار
-  transliteration: at-ta'khir min al-matar
+  ar: التَّأْخِير مِنْ الْمَطَار
+  transliteration: "it-ta'khir min il-matar"
   ru: задержка из-за аэропорта
 - en: show me the passport please
-  ar: ورجيني جواز السفر لو سمحت
-  transliteration: warjini jawaz as-safar law samaht
+  ar: وَرَّجِينِي جَوَاز السَّفَر لَوْ سَمَحْت
+  transliteration: warrajini jawaz is-safar law samaht
   ru: покажи мне паспорт пожалуйста
 - en: we wait in the queue now
-  ar: بنستنى في الدور الآن
-  transliteration: bnastanna fid-dor al-an
+  ar: بْنَسْتَنَّى بِالدَّوْر هَلَّأ
+  transliteration: "bnastanna bid-dor halla'"
   ru: мы ждем в очереди сейчас

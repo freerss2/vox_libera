@@ -1158,8 +1158,8 @@ Note the word "halva" - it shares a root with both "sweet" and "dessert."
       ],
       [
         "bon appetit",
-        "صحتين@صَحْتَيْن",
-        "sahtein"
+        "صحتين وعافية@صَحْتَيْن وَعَافِيَة",
+        "sahtein w-'afye"
       ],
       [
         "plate",
@@ -1413,276 +1413,1493 @@ Afsh '''عفش''': A very popular word for luggage in general (things you check 
 
 Fadi / Mahjuz: These two words will save you when you need to figure out if a seat is free in a lounge or on a plane.
 `,
-    "story": `##story-line## ''' رحلتي بكير ولازم أروح على المطار الآن. ''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar al-an.
-##story-line## ''' وين المقعد تبعي؟ الكرسي هذا فاضي ولا محجوز؟ ''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Al-kursi hada fadi wala mahjuz?
-##story-line## ''' بدي بطاقة الصعود وجواز السفر لو سمحت. ''' ##story-translation## I want the boarding pass and the passport please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
-##story-line## ''' عندي وزن زايد في الشنطة الكبيرة وبدي أدفع هنا. ''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid fish-shanta al-kabira wa biddi adfa huna.
-##story-line## ''' طير السعادة! جاري العزيز كمان بيسافر معي اليوم. ''' ##story-translation## Flying of happiness! My dear neighbor also travels with me today. ##story-transcr## Tayr as-sa'ada! Jari al-aziz kaman bisafir ma'i al-yom.`,
+    "story": `##story-line## ''' رحلتي بكّير ولازم أروح على المطار هلّق.@رِحْلْتِي بَكِّير وِلَازِم أَرُوح عَلَى الْمَطَار هَلَّق. ''' ##story-translation## My flight is early and I must go to the airport now. ##story-transcr## Rihlati bakir wa lazim aruh alal-matar hallaq.
+##story-line## ''' وين المقعد تبعي؟ هاد الكرسي فاضي ولّا محجوز؟@وَيْن الْمَقْعَد تَبَعِي؟ هَاد الْكُرْسِي فَاضِي وَلَّا مَحْجُوز؟ ''' ##story-translation## Where is my seat? Is this chair empty or reserved? ##story-transcr## Wayn al-maq'ad tabai? Had al-kursi fadi walla mahjuz?
+##story-line## ''' بدّي بطاقة الصّعود وجواز السّفر لو سمحت.@بِدِّي بِطَاقَة الصُّعُود وَجَوَاز السَّفَر لَوْ سَمَحْت. ''' ##story-translation## I need the boarding pass and the passport, please. ##story-transcr## Biddi bitaqat as-su'ud wa jawaz as-safar law samaht.
+##story-line## ''' عندي وزن زايد بالشّنطة الكبيرة وبدّي أدفع هون.@عِنْدِي وَزْن زَايِد بِالشَّنْطَة الْكَبِيرَة وِبِدِّي أَدْفَع هُون. ''' ##story-translation## I have excess weight in the big bag and I want to pay here. ##story-transcr## Indi wazn zayid bish-shanta al-kabira wa biddi adfa hon.
+##story-line## ''' رحلة سعيدة! جاري العزيز كمان بيسافر معي اليوم.@رِحْلَة سَعِيدَة! جَارِي الْعَزِيز كَمَان بْيِسَافِر مَعِي الْيَوْم. ''' ##story-translation## Have a nice flight! My dear neighbor is also traveling with me today. ##story-transcr## Rihla sa'ida! Jari al-aziz kaman byisafir ma'i al-yom.`,
     "words": [
       [
         "airport",
-        "مطار",
+        "مطار@مَطَار",
         "matar"
       ],
       [
-        "flight",
-        "رحلة",
-        "rihla"
+        "flight / trip",
+        "رحلة@رِحْلَة",
+        "rihle"
       ],
       [
         "gate",
-        "بوابة",
+        "بوّابة@بَوَّابَة",
         "bawwaba"
       ],
       [
+        "boarding",
+        "صعود@صُعُود",
+        "su'ud"
+      ],
+      [
         "boarding pass",
-        "بطاقة صعود",
+        "بطاقة صعود@بِطَاقَة صُعُود",
         "bitaqat su'ud"
       ],
       [
+        "seat",
+        "مقعد@مَقْعَد",
+        "maq'ad"
+      ],
+      [
+        "chair / seat",
+        "كرسي@كُرْسِي",
+        "kursi"
+      ],
+      [
+        "window",
+        "شبّاك@شُبَّاك",
+        "shubbak"
+      ],
+      [
+        "aisle / passage",
+        "ممرّ@مَمَرّ",
+        "mamarr"
+      ],
+      [
+        "customs",
+        "جمارك@جَمَارِك",
+        "jamarik"
+      ],
+      [
+        "security",
+        "أمن@أَمْن",
+        "amn"
+      ],
+      [
+        "inspection / search",
+        "تفتيش@تَفْتِيش",
+        "taftish"
+      ],
+      [
         "luggage",
-        "عفش",
-        "afsh"
+        "عفش@عَفْش",
+        "'afsh"
       ],
       [
         "suitcase",
-        "شنطة سفر",
+        "شنتة سفر@شَنْتَة سَفَر",
         "shantat safar"
       ],
       [
         "hand luggage",
-        "حقيبة يد",
-        "haqibat yad"
+        "شنتة إيد@شَنْتَة إِيد",
+        "shantat id"
       ],
       [
         "weight",
-        "وزن",
+        "وزن@وَزْن",
         "wazn"
       ],
       [
         "excess weight",
-        "وزن زايد",
+        "وزن زايد@وَزْن زَايِد",
         "wazn zayid"
       ],
       [
-        "delay",
-        "تأخير",
-        "ta'khir"
-      ],
-      [
-        "queue",
-        "دور",
-        "dor"
-      ],
-      [
-        "customs",
-        "جمارك",
-        "jamarik"
-      ],
-      [
-        "seat",
-        "مقعد",
-        "maq'ad"
-      ],
-      [
-        "window",
-        "شباك",
-        "shubbak"
-      ],
-      [
-        "aisle",
-        "ممر",
-        "mamarr"
-      ],
-      [
-        "free",
-        "فاضي",
-        "fadi"
-      ],
-      [
-        "reserved",
-        "محجوز",
-        "mahjuz"
-      ],
-      [
         "plane",
-        "طيارة",
+        "طيّارة@طَيَّارَة",
         "tayyara"
       ],
       [
         "pilot",
-        "طيار",
+        "طيّار@طَيَّار",
         "tayyar"
       ],
       [
+        "security officer",
+        "ضابط أمن@ضَابِط أَمْن",
+        "dabit amn"
+      ],
+      [
+        "neighbor",
+        "جار@جَار",
+        "jar"
+      ],
+      [
         "ticket",
-        "تذكرة",
-        "tadhkira"
+        "تذكرة@تَذْكَرَة",
+        "tazkara"
+      ],
+      [
+        "delay",
+        "تأخير@تَأْخِير",
+        "ta'khir"
+      ],
+      [
+        "queue / turn",
+        "دور@دَوْر",
+        "dor"
       ],
       [
         "late",
-        "متأخر",
-        "muta'akhkhir"
+        "متأخّر@مْتَأَخِّر",
+        "mt'akhkhir"
       ],
       [
-        "security",
-        "أمن",
-        "amn"
+        "free / empty",
+        "فاضي@فَاضِي",
+        "fadi"
       ],
       [
-        "searching",
-        "تفتيش",
-        "taftish"
+        "reserved",
+        "محجوز@مَحْجُوز",
+        "mahjuz"
+      ],
+      [
+        "excess / extra",
+        "زايد@زَايِد",
+        "zayid"
+      ],
+      [
+        "dear",
+        "عزيز@عَزِيز",
+        "'aziz"
+      ],
+      [
+        "have a nice flight!",
+        "رحلة سعيدة@رِحْلَة سَعِيدَة",
+        "rihle sa'ide"
       ],
       [
         "where",
-        "وين",
-        "wayn"
+        "وين@وِين",
+        "wen"
       ],
       [
         "here",
-        "هنا",
-        "huna"
+        "هون@هُون",
+        "hon"
       ],
       [
         "next to",
-        "جنب",
+        "جنب@جَنْب",
         "janb"
       ],
       [
-        "i travel",
-        "بسافر",
+        "i travel / fly",
+        "بسافر@بَسَافِر",
         "basafir"
       ],
       [
+        "he travels",
+        "بيسافر@بْيِسَافِر",
+        "byisafir"
+      ],
+      [
         "i wait",
-        "بستنى",
+        "بستنّى@بَسْتَنَّى",
         "bastanna"
       ],
       [
+        "we wait",
+        "بنستنّى@بْنَسْتَنَّى",
+        "bnastanna"
+      ],
+      [
         "he checks",
-        "بيفحص",
-        "bifhas"
+        "بيفحص@بْيِفْحَص",
+        "byifhas"
+      ],
+      [
+        "show me",
+        "ورّجيني@وَرَّجِينِي",
+        "warrajini"
       ]
     ],
     "sentences": [
       [
         "where is the airport",
-        "وين المطار",
-        "wayn al-matar"
+        "وين المطار؟@وِين الْمَطَار؟",
+        "wen il-matar?"
       ],
       [
         "my flight is late today",
-        "رحلتي متأخرة اليوم",
-        "rihlati muta'akhkhira al-yom"
+        "رحلتي متأخّرة اليوم@رِحْلْتِي مْتَأَخِّرَة الْيَوْم",
+        "rihlti mt'akhkhra il-yom"
       ],
       [
         "i want the boarding pass please",
-        "بدي بطاقة الصعود لو سمحت",
-        "biddi bitaqat as-su'ud law samaht"
+        "بدّي بطاقة الصّعود لو سمحت@بِدِّي بِطَاقَة الصُّعُود لَوْ سَمَحْت",
+        "biddi bitaqat is-su'ud law samaht"
       ],
       [
         "where is the boarding gate",
-        "وين بوابة الصعود",
-        "wayn bawwabat as-su'ud"
+        "وين بوّابة الصّعود؟@وِين بَوَّابَة الصُّعُود؟",
+        "wen bawwabat is-su'ud?"
       ],
       [
         "i have excess weight in the suitcase",
-        "عندي وزن زايد في شنطة السفر",
-        "indi wazn zayid fi shantat as-safar"
+        "عندي وزن زايد بشنتة السّفر@عِنْدِي وَزْن زَايِد بِشَنْتَة السَّفَر",
+        "'indi wazn zayid bish-shantat is-safar"
       ],
       [
         "the hand luggage is here",
-        "حقيبة اليد هنا",
-        "haqibat al-yad huna"
+        "شنتة الإيد هون@شَنْتَة الإِيد هُون",
+        "shantat il-id hon"
       ],
       [
         "the security officer checks the passport",
-        "ضابط الأمن بيفحص جواز السفر",
-        "dabit al-amn bifhas jawaz as-safar"
+        "ضابط الأمن بيفحص جواز السّفر@ضَابِط الأَمْن بْيِفْحَص جَوَاز السَّفَر",
+        "dabit il-amn byifhas jawaz is-safar"
       ],
       [
         "there is a big queue in customs",
-        "في دور كبير في الجمارك",
-        "fi dor kabir fil-jamarik"
+        "فيه دور كبير بالجمارك@فِيه دَوْر كْبِير بِالْجَمَارِك",
+        "fih dor kbir bil-jamarik"
       ],
       [
         "i wait for my luggage here",
-        "بستنى العفش تبعي هنا",
-        "bastanna al-afsh tabai huna"
+        "بستنّى العفش تبعي هون@بَسْتَنَّى الْعَفْش تَبَعِي هُون",
+        "bastanna il-'afsh taba'i hon"
       ],
       [
         "is this seat free",
-        "هذا المقعد فاضي",
-        "hada al-maq'ad fadi"
+        "هاد المقعد فاضي؟@هَاد الْمَقْعَد فَاضِي؟",
+        "had il-maq'ad fadi?"
       ],
       [
         "is this chair free",
-        "هذا الكرسي فاضي",
-        "hada al-kursi fadi"
+        "هاد الكرسي فاضي؟@هَاد الْكُرْسِي فَاضِي؟",
+        "had il-kursi fadi?"
       ],
       [
         "this seat next to me is reserved",
-        "هذا المقعد جنبي محجوز",
-        "hada al-maq'ad janbi mahjuz"
+        "هاد المقعد جنبي محجوز@هَاد الْمَقْعَد جَنْبِي مَحْجُوز",
+        "had il-maq'ad janbi mahjuz"
       ],
       [
         "i want a seat next to the window",
-        "بدي مقعد جنب الشباك",
-        "biddi maq'ad janb ash-shubbak"
+        "بدّي مقعد جنب الشّبّاك@بِدِّي مَقْعَد جَنْب الشُّبَّاك",
+        "biddi maq'ad janb ish-shubbak"
       ],
       [
         "where is the aisle seat",
-        "وين المقعد في الممر",
-        "wayn al-maq'ad fil-mamarr"
+        "وين المقعد بالممرّ؟@وِين الْمَقْعَد بِالْمَمَرّ؟",
+        "wen il-maq'ad bil-mamarr?"
       ],
       [
         "i fly to russia tomorrow",
-        "بسافر على روسيا بكرة",
-        "basafir ala rusiya bukra"
+        "بسافر ع روسيا بكرة@بَسَافِر عَ رُوسْيَا بُكْرَة",
+        "basafir 'a-rusiya bukra"
       ],
       [
         "where is the customs inspection",
-        "وين تفتيش الجمارك",
-        "wayn taftish al-jamarik"
+        "وين تفتيش الجمارك؟@وِين تَفْتِيش الْجَمَارِك؟",
+        "wen taftish il-jamarik?"
       ],
       [
         "the plane is very big",
-        "الطيارة كبيرة كثير",
-        "at-tayyara kabira kathir"
+        "الطّيّارة كبيرة كتير@الطَّيَّارَة كْبِيرَة كْتِير",
+        "it-tayyara kbira ktir"
       ],
       [
         "the pilot is in the plane now",
-        "الطيار في الطيارة الآن",
-        "at-tayyar fit-tayyara al-an"
+        "الطّيّار بالطّيّارة هلّأ@الطَّيَّار بِالطَّيَّارَة هَلَّأ",
+        "it-tayyar bit-tayyara halla'"
       ],
       [
         "where is my suitcase",
-        "وين شنطة السفر تبعتي",
-        "wayn shantat safari tabati"
+        "وين شنتة السّفر تبعتي؟@وِين شَنْتَة السَّفَر تَبَعْتِي؟",
+        "wen shantat is-safar taba'ti?"
       ],
       [
         "i am late for the flight",
-        "أنا متأخر على الرحلة",
-        "ana muta'akhkhir alar-rihla"
+        "أنا متأخّر ع الرّحلة@أَنَا مْتَأَخِّر عَ الرِّحْلَة",
+        "ana mt'akhkhir 'a-r-rihle"
       ],
       [
         "the delay is from the airport",
-        "التأخير من المطار",
-        "at-ta'khir min al-matar"
+        "التّأخير من المطار@التَّأْخِير مِنْ الْمَطَار",
+        "it-ta'khir min il-matar"
       ],
       [
         "show me the passport please",
-        "ورجيني جواز السفر لو سمحت",
-        "warjini jawaz as-safar law samaht"
+        "ورّجيني جواز السّفر لو سمحت@وَرَّجِينِي جَوَاز السَّفَر لَوْ سَمَحْت",
+        "warrajini jawaz is-safar law samaht"
       ],
       [
         "we wait in the queue now",
-        "بنستنى في الدور الآن",
-        "bnastanna fid-dor al-an"
+        "بنستنّى بالدّور هلّأ@بْنَسْتَنَّى بِالدَّوْر هَلَّأ",
+        "bnastanna bid-dor halla'"
       ]
     ],
     "index": 6
+  },
+  "training_0": {
+    "name": "Practice (intermediate)",
+    "explanations": `### This lesson is designed to consolidate what has been learned.
+Here you'll find exercises that practice grammar and memorize words that are similar in meaning or different variations of the same root.
+Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
+Like flashcards, these exercises don't award success percentages.
+The goal is to practice independently in the game format, but without the risk of losing winning points.
+`,
+    "sort_set": [
+      {
+        "id": "verb_gender_pairs_present_3p",
+        "question1": {},
+        "question2": {},
+        "type": "pairs",
+        "data": [
+          [
+            "بْتِكْتُب",
+            "بْيِكْتُب"
+          ],
+          [
+            "بْتِشْرَب",
+            "بْيِشْرَب"
+          ],
+          [
+            "بْتِعْرِف",
+            "بْيِعْرِف"
+          ],
+          [
+            "بْتِشُوف",
+            "بْيِشُوف"
+          ],
+          [
+            "بْتَأْكُل",
+            "بْيَأْكُل"
+          ],
+          [
+            "بْتِدْفَع",
+            "بْيِدْفَع"
+          ],
+          [
+            "بْتَطْلُب",
+            "بْيَطْلُب"
+          ],
+          [
+            "بْتِسَافِر",
+            "بْيِسَافِر"
+          ],
+          [
+            "بْتَسْتَنَّى",
+            "بْيَسْتَنَّى"
+          ],
+          [
+            "بْتِحِبّ",
+            "بْيِحِبّ"
+          ],
+          [
+            "بْتِفْحَص",
+            "بْيِفْحَص"
+          ],
+          [
+            "بْتِرُوح",
+            "بْيِرُوح"
+          ]
+        ]
+      },
+      {
+        "id": "verb_gender_pairs_imperative",
+        "question1": {},
+        "question2": {},
+        "type": "pairs",
+        "data": [
+          [
+            "اِكْتِبِي",
+            "اِكْتِب"
+          ],
+          [
+            "اِشْرَبِي",
+            "اِشْرَب"
+          ],
+          [
+            "شُوفِي",
+            "شُوف"
+          ],
+          [
+            "تَعَالِي",
+            "تَعَال"
+          ],
+          [
+            "اِدْفَعِي",
+            "اِدْفَع"
+          ],
+          [
+            "اُطْلُبِي",
+            "اُطْلُب"
+          ],
+          [
+            "اِسْتَنِّي",
+            "اِسْتَنَّى"
+          ],
+          [
+            "رُوحِي",
+            "رُوح"
+          ],
+          [
+            "اِعْطِينِي",
+            "اِعْطِينِي"
+          ],
+          [
+            "اِفْحَصِي",
+            "اِفْحَص"
+          ]
+        ]
+      },
+      {
+        "id": "adj_gender_pairs",
+        "question1": {},
+        "question2": {},
+        "type": "pairs",
+        "data": [
+          [
+            "كَبِيرَة",
+            "كَبِير"
+          ],
+          [
+            "زَكِيَّة",
+            "زَاكِي"
+          ],
+          [
+            "مَالْحَة",
+            "مَالِح"
+          ],
+          [
+            "حَامْضَة",
+            "حَامِض"
+          ],
+          [
+            "جُوعَانَة",
+            "جُوعَان"
+          ],
+          [
+            "نَظِيفَة",
+            "نَظِيف"
+          ],
+          [
+            "مْتَأَخِّرَة",
+            "مْتَأَخِّر"
+          ],
+          [
+            "مَحْجُوزَة",
+            "مَحْجُوز"
+          ],
+          [
+            "فَاضْيَة",
+            "فَاضِي"
+          ],
+          [
+            "سَعِيدَة",
+            "سَعِيد"
+          ],
+          [
+            "جَدِيدَة",
+            "جَدِيد"
+          ],
+          [
+            "قَدِيمَة",
+            "قَدِيم"
+          ]
+        ]
+      },
+      {
+        "id": "sort_singular_plural_1",
+        "question1": {},
+        "question2": {},
+        "type": "lists",
+        "data": [
+          [
+            "اِسْم",
+            "مِهْنَة",
+            "مُبَرْمِج",
+            "مُهَنْدِس",
+            "دَوْلَة",
+            "عَيْلَة",
+            "أَب",
+            "فُسْتَان",
+            "مَقْعَد",
+            "كُرْسِي",
+            "كَلِمَة",
+            "شَنْتَة",
+            "طَالِب",
+            "سَيَّارَة",
+            "صَاحِب",
+            "مَطْعَم",
+            "طَيَّارَة"
+          ],
+          [
+            "أَسْمَاء",
+            "مِهَن",
+            "مُبَرْمِجِين",
+            "مُهَنْدِسِين",
+            "دُوَل",
+            "عِيَل",
+            "أَبَهَات",
+            "فَسَاتِين",
+            "مَقَاعِد",
+            "كَرَاسِي",
+            "كَلِمَات",
+            "شُنَط",
+            "طُلَّاب",
+            "سَيَّارَات",
+            "صُحَاب",
+            "مَطَاعِم",
+            "طَيَّارَات"
+          ]
+        ]
+      }
+    ],
+    "pairs_set": [
+      {
+        "title": "Travel & Tourism Family",
+        "id": "root_travel_tourism",
+        "words": [
+          [
+            "travel / traveling",
+            "سفر@سَفَر",
+            "safar"
+          ],
+          [
+            "traveler / passenger",
+            "مسافر@مُسَافِر",
+            "musafir"
+          ],
+          [
+            "tourism",
+            "سياحة@سِيَاحَة",
+            "siyaha"
+          ],
+          [
+            "tourist (m)",
+            "سايح@سَايِح",
+            "sayih"
+          ],
+          [
+            "tourist (f)",
+            "سايحة@سَايْحَة",
+            "sayha"
+          ],
+          [
+            "touristy / touristic",
+            "سياحي@سِيَاحِي",
+            "siyahi"
+          ],
+          [
+            "airplane",
+            "طيّارة@طَيَّارَة",
+            "tayyara"
+          ],
+          [
+            "pilot",
+            "طيّار@طَيَّار",
+            "tayyar"
+          ],
+          [
+            "airport",
+            "مطار@مَطَار",
+            "matar"
+          ],
+          [
+            "aviation / flying",
+            "طيران@طَيَرَان",
+            "tayaran"
+          ],
+          [
+            "he flies",
+            "بيطير@بْيِطِير",
+            "byitir"
+          ]
+        ]
+      },
+      {
+        "title": "Writing & Office Family",
+        "id": "root_write_office",
+        "words": [
+          [
+            "book",
+            "كتاب@كْتَاب",
+            "ktab"
+          ],
+          [
+            "office / desk",
+            "مكتب@مَكْتَب",
+            "maktab"
+          ],
+          [
+            "library / bookstore",
+            "مكتبة@مَكْتَبَة",
+            "maktaba"
+          ],
+          [
+            "writer / author",
+            "كاتب@كَاتِب",
+            "katib"
+          ],
+          [
+            "writing",
+            "كتابة@كِتَابَة",
+            "kitaba"
+          ],
+          [
+            "i write",
+            "بكتب@بَكْتُب",
+            "baktub"
+          ],
+          [
+            "lesson",
+            "درس@دَرْس",
+            "dars"
+          ],
+          [
+            "studies / studying",
+            "دراسة@دِرَاسَة",
+            "dirasa"
+          ],
+          [
+            "school",
+            "مدرسة@مَدْرَسَة",
+            "madrasa"
+          ],
+          [
+            "teacher",
+            "مدرّس@مُدَرِّس",
+            "mudarris"
+          ],
+          [
+            "teacher (f)",
+            "مدرّسة@مُدَرِّسَة",
+            "mudarrisa"
+          ],
+          [
+            "i study",
+            "بدرس@بَدْرُس",
+            "badrus"
+          ]
+        ]
+      },
+      {
+        "title": "Cooking & Kitchen Family",
+        "id": "root_cooking_kitchen",
+        "words": [
+          [
+            "kitchen",
+            "مطبخ@مَطْبَخ",
+            "matbakh"
+          ],
+          [
+            "cook / chef",
+            "طبّاخ@طَبَّاخ",
+            "tabbakh"
+          ],
+          [
+            "cooked dish",
+            "طبخة@طَبْخَة",
+            "tabkha"
+          ],
+          [
+            "i cook",
+            "بطبخ@بَطْبُخ",
+            "batbukh"
+          ],
+          [
+            "cooked",
+            "مطبوخ@مَطْبُوخ",
+            "matbukh"
+          ],
+          [
+            "food",
+            "أكل@أَكِل",
+            "akil"
+          ],
+          [
+            "i eat",
+            "باكل@بَاكُل",
+            "bakul"
+          ],
+          [
+            "restaurant",
+            "مطعم@مَطْعَم",
+            "mat'am"
+          ],
+          [
+            "taste / flavor",
+            "طعمة@طَعْمَة",
+            "ta'ma"
+          ],
+          [
+            "foodie / glutton",
+            "أكّال@أَكَّال",
+            "akkal"
+          ]
+        ]
+      },
+      {
+        "title": "Work & Busyness Family",
+        "id": "root_work_busy",
+        "words": [
+          [
+            "work / job",
+            "شغل@شُغُل",
+            "shughul"
+          ],
+          [
+            "i work",
+            "بشتغل@بَشْتِغِل",
+            "bashtighil"
+          ],
+          [
+            "busy (m)",
+            "مشغول@مَشْغُول",
+            "mashghul"
+          ],
+          [
+            "busy (f)",
+            "مشغولة@مَشْغُولَة",
+            "mashghula"
+          ],
+          [
+            "working / functioning",
+            "شغّال@شَغَّال",
+            "shagghal"
+          ],
+          [
+            "order / request",
+            "طلب@طَلَب",
+            "talab"
+          ],
+          [
+            "student (m)",
+            "طالب@طَالِب",
+            "talib"
+          ],
+          [
+            "student (f)",
+            "طالبة@طَالْبَة",
+            "talba"
+          ],
+          [
+            "i order",
+            "بطلب@بَطْلُب",
+            "batlub"
+          ],
+          [
+            "required / wanted",
+            "مطلوب@مَطْلُوب",
+            "matlub"
+          ]
+        ]
+      }
+    ],
+    "words": [
+      [
+        "travel / traveling",
+        "سفر@سَفَر",
+        "safar"
+      ],
+      [
+        "traveler / passenger",
+        "مسافر@مُسَافِر",
+        "musafir"
+      ],
+      [
+        "tourism",
+        "سياحة@سِيَاحَة",
+        "siyaha"
+      ],
+      [
+        "tourist (m)",
+        "سايح@سَايِح",
+        "sayih"
+      ],
+      [
+        "tourist (f)",
+        "سايحة@سَايْحَة",
+        "sayha"
+      ],
+      [
+        "touristy / touristic",
+        "سياحي@سِيَاحِي",
+        "siyahi"
+      ],
+      [
+        "airplane",
+        "طيّارة@طَيَّارَة",
+        "tayyara"
+      ],
+      [
+        "pilot",
+        "طيّار@طَيَّار",
+        "tayyar"
+      ],
+      [
+        "airport",
+        "مطار@مَطَار",
+        "matar"
+      ],
+      [
+        "aviation / flying",
+        "طيران@طَيَرَان",
+        "tayaran"
+      ],
+      [
+        "he flies",
+        "بيطير@بْيِطِير",
+        "byitir"
+      ],
+      [
+        "book",
+        "كتاب@كْتَاب",
+        "ktab"
+      ],
+      [
+        "office / desk",
+        "مكتب@مَكْتَب",
+        "maktab"
+      ],
+      [
+        "library / bookstore",
+        "مكتبة@مَكْتَبَة",
+        "maktaba"
+      ],
+      [
+        "writer / author",
+        "كاتب@كَاتِب",
+        "katib"
+      ],
+      [
+        "writing",
+        "كتابة@كِتَابَة",
+        "kitaba"
+      ],
+      [
+        "i write",
+        "بكتب@بَكْتُب",
+        "baktub"
+      ],
+      [
+        "lesson",
+        "درس@دَرْس",
+        "dars"
+      ],
+      [
+        "studies / studying",
+        "دراسة@دِرَاسَة",
+        "dirasa"
+      ],
+      [
+        "school",
+        "مدرسة@مَدْرَسَة",
+        "madrasa"
+      ],
+      [
+        "teacher",
+        "مدرّس@مُدَرِّس",
+        "mudarris"
+      ],
+      [
+        "teacher (f)",
+        "مدرّسة@مُدَرِّسَة",
+        "mudarrisa"
+      ],
+      [
+        "i study",
+        "بدرس@بَدْرُس",
+        "badrus"
+      ],
+      [
+        "kitchen",
+        "مطبخ@مَطْبَخ",
+        "matbakh"
+      ],
+      [
+        "cook / chef",
+        "طبّاخ@طَبَّاخ",
+        "tabbakh"
+      ],
+      [
+        "cooked dish",
+        "طبخة@طَبْخَة",
+        "tabkha"
+      ],
+      [
+        "i cook",
+        "بطبخ@بَطْبُخ",
+        "batbukh"
+      ],
+      [
+        "cooked",
+        "مطبوخ@مَطْبُوخ",
+        "matbukh"
+      ],
+      [
+        "work / job",
+        "شغل@شُغُل",
+        "shughul"
+      ],
+      [
+        "i work",
+        "بشتغل@بَشْتِغِل",
+        "bashtighil"
+      ],
+      [
+        "busy (m)",
+        "مشغول@مَشْغُول",
+        "mashghul"
+      ],
+      [
+        "busy (f)",
+        "مشغولة@مَشْغُولَة",
+        "mashghula"
+      ],
+      [
+        "working / functioning",
+        "شغّال@شَغَّال",
+        "shagghal"
+      ],
+      [
+        "food",
+        "أكل@أَكِل",
+        "akil"
+      ],
+      [
+        "i eat",
+        "باكل@بَاكُل",
+        "bakul"
+      ],
+      [
+        "restaurant",
+        "مطعم@مَطْعَم",
+        "mat'am"
+      ],
+      [
+        "taste / flavor",
+        "طعمة@طَعْمَة",
+        "ta'ma"
+      ],
+      [
+        "foodie / glutton",
+        "أكّال@أَكَّال",
+        "akkal"
+      ],
+      [
+        "order / request",
+        "طلب@طَلَب",
+        "talab"
+      ],
+      [
+        "student (m)",
+        "طالب@طَالِب",
+        "talib"
+      ],
+      [
+        "student (f)",
+        "طالبة@طَالْبَة",
+        "talba"
+      ],
+      [
+        "i order",
+        "بطلب@بَطْلُب",
+        "batlub"
+      ],
+      [
+        "required / wanted",
+        "مطلوب@مَطْلُوب",
+        "matlub"
+      ],
+      [
+        "write! (to a man)",
+        "اكتب@اِكْتِب",
+        "iktib"
+      ],
+      [
+        "write! (to a woman)",
+        "اكتبي@اِكْتِبِي",
+        "iktibi"
+      ],
+      [
+        "drink! (to a man)",
+        "اشرب@اِشْرَب",
+        "ishrab"
+      ],
+      [
+        "drink! (to a woman)",
+        "اشربي@اِشْرَبِي",
+        "ishrabi"
+      ],
+      [
+        "look / see! (to a man)",
+        "شوف@شُوف",
+        "shuf"
+      ],
+      [
+        "look / see! (to a woman)",
+        "شوفي@شُوفِي",
+        "shufi"
+      ],
+      [
+        "come! (to a man)",
+        "تعال@تَعَال",
+        "ta'al"
+      ],
+      [
+        "come! (to a woman)",
+        "تعالي@تَعَالِي",
+        "ta'ali"
+      ],
+      [
+        "pay! (to a man)",
+        "ادفع@اِدْفَع",
+        "idfa'"
+      ],
+      [
+        "pay! (to a woman)",
+        "ادفعي@اِدْفَعِي",
+        "idfa'i"
+      ],
+      [
+        "order! (to a man)",
+        "اطلب@اُطْلُب",
+        "utlub"
+      ],
+      [
+        "order! (to a woman)",
+        "اطلبي@اُطْلُبِي",
+        "utlubi"
+      ],
+      [
+        "wait! (to a man)",
+        "استنّى@اِسْتَنَّى",
+        "istanna"
+      ],
+      [
+        "wait! (to a woman)",
+        "استنّي@اِسْتَنِّي",
+        "istanni"
+      ],
+      [
+        "go! (to a man)",
+        "روح@رُوح",
+        "ruh"
+      ],
+      [
+        "go! (to a woman)",
+        "روحي@رُوحِي",
+        "ruhi"
+      ],
+      [
+        "give me!",
+        "اعطيني@اِعْطِينِي",
+        "i'tini"
+      ],
+      [
+        "check! (to a man)",
+        "افحص@اِفْحَص",
+        "ifhas"
+      ],
+      [
+        "check! (to a woman)",
+        "افحصي@اِفْحَصِي",
+        "ifhasi"
+      ],
+      [
+        "she writes / you write (m)",
+        "بتكتب@بْتِكْتُب",
+        "btiktub"
+      ],
+      [
+        "he writes",
+        "بيكتب@بْيِكْتُب",
+        "byiktub"
+      ],
+      [
+        "she drinks / you drink (m)",
+        "بتشرب@بْتِشْرَب",
+        "btishrab"
+      ],
+      [
+        "he drinks",
+        "بيشرب@بْيِشْرَب",
+        "byishrab"
+      ],
+      [
+        "she knows / you know (m)",
+        "بتعرف@بْتِعْرِف",
+        "bti'rif"
+      ],
+      [
+        "he knows",
+        "بيعرف@بْيِعْرِف",
+        "byi'rif"
+      ],
+      [
+        "she sees / you see (m)",
+        "بتشوف@بْتِشُوف",
+        "btishuf"
+      ],
+      [
+        "he sees",
+        "بيشوف@بْيِشُوف",
+        "byishuf"
+      ],
+      [
+        "she eats / you eat (m)",
+        "بتأكل@بْتَأْكُل",
+        "btatkul"
+      ],
+      [
+        "he eats",
+        "بيأكل@بْيَأْكُل",
+        "byatkul"
+      ],
+      [
+        "she pays / you pay (m)",
+        "بتدفع@بْتِدْفَع",
+        "btidfa'"
+      ],
+      [
+        "he pays",
+        "بيدفع@بْيِدْفَع",
+        "byidfa'"
+      ],
+      [
+        "she orders / you order (m)",
+        "بتطلب@بْتَطْلُب",
+        "btatlub"
+      ],
+      [
+        "he orders",
+        "بيطلب@بْيَطْلُب",
+        "byatlub"
+      ],
+      [
+        "she travels / you travel (m)",
+        "بتسافر@بْتِسَافِر",
+        "btisafir"
+      ],
+      [
+        "he travels",
+        "بيسافر@بْيِسَافِر",
+        "byisafir"
+      ],
+      [
+        "she waits / you wait (m)",
+        "بتستنّى@بْتَسْتَنَّى",
+        "btastanna"
+      ],
+      [
+        "he waits",
+        "بيستنّى@بْيَسْتَنَّى",
+        "byastanna"
+      ],
+      [
+        "she loves / you love (m)",
+        "بتحبّ@بْتِحِبّ",
+        "btihibb"
+      ],
+      [
+        "he loves",
+        "بيحبّ@بْيِحِبّ",
+        "byihibb"
+      ],
+      [
+        "she checks / you check (m)",
+        "بتفحص@بْتِفْحَص",
+        "btifhas"
+      ],
+      [
+        "he checks",
+        "بيفحص@بْيِفْحَص",
+        "byifhas"
+      ],
+      [
+        "she goes / you go (m)",
+        "بتروح@بْتِرُوح",
+        "btiruh"
+      ],
+      [
+        "he goes",
+        "بيروح@بْيِرُوح",
+        "byiruh"
+      ],
+      [
+        "big (m)",
+        "كبير@كَبِير",
+        "kabir"
+      ],
+      [
+        "big (f)",
+        "كبيرة@كَبِيرَة",
+        "kabira"
+      ],
+      [
+        "delicious (m)",
+        "زاكي@زَاكِي",
+        "zaki"
+      ],
+      [
+        "delicious (f)",
+        "زكيّة@زَكِيَّة",
+        "zakiyya"
+      ],
+      [
+        "salty (m)",
+        "مالح@مَالِح",
+        "malih"
+      ],
+      [
+        "salty (f)",
+        "مالحة@مَالْحَة",
+        "malha"
+      ],
+      [
+        "sour (m)",
+        "حامض@حَامِض",
+        "hamid"
+      ],
+      [
+        "sour (f)",
+        "حامضة@حَامْضَة",
+        "hamda"
+      ],
+      [
+        "hungry (m)",
+        "جوعان@جُوعَان",
+        "ju'an"
+      ],
+      [
+        "hungry (f)",
+        "جوعانة@جُوعَانَة",
+        "ju'ana"
+      ],
+      [
+        "clean (m)",
+        "نظيف@نَظِيف",
+        "nazif"
+      ],
+      [
+        "clean (f)",
+        "نظيفة@نَظِيفَة",
+        "nazifa"
+      ],
+      [
+        "late (m)",
+        "متأخّر@مْتَأَخِّر",
+        "mt'akhkhir"
+      ],
+      [
+        "late (f)",
+        "متأخّرة@مْتَأَخِّرَة",
+        "mt'akhkhira"
+      ],
+      [
+        "reserved (m)",
+        "محجوز@مَحْجُوز",
+        "mahjuz"
+      ],
+      [
+        "reserved (f)",
+        "محجوزة@مَحْجُوزَة",
+        "mahjuza"
+      ],
+      [
+        "free / empty (m)",
+        "فاضي@فَاضِي",
+        "fadi"
+      ],
+      [
+        "free / empty (f)",
+        "فاضية@فَاضْيَة",
+        "fadya"
+      ],
+      [
+        "happy (m)",
+        "سعيد@سَعِيد",
+        "sa'id"
+      ],
+      [
+        "happy (f)",
+        "سعيدة@سَعِيدَة",
+        "sa'ida"
+      ],
+      [
+        "new (m)",
+        "جديد@جَدِيد",
+        "jadid"
+      ],
+      [
+        "new (f)",
+        "جديدة@جَدِيدَة",
+        "jadida"
+      ],
+      [
+        "old (m)",
+        "قديم@قَدِيم",
+        "qadim"
+      ],
+      [
+        "old (f)",
+        "قديمة@قَدِيمَة",
+        "qadima"
+      ],
+      [
+        "name",
+        "اسم@اِسْم",
+        "ism"
+      ],
+      [
+        "names",
+        "أسماء@أَسْمَاء",
+        "asma'"
+      ],
+      [
+        "profession",
+        "مهنة@مِهْنَة",
+        "mihna"
+      ],
+      [
+        "professions",
+        "مهن@مِهَن",
+        "mihan"
+      ],
+      [
+        "programmer",
+        "مبرمج@مُبَرْمِج",
+        "mubarmij"
+      ],
+      [
+        "programmers",
+        "مبرمجين@مُبَرْمِجِين",
+        "mubarmijin"
+      ],
+      [
+        "engineer",
+        "مهندس@مُهَنْدِس",
+        "muhandis"
+      ],
+      [
+        "engineers",
+        "مهندسين@مُهَنْدِسِين",
+        "muhandisin"
+      ],
+      [
+        "country / state",
+        "دولة@دَوْلَة",
+        "dawla"
+      ],
+      [
+        "countries",
+        "دول@دُوَل",
+        "duwal"
+      ],
+      [
+        "family",
+        "عيلة@عَيْلَة",
+        "'ayla"
+      ],
+      [
+        "families",
+        "عيل@عِيَل",
+        "'iyal"
+      ],
+      [
+        "father",
+        "أب@أَب",
+        "ab"
+      ],
+      [
+        "fathers",
+        "أبهات@أَبَهَات",
+        "abahat"
+      ],
+      [
+        "dress",
+        "فستان@فُسْتَان",
+        "fustan"
+      ],
+      [
+        "dresses",
+        "فساتين@فَسَاتِين",
+        "fasatin"
+      ],
+      [
+        "seat",
+        "مقعد@مَقْعَد",
+        "maq'ad"
+      ],
+      [
+        "seats",
+        "مقاعد@مَقَاعِد",
+        "maqa'id"
+      ],
+      [
+        "chair",
+        "كرسي@كُرْسِي",
+        "kursi"
+      ],
+      [
+        "chairs",
+        "كراسي@كَرَاسِي",
+        "karasi"
+      ],
+      [
+        "word",
+        "كلمة@كَلِمَة",
+        "kalima"
+      ],
+      [
+        "words",
+        "كلمات@كَلِمَات",
+        "kalimat"
+      ],
+      [
+        "bag / suitcase",
+        "شنتة@شَنْتَة",
+        "shanta"
+      ],
+      [
+        "bags",
+        "شنط@شُنَط",
+        "shunat"
+      ],
+      [
+        "students",
+        "طلّاب@طُلَّاب",
+        "tullab"
+      ],
+      [
+        "car",
+        "سيّارة@سَيَّارَة",
+        "sayyara"
+      ],
+      [
+        "cars",
+        "سيّارات@سَيَّارَات",
+        "sayyarat"
+      ],
+      [
+        "friend",
+        "صاحب@صَاحِب",
+        "sahib"
+      ],
+      [
+        "friends",
+        "صحاب@صُحَاب",
+        "suhab"
+      ],
+      [
+        "restaurants",
+        "مطاعم@مَطَاعِم",
+        "mata'im"
+      ],
+      [
+        "planes",
+        "طيّارات@طَيَّارَات",
+        "tayyarat"
+      ]
+    ],
+    "sentences": [],
+    "index": 7
   },
   "names_meaning_1": {
     "name": "Names meaning 1",
@@ -1920,7 +3137,7 @@ A native speaker will be pleased if you compliment them on the meaning of their 
         "hadhihi al-mara karima kathir"
       ]
     ],
-    "index": 7
+    "index": 8
   },
   "polite_language_1": {
     "name": "Polite language 1",
@@ -2229,7 +3446,7 @@ Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the me
         "jarna marid, Allah ya'tih is-sahha"
       ]
     ],
-    "index": 8
+    "index": 9
   },
   "studying_language_1": {
     "name": "Studying language 1",
@@ -2479,7 +3696,7 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
         "sallih-li aghlati law samaht"
       ]
     ],
-    "index": 9
+    "index": 10
   },
   "filling_the_gaps": {
     "name": "Filling the Gaps",
@@ -2704,7 +3921,7 @@ Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produce
         "al-jarson da'iman mashghul"
       ]
     ],
-    "index": 10
+    "index": 11
   },
   "health_1": {
     "name": "Health 1",
@@ -2868,7 +4085,7 @@ Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting."
         "hadha al-mustashfa kabir"
       ]
     ],
-    "index": 11
+    "index": 12
   },
   "training_1": {
     "name": "Practice the Learned",
@@ -4631,6 +5848,6 @@ The goal is to practice independently in the game format, but without the risk o
       ]
     ],
     "sentences": [],
-    "index": 12
+    "index": 13
   }
 };

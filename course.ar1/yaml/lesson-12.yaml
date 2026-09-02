@@ -1,1117 +1,151 @@
-id: training_1
+id: health_1
 name:
-  en: Practice the Learned
-  ru: Тренируем Выученное
+  en: Health 1
+  ru: Здоровье 1
 explanations:
   en: |
-    ### This lesson is designed to consolidate what has been learned.
-    Here you'll find exercises that practice grammar and memorize words that are similar in meaning or different variations of the same root.
-    Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
-    Like flashcards, these exercises don't award success percentages.
-    The goal is to practice independently in the game format, but without the risk of losing winning points.
-    ** A little grammar: ** the negative particle '''ما''' is used before verbs, and '''مش''' is used before other parts of speech
+    ### Short notes about this topic
+    Biwja'ni ('''بيوجعني'''): The verb "to be sick" itself is biwja'. But when we talk about ourselves, we add the ending -ni: "my head hurts" (rasi biwja'ni).
+
+    Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's used to refer to any pill or capsule.
+
+    Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
   ru: |
-    ### Этот урок предназначен для закрепления изученного.
-    Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
-    Кроме того, существует особый тип упражнений: сортировка по какому-либо общепринятому определению, например, женский род или сравнительная степень.
-    Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
-    Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
-    ** Немного грамматики: ** отрицательная частица '''ما''' используется перед глаголами, а '''مش''' - перед остальными частями речи
-sort_set:
-- id: sort_people_pairs_v1
-  question1:
-    en: Find feminine words
-    ru: Найди слова женского рода
-  question2:
-    en: Find masculine words
-    ru: Найди слова мужского рода
-  type: pairs
-  data:
-    - [ أُمّ, أَب ]
-    - [ أُخْت, أَخ ] 
-    - [ بِنت, إِبِن ] 
-    - [ مَرَة, زَلَمِة ] 
-    - [ صَاحْبِة, صَاحِب ] 
-    - [ جَارَة, جَار ]     
-    - [ زَمِيلِة, زَمِيل ] 
-    - [ شُرْطِيِّة, شُرْطِي ] 
-    - [ مُعَلِّمِة, مُعَلِّم ] 
-    - [ دُكْتُورَة, دُكْتُور ] 
-    - [ مُمَرِّضَة, مُمَرِّض ] 
-    - [ آنِسَة, سَيِّد ]   
-- id: sort_singular_plural_1
-  question1:
-    en: Find the singular
-    ru: Найди единственное число
-  question2:
-    en: Find the plural
-    ru: Найди множественное число
-  type: lists
-  data:
-  - - اِسْم
-    - مِهْنَة
-    - مُبَرْمِج
-    - مُهَنْدِس
-    - دَوْلِيَّة
-    - عَيْلَة
-    - أَب
-    - فستان
-    - مقعد
-  - - فنون
-    - أرقام
-    - مفاتيح
-    - كلمات
-    - طلاب
-    - سيارات
-    - أصدقاء
-    - فساتين
-    - مقاعد
-- id: sort_mish_ma_1
-  question1:
-    en: Find where 'مش' fits
-    ru: Найди где подходит 'مش'
-  question2:
-    en: Find where 'ما' fits
-    ru: Найди где подходит 'ما'
-  type: lists
-  data:
-    - ["منيح", "هون", "جاهز", "كبير", "معي", "مشكلة", "لحالي", "فاضي", "تعبان", "غالي", "بعيد", "موجود"]
-    - ["بعرف", "بفهم", "بروح", "بحب", "بدي", "بشوف", "بسمع", "بجي", "بنام", "بلاقي", "بقدر", "بنسى"]
+    ### Краткие заметки по этой теме
+    Биужа'ни ('''بيوجعني'''): Сам глагол «болеть» — biwja'. Но когда мы говорим про себя, мы добавляем окончание -ни: «голова болит меня» (rasi biwja'ni).
 
-- id: sort_adjective_comparative_v1
-  question1:
-    en: Find comparative form
-    ru: Найди сравнительную форму
-  question2:
-    en: find non-comparative adjective
-    ru: Найди обычную форму прилагательного
-  type: pairs
-  data:
-    - [ أَكْبَر, كْبِير ]      
-    - [ أَزْغَر, زْغِير ]      
-    - [ أَغْلَى, غَالِي ]      
-    - [ أَرْخَص, رْخِيص ]      
-    - [ أَجْدَد, جْدِيد ]      
-    - [ أَقْدَم, قَدِيم ]      
-    - [ أَفْقَر, فَقِير ]      
-    - [ أَغْنَى, غَنِي ]       
-    - [ أَكْتَر, كْتِير ]      
-    - [ أَقْرَب, قَرِيب ] 
+    Хабба ('''حبة'''): Дословно это «зернышко» или «штука». В аптеке так называют любую таблетку или капсулу.
 
-- id: sort_colors_fem_irregular
-  question1:
-    en: Find feminine form
-    ru: Найди женскую форму
-  question2:
-    en: Find masculine form
-    ru: Найди мужскую форму
-  type: pairs
-  data:
-    - [ بَيْضَا, أبيض ]
-    - [ سَوْدَا, أسود ]
-    - [ حَمْرَا, أحمر ]
-    - [ صَفْرَا, أصفر ]
-    - [ خَضْرَا, أخضر ]
-    - [ زَرْقَا, أزرق ]
-    - [ رمادِيِّة, رمادي ]
-    - [ برتقانِيِّة, برتقالي ]
-    - [ بنفسجِيِّة, بنفسجي ]
-    - [ بنِيِّة, بني ]
-    - [ وردِيِّة, وردي ]
-
-pairs_set:
-- title:
-    en: Similar words
-    ru: Похожие слова
-  id: similar_words
-  words:
-  - جار
-  - إيجار
-  - مستأجر
-  - ولد
-  - والد
-  - والدة
-  - مولود
-  - أولاد
-  - سفر
-  - رحلة
-  - سائح
-  - سائحة
-  - سياحة
-  - مكان
-  - مقعد
-  - ولد
-  - إبن
-  - ختيار
-  - قديم
-  - تاريخي
-- title:
-    en: Adverbs
-    ru: Наречия
-  id: adverbs
-  words:
-  - للأسف
-  - توفيق
-  - مستحيل
-  - أكيد
-  - ممكن
-  - صح
-  - اتفقنا
-  - دغري
-  - لورا
-  - فقط
-  - شوي
-  - كمان
-  - لازم
-  - بدي
-  - لكن
-- title:
-    en: Time and Place
-    ru: Время и место
-  id: time_and_place
-  words:
-  - بعيد
-  - قريب
-  - هون
-  - جنب
-  - فاضي
-  - محجوز
-  - بكرة
-  - أمس
-  - اليوم
-  - قريبا
-  - عادة
-  - بكير
-  - متأخر
-  - مرات
-  - دائما
-  - الآن
-- title:
-    en: Possessive Suffixes "home"
-    ru: Местоимённые суффиксы "дом"
-  id: posessive_home
-  words:
-  - بيت
-  - بيتي
-  - بيتك
-  - بيته
-  - بيتها
-  - بيتنا
-  - بيتكم
-  - بيتهم
-- title:
-    en: Possessive Suffixes "friend"
-    ru: Местоимённые суффиксы "друг"
-  id: posessive_friend
-  words:
-  - صاحب
-  - صاحبي
-  - صاحبك
-  - صاحبك
-  - صاحبو
-  - صاحبها
-  - صاحبنا
-  - صاحبكن
-  - صاحبهن
-- title:
-    en: Colors
-    ru: Цвета
-  id: colors
-  words:
-  - أبيض
-  - رمادي
-  - أسود
-  - أحمر
-  - أصفر
-  - أخضر
-  - أزرق
-  - برتقالي
-  - بنفسجي
-  - بني
-  - وردي
-- title:
-    en: modal verbs conjugation
-    ru: склонение модальных глаголов
-  id: modal_conjugation
-  words:
-  - بحب
-  - إنت بتحب
-  - بتحبي
-  - منحب
-  - بتحبو
-  - بحبو
-  - بدي
-  - إنتي بدك
-  - بدو
-  - بدها
-  - بدنا
-  - بدكن
-  - بدهن
-- title:
-    en: Interrogative and function words
-    ru: Вопросительные и служебные слова
-  id: question_and_function
-  words:
-  - مين
-  - شو
-  - وين
-  - من وين
-  - لوين
-  - إيمتى
-  - كيف
-  - ليش
-  - في
-  - من
-  - مع
-  - أو
+    Истикбаль ('''استقبال'''): Универсальное слово «прием/встреча». Используется и как ресепшен в отеле, и как регистратура в больнице.
+story:
+  en:
+  - ar: أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.
+    en: I am at the reception in the clinic now. My head hurts and I have a fever.
+    transliteration: Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
+  - ar: تفضل هنا، الممرضة مع الدكتور في المستشفى.
+    en: Come here please, the nurse is with the doctor in the hospital.
+    transliteration: Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
+  - ar: عندي جرح في الإيد، لازم مرهم وضمادة؟
+    en: I have a wound on the hand, do I need an ointment and a bandage?
+    transliteration: Indi jurh fil-id, lazim marham wa dimada?
+  - ar: نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.
+    en: Yes, and take this pill please. Everything is okay.
+    transliteration: Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
 words:
-- en: well
-  ar: منيح
-  transliteration: mnih
-  ru: хороший
-- en: ready
-  ar: جاهز
-  transliteration: jahiz
-  ru: готовый
-- en: with me
-  ar: معي
-  transliteration: ma'i
-  ru: со мной
-- en: problem
-  ar: مشكلة
-  transliteration: mushkle
-  ru: проблема
-- en: alone
-  ar: لحالي
-  transliteration: lahali
-  ru: сам
-- en: tired
-  ar: تعبان
-  transliteration: ta'ban
-  ru: уставший
-- en: present
-  ar: موجود
-  transliteration: mawjud
-  ru: имеющийся
-- en: I know
-  ar: بعرف
-  transliteration: ba'rif
-  ru: я знаю
-- en: I understand
-  ar: بفهم
-  transliteration: bifham
-  ru: я понимаю
-- en: I go
-  ar: بروح
-  transliteration: bruh
-  ru: я иду
-- en: I see
-  ar: بشوف
-  transliteration: bshuf
-  ru: я вижу
-- en: I hear
-  ar: بسمع
-  transliteration: bisma'
-  ru: я слышу
-- en: I come
-  ar: بجي
-  transliteration: bji
-  ru: я прихожу
-- en: I sleep
-  ar: بنام
-  transliteration: bnam
-  ru: я сплю
-- en: I find
-  ar: بلاقي
-  transliteration: blaq'i
-  ru: я нахожу
-- en: I can
-  ar: بقدر
-  transliteration: baq'dir
-  ru: я могу
-- en: I forget
-  ar: بنسى
-  transliteration: binsa
-  ru: я забываю
-- en: who
-  ar: مين
-  transliteration: min
-  ru: кто?
-- en: what
-  ar: شو
-  transliteration: shu
-  ru: что?
-- en: where
-  ar: وين
-  transliteration: wen
-  ru: где?
-- en: where from
-  ar: من وين
-  transliteration: min wen
-  ru: откуда?
-- en: where to
-  ar: لوين
-  transliteration: la-wen
-  ru: куда?
-- en: when
-  ar: إيمتى
-  transliteration: emta
-  ru: когда?
-- en: how
-  ar: كيف
-  transliteration: kif
-  ru: как?
-- en: why
-  ar: ليش
-  transliteration: lesh
-  ru: почему?
-- en: in
-  ar: في
-  transliteration: fi
-  ru: в
-- en: from
-  ar: من
-  transliteration: min
-  ru: из
-- en: with
-  ar: مع
-  transliteration: ma'a
-  ru: с
-- en: or
-  ar: أو
-  transliteration: oo
-  ru: или
-- en: rent
-  ar: إيجار
-  transliteration: ijaar
-  ru: аренда
-- en: tenant
-  ar: مستأجر
-  transliteration: mustajir
-  ru: арендатор
-- en: parent (m)
-  ar: والد
-  transliteration: walid
-  ru: родитель
-- en: parent (f)
-  ar: والدة
-  transliteration: walde
-  ru: родительница
-- en: newborn
-  ar: مولود
-  transliteration: malud
-  ru: новорожденный
-- en: children
-  ar: أولاد
-  transliteration: wlad
-  ru: дети
-- en: travel
-  ar: سفر
-  transliteration: safar
-  ru: путешествие
-- en: trip
-  ar: رحلة
-  transliteration: rihle
-  ru: поездка
-- en: tourist (m)
-  ar: سائح
-  transliteration: sayeh
-  ru: турист
-- en: tourist (f)
-  ar: سائحة
-  transliteration: sayha
-  ru: туристка
-- en: tourism
-  ar: سياحة
-  transliteration: siyaha
-  ru: туризм
-- en: place
-  ar: مكان
-  transliteration: makan
-  ru: место
-- en: elderly
-  ar: ختيار
-  transliteration: khtyar
-  ru: пожилой
-- en: historical
-  ar: تاريخي
-  transliteration: tarikhi
-  ru: исторический
-- en: I love
-  ar: بحب
-  transliteration: bhibb
-  ru: я люблю
-- en: you love f
-  ar: بتحبي
-  transliteration: btihibbe
-  ru: ты любишь ж
-- en: he loves
-  ar: بيحب
-  transliteration: byhibb
-  ru: он любит
-- en: you love m
-  ar: إنت بتحب
-  transliteration: inta btihibb
-  ru: ты любишь м
-- en: she loves
-  ar: هي بتحب
-  transliteration: hiyye btihibb
-  ru: она любит
-- en: we love
-  ar: منحب
-  transliteration: mnihibb
-  ru: мы любим
-- en: you love pl
-  ar: بتحبو
-  transliteration: btihibbu
-  ru: вы любите
-- en: they love
-  ar: بحبو
-  transliteration: byhibbu
-  ru: они любят
-- en: I want
-  ar: بدي
-  transliteration: biddi
-  ru: я хочу
-- en: you want m
-  ar: إنت بدك
-  transliteration: inta biddak
-  ru: ты хочешь м
-- en: you want f
-  ar: إنتي بدك
-  transliteration: inti biddik
-  ru: ты хочешь ж
-- en: he wants
-  ar: بدو
-  transliteration: biddo
-  ru: он хочет
-- en: she wants
-  ar: بدها
-  transliteration: biddha
-  ru: она хочет
-- en: we want
-  ar: بدنا
-  transliteration: biddna
-  ru: мы хотим
-- en: you want pl
-  ar: بدكن
-  transliteration: biddkun
-  ru: вы хотите
-- en: they want
-  ar: بدهن
-  transliteration: biddhun
-  ru: они хотят
-- en: white (f)
-  ar: بيضا
-  transliteration: bayda
-  vocalized: بَيْضَا
-  ru: белая
-- en: gray (f)
-  ar: رماديّة
-  transliteration: rmadiyye
-  vocalized: رمادِيِّة
-  ru: серая
-- en: black (f)
-  ar: سودا
-  transliteration: sawda
-  vocalized: سَوْدَا
-  ru: чёрная
-- en: red (f)
-  ar: حمرا
-  transliteration: hamra
-  vocalized: حَمْرَا
-  ru: красная
-- en: yellow (f)
-  ar: صفرا
-  transliteration: safra
-  vocalized: صَفْرَا
-  ru: жёлтая
-- en: green (f)
-  ar: خضرا
-  transliteration: khadra
-  vocalized: خَضْرَا
-  ru: зелёная
-- en: blue (f)
-  ar: زرقا
-  transliteration: zarqa
-  vocalized: زَرْقَا
-  ru: синяя
-- en: orange (f)
-  ar: برتقانيّة
-  transliteration: burtu'aniyye
-  vocalized: برتقانِيِّة
-  ru: оранжевая
-- en: purple (f)
-  ar: بنفسجيّة
-  transliteration: banafsajiyye
-  vocalized: بنفسجِيِّة
-  ru: фиолетовая
-- en: brown (f)
-  ar: بنيّة
-  transliteration: binniyye
-  vocalized: بنِيِّة
-  ru: коричневая
-- en: pink (f)
-  ar: ورديّة
-  transliteration: wardiyye
-  vocalized: وردِيِّة
-  ru: розовая
-- en: white
-  ar: أبيض
-  transliteration: abyad
-  ru: белый
-- en: gray
-  ar: رمادي
-  transliteration: rmadi
-  ru: серый
-- en: black
-  ar: أسود
-  transliteration: aswad
-  ru: чёрный
-- en: red
-  ar: أحمر
-  transliteration: ahmar
-  ru: красный
-- en: yellow
-  ar: أصفر
-  transliteration: asfar
-  ru: жёлтый
-- en: green
-  ar: أخضر
-  transliteration: akhdar
-  ru: зелёный
-- en: blue
-  ar: أزرق
-  transliteration: azraq
-  ru: синий
-- en: orange
-  ar: برتقالي
-  transliteration: burtu'ani
-  ru: оранжевый
-- en: purple
-  ar: بنفسجي
-  transliteration: banafsaji
-  ru: фиолетовый
-- en: brown
-  ar: بني
-  transliteration: binni
-  ru: коричневый
-- en: pink
-  ar: وردي
-  transliteration: wardi
-  ru: розовый
-- en: greater
-  ar: أكبر
-  transliteration: '''akbar'
-  vocalized: أَكْبَر
-  ru: больше
-- en: big
-  ar: كبير
-  transliteration: kbir
-  vocalized: كْبِير
-  ru: большой
-- en: smaller
-  ar: أزغر
-  transliteration: '''azghar'
-  vocalized: أَزْغَر
-  ru: меньше
-- en: small
-  ar: زغير
-  transliteration: zhir
-  vocalized: زْغِير
-  ru: маленький
-- en: more expensive
-  ar: أغلى
-  transliteration: '''aghlaa'
-  vocalized: أَغْلَى
-  ru: дороже
-- en: expensive
-  ar: غالي
-  transliteration: ghali
-  vocalized: غَالِي
-  ru: дорогой
-- en: cheaper
-  ar: أرخص
-  transliteration: '''arkhas'
-  vocalized: أَرْخَص
-  ru: дешевле
-- en: cheap
-  ar: رخيص
-  transliteration: rkhis
-  vocalized: رْخِيص
-  ru: дешёвый
-- en: newer
-  ar: أجدد
-  transliteration: '''ajdad'
-  vocalized: أَجْدَد
-  ru: новее
-- en: new
-  ar: جديد
-  transliteration: jdid
-  vocalized: جْدِيد
-  ru: новый
-- en: older
-  ar: أقدم
-  transliteration: '''aqdam'
-  vocalized: أَقْدَم
-  ru: старее
-- en: old
-  ar: قديم
-  transliteration: qadim
-  vocalized: قَدِيم
-  ru: старый
-- en: poorest
-  ar: أفقر
-  transliteration: '''afqar'
-  vocalized: أَفْقَر
-  ru: беднее
-- en: poor
-  ar: فقير
-  transliteration: faqir
-  vocalized: فَقِير
-  ru: бедный
-- en: richest
-  ar: أغنى
-  transliteration: '''aghnaa'
-  vocalized: أَغْنَى
-  ru: богаче
-- en: rich
-  ar: غني
-  transliteration: ghani
-  vocalized: غَنِي
-  ru: богатый
-- en: near
-  ar: قريب
-  transliteration: qarib
-  vocalized: قَرِيب
-  ru: близко
-- en: closer
-  ar: أقرب
-  transliteration: '''aqrab'
-  vocalized: أَقْرَب
-  ru: ближе
-- en: more
-  ar: أكتر
-  transliteration: '''aktar'
-  vocalized: أَكْتَر
-  ru: более
-- en: very
-  ar: كتير
-  transliteration: ktir
-  vocalized: كْتِير
-  ru: очень
-- en: my friend
-  ar: صاحبي
-  transliteration: saahbi
-  ru: мой друг
-- en: your (m) friend
-  ar: صاحبك
-  transliteration: saahbak
-  vocalized: صاحْبَك
-  ru: твой (м) друг
-- en: his friend
-  ar: صاحبو
-  transliteration: saahbu
-  vocalized: صاحْبُو
-  ru: его друг
-- en: her friend
-  ar: صاحبها
-  transliteration: saahibha
-  vocalized: صاحِبْهَا
-  ru: её друг
-- en: our friend
-  ar: صاحبنا
-  transliteration: saahibna
-  vocalized: صاحِبْنَا
-  ru: наш друг
-- en: your (pl) friend
-  ar: صاحبكن
-  transliteration: saahibkun
-  vocalized: صاحِبْكُن
-  ru: ваш (мн) друг
-- en: their friend
-  ar: صاحبهن
-  transliteration: saahibhun
-  vocalized: صاحِبْهُن
-  ru: их друг
-- en: home
-  ar: بيت
-  transliteration: bayt
-  ru: дом
-- en: my home
-  ar: بيتي
-  transliteration: bayti
-  ru: мой дом
-- en: your (s) home
-  ar: بيتك
-  transliteration: baytuk
-  ru: твой дом
-- en: his home
-  ar: بيته
-  transliteration: baytuhu
-  vocalized: بَيْتُهُ
-  ru: его дом
-- en: her home
-  ar: بيتها
-  transliteration: baytuha
-  vocalized: بَيْتُهَا
-  ru: её дом
-- en: our home
-  ar: بيتنا
-  transliteration: baytuna
-  vocalized: بَيْتُنَا
-  ru: наш дом
-- en: your (pl) home
-  ar: بيتكم
-  transliteration: baytukum
-  vocalized: بَيْتُكُمْ
-  ru: ваш (мн) дом
-- en: their home
-  ar: بيتهم
-  transliteration: baytuhum
-  vocalized: بَيْتُهُمْ
-  ru: их дом
-- en: unfortunately
-  ar: للأسف
-  transliteration: lil-asaf
-  vocalized: لِلْأَسَف
-  ru: к сожалению
-- en: luck
-  ar: توفيق
-  transliteration: tawfiq
-  vocalized: تَوْفِيق
-  ru: удача
-- en: impossible (m)
-  ar: مستحيل
-  transliteration: mustahil
-  vocalized: مُسْتَحِيل
-  ru: невозможный
-- en: definite (m)
-  ar: أكيد
-  transliteration: akid
-  vocalized: أَكِيد
-  ru: определенный
-- en: possible (m)
-  ar: ممكن
-  transliteration: mumkin
-  vocalized: مُمْكِن
-  ru: возможный
-- en: correctly
-  ar: صح
-  transliteration: sah
-  ru: правильно
-- en: agreed
-  ar: اتفقنا
-  transliteration: ittafaqna
-  ru: договорились
-- en: straight
-  ar: دغري
-  transliteration: dughri
-  ru: прямо
-- en: backwards
-  ar: لورا
-  transliteration: la-wara
-  ru: назад
-- en: only
-  ar: فقط
-  transliteration: faqat
-  ru: только
-- en: a little
-  ar: شوي
-  transliteration: shway
-  ru: немного
-- en: also
-  ar: كمان
-  transliteration: kaman
-  ru: тоже
-- en: must
-  ar: لازم
-  transliteration: lazim
-  ru: должен
-- en: but
-  ar: لكن
-  transliteration: lakin
-  ru: но
-- en: away
-  ar: بعيد
-  transliteration: ba'id
-  ru: вдали
-- en: here
-  ar: هون
-  transliteration: hon
-  ru: здесь
-- en: next to
-  ar: جنب
-  transliteration: janb
-  ru: возле
-- en: free
-  ar: فاضي
-  transliteration: fadi
-  ru: свободный
-- en: reserved
-  ar: محجوز
-  transliteration: mahjuz
-  ru: занятый
-- en: tomorrow
-  ar: بكرة
-  transliteration: bukra
-  ru: завтра
-- en: yesterday
-  ar: أمس
-  transliteration: '''ams'
-  ru: вчера
-- en: today
-  ar: اليوم
-  transliteration: al-yom
-  ru: сегодня
-- en: soon
-  ar: قريبا
-  transliteration: qariban
-  vocalized: قريباً
-  ru: скоро
-- en: usually
-  ar: عادة
-  transliteration: '''adan'
-  vocalized: عادةً
-  ru: обычно
-- en: early
-  ar: بكير
-  transliteration: bakir
-  ru: рано
-- en: late
-  ar: متأخر
-  transliteration: muta'akhkhir
-  ru: опоздавший
-- en: sometimes
-  ar: مرات
-  transliteration: marrat
-  ru: иногда
-- en: always
-  ar: دائما
-  transliteration: da'iman
-  vocalized: دائماً
-  ru: всегда
-- en: now
-  ar: الآن
-  transliteration: al-an
-  ru: сейчас
-- en: students
-  ar: طلاب
-  transliteration: tulaab
-  ru: студенты
-- en: father
-  ar: أب
-  transliteration: ab
-  vocalized: أَب
-  ru: отец
-- en: mother
-  ar: أمّ
-  transliteration: umm
-  vocalized: أُمّ
-  ru: мать
-- en: brother
-  ar: أخ
-  transliteration: akh
-  vocalized: أَخ
-  ru: брат
-- en: sister
-  ar: أخت
-  transliteration: ukht
-  vocalized: أُخْت
-  ru: сестра
-- en: friend (m)
-  ar: صاحب
-  transliteration: sahib
-  vocalized: صَاحِب
-  ru: друг
-- en: name
-  ar: اسم
-  transliteration: ism
-  vocalized: اِسْم
-  ru: имя
-- en: profession
-  ar: مهنة
-  transliteration: mihna
-  vocalized: مِهْنَة
-  ru: профессия
-- en: programmer (m)
-  ar: مبرمج
-  transliteration: mubarmij
-  vocalized: مُبَرْمِج
-  ru: программист
-- en: engineer (m)
-  ar: مهندس
-  transliteration: muhandis
-  vocalized: مُهَنْدِس
-  ru: инженер
-- en: company
-  ar: شركة
-  transliteration: shirka
-  vocalized: شِرْكَة
-  ru: компания
-- en: international (f)
-  ar: دوليّة
-  transliteration: dawliyya
-  vocalized: دَوْلِيَّة
-  ru: международная
-- en: family
-  ar: عيلة
-  transliteration: ayla
-  vocalized: عَيْلَة
-  ru: семья
-- en: words
-  ar: كلمات
-  transliteration: kalimat
-  ru: слова
-- en: miss
-  ar: آنسة
-  transliteration: anisa
-  vocalized: آنِسَة
-  ru: девушка
-- en: mr.
-  ar: سيّد
-  transliteration: sayyid
-  vocalized: سَيِّد
-  ru: господин
-- en: numbers
-  ar: أرقام
-  transliteration: arqam
-  ru: цифры
-- en: Keys
-  ar: مفاتيح
-  transliteration: mafatih
-  ru: ключи
-- en: arts
-  ar: فنون
-  transliteration: funun
-  ru: искусства
-- en: cars
-  ar: سيارات
-  transliteration: sayaarat
-  ru: автомобили
-- en: friends
-  ar: أصدقاء
-  transliteration: '''asdiqa'''
-  ru: друзья
-- en: child
-  ar: ولد
-  transliteration: walad
-  vocalized: وَلَد
-  ru: мальчик
-- en: sun
-  ar: شمس
-  transliteration: shams
-  vocalized: شَمْس
-  ru: солнце
-- en: book
-  ar: كتاب
-  transliteration: kitaab
-  vocalized: كِتَاب
-  ru: книга
-- en: war
-  ar: حرب
-  transliteration: harb
-  vocalized: حَرْب
-  ru: война
-- en: dress
-  ar: فستان
-  transliteration: fustan
-  ru: платье
-- en: dresses
-  ar: فساتين
-  transliteration: fasatin
-  ru: платья
-- en: a seat
-  ar: مقعد
-  transliteration: maqe'ad
-  ru: сиденье
-- en: the seats
-  ar: مقاعد
-  transliteration: maqaeid
-  ru: сиденья
-- en: girl
-  ar: بنت
-  transliteration: bint
-  vocalized: بِنت
-  ru: девочка
-- en: son
-  ar: إبن
-  transliteration: '''iibin'
-  vocalized: إِبِن
-  ru: сын
-- en: woman
-  ar: مرة
-  transliteration: marra
-  vocalized: مَرَة
-  ru: женщина
-- en: man
-  ar: زلمة
-  transliteration: zalma
-  vocalized: زَلَمِة
-  ru: мужчина
-- en: friend (f)
-  ar: صاحبة
-  transliteration: sahbi
-  vocalized: صَاحْبِة
-  ru: подруга
-- en: neighbor (f)
-  ar: جارة
-  transliteration: jaara
-  vocalized: جَارَة
-  ru: соседка
-- en: neighbor (m)
-  ar: جار
-  transliteration: jaar
-  vocalized: جَار
-  ru: сосед
-- en: peer (f)
-  ar: زميلة
-  transliteration: zamilia
-  vocalized: زَمِيلِة
-  ru: сотрудница
-- en: peer (m)
-  ar: زميل
-  transliteration: zamil
-  vocalized: زَمِيل
-  ru: сотрудник
-- en: policewoman
-  ar: شرطيّة
-  transliteration: shurtiia
-  vocalized: شُرْطِيِّة
-  ru: полицейская
-- en: policeman
-  ar: شرطي
-  transliteration: shurti
-  vocalized: شُرْطِي
-  ru: полицейский
-- en: teacher (f)
-  ar: معلّمة
-  transliteration: mueallimia
-  vocalized: مُعَلِّمِة
-  ru: учительница
-- en: teacher (m)
-  ar: معلّم
-  transliteration: mueallim
-  vocalized: مُعَلِّم
-  ru: учитель (м)
-- en: doctor (f)
-  ar: دكتورة
-  transliteration: duktura
-  vocalized: دُكْتُورَة
-  ru: доктор (ж)
-- en: doctor (m)
+- en: it hurts
+  ar: بيوجع
+  transliteration: biwja'
+  ru: болит
+- en: it itches
+  ar: بيحك
+  transliteration: bihikk
+  ru: чешется
+- en: runny nose
+  ar: رشح
+  transliteration: rashah
+  ru: насморк
+- en: fever / temperature
+  ar: حرارة
+  transliteration: harara
+  ru: температура
+- en: bruise
+  ar: رضة
+  transliteration: radda
+  ru: ушиб
+- en: wound
+  ar: جرح
+  transliteration: jurh
+  ru: рана
+- en: fracture
+  ar: كسر
+  transliteration: kasr
+  ru: перелом
+- en: bandage
+  ar: ضمادة
+  transliteration: dimada
+  ru: повязка
+- en: pill
+  ar: حبة
+  transliteration: habba
+  ru: таблетка
+- en: ointment
+  ar: مرهم
+  transliteration: marham
+  ru: мазь
+- en: drops
+  ar: قطرة
+  transliteration: qatra
+  ru: капли
+- en: doctor
   ar: دكتور
-  transliteration: duktur
-  vocalized: دُكْتُور
-  ru: доктор (м)
-- en: nurse (f)
-  ar: ممرّضة
-  transliteration: mumarrida
-  vocalized: مُمَرِّضَة
+  transliteration: duktor
+  ru: врач
+- en: nurse
+  ar: ممرضة
+  transliteration: mumarriḍa
   ru: медсестра
-- en: nurse (m)
-  ar: ممرّض
-  transliteration: mumarrid
-  vocalized: مُمَرِّض
-  ru: медбрат
-sentences: []
+- en: reception
+  ar: استقبال
+  transliteration: istiqbal
+  ru: регистратура
+- en: hospital
+  ar: مستشفى
+  transliteration: mustashfa
+  ru: больница
+- en: clinic
+  ar: عيادة
+  transliteration: iyada
+  ru: клиника
+sentences:
+- en: my head hurts
+  ar: راسي بيوجعني
+  transliteration: rasi biwja'ni
+  ru: у меня болит голова
+- en: my hand itches
+  ar: إيدي بتحكني
+  transliteration: idi btihikkni
+  ru: у меня чешется рука
+- en: i have a runny nose and fever
+  ar: عندي رشح وحرارة
+  transliteration: indi rashah wa harara
+  ru: у меня насморк и температура
+- en: this is a small bruise
+  ar: هذه رضة صغيرة
+  transliteration: hadhihi radda saghira
+  ru: это маленький ушиб
+- en: the wound is clean
+  ar: الجرح نظيف
+  transliteration: al-jurh nazif
+  ru: рана чистая
+- en: he has a leg fracture
+  ar: عنده كسر في الرجل
+  transliteration: indo kasr fir-rijl
+  ru: у него перелом ноги
+- en: where is the bandage?
+  ar: وين الضمادة
+  transliteration: wayn ad-dimada
+  ru: где повязка?
+- en: take this pill please
+  ar: خذ هذه الحبة لو سمحت
+  transliteration: khud hadhihi al-habba law samaht
+  ru: выпей эту таблетку пожалуйста
+- en: i need an ointment for the hand
+  ar: بدي مرهم للإيد
+  transliteration: biddi marham lil-id
+  ru: мне нужна мазь для руки
+- en: where are the eye drops?
+  ar: وين قطرة العين
+  transliteration: wayn qatrat al-ayn
+  ru: где глазные капли?
+- en: the doctor is inside the clinic
+  ar: الدكتور جوا العيادة
+  transliteration: ad-duktor juwwa al-iyada
+  ru: врач внутри клиники
+- en: the nurse is at the reception
+  ar: الممرضة في الاستقبال
+  transliteration: al-mumarriḍa fil-istiqbal
+  ru: медсестра в регистратуре
+- en: this hospital is big
+  ar: هذا المستشفى كبير
+  transliteration: hadha al-mustashfa kabir
+  ru: эта больница большая

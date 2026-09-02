@@ -1,221 +1,235 @@
-id: filling_the_gaps
+id: studying_language_1
 name:
-  en: Filling the Gaps
-  ru: Полезные мелочи
+  en: Studying language 1
+  ru: Изучая язык 1
 explanations:
   en: |
-    ### Important notes about this topic
+    ### Lesson Objective
+    When communicating with a native speaker, we often find it difficult to express ourselves correctly.
+    We lack words, we're unsure of our declensions, and our pronunciation isn't perfect.
+    This lesson was created to help explain these difficulties.
 
-    Сottage cheese: Arabic cuisine doesn't have a complete equivalent to cottage cheese. They typically use either qarisha (a cheese product) or white soft cheeses like jibna bida (white cheese).
+    ### Conversational nuances
+    La-khali '''لحالي''': A very important word. Literally "for yourself," it's used in all contexts when you're doing something alone or independently.
 
-    Waiter (Jarson): This word comes from French (garçon) and has become firmly established in the Arabic dialect.
+    Ala makhlaq '''على مهلك''': Literally "at your leisure." This is the most natural way to ask someone to stop talking too fast.
 
-    Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so take this into account in sentences.
+    Ashan '''عشان''': Levantine "so that" or "because." In colloquial speech, it's used in every other sentence.
 
-    Dughri ('''دغري'''): Perhaps the most popular word for directions. It comes from Turkish, but Arabic is indispensable.
+    Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the beginning of a conversation with a native speaker so they feel comfortable correcting you.
 
-    Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used specifically as "OK, it's done."
-
-    Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
+    At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
   ru: |
-    ### Важные замечания по поводу этой темы
+    ### Цель урока
+    Общаясь с носителем языка мы часто затрудняемся изъясниться правильно.
+    Нам не хватает слов, мы неуверенно пользуемся склонениями, наше произношение не идеально.
+    Чтобы помочь объяснить такие трудности и был создан этот урок.
 
-    Творог: В арабской кухне нет полного аналога нашего рассыпчатого творога. Обычно используют либо qarisha (творожный продукт), либо белые мягкие сыры типа jibna bida (белый сыр).
+    ### Разговорные нюансы
+    Ля-хали '''لحالي''': Очень важное слово. Дословно "для себя самого", используется во всех контекстах, когда вы делаете что-то один или самостоятельно.
 
-    Официант (Jarson): Это слово пришло из французского (garçon) и прочно закрепилось в арабском диалекте.
+    Ала махлак '''على مهلك''': Дословно "на твоей неспешности". Это самый естественный способ попросить кого-то не тараторить.
 
-    Цвета (Род). Обратите внимание: «синий» — azraq, но «синяя бумага» — waraqa zarqa. У цветов в арабском мужской и женский род образуются специфически, учтите это в предложениях.
+    Ашан '''عشان''': Левантийское "чтобы" или "потому что". В разговорной речи оно звучит в каждом втором предложении.
 
-    Dughri ('''دغري'''): Пожалуй, самое популярное слово для указания пути. Оно пришло из турецкого, но в арабском без него никуда.
+    Саллих-ли '''صلح لي''': "Исправь мне". Полезно сказать это в начале разговора с носителем, чтобы он не стеснялся вас поправлять.
 
-    Ittafaqna ('''اتفقنا'''): Глагол в прошедшем времени («мы договорились»), но используется именно как «ОК, идёт, по рукам».
-
-    Bid-dabt ('''بالضبط'''): Обратите внимание на транскрипцию — буква «Дад» дает тяжелый звук «д», почти переходящий в «з» в некоторых диалектах, но «d» здесь — стандарт.
+    Ат-талфон '''التلفون''': Несмотря на наличие слова "хатиф" (телефон), в 99% случаев люди используют именно это заимствование.
 story:
   en:
-  - ar: لو سمحت يا جرسون، وين طلبنا؟
-    en: Please waiter, where is our order?
-    transliteration: Law samaht ya jarson, wayn talabna?
-  - ar: الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.
-    en: The tablecloth is purple and the napkin is blue, everything is beautiful here.
-    transliteration: Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
-  - ar: بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.
-    en: I want boiled chicken and a salad with olive oil and sour cream.
-    transliteration: Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
-  - ar: ممكن تطبع هذا المستند على ورقة رمادية؟
-    en: Can you print this document on a grey paper?
-    transliteration: Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
-  - ar: وين الفندق؟ هو بعيد من هنا؟
-    en: Where is the hotel? Is it far from here?
-    transliteration: Wayn al-funduq? Huwa ba'id min huna?
-  - ar: لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.
-    en: No, go straight, the hotel is around the corner after the traffic light.
-    transliteration: La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-  - ar: تمام، هذا بالضبط شو بدي. شكرا!
-    vocalized: تمام، هذا بالضبط شو بدي. شكراً!
-    en: Okay, this is exactly what I want. Thanks!
-    transliteration: Tamam, hadha bid-dabt shu biddi. Shukran!
-  - ar: عفوا! اتفقنا، يوم سعيد.
-    vocalized: عفواً! اتفقنا، يوم سعيد.
-    en: You're welcome! Agreed, have a happy day.
-    transliteration: Afwan! Ittafaqna, yawm sa'id.
+  - ar: بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون.
+    en: I started studying the language on my own two years ago with a phone app.
+    transliteration: Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
+  - ar: مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي.
+    en: Sometimes I lack words and my grammar is weak, and it is hard to understand by ear.
+    transliteration: Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
+  - ar: بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا.
+    en: I try to read the news to communicate with people. Language connects us.
+    transliteration: Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
+  - ar: لو سمحت، احكي على مهلك. ما فهمت كل شيء.
+    en: Please, speak slower. I did not understand everything.
+    transliteration: Law samaht, ihki ala mahlak. Ma fahimt kull shi.
+  - ar: كيف لهجتي؟ صلح لي أغلاطي وكيف بنحكي هذه الكلمة صح؟
+    en: How is my accent? Correct my mistakes and how to say this word correctly?
+    transliteration: Kayf lahjati? Sallih-li aghlati wa kayf binhki hadhihi al-kalima sah?
+  - ar: لازم أزيد كلماتي. العمر مش حاجز للدراسة!
+    en: I need to expand my vocabulary. Age is not a barrier to study!
+    transliteration: Lazim azid kalimati. Al-umr mish hajaz lid-dirasa!
 words:
-- en: blue
-  ar: أزرق
-  transliteration: azraq
-  ru: синий
-- en: purple
-  ar: بنفسجي
-  transliteration: banafsaji
-  ru: фиолетовый
-- en: grey
-  ar: رمادي
-  transliteration: ramadi
-  ru: серый
-- en: paper
-  ar: ورقة
-  transliteration: waraqa
-  ru: бумага
-- en: document
-  ar: مستند
-  transliteration: mustanad
-  ru: документ
-- en: to print
-  ar: يطبع
-  transliteration: yitba'
-  ru: напечатать
-- en: olive oil
-  ar: زيت زيتون
-  transliteration: zayt zaytun
-  ru: оливковое масло
-- en: sour cream
-  ar: لبنة
-  transliteration: labneh
-  ru: сметана
-- en: cottage cheese
-  ar: قريشة
-  transliteration: qarisha
-  ru: творог
-- en: to fry
-  ar: يقلي
-  transliteration: yiqli
-  ru: поджарить
-- en: to boil
-  ar: يسلق
-  transliteration: yisluq
-  ru: сварить
-- en: waiter
-  ar: جرسون
-  transliteration: jarson
-  ru: официант
-- en: exactly
-  ar: بالضبط
-  transliteration: bid-dabt
-  ru: в точности
-- en: i agree
-  ar: أنا موافق
-  transliteration: ana muwafiq
-  ru: согласен
-- en: agreed
-  ar: اتفقنا
-  transliteration: ittafaqna
-  ru: договорились
-- en: straight
-  ar: دغري
-  transliteration: dughri
-  ru: прямо
-- en: backwards
-  ar: لورا
-  transliteration: la-wara
-  ru: назад
-- en: around the corner
-  ar: على الزاوية
-  transliteration: ala az-zawiya
-  ru: за углом
-- en: traffic light
-  ar: إشارة ضوئية
-  transliteration: ishara daw'iya
-  ru: светофор
+- en: self
+  ar: لحالي
+  transliteration: la-hali
+  ru: самостоятельно
+- en: application
+  ar: تطبيق
+  transliteration: tatbiq
+  ru: приложение
+- en: grammar
+  ar: قواعد
+  transliteration: qawa'id
+  ru: грамматика
+- en: accent
+  ar: لهجة
+  transliteration: lahja
+  ru: акцент
+- en: communication
+  ar: تواصل
+  transliteration: tawasul
+  ru: общение
+- en: vocabulary
+  ar: قاموس كلمات
+  transliteration: qamus kalimat
+  ru: запас слов
+- en: mistake
+  ar: غلط
+  transliteration: ghalat
+  ru: ошибка
+- en: news
+  ar: أخبار
+  transliteration: akhbar
+  ru: новости
+- en: slowly
+  ar: على مهلك
+  transliteration: ala mahlak
+  ru: медленно
+- en: correcting
+  ar: تصليح
+  transliteration: taslih
+  ru: исправление
+- en: study
+  ar: بدرس
+  transliteration: badrus
+  ru: учить
+- en: understand
+  ar: بفهم
+  transliteration: bafham
+  ru: понимать
+- en: speak
+  ar: بحكي
+  transliteration: bahki
+  ru: говорить
+- en: explain
+  ar: يشرح
+  transliteration: yishrah
+  ru: объяснять
+- en: to start
+  ar: بدأت
+  transliteration: badat
+  ru: начинать
+- en: to correct
+  ar: يصلح
+  transliteration: yisallih
+  ru: исправлять
+- en: to try
+  ar: بحاول
+  transliteration: bahawal
+  ru: стараться
+- en: to read
+  ar: بقرأ
+  transliteration: baqra
+  ru: читать
+- en: to connect
+  ar: بيجمع
+  transliteration: bijma
+  ru: соединять
+- en: two years
+  ar: سنتين
+  transliteration: sanatayn
+  ru: два года
+- en: word
+  ar: كلمة
+  transliteration: kalima
+  ru: слово
+- en: words
+  ar: كلمات
+  transliteration: kalimat
+  ru: слова
+- en: age
+  ar: عمر
+  transliteration: umr
+  ru: возраст
+- en: barrier
+  ar: حاجز
+  transliteration: hajaz
+  ru: преграда
+- en: correctly
+  ar: صح
+  transliteration: sah
+  ru: правильно
+- en: sometimes
+  ar: مرات
+  transliteration: marrat
+  ru: иногда
 sentences:
-- en: i want a blue paper
-  ar: بدي ورقة زرقاء
-  transliteration: biddi waraqa zarqa
-  ru: я хочу синюю бумагу
-- en: can you print this document?
-  ar: ممكن تطبع هذا المستند
-  transliteration: mumkin titba' hadha al-mustanad
-  ru: можешь напечатать этот документ?
-- en: the car is grey
-  ar: السيارة رمادية
-  transliteration: as-sayyara ramadiya
-  ru: машина серая
-- en: we need olive oil for the salad
-  ar: بدنا زيت زيتون للسلطة
-  transliteration: bidna zayt zaytun las-salata
-  ru: нам нужно оливковое масло для салата
-- en: i want to fry the eggs
-  ar: بدي أقلي بيض
-  transliteration: biddi aqli bayd
-  ru: я хочу поджарить яйца
-- en: boiled chicken is very healthy
-  ar: دجاج مسلوق صحي كثير
-  transliteration: djaj masluq sihi kathir
-  ru: вареная курица — это очень полезно
-- en: where is the waiter?
-  ar: وين الجرسون
-  transliteration: wayn al-jarson
-  ru: где официант?
-- en: this is our order
-  ar: هذا طلبنا
-  transliteration: hadha talabna
-  ru: это наш заказ
-- en: please give me a napkin
-  ar: لو سمحت اعطيني محرمة
-  transliteration: law samaht a'tini mahrameh
-  ru: пожалуйста, дай мне салфетку
-- en: the tablecloth is purple
-  ar: الشرشف بنفسجي
-  transliteration: ash-sharshaf banafsaji
-  ru: скатерть фиолетовая
-- en: give me sour cream please
-  ar: اعطيني لبنة لو سمحت
-  transliteration: a'tini labneh law samaht
-  ru: дай мне сметану пожалуйста
-- en: i love cottage cheese
-  ar: بحب القريشة
-  transliteration: bahibb al-qarisha
-  ru: я люблю творог
-- en: go straight and then around the corner
-  ar: امشي دغري وبعدين على الزاوية
-  transliteration: imshi dughri wa ba'den ala az-zawiya
-  ru: иди прямо, а затем за угол
-- en: the traffic light is red now
-  ar: الإشارة الضوئية حمراء الآن
-  transliteration: al-ishara daw'iya hamra al-an
-  ru: светофор сейчас красный
-- en: i am constantly studying here
-  ar: أنا دائما بدرس هنا
-  transliteration: ana da'iman badrus huna
-  vocalized: أنا دائماً بدرس هنا
-  ru: я постоянно учусь здесь
-- en: this is exactly what i want
-  ar: هذا بالضبط شو بدي
-  transliteration: hadha bid-dabt shu biddi
-  ru: это в точности то, что я хочу
-- en: i agree with you, my friend
-  ar: أنا موافق معك يا صاحبي
-  transliteration: ana muwafiq ma'ak ya sahbi
-  ru: я согласен с тобой, мой друг
-- en: deal, see you tomorrow
-  ar: اتفقنا بشوفك بكرة
-  transliteration: ittafaqna bashufak bukra
-  ru: договорились, увидимся завтра
-- en: move the car backwards
-  ar: حرك السيارة لورا
-  transliteration: harrik as-sayyara la-wara
-  ru: передвинь машину назад
-- en: the waiter is constantly busy
-  ar: الجرسون دائما مشغول
-  transliteration: al-jarson da'iman mashghul
-  vocalized: الجرسون دائماً مشغول
-  ru: официант постоянно занят
+- en: i study the language on my own
+  ar: بدرس اللغة لحالي
+  transliteration: badrus al-lugha la-hali
+  ru: учу язык самостоятельно
+- en: i have been studying for two years
+  ar: بدرس من سنتين
+  transliteration: badrus min sanatayn
+  ru: учусь два года
+- en: i started with a phone app
+  ar: بدأت بتطبيق على التلفون
+  transliteration: badat bi-tatbiq ala at-talafon
+  ru: начинал по приложению в телефоне
+- en: sometimes i lack words
+  ar: مرات بنقصني كلمات
+  transliteration: marrat binqusni kalimat
+  ru: иногда мне не хватает слов
+- en: i have weak grammar knowledge
+  ar: قواعدي ضعيفة
+  transliteration: qawa'idi da'ifa
+  ru: слабо знаю грамматику
+- en: can you explain this word?
+  ar: ممكن تشرح هذه الكلمة
+  transliteration: mumkin tishrah hadhihi al-kalima
+  ru: можешь объяснить это слово
+- en: how to say it correctly?
+  ar: كيف بنحكيها صح
+  transliteration: kayf binhkiha sah
+  ru: как правильно сказать
+- en: what kind of accent do i have?
+  ar: كيف لهجتي
+  transliteration: kayf lahjati
+  ru: какой у меня акцент
+- en: i study to communicate
+  ar: بدرس عشان أتواصل
+  transliteration: badrus ashan atwasal
+  ru: учусь чтобы общаться
+- en: it is never too late to learn
+  ar: العمر مش حاجز للدراسة
+  transliteration: al-umr mish hajaz lid-dirasa
+  ru: возраст не преграда учёбе
+- en: language connects people
+  ar: اللغة بتجمع الناس
+  transliteration: al-lugha bitijma' an-nas
+  ru: язык соединяет людей
+- en: speak slower
+  ar: احكي على مهلك
+  transliteration: ihki ala mahlak
+  ru: говори медленнее
+- en: i did not understand everything
+  ar: ما فهمت كل شيء
+  transliteration: ma fahimt kull shi
+  ru: я не всё понял
+- en: i speak like a child
+  ar: بحكي مثل الولد الصغير
+  transliteration: bahki mitl al-walad as-saghir
+  ru: владею языком на уровне ребёнка
+- en: i need to expand my vocabulary
+  ar: لازم أزيد كلماتي
+  transliteration: lazim azid kalimati
+  ru: мне нужно расширить запас слов
+- en: i try to read the news
+  ar: بحاول أقرأ الأخبار
+  transliteration: bahawal aqra al-akhbar
+  ru: стараюсь читать новости
+- en: it is hard to understand by ear
+  ar: صعب أفهم سماعي
+  transliteration: sa'b afham sima'i
+  ru: трудно понимать на слух
+- en: please correct my mistakes
+  ar: صلح لي أغلاطي لو سمحت
+  transliteration: sallih-li aghlati law samaht
+  ru: пожалуйста, исправляй мои ошибки

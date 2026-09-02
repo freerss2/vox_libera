@@ -1,328 +1,198 @@
-id: polite_language_1
+id: names_meaning_1
 name:
-  en: Polite language 1
-  ru: Вежливые обращения 1
+  en: Names meaning 1
+  ru: Значения имён 1
 explanations:
   en: |
-    ### Lesson Objective
-    Arabic politeness is imbued with special expressions that are often not translated literally, but create that very atmosphere of hospitality.
+    ### Why is it important to study the meaning of proper names
 
-    ### Conversational nuances
-    Sakhtein '''صحتين''': A versatile word. It's used both as "to your health" (when someone sneezes or drinks) and as "bon appétit." Literally, it's "two healths."
+    Many Arabic names are common adjectives and nouns. Understanding their literal meaning helps you instantly associate a new word with a familiar name (for example, the name Ali means "high/elevated," and Karim means "generous").
+    A native speaker will be pleased if you compliment them on the meaning of their name. Furthermore, using names as an example, we learn about word construction patterns in Arabic.
 
-    Dir balak '''دير بالك''': The most common way to say "be careful" or "take care." The masculine form is balak, and the feminine form is balek.
-
-    Lo samaght '''لو سمحت''': The perfect phrase to politely address a waiter, passerby, or coworker.
-
-    Al-bayt baytak '''البيت بيتك''': Literally, "the house is your home." This is the warmest "make yourself comfortable" one can hear from a host.
-
-    Truh wa tirja bis-salaamah: A beautiful wish for "leaving and returning safely." In colloquial speech, this is the standard "have a safe journey."
-
-    Tafaddal '''تفضل''': A magical word. It is used to invite someone into the house and is said when passing an object or giving up a seat.
-
-    Ala rasi '''على راسي''': Literally, "on my head." A very polite way of saying "I'll do it with pleasure" or "you're welcome."
-
-    Mustahil '''مستحيل''': Literally, "impossible." In Arabic, this is the strongest way to say "absolutely" or "it can't happen."
-
-    Aqeed '''أكيد''': One of the most common words. It replaces "absolutely," "certainly," and "definitely."
-
-    Mumkin '''ممكن''': A universal "maybe" or "possible."
-
-    Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the meaning of "as luck would have it."
   ru: |
-    ### Цель урока
-    Арабская вежливость пропитана особыми оборотами, которые часто не переводятся дословно, но создают ту самую атмосферу гостеприимства.
+    ### Почему важно изучить значение имён собственных
 
-    ### Разговорные нюансы
-    Сахтейн '''صحتين''': Универсальное слово. Его говорят и как «на здоровье» (когда кто-то чихнул или выпил), и как «приятного аппетита». Дословно это «два здоровья».
-
-    Дир балак '''دير بالك''': Самый ходовой способ сказать «осторожно» или «береги себя». В мужском роде — balak, в женском — balek.
-
-    Ло самахт '''لو سمحت''': Идеальная фраза, чтобы вежливо обратиться к официанту, прохожему или коллеге.
-
-    Аль-байт байтак '''البيت بيتك''': Дословно «дом — твой дом». Это самое теплое «располагайтесь», которое можно услышать от хозяина.
-
-    Трух ва тирджа бис-саляма: Красивое пожелание «уехать и вернуться в целости». В разговорной речи это стандартное «счастливого пути».
-
-    Тафаддаль '''تفضل''': Магическое слово. Им приглашают войти, его говорят, когда передают предмет, или когда уступают место.
-
-    Аля раси '''على راسي''': Дословно «на моей голове». Очень вежливый способ сказать «сделаю с удовольствием» или «не стоит благодарности».
-
-    Мустахиль '''مستحيل''': Дословно «невозможно». В арабском это самый сильный способ сказать «ни в коем случае» или «этого не может быть».
-
-    Акид '''أكيد''': Одно из самых частотных слов. Оно заменяет и «обязательно», и «конечно», и «точно».
-
-    Мумкин '''ممكن''': Универсальное «может быть» или «возможно».
-
-    Митль аль-хазз ас-саййи: Дословно «как плохая удача». Именно так передается смысл нашего «как назло».
+    Многие арабские имена — это обычные прилагательные и существительные. Понимание их буквального значения помогает мгновенно связать новое слово с уже знакомым именем (например, имя Али означает "высокий/возвышенный", а Карим — "щедрый").
+    Носителю языка будет приятно, если вы скажете комплимент связанный со смыслом его имени. Кроме того, на примере имён мы знакомимся с моделями построения слов в арабском языке.
 words:
-- en: thank god
-  ar: الحمد لله
-  transliteration: al-hamdu lillah
-  vocalized: الحَمْدُ لله
-  ru: слава богу
-- en: god forbid
-  ar: لا سمح الله
-  transliteration: la samah allah
-  vocalized: لَا سَمَحَ الله
-  ru: не дай бог
-- en: to your health
-  ar: صحتين
-  transliteration: sahtayn
-  vocalized: صَحْتَيْن
-  ru: на здоровье
-- en: rest in peace
-  ar: الله يرحمه
-  transliteration: Allah yirhamo
-  ru: царство ему небесное
-- en: may God grant him health
-  ar: الله يعطيه الصحة
-  transliteration: Allah ya'tih is-sahha
-  ru: дай бог ему здоровья
-- en: bon appetit
-  ar: صحتين وعافية
-  transliteration: sahtayn wa afye
-  vocalized: صَحْتَيْن وَعَافْيِة
-  ru: приятного аппетита
-- en: take care
-  ar: دير بالاك
-  transliteration: dir balak
-  vocalized: دِير بَالَاك
-  ru: береги себя
-- en: you are welcome
-  ar: عفوا
-  transliteration: afwan
-  vocalized: عَفْوًا
-  ru: пожалуйста (ответ)
-- en: nice to meet you
-  ar: فرصة سعيدة
-  transliteration: fursa sa'ida
-  vocalized: فُرْصَة سَعِيدَة
-  ru: приятно познакомиться
-- en: unfortunately
-  ar: للأسف
-  transliteration: lil-asaf
-  vocalized: لِلْأَسَف
-  ru: к сожалению
-- en: luck
-  ar: توفيق
-  transliteration: tawfiq
-  vocalized: تَوْفِيق
-  ru: удача
-- en: welcome
-  ar: أهلا وسهلا
-  transliteration: ahlan wa sahlan
-  vocalized: أَهْلًا وَسَهْلًا
-  ru: добро пожаловать
-- en: with pleasure
-  ar: على راسي
-  transliteration: ala rasi
-  vocalized: عَلَى رَاسِي
-  ru: с радостью
-- en: thank you
-  ar: تسلم
-  transliteration: tislam
-  vocalized: تِسْلَم
-  ru: спасибо (пожелание здоровья)
-- en: safe (m)
-  ar: سالم
-  transliteration: salim
-  vocalized: سَالِم
-  ru: благополучный
-- en: worry
-  ar: قلق
-  transliteration: qalaq
-  vocalized: قَلَق
-  ru: беспокойство
-- en: here you go (m)
-  ar: تفضّل
-  transliteration: tafaddal
-  vocalized: تَفَضَّل
-  ru: пожалуйста (приглашение)
-- en: never mind
-  ar: معلش
-  transliteration: ma'lesh
-  vocalized: مَعْلِش
-  ru: ничего страшного
-- en: problem
-  ar: مشكلة
-  transliteration: mushkile
-  vocalized: مُشْكِلِة
-  ru: проблема
-- en: congratulations
-  ar: مبروك
-  transliteration: mabruk
-  vocalized: مَبْرُوك
-  ru: поздравляю
-- en: blessed (m)
-  ar: مبارك
-  transliteration: mubarak
-  vocalized: مُبَارَك
-  ru: благословенный
-- en: bad (m)
-  ar: سيّء
-  transliteration: sayyi
-  vocalized: سَيِّء
-  ru: плохой
-- en: good
-  ar: تمام
-  transliteration: tamam
-  vocalized: تَمَام
-  ru: хорошо (согласие)
-- en: impossible (m)
-  ar: مستحيل
-  transliteration: mustahil
-  vocalized: مُسْتَحِيل
-  ru: невозможный
-- en: definite (m)
-  ar: أكيد
-  transliteration: akid
-  vocalized: أَكِيد
-  ru: определенный
-- en: possible (m)
-  ar: ممكن
-  transliteration: mumkin
-  vocalized: مُمْكِن
-  ru: возможный
-- en: honored (m)
-  ar: محترم
-  transliteration: muhtaram
-  vocalized: مُحْتَرَم
-  ru: уважаемый
+- en: happy (m)
+  ar: سعيد
+  transliteration: sa'id
+  ru: счастливый
+- en: beautiful (m)
+  ar: جميل
+  transliteration: jamil
+  ru: красивый
+- en: kind (m)
+  ar: طيب
+  transliteration: tayyib
+  ru: добрый
+- en: elevated (m)
+  ar: عالي
+  transliteration: ali
+  ru: возвышенный
+- en: calm (m)
+  ar: هادي
+  transliteration: hadi
+  ru: спокойный
+- en: generous (m)
+  ar: كريم
+  transliteration: karim
+  ru: щедрый
+- en: faithful (m)
+  ar: أمين
+  transliteration: amin
+  ru: верный
+- en: understanding (m)
+  ar: فهيم
+  transliteration: fahim
+  ru: понимающий
+- en: man / guy
+  ar: زلمة
+  transliteration: zalama
+  ru: человек / мужчина
+- en: employee (m)
+  ar: موظف
+  transliteration: muwazzaf
+  ru: сотрудник / работник
+- en: bright / shining (m)
+  ar: منير
+  transliteration: munir
+  ru: яркий / светлый
+- en: strong (m)
+  ar: شديد
+  transliteration: shadid
+  ru: крепкий
+- en: flower
+  ar: زهرة
+  transliteration: zahra
+  ru: цветок
+- en: rose
+  ar: وردة
+  transliteration: warda
+  ru: роза
+- en: star
+  ar: نجمة
+  transliteration: najma
+  ru: звезда
+- en: glow
+  ar: نور
+  transliteration: nur
+  ru: сияние
+- en: sun
+  ar: شمس
+  transliteration: shams
+  ru: солнце
+- en: pure (f)
+  ar: صافية
+  transliteration: safiya
+  ru: ясная
+- en: moon
+  ar: قمر
+  transliteration: qamar
+  ru: луна
+- en: pearl
+  ar: لؤلؤة
+  transliteration: lu'lu'a
+  ru: жемчужина
+- en: generous (f)
+  ar: كريمة
+  transliteration: karima
+  ru: щедрая
+- en: beautiful (f)
+  ar: جميلة
+  transliteration: jamila
+  ru: красивая
+- en: happy (f)
+  ar: سعيدة
+  transliteration: sa'ida
+  ru: счастливая
+- en: kind (f)
+  ar: طيبة
+  transliteration: tayyiba
+  ru: добрая
 sentences:
-- en: everything is good thank god
-  ar: كلّ شيء تمام الحمد لله
-  transliteration: kull shi tamam al-hamdu lillah
-  vocalized: كُلّ شَيْء تَمَام الحَمْدُ لله
-  ru: всё хорошо слава богу
-- en: bon appetit to everyone
-  ar: صحتين وعافية للجميع
-  transliteration: sahtayn wa afye lil-jami
-  vocalized: صَحْتَيْن وَعَافْيِة لِلْجَمِيع
-  ru: приятного аппетита всем
-- en: be careful on the road
-  ar: دير بالاك على الطّريق
-  transliteration: dir balak ala t-tariq
-  vocalized: دِير بَالَاك عَلَى الطَّرِيق
-  ru: осторожно на дороге
-- en: please i want a menu
-  ar: لو سمحت بدّي المنيو
-  transliteration: law samaht biddi l-minyu
-  vocalized: لَوْ سَمَحْت بَدِّي المِنْيُو
-  ru: будьте добры я хочу меню
-- en: nice to meet you my friend
-  ar: فرصة سعيدة يا صاحبي
-  transliteration: fursa sa'ida ya sahbi
-  vocalized: فُرْصَة سَعِيدَة يَا صَاحْبِي
-  ru: приятно познакомиться мой друг
-- en: unfortunately i can not come today
-  ar: للأسف ما بقدر أجي اليوم
-  transliteration: lil-asaf ma baqdar aji l-yom
-  vocalized: لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم
-  ru: к сожалению не могу прийти сегодня
-- en: i wish you luck in work
-  ar: بتمنّى لاك التّوفيق في الشّغل
-  transliteration: batmanna lak at-tawfiq fi sh-shughl
-  vocalized: بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل
-  ru: желаю тебе удачи в работе
-- en: no god forbid
-  ar: لا لا سمح الله
-  transliteration: la la samah allah
-  vocalized: لَا لَا سَمَحَ الله
-  ru: нет не дай бог
-- en: welcome to our house
-  ar: أهلا وسهلا في بيتنا
-  transliteration: ahlan wa sahlan fi baytna
-  vocalized: أهْلًا وَسَهْلًا فِي بَيْتْنَا
-  ru: добро пожаловать в наш дом
-- en: make yourself at home my friend
-  ar: البيت بيتاك يا صاحبي
-  transliteration: al-bayt baytak ya sahbi
-  vocalized: البَيْت بَيْتَاك يَا صَاحْبِي
-  ru: располагайтесь мой друг
-- en: have a safe trip to russia
-  ar: تروح وترجع بالسّلامة لروسيا
-  transliteration: truh wa tirja bis-salame la-rusiya
-  vocalized: تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا
-  ru: счастливого пути в Россию
-- en: do not worry about the money
-  ar: ما في داعي للقلق عن المصاري
-  transliteration: ma fi da'i lil-qalaq an al-masari
-  vocalized: مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي
-  ru: не стоит беспокоиться о деньгах
-- en: please sit here
-  ar: تفضّل اقعد هون
-  transliteration: tafaddal iq'ud hon
-  vocalized: تَفَضَّل اِقْعُد هُون
-  ru: пожалуйста садись здесь
-- en: it is not a problem never mind
-  ar: مش مشكلة معلش
-  transliteration: mish mushkile ma'lesh
-  vocalized: مُش مُشْكِلِة مَعْلِش
-  ru: это не проблема ничего страшного
-- en: congratulations on the new job
-  ar: مبروك على الشّغل جـديد
-  transliteration: mabruk ala sh-shughl j-did
-  vocalized: مَبْرُوك عَلَى الشُّغْل جْـدِيد
-  ru: поздравляю с новой работой
-- en: it is my pleasure no need to thank
-  ar: على راسي ولا يهمّاك
-  transliteration: ala rasi wala yhimmak
-  vocalized: عَلَى رَاسِي وَلَا يْهِمَّاك
-  ru: не стоит благодарности мне в радость
-- en: as luck would have it the bus is late
-  ar: مثل الحظّ السّيّء الباص متأخّر
-  transliteration: mitl al-hazz as-sayyi l-bas mut'akhkhir
-  vocalized: مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر
-  ru: как назло автобус опаздывает
-- en: fortunately the passport is here
-  ar: من حسن الحظّ الجواز هون
-  transliteration: min husn al-hazz al-jawaz hon
-  vocalized: مِن حُسْن الحَظّ الجَوَاز هُون
-  ru: к счастью паспорт здесь
-- en: no way this is impossible
-  ar: مستحيل هادا مش ممكن
-  transliteration: mustahil hada mish mumkin
-  vocalized: مُسْتَحِيل هَادَا مُش مُمْكِن
-  ru: ни в коем случае это невозможно
-- en: i will definitely come today
-  ar: أكيد بجي اليوم
-  transliteration: akid baji l-yom
-  vocalized: أَكِيد بَجِي اليَوْم
-  ru: я обязательно приду сегодня
-- en: maybe the coffee is hot
-  ar: ممكن القهوة سخنة
-  transliteration: mumkin al-qahwe sukhne
-  vocalized: مُمْكِن القَهْوِة سُخْنِة
-  ru: возможно кофе горячий
-- en: definitely the food is tasty
-  ar: أكيد الأكل زاكي
-  transliteration: akid al-akl zaki
-  vocalized: أَكِيد الأَكْل زَاكِي
-  ru: обязательно еда вкусная
-- en: as luck would have it the city is far
-  ar: مثل الحظّ السّيّء البلد بعيدة
-  transliteration: mitl al-hazz as-sayyi l-balad ba'ide
-  vocalized: مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة
-  ru: как назло город далеко
-- en: fortunately the hotel is clean
-  ar: من حسن الحظّ الفندق نظيف
-  transliteration: min husn al-hazz al-funduq nazif
-  vocalized: مِن حُسْن الحَظّ الفُنْدُق نَظِيف
-  ru: к счастью гостиница чистая
-- en: rest in peace, he was a good man
-  ar: الله يرحمه، كان زلمة منيح
-  transliteration: Allah yirhamo, kan zalame mnih
-  ru: царство ему небесное, он был хорошим человеком
-- en: my grandfather, rest in peace, taught me this
-  ar: جدي الله يرحمه علمني هالشي
-  transliteration: jiddi Allah yirhamo 'allamni ha-shi
-  ru: мой дед, царство ему небесное, научил меня этому
-- en: may God grant him health, he helped me a lot
-  ar: الله يعطيه الصحة، ساعدني كتير
-  transliteration: Allah ya'tih is-sahha, sa'adni ktir
-  ru: дай бог ему здоровья, он мне очень помог
-- en: our neighbor is sick, may God grant him health
-  ar: جارنا مريض، الله يعطيه الصحة
-  transliteration: jarna marid, Allah ya'tih is-sahha
-  ru: наш сосед болеет, дай бог ему здоровья
+- en: this man is very happy
+  ar: هذا الزلمة سعيد كثير
+  transliteration: hadha az-zalama sa'id kathir
+  ru: этот человек очень счастливый
+- en: your friend is very handsome
+  ar: صاحبك جميل كثير
+  transliteration: sahbak jamil kathir
+  ru: твой друг очень красивый
+- en: my brother is very kind
+  ar: أخوي طيب كثير
+  transliteration: akhuy tayyib kathir
+  ru: мой брат очень добрый
+- en: this boy is very tall
+  ar: هذا الولد طويل كثير
+  transliteration: hadha al-walad tawil kathir
+  ru: этот парень очень высокий
+- en: the sea today is very calm
+  ar: البحر اليوم هادي كثير
+  transliteration: al-bahr al-yom hadi kathir
+  ru: море сегодня очень спокойное
+- en: your father is very generous
+  ar: أبوك كريم كثير
+  transliteration: abuk karim kathir
+  ru: твой отец очень щедрый
+- en: this employee is very loyal
+  ar: هذا الموظف أمين كثير
+  transliteration: hadha al-muwazzaf amin kathir
+  ru: этот сотрудник очень верный
+- en: my son is very smart
+  ar: ابني فهيم كثير
+  transliteration: ibni fahim kathir
+  ru: мой сын очень умный
+- en: this man is very kind
+  ar: هذا الزلمة طيب كثير
+  transliteration: hadha az-zalama tayyib kathir
+  ru: этот человек очень добрый
+- en: your room is very bright
+  ar: غرفتك منيرة كثير
+  transliteration: ghurfatak munira kathir
+  ru: твоя комната очень светлая
+- en: this coffee is very strong
+  ar: هذه القهوة شديدة كثير
+  transliteration: hadhihi al-qahwa shadida kathir
+  ru: этот кофе очень крепкий
+- en: our neighbor is very calm
+  ar: جارنا هادي كثير
+  transliteration: jarna hadi kathir
+  ru: наш сосед очень спокойный
+- en: this flower is very beautiful
+  ar: هذه الزهرة جميلة كثير
+  transliteration: hadhihi az-zahra jamila kathir
+  ru: этот цветок очень красивый
+- en: the sun today is very hot
+  ar: الشمس اليوم سخنة كثير
+  transliteration: ash-shams al-yom sukhna kathir
+  ru: солнце сегодня очень жаркое
+- en: this star is very bright
+  ar: هذه النجمة منيرة كثير
+  transliteration: hadhihi an-najma munira kathir
+  ru: эта звезда очень яркая
+- en: this rose is very beautiful
+  ar: هذه الوردة جميلة كثير
+  transliteration: hadhihi al-warda jamila kathir
+  ru: эта роза очень красивая
+- en: the sky today is very clear
+  ar: السماء اليوم صافية كثير
+  transliteration: as-sama al-yom safiya kathir
+  ru: небо сегодня очень чистое
+- en: your sister is very happy
+  ar: أختك سعيدة كثير
+  transliteration: ukhtak sa'ida kathir
+  ru: твоя сестра очень счастливая
+- en: my mom is very kind
+  ar: أمي طيبة كثير
+  transliteration: ummi tayyiba kathir
+  ru: моя мама очень добрая
+- en: the moon today is very beautiful
+  ar: القمر اليوم جميل كثير
+  transliteration: al-qamar al-yom jamil kathir
+  ru: луна сегодня очень красивая
+- en: this woman is very generous
+  ar: هذه المرة كريمة كثير
+  transliteration: hadhihi al-mara karima kathir
+  ru: эта женщина очень щедрая

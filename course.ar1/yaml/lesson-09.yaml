@@ -1,235 +1,328 @@
-id: studying_language_1
+id: polite_language_1
 name:
-  en: Studying language 1
-  ru: Изучая язык 1
+  en: Polite language 1
+  ru: Вежливые обращения 1
 explanations:
   en: |
     ### Lesson Objective
-    When communicating with a native speaker, we often find it difficult to express ourselves correctly.
-    We lack words, we're unsure of our declensions, and our pronunciation isn't perfect.
-    This lesson was created to help explain these difficulties.
+    Arabic politeness is imbued with special expressions that are often not translated literally, but create that very atmosphere of hospitality.
 
     ### Conversational nuances
-    La-khali '''لحالي''': A very important word. Literally "for yourself," it's used in all contexts when you're doing something alone or independently.
+    Sakhtein '''صحتين''': A versatile word. It's used both as "to your health" (when someone sneezes or drinks) and as "bon appétit." Literally, it's "two healths."
 
-    Ala makhlaq '''على مهلك''': Literally "at your leisure." This is the most natural way to ask someone to stop talking too fast.
+    Dir balak '''دير بالك''': The most common way to say "be careful" or "take care." The masculine form is balak, and the feminine form is balek.
 
-    Ashan '''عشان''': Levantine "so that" or "because." In colloquial speech, it's used in every other sentence.
+    Lo samaght '''لو سمحت''': The perfect phrase to politely address a waiter, passerby, or coworker.
 
-    Sallikh-li '''صلح لي''': "Correct me." It's helpful to say this at the beginning of a conversation with a native speaker so they feel comfortable correcting you.
+    Al-bayt baytak '''البيت بيتك''': Literally, "the house is your home." This is the warmest "make yourself comfortable" one can hear from a host.
 
-    At-talfon '''التلفون''': Despite the presence of the word "khatif" (telephone), in 99% of cases people use this borrowing.
+    Truh wa tirja bis-salaamah: A beautiful wish for "leaving and returning safely." In colloquial speech, this is the standard "have a safe journey."
+
+    Tafaddal '''تفضل''': A magical word. It is used to invite someone into the house and is said when passing an object or giving up a seat.
+
+    Ala rasi '''على راسي''': Literally, "on my head." A very polite way of saying "I'll do it with pleasure" or "you're welcome."
+
+    Mustahil '''مستحيل''': Literally, "impossible." In Arabic, this is the strongest way to say "absolutely" or "it can't happen."
+
+    Aqeed '''أكيد''': One of the most common words. It replaces "absolutely," "certainly," and "definitely."
+
+    Mumkin '''ممكن''': A universal "maybe" or "possible."
+
+    Mithl al-hazz al-sayyi: Literally, "like bad luck." This is how we convey the meaning of "as luck would have it."
   ru: |
     ### Цель урока
-    Общаясь с носителем языка мы часто затрудняемся изъясниться правильно.
-    Нам не хватает слов, мы неуверенно пользуемся склонениями, наше произношение не идеально.
-    Чтобы помочь объяснить такие трудности и был создан этот урок.
+    Арабская вежливость пропитана особыми оборотами, которые часто не переводятся дословно, но создают ту самую атмосферу гостеприимства.
 
     ### Разговорные нюансы
-    Ля-хали '''لحالي''': Очень важное слово. Дословно "для себя самого", используется во всех контекстах, когда вы делаете что-то один или самостоятельно.
+    Сахтейн '''صحتين''': Универсальное слово. Его говорят и как «на здоровье» (когда кто-то чихнул или выпил), и как «приятного аппетита». Дословно это «два здоровья».
 
-    Ала махлак '''على مهلك''': Дословно "на твоей неспешности". Это самый естественный способ попросить кого-то не тараторить.
+    Дир балак '''دير بالك''': Самый ходовой способ сказать «осторожно» или «береги себя». В мужском роде — balak, в женском — balek.
 
-    Ашан '''عشان''': Левантийское "чтобы" или "потому что". В разговорной речи оно звучит в каждом втором предложении.
+    Ло самахт '''لو سمحت''': Идеальная фраза, чтобы вежливо обратиться к официанту, прохожему или коллеге.
 
-    Саллих-ли '''صلح لي''': "Исправь мне". Полезно сказать это в начале разговора с носителем, чтобы он не стеснялся вас поправлять.
+    Аль-байт байтак '''البيت بيتك''': Дословно «дом — твой дом». Это самое теплое «располагайтесь», которое можно услышать от хозяина.
 
-    Ат-талфон '''التلفون''': Несмотря на наличие слова "хатиф" (телефон), в 99% случаев люди используют именно это заимствование.
-story:
-  en:
-  - ar: بدأت بدرس اللغة لحالي من سنتين بتطبيق على التلفون.
-    en: I started studying the language on my own two years ago with a phone app.
-    transliteration: Badat badrus al-lugha la-hali min sanatayn bi-tatbiq ala at-talafon.
-  - ar: مرات بنقصني كلمات وقواعدي ضعيفة، وصعب أفهم سماعي.
-    en: Sometimes I lack words and my grammar is weak, and it is hard to understand by ear.
-    transliteration: Marrat binqusni kalimat wa qawa'idi da'ifa, wa sa'b afham sima'i.
-  - ar: بحاول أقرأ الأخبار عشان أتواصل مع الناس. اللغة بتجمعنا.
-    en: I try to read the news to communicate with people. Language connects us.
-    transliteration: Bahawal aqra al-akhbar ashan atwasal ma'a an-nas. Al-lugha bitijma'na.
-  - ar: لو سمحت، احكي على مهلك. ما فهمت كل شيء.
-    en: Please, speak slower. I did not understand everything.
-    transliteration: Law samaht, ihki ala mahlak. Ma fahimt kull shi.
-  - ar: كيف لهجتي؟ صلح لي أغلاطي وكيف بنحكي هذه الكلمة صح؟
-    en: How is my accent? Correct my mistakes and how to say this word correctly?
-    transliteration: Kayf lahjati? Sallih-li aghlati wa kayf binhki hadhihi al-kalima sah?
-  - ar: لازم أزيد كلماتي. العمر مش حاجز للدراسة!
-    en: I need to expand my vocabulary. Age is not a barrier to study!
-    transliteration: Lazim azid kalimati. Al-umr mish hajaz lid-dirasa!
+    Трух ва тирджа бис-саляма: Красивое пожелание «уехать и вернуться в целости». В разговорной речи это стандартное «счастливого пути».
+
+    Тафаддаль '''تفضل''': Магическое слово. Им приглашают войти, его говорят, когда передают предмет, или когда уступают место.
+
+    Аля раси '''على راسي''': Дословно «на моей голове». Очень вежливый способ сказать «сделаю с удовольствием» или «не стоит благодарности».
+
+    Мустахиль '''مستحيل''': Дословно «невозможно». В арабском это самый сильный способ сказать «ни в коем случае» или «этого не может быть».
+
+    Акид '''أكيد''': Одно из самых частотных слов. Оно заменяет и «обязательно», и «конечно», и «точно».
+
+    Мумкин '''ممكن''': Универсальное «может быть» или «возможно».
+
+    Митль аль-хазз ас-саййи: Дословно «как плохая удача». Именно так передается смысл нашего «как назло».
 words:
-- en: self
-  ar: لحالي
-  transliteration: la-hali
-  ru: самостоятельно
-- en: application
-  ar: تطبيق
-  transliteration: tatbiq
-  ru: приложение
-- en: grammar
-  ar: قواعد
-  transliteration: qawa'id
-  ru: грамматика
-- en: accent
-  ar: لهجة
-  transliteration: lahja
-  ru: акцент
-- en: communication
-  ar: تواصل
-  transliteration: tawasul
-  ru: общение
-- en: vocabulary
-  ar: قاموس كلمات
-  transliteration: qamus kalimat
-  ru: запас слов
-- en: mistake
-  ar: غلط
-  transliteration: ghalat
-  ru: ошибка
-- en: news
-  ar: أخبار
-  transliteration: akhbar
-  ru: новости
-- en: slowly
-  ar: على مهلك
-  transliteration: ala mahlak
-  ru: медленно
-- en: correcting
-  ar: تصليح
-  transliteration: taslih
-  ru: исправление
-- en: study
-  ar: بدرس
-  transliteration: badrus
-  ru: учить
-- en: understand
-  ar: بفهم
-  transliteration: bafham
-  ru: понимать
-- en: speak
-  ar: بحكي
-  transliteration: bahki
-  ru: говорить
-- en: explain
-  ar: يشرح
-  transliteration: yishrah
-  ru: объяснять
-- en: to start
-  ar: بدأت
-  transliteration: badat
-  ru: начинать
-- en: to correct
-  ar: يصلح
-  transliteration: yisallih
-  ru: исправлять
-- en: to try
-  ar: بحاول
-  transliteration: bahawal
-  ru: стараться
-- en: to read
-  ar: بقرأ
-  transliteration: baqra
-  ru: читать
-- en: to connect
-  ar: بيجمع
-  transliteration: bijma
-  ru: соединять
-- en: two years
-  ar: سنتين
-  transliteration: sanatayn
-  ru: два года
-- en: word
-  ar: كلمة
-  transliteration: kalima
-  ru: слово
-- en: words
-  ar: كلمات
-  transliteration: kalimat
-  ru: слова
-- en: age
-  ar: عمر
-  transliteration: umr
-  ru: возраст
-- en: barrier
-  ar: حاجز
-  transliteration: hajaz
-  ru: преграда
-- en: correctly
-  ar: صح
-  transliteration: sah
-  ru: правильно
-- en: sometimes
-  ar: مرات
-  transliteration: marrat
-  ru: иногда
+- en: thank god
+  ar: الحمد لله
+  transliteration: al-hamdu lillah
+  vocalized: الحَمْدُ لله
+  ru: слава богу
+- en: god forbid
+  ar: لا سمح الله
+  transliteration: la samah allah
+  vocalized: لَا سَمَحَ الله
+  ru: не дай бог
+- en: to your health
+  ar: صحتين
+  transliteration: sahtayn
+  vocalized: صَحْتَيْن
+  ru: на здоровье
+- en: rest in peace
+  ar: الله يرحمه
+  transliteration: Allah yirhamo
+  ru: царство ему небесное
+- en: may God grant him health
+  ar: الله يعطيه الصحة
+  transliteration: Allah ya'tih is-sahha
+  ru: дай бог ему здоровья
+- en: bon appetit
+  ar: صحتين وعافية
+  transliteration: sahtayn wa afye
+  vocalized: صَحْتَيْن وَعَافْيِة
+  ru: приятного аппетита
+- en: take care
+  ar: دير بالاك
+  transliteration: dir balak
+  vocalized: دِير بَالَاك
+  ru: береги себя
+- en: you are welcome
+  ar: عفوا
+  transliteration: afwan
+  vocalized: عَفْوًا
+  ru: пожалуйста (ответ)
+- en: nice to meet you
+  ar: فرصة سعيدة
+  transliteration: fursa sa'ida
+  vocalized: فُرْصَة سَعِيدَة
+  ru: приятно познакомиться
+- en: unfortunately
+  ar: للأسف
+  transliteration: lil-asaf
+  vocalized: لِلْأَسَف
+  ru: к сожалению
+- en: luck
+  ar: توفيق
+  transliteration: tawfiq
+  vocalized: تَوْفِيق
+  ru: удача
+- en: welcome
+  ar: أهلا وسهلا
+  transliteration: ahlan wa sahlan
+  vocalized: أَهْلًا وَسَهْلًا
+  ru: добро пожаловать
+- en: with pleasure
+  ar: على راسي
+  transliteration: ala rasi
+  vocalized: عَلَى رَاسِي
+  ru: с радостью
+- en: thank you
+  ar: تسلم
+  transliteration: tislam
+  vocalized: تِسْلَم
+  ru: спасибо (пожелание здоровья)
+- en: safe (m)
+  ar: سالم
+  transliteration: salim
+  vocalized: سَالِم
+  ru: благополучный
+- en: worry
+  ar: قلق
+  transliteration: qalaq
+  vocalized: قَلَق
+  ru: беспокойство
+- en: here you go (m)
+  ar: تفضّل
+  transliteration: tafaddal
+  vocalized: تَفَضَّل
+  ru: пожалуйста (приглашение)
+- en: never mind
+  ar: معلش
+  transliteration: ma'lesh
+  vocalized: مَعْلِش
+  ru: ничего страшного
+- en: problem
+  ar: مشكلة
+  transliteration: mushkile
+  vocalized: مُشْكِلِة
+  ru: проблема
+- en: congratulations
+  ar: مبروك
+  transliteration: mabruk
+  vocalized: مَبْرُوك
+  ru: поздравляю
+- en: blessed (m)
+  ar: مبارك
+  transliteration: mubarak
+  vocalized: مُبَارَك
+  ru: благословенный
+- en: bad (m)
+  ar: سيّء
+  transliteration: sayyi
+  vocalized: سَيِّء
+  ru: плохой
+- en: good
+  ar: تمام
+  transliteration: tamam
+  vocalized: تَمَام
+  ru: хорошо (согласие)
+- en: impossible (m)
+  ar: مستحيل
+  transliteration: mustahil
+  vocalized: مُسْتَحِيل
+  ru: невозможный
+- en: definite (m)
+  ar: أكيد
+  transliteration: akid
+  vocalized: أَكِيد
+  ru: определенный
+- en: possible (m)
+  ar: ممكن
+  transliteration: mumkin
+  vocalized: مُمْكِن
+  ru: возможный
+- en: honored (m)
+  ar: محترم
+  transliteration: muhtaram
+  vocalized: مُحْتَرَم
+  ru: уважаемый
 sentences:
-- en: i study the language on my own
-  ar: بدرس اللغة لحالي
-  transliteration: badrus al-lugha la-hali
-  ru: учу язык самостоятельно
-- en: i have been studying for two years
-  ar: بدرس من سنتين
-  transliteration: badrus min sanatayn
-  ru: учусь два года
-- en: i started with a phone app
-  ar: بدأت بتطبيق على التلفون
-  transliteration: badat bi-tatbiq ala at-talafon
-  ru: начинал по приложению в телефоне
-- en: sometimes i lack words
-  ar: مرات بنقصني كلمات
-  transliteration: marrat binqusni kalimat
-  ru: иногда мне не хватает слов
-- en: i have weak grammar knowledge
-  ar: قواعدي ضعيفة
-  transliteration: qawa'idi da'ifa
-  ru: слабо знаю грамматику
-- en: can you explain this word?
-  ar: ممكن تشرح هذه الكلمة
-  transliteration: mumkin tishrah hadhihi al-kalima
-  ru: можешь объяснить это слово
-- en: how to say it correctly?
-  ar: كيف بنحكيها صح
-  transliteration: kayf binhkiha sah
-  ru: как правильно сказать
-- en: what kind of accent do i have?
-  ar: كيف لهجتي
-  transliteration: kayf lahjati
-  ru: какой у меня акцент
-- en: i study to communicate
-  ar: بدرس عشان أتواصل
-  transliteration: badrus ashan atwasal
-  ru: учусь чтобы общаться
-- en: it is never too late to learn
-  ar: العمر مش حاجز للدراسة
-  transliteration: al-umr mish hajaz lid-dirasa
-  ru: возраст не преграда учёбе
-- en: language connects people
-  ar: اللغة بتجمع الناس
-  transliteration: al-lugha bitijma' an-nas
-  ru: язык соединяет людей
-- en: speak slower
-  ar: احكي على مهلك
-  transliteration: ihki ala mahlak
-  ru: говори медленнее
-- en: i did not understand everything
-  ar: ما فهمت كل شيء
-  transliteration: ma fahimt kull shi
-  ru: я не всё понял
-- en: i speak like a child
-  ar: بحكي مثل الولد الصغير
-  transliteration: bahki mitl al-walad as-saghir
-  ru: владею языком на уровне ребёнка
-- en: i need to expand my vocabulary
-  ar: لازم أزيد كلماتي
-  transliteration: lazim azid kalimati
-  ru: мне нужно расширить запас слов
-- en: i try to read the news
-  ar: بحاول أقرأ الأخبار
-  transliteration: bahawal aqra al-akhbar
-  ru: стараюсь читать новости
-- en: it is hard to understand by ear
-  ar: صعب أفهم سماعي
-  transliteration: sa'b afham sima'i
-  ru: трудно понимать на слух
-- en: please correct my mistakes
-  ar: صلح لي أغلاطي لو سمحت
-  transliteration: sallih-li aghlati law samaht
-  ru: пожалуйста, исправляй мои ошибки
+- en: everything is good thank god
+  ar: كلّ شيء تمام الحمد لله
+  transliteration: kull shi tamam al-hamdu lillah
+  vocalized: كُلّ شَيْء تَمَام الحَمْدُ لله
+  ru: всё хорошо слава богу
+- en: bon appetit to everyone
+  ar: صحتين وعافية للجميع
+  transliteration: sahtayn wa afye lil-jami
+  vocalized: صَحْتَيْن وَعَافْيِة لِلْجَمِيع
+  ru: приятного аппетита всем
+- en: be careful on the road
+  ar: دير بالاك على الطّريق
+  transliteration: dir balak ala t-tariq
+  vocalized: دِير بَالَاك عَلَى الطَّرِيق
+  ru: осторожно на дороге
+- en: please i want a menu
+  ar: لو سمحت بدّي المنيو
+  transliteration: law samaht biddi l-minyu
+  vocalized: لَوْ سَمَحْت بَدِّي المِنْيُو
+  ru: будьте добры я хочу меню
+- en: nice to meet you my friend
+  ar: فرصة سعيدة يا صاحبي
+  transliteration: fursa sa'ida ya sahbi
+  vocalized: فُرْصَة سَعِيدَة يَا صَاحْبِي
+  ru: приятно познакомиться мой друг
+- en: unfortunately i can not come today
+  ar: للأسف ما بقدر أجي اليوم
+  transliteration: lil-asaf ma baqdar aji l-yom
+  vocalized: لِلْأَسَف مَا بَقْدِر أَجِي اليَوْم
+  ru: к сожалению не могу прийти сегодня
+- en: i wish you luck in work
+  ar: بتمنّى لاك التّوفيق في الشّغل
+  transliteration: batmanna lak at-tawfiq fi sh-shughl
+  vocalized: بَتْمَنَّى لَاك التَّوْفِيق فِي الشُّغْل
+  ru: желаю тебе удачи в работе
+- en: no god forbid
+  ar: لا لا سمح الله
+  transliteration: la la samah allah
+  vocalized: لَا لَا سَمَحَ الله
+  ru: нет не дай бог
+- en: welcome to our house
+  ar: أهلا وسهلا في بيتنا
+  transliteration: ahlan wa sahlan fi baytna
+  vocalized: أهْلًا وَسَهْلًا فِي بَيْتْنَا
+  ru: добро пожаловать в наш дом
+- en: make yourself at home my friend
+  ar: البيت بيتاك يا صاحبي
+  transliteration: al-bayt baytak ya sahbi
+  vocalized: البَيْت بَيْتَاك يَا صَاحْبِي
+  ru: располагайтесь мой друг
+- en: have a safe trip to russia
+  ar: تروح وترجع بالسّلامة لروسيا
+  transliteration: truh wa tirja bis-salame la-rusiya
+  vocalized: تْرُوح وَتِرْجَع بِالسَّلَامِة لَرُوسْيَا
+  ru: счастливого пути в Россию
+- en: do not worry about the money
+  ar: ما في داعي للقلق عن المصاري
+  transliteration: ma fi da'i lil-qalaq an al-masari
+  vocalized: مَا فِي دَاعِي لِلْقَلَق عَن المَصَارِي
+  ru: не стоит беспокоиться о деньгах
+- en: please sit here
+  ar: تفضّل اقعد هون
+  transliteration: tafaddal iq'ud hon
+  vocalized: تَفَضَّل اِقْعُد هُون
+  ru: пожалуйста садись здесь
+- en: it is not a problem never mind
+  ar: مش مشكلة معلش
+  transliteration: mish mushkile ma'lesh
+  vocalized: مُش مُشْكِلِة مَعْلِش
+  ru: это не проблема ничего страшного
+- en: congratulations on the new job
+  ar: مبروك على الشّغل جـديد
+  transliteration: mabruk ala sh-shughl j-did
+  vocalized: مَبْرُوك عَلَى الشُّغْل جْـدِيد
+  ru: поздравляю с новой работой
+- en: it is my pleasure no need to thank
+  ar: على راسي ولا يهمّاك
+  transliteration: ala rasi wala yhimmak
+  vocalized: عَلَى رَاسِي وَلَا يْهِمَّاك
+  ru: не стоит благодарности мне в радость
+- en: as luck would have it the bus is late
+  ar: مثل الحظّ السّيّء الباص متأخّر
+  transliteration: mitl al-hazz as-sayyi l-bas mut'akhkhir
+  vocalized: مِثْل الحَظّ السَّيِّء البَاص مُتَأَخِّر
+  ru: как назло автобус опаздывает
+- en: fortunately the passport is here
+  ar: من حسن الحظّ الجواز هون
+  transliteration: min husn al-hazz al-jawaz hon
+  vocalized: مِن حُسْن الحَظّ الجَوَاز هُون
+  ru: к счастью паспорт здесь
+- en: no way this is impossible
+  ar: مستحيل هادا مش ممكن
+  transliteration: mustahil hada mish mumkin
+  vocalized: مُسْتَحِيل هَادَا مُش مُمْكِن
+  ru: ни в коем случае это невозможно
+- en: i will definitely come today
+  ar: أكيد بجي اليوم
+  transliteration: akid baji l-yom
+  vocalized: أَكِيد بَجِي اليَوْم
+  ru: я обязательно приду сегодня
+- en: maybe the coffee is hot
+  ar: ممكن القهوة سخنة
+  transliteration: mumkin al-qahwe sukhne
+  vocalized: مُمْكِن القَهْوِة سُخْنِة
+  ru: возможно кофе горячий
+- en: definitely the food is tasty
+  ar: أكيد الأكل زاكي
+  transliteration: akid al-akl zaki
+  vocalized: أَكِيد الأَكْل زَاكِي
+  ru: обязательно еда вкусная
+- en: as luck would have it the city is far
+  ar: مثل الحظّ السّيّء البلد بعيدة
+  transliteration: mitl al-hazz as-sayyi l-balad ba'ide
+  vocalized: مِثْل الحَظّ السَّيِّء البَلَد بَعِيدِة
+  ru: как назло город далеко
+- en: fortunately the hotel is clean
+  ar: من حسن الحظّ الفندق نظيف
+  transliteration: min husn al-hazz al-funduq nazif
+  vocalized: مِن حُسْن الحَظّ الفُنْدُق نَظِيف
+  ru: к счастью гостиница чистая
+- en: rest in peace, he was a good man
+  ar: الله يرحمه، كان زلمة منيح
+  transliteration: Allah yirhamo, kan zalame mnih
+  ru: царство ему небесное, он был хорошим человеком
+- en: my grandfather, rest in peace, taught me this
+  ar: جدي الله يرحمه علمني هالشي
+  transliteration: jiddi Allah yirhamo 'allamni ha-shi
+  ru: мой дед, царство ему небесное, научил меня этому
+- en: may God grant him health, he helped me a lot
+  ar: الله يعطيه الصحة، ساعدني كتير
+  transliteration: Allah ya'tih is-sahha, sa'adni ktir
+  ru: дай бог ему здоровья, он мне очень помог
+- en: our neighbor is sick, may God grant him health
+  ar: جارنا مريض، الله يعطيه الصحة
+  transliteration: jarna marid, Allah ya'tih is-sahha
+  ru: наш сосед болеет, дай бог ему здоровья
