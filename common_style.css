@@ -50,6 +50,12 @@
     text-align: center;
 }
 
+.action-link {
+    padding: 5px;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
 .bubble-buttons-no-margin {
     margin-top: 4px;
     margin-bottom: 4px;
