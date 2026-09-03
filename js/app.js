@@ -1302,7 +1302,7 @@ function renderSortingGame() {
         const wordText = bankWords[i];
         // find matching records in topic abc/words
         let transcription = '';
-        const matching_record = getMatchingRecord(topicDict, wordText);
+        const matching_record = decodeLearnItem(getMatchingRecord(topicDict, wordText));
         wordsMappingForSummary.push(matching_record);
         // use a transcription in the created element
         if (matching_record) {
@@ -1485,6 +1485,15 @@ window.giveupSorting = function() {
 
 // ------------------------------------------- game completion popup
 
+// decide whether topic is completed according to success percent
+// @param data: dictionary with wordsCount, sentencesCount, wordsSuccess, sentencesSuccess 
+// @return: true if all relevant percents are over the threshold (90%)
+function checkTopicSuccess(data) {
+    if (data.wordsCount && Math.round(data.wordsSuccess) < 90) { return 0; }
+    if (data.sentencesCount && Math.round(data.sentencesSuccess) < 90) { return 0; }
+    return 1;
+}
+
 // Show completion summary per round
 // @param acc: accuracy in this round
 function showWin(acc) {
@@ -1520,7 +1529,7 @@ function showWin(acc) {
 
         // suggest check/uncheck "completed" state in case it does not match the current state
         const currentTopicState = getTopicState(topicId);
-        const topicSuccess = (data.wordsSuccess > 90) && (data.sentencesSuccess > 90);
+        const topicSuccess = checkTopicSuccess(data);
         if (topicSuccess && ! currentTopicState) {
             suggestion = i18n.t('main|mark-completed');
             extra_action = function() {setTopicState(topicId, 1); setTimeout( () => {showWin(acc);}, 300) };
@@ -1535,8 +1544,9 @@ function showWin(acc) {
             suggestion = `\n### ##text-center## ${recommended}\n##bubble-buttons-no-margin## [${suggestion}](#suggestion)`;
         }
 
-        const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
-##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}% ${suggestion}`;
+        // skip sentences info on zero sentencesCount
+        const sent_info = data.sentencesCount ? `\n##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%` : '';
+        const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}% ${sent_info} ${suggestion}`;
 
         // Calculate the success rate
         let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
