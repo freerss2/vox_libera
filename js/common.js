@@ -45,8 +45,7 @@ function parseCustomDivs(text) {
 // usage: markdownConf = buildMarkdownConf(courseTargetLanguage, targetDir, userLang, userDir);
 // domElm.innerHTML = parseMarkdown(text, markdownConf);
 function parseMarkdown(text, conf={}) {
-    const nestedProcessed = parseCustomDivs(text);
-    return nestedProcessed
+    const nestedProcessed = parseCustomDivs(text)
       
       // Images ![alt-text](/path/to/picture.jpg)
       .replace(new RegExp('!\\[(.*?)\\]\\((.*?)\\)', 'gim'), '<img src="$2" alt="$1" class="guide-img">')
@@ -75,6 +74,7 @@ function parseMarkdown(text, conf={}) {
       
       // Newlines
       .replace(new RegExp('\\n', 'gim'), '<br>');
+    return window.replaceSmiliesWithImages(nestedProcessed);
 }
 
 // replace links like href="#repeat" with functions from actions dictionary
@@ -136,6 +136,7 @@ const smiliesMap = {
     '📚': 'lucide-book-check',
     '📖': 'lucide-book',
     '💬': 'lucide-message',
+    '💡': 'lucide-lightbulb',
     '✔': 'lucide-check',
     '▶': 'lucide-play',
     '⏩': 'lucide-chevrons-right',
@@ -143,6 +144,7 @@ const smiliesMap = {
     '🌍': 'lucide-globe',
     '👤': 'lucide-user',
     '→': 'lucide-arrow-right',
+    '➡': 'lucide-arrow-right',
     '☁': 'lucide-online',
     '💾': 'lucide-offline',
     '❌': 'lucide-close',

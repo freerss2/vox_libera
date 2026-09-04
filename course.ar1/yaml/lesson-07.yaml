@@ -10,12 +10,26 @@ explanations:
     Like flashcards, these exercises don't award success percentages.
     The goal is to practice independently in the game format, but without the risk of losing winning points.
 
+    This lesson introduces imperative verbs.
+    It is formed from the base verb form by shortening the prefix bti- to i- (for example, '''اِكْتِب''' — [iktib] "write").
+    When addressing a woman, the ending -і is always added at the end ('''اِكْتِبِي''' — [iktibi]).
+    More examples:
+    You drink (btishrab) ➡️ '''اِشْرَب''' (ishrab - m) ➡️ '''اِشْرَبِي''' (ishrabi - f)
+    You look (btishuf) ➡️ '''شُوف''' (shuf - m) ➡️ '''شُوفِي''' (shufi - f, the auxiliary sound is not needed if the root contains a second vowel)
+
   ru: |
     ### Этот урок предназначен для закрепления изученного.
     Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
     Кроме того, существует особый тип упражнений: сортировка по какому-либо общепринятому определению, например, женский род или сравнительная степень.
     Как и в карточках слов, за такие упражнения не начисляются проценты успеха.
     Цель - самостоятельная тренировка в фомате игры, но без угрозы потерять выигрышные баллы.
+
+    В этом уроке вводится блок глаголов повелительного наклонения.
+    Оно образуется от базовой формы глагола сокращением приставки bti- до i- (например, '''اِكْتِب''' — [iktib] «пиши»).
+    При обращении к женщине в конце всегда добавляется окончание -і ('''اِكْتِبِي''' — [iktibi]).
+    Ещё примеры:
+    Ты пьёшь (бтишраб) ➡️ '''اِشْرَب''' (ишраб — м) ➡️ '''اِشْرَبِي''' (ишраби — ж)
+    Ты смотришь (бтишуф) ➡️ '''شُوف''' (шуф — м) ➡️ '''شُوفِي''' (шуфи — ж, вспомогательный звук не нужен если корень содержит вторую гласную)
 
 sort_set:
 - id: verb_gender_pairs_present_3p

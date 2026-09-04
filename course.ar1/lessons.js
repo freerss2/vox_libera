@@ -1741,6 +1741,13 @@ Here you'll find exercises that practice grammar and memorize words that are sim
 Also, there is a special exercise type: sorting by some common definition, like feminine forms or comparative adjectives.
 Like flashcards, these exercises don't award success percentages.
 The goal is to practice independently in the game format, but without the risk of losing winning points.
+
+This lesson introduces imperative verbs.
+It is formed from the base verb form by shortening the prefix bti- to i- (for example, '''اِكْتِب''' — [iktib] "write").
+When addressing a woman, the ending -і is always added at the end ('''اِكْتِبِي''' — [iktibi]).
+More examples:
+You drink (btishrab) ➡️ '''اِشْرَب''' (ishrab - m) ➡️ '''اِشْرَبِي''' (ishrabi - f)
+You look (btishuf) ➡️ '''شُوف''' (shuf - m) ➡️ '''شُوفِي''' (shufi - f, the auxiliary sound is not needed if the root contains a second vowel)
 `,
     "sort_set": [
       {
