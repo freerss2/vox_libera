@@ -3705,227 +3705,233 @@ At-talfon '''التلفون''': Despite the presence of the word "khatif" (telep
     ],
     "index": 10
   },
-  "filling_the_gaps": {
-    "name": "Filling the Gaps",
+  "local_market": {
+    "name": "At the Market",
     "explanations": `### Important notes about this topic
-
-Сottage cheese: Arabic cuisine doesn't have a complete equivalent to cottage cheese. They typically use either qarisha (a cheese product) or white soft cheeses like jibna bida (white cheese).
-
-Waiter (Jarson): This word comes from French (garçon) and has become firmly established in the Arabic dialect.
-
-Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so take this into account in sentences.
-
-Dughri ('''دغري'''): Perhaps the most popular word for directions. It comes from Turkish, but Arabic is indispensable.
 
 Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used specifically as "OK, it's done."
 
-Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
+Mish mihriz ('''مش محرز'''): A super-popular Levantine expression. It means "it's not worth it," "it has no value," "it's not worth it." If you're offered a two-cent discount, say "mish mihriz" without hesitation.
+
+Basta ('''بسطة'''): This isn't just a stall, but most often an improvised street stand, a folding cot, or a carpet on the ground from which people sell fruit or souvenirs.
+
+Bahdalah ('''بهدلة'''): A very capacious word. It can mean "outrage," "reprimand/scolding," and "utter chaos."
+
+Harban ('''خربان'''): The most common colloquial word for something that is damaged, broken, or defective (from a telephone to sour milk).
 `,
-    "story": `##story-line## ''' لو سمحت يا جرسون، وين طلبنا؟ ''' ##story-translation## Please waiter, where is our order? ##story-transcr## Law samaht ya jarson, wayn talabna?
-##story-line## ''' الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا. ''' ##story-translation## The tablecloth is purple and the napkin is blue, everything is beautiful here. ##story-transcr## Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
-##story-line## ''' بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة. ''' ##story-translation## I want boiled chicken and a salad with olive oil and sour cream. ##story-transcr## Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
-##story-line## ''' ممكن تطبع هذا المستند على ورقة رمادية؟ ''' ##story-translation## Can you print this document on a grey paper? ##story-transcr## Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
-##story-line## ''' وين الفندق؟ هو بعيد من هنا؟ ''' ##story-translation## Where is the hotel? Is it far from here? ##story-transcr## Wayn al-funduq? Huwa ba'id min huna?
-##story-line## ''' لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية. ''' ##story-translation## No, go straight, the hotel is around the corner after the traffic light. ##story-transcr## La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-##story-line## ''' تمام، هذا بالضبط شو بدي. شكرا!@تمام، هذا بالضبط شو بدي. شكراً! ''' ##story-translation## Okay, this is exactly what I want. Thanks! ##story-transcr## Tamam, hadha bid-dabt shu biddi. Shukran!
-##story-line## ''' عفوا! اتفقنا، يوم سعيد.@عفواً! اتفقنا، يوم سعيد. ''' ##story-translation## You're welcome! Agreed, have a happy day. ##story-transcr## Afwan! Ittafaqna, yawm sa'id.`,
-    "words": [
-      [
-        "blue",
-        "أزرق",
-        "azraq"
-      ],
-      [
-        "purple",
-        "بنفسجي",
-        "banafsaji"
-      ],
-      [
-        "grey",
-        "رمادي",
-        "ramadi"
-      ],
-      [
-        "paper",
-        "ورقة",
-        "waraqa"
-      ],
-      [
-        "document",
-        "مستند",
-        "mustanad"
-      ],
-      [
-        "to print",
-        "يطبع",
-        "yitba'"
-      ],
-      [
-        "olive oil",
-        "زيت زيتون",
-        "zayt zaytun"
-      ],
-      [
-        "sour cream",
-        "لبنة",
-        "labneh"
-      ],
-      [
-        "cottage cheese",
-        "قريشة",
-        "qarisha"
-      ],
-      [
-        "to fry",
-        "يقلي",
-        "yiqli"
-      ],
-      [
-        "to boil",
-        "يسلق",
-        "yisluq"
-      ],
-      [
-        "waiter",
-        "جرسون",
-        "jarson"
-      ],
-      [
-        "exactly",
-        "بالضبط",
-        "bid-dabt"
-      ],
-      [
-        "i agree",
-        "أنا موافق",
-        "ana muwafiq"
-      ],
-      [
-        "agreed",
-        "اتفقنا",
-        "ittafaqna"
-      ],
-      [
-        "straight",
-        "دغري",
-        "dughri"
-      ],
-      [
-        "backwards",
-        "لورا",
-        "la-wara"
-      ],
-      [
-        "around the corner",
-        "على الزاوية",
-        "ala az-zawiya"
-      ],
-      [
-        "traffic light",
-        "إشارة ضوئية",
-        "ishara daw'iya"
-      ]
-    ],
+    "story": `##story-line## ''' مرحبا يا بيّاع، شو سعر هاي الشّنطة ع البسطة؟@مَرْحَبَا يَا بَيَّاع، شُو سِعِر هَاي الشَّنْطَة عَ الْبَسْطَة؟ ''' ##story-translation## Hi seller, how much is this bag on the stall? ##story-transcr## Marhaba ya bayya', shu si'ir hay ash-shanta 'al-basta?
+##story-line## ''' أهلا وسهلا! هاي مش أيّ شنطة، هاي جلد أصلي وشغل إيد، أحلى بضاعة عندي.@أَهْلًا وَسَهْلًا! هَاي مِش أَيَّ شَنْطَة، هَاي جِلْد أَصْلِي وِشُغُل إِيد، أَحْلَى بْضَاعَة عِنْدِي. ''' ##story-translation## Welcome! This is not just any bag, it's real leather, handmade, my best item. ##story-transcr## Ahla w-sahla! Hay mish ayy shanta, hay jild asli w-shughul id, ahla bda'a 'andi.
+##story-line## ''' سعرها منيح، نوعيّتها ممتازة مش تقليد.@سِعِرْهَا مْنِيح، نَوْعِيَّتْهَا مُمْتَازَة مِش تَقْلِيد. ''' ##story-translation## Its price is fair, its quality is excellent, not a fake. ##story-transcr## Si'irha mnih, no'iyyatha mumtaze mish taqlid.
+##story-line## ''' شو هالحكي! هاد غالي كتير، عيب عليك. بدّي خصم كبير.@شُو هَالْحَكِي! هَاد غَالِي كْتِير، عَيْب عَلَيْك. بِدِّي خَصِم كْبِير. ''' ##story-translation## What are you saying! This is way too expensive. I want a big discount. ##story-transcr## Shu hal-haki! Had ghali ktir, 'eb 'aleik. Biddi khasim kbir.
+##story-line## ''' واللّه عم تظلميني، تطّلّعي ع الخياطة، بتضلّ معك عشر سنين.@وَاللّٰه عَمْ تِظْلِمِينِي، تِطَّلَّعِي عَ الْخِيَاطَة، بِتِضَلّ مَعِك عَشِر سْنِين. ''' ##story-translation## You're being unfair, look at the stitching, it will last you ten years. ##story-transcr## Walla 'am tizlimini, tittalla'i 'al-khiyata, bitidall ma'ik 'ashir snin.
+##story-line## ''' لازم الواحد يفاصل دايما بالسّوق؟ طيّب، اتّفقنا.@لَازِم الْوَاحِد يْفَاصِل دَايْمًا بِالسُّوق؟ طَيِّب، اِتَّفَقْنَا. ''' ##story-translation## Does one always have to bargain at the market? Okay, deal. ##story-transcr## Lazim il-wahad yfasil dayman bis-suq? Tayyib, ittafaqna.`,
     "sentences": [
       [
-        "i want a blue paper",
-        "بدي ورقة زرقاء",
-        "biddi waraqa zarqa"
+        "what is the price of this",
+        "شو سعر هاد؟@شُو سِعِر هَاد؟",
+        "shu si'ir had?"
       ],
       [
-        "can you print this document?",
-        "ممكن تطبع هذا المستند",
-        "mumkin titba' hadha al-mustanad"
+        "i want a big discount",
+        "بدّي خصم كبير@بِدِّي خَصِم كْبِير",
+        "biddi khasim kbir"
       ],
       [
-        "the car is grey",
-        "السيارة رمادية",
-        "as-sayyara ramadiya"
+        "it is necessary to bargain at the market",
+        "لازم تفاصل بالسّوق@لَازِم تْفَاصِل بِالسُّوق",
+        "lazim tfasil bis-suq"
       ],
       [
-        "we need olive oil for the salad",
-        "بدنا زيت زيتون للسلطة",
-        "bidna zayt zaytun las-salata"
+        "everything on the stall is clean",
+        "كلّ شي ع البسطة نظيف@كُلّ شِي عَ الْبَسْطَة نَظِيف",
+        "kull shi 'al-basta nazif"
       ],
       [
-        "i want to fry the eggs",
-        "بدي أقلي بيض",
-        "biddi aqli bayd"
+        "the seller is a good man",
+        "البيّاع زلمة طيّب@الْبَيَّاع زَلَمَة طَيِّب",
+        "al-bayya' zalame tayyib"
       ],
       [
-        "boiled chicken is very healthy",
-        "دجاج مسلوق صحي كثير",
-        "djaj masluq sihi kathir"
+        "shame on you this is too expensive",
+        "عيب عليك هاد غالي كتير@عَيْب عَلَيْك هَاد غَالِي كْتِير",
+        "'eb 'aleik had ghali ktir"
       ],
       [
-        "where is the waiter?",
-        "وين الجرسون",
-        "wayn al-jarson"
+        "this price is a robbery",
+        "هاد السّعر سرقة@هَاد السِّعِر سِرْقَة",
+        "had as-si'ir sirqa"
       ],
       [
-        "this is our order",
-        "هذا طلبنا",
-        "hadha talabna"
+        "this job is not worth it",
+        "هاد الشّغل مش محرز@هَاد الشُّغُل مِش مِحْرِز",
+        "had ash-shughul mish mihriz"
       ],
       [
-        "please give me a napkin",
-        "لو سمحت اعطيني محرمة",
-        "law samaht a'tini mahrameh"
+        "what a mess is here",
+        "شو هالبهدلة هون@شُو هَالْبَهْدَلَة هُون",
+        "shu hal-bahdala hon"
       ],
       [
-        "the tablecloth is purple",
-        "الشرشف بنفسجي",
-        "ash-sharshaf banafsaji"
+        "the food is high quality",
+        "الأكل جودة عالية@الأَكِل جَوْدَة عَالْيَة",
+        "al-akil jawda 'alya"
       ],
       [
-        "give me sour cream please",
-        "اعطيني لبنة لو سمحت",
-        "a'tini labneh law samaht"
+        "the phone is broken",
+        "التّلفون خربان@التَّلَفُون خَرْبَان",
+        "at-talafon kharban"
       ],
       [
-        "i love cottage cheese",
-        "بحب القريشة",
-        "bahibb al-qarisha"
+        "this bag is fake",
+        "هاي الشّنطة تقليد@هَاي الشَّنْطَة تَقْلِيد",
+        "hay ash-shanta taqlid"
       ],
       [
-        "go straight and then around the corner",
-        "امشي دغري وبعدين على الزاوية",
-        "imshi dughri wa ba'den ala az-zawiya"
+        "give me a better price please",
+        "أعطيني سعر أحسن لو سمحت@أَعْطِينِي سِعِر أَحْسَن لَوْ سَمَحْت",
+        "a'tini si'ir ahsan law samaht"
       ],
       [
-        "the traffic light is red now",
-        "الإشارة الضوئية حمراء الآن",
-        "al-ishara daw'iya hamra al-an"
+        "is this real leather",
+        "هاد جلد أصلي؟@هَاد جِلْد أَصْلِي؟",
+        "had jild asli?"
       ],
       [
-        "i am constantly studying here",
-        "أنا دائما بدرس هنا@أنا دائماً بدرس هنا",
-        "ana da'iman badrus huna"
+        "this bag is very cheap",
+        "هاي الشّنطة رخيصة كتير@هَاي الشَّنْطَة رَخِيصَة كْتِير",
+        "hay ash-shanta rakhisa ktir"
       ],
       [
-        "this is exactly what i want",
-        "هذا بالضبط شو بدي",
-        "hadha bid-dabt shu biddi"
+        "i want to buy handmade items",
+        "بدّي أشتري شغل إيد@بِدِّي أَشْتَرِي شُغُل إِيد",
+        "biddi ashtari shughul id"
       ],
       [
-        "i agree with you, my friend",
-        "أنا موافق معك يا صاحبي",
-        "ana muwafiq ma'ak ya sahbi"
+        "the goods on the stall are excellent",
+        "البضاعة ع البسطة ممتازة@الْبْضَاعَة عَ الْبَسْطَة مُمْتَازَة",
+        "al-bda'a 'al-basta mumtaza"
       ],
       [
-        "deal, see you tomorrow",
-        "اتفقنا بشوفك بكرة",
-        "ittafaqna bashufak bukra"
+        "i do not want fake goods",
+        "ما بدّي بضاعة تقليد@مَا بِدِّي بْضَاعَة تَقْلِيد",
+        "ma biddi bda'a taqlid"
       ],
       [
-        "move the car backwards",
-        "حرك السيارة لورا",
-        "harrik as-sayyara la-wara"
+        "how much is this bag",
+        "قدّايش هاي الشّنطة؟@قَدَّايْش هَاي الشَّنْطَة؟",
+        "qaddesh hay ash-shanta?"
       ],
       [
-        "the waiter is constantly busy",
-        "الجرسون دائما مشغول@الجرسون دائماً مشغول",
-        "al-jarson da'iman mashghul"
+        "we agreed on the price",
+        "اتّفقنا ع السّعر@اِتَّفَقْنَا عَ السِّعِر",
+        "ittafaqna 'as-si'ir"
+      ]
+    ],
+    "words": [
+      [
+        "price",
+        "سعر@سِعِر",
+        "si'ir"
+      ],
+      [
+        "discount",
+        "خصم@خَصِم",
+        "khasim"
+      ],
+      [
+        "to bargain",
+        "يفاصل@يْفَاصِل",
+        "yfasil"
+      ],
+      [
+        "counter / stall",
+        "بسطة@بَسْطَة",
+        "basta"
+      ],
+      [
+        "seller",
+        "بيّاع@بَيَّاع",
+        "bayya'"
+      ],
+      [
+        "shame on you!",
+        "عيب عليك@عَيْب عَلَيْك",
+        "'eb 'aleik"
+      ],
+      [
+        "robbery",
+        "سرقة@سِرْقَة",
+        "sirqa"
+      ],
+      [
+        "unprofitable / not worth it",
+        "مش محرز@مِش مِحْرِز",
+        "mish mihriz"
+      ],
+      [
+        "outrage / mess",
+        "بهدلة@بَهْدَلَة",
+        "bahdala"
+      ],
+      [
+        "high quality",
+        "جودة عالية@جَوْدَة عَالْيَة",
+        "jawda 'alya"
+      ],
+      [
+        "defective / broken",
+        "خربان@خَرْبَان",
+        "kharban"
+      ],
+      [
+        "fake / imitation",
+        "تقليد@تَقْلِيد",
+        "taqlid"
+      ],
+      [
+        "counterfeit",
+        "مقلّد@مُقَلَّد",
+        "muqallad"
+      ],
+      [
+        "market",
+        "سوق@سُوق",
+        "suq"
+      ],
+      [
+        "leather",
+        "جلد@جِلْد",
+        "jild"
+      ],
+      [
+        "original / real",
+        "أصلي@أَصْلِي",
+        "asli"
+      ],
+      [
+        "handmade",
+        "شغل إيد@شُغُل إِيد",
+        "shughul id"
+      ],
+      [
+        "goods / merchandise",
+        "بضاعة@بْضَاعَة",
+        "bda'a"
+      ],
+      [
+        "better",
+        "أحسن@أَحْسَن",
+        "ahsan"
+      ],
+      [
+        "how much?",
+        "قدّايش@قَدَّايْش",
+        "qaddesh"
+      ],
+      [
+        "i buy",
+        "أشتري@أَشْتَرِي",
+        "ashtari"
       ]
     ],
     "index": 11

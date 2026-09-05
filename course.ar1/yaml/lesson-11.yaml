@@ -1,221 +1,269 @@
-id: filling_the_gaps
+id: local_market
 name:
-  en: Filling the Gaps
-  ru: Полезные мелочи
+  en: At the Market
+  ru: На рынке
 explanations:
   en: |
     ### Important notes about this topic
 
-    Сottage cheese: Arabic cuisine doesn't have a complete equivalent to cottage cheese. They typically use either qarisha (a cheese product) or white soft cheeses like jibna bida (white cheese).
-
-    Waiter (Jarson): This word comes from French (garçon) and has become firmly established in the Arabic dialect.
-
-    Colors (Gender): Note: "blue" is azraq, but "blue paper" is waraqa zarqa. Colors in Arabic have specific masculine and feminine genders, so take this into account in sentences.
-
-    Dughri ('''دغري'''): Perhaps the most popular word for directions. It comes from Turkish, but Arabic is indispensable.
-
     Ittafaqna ('''اتفقنا'''): A verb in the past tense ("we agreed"), but used specifically as "OK, it's done."
 
-    Bid-dabt ('''بالضبط'''): Note the transcription—the letter "Dad" produces a heavy "d" sound, almost turning into a "z" in some dialects, but "d" is standard here.
+    Mish mihriz ('''مش محرز'''): A super-popular Levantine expression. It means "it's not worth it," "it has no value," "it's not worth it." If you're offered a two-cent discount, say "mish mihriz" without hesitation.
+
+    Basta ('''بسطة'''): This isn't just a stall, but most often an improvised street stand, a folding cot, or a carpet on the ground from which people sell fruit or souvenirs.
+
+    Bahdalah ('''بهدلة'''): A very capacious word. It can mean "outrage," "reprimand/scolding," and "utter chaos."
+
+    Harban ('''خربان'''): The most common colloquial word for something that is damaged, broken, or defective (from a telephone to sour milk).
+
   ru: |
     ### Важные замечания по поводу этой темы
 
-    Творог: В арабской кухне нет полного аналога нашего рассыпчатого творога. Обычно используют либо qarisha (творожный продукт), либо белые мягкие сыры типа jibna bida (белый сыр).
-
-    Официант (Jarson): Это слово пришло из французского (garçon) и прочно закрепилось в арабском диалекте.
-
-    Цвета (Род). Обратите внимание: «синий» — azraq, но «синяя бумага» — waraqa zarqa. У цветов в арабском мужской и женский род образуются специфически, учтите это в предложениях.
-
-    Dughri ('''دغري'''): Пожалуй, самое популярное слово для указания пути. Оно пришло из турецкого, но в арабском без него никуда.
-
     Ittafaqna ('''اتفقنا'''): Глагол в прошедшем времени («мы договорились»), но используется именно как «ОК, идёт, по рукам».
 
-    Bid-dabt ('''بالضبط'''): Обратите внимание на транскрипцию — буква «Дад» дает тяжелый звук «д», почти переходящий в «з» в некоторых диалектах, но «d» здесь — стандарт.
+    Миш михриз ('''مش محرز'''): Супер-популярное левантийское выражение. Означает «оно того не стоит», «не имеет ценности», «невыгодно». Если вам предлагают скидку в два цента, смело говорите «mish mihriz».
+
+    Баста ('''بسطة'''): Это не просто прилавок, а чаще всего импровизированный уличный лоток, раскладушка или ковер на земле, с которого продают фрукты или сувениры.
+
+    Бахдаля ('''بهدلة'''): Очень емкое слово. Это и «безобразие», и «выговор/нагоняй», и «полный хаос».
+
+    Харбан ('''خربان'''): Самое ходовое разговорное слово для обозначения чего-то испорченного, сломанного или бракованного (от телефона до прокисшего молока).
+
 story:
   en:
-  - ar: لو سمحت يا جرسون، وين طلبنا؟
-    en: Please waiter, where is our order?
-    transliteration: Law samaht ya jarson, wayn talabna?
-  - ar: الشرشف بنفسجي والمحرمة زرقاء، كل شيء جميل هنا.
-    en: The tablecloth is purple and the napkin is blue, everything is beautiful here.
-    transliteration: Ash-sharshaf banafsaji wal-mahrameh zarqa, kull shi jamil huna.
-  - ar: بدي دجاج مسلوق وسلطة مع زيت زيتون ولبنة.
-    en: I want boiled chicken and a salad with olive oil and sour cream.
-    transliteration: Biddi djaj masluq wa salata ma'a zayt zaytun wa labneh.
-  - ar: ممكن تطبع هذا المستند على ورقة رمادية؟
-    en: Can you print this document on a grey paper?
-    transliteration: Mumkin titba' hadha al-mustanad ala waraqa ramadiya?
-  - ar: وين الفندق؟ هو بعيد من هنا؟
-    en: Where is the hotel? Is it far from here?
-    transliteration: Wayn al-funduq? Huwa ba'id min huna?
-  - ar: لا، امشي دغري، الفندق على الزاوية بعد الإشارة الضوئية.
-    en: No, go straight, the hotel is around the corner after the traffic light.
-    transliteration: La, imshi dughri, al-funduq ala az-zawiya ba'd al-ishara daw'iya.
-  - ar: تمام، هذا بالضبط شو بدي. شكرا!
-    vocalized: تمام، هذا بالضبط شو بدي. شكراً!
-    en: Okay, this is exactly what I want. Thanks!
-    transliteration: Tamam, hadha bid-dabt shu biddi. Shukran!
-  - ar: عفوا! اتفقنا، يوم سعيد.
-    vocalized: عفواً! اتفقنا، يوم سعيد.
-    en: You're welcome! Agreed, have a happy day.
-    transliteration: Afwan! Ittafaqna, yawm sa'id.
-words:
-- en: blue
-  ar: أزرق
-  transliteration: azraq
-  ru: синий
-- en: purple
-  ar: بنفسجي
-  transliteration: banafsaji
-  ru: фиолетовый
-- en: grey
-  ar: رمادي
-  transliteration: ramadi
-  ru: серый
-- en: paper
-  ar: ورقة
-  transliteration: waraqa
-  ru: бумага
-- en: document
-  ar: مستند
-  transliteration: mustanad
-  ru: документ
-- en: to print
-  ar: يطبع
-  transliteration: yitba'
-  ru: напечатать
-- en: olive oil
-  ar: زيت زيتون
-  transliteration: zayt zaytun
-  ru: оливковое масло
-- en: sour cream
-  ar: لبنة
-  transliteration: labneh
-  ru: сметана
-- en: cottage cheese
-  ar: قريشة
-  transliteration: qarisha
-  ru: творог
-- en: to fry
-  ar: يقلي
-  transliteration: yiqli
-  ru: поджарить
-- en: to boil
-  ar: يسلق
-  transliteration: yisluq
-  ru: сварить
-- en: waiter
-  ar: جرسون
-  transliteration: jarson
-  ru: официант
-- en: exactly
-  ar: بالضبط
-  transliteration: bid-dabt
-  ru: в точности
-- en: i agree
-  ar: أنا موافق
-  transliteration: ana muwafiq
-  ru: согласен
-- en: agreed
-  ar: اتفقنا
-  transliteration: ittafaqna
-  ru: договорились
-- en: straight
-  ar: دغري
-  transliteration: dughri
-  ru: прямо
-- en: backwards
-  ar: لورا
-  transliteration: la-wara
-  ru: назад
-- en: around the corner
-  ar: على الزاوية
-  transliteration: ala az-zawiya
-  ru: за углом
-- en: traffic light
-  ar: إشارة ضوئية
-  transliteration: ishara daw'iya
-  ru: светофор
+    - ar: مَرْحَبَا يَا بَيَّاع، شُو سِعِر هَاي الشَّنْطَة عَ الْبَسْطَة؟
+      en: Hi seller, how much is this bag on the stall?
+      transliteration: "Marhaba ya bayya', shu si'ir hay ash-shanta 'al-basta?"
+
+    - ar: أَهْلًا وَسَهْلًا! هَاي مِش أَيَّ شَنْطَة، هَاي جِلْد أَصْلِي وِشُغُل إِيد، أَحْلَى بْضَاعَة عِنْدِي.
+      en: Welcome! This is not just any bag, it's real leather, handmade, my best item.
+      transliteration: "Ahla w-sahla! Hay mish ayy shanta, hay jild asli w-shughul id, ahla bda'a 'andi."
+
+    - ar: سِعِرْهَا مْنِيح، نَوْعِيَّتْهَا مُمْتَازَة مِش تَقْلِيد.
+      en: Its price is fair, its quality is excellent, not a fake.
+      transliteration: "Si'irha mnih, no'iyyatha mumtaze mish taqlid."
+
+    - ar: شُو هَالْحَكِي! هَاد غَالِي كْتِير، عَيْب عَلَيْك. بِدِّي خَصِم كْبِير.
+      en: What are you saying! This is way too expensive. I want a big discount.
+      transliteration: "Shu hal-haki! Had ghali ktir, 'eb 'aleik. Biddi khasim kbir."
+
+    - ar: وَاللّٰه عَمْ تِظْلِمِينِي، تِطَّلَّعِي عَ الْخِيَاطَة، بِتِضَلّ مَعِك عَشِر سْنِين.
+      en: You're being unfair, look at the stitching, it will last you ten years.
+      transliteration: "Walla 'am tizlimini, tittalla'i 'al-khiyata, bitidall ma'ik 'ashir snin."
+
+    - ar: لَازِم الْوَاحِد يْفَاصِل دَايْمًا بِالسُّوق؟ طَيِّب، اِتَّفَقْنَا.
+      en: Does one always have to bargain at the market? Okay, deal.
+      transliteration: "Lazim il-wahad yfasil dayman bis-suq? Tayyib, ittafaqna."
+
+  ru:
+    - ar: مَرْحَبَا يَا بَيَّاع، شُو سِعِر هَاي الشَّنْطَة عَ الْبَسْطَة؟
+      ru: Привет, продавец, почём эта сумка на прилавке?
+      transliteration: "Marhaba ya bayya', shu si'ir hay ash-shanta 'al-basta?"
+
+    - ar: أَهْلًا وَسَهْلًا! هَاي مِش أَيَّ شَنْطَة، هَاي جِلْد أَصْلِي وِشُغُل إِيد، أَحْلَى بْضَاعَة عِنْدِي.
+      ru: Добро пожаловать! Это не просто сумка, это натуральная кожа, ручная работа, лучший товар у меня.
+      transliteration: "Ahla w-sahla! Hay mish ayy shanta, hay jild asli w-shughul id, ahla bda'a 'andi."
+
+    - ar: سِعِرْهَا مْنِيح، نَوْعِيَّتْهَا مُمْتَازَة مِش تَقْلِيد.
+      ru: Цена нормальная, качество отличное, не подделка.
+      transliteration: "Si'irha mnih, no'iyyatha mumtaze mish taqlid."
+
+    - ar: شُو هَالْحَكِي! هَاد غَالِي كْتِير، عَيْب عَلَيْك. بِدِّي خَصِم كْبِير.
+      ru: Что ты такое говоришь! Это очень дорого. Хочу большую скидку.
+      transliteration: "Shu hal-haki! Had ghali ktir, 'eb 'aleik. Biddi khasim kbir."
+
+    - ar: وَاللّٰه عَمْ تِظْلِمِينِي، تِطَّلَّعِي عَ الْخِيَاطَة، بِتِضَلّ مَعِك عَشِر سْنِين.
+      ru: Честно, ты меня обижаешь, посмотри на строчку, она прослужит тебе десять лет.
+      transliteration: "Walla 'am tizlimini, tittalla'i 'al-khiyata, bitidall ma'ik 'ashir snin."
+
+    - ar: لَازِم الْوَاحِد يْفَاصِل دَايْمًا بِالسُّوق؟ طَيِّب، اِتَّفَقْنَا.
+      ru: Надо всегда торговаться на рынке? Ладно, договорились.
+      transliteration: "Lazim il-wahad yfasil dayman bis-suq? Tayyib, ittafaqna."
+
 sentences:
-- en: i want a blue paper
-  ar: بدي ورقة زرقاء
-  transliteration: biddi waraqa zarqa
-  ru: я хочу синюю бумагу
-- en: can you print this document?
-  ar: ممكن تطبع هذا المستند
-  transliteration: mumkin titba' hadha al-mustanad
-  ru: можешь напечатать этот документ?
-- en: the car is grey
-  ar: السيارة رمادية
-  transliteration: as-sayyara ramadiya
-  ru: машина серая
-- en: we need olive oil for the salad
-  ar: بدنا زيت زيتون للسلطة
-  transliteration: bidna zayt zaytun las-salata
-  ru: нам нужно оливковое масло для салата
-- en: i want to fry the eggs
-  ar: بدي أقلي بيض
-  transliteration: biddi aqli bayd
-  ru: я хочу поджарить яйца
-- en: boiled chicken is very healthy
-  ar: دجاج مسلوق صحي كثير
-  transliteration: djaj masluq sihi kathir
-  ru: вареная курица это очень полезно
-- en: where is the waiter?
-  ar: وين الجرسون
-  transliteration: wayn al-jarson
-  ru: где официант?
-- en: this is our order
-  ar: هذا طلبنا
-  transliteration: hadha talabna
-  ru: это наш заказ
-- en: please give me a napkin
-  ar: لو سمحت اعطيني محرمة
-  transliteration: law samaht a'tini mahrameh
-  ru: пожалуйста, дай мне салфетку
-- en: the tablecloth is purple
-  ar: الشرشف بنفسجي
-  transliteration: ash-sharshaf banafsaji
-  ru: скатерть фиолетовая
-- en: give me sour cream please
-  ar: اعطيني لبنة لو سمحت
-  transliteration: a'tini labneh law samaht
-  ru: дай мне сметану пожалуйста
-- en: i love cottage cheese
-  ar: بحب القريشة
-  transliteration: bahibb al-qarisha
-  ru: я люблю творог
-- en: go straight and then around the corner
-  ar: امشي دغري وبعدين على الزاوية
-  transliteration: imshi dughri wa ba'den ala az-zawiya
-  ru: иди прямо, а затем за угол
-- en: the traffic light is red now
-  ar: الإشارة الضوئية حمراء الآن
-  transliteration: al-ishara daw'iya hamra al-an
-  ru: светофор сейчас красный
-- en: i am constantly studying here
-  ar: أنا دائما بدرس هنا
-  transliteration: ana da'iman badrus huna
-  vocalized: أنا دائماً بدرس هنا
-  ru: я постоянно учусь здесь
-- en: this is exactly what i want
-  ar: هذا بالضبط شو بدي
-  transliteration: hadha bid-dabt shu biddi
-  ru: это в точности то, что я хочу
-- en: i agree with you, my friend
-  ar: أنا موافق معك يا صاحبي
-  transliteration: ana muwafiq ma'ak ya sahbi
-  ru: я согласен с тобой, мой друг
-- en: deal, see you tomorrow
-  ar: اتفقنا بشوفك بكرة
-  transliteration: ittafaqna bashufak bukra
-  ru: договорились, увидимся завтра
-- en: move the car backwards
-  ar: حرك السيارة لورا
-  transliteration: harrik as-sayyara la-wara
-  ru: передвинь машину назад
-- en: the waiter is constantly busy
-  ar: الجرسون دائما مشغول
-  transliteration: al-jarson da'iman mashghul
-  vocalized: الجرسون دائماً مشغول
-  ru: официант постоянно занят
+- en: what is the price of this
+  ar: شُو سِعِر هَاد؟
+  transliteration: "shu si'ir had?"
+  ru: какая цена у этого
+
+- en: i want a big discount
+  ar: بِدِّي خَصِم كْبِير
+  transliteration: "biddi khasim kbir"
+  ru: я хочу большую скидку
+
+- en: it is necessary to bargain at the market
+  ar: لَازِم تْفَاصِل بِالسُّوق
+  transliteration: "lazim tfasil bis-suq"
+  ru: на рынке нужно торговаться
+
+- en: everything on the stall is clean
+  ar: كُلّ شِي عَ الْبَسْطَة نَظِيف
+  transliteration: "kull shi 'al-basta nazif"
+  ru: всё на прилавке чистое
+
+- en: the seller is a good man
+  ar: الْبَيَّاع زَلَمَة طَيِّب
+  transliteration: "al-bayya' zalame tayyib"
+  ru: продавец хороший человек
+
+- en: shame on you this is too expensive
+  ar: عَيْب عَلَيْك هَاد غَالِي كْتِير
+  transliteration: "'eb 'aleik had ghali ktir"
+  ru: как не стыдно это слишком дорого
+
+- en: this price is a robbery
+  ar: هَاد السِّعِر سِرْقَة
+  transliteration: "had as-si'ir sirqa"
+  ru: эта цена грабёж
+
+- en: this job is not worth it
+  ar: هَاد الشُّغُل مِش مِحْرِز
+  transliteration: "had ash-shughul mish mihriz"
+  ru: эта работа не стоит того
+
+- en: what a mess is here
+  ar: شُو هَالْبَهْدَلَة هُون
+  transliteration: "shu hal-bahdala hon"
+  ru: что за безобразие здесь
+
+- en: the food is high quality
+  ar: الأَكِل جَوْدَة عَالْيَة
+  transliteration: "al-akil jawda 'alya"
+  ru: еда качественная
+
+- en: the phone is broken
+  ar: التَّلَفُون خَرْبَان
+  transliteration: "at-talafon kharban"
+  ru: телефон бракованный
+
+- en: this bag is fake
+  ar: هَاي الشَّنْطَة تَقْلِيد
+  transliteration: "hay ash-shanta taqlid"
+  ru: эта сумка поддельная
+
+- en: give me a better price please
+  ar: أَعْطِينِي سِعِر أَحْسَن لَوْ سَمَحْت
+  transliteration: "a'tini si'ir ahsan law samaht"
+  ru: дай мне цену получше пожалуйста
+
+- en: is this real leather
+  ar: هَاد جِلْد أَصْلِي؟
+  transliteration: "had jild asli?"
+  ru: это натуральная кожа
+
+- en: this bag is very cheap
+  ar: هَاي الشَّنْطَة رَخِيصَة كْتِير
+  transliteration: "hay ash-shanta rakhisa ktir"
+  ru: эта сумка очень дешёвая
+
+- en: i want to buy handmade items
+  ar: بِدِّي أَشْتَرِي شُغُل إِيد
+  transliteration: "biddi ashtari shughul id"
+  ru: я хочу купить вещи ручной работы
+
+- en: the goods on the stall are excellent
+  ar: الْبْضَاعَة عَ الْبَسْطَة مُمْتَازَة
+  transliteration: "al-bda'a 'al-basta mumtaza"
+  ru: товар на прилавке отличный
+
+- en: i do not want fake goods
+  ar: مَا بِدِّي بْضَاعَة تَقْلِيد
+  transliteration: "ma biddi bda'a taqlid"
+  ru: я не хочу поддельный товар
+
+- en: how much is this bag
+  ar: قَدَّايْش هَاي الشَّنْطَة؟
+  transliteration: "qaddesh hay ash-shanta?"
+  ru: сколько стоит эта сумка
+
+- en: we agreed on the price
+  ar: اِتَّفَقْنَا عَ السِّعِر
+  transliteration: "ittafaqna 'as-si'ir"
+  ru: мы договорились о цене
+
+words:
+
+- en: price
+  ar: سِعِر
+  transliteration: "si'ir"
+  ru: цена
+- en: discount
+  ar: خَصِم
+  transliteration: "khasim"
+  ru: скидка
+- en: to bargain
+  ar: يْفَاصِل
+  transliteration: "yfasil"
+  ru: торговаться
+- en: counter / stall
+  ar: بَسْطَة
+  transliteration: "basta"
+  ru: прилавок
+- en: seller
+  ar: بَيَّاع
+  transliteration: "bayya'"
+  ru: продавец
+- en: shame on you!
+  ar: عَيْب عَلَيْك
+  transliteration: "'eb 'aleik"
+  ru: как не стыдно!
+- en: robbery
+  ar: سِرْقَة
+  transliteration: "sirqa"
+  ru: грабёж
+- en: unprofitable / not worth it
+  ar: مِش مِحْرِز
+  transliteration: "mish mihriz"
+  ru: невыгодно / не стоит того
+- en: outrage / mess
+  ar: بَهْدَلَة
+  transliteration: "bahdala"
+  ru: безобразие
+- en: high quality
+  ar: جَوْدَة عَالْيَة
+  transliteration: "jawda 'alya"
+  ru: высокое качество
+- en: defective / broken
+  ar: خَرْبَان
+  transliteration: "kharban"
+  ru: бракованный / сломанный
+- en: fake / imitation
+  ar: تَقْلِيد
+  transliteration: "taqlid"
+  ru: подделка
+- en: counterfeit
+  ar: مُقَلَّد
+  transliteration: "muqallad"
+  ru: поддельный
+- en: market
+  ar: سُوق
+  transliteration: "suq"
+  ru: рынок
+- en: leather
+  ar: جِلْد
+  transliteration: "jild"
+  ru: кожа
+- en: original / real
+  ar: أَصْلِي
+  transliteration: "asli"
+  ru: натуральный / оригинальный
+- en: handmade
+  ar: شُغُل إِيد
+  transliteration: "shughul id"
+  ru: ручная работа
+- en: goods / merchandise
+  ar: بْضَاعَة
+  transliteration: "bda'a"
+  ru: товар
+- en: better
+  ar: أَحْسَن
+  transliteration: "ahsan"
+  ru: лучше
+- en: how much?
+  ar: قَدَّايْش
+  transliteration: "qaddesh"
+  ru: сколько?
+- en: i buy
+  ar: أَشْتَرِي
+  transliteration: "ashtari"
+  ru: я покупаю
