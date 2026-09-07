@@ -1036,6 +1036,18 @@ body {
     display: inline;
 }
 
+.stat-value.low {
+    color: #8AB6D6;
+}
+
+.stat-value.med {
+    color: #3A7ed0;
+}
+
+.stat-value.high {
+    color: #1A4A7A;
+}
+
 .results-stats {
     width: 100%;
     padding-left: 30px;

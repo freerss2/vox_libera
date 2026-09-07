@@ -335,12 +335,15 @@ function showTopicResults() {
     const sentCount = i18n.t('menu|sent_count');
     const accuracy = i18n.t('modal_results|accuracy');
 
+    // get graded class name 'stat-value ...' for words/sentences
+    const wordsClasses = gradedStatDisplayClass(data.wordsSuccess);
+    const sentsClasses = gradedStatDisplayClass(data.sentencesSuccess);
     const markdownText = `### ##text-center## ${title}
 ### ##text-center## ${topicTitle}
 ##text-center## ${wordsLearned} ##stat-value## ${data.wordsCount}
-##text-center## ${accuracy} ##stat-value## ${Math.round(data.wordsSuccess)}%
+##text-center## ${accuracy} ##${wordsClasses}## ${Math.round(data.wordsSuccess)}%
 ##text-center## ${sentCount} ##stat-value## ${data.sentencesCount}
-##text-center## ${accuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%
+##text-center## ${accuracy} ##${sentsClasses}## ${Math.round(data.sentencesSuccess)}%
 
 ##bubble-buttons## [✔ ${repeatPrompt}](#repeat) &nbsp;|&nbsp; [${nextPrompt} ▶▶](#next)`;
 
@@ -1545,8 +1548,11 @@ function showWin(acc) {
         }
 
         // skip sentences info on zero sentencesCount
-        const sent_info = data.sentencesCount ? `\n##text-center## ${sentAccuracy} ##stat-value## ${Math.round(data.sentencesSuccess)}%` : '';
-        const topic_stats_info = `##text-center## ${wordsAccuracy} ##stat-value## ${Math.round(data.wordsSuccess)}% ${sent_info} ${suggestion}`;
+        // get graded class name 'stat-value ...' for words/sentences
+        const wordsClasses = gradedStatDisplayClass(data.wordsSuccess);
+        const sentsClasses = gradedStatDisplayClass(data.sentencesSuccess);
+        const sent_info = data.sentencesCount ? `\n##text-center## ${sentAccuracy} ##${sentsClasses}## ${Math.round(data.sentencesSuccess)}%` : '';
+        const topic_stats_info = `##text-center## ${wordsAccuracy} ##${wordsClasses}## ${Math.round(data.wordsSuccess)}% ${sent_info} ${suggestion}`;
 
         // Calculate the success rate
         let category = acc >= 90 ? 'perfect' : (acc >= 60 ? 'good' : 'tryAgain');
@@ -2799,14 +2805,31 @@ function getTopicStats(topicId) {
     return stats;
 }
 
+// For statistics percent:
+//   under 70%       return 'stat-value low'
+//   from 70% to 85% return 'stat-value med'
+//   higher 85%      return 'stat-value high'
+function gradedStatDisplayClass(stat_value) {
+    const base_class_name = 'stat-value';
+    if (Math.round(stat_value) < 70) return `${base_class_name} low`;
+    if (Math.round(stat_value) < 85) return `${base_class_name} med`;
+    return `${base_class_name} high`;
+}
+
 function updateDrawerStats() {
     const data = getTopicStats(settings.getCurrentTopic());
     if (!data) return;
 
+    // get graded class name for words/sentences
+    const wordsClasses = gradedStatDisplayClass(data.wordsSuccess);
     document.getElementById('statWords').textContent =
         `${data.wordsCount} / ${Math.round(data.wordsSuccess)}%`;
+    document.getElementById('statWords').classList.value = wordsClasses;
+
+    const sentsClasses = gradedStatDisplayClass(data.sentencesSuccess);
     document.getElementById('statSents').textContent =
         `${data.sentencesCount} / ${Math.round(data.sentencesSuccess)}%`;
+    document.getElementById('statSents').classList.value = sentsClasses;
 }
 
 // callback for toggle "Well-learned" checkbox
