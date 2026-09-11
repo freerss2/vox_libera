@@ -4,6 +4,7 @@ Validate that course lessons definitions (in YAML) are matching application sche
 """
 
 import os
+import re
 import yaml
 import argparse
 from pathlib import Path
@@ -68,6 +69,24 @@ class LessonFile(BaseModel):
     sort_set: Optional[List[SortSet]] = None
     pairs_set: Optional[List[PairsSet]] = None
 
+
+MISSING_SPACE_AFTER_PUNCTUATION = re.compile(
+    r"[,:;!?،؛؟，：；！？](?=\S)|(?<![\d.])\.(?=[^\d.\s])"
+)
+
+
+def find_sentence_punctuation_errors(data):
+    """Find sentence punctuation that is immediately followed by another token."""
+    errors = []
+    for sentence_index, sentence in enumerate(data.get('sentences', [])):
+        for field, value in sentence.items():
+            if not isinstance(value, str):
+                continue
+            match = MISSING_SPACE_AFTER_PUNCTUATION.search(value)
+            if match:
+                errors.append((sentence_index, field, match.group(0), value))
+    return errors
+
 # --- 2. Line map builder ---
 
 def build_line_map(node, path=(), mapping=None):
@@ -113,6 +132,19 @@ def validate_with_lines(path: str):
                         break
             loc_str = "".join(f"[{x}]" if isinstance(x,int) else f".{x}" for x in loc).lstrip(".")
             result.append(f" line {line}: {loc_str} -> {err['msg']}")
+        return "\n".join(result)
+    punctuation_errors = find_sentence_punctuation_errors(data)
+    if punctuation_errors:
+        result = [
+            f"\n❌ {Path(path).name} - {len(punctuation_errors)} error(s):"
+        ]
+        for sentence_index, field, punctuation, value in punctuation_errors:
+            loc = ('sentences', sentence_index, field)
+            line = line_map.get(('sentences', sentence_index))
+            result.append(
+                f" line {line}: {'.'.join(map(str, loc))} -> "
+                f"punctuation '{punctuation}' must be followed by a space in {value!r}"
+            )
         return "\n".join(result)
     return ""
 

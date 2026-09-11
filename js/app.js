@@ -1974,7 +1974,9 @@ function renderSent(screen_id) {
     questionContainer.innerHTML = questionHtml;
     document.getElementById('sent-main-hint').innerHTML = mainHint;
     // TODO: for sent_u2t extract vocalization and visual per word
-    let bankWords = (wordDisplayText(expected).split(/\s+/)).filter(word => word.length > 0);
+    let bankWords = (wordDisplayText(expected).split(/\s+/))
+        .map(word => word.replace(/\p{P}/gu, punctuation => punctuation === '-' ? punctuation : ''))
+        .filter(word => word.length > 0);
     questionContainer.dataset.expected = bankWords.join(' ');
     questionContainer.dataset.target = gameSentence[1];
     // 5. add to expected sentence more words (avoid already contaning words)
@@ -2022,7 +2024,9 @@ function renderSent(screen_id) {
 // randomly shuffle the result
 // @return: shuffled list of words that present in input sentences
 function extractUniqueWordsFromData(allData, pos) {
-   let realWords = allData.flatMap(row => wordDisplayText(row[pos]).split(/\s+|,/)).filter(w => w.length > 0);
+    let realWords = allData.flatMap(row => wordDisplayText(row[pos]).split(/\s+/))
+    .map(word => word.replace(/\p{P}/gu, punctuation => punctuation === '-' ? punctuation : ''))
+    .filter(word => word.length > 0);
    realWords = realWords.filter(w => !w.includes(')')).filter(w => !w.includes('(')).filter(w => !w.includes('/'));
    let allWords = [...new Set( realWords )];
    return shuffle(allWords);
