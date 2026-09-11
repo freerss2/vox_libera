@@ -2533,18 +2533,26 @@ function getStratifiedBatch(candidates) {
     const total = candidates.length;
     if (total === 0) return [];
 
+    // Never hide items that have not been attempted yet.
+    const unseen = candidates.filter(item => {
+        const stats = wordStats[itemDisplayText(item)];
+        return !stats || stats.attempts <= 0;
+    });
+    const attempted = candidates.filter(item => !unseen.includes(item));
+    if (attempted.length === 0) return unseen;
+
     // 1. Calculate index for each strate beginning
-    const limit60 = Math.floor(total * 0.6);
-    const limit90 = Math.floor(total * 0.9);
+    const limit60 = Math.floor(attempted.length * 0.6);
+    const limit90 = Math.floor(attempted.length * 0.9);
 
     // Extract strates according to indexes
     const strates = [
-        candidates.slice(0, limit60),           // First 60%
-        candidates.slice(limit60, limit90),     // Next  30%
-        candidates.slice(limit90)               // Last  10%
+        attempted.slice(0, limit60),           // First 60%
+        attempted.slice(limit60, limit90),     // Next  30%
+        attempted.slice(limit90)               // Last  10%
     ];
 
-    let finalBatch = [];
+    let finalBatch = [...unseen];
 
     // 2. Randomly take a half from each strate
     strates.forEach(strate => {
