@@ -1244,7 +1244,8 @@ function checkPairMatch() {
             }, 400);
         }
     } else {
-        updateStats(targetStr, false);
+        updateStats(l.dataset.id, false);
+        updateStats(r.dataset.id, false);
         errors++;
         const index = r.dataset.index;
         // save associated record
