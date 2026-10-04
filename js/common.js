@@ -445,6 +445,12 @@ function restoreBubbleContext() {
 function hideNarrator() {
   document.getElementById('narrator-container').classList.add('hidden');
   resetSavedBubbleContext();
+  bubbleStateStack = [];
+  currentBubbleState = {};
+  bubbleMinimized = false;
+  const bubble = document.getElementById('speech-bubble');
+  if (bubble) bubble.classList.remove('bubble-minimized');
+  showHideBackgroundNavigationButtons(false);
 }
 
 // clear context to avoid restore in the future
