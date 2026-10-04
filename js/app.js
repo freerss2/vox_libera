@@ -2582,10 +2582,13 @@ function getStats(initial = false) {
     // collect all words and sentences for topicId == "all"
     console.log('Initial state of stats: ' + Object.keys(stats).length);
     let changed = false;
-    const allStrs = getRawTopicData(GENERAL_TOPIC_ID, ['words', 'sentences']);
+    const validStatKeys = new Set(
+      getRawTopicData(GENERAL_TOPIC_ID, ['words', 'sentences'])
+        .map(item => wordDisplayText(item[1]))
+    );
     // filter out any invalid entries
     Object.keys(stats).forEach(key => {
-        if (!allStrs.some(item => item[1] === key)) {
+        if (!validStatKeys.has(key)) {
             delete stats[key];
             changed = true;
         }
