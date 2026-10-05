@@ -1162,6 +1162,7 @@ function renderMatchingGame() {
     const currentScreenId = settings.getCurrentScreenId();
     const inputTypes = getGameInputTypes(currentScreenId);
     currentData = getTopicData(inputTypes, settings.getHideWellLearned(), true);
+    currentData = removeTargetVisualConflicts(currentData);
 
     // Take a random slice according to itemsPerRound
     const pool = shuffle([...currentData]).slice(0, gameSettings.itemsPerRound);
@@ -1362,6 +1363,8 @@ function getDataSetForSortingGame() {
             pairsList.push([set0[i], set1[i]]);
         }
     }
+
+    pairsList = removeSortVisualConflicts(pairsList);
 
     // randomize and slice a desired number
     const desiredNumber = gameSettings.itemsPerRound;
@@ -2442,6 +2445,28 @@ function dedupeByTargetVisual(items) {
     seen.add(key);
     return true;
   });
+}
+
+function removeTargetVisualConflicts(items) {
+  const visualCounts = new Map();
+  items.forEach(item => {
+    const visual = itemDisplayText(item);
+    visualCounts.set(visual, (visualCounts.get(visual) || 0) + 1);
+  });
+  return items.filter(item => visualCounts.get(itemDisplayText(item)) === 1);
+}
+
+function removeSortVisualConflicts(pairs) {
+  const visualCounts = new Map();
+  pairs.forEach(pair => {
+    pair.forEach(word => {
+      const visual = wordDisplayText(word);
+      visualCounts.set(visual, (visualCounts.get(visual) || 0) + 1);
+    });
+  });
+  return pairs.filter(pair =>
+    pair.every(word => visualCounts.get(wordDisplayText(word)) === 1)
+  );
 }
 
 // universal collector for topic data (including virtual "all")

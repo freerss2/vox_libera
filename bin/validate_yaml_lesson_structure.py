@@ -9,7 +9,7 @@ import yaml
 import argparse
 from pathlib import Path
 from typing import Dict, List, Optional, Literal
-from pydantic import BaseModel, ConfigDict, ValidationError
+from pydantic import BaseModel, ConfigDict, ValidationError, model_validator
 
 
 def parse_arguments():
@@ -47,6 +47,12 @@ class Word(BaseModel):
 class Sentence(Word):
     pass
 
+class AbcRecord(BaseModel):
+    model_config = ConfigDict(extra='allow')
+    en: str
+    transliteration: Optional[str] = None
+    vocalized: Optional[str] = None
+
 class SortSet(BaseModel):
     id: str
     question1: Localized
@@ -55,8 +61,17 @@ class SortSet(BaseModel):
     data: List[List[str]]
 
 class PairsSet(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    id: str
     title: Localized
-    words: List[str]
+    words: Optional[List[str]] = None
+    abc: Optional[List[str]] = None
+
+    @model_validator(mode='after')
+    def has_one_word_source(self):
+        if (self.words is None) == (self.abc is None):
+            raise ValueError("exactly one of 'words' or 'abc' must be provided")
+        return self
 
 class LessonFile(BaseModel):
     model_config = ConfigDict(extra='forbid')
@@ -64,6 +79,7 @@ class LessonFile(BaseModel):
     name: Localized
     explanations: Dict[str, str]
     story: Optional[Dict[str, List[StoryLine]]] = None
+    abc: List[AbcRecord] = []
     words: List[Word] = []
     sentences: List[Sentence] = []
     sort_set: Optional[List[SortSet]] = None
