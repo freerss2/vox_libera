@@ -35,7 +35,7 @@ class Settings {
                     else       value = '{}';
                 }
                 this.storage.setItem(storageItemName, value);
-                if (this.markChanges) {
+                if (this.markChanges && paramSettings.trackChanges !== false) {
                     this.markAsChanged();
                 }
             };

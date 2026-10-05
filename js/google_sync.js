@@ -291,7 +291,11 @@ async function resolveProgressConflict(cloudData, localData) {
     let direction = '';
     const currentLocalData = localData || packProgressData();
 
-    if (!cloudData || !cloudData.courses) {
+    if (settings.getForceCloudSync()) {
+        direction = 'cloud';
+    }
+
+    if (!direction && (!cloudData || !cloudData.courses)) {
         console.warn("Vox Libera: Cloud data is empty or damaged.");
         direction = 'cloud';
     }
@@ -530,11 +534,14 @@ class CloudSync {
 
         if (response && response.ok) {
             console.log("Vox Libera: Cloud data is updated.");
+            settings.setForceCloudSync(0);
             if (typeof updateCloudStatus === 'function') updateCloudStatus('synced');
             updateSyncDirectionIndicator('to cloud', Date.now());
+            return true;
         } else {
             if (typeof updateCloudStatus === 'function') updateCloudStatus('offline');
             updateSyncDirectionIndicator('offline', Date.now());
+            return false;
         }
     }
 }

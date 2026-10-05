@@ -111,4 +111,15 @@ describe('Settings', () => {
     expect(t).not.toBe('0');
     expect(Number(t)).toBeGreaterThan(0);
   });
+
+  it('can persist a sync override without changing the progress timestamp', () => {
+    const s = new window.Settings({ forceCloudSync: { default: 0, type: 'int', trackChanges: false } });
+    s.enableChangedFlag();
+    const before = Number(s.getProgressUpdatedTime()) || 0;
+
+    s.setForceCloudSync(1);
+
+    expect(s.getForceCloudSync()).toBe(1);
+    expect(Number(s.getProgressUpdatedTime()) || 0).toBe(before);
+  });
 });

@@ -59,7 +59,8 @@ const settings = new Settings(
       "currentTopic":          {"default": GENERAL_TOPIC_ID},
       "currentScreenId":       {"default": DEFAULT_SCREEN_ID},
       "topicsCompletion":      {"default": {}, "type": "json"},
-      "wordStats":             {"default": {}, "type": "json"}
+      "wordStats":             {"default": {}, "type": "json"},
+      "forceCloudSync":        {"default": 0, "type": "int", "trackChanges": false}
     }
 );
 
@@ -2701,7 +2702,11 @@ function resetTopicStats() {
   [...topicData].forEach(e => {delete stats[e[1]]});
   // save stats back
   setStats(stats);
+  settings.setForceCloudSync(1);
   settings.markAsChanged();
+  if (window.currentAccessToken) {
+      syncManager.queueUpload(window.currentAccessToken);
+  }
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
@@ -2737,6 +2742,10 @@ function resetStats() {
   setStats({});
   settings.markAsChanged();
   wordStats = {};
+  settings.setForceCloudSync(1);
+  if (window.currentAccessToken) {
+      syncManager.queueUpload(window.currentAccessToken);
+  }
   // reload dictionary
   const screenType = getScreenType(settings.getCurrentScreenId());
   if (screenType === 'dictionary') {
