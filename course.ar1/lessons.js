@@ -3939,163 +3939,276 @@ Harban ('''خربان'''): The most common colloquial word for something that is
   "health_1": {
     "name": "Health 1",
     "explanations": `### Short notes about this topic
-Biwja'ni ('''بيوجعني'''): The verb "to be sick" itself is biwja'. But when we talk about ourselves, we add the ending -ni: "my head hurts" (rasi biwja'ni).
 
-Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's used to refer to any pill or capsule.
+Byuja'ni ('''بْيُوجَعْنِي''') / Btuja'ni ('''بْتُوجَعْنِي'''): The verb literally means "it causes pain to me". We attach the pronoun suffix __-ni__ ("me"). Notice gender agreement: use __byuja'ni__ for masculine body parts (__rasi__ — my head, __batni__ — my stomach) and __btuja'ni__ for feminine ones (__idi__ — my hand, __rijli__ — my leg).
 
-Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
+Habba ('''حَبَّة'''): Literally means "grain" or "single piece". In pharmacies, it refers to any pill, capsule, or tablet. In everyday language, it's also used as a counter for fruit or small items (e.g., __habba tuffah__ — one apple).
+
+Istiqbal ('''اِسْتِقْبَال'''): Derived from the verb "to receive/welcome". It is the universal term for "reception" or "front desk", used equally at a hospital admissions desk, a doctor's clinic, or a hotel lobby.
+
+Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): The most essential etiquette phrase when someone is sick or injured, meaning "Get well soon!" or "Health to you!". The standard response is __Allah yisallmak__ ('''اللّٰه يْسَلْمَك''') — "May God protect you".
 `,
-    "story": `##story-line## ''' أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة. ''' ##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever. ##story-transcr## Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
-##story-line## ''' تفضل هنا، الممرضة مع الدكتور في المستشفى. ''' ##story-translation## Come here please, the nurse is with the doctor in the hospital. ##story-transcr## Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
-##story-line## ''' عندي جرح في الإيد، لازم مرهم وضمادة؟ ''' ##story-translation## I have a wound on the hand, do I need an ointment and a bandage? ##story-transcr## Indi jurh fil-id, lazim marham wa dimada?
-##story-line## ''' نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام. ''' ##story-translation## Yes, and take this pill please. Everything is okay. ##story-transcr## Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.`,
+    "story": `##story-line## ''' أنا بالاستقبال بالعيادة هلّأ. راسي بيوجعني وعندي حرارة.@أَنَا بِالِاسْتِقْبَال بِالْعِيَادَة هَلَّأ. رَاسِي بْيُوجَعْنِي وِعِنْدِي حَرَارَة. ''' ##story-translation## I am at the reception in the clinic now. My head hurts and I have a fever. ##story-transcr## Ana bil-istiqbal bil-'iyada halla'. Rasi byuja'ni w-'indi harara.
+##story-line## ''' تفضّل هون، الممرّضة مع الدّكتور بالمستشفى.@تَفَضَّل هُون، الْمُمَرِّضَة مَع الدَّكْتُور بِالْمُسْتَشْفَى. ''' ##story-translation## Come in here please, the nurse is with the doctor in the hospital. ##story-transcr## Tafaddal hon, il-mumarrida ma' id-daktoor bil-mustashfa.
+##story-line## ''' عندي جرح بالإيد، لازم مرهم وضمادة؟@عِنْدِي جُرْح بِالإِيد، لَازِم مَرْهَم وِضِمَادَة؟ ''' ##story-translation## I have a wound on my hand, do I need ointment and a bandage? ##story-transcr## 'Indi jurh bil-id, lazim marham w-dimada?
+##story-line## ''' إيه، وخوذ هاي الحبّة لو سمحت. كلّ شي تمام.@إِيه، وِخُوذ هَاي الْحَبَّة لَوْ سَمَحْت. كُلّ شِي تَمَام. ''' ##story-translation## Yes, and take this pill please. Everything is okay. ##story-transcr## Eh, w-khud hay il-habba law samaht. Kull shi tamam.`,
     "words": [
       [
         "it hurts",
-        "بيوجع",
-        "biwja'"
+        "بيوجع@بْيُوجَع",
+        "byuja'"
       ],
       [
         "it itches",
-        "بيحك",
-        "bihikk"
+        "بيحكّ@بْيِحِكّ",
+        "byihikk"
       ],
       [
-        "runny nose",
-        "رشح",
+        "runny nose / cold",
+        "رشح@رَشَح",
         "rashah"
       ],
       [
         "fever / temperature",
-        "حرارة",
+        "حرارة@حَرَارَة",
         "harara"
       ],
       [
         "bruise",
-        "رضة",
+        "رضّة@رَضَّة",
         "radda"
       ],
       [
         "wound",
-        "جرح",
+        "جرح@جُرْح",
         "jurh"
       ],
       [
         "fracture",
-        "كسر",
-        "kasr"
+        "كسر@كَسِر",
+        "kasir"
       ],
       [
         "bandage",
-        "ضمادة",
+        "ضمادة@ضِمَادَة",
         "dimada"
       ],
       [
-        "pill",
-        "حبة",
+        "pill / tablet",
+        "حبّة@حَبَّة",
         "habba"
       ],
       [
         "ointment",
-        "مرهم",
+        "مرهم@مَرْهَم",
         "marham"
       ],
       [
         "drops",
-        "قطرة",
+        "قطرة@قَطْرَة",
         "qatra"
       ],
       [
         "doctor",
-        "دكتور",
-        "duktor"
+        "دكتور@دَكْتُور",
+        "daktoor"
       ],
       [
         "nurse",
-        "ممرضة",
-        "mumarriḍa"
+        "ممرّضة@مُمَرِّضَة",
+        "mumarrida"
       ],
       [
         "reception",
-        "استقبال",
+        "استقبال@اِسْتِقْبَال",
         "istiqbal"
       ],
       [
         "hospital",
-        "مستشفى",
+        "مستشفى@مُسْتَشْفَى",
         "mustashfa"
       ],
       [
         "clinic",
-        "عيادة",
-        "iyada"
+        "عيادة@عِيَادَة",
+        "'iyada"
+      ],
+      [
+        "head",
+        "راس@رَاس",
+        "ras"
+      ],
+      [
+        "hand / arm",
+        "إيد@إِيد",
+        "id"
+      ],
+      [
+        "leg / foot",
+        "رجل@رِجِل",
+        "rijil"
+      ],
+      [
+        "eye",
+        "عين@عَيْن",
+        "'ayn"
+      ],
+      [
+        "stomach / belly",
+        "بطن@بَطِن",
+        "batin"
+      ],
+      [
+        "throat",
+        "حلق@حَلْق",
+        "halq"
+      ],
+      [
+        "pain / ache",
+        "وجع@وَجَع",
+        "waj'a"
+      ],
+      [
+        "cough",
+        "قحّة@قَحَّة",
+        "qahha"
+      ],
+      [
+        "pharmacy",
+        "صيدليّة@صَيْدَلِيَّة",
+        "saydaliyya"
+      ],
+      [
+        "medicine",
+        "دوا@دَوَا",
+        "dawa"
+      ],
+      [
+        "dizzy",
+        "دايخ@دَايِخ",
+        "dayikh"
+      ],
+      [
+        "ambulance",
+        "إسعاف@إِسْعَاف",
+        "is'af"
+      ],
+      [
+        "take! (to a man)",
+        "خوذ@خُوذ",
+        "khud"
+      ],
+      [
+        "inside",
+        "جوّا@جَوَّا",
+        "jawwa"
+      ],
+      [
+        "small (f)",
+        "صغيرة@صْغِيرَة",
+        "sghira"
       ]
     ],
     "sentences": [
       [
         "my head hurts",
-        "راسي بيوجعني",
-        "rasi biwja'ni"
+        "راسي بيوجعني@رَاسِي بْيُوجَعْنِي",
+        "rasi byuja'ni"
       ],
       [
         "my hand itches",
-        "إيدي بتحكني",
-        "idi btihikkni"
+        "إيدي بتحكّني@إِيدِي بْتِحِكَّنِي",
+        "idi btihikkani"
       ],
       [
         "i have a runny nose and fever",
-        "عندي رشح وحرارة",
-        "indi rashah wa harara"
+        "عندي رشح وحرارة@عِنْدِي رَشَح وِحَرَارَة",
+        "'indi rashah w-harara"
       ],
       [
         "this is a small bruise",
-        "هذه رضة صغيرة",
-        "hadhihi radda saghira"
+        "هاي رضّة صغيرة@هَاي رَضَّة صْغِيرَة",
+        "hay radda sghira"
       ],
       [
         "the wound is clean",
-        "الجرح نظيف",
-        "al-jurh nazif"
+        "الجرح نظيف@الْجُرْح نَظِيف",
+        "il-jurh nazif"
       ],
       [
         "he has a leg fracture",
-        "عنده كسر في الرجل",
-        "indo kasr fir-rijl"
+        "عندو كسر بالرّجل@عِنْدُو كَسِر بِالرِّجِل",
+        "'indo kasir bir-rijil"
       ],
       [
-        "where is the bandage?",
-        "وين الضمادة",
-        "wayn ad-dimada"
+        "where is the bandage",
+        "وين الضّمادة؟@وِين الضِّمَادَة؟",
+        "wen id-dimada?"
       ],
       [
         "take this pill please",
-        "خذ هذه الحبة لو سمحت",
-        "khud hadhihi al-habba law samaht"
+        "خوذ هاي الحبّة لو سمحت@خُوذ هَاي الْحَبَّة لَوْ سَمَحْت",
+        "khud hay il-habba law samaht"
       ],
       [
         "i need an ointment for the hand",
-        "بدي مرهم للإيد",
+        "بدّي مرهم للإيد@بِدِّي مَرْهَم لِلإِيد",
         "biddi marham lil-id"
       ],
       [
-        "where are the eye drops?",
-        "وين قطرة العين",
-        "wayn qatrat al-ayn"
+        "where are the eye drops",
+        "وين قطرة العين؟@وِين قَطْرَة الْعَيْن؟",
+        "wen qatrat il-'ayn?"
       ],
       [
         "the doctor is inside the clinic",
-        "الدكتور جوا العيادة",
-        "ad-duktor juwwa al-iyada"
+        "الدّكتور جوّا العيادة@الدَّكْتُور جَوَّا الْعِيَادَة",
+        "id-daktoor jawwa il-'iyada"
       ],
       [
         "the nurse is at the reception",
-        "الممرضة في الاستقبال",
-        "al-mumarriḍa fil-istiqbal"
+        "الممرّضة بالاستقبال@الْمُمَرِّضَة بِالِاسْتِقْبَال",
+        "il-mumarrida bil-istiqbal"
       ],
       [
         "this hospital is big",
-        "هذا المستشفى كبير",
-        "hadha al-mustashfa kabir"
+        "هاد المستشفى كبير@هَاد الْمُسْتَشْفَى كْبِير",
+        "had il-mustashfa kbir"
+      ],
+      [
+        "my stomach hurts",
+        "بطني بيوجعني@بَطْنِي بْيُوجَعْنِي",
+        "batni byuja'ni"
+      ],
+      [
+        "where is the pharmacy",
+        "وين الصّيدليّة؟@وِين الصَّيْدَلِيَّة؟",
+        "wen is-saydaliyya?"
+      ],
+      [
+        "i have a cough and sore throat",
+        "عندي قحّة ووجع بالحلق@عِنْدِي قَحَّة وِوَجَع بِالْحَلْق",
+        "'indi qahha w-waj'a bil-halq"
+      ],
+      [
+        "do you have medicine for headache",
+        "عندك دوا لوجع الرّاس؟@عِنْدَك دَوَا لِوَجَع الرَّاس؟",
+        "'indak dawa li-waj'a ir-ras?"
+      ],
+      [
+        "i feel dizzy today",
+        "أنا دايخ اليوم@أَنَا دَايِخ الْيَوْم",
+        "ana dayikh il-yom"
+      ],
+      [
+        "call the ambulance please",
+        "اتّصل بالإسعاف لو سمحت@اِتَّصِل بِالإِسْعَاف لَوْ سَمَحْت",
+        "ittasil bil-is'af law samaht"
+      ],
+      [
+        "everything is fine thank God",
+        "كلّ شي تمام الحمد للّه@كُلّ شِي تَمَام الْحَمْدُ لِلّٰه",
+        "kull shi tamam il-hamdu lillah"
       ]
     ],
     "index": 12

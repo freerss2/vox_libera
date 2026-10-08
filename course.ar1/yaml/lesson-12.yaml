@@ -2,150 +2,290 @@ id: health_1
 name:
   en: Health 1
   ru: Здоровье 1
+
 explanations:
   en: |
     ### Short notes about this topic
-    Biwja'ni ('''بيوجعني'''): The verb "to be sick" itself is biwja'. But when we talk about ourselves, we add the ending -ni: "my head hurts" (rasi biwja'ni).
 
-    Habba ('''حبة'''): Literally, it's a "grain" or "thing." In pharmacies, it's used to refer to any pill or capsule.
+    Byuja'ni ('''بْيُوجَعْنِي''') / Btuja'ni ('''بْتُوجَعْنِي'''): The verb literally means "it causes pain to me". We attach the pronoun suffix __-ni__ ("me"). Notice gender agreement: use __byuja'ni__ for masculine body parts (__rasi__ — my head, __batni__ — my stomach) and __btuja'ni__ for feminine ones (__idi__ — my hand, __rijli__ — my leg).
 
-    Istiqbal ('''استقبال'''): A general-purpose word for "reception/meeting." It's used both at a hotel reception and at a hospital reception desk.
+    Habba ('''حَبَّة'''): Literally means "grain" or "single piece". In pharmacies, it refers to any pill, capsule, or tablet. In everyday language, it's also used as a counter for fruit or small items (e.g., __habba tuffah__ — one apple).
+
+    Istiqbal ('''اِسْتِقْبَال'''): Derived from the verb "to receive/welcome". It is the universal term for "reception" or "front desk", used equally at a hospital admissions desk, a doctor's clinic, or a hotel lobby.
+
+    Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): The most essential etiquette phrase when someone is sick or injured, meaning "Get well soon!" or "Health to you!". The standard response is __Allah yisallmak__ ('''اللّٰه يْسَلْمَك''') — "May God protect you".
+
   ru: |
     ### Краткие заметки по этой теме
-    Биужа'ни ('''بيوجعني'''): Сам глагол «болеть» — biwja'. Но когда мы говорим про себя, мы добавляем окончание -ни: «голова болит меня» (rasi biwja'ni).
 
-    Хабба ('''حبة'''): Дословно это «зернышко» или «штука». В аптеке так называют любую таблетку или капсулу.
+    Byuja'ni ('''بْيُوجَعْنِي''') / Btuja'ni ('''بْتُوجَعْنِي'''): Глагол буквально означает «причиняет боль [мне]». Окончание __-ни__ указывает на «меня». Обратите внимание на род: если болит часть тела мужского рода (__раси__ — моя голова, __батни__ — мой живот), говорим __byuja'ni__. Если женского (__иди__ — моя рука, __рижли__ — моя нога) — __btuja'ni__.
 
-    Истикбаль ('''استقبال'''): Универсальное слово «прием/встреча». Используется и как ресепшен в отеле, и как регистратура в больнице.
+    Habba ('''حَبَّة'''): Дословно — «зёрнышко» или «одна штука». В аптеке обозначает любую таблетку или капсулу. В быту также часто используется как счётное слово для фруктов и мелких предметов (например, __хаббат туффах__ — одно яблоко).
+
+    Istiqbal ('''اِسْتِقْبَال'''): От глагола «встречать / принимать». Универсальное слово: регистратура в клинике, стойка приёма в больнице или ресепшен в отеле.
+
+    Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): Главная этикетная фраза, когда кто-то заболел — «Выздоравливай!» / «Здоровья тебе!» (обращение к мужчине / женщине). Стандартный ответ на неё — __Allah yisallmak__ ('''اللّٰه يْسَلْمَك''') — «Пусть Бог тебя бережёт».
+
 story:
   en:
-  - ar: أنا في الاستقبال في العيادة الآن. راسي بيوجعني وعندي حرارة.
-    en: I am at the reception in the clinic now. My head hurts and I have a fever.
-    transliteration: Ana fil-istiqbal fil-iyada al-an. Rasi biwja'ni wa indi harara.
-  - ar: تفضل هنا، الممرضة مع الدكتور في المستشفى.
-    en: Come here please, the nurse is with the doctor in the hospital.
-    transliteration: Tafaddal huna, al-mumarriḍa ma'a ad-duktor fil-mustashfa.
-  - ar: عندي جرح في الإيد، لازم مرهم وضمادة؟
-    en: I have a wound on the hand, do I need an ointment and a bandage?
-    transliteration: Indi jurh fil-id, lazim marham wa dimada?
-  - ar: نعم، وخذ هذه الحبة لو سمحت. كل شيء تمام.
-    en: Yes, and take this pill please. Everything is okay.
-    transliteration: Naam, wa khud hadhihi al-habba law samaht. Kull shi tamam.
+    - ar: أَنَا بِالِاسْتِقْبَال بِالْعِيَادَة هَلَّأ. رَاسِي بْيُوجَعْنِي وِعِنْدِي حَرَارَة.
+      en: I am at the reception in the clinic now. My head hurts and I have a fever.
+      transliteration: "Ana bil-istiqbal bil-'iyada halla'. Rasi byuja'ni w-'indi harara."
+
+    - ar: تَفَضَّل هُون، الْمُمَرِّضَة مَع الدَّكْتُور بِالْمُسْتَشْفَى.
+      en: Come in here please, the nurse is with the doctor in the hospital.
+      transliteration: "Tafaddal hon, il-mumarrida ma' id-daktoor bil-mustashfa."
+
+    - ar: عِنْدِي جُرْح بِالإِيد، لَازِم مَرْهَم وِضِمَادَة؟
+      en: I have a wound on my hand, do I need ointment and a bandage?
+      transliteration: "'Indi jurh bil-id, lazim marham w-dimada?"
+
+    - ar: إِيه، وِخُوذ هَاي الْحَبَّة لَوْ سَمَحْت. كُلّ شِي تَمَام.
+      en: Yes, and take this pill please. Everything is okay.
+      transliteration: "Eh, w-khud hay il-habba law samaht. Kull shi tamam."
+
+  ru:
+    - ar: أَنَا بِالِاسْتِقْبَال بِالْعِيَادَة هَلَّأ. رَاسِي بْيُوجَعْنِي وِعِنْدِي حَرَارَة.
+      ru: Я сейчас на рецепции в клинике. У меня болит голова и поднялась температура.
+      transliteration: "Ana bil-istiqbal bil-'iyada halla'. Rasi byuja'ni w-'indi harara."
+
+    - ar: تَفَضَّل هُون، الْمُمَرِّضَة مَع الدَّكْتُور بِالْمُسْتَشْفَى.
+      ru: Проходите сюда, пожалуйста, медсестра с врачом в больнице.
+      transliteration: "Tafaddal hon, il-mumarrida ma' id-daktoor bil-mustashfa."
+
+    - ar: عِنْدِي جُرْح بِالإِيد، لَازِم مَرْهَم وِضِمَادَة؟
+      ru: У меня рана на руке, нужна мазь и бинт?
+      transliteration: "'Indi jurh bil-id, lazim marham w-dimada?"
+
+    - ar: إِيه، وِخُوذ هَاي الْحَبَّة لَوْ سَمَحْت. كُلّ شِي تَمَام.
+      ru: Да, и примите эту таблетку, пожалуйста. Всё в порядке.
+      transliteration: "Eh, w-khud hay il-habba law samaht. Kull shi tamam."
+
 words:
 - en: it hurts
-  ar: بيوجع
-  transliteration: biwja'
+  ar: بْيُوجَع
+  transliteration: "byuja'"
   ru: болит
 - en: it itches
-  ar: بيحك
-  transliteration: bihikk
+  ar: بْيِحِكّ
+  transliteration: "byihikk"
   ru: чешется
-- en: runny nose
-  ar: رشح
-  transliteration: rashah
+- en: runny nose / cold
+  ar: رَشَح
+  transliteration: "rashah"
   ru: насморк
 - en: fever / temperature
-  ar: حرارة
-  transliteration: harara
+  ar: حَرَارَة
+  transliteration: "harara"
   ru: температура
 - en: bruise
-  ar: رضة
-  transliteration: radda
+  ar: رَضَّة
+  transliteration: "radda"
   ru: ушиб
 - en: wound
-  ar: جرح
-  transliteration: jurh
+  ar: جُرْح
+  transliteration: "jurh"
   ru: рана
 - en: fracture
-  ar: كسر
-  transliteration: kasr
+  ar: كَسِر
+  transliteration: "kasir"
   ru: перелом
 - en: bandage
-  ar: ضمادة
-  transliteration: dimada
+  ar: ضِمَادَة
+  transliteration: "dimada"
   ru: повязка
-- en: pill
-  ar: حبة
-  transliteration: habba
+- en: pill / tablet
+  ar: حَبَّة
+  transliteration: "habba"
   ru: таблетка
 - en: ointment
-  ar: مرهم
-  transliteration: marham
+  ar: مَرْهَم
+  transliteration: "marham"
   ru: мазь
 - en: drops
-  ar: قطرة
-  transliteration: qatra
+  ar: قَطْرَة
+  transliteration: "qatra"
   ru: капли
 - en: doctor
-  ar: دكتور
-  transliteration: duktor
+  ar: دَكْتُور
+  transliteration: "daktoor"
   ru: врач
 - en: nurse
-  ar: ممرضة
-  transliteration: mumarriḍa
+  ar: مُمَرِّضَة
+  transliteration: "mumarrida"
   ru: медсестра
 - en: reception
-  ar: استقبال
-  transliteration: istiqbal
-  ru: регистратура
+  ar: اِسْتِقْبَال
+  transliteration: "istiqbal"
+  ru: регистратура / рецепция
 - en: hospital
-  ar: مستشفى
-  transliteration: mustashfa
+  ar: مُسْتَشْفَى
+  transliteration: "mustashfa"
   ru: больница
 - en: clinic
-  ar: عيادة
-  transliteration: iyada
+  ar: عِيَادَة
+  transliteration: "'iyada"
   ru: клиника
+
+- en: head
+  ar: رَاس
+  transliteration: "ras"
+  ru: голова
+- en: hand / arm
+  ar: إِيد
+  transliteration: "id"
+  ru: рука
+- en: leg / foot
+  ar: رِجِل
+  transliteration: "rijil"
+  ru: нога
+- en: eye
+  ar: عَيْن
+  transliteration: "'ayn"
+  ru: глаз
+- en: stomach / belly
+  ar: بَطِن
+  transliteration: "batin"
+  ru: живот
+- en: throat
+  ar: حَلْق
+  transliteration: "halq"
+  ru: горло
+- en: pain / ache
+  ar: وَجَع
+  transliteration: "waj'a"
+  ru: боль
+- en: cough
+  ar: قَحَّة
+  transliteration: "qahha"
+  ru: кашель
+- en: pharmacy
+  ar: صَيْدَلِيَّة
+  transliteration: "saydaliyya"
+  ru: аптека
+- en: medicine
+  ar: دَوَا
+  transliteration: "dawa"
+  ru: лекарство
+- en: dizzy
+  ar: دَايِخ
+  transliteration: "dayikh"
+  ru: чувствующий головокружение
+- en: ambulance
+  ar: إِسْعَاف
+  transliteration: "is'af"
+  ru: скорая помощь
+- en: take! (to a man)
+  ar: خُوذ
+  transliteration: "khud"
+  ru: возьми! / выпей! (м)
+- en: inside
+  ar: جَوَّا
+  transliteration: "jawwa"
+  ru: внутри
+- en: small (f)
+  ar: صْغِيرَة
+  transliteration: "sghira"
+  ru: маленькая
+
+
 sentences:
 - en: my head hurts
-  ar: راسي بيوجعني
-  transliteration: rasi biwja'ni
+  ar: رَاسِي بْيُوجَعْنِي
+  transliteration: "rasi byuja'ni"
   ru: у меня болит голова
+
 - en: my hand itches
-  ar: إيدي بتحكني
-  transliteration: idi btihikkni
+  ar: إِيدِي بْتِحِكَّنِي
+  transliteration: "idi btihikkani"
   ru: у меня чешется рука
+
 - en: i have a runny nose and fever
-  ar: عندي رشح وحرارة
-  transliteration: indi rashah wa harara
+  ar: عِنْدِي رَشَح وِحَرَارَة
+  transliteration: "'indi rashah w-harara"
   ru: у меня насморк и температура
+
 - en: this is a small bruise
-  ar: هذه رضة صغيرة
-  transliteration: hadhihi radda saghira
+  ar: هَاي رَضَّة صْغِيرَة
+  transliteration: "hay radda sghira"
   ru: это маленький ушиб
+
 - en: the wound is clean
-  ar: الجرح نظيف
-  transliteration: al-jurh nazif
+  ar: الْجُرْح نَظِيف
+  transliteration: "il-jurh nazif"
   ru: рана чистая
+
 - en: he has a leg fracture
-  ar: عنده كسر في الرجل
-  transliteration: indo kasr fir-rijl
+  ar: عِنْدُو كَسِر بِالرِّجِل
+  transliteration: "'indo kasir bir-rijil"
   ru: у него перелом ноги
-- en: where is the bandage?
-  ar: وين الضمادة
-  transliteration: wayn ad-dimada
-  ru: где повязка?
+
+- en: where is the bandage
+  ar: وِين الضِّمَادَة؟
+  transliteration: "wen id-dimada?"
+  ru: где повязка
+
 - en: take this pill please
-  ar: خذ هذه الحبة لو سمحت
-  transliteration: khud hadhihi al-habba law samaht
+  ar: خُوذ هَاي الْحَبَّة لَوْ سَمَحْت
+  transliteration: "khud hay il-habba law samaht"
   ru: выпей эту таблетку пожалуйста
+
 - en: i need an ointment for the hand
-  ar: بدي مرهم للإيد
-  transliteration: biddi marham lil-id
+  ar: بِدِّي مَرْهَم لِلإِيد
+  transliteration: "biddi marham lil-id"
   ru: мне нужна мазь для руки
-- en: where are the eye drops?
-  ar: وين قطرة العين
-  transliteration: wayn qatrat al-ayn
-  ru: где глазные капли?
+
+- en: where are the eye drops
+  ar: وِين قَطْرَة الْعَيْن؟
+  transliteration: "wen qatrat il-'ayn?"
+  ru: где глазные капли
+
 - en: the doctor is inside the clinic
-  ar: الدكتور جوا العيادة
-  transliteration: ad-duktor juwwa al-iyada
+  ar: الدَّكْتُور جَوَّا الْعِيَادَة
+  transliteration: "id-daktoor jawwa il-'iyada"
   ru: врач внутри клиники
+
 - en: the nurse is at the reception
-  ar: الممرضة في الاستقبال
-  transliteration: al-mumarriḍa fil-istiqbal
+  ar: الْمُمَرِّضَة بِالِاسْتِقْبَال
+  transliteration: "il-mumarrida bil-istiqbal"
   ru: медсестра в регистратуре
+
 - en: this hospital is big
-  ar: هذا المستشفى كبير
-  transliteration: hadha al-mustashfa kabir
+  ar: هَاد الْمُسْتَشْفَى كْبِير
+  transliteration: "had il-mustashfa kbir"
   ru: эта больница большая
+
+- en: my stomach hurts
+  ar: بَطْنِي بْيُوجَعْنِي
+  transliteration: "batni byuja'ni"
+  ru: у меня болит живот
+
+- en: where is the pharmacy
+  ar: وِين الصَّيْدَلِيَّة؟
+  transliteration: "wen is-saydaliyya?"
+  ru: где аптека
+
+- en: i have a cough and sore throat
+  ar: عِنْدِي قَحَّة وِوَجَع بِالْحَلْق
+  transliteration: "'indi qahha w-waj'a bil-halq"
+  ru: у меня кашель и болит горло
+
+- en: do you have medicine for headache
+  ar: عِنْدَك دَوَا لِوَجَع الرَّاس؟
+  transliteration: "'indak dawa li-waj'a ir-ras?"
+  ru: у вас есть лекарство от головной боли
+
+- en: i feel dizzy today
+  ar: أَنَا دَايِخ الْيَوْم
+  transliteration: "ana dayikh il-yom"
+  ru: у меня сегодня кружится голова
+
+- en: call the ambulance please
+  ar: اِتَّصِل بِالإِسْعَاف لَوْ سَمَحْت
+  transliteration: "ittasil bil-is'af law samaht"
+  ru: вызовите скорую пожалуйста
+
+- en: everything is fine thank God
+  ar: كُلّ شِي تَمَام الْحَمْدُ لِلّٰه
+  transliteration: "kull shi tamam il-hamdu lillah"
+  ru: всё в порядке слава Богу
