@@ -4213,6 +4213,283 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
     ],
     "index": 12
   },
+  "on_road_1": {
+    "name": "Cars and traffic",
+    "explanations": `### Short notes about this topic
+
+**Msakkra 'alayya** ('''مْسَكْرَة عَلَيَّ'''): Literally means "closed upon me". This is the exact phrase used when another vehicle double-parks or blocks your car in.
+
+**Kan rah...** ('''كَان رَاح'''): A very handy construction for "almost [happened]". Combined with a verb, e.g., __kan rah yidribni__ = "he was going to hit me" / "he almost hit me".
+
+**Saff** ('''صَفّ'''): In the Levant, "to park a car" is expressed with the verb __saff__ (literally "to align/line up"), rather than formal terms. A parking space is a __mawqif__.
+
+**Awlawiyya** ('''أَوْلَوِيَّة'''): Meaning "priority/right of way". At roundabouts (__dawwar__) or unmarked intersections, you can say __'indi al-awlawiyya__ ("I have the right of way").
+`,
+    "story": `##story-line## ''' يا زلمة، تطّلّع! هاي السّيّارة مسكرة عليّ، مش قادر أاخذ سيّارتي.@يَا زَلَمَة، تَطَّلَّع! هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ، مِش قَادِر أَاْخُذ سَيَّارْتِي. ''' ##story-translation## Man, look! This car is blocking me, I can't get my car out. ##story-transcr## Ya zalame, tittalla'! Hay as-sayyara msakkra 'alayya, mish qadir akhud sayyarti.
+##story-line## ''' شو هالبهدلة! إذا ما بيجي هلّأ، بدّي أتّصل بالشّرطة.@شُو هَالْبَهْدَلَة! إِذَا مَا بْيِجِي هَلَّأ، بَدِّي أَتَّصِل بِالشُّرْطَة. ''' ##story-translation## What a mess! If he doesn't come now, I will call the police. ##story-transcr## Shu hal-bahdala! Idha ma byiji halla', biddi attasil bish-shurta.
+##story-line## ''' صبرك شويّ، صاحبها بالصّيدليّة. لفّ من هونك وصفّ عالموقف.@صَبْرَك شْوَيّ، صَاحِبْهَا بِالصَّيْدَلِيَّة. لَفّ مِن هُونِك وِصَفّ عَالْمَوْقِف. ''' ##story-translation## Be patient, its owner is in the pharmacy. Turn from over there and park in the parking spot. ##story-transcr## Sabrak shwayy, sahibha bis-saydaliyya. Laff min honik w-saff 'al-mawqif.
+##story-line## ''' طيّب، كان راح يضربني قبل شويّ ع الدّوّار! الشّارع مليان جنون.@طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون. ''' ##story-translation## Okay, but he almost hit me earlier at the roundabout! The street is full of madness. ##story-transcr## Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun.`,
+    "sentences": [
+      [
+        "this car blocked me",
+        "هاي السّيّارة مسكرة عليّ@هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ",
+        "hay as-sayyara msakkra 'alayya"
+      ],
+      [
+        "i will call the police now",
+        "هلّأ بدّي أتّصل بالشّرطة@هَلَّأ بَدِّي أَتَّصِل بِالشُّرْطَة",
+        "halla' biddi attasil bish-shurta"
+      ],
+      [
+        "look where you are driving",
+        "تطّلّع وين عم تسوق@تَطَّلَّع وِين عَمْ تْسُوق",
+        "tittalla' wen 'am tsut"
+      ],
+      [
+        "let me pass i have the right of way",
+        "مرّقني أنا عندي الأولويّة@مَرِّقْنِي أَنَا عِنْدِي الأَوْلَوِيَّة",
+        "marriqni ana 'indi al-awlawiyya"
+      ],
+      [
+        "drive faster do not hold everyone up",
+        "سوق أسرع لا تعطّل الكلّ@سُوق أَسْرَع لا تْعَطِّل الْكُلّ",
+        "suq asra' la t'attil il-kull"
+      ],
+      [
+        "he almost hit me",
+        "كان راح يضربني@كَان رَاح يِضْرِبْنِي",
+        "kan rah yidribni"
+      ],
+      [
+        "his tire went flat",
+        "عجلتو بنشرت@عَجَلْتُو بَنَشَرَت",
+        "'ajalto banasharat"
+      ],
+      [
+        "turn right at the intersection",
+        "لفّ يمين ع التّقاطع@لَفّ يَمِين عَ التَّقَاطُع",
+        "laff yamin 'at-taqatu'"
+      ],
+      [
+        "stop at the red traffic light",
+        "إقف ع الإشارة الحمرا@إِقَف عَ الإِشَارَة الْحَمْرَا",
+        "iqaf 'al-ishara il-hamra"
+      ],
+      [
+        "slow down before the turn",
+        "هدّي قبل اللّفّة@هَدِّي قَبْل اللَّفَّة",
+        "haddi qabl al-laffa"
+      ],
+      [
+        "turn at the roundabout",
+        "لفّ ع الدّوّار@لَفّ عَ الدَّوَّار",
+        "laff 'ad-dawwar"
+      ],
+      [
+        "the big truck is slow",
+        "الشّاحنة الكبيرة بطيئة@الشَّاحْنَة الْكْبِيرَة بَطِيئَة",
+        "ash-shahna il-kbira bati'a"
+      ],
+      [
+        "watch out for the motorcycle",
+        "دير بالك من الموتور@دِير بَالَك مِن الْمُوتُور",
+        "dir balak min il-motor"
+      ],
+      [
+        "the bicycle is on the right",
+        "البسكليت ع اليمين@البِسْكِلِيت عَ الْيَمِين",
+        "al-bisklet 'al-yamin"
+      ],
+      [
+        "this parking is paid",
+        "هاد الموقف بمصاري@هَاد الْمَوْقِف بِمَصَارِي",
+        "had il-mawqif bi-masari"
+      ],
+      [
+        "is there a free parking spot here",
+        "في موقف فاضي هون؟@فِي مَوْقِف فَاضِي هُون؟",
+        "fi mawqif fadi hon?"
+      ],
+      [
+        "entry is forbidden here",
+        "الدّخول ممنوع هون@الدُّخُول مَمْنُوع هُون",
+        "ad-dukhul mamnu' hon"
+      ],
+      [
+        "look at the road sign",
+        "تطّلّع ع الافتة الشّارع@تَطَّلَّع عَ الِافْتَة الشََّارِع",
+        "tittalla' 'a-laftat ash-shari'"
+      ],
+      [
+        "fill it up full tank please",
+        "فلّلها لو سمحت@فَلِّلْهَا لَوْ سَمَحْت",
+        "fallilha law samaht"
+      ],
+      [
+        "where is the nearest gas station",
+        "وين أقرب محطّة بنزين؟@وِين أَقْرَب مَحَطَّة بَنْزِين؟",
+        "wen aqrab mahattat banzin?"
+      ],
+      [
+        "please stop after the bus stop",
+        "إقف لو سمحت بعد موقف الباص@إِقَف لَوْ سَمَحْت بَعِد مَوْقِف الْبَاص",
+        "iqaf law samaht ba'id mawqif il-bas"
+      ],
+      [
+        "what is the direction of traffic on this street",
+        "شو اتّجاه السّير بهاد الشّارع؟@شُو اتِّجَاه السَّيْر بِهَاد الشََّارِع؟",
+        "shu ittijah as-sayr bi-had ash-shari'?"
+      ],
+      [
+        "you are driving in the wrong direction",
+        "عم تسوق بالاتّجاه الغلط@عَمْ تْسُوق بِالاتِّجَاه الْغَلَط",
+        "'am tsuq bil-ittijah il-ghalat"
+      ]
+    ],
+    "words": [
+      [
+        "intersection",
+        "تقاطع@تَقَاطُع",
+        "taqatu'"
+      ],
+      [
+        "traffic light",
+        "إشارة@إِشَارَة",
+        "ishara"
+      ],
+      [
+        "turn / bend",
+        "لفّة@لَفَّة",
+        "laffa"
+      ],
+      [
+        "roundabout",
+        "دوّار@دَوَّار",
+        "dawwar"
+      ],
+      [
+        "truck",
+        "شاحنة@شَاحْنَة",
+        "shahna"
+      ],
+      [
+        "motorcycle",
+        "موتور@مُوتُور",
+        "motor"
+      ],
+      [
+        "bicycle",
+        "بسكليت@بِسْكِلِيت",
+        "bisklet"
+      ],
+      [
+        "parking / parking spot",
+        "موقف@مَوْقِف",
+        "mawqif"
+      ],
+      [
+        "paid parking",
+        "موقف بمصاري@مَوْقِف بِمَصَارِي",
+        "mawqif bi-masari"
+      ],
+      [
+        "entry forbidden",
+        "الدّخول ممنوع@الدُّخُول مَمْنُوع",
+        "ad-dukhul mamnu'"
+      ],
+      [
+        "road sign",
+        "لافتة الشّارع@لَافْتَة الشََّارِع",
+        "laftat ash-shari'"
+      ],
+      [
+        "full tank",
+        "فلّ@فُلّ",
+        "full"
+      ],
+      [
+        "gas station",
+        "محطّة بنزين@مَحَطَّة بَنْزِين",
+        "mahattat banzin"
+      ],
+      [
+        "blocked / closed (f)",
+        "مسكرة@مْسَكْرَة",
+        "msakkra"
+      ],
+      [
+        "right of way / priority",
+        "أولويّة@أَوْلَوِيَّة",
+        "awlawiyya"
+      ],
+      [
+        "tire",
+        "عجلة@عَجَلَة",
+        "'ajala"
+      ],
+      [
+        "flat tire / punctured",
+        "بنشرت@بَنَشَرَت",
+        "banasharat"
+      ],
+      [
+        "police",
+        "شرطة@شُرْطَة",
+        "shurta"
+      ],
+      [
+        "he almost...",
+        "كان راح@كَان رَاح",
+        "kan rah"
+      ],
+      [
+        "drive! (to a man)",
+        "سوق@سُوق",
+        "suq"
+      ],
+      [
+        "park! (to a man)",
+        "صفّ@صَفّ",
+        "saff"
+      ],
+      [
+        "slow down! (to a man)",
+        "هدّي@هَدِّي",
+        "haddi"
+      ],
+      [
+        "fill it up!",
+        "فلّلها@فَلِّلْهَا",
+        "fallilha"
+      ],
+      [
+        "bus stop",
+        "موقف الباص@مَوْقِف الْبَاص",
+        "mawqif il-bas"
+      ],
+      [
+        "direction",
+        "اتّجاه@اتِّجَاه",
+        "ittijah"
+      ],
+      [
+        "traffic / movement",
+        "سير@سَيْر",
+        "sayr"
+      ],
+      [
+        "wrong / mistake",
+        "غلط@غَلَط",
+        "ghalat"
+      ],
+      [
+        "stop! (to a man)",
+        "إقف@إِقَف",
+        "iqaf"
+      ]
+    ],
+    "index": 13
+  },
   "training_1": {
     "name": "Practice the Learned",
     "explanations": `### This lesson is designed to consolidate what has been learned.
@@ -5974,6 +6251,6 @@ The goal is to practice independently in the game format, but without the risk o
       ]
     ],
     "sentences": [],
-    "index": 13
+    "index": 14
   }
 };
