@@ -859,10 +859,15 @@ body {
     margin-bottom: 8px;
 }
 
-#screen-dictionary{
-    height: 100vh !important;
+#screen-dictionary {
+    /* dynamic "dvh" for considering mobile environment */
+    height: 100dvh !important; 
+    max-height: 100dvh !important;
     overflow-y: auto !important;
-    padding-bottom: 50px;
+    
+    /* Consider safe area */
+    padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box;
 }
 
 .dictionary-card {
