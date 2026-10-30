@@ -336,8 +336,9 @@ body {
     transition: width 0.3s ease;
 }
 
+/* use the same approach as for dictionary padding */
 .game-screen {
-    padding-bottom: 50px;
+    padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
 }
 
 .hidden { display: none !important; }

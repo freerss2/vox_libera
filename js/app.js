@@ -2397,9 +2397,25 @@ function toggleQuickSettings() {
     const panel = document.getElementById('nav-settings-lower-panel');
     const button = document.getElementById('settingsToggleBtn');
     if (!panel || !button) return;
-    const isHidden = panel.classList.toggle('hidden');
-    button.setAttribute('aria-expanded', String(!isHidden));
-    window.changeBubbleState(isHidden ? 'wakeup' : 'minimize');
+    if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+        window.changeBubbleState('minimize');
+    } else {
+        closeQuickSettings();
+    }
+}
+
+function closeQuickSettings() {
+    const panel = document.getElementById('nav-settings-lower-panel');
+    const button = document.getElementById('settingsToggleBtn');
+    if (!panel || !button || panel.classList.contains('hidden')) return;
+    panel.classList.add('hidden');
+    button.setAttribute('aria-expanded', 'false');
+    const narratorContainer = document.getElementById('narrator-container');
+    if (narratorContainer && !narratorContainer.classList.contains('hidden')) {
+        window.changeBubbleState('wakeup');
+    }
 }
 
 // Get list of input types for current screen
@@ -3169,6 +3185,15 @@ function unpackProgressData(data) {
 //  - initialize the menu
 //  - show current screen
 document.addEventListener('DOMContentLoaded', () => {
+
+    document.addEventListener('click', event => {
+        const settingsWrapper = document.querySelector('.settings-toggle-wrapper');
+        const panel = document.getElementById('nav-settings-lower-panel');
+        if (panel && !panel.classList.contains('hidden')
+            && settingsWrapper && !settingsWrapper.contains(event.target)) {
+            closeQuickSettings();
+        }
+    });
 
     document.getElementById('current-course-name').innerText = i18n.t(manifest.metadata.title);
     window.initNarrator(getRandomNarrator(), 'narrator-wrapper');
