@@ -447,6 +447,9 @@ window.toggleTopicCards = function() {
     const panel = document.getElementById('course-map');
     if (panel.classList.contains('hidden')) {
         showTopicsCards();
+    } else if (settings.getCurrentScreenId() === 'final'
+        && !document.getElementById('narrator-container').classList.contains('hidden')) {
+        toggleBubble();
     } else {
        renderCurrentScreen();
     }

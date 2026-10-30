@@ -6,8 +6,8 @@
     "organization": "freerss2",
     "repositoryId": "895049",
     "repositoryName": "vox_libera",
-    "createdAt": "2026-09-11T18:49:11.658Z",
-    "updatedAt": "2026-09-11T18:49:11.658Z",
+    "createdAt": "2026-10-30T14:57:53.891Z",
+    "updatedAt": "2026-10-30T14:57:53.891Z",
     "languages": [
       "CSS",
       "HTML",
@@ -21,7 +21,7 @@
   "tools": [
     {
       "toolId": "Stylelint",
-      "localConfigurationFile": "c:\\Users\\felixl\\Downloads\\development\\web\\vox_libera\\stylelint.config.mjs",
+      "localConfigurationFile": "stylelint.config.mjs",
       "patterns": [
         {
           "patternId": "Stylelint_scss_function-disallowed-list",
@@ -687,7 +687,7 @@
     },
     {
       "toolId": "ESLint8",
-      "localConfigurationFile": "c:\\Users\\felixl\\Downloads\\development\\web\\vox_libera\\.eslintrc.json",
+      "localConfigurationFile": ".eslintrc.json",
       "useLocalConfigurationFile": true,
       "patterns": []
     },
