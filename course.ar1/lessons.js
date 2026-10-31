@@ -4398,9 +4398,14 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
         "ad-dukhul mamnu'"
       ],
       [
-        "road sign",
-        "لافتة الشّارع@لَافْتَة الشََّارِع",
-        "laftat ash-shari'"
+        "road sign / traffic sign",
+        "إشارة مرور",
+        "isharit murur"
+      ],
+      [
+        "speed limit sign",
+        "إشارة تحديد السرعة",
+        "isharit tahdid is-sur'a"
       ],
       [
         "full tank",

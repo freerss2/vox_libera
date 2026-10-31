@@ -220,10 +220,14 @@ words:
   ar: الدُّخُول مَمْنُوع
   transliteration: "ad-dukhul mamnu'"
   ru: въезд запрещён
-- en: road sign
-  ar: لَافْتَة الشََّارِع
-  transliteration: "laftat ash-shari'"
-  ru: дорожный указатель
+- ar: إشارة مرور
+  en: road sign / traffic sign
+  transliteration: isharit murur
+  ru: дорожный знак
+- ar: إشارة تحديد السرعة
+  en: speed limit sign
+  transliteration: isharit tahdid is-sur'a
+  ru: знак ограничения скорости
 - en: full tank
   ar: فُلّ
   transliteration: "full"

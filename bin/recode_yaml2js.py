@@ -393,7 +393,7 @@ def parse_arguments():
     Parse command-line arguments.
     @return: parsed arguments
     """
-    parser = argparse.ArgumentParser(description="Decode course JS data into YAML format.")
+    parser = argparse.ArgumentParser(description="Decode course YAML source data into JS format.")
     parser.add_argument('-d', '--course_dir', required=True, help="Directory containing course data.")
     return parser.parse_args()
 
