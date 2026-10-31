@@ -209,10 +209,22 @@ def aggregate_data(lessons, locales, manifest):
     @return: aggregated lessons with words and sentences, and manifest
     """
     info("processing {} topics".format(len(lessons.keys())))
-    total_abc = 0
-    total_words = 0
-    total_sentences = 0
     target_lang = manifest.get('target_language', 'ar')
+    _aggregate_metadata(locales, manifest)
+    totals = {'abc': 0, 'words': 0, 'sentences': 0}
+    for name, topic in lessons.items():
+        counts = _aggregate_topic(topic, name, locales, target_lang)
+        for collection in totals:
+            totals[collection] += counts[collection]
+    info("total words: {} sentences: {} abc: {}".format(
+        totals['words'], totals['sentences'], totals['abc']))
+    _aggregate_feedback(manifest, locales, target_lang)
+    for lang in locales:
+        locales[lang].pop('content', None)
+    manifest['locales'] = locales
+    return lessons, manifest
+
+def _aggregate_metadata(locales, manifest):
     metadata_title = {'en': manifest.get('metadata', {}).pop('title', '')}
     for lang in locales:
         if 'interface' not in locales[lang]:
@@ -225,99 +237,78 @@ def aggregate_data(lessons, locales, manifest):
         if 'story' not in locales[lang]:
             locales[lang]['story'] = {}
     manifest['metadata']['title'] = metadata_title
-    for name in lessons:
-        topic = lessons[name]
-        info_abc = ''
-        info_words = ''
-        info_sentences = ''
-        if 'abc' in topic:
-            abc = aggregate_list(topic['abc'], locales, target_lang)
-            topic['abc'] = abc
-            info_abc = "  abc: {}".format(len(abc))
-            total_abc += len(abc)
-        if 'words' in topic:
-            words = aggregate_list(topic['words'], locales, target_lang)
-            topic['words'] = words
-            info_words = "  words: {}".format(len(words))
-            total_words += len(words)
-        if 'sentences' in topic:
-            sentences = aggregate_list(topic['sentences'], locales, target_lang)
-            topic['sentences'] = sentences
-            info_sentences = "  sentences: {}".format(len(sentences))
-            total_sentences += len(sentences)
-        if 'sort_set' in topic:
-            # extract translations
-            for sort_set_data in topic['sort_set']:
-                sort_set_id = sort_set_data['id']
-                questions1 = {}
-                questions2 = {}
-                for lang in locales:
-                    rec = locales[lang]['sort_set'].get(sort_set_id)
-                    if not rec:
-                        continue
-                    questions1[lang] = rec['question1']
-                    if 'question2' in rec:
-                        questions2[lang] = rec['question2']
-                sort_set_data['question1'] = questions1
-                if questions2:
-                    sort_set_data['question2'] = questions2
-        if 'pairs_set' in topic:
-            pairs_sets = topic['pairs_set']
-            for pairs_set in pairs_sets:
-                # decode words / abc
-                if 'abc' in pairs_set:
-                    set_type = 'abc'
-                elif 'words' in pairs_set:
-                    set_type = 'words'
-                else:
-                    continue
-                aggregated_list = aggregate_list(pairs_set[set_type], locales, target_lang)
-                pure_str_list = []
-                # for each record
-                #  - extract target lang word
-                #  - make sure respective record present in topic itself
-                for rec in aggregated_list:
-                    target_str = rec.get(target_lang)
-                    pure_str_list.append(target_str)
-                    if not target_str:
-                        error(f"failed to parse {rec}")
-                        continue
-                    append_if_missing(topic[set_type], rec, target_str, target_lang)
-                pairs_set[set_type] = pure_str_list
-                # split title by languages
-                pairs_set_title = pairs_set['title']
-                pairs_set['title'] = {'en': pairs_set_title}
-                for lang in locales:
-                    value = locales[lang].get('interface', {}).pop(pairs_set_title, '')
-                    if not value:
-                        continue
-                    pairs_set['title'][lang] = value
-        topic['name'] = {'en': topic.get('name', name)}
+
+def _aggregate_topic(topic, name, locales, target_lang):
+    counts = _aggregate_topic_lists(topic, locales, target_lang)
+    _aggregate_sort_sets(topic, locales)
+    _aggregate_pairs_sets(topic, locales, target_lang)
+    topic['name'] = {'en': topic.get('name', name)}
+    topic['name'].update(_take_interface_translations(locales, topic['name']['en']))
+    info(" * topic '{}'   words: {}   sentences: {}   abc: {}".format(
+        name, counts['words'], counts['sentences'], counts['abc']))
+    return counts
+
+def _aggregate_topic_lists(topic, locales, target_lang):
+    counts = {'abc': 0, 'words': 0, 'sentences': 0}
+    for collection in counts:
+        if collection in topic:
+            topic[collection] = aggregate_list(topic[collection], locales, target_lang)
+            counts[collection] = len(topic[collection])
+    return counts
+
+def _aggregate_sort_sets(topic, locales):
+    for sort_set_data in topic.get('sort_set', []):
+        sort_set_id = sort_set_data['id']
+        questions1 = {}
+        questions2 = {}
         for lang in locales:
-            if 'interface' not in locales[lang]:
+            rec = locales[lang]['sort_set'].get(sort_set_id)
+            if not rec:
                 continue
-            value = locales[lang].get('interface', {}).pop(topic['name']['en'], '')
-            if value:
-                topic['name'][lang] = value
-        info(" * topic '{}' {} {} {}".format(name, info_words, info_sentences, info_abc))
-    info("total words: {} sentences: {} abc: {}".format(total_words, total_sentences, total_abc))
+            questions1[lang] = rec['question1']
+            if 'question2' in rec:
+                questions2[lang] = rec['question2']
+        sort_set_data['question1'] = questions1
+        if questions2:
+            sort_set_data['question2'] = questions2
+
+def _aggregate_pairs_sets(topic, locales, target_lang):
+    for pairs_set in topic.get('pairs_set', []):
+        set_type = 'abc' if 'abc' in pairs_set else 'words' if 'words' in pairs_set else None
+        if not set_type:
+            continue
+        aggregated = aggregate_list(pairs_set[set_type], locales, target_lang)
+        pure_str_list = []
+        for rec in aggregated:
+            target_str = rec.get(target_lang)
+            pure_str_list.append(target_str)
+            if not target_str:
+                error(f"failed to parse {rec}")
+                continue
+            append_if_missing(topic[set_type], rec, target_str, target_lang)
+        pairs_set[set_type] = pure_str_list
+        title = pairs_set['title']
+        pairs_set['title'] = {'en': title}
+        pairs_set['title'].update(_take_interface_translations(locales, title))
+
+def _take_interface_translations(locales, text):
+    translations = {}
+    for lang in locales:
+        if 'interface' not in locales[lang]:
+            continue
+        value = locales[lang].get('interface', {}).pop(text, '')
+        if value:
+            translations[lang] = value
+    return translations
+
+def _aggregate_feedback(manifest, locales, target_lang):
     for feedback_id, feedback in manifest.get('feedback', {}).items():
         records = []
         for item in feedback:
             record = {'en': item[0], target_lang: item[1], 'transliteration': item[2]}
-            record_id = item[0]
-            for lang in locales:
-                if 'interface' not in locales[lang]:
-                    continue
-                value = locales[lang].get('interface', {}).pop(record_id, '')
-                if value:
-                    record[lang] = value
+            record.update(_take_interface_translations(locales, item[0]))
             records.append(record)
         manifest['feedback'][feedback_id] = records
-    for lang in locales:
-        locales[lang].pop('content', None)
-    manifest['locales'] = locales
-    return lessons, manifest
 
 def append_if_missing(topic_list, rec, target_str, target_lang):
     """
@@ -392,9 +383,9 @@ def main(args):
 
     yaml_dir = os.path.join(args.course_dir, 'yaml')
     safe_mkdir(yaml_dir)
-    for id in updated_lessons:
-        topic = updated_lessons[id]
-        topic, updated_locales = rebuild_lesson(topic, id, updated_locales, target_lang)
+    for lesson_id in updated_lessons:
+        topic = updated_lessons[lesson_id]
+        topic, updated_locales = rebuild_lesson(topic, lesson_id, updated_locales, target_lang)
         index = topic.pop('index', 0)
         lesson_file = os.path.join(yaml_dir, "lesson-%02.2d.yaml" % int(index))
         save_yaml(lesson_file, topic)

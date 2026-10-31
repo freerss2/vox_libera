@@ -274,15 +274,8 @@ def extract_from_list(materials, locales, target_lang):
             raise Exception("extract for {} failed - {}".format(row, e))
     return (result, locales)
 
-def separate_data(lessons, metadata):
-    """
-    Recode lessons content and extract locales
-    @param lessons: topics (lessons) list received from YAML files
-    @param metadata: general definitions for whole course
-    @return: (updated_lessons, locales, metadata)
-    Rise exception on input format errors
-    """
-    locales = metadata['locales']
+def _init_locales(locales):
+    """Initialize all locale buckets used during extraction."""
     for lang in locales:
         locales[lang]['content'] = {}
         locales[lang]['explanations'] = {}
@@ -290,91 +283,114 @@ def separate_data(lessons, metadata):
         locales[lang]['sort_set'] = {}
         locales[lang]['interface'] = {}
 
-    updated_lessons = {}
-    target_lang = metadata['target_language']
-    for index, topic in enumerate(lessons):
-        topic['index'] = index
-        topic_id = topic.pop('id')
-        # check lesson ID uniquness
-        if topic_id in updated_lessons:
-            raise Exception(f"duplicated topic (lesson) ID: {topic_id}")
-        if 'abc' in topic:
-            (abc, locales) = extract_from_list(topic['abc'], locales, target_lang)
-            topic['abc'] = abc
-        if 'words' in topic and topic['words']:
-            (words, locales) = extract_from_list(topic['words'], locales, target_lang)
-            topic['words'] = words
+
+def _collect_title_translations(title, locales, title_key):
+    """Move English title and keep localized versions in interface dict."""
+    new_value = title.pop('en')
+    for lang in title:
+        locales[lang]['interface'][new_value] = title.get(lang)
+    return new_value
+
+
+def _process_topic_name(topic, locales):
+    """Replace topic name with English value and save localized names."""
+    topic_name = topic['name'].pop('en')
+    for lang in topic['name']:
+        locales[lang]['interface'][topic_name] = topic['name'][lang]
+    topic['name'] = topic_name
+
+
+def _process_explanations(topic, topic_id, locales):
+    """Convert lesson explanations to JS-friendly strings and localize them."""
+    explanations = topic.get('explanations')
+    if not explanations:
+        return
+    new_value = explanations.pop('en')
+    for lang in explanations:
+        locales[lang]['explanations'][topic_id] = quote_multiline_js(explanations.get(lang))
+    topic['explanations'] = quote_multiline_js(new_value)
+
+
+def _process_story(topic, topic_id, locales, target_lang):
+    """Convert story text and keep localized versions under each language."""
+    story = topic.get('story')
+    if not story:
+        return
+    new_value = decode_story(story.pop('en'), 'en', target_lang)
+    for lang in story:
+        decoded_story = decode_story(story.get(lang), lang, target_lang)
+        locales[lang]['story'][topic_id] = quote_multiline_js(decoded_story)
+    topic['story'] = quote_multiline_js(new_value)
+
+
+def _process_pairs_set(pairs_set, topic, locales, target_lang):
+    """Normalize a pairs set and keep localized title translations."""
+    if 'words' in pairs_set:
+        set_type = 'words'
+    elif 'abc' in pairs_set:
+        set_type = 'abc'
+    else:
+        raise Exception(f"unsupported pairs set data type - {pairs_set}")
+    topic_records = topic[set_type]
+    extracted_list = []
+    for word in pairs_set[set_type]:
+        found = find_matching_record(word, topic_records, target_lang)
+        if found:
+            rec = found
         else:
-            topic['words'] = []
-        if 'sentences' in topic and topic['sentences']:
-            (sentences, locales) = extract_from_list(topic['sentences'], locales, target_lang)
-            topic['sentences'] = sentences
-        else:
-            topic['sentences'] = []
-        # topic['name'] - replace with 'en', rest - to 'interface'
-        topic_name = topic['name'].pop('en')
-        for lang in topic['name']:
-            locales[lang]['interface'][topic_name] = topic['name'][lang]
-        topic['name'] = topic_name
-        # topic['explanations'] - if exists, use 'en', rest - under each lang 'explanations'[id]
-        explanations = topic.get('explanations')
-        if explanations:
-            new_value = explanations.pop('en')
-            for lang in explanations:
-                locales[lang]['explanations'][topic_id] = quote_multiline_js(explanations.get(lang))
-            topic['explanations'] = quote_multiline_js(new_value)
-        # topic['story'] - if exists, use 'en', rest - under each lang 'story'[id]
-        story = topic.get('story')
-        if story:
-            new_value = decode_story(story.pop('en'), 'en', target_lang)
-            for lang in story:
-                decoded_story = decode_story(story.get(lang), lang, target_lang)
-                locales[lang]['story'][topic_id] = quote_multiline_js(decoded_story)
-            topic['story'] = quote_multiline_js(new_value)
-        sort_set = topic.get('sort_set')
-        if sort_set:
-            new_sort_set = decode_sort_set(sort_set, locales, target_lang, topic['words'])
-            topic['sort_set'] = new_sort_set
-        # same for pairs_set (list with "words"/"abc" inside)
-        pairs_sets = topic.get('pairs_set')
-        if pairs_sets:
-            new_sets = []
-            for pairs_set in pairs_sets:
-                if 'words' in pairs_set:
-                    set_type = 'words'
-                elif 'abc' in pairs_set:
-                    set_type = 'abc'
-                else:
-                    raise Exception(f"unsupported pairs set data type - {pairs_set}")
-                # convert list of target words to list of 3-element records
-                topic_records = topic[set_type]
-                extracted_list = []
-                for word in pairs_set[set_type]:
-                    # find this word in abc/words for this lesson
-                    found = find_matching_record(word, topic_records, target_lang)
-                    if found:
-                        rec = found
-                    else:
-                        rec = ['UNDEFINED', word, 'UNDEFINED']
-                        # make sure each target word id present in lesson's dictionary
-                        topic_records.append(rec)
-                    # push the full record in extracted_list
-                    extracted_list.append(rec)
-                pairs_set[set_type] = extracted_list
-                # split title translations
-                pairs_set_title = pairs_set['title'].pop('en')
-                for lang in pairs_set['title']:
-                    locales[lang]['interface'][pairs_set_title] = pairs_set['title'][lang]
-                pairs_set['title'] = pairs_set_title
-                new_sets.append(pairs_set)
-            topic['pairs_set'] = new_sets
-        updated_lessons[topic_id] = topic
-    # metadata['metadata']['title'] - replace with 'en', rest - to 'interface'
-    new_value = metadata['metadata']['title'].pop('en')
-    for lang in metadata['metadata']['title']:
-        locales[lang]['interface'][new_value] = metadata['metadata']['title'].get(lang)
-    metadata['metadata']['title'] = new_value
-    # metadata['feedback'] - dictionary of lists - each list to apply extract_from_list - to 'interface'
+            rec = ['UNDEFINED', word, 'UNDEFINED']
+            topic_records.append(rec)
+        extracted_list.append(rec)
+    pairs_set[set_type] = extracted_list
+    pairs_set['title'] = _collect_title_translations(pairs_set['title'], locales, 'interface')
+    return pairs_set
+
+
+def _process_pairs_sets(topic, locales, target_lang):
+    """Normalize all pairs sets for one lesson."""
+    pairs_sets = topic.get('pairs_set')
+    if not pairs_sets:
+        return
+    topic['pairs_set'] = [
+        _process_pairs_set(pairs_set, topic, locales, target_lang)
+        for pairs_set in pairs_sets
+    ]
+
+
+def _process_topic(topic, index, locales, target_lang, updated_lessons):
+    """Recode a single lesson topic and return the updated topic."""
+    topic['index'] = index
+    topic_id = topic.pop('id')
+    if topic_id in updated_lessons:
+        raise Exception(f"duplicated topic (lesson) ID: {topic_id}")
+    if 'abc' in topic:
+        (abc, locales) = extract_from_list(topic['abc'], locales, target_lang)
+        topic['abc'] = abc
+    if 'words' in topic and topic['words']:
+        (words, locales) = extract_from_list(topic['words'], locales, target_lang)
+        topic['words'] = words
+    else:
+        topic['words'] = []
+    if 'sentences' in topic and topic['sentences']:
+        (sentences, locales) = extract_from_list(topic['sentences'], locales, target_lang)
+        topic['sentences'] = sentences
+    else:
+        topic['sentences'] = []
+    _process_topic_name(topic, locales)
+    _process_explanations(topic, topic_id, locales)
+    _process_story(topic, topic_id, locales, target_lang)
+    sort_set = topic.get('sort_set')
+    if sort_set:
+        topic['sort_set'] = decode_sort_set(sort_set, locales, target_lang, topic['words'])
+    _process_pairs_sets(topic, locales, target_lang)
+    return topic_id, topic
+
+
+def _finalize_metadata(metadata, locales, target_lang):
+    """Convert overall metadata title and feedback to JS-friendly format."""
+    metadata['metadata']['title'] = _collect_title_translations(
+        metadata['metadata']['title'], locales, 'interface'
+    )
     feedback = metadata.pop('feedback')
     for key in feedback:
         new_list = []
@@ -386,6 +402,26 @@ def separate_data(lessons, metadata):
         feedback[key] = new_list
     metadata['feedback'] = feedback
     metadata.pop('locales')
+
+
+def separate_data(lessons, metadata):
+    """
+    Recode lessons content and extract locales
+    @param lessons: topics (lessons) list received from YAML files
+    @param metadata: general definitions for whole course
+    @return: (updated_lessons, locales, metadata)
+    Rise exception on input format errors
+    """
+    locales = metadata['locales']
+    _init_locales(locales)
+
+    updated_lessons = {}
+    target_lang = metadata['target_language']
+    for index, topic in enumerate(lessons):
+        topic_id, topic = _process_topic(topic, index, locales, target_lang, updated_lessons)
+        updated_lessons[topic_id] = topic
+
+    _finalize_metadata(metadata, locales, target_lang)
     return (updated_lessons, locales, metadata)
 
 def parse_arguments():
