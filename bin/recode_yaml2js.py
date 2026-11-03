@@ -11,6 +11,7 @@ Conversions:
 
 Input checks:
     lesson ID must be unique
+    input strings must not contain backticks
 """
 import os
 import re
@@ -182,11 +183,34 @@ def read_input(dirname):
         err_msg = validate_with_lines(file)
         if err_msg:
             raise Exception(err_msg)
-        lessons.append(read_yaml(file))
+        lesson = read_yaml(file)
+        validate_input_strings(lesson, file)
+        lessons.append(lesson)
     # 2. read the file manifest.yaml
     manifest_file_name = os.path.join(dirname, INPUT_MANIFEST_FILE)
     manifest = read_yaml(manifest_file_name)
+    validate_input_strings(manifest, manifest_file_name)
     return lessons, manifest
+
+def validate_input_strings(data, source):
+    """Reject backticks in YAML string values, which break generated JS template literals."""
+    errors = []
+
+    def visit(value, path):
+        if isinstance(value, str):
+            if '`' in value:
+                errors.append(f"{path}: backtick (`) is not allowed")
+        elif isinstance(value, dict):
+            for key, child in value.items():
+                visit(child, f"{path}.{key}")
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                visit(child, f"{path}[{index}]")
+
+    visit(data, "$")
+    if errors:
+        details = "\n".join(f"  {source}: {error}" for error in errors)
+        raise ValueError(f"invalid input strings:\n{details}")
 
 def read_yaml(fname):
     """

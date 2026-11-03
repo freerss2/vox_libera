@@ -4501,11 +4501,11 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
 
 Family vocab in Levantine is built on three shortcuts.
 
-**1. Possessives are one word.** We don't say `ab + i`. We say **abuy** ('''أَبوي''') — my father, **immi** ('''إِمّي''') — my mother. Same for **jiddi** ('''جَدّي'''), **sitti** ('''سِتّي'''), **akhuy** ('''أَخوي'''), **ikhti** ('''إِخْتي'''). Learn them as a whole.
+**1. Possessives are one word.** We don't say "ab + i". We say **abuy** ('''أَبوي''') — my father, **immi** ('''إِمّي''') — my mother. Same for **jiddi** ('''جَدّي'''), **sitti** ('''سِتّي'''), **akhuy** ('''أَخوي'''), **ikhti** ('''إِخْتي'''). Learn them as a whole.
 
 **2. Age is "my age".** There is no verb "I am 30". You say **'umri** ('''عُمْري''') 30 — literally "my age is 30". For others **'umro** ('''عُمْره''') 70 — "his age is 70". Same model as **'indi** ('''عِنْدي''') — I have.
 
-**3. The flip.** MSA **mutazawwij** ('''مُتَزَوِّج''') — married, becomes **mitjawwiz** ('''مِتْجَوِّز''') in Levantine. Letters `ز` and `ج` swapped. That's why **jozi** ('''جَوْزي''') means my husband, but **joz** ('''جَوْز''') also means walnut. Context saves you.
+**3. The flip.** MSA **mutazawwij** ('''مُتَزَوِّج''') — married, becomes **mitjawwiz** ('''مِتْجَوِّز''') in Levantine. Letters '''ز''' and '''ج''' swapped. That's why **jozi** ('''جَوْزي''') means my husband, but **joz** ('''جَوْز''') also means walnut. Context saves you.
 `,
     "words": [
       [
