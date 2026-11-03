@@ -4495,6 +4495,225 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
     ],
     "index": 13
   },
+  "describe_family_1": {
+    "name": "Tell about your family",
+    "explanations": `### Family in Levantine - 3 hacks
+
+Family vocab in Levantine is built on three shortcuts.
+
+**1. Possessives are one word.** We don't say `ab + i`. We say **abuy** ('''أَبوي''') — my father, **immi** ('''إِمّي''') — my mother. Same for **jiddi** ('''جَدّي'''), **sitti** ('''سِتّي'''), **akhuy** ('''أَخوي'''), **ikhti** ('''إِخْتي'''). Learn them as a whole.
+
+**2. Age is "my age".** There is no verb "I am 30". You say **'umri** ('''عُمْري''') 30 — literally "my age is 30". For others **'umro** ('''عُمْره''') 70 — "his age is 70". Same model as **'indi** ('''عِنْدي''') — I have.
+
+**3. The flip.** MSA **mutazawwij** ('''مُتَزَوِّج''') — married, becomes **mitjawwiz** ('''مِتْجَوِّز''') in Levantine. Letters `ز` and `ج` swapped. That's why **jozi** ('''جَوْزي''') means my husband, but **joz** ('''جَوْز''') also means walnut. Context saves you.
+`,
+    "words": [
+      [
+        "my grandfather",
+        "جدّي@جَدّي",
+        "jiddi"
+      ],
+      [
+        "my grandmother",
+        "ستّي@سِتّي",
+        "sitti"
+      ],
+      [
+        "my father",
+        "أبوي@أَبوي",
+        "abuy"
+      ],
+      [
+        "my mother",
+        "إمّي@إِمّي",
+        "immi"
+      ],
+      [
+        "my brother",
+        "أخوي@أَخوي",
+        "akhuy"
+      ],
+      [
+        "my sister",
+        "إختي@إِخْتي",
+        "ikhti"
+      ],
+      [
+        "my son",
+        "إبني@إِبْني",
+        "ibni"
+      ],
+      [
+        "my daughter",
+        "بنتي@بِنْتي",
+        "binti"
+      ],
+      [
+        "my wife",
+        "مرتي@مَرْتي",
+        "marti"
+      ],
+      [
+        "my husband",
+        "جوزي@جَوْزي",
+        "jozi"
+      ],
+      [
+        "my mother-in-law",
+        "حماتي@حَماتي",
+        "hamati"
+      ],
+      [
+        "married (man)",
+        "متجوّز@مِتْجَوِّز",
+        "mitjawwiz"
+      ],
+      [
+        "married (woman)",
+        "متجوّزة@مِتْجَوِّزة",
+        "mitjawwze"
+      ],
+      [
+        "lives / residing",
+        "ساكن@ساكِن",
+        "sakin"
+      ],
+      [
+        "was born (m)",
+        "خلق@خِلِق",
+        "khili'"
+      ],
+      [
+        "got married",
+        "تجوّز@تْجَوَّز",
+        "tjawwaz"
+      ],
+      [
+        "how many",
+        "قدّيش@قَدّيش",
+        "qaddesh"
+      ],
+      [
+        "single",
+        "عازب@عازِب",
+        "'azib"
+      ],
+      [
+        "originally from",
+        "أصله من@أَصْله مِن",
+        "aslo min"
+      ]
+    ],
+    "sentences": [
+      [
+        "My father lives in Haifa",
+        "أبوي ساكن بحيفا@أَبوي ساكِن بِحَيْفا",
+        "abuy sakin b-Hefa"
+      ],
+      [
+        "My grandfather is 75 years old",
+        "جدّي عمره خمسة وسبعين سنة@جَدّي عُمْره خَمْسة وَسَبْعين سَنة",
+        "jiddi 'umro khamse w saba'in sene"
+      ],
+      [
+        "My grandmother was born in Jaffa",
+        "ستّي خلقت بيافا@سِتّي خِلْقِت بْيافا",
+        "sitti khil'it b-Yafa"
+      ],
+      [
+        "My brother is married",
+        "أخوي متجوّز@أَخوي مِتْجَوِّز",
+        "akhuy mitjawwiz"
+      ],
+      [
+        "My sister is married and has two kids",
+        "إختي متجوّزة وعندها ولدين@إِخْتي مِتْجَوِّزة وَعِنْدها وَلَدَيْن",
+        "ikhti mitjawwze w 'indha waladein"
+      ],
+      [
+        "He got married last year",
+        "تجوّز السّنة الماضية@تْجَوَّز السَّنة الماضْية",
+        "tjawwaz is-sene il-madye"
+      ],
+      [
+        "My daughter is 5 and my son is 8",
+        "بنتي عمرها خمس سنين وإبني عمره ثماني@بِنْتي عُمْرهَا خَمَس سْنين وَإِبْني عُمْره ثْماني",
+        "binti 'umrha khamas snin w ibni 'umro tmane"
+      ],
+      [
+        "My mother-in-law lives with us, we all gather at grandma's every Friday",
+        "حماتي ساكنة معنا، كلّنا منجتمع عند ستّي كلّ جمعة@حَماتي ساكْنة مَعْنا، كِلّنا مِنْجْتَمَع عِنْد سِتّي كِلّ جُمْعَة",
+        "hamati sakne ma'na, killna minijtama' 'ind sitti kill jum'a"
+      ],
+      [
+        "How many kids does your brother have?",
+        "قدّيش ولاد عند أخوك؟@قَدّيش وَلاد عِنْد أَخوك؟",
+        "qaddesh wlad 'ind akhuk?"
+      ],
+      [
+        "My brother has three kids",
+        "عند أخوي ثلاث ولاد@عِنْد أَخوي ثْلاث وَلاد",
+        "'ind akhuy tlat wlad"
+      ],
+      [
+        "Where does your eldest son live?",
+        "وين ساكن إبنك الكبير؟@وَيْن ساكِن إِبْنك الكْبير؟",
+        "wein sakin ibnak il-kbir?"
+      ],
+      [
+        "My eldest son lives in Tel Aviv",
+        "إبني الكبير ساكن بتلّ أبيب@إِبْني الكْبير ساكِن بِتَلّ أَبِيب",
+        "ibni il-kbir sakin b-Tall Abib"
+      ],
+      [
+        "Did your grandpa have brothers and sisters?",
+        "كان عند جدّك إخوة وأخوات؟@كان عِنْد جَدّك إِخْوة وَأَخَوات؟",
+        "kan 'ind jaddak ikhwe w akhawat?"
+      ],
+      [
+        "Yes, my grandpa had two brothers and a sister",
+        "إيه، كان عند جدّي أخوين وإخت@إيه، كان عِنْد جَدّي أَخَوَيْن وَإِخِت",
+        "eh, kan 'ind jiddi akhawein w ikhit"
+      ],
+      [
+        "Where is your wife originally from?",
+        "مرتك من وين أصلها؟@مَرْتك مِن وَيْن أَصِلها؟",
+        "martak min wein asilha?"
+      ],
+      [
+        "My wife is originally from Beirut",
+        "مرتي أصلها من بيروت@مَرْتي أَصِلها مِن بَيْروت",
+        "marti asilha min Beirut"
+      ],
+      [
+        "How old is your mom?",
+        "قدّيش عمر إمّك؟@قَدّيش عُمُر إِمَّك؟",
+        "qaddesh 'umur immak?"
+      ],
+      [
+        "My mom is 55 years old",
+        "إمّي عمرها خمسة وخمسين سنة@إِمّي عُمْرهَا خَمْسة وَخَمْسين سَنة",
+        "immi 'umrha khamse w khamsin sene"
+      ],
+      [
+        "Are you married?",
+        "إنت متجوّز؟@إِنْت مِتْجَوِّز؟",
+        "inta mitjawwiz?"
+      ],
+      [
+        "No, I'm single, but my brother has been married for five years",
+        "لا، أنا عازب، بسّ أخوي متجوّز من خمس سنين@لا، أَنا عازِب، بَسّ أَخوي مِتْجَوِّز مِن خَمَس سْنين",
+        "la, ana 'azib, bass akhuy mitjawwiz min khamas snin"
+      ]
+    ],
+    "story": `##story-line## ''' إسمي أحمد، أنا ساكن بعكّا، بسّ أصلي من النّاصرة@إِسْمي أَحْمَد، أَنا ساكِن بْعَكّا، بَسّ أَصْلي مِن النّاصْرة ''' ##story-translation## My name is Ahmad, I live in Akko, but I'm originally from Nazareth ##story-transcr## ismi Ahmad, ana sakin b-'Akka, bass asli min in-Nasra
+##story-line## ''' أبوي عمره إثنين وستّين وإمّي عمرها ثمانة وخمسين، هنّي ساكنين بنابلس@أَبوي عُمْره إِثْنَيْن وَسِتّين وَإِمّي عُمْرهَا ثْمانة وَخَمْسين، هِنّي ساكْنين بِنابْلُس ''' ##story-translation## My father is 62 and my mother is 58, they live in Nablus ##story-transcr## abuy 'umro itnein w sittin w immi 'umrha tmane w khamsin, hinni saknin b-Nablus
+##story-line## ''' ستّي خلقت بسنة إثنين وخمسين بالقدس، هلّأ عمرها إثنين وسبعين@سِتّي خِلْقِت بِسَنة إِثْنَيْن وَخَمْسين بِالقُدْس، هَلّأ عُمْرهَا إِثْنَيْن وَسَبْعين ''' ##story-translation## My grandmother was born in 1952 in Jerusalem, now she is 72 ##story-transcr## sitti khil'it bi-sene itnein w khamsin bil-Quds, halla 'umrha itnein w saba'in
+##story-line## ''' أخوي الكبير تجوّز من سنتين، مرته أصلها من طرابلس@أَخوي الكْبير تْجَوَّز مِن سَنْتَيْن، مَرْته أَصِلها مِن طْرابْلُس ''' ##story-translation## My eldest brother got married two years ago, his wife is originally from Tripoli ##story-transcr## akhuy il-kbir tjawwaz min santein, marto asilha min Trablous
+##story-line## ''' هلّأ عندهن صبي، عمره سنتين@هَلّأ عِنْدهُن صَبي، عُمْره سَنْتَيْن ''' ##story-translation## Now they have a baby boy, he is two years old ##story-transcr## halla 'indhun sabi, 'umro santein
+##story-line## ''' كلّنا منجتمع عند أبوي وإمّي كلّ سبت@كِلّنا مِنْجْتَمَع عِنْد أَبوي وَإِمّي كِلّ سَبِت ''' ##story-translation## We all gather at my parents' place every Saturday ##story-transcr## killna minijtama' 'ind abuy w immi kill sabit`,
+    "index": 14
+  },
   "training_1": {
     "name": "Practice the Learned",
     "explanations": `### This lesson is designed to consolidate what has been learned.
@@ -6256,6 +6475,6 @@ The goal is to practice independently in the game format, but without the risk o
       ]
     ],
     "sentences": [],
-    "index": 14
+    "index": 15
   }
 };

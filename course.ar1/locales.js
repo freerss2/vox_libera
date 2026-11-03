@@ -206,6 +206,16 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): �
 
 **Awlawiyya** ('''أَوْلَوِيَّة'''): Означает «приоритет / преимущество на дороге». На кольце (__dawwar__) или перекрёстке фраза __'indi al-awlawiyya__ («у меня преимущество») поможет обозначить право проезда.
 `,
+      "describe_family_1": `### Семья в левантийском — 3 хака
+
+Вся семейная лексика держится на трех приемах.
+
+**1. Притяжательность — одним словом.** Мы не говорим '''`أب + ي`'''. Говорим **abuy** ('''أَبوي''') — мой отец, **immi** ('''إِمّي''') — моя мама. Так же **jiddi** ('''جَدّي'''), **sitti** ('''سِتّي'''), **akhuy** ('''أَخوي'''), **ikhti** ('''إِخْتي'''). Учи сразу целиком.
+
+**2. Возраст — это "мой возраст".** Нет "мне 30 лет". Говорят **'umri** ('''عُمْري''') 30 — букв. "мой возраст 30". Про другого **'umro** ('''عُمْره''') 70 — "его возраст 70". Та же модель что и **'indi** ('''عِنْدي''') — у меня есть.
+
+**3. Перевертыш.** Фусха **mutazawwij** ('''مُتَزَوِّج''') — женат, в Леванте **mitjawwiz** ('''مِتْجَوِّز'''). Буквы `ز` и `ج` поменялись местами, отсюда **jozi** ('''جَوْزي''') — мой муж, но **joz** ('''جَوْز''') — еще и грецкий орех. Спасает контекст.
+`,
       "training_1": `### Этот урок предназначен для закрепления изученного.
 Тут собраны упражнения, тренирующие знания грамматики и запоминание слов, схожих по смыслу или различные вариации от того же корня.
 Кроме того, существует особый тип упражнений: сортировка по какому-либо общепринятому определению, например, женский род или сравнительная степень.
@@ -233,6 +243,7 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): �
       "At the Market": "На рынке",
       "Health 1": "Здоровье 1",
       "Cars and traffic": "Автомобили и дорожное движение",
+      "Tell about your family": "Рассказ о семье",
       "Practice the Learned": "Тренируем Выученное",
       "Similar words": "Похожие слова",
       "Adverbs": "Наречия",
@@ -290,7 +301,13 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): �
       "on_road_1": `##story-line## ''' يا زلمة، تطّلّع! هاي السّيّارة مسكرة عليّ، مش قادر أاخذ سيّارتي.@يَا زَلَمَة، تَطَّلَّع! هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ، مِش قَادِر أَاْخُذ سَيَّارْتِي. ''' ##story-translation## Дружище, посмотри! Эта машина заблокировала меня, я не могу выехать. ##story-transcr## Ya zalame, tittalla'! Hay as-sayyara msakkra 'alayya, mish qadir akhud sayyarti.
 ##story-line## ''' شو هالبهدلة! إذا ما بيجي هلّأ، بدّي أتّصل بالشّرطة.@شُو هَالْبَهْدَلَة! إِذَا مَا بْيِجِي هَلَّأ، بَدِّي أَتَّصِل بِالشُّرْطَة. ''' ##story-translation## Что за безобразие! Если он сейчас не прийдёт, я вызову полицию. ##story-transcr## Shu hal-bahdala! Idha ma byiji halla', biddi attasil bish-shurta.
 ##story-line## ''' صبرك شويّ، صاحبها بالصّيدليّة. لفّ من هونك وصفّ عالموقف.@صَبْرَك شْوَيّ، صَاحِبْهَا بِالصَّيْدَلِيَّة. لَفّ مِن هُونِك وِصَفّ عَالْمَوْقِف. ''' ##story-translation## Потерпи немного, хозяин в аптеке. Поверни вон там и припаркуйся на парковке. ##story-transcr## Sabrak shwayy, sahibha bis-saydaliyya. Laff min honik w-saff 'al-mawqif.
-##story-line## ''' طيّب، كان راح يضربني قبل شويّ ع الدّوّار! الشّارع مليان جنون.@طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون. ''' ##story-translation## Ладно, но он чуть не стукнул меня чуть раньше на кольце! На улице полный беспредел. ##story-transcr## Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun.`
+##story-line## ''' طيّب، كان راح يضربني قبل شويّ ع الدّوّار! الشّارع مليان جنون.@طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون. ''' ##story-translation## Ладно, но он чуть не стукнул меня чуть раньше на кольце! На улице полный беспредел. ##story-transcr## Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun.`,
+      "describe_family_1": `##story-line## ''' إسمي أحمد، أنا ساكن بعكّا، بسّ أصلي من النّاصرة@إِسْمي أَحْمَد، أَنا ساكِن بْعَكّا، بَسّ أَصْلي مِن النّاصْرة ''' ##story-translation## Меня зовут Ахмад, я живу в Акко, но родом из Назарета ##story-transcr## ismi Ahmad, ana sakin b-'Akka, bass asli min in-Nasra
+##story-line## ''' أبوي عمره إثنين وستّين وإمّي عمرها ثمانة وخمسين، هنّي ساكنين بنابلس@أَبوي عُمْره إِثْنَيْن وَسِتّين وَإِمّي عُمْرهَا ثْمانة وَخَمْسين، هِنّي ساكْنين بِنابْلُس ''' ##story-translation## Моему отцу 62, а маме 58, они живут в Наблусе ##story-transcr## abuy 'umro itnein w sittin w immi 'umrha tmane w khamsin, hinni saknin b-Nablus
+##story-line## ''' ستّي خلقت بسنة إثنين وخمسين بالقدس، هلّأ عمرها إثنين وسبعين@سِتّي خِلْقِت بِسَنة إِثْنَيْن وَخَمْسين بِالقُدْس، هَلّأ عُمْرهَا إِثْنَيْن وَسَبْعين ''' ##story-translation## Моя бабушка родилась в 1952 году в Иерусалиме, ей сейчас 72 ##story-transcr## sitti khil'it bi-sene itnein w khamsin bil-Quds, halla 'umrha itnein w saba'in
+##story-line## ''' أخوي الكبير تجوّز من سنتين، مرته أصلها من طرابلس@أَخوي الكْبير تْجَوَّز مِن سَنْتَيْن، مَرْته أَصِلها مِن طْرابْلُس ''' ##story-translation## Мой старший брат женился два года назад, его жена родом из Триполи ##story-transcr## akhuy il-kbir tjawwaz min santein, marto asilha min Trablous
+##story-line## ''' هلّأ عندهن صبي، عمره سنتين@هَلّأ عِنْدهُن صَبي، عُمْره سَنْتَيْن ''' ##story-translation## Теперь у них мальчик, ему 2 года ##story-transcr## halla 'indhun sabi, 'umro santein
+##story-line## ''' كلّنا منجتمع عند أبوي وإمّي كلّ سبت@كِلّنا مِنْجْتَمَع عِنْد أَبوي وَإِمّي كِلّ سَبِت ''' ##story-translation## Мы все собираемся у родителей каждую субботу ##story-transcr## killna minijtama' 'ind abuy w immi kill sabit`
     },
     "sort_set": {
       "verb_gender_pairs_present_3p": {
@@ -1038,6 +1055,43 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): �
       "please stop after the bus stop": "останови пожалуйста после автобусной остановки",
       "what is the direction of traffic on this street": "какое направление движения на этой улице",
       "you are driving in the wrong direction": "ты едешь в неправильном направлении",
+      "my grandfather": "мой дедушка",
+      "my grandmother": "моя бабушка",
+      "my brother": "мой брат",
+      "my sister": "моя сестра",
+      "my son": "мой сын",
+      "my daughter": "моя дочь",
+      "my wife": "моя жена",
+      "my husband": "мой муж",
+      "my mother-in-law": "моя тёща / свекровь",
+      "married (man)": "женат",
+      "married (woman)": "замужем",
+      "lives / residing": "живет",
+      "was born (m)": "родился",
+      "got married": "женился",
+      "how many": "сколько",
+      "single": "холост",
+      "originally from": "родом из",
+      "My father lives in Haifa": "Мой отец живет в Хайфе",
+      "My grandfather is 75 years old": "Моему деду 75 лет",
+      "My grandmother was born in Jaffa": "Моя бабушка родилась в Яффе",
+      "My brother is married": "Мой брат женат",
+      "My sister is married and has two kids": "Моя сестра замужем, у нее двое детей",
+      "He got married last year": "Он женился в прошлом году",
+      "My daughter is 5 and my son is 8": "Моей дочке 5 лет, а сыну 8",
+      "My mother-in-law lives with us, we all gather at grandma's every Friday": "Моя теща живет с нами, мы все собираемся у бабушки по пятницам",
+      "How many kids does your brother have?": "Сколько детей у твоего брата?",
+      "My brother has three kids": "У моего брата трое детей",
+      "Where does your eldest son live?": "Где живет твой старший сын?",
+      "My eldest son lives in Tel Aviv": "Мой старший сын живет в Тель-Авиве",
+      "Did your grandpa have brothers and sisters?": "У твоего деда были братья и сестры?",
+      "Yes, my grandpa had two brothers and a sister": "Да, у моего деда было два брата и сестра",
+      "Where is your wife originally from?": "Твоя жена откуда родом?",
+      "My wife is originally from Beirut": "Моя жена родом из Бейрута",
+      "How old is your mom?": "Сколько лет твоей маме?",
+      "My mom is 55 years old": "Моей маме 55 лет",
+      "Are you married?": "Ты женат?",
+      "No, I'm single, but my brother has been married for five years": "Нет, я холост, а брат женат уже пять лет",
       "well": "хороший",
       "ready": "готовый",
       "with me": "со мной",
