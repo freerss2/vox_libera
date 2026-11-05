@@ -2,7 +2,7 @@ const topics =
 {
   "all": {
     "name": "All topics",
-    "explanations": `### ### Welcome to the course on living Arabic (Levantine dialect)!
+    "explanations": `### Welcome to the course on living Arabic (Levantine dialect)!
 
 Conversational Arabic is something often missing from classic textbooks and popular apps, but it opens the door to real communication. Our goal is not to memorize dry theory, but to give you a foundation that really works in real life. We'll build a solid vocabulary for everyday situations and easily cover grammar, so you can understand native speakers and speak confidently.
 
