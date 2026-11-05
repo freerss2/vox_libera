@@ -709,7 +709,7 @@ function initTopic(topicId, reset_first_screen) {
       topicScreens.push(screen);
     }
   });
-  if (reset_first_screen || topicId == GENERAL_TOPIC_ID) {
+  if (reset_first_screen || !topicScreens.some(screen => screen.id === currentScreenId)) {
     currentScreenId = topicScreens[0].id;
   }
   settings.setCurrentScreenId(currentScreenId);
