@@ -2152,6 +2152,8 @@ window.checkSent = function() {
   if ( resultContainer.dataset.words == questionContainer.dataset.expected) {
     // count as success
     updateStats(questionContainer.dataset.target, true);
+    resultContainer.innerText = '';
+    resultContainer.dataset.words = '';
     const acc = Math.round((2 / (2 + errors)) * 100);
     showWin(acc);
   } else {
