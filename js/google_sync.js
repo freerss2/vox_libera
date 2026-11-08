@@ -170,10 +170,10 @@ async function performInitialSync() {
     }
 
     if (cloudData) {
-        await resolveProgressConflict(cloudData, packProgressData());
+        if (!await resolveProgressConflict(cloudData, packProgressData())) return;
     } else {
         // When data is missing in cloud - push there the current progress
-        await syncManager.uploadProgress(window.currentAccessToken, localData);
+        if (!await syncManager.uploadProgress(window.currentAccessToken, localData)) return;
     }
 
     settings.enableChangedFlag();
@@ -205,6 +205,11 @@ window.addEventListener('online', syncWhenPageWakes);
 
 // Manage cloud sync status in UI
 function updateCloudStatus(status) {
+    const settingsIcon = document.querySelector('#settingsToggleBtn use');
+    if (settingsIcon) {
+        settingsIcon.setAttribute('href', status === 'synced' ? '#lucide-user-round-check' : '#lucide-user-round');
+    }
+
     const el = document.getElementById('cloud-status');
     if (!el) return;
 
@@ -257,7 +262,7 @@ async function handleSuccessfulLogin(accessToken) {
     isUserLoggedIn = true;
     localStorage.setItem('vox_libera_logged_in', 'true');
     setLoginDisplay(false);
-    updateCloudStatus('synced');
+    updateCloudStatus('loading');
 
     try {
       // query email
@@ -330,16 +335,16 @@ async function resolveProgressConflict(cloudData, localData) {
     }
     else if (direction === 'cloud') {
         console.log("🚀 Local progress has more hits or is newer.");
-        if (window.currentAccessToken) {
-            console.log("🚀 Uploading to cloud.");
-            await syncManager.uploadProgress(window.currentAccessToken, currentLocalData);
-            updateSyncDirectionIndicator('to cloud', currentLocalData.updated_at || Date.now());
-        }
+        if (!window.currentAccessToken) return false;
+        console.log("🚀 Uploading to cloud.");
+        if (!await syncManager.uploadProgress(window.currentAccessToken, currentLocalData)) return false;
+        updateSyncDirectionIndicator('to cloud', currentLocalData.updated_at || Date.now());
     }
     else {
         console.log("🤝 Data is in sync.");
         updateSyncDirectionIndicator('in sync', Math.max(Number(currentLocalData.updated_at || 0), Number(cloudData.updated_at || 0)) || Date.now());
     }
+    return true;
 }
 
 // Count relevant exercise hits in progress data.
@@ -467,6 +472,7 @@ class CloudSync {
         }
 
         console.log(`Vox Libera: Progress upload queued; waiting for ${this.debounceDelay / 1000} seconds of silence.`);
+        if (typeof updateCloudStatus === 'function') updateCloudStatus('loading');
 
         // When user still sending more updates - reset the timer to avoid UI slowness
         if (this.debounceTimeout) {
