@@ -66,7 +66,7 @@
                 </svg>
                 <span data-i18n="menu|sentences">Sentences</span>
               </button>
-              <button type="button" class="menu-popup-item" onclick="toggleDrawer()" aria-label="Open settings" aria-expanded="false">
+              <button type="button" class="menu-popup-item" id="sync-settings-menu-item" onclick="toggleDrawer()" aria-label="Open settings" aria-expanded="false">
                 <svg class="emoji-icon" aria-hidden="true">
                   <use href="#lucide-file-settings"></use>
                 </svg>
@@ -144,7 +144,7 @@
           <span data-i18n="menu|settings">Settings</span>
         </h3>
 
-        <div class="auth-container setting-group">
+        <div class="auth-container setting-group" id="sync-auth-container">
             <div id="vox-auth-container" class="hidden vox-auth-container">
               <button id="google-login-btn" onclick="handleManualLoginClick()" class="btn-minimal google-login-btn">
                   <svg class="emoji-icon">

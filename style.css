@@ -268,6 +268,21 @@ body {
     cursor: pointer;
 }
 
+#sync-settings-menu-item {
+    position: relative;
+}
+
+#sync-settings-menu-item.sync-login-needed::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
 .menu-popup-item:hover {
     background: #f3f6fb;
 }
@@ -1272,6 +1287,12 @@ body {
 .setting-group {
   margin: 20px 0;
   padding: 0 5px;
+}
+
+#sync-auth-container.sync-login-needed {
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .setting-group.inline {

@@ -12,6 +12,7 @@ void isUserLoggedIn;
 let cloudSyncGeneration = 0;
 let initialSyncPromise = null;
 let silentLoginInProgress = false;
+let googleSyncAvailable = false;
 
 // Check if current origin is allowed for Google API usage and start auth process
 window.startAppAuth = function() {
@@ -19,9 +20,10 @@ window.startAppAuth = function() {
 
     // Allowed domains that appear in Google Cloud Console -> Authorized JavaScript origins
     const allowedGoogleOrigins = ['freerss2.github.io'];
+    googleSyncAvailable = allowedGoogleOrigins.includes(currentHost);
 
     // If current address is not listed there
-    if (!allowedGoogleOrigins.includes(currentHost)) {
+    if (!googleSyncAvailable) {
         console.log(`Vox Libera: Google Sync disabled for current origin (${currentHost}). Running in local-only mode.`);
 
         // Hide anything related to Google login
@@ -32,6 +34,7 @@ window.startAppAuth = function() {
 
     // When address is supported - just proceed to authorization init
     console.log("Vox Libera: Valid origin detected. Activating Google API components...");
+    updateLoginReminder();
     initVoxLiberaAuth();
 }
 
@@ -56,8 +59,7 @@ function initVoxLiberaAuth() {
             if (err.type === 'popup_closed' && localStorage.getItem('vox_libera_logged_in') === 'true') {
                 silentLoginInProgress = false;
                 console.warn("Vox Libera: Silent authentication was unavailable; manual login is available.");
-                setLoginDisplay(true);
-                updateCloudStatus('disconnected');
+                showLoginButton();
             } else {
                 showLoginButton();
             }
@@ -82,6 +84,15 @@ function setLoginDisplay(show) {
     } else {
       [...authContainers].forEach( elm => elm.classList.add('hidden') );
     }
+    updateLoginReminder();
+}
+
+function updateLoginReminder() {
+    const showReminder = googleSyncAvailable && navigator.onLine && !isUserLoggedIn;
+    const menuItem = document.getElementById('sync-settings-menu-item');
+    const authContainer = document.getElementById('sync-auth-container');
+    if (menuItem) menuItem.classList.toggle('sync-login-needed', showReminder);
+    if (authContainer) authContainer.classList.toggle('sync-login-needed', showReminder);
 }
 
 // Show the button if background login failed or on initial load
@@ -203,6 +214,8 @@ function syncWhenPageWakes() {
 document.addEventListener('visibilitychange', syncWhenPageWakes);
 window.addEventListener('pageshow', syncWhenPageWakes);
 window.addEventListener('online', syncWhenPageWakes);
+window.addEventListener('online', updateLoginReminder);
+window.addEventListener('offline', updateLoginReminder);
 
 // Manage cloud sync status in UI
 function updateCloudStatus(status) {
