@@ -26,6 +26,7 @@ window.startAppAuth = function() {
 
         // Hide anything related to Google login
         setLoginDisplay(false);
+        updateCloudStatus('disconnected');
         return;
     }
 
@@ -207,7 +208,12 @@ window.addEventListener('online', syncWhenPageWakes);
 function updateCloudStatus(status) {
     const settingsIcon = document.querySelector('#settingsToggleBtn use');
     if (settingsIcon) {
-        settingsIcon.setAttribute('href', status === 'synced' ? '#lucide-user-round-check' : '#lucide-user-round');
+        const iconName = status === 'synced'
+            ? 'lucide-user-round-check'
+            : status === 'disconnected' || status === 'offline'
+                ? 'lucide-user-round-x'
+                : 'lucide-user-round';
+        settingsIcon.setAttribute('href', `#${iconName}`);
     }
 
     const el = document.getElementById('cloud-status');
