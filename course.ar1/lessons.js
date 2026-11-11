@@ -4354,11 +4354,6 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
         "jibne"
       ],
       [
-        "to weigh",
-        "وزن@وَزَن",
-        "wazan"
-      ],
-      [
         "weigh for me",
         "إوزنّي@إِوْزِنّي",
         "wzinni"
@@ -4399,11 +4394,6 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
         "bidall"
       ],
       [
-        "freshest",
-        "أطزج@أَطْزَج",
-        "atzaz"
-      ],
-      [
         "to expire",
         "بيخلص@بْيِخْلَص",
         "byikhlas"
@@ -4411,7 +4401,7 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
       [
         "flour",
         "طحين@طْحين",
-        "thin"
+        "T-hin"
       ],
       [
         "wheat",
@@ -4437,11 +4427,6 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
         "its price",
         "حقّه@حَقّه",
         "ha''o"
-      ],
-      [
-        "together",
-        "مع بعض@مَع بَعَض",
-        "ma' ba'ad"
       ],
       [
         "total",
@@ -4482,11 +4467,6 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
         "two payments",
         "دفعتين@دَفْعَتَيْن",
         "daf'atein"
-      ],
-      [
-        "discount",
-        "خصم@خَصِم",
-        "khusum"
       ],
       [
         "to not apply (discount)",
