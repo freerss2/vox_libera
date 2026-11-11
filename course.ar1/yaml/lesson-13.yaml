@@ -1,304 +1,414 @@
-id: on_road_1
+id: supermarket_1
 name:
-  en: Cars and traffic
-  ru: Автомобили и дорожное движение
+  en: In the supermarket
+  ru: В супермаркете
+
+
 
 explanations:
   en: |
     ### Short notes about this topic
 
-    **Msakkra 'alayya** ('''مْسَكْرَة عَلَيَّ'''): Literally means "closed upon me". This is the exact phrase used when another vehicle double-parks or blocks your car in.
+    **Numbers are words, not digits.** In this lesson all numbers are written out in Arabic — '''عَشَر''', '''إثْنَعْشَر''', '''ميتَيْن''' — so you learn to pronounce and understand them, not just to read 10, 12, 200. In Levantine, teens are fused: '''إثْنَعْشَر''' __itna'shar__ (12), '''أَرْبَعْطَعْشَر''' __arba'tashar__ (14), '''تْمَنْطَعْشَر''' __tmantashar__ (18). Tens are built as unit + w + ten: '''خَمْسة وَعِشْرين''' __khamse w 'ishrin__ (25), '''سَبْعة وَتْمانين''' __saba' w tmanin__ (87). Hundreds: '''مِيّة''' __miyye__ (100), '''ميتَيْن''' __mitein__ (200), '''ثْلاثْمِيّة''' __tlat-miyye__ (300), '''أَرْبَعْمِيّة''' __arba'-miyye__ (400).
+    **Cheaper / more expensive.** '''أَرْخَص''' __arkhas__ and '''أَغْلى''' __aghla__ are comparatives. The pattern is:
+    '''هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — This cheese is cheaper by 10 lira.
+    The '''بِـ''' __bi-__ is important: it means by this amount.
+    **Weigh me.** '''إِوْزِنّي''' __wzinni__ = weigh + for me. Levantine imperative + -ni (for me) is very common in a shop: '''عْطيني''' __'tini__ (give me), '''إِوْزِنّي''' __wzinni__ (weigh for me).
+    **Slice or leave it?** '''أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟''' __aqatti'ha rfi' walla atrukha sha'fe?__ — Do I slice it thin or leave it as a piece? '''شَقْفة''' __sha'fe__ is the everyday word for a chunk / piece of cheese, meat, bread.
+    **Expiry.** Two ways to say it:
+    - '''تاريخ الانْتِهاء''' __tarikh il-intiha__ — expiry date, formal, on the label
+    - '''بْيِخْلَص بُكْرا''' __byikhlas bukra__ — it finishes / expires tomorrow, spoken
+    '''بْيِضَلّ إثْنَعْشَر يَوْم''' __bidall itna'shar yom__ = it stays good for 12 more days.
+    **Paying.** '''المَجْموع''' __il-majmu'__ = the total. '''حَقّه''' __ha''o__ = its price. '''بِالبِطاقة''' __bil-bitaqa__ = by card, '''كاش''' __cash__ = cash. If the card fails: '''بِطاقْتي ما عَم بِتْمْرُق''' __bita'ti ma 'am bitmru'__ — my card is not going through. If the discount didn't apply: '''الخَصِم ما نِزِل''' __il-khusum ma nizil__ — the discount didn't come down / didn't apply.
 
-    **Kan rah...** ('''كَان رَاح'''): A very handy construction for "almost [happened]". Combined with a verb, e.g., __kan rah yidribni__ = "he was going to hit me" / "he almost hit me".
-
-    **Saff** ('''صَفّ'''): In the Levant, "to park a car" is expressed with the verb __saff__ (literally "to align/line up"), rather than formal terms. A parking space is a __mawqif__.
-
-    **Awlawiyya** ('''أَوْلَوِيَّة'''): Meaning "priority/right of way". At roundabouts (__dawwar__) or unmarked intersections, you can say __'indi al-awlawiyya__ ("I have the right of way").
 
   ru: |
-    ### Краткие заметки по этой теме
+    ### Коротко о теме
 
-    **Msakkra 'alayya** ('''مْسَكْرَة عَلَيَّ'''): Дословно «закрыта на меня». Идеальная фраза для ситуации, когда кто-то подпёр вашу машину или заблокировал выезд.
+    **Числа — прописью, а не цифрами.** В этом уроке все числа в арабском варианте написаны словами — '''عَشَر''', '''إثْنَعْشَر''', '''ميتَيْن''' — чтобы ты научился их произносить и понимать на слух, а не просто читать 10, 12, 200. В левантийском подростковые числа слитные: '''إثْنَعْشَر''' __itna'shar__ (12), '''أَرْبَعْطَعْشَر''' __arba'tashar__ (14), '''تْمَنْطَعْشَر''' __tmantashar__ (18). Десятки строятся как единицы + وَ + десятки: '''خَمْسة وَعِشْرين''' __khamse w 'ishrin__ (25), '''سَبْعة وَتْمانين''' __saba' w tmanin__ (87). Сотни: '''مِيّة''' __miyye__ (100), '''ميتَيْن''' __mitein__ (200), '''ثْلاثْمِيّة''' __tlat-miyye__ (300), '''أَرْبَعْمِيّة''' __arba'-miyye__ (400).
+    **Дешевле / дороже.** '''أَرْخَص''' __arkhas__ и '''أَغْلى''' __aghla__ — сравнительные формы. Модель такая:
+    '''هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — Этот сыр дешевле на 10 лир.
+    Важен предлог '''بِـ''' __bi-__ — он значит «на эту сумму».
+    **Взвесь мне.** '''إِوْزِنّي''' __wzinni__ = взвесь + мне. В магазине левантийский императив + -ни (мне) встречается постоянно: '''عْطيني''' __'tini__ (дай мне), '''إِوْزِنّي''' __wzinni__ (взвесь мне).
+    **Нарезать или оставить?** '''أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟''' __aqatti'ha rfi' walla atrukha sha'fe?__ — Нарезать тонко или оставить куском? '''شَقْفة''' __sha'fe__ — обычное слово для куска сыра, мяса, хлеба.
+    **Срок годности.** Два способа сказать:
+    - '''تاريخ الانْتِهاء''' __tarikh il-intiha__ — срок годности, формально, на этикетке
+    - '''بْيِخْلَص بُكْرا''' __byikhlas bukra__ — заканчивается завтра, разговорно
+    '''بْيِضَلّ إثْنَعْشَر يَوْم''' __bidall itna'shar yom__ = годен еще 12 дней.
+    **Оплата.** '''المَجْموع''' __il-majmu'__ — итого. '''حَقّه''' __ha''o__ — его цена. '''بِالبِطاقة''' __bil-bitaqa__ — картой, '''كاش''' __cash__ — наличными. Если карта не проходит: '''بِطاقْتي ما عَم بِتْمْرُق''' __bita'ti ma 'am bitmru'__ — моя карта не проходит. Если скидка не применилась: '''الخَصِم ما نِزِل''' __il-khusum ma nizil__ — скидка не «спустилась» / не прошла.
 
-    **Kan rah...** ('''كَان رَاح'''): Полезнейшая конструкция для значения «чуть не [случилось]». Например: __kan rah yidribni__ — «он чуть не врезался в меня».
-
-    **Saff** ('''صَفّ'''): В разговорном левантийском парковка машины выражается глаголом __saff__ (дословно «ставить в ряд»). Парковочное место — __mawqif__.
-
-    **Awlawiyya** ('''أَوْلَوِيَّة'''): Означает «приоритет / преимущество на дороге». На кольце (__dawwar__) или перекрёстке фраза __'indi al-awlawiyya__ («у меня преимущество») поможет обозначить право проезда.
 
 story:
   en:
-    - ar: يَا زَلَمَة، تَطَّلَّع! هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ، مِش قَادِر أَاْخُذ سَيَّارْتِي.
-      en: Man, look! This car is blocking me, I can't get my car out.
-      transliteration: "Ya zalame, tittalla'! Hay as-sayyara msakkra 'alayya, mish qadir akhud sayyarti."
+    - ar: رامي راح عَالسّوبِرْمارْكِت الصُّبْح بَكّير
+      en: Rami went to the supermarket early in the morning.
+      transliteration: "rami rah 'as-supermarket is-subih bakkir"
 
-    - ar: شُو هَالْبَهْدَلَة! إِذَا مَا بْيِجِي هَلَّأ، بَدِّي أَتَّصِل بِالشُّرْطَة.
-      en: What a mess! If he doesn't come now, I will call the police.
-      transliteration: "Shu hal-bahdala! Idha ma byiji halla', biddi attasil bish-shurta."
+    - ar: أَخَذ ميتَيْن غْرام جِبْنة وَرَغيف خُبِز
+      en: He took two hundred grams of cheese and a loaf of bread.
+      transliteration: "akhad mitein ghram jibne w rghif khubiz"
 
-    - ar: صَبْرَك شْوَيّ، صَاحِبْهَا بِالصَّيْدَلِيَّة. لَفّ مِن هُونِك وِصَفّ عَالْمَوْقِف.
-      en: Be patient, its owner is in the pharmacy. Turn from over there and park in the parking spot.
-      transliteration: "Sabrak shwayy, sahibha bis-saydaliyya. Laff min honik w-saff 'al-mawqif."
+    - ar: الحَليب كان أَرْخَص بَسّ قَرَّب يِخْلَص
+      en: The milk was cheaper but it is about to expire.
+      transliteration: "il-halib kan arkhas bass qarrab yikhlas"
 
-    - ar: طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون.
-      en: Okay, but he almost hit me earlier at the roundabout! The street is full of madness.
-      transliteration: "Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun."
+    - ar: سَأَل البَيّاع عَن تاريخ الجِّبْنة
+      en: He asked the seller about the cheese date.
+      transliteration: "sa'al il-bayya' 'an tarikh il-jibne"
+
+    - ar: المَجْموع طِلِع خَمْسة وَسِتّين لِيرة
+      en: The total came to sixty-five lira.
+      transliteration: "il-majmu' tili' khamse w sittin lira"
+
+    - ar: دَفَع بِالبِطاقة وَرَوَّح عَالبَيْت مَبْسوط
+      en: He paid by card and went home happy.
+      transliteration: "dafa' bil-bitaqa w rawwah 'al-beit mabsut"
 
   ru:
-    - ar: يَا زَلَمَة، تَطَّلَّع! هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ، مِش قَادِر أَاْخُذ سَيَّارْتِي.
-      ru: Дружище, посмотри! Эта машина заблокировала меня, я не могу выехать.
-      transliteration: "Ya zalame, tittalla'! Hay as-sayyara msakkra 'alayya, mish qadir akhud sayyarti."
+    - ar: رامي راح عَالسّوبِرْمارْكِت الصُّبْح بَكّير
+      ru: Рами рано утром пошел в супермаркет
+      transliteration: "rami rah 'as-supermarket is-subih bakkir"
 
-    - ar: شُو هَالْبَهْدَلَة! إِذَا مَا بْيِجِي هَلَّأ، بَدِّي أَتَّصِل بِالشُّرْطَة.
-      ru: Что за безобразие! Если он сейчас не прийдёт, я вызову полицию.
-      transliteration: "Shu hal-bahdala! Idha ma byiji halla', biddi attasil bish-shurta."
+    - ar: أَخَذ ميتَيْن غْرام جِبْنة وَرَغيف خُبِز
+      ru: Взял двести грамм сыра и батон хлеба
+      transliteration: "akhad mitein ghram jibne w rghif khubiz"
 
-    - ar: صَبْرَك شْوَيّ، صَاحِبْهَا بِالصَّيْدَلِيَّة. لَفّ مِن هُونِك وِصَفّ عَالْمَوْقِف.
-      ru: Потерпи немного, хозяин в аптеке. Поверни вон там и припаркуйся на парковке.
-      transliteration: "Sabrak shwayy, sahibha bis-saydaliyya. Laff min honik w-saff 'al-mawqif."
+    - ar: الحَليب كان أَرْخَص بَسّ قَرَّب يِخْلَص
+      ru: Молоко было дешевле, но скоро истекает
+      transliteration: "il-halib kan arkhas bass qarrab yikhlas"
 
-    - ar: طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون.
-      ru: Ладно, но он чуть не стукнул меня чуть раньше на кольце! На улице полный беспредел.
-      transliteration: "Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun."
+    - ar: سَأَل البَيّاع عَن تاريخ الجِّبْنة
+      ru: Спросил продавца о сроке сыра
+      transliteration: "sa'al il-bayya' 'an tarikh il-jibne"
+
+    - ar: المَجْموع طِلِع خَمْسة وَسِتّين لِيرة
+      ru: Итого вышло шестьдесят пять лир
+      transliteration: "il-majmu' tili' khamse w sittin lira"
+
+    - ar: دَفَع بِالبِطاقة وَرَوَّح عَالبَيْت مَبْسوط
+      ru: Заплатил картой и довольный пошел домой
+      transliteration: "dafa' bil-bitaqa w rawwah 'al-beit mabsut"
+
 
 sentences:
-- en: this car blocked me
-  ar: هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ
-  transliteration: "hay as-sayyara msakkra 'alayya"
-  ru: эта машина заблокировала меня
 
-- en: i will call the police now
-  ar: هَلَّأ بَدِّي أَتَّصِل بِالشُّرْطَة
-  transliteration: "halla' biddi attasil bish-shurta"
-  ru: я сейчас вызову полицию
+- ar: "هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة"
+  en: "This cheese is cheaper by 10 lira"
+  transliteration: "had il-jibne arkhas bi-'ashar lira"
+  ru: "Этот сыр дешевле на 10 лир"
 
-- en: look where you are driving
-  ar: تَطَّلَّع وِين عَمْ تْسُوق
-  transliteration: "tittalla' wen 'am tsut"
-  ru: смотри куда едешь
+- ar: "هاديك الجِّبْنة أَغْلى بِـ إثْنَعْشَر لِيرة"
+  en: "That cheese is more expensive by 12 lira"
+  transliteration: "hadik il-jibne aghla bi-itna'shar lira"
+  ru: "Тот сыр дороже на 12 лир"
 
-- en: let me pass i have the right of way
-  ar: مَرِّقْنِي أَنَا عِنْدِي الأَوْلَوِيَّة
-  transliteration: "marriqni ana 'indi al-awlawiyya"
-  ru: пропусти меня у меня преимущество
+- ar: "إِوْزِنّي مِيّة وَخَمْسين غْرام جِبْنة"
+  en: "Weigh 150 grams of cheese for me"
+  transliteration: "wzinni miyye w khamsin ghram jibne"
+  ru: "Взвесьте мне 150 грамм сыра"
 
-- en: drive faster do not hold everyone up
-  ar: سُوق أَسْرَع لا تْعَطِّل الْكُلّ
-  transliteration: "suq asra' la t'attil il-kull"
-  ru: проезжай быстрее не задерживай всех
+- ar: "إِوْزِنّي ميتَيْن وَخَمْسين غْرام مْرْتَدَلّا لَوْ سَمَحْت"
+  en: "Weigh 250 grams of ham please"
+  transliteration: "wzinni mitein w khamsin ghram murtadella law samaht"
+  ru: "Взвесьте 250 грамм ветчины пожалуйста"
 
-- en: he almost hit me
-  ar: كَان رَاح يِضْرِبْنِي
-  transliteration: "kan rah yidribni"
-  ru: он чуть не стукнул меня
+- ar: "أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟"
+  en: "Slice it thin or leave it as a piece?"
+  transliteration: "aqatti'ha rfi' walla atrukha sha'fe?"
+  ru: "Нарезать тонко или оставить куском?"
 
-- en: his tire went flat
-  ar: عَجَلْتُو بَنَشَرَت
-  transliteration: "'ajalto banasharat"
-  ru: у него спустило колесо
+- ar: "لَوْ سَمَحْت قَطِّع هالشَّقْفة أَرْفَع"
+  en: "Please slice this piece thinner"
+  transliteration: "law samaht qatti' ha-sh-sha'fe arfa'"
+  ru: "Пожалуйста нарежьте этот кусок тоньше"
 
-- en: turn right at the intersection
-  ar: لَفّ يَمِين عَ التَّقَاطُع
-  transliteration: "laff yamin 'at-taqatu'"
-  ru: поверни направо на перекрёстке
+- ar: "تاريخ الانْتِهاء لَـ تْمَنْطَعْشَر الشَّهْر"
+  en: "Expiry date until the 18th"
+  transliteration: "tarikh il-intiha la-tmantashar ish-shahir"
+  ru: "Срок годности до 18 числа"
 
-- en: stop at the red traffic light
-  ar: إِقَف عَ الإِشَارَة الْحَمْرَا
-  transliteration: "iqaf 'al-ishara il-hamra"
-  ru: остановись на красный светофор
+- ar: "المُنْتَج بْيِضَلّ إثْنَعْشَر يَوْم كَمان"
+  en: "The product is good for 12 more days"
+  transliteration: "il-muntaj bidall itna'shar yom kaman"
+  ru: "Продукт годен еще 12 дней"
 
-- en: slow down before the turn
-  ar: هَدِّي قَبْل اللَّفَّة
-  transliteration: "haddi qabl al-laffa"
-  ru: сбавь скорость перед поворотом
+- ar: "هاد الجِّبْنة صالْحة لَـ خَمْسة وَعِشْرين الشَّهْر"
+  en: "This cheese is good until the 25th"
+  transliteration: "had il-jibne salha la-khamse w 'ishrin ish-shahir"
+  ru: "Этот сыр годен до 25 числа"
 
-- en: turn at the roundabout
-  ar: لَفّ عَ الدَّوَّار
-  transliteration: "laff 'ad-dawwar"
-  ru: поверни на круговом движении
+- ar: "عْطيني ثْلاثْمِيّة غْرام مِن أَطْزَج جِبْنة"
+  en: "Give me 300 grams of the freshest cheese"
+  transliteration: "'tini tlat-miyye ghram min atzaz jibne"
+  ru: "Дайте 300 грамм самого свежего сыра"
 
-- en: the big truck is slow
-  ar: الشَّاحْنَة الْكْبِيرَة بَطِيئَة
-  transliteration: "ash-shahna il-kbira bati'a"
-  ru: большой грузовик медленный
+- ar: "هاد الحَليب أَرْخَص، بَسّ بْيِخْلَص بُكْرا"
+  en: "This milk is cheaper but expires tomorrow"
+  transliteration: "had il-halib arkhas, bass byikhlas bukra"
+  ru: "Это молоко дешевле, но завтра истекает"
 
-- en: watch out for the motorcycle
-  ar: دِير بَالَك مِن الْمُوتُور
-  transliteration: "dir balak min il-motor"
-  ru: берегись мотоцикла
+- ar: "الخُبِز مِن طْحين قَمْح كامِل بِالقِسِم أَرْبَعْطَعْشَر"
+  en: "Wholemeal bread is in section 14"
+  transliteration: "il-khubiz min thin qamh kamil bil-qisim arba'tashar"
+  ru: "Хлеб из цельной муки в 14 секции"
 
-- en: the bicycle is on the right
-  ar: البِسْكِلِيت عَ الْيَمِين
-  transliteration: "al-bisklet 'al-yamin"
-  ru: велосипед справа
+- ar: "الرَّغيف الكْبير سَبْعْمِيّة وَخَمْسين غْرام حَقّه تْلَطَّعْشَر لِيرة"
+  en: "The big loaf 750 grams costs 13 lira"
+  transliteration: "ir-rghif il-kbir saba'-miyye w khamsin ghram ha''o tlatashar lira"
+  ru: "Большой батон 750 грамм стоит 13 лир"
 
-- en: this parking is paid
-  ar: هَاد الْمَوْقِف بِمَصَارِي
-  transliteration: "had il-mawqif bi-masari"
-  ru: эта стоянка платная
+- ar: "الرَّغيف الصْغير أَرْبَعْمِيّة غْرام حَقّه تِسَع لِيرة"
+  en: "The small loaf 400 grams costs 9 lira"
+  transliteration: "ir-rghif is-sghir arba'-miyye ghram ha''o tisa' lira"
+  ru: "Маленький батон 400 грамм стоит 9 лир"
 
-- en: is there a free parking spot here
-  ar: فِي مَوْقِف فَاضِي هُون؟
-  transliteration: "fi mawqif fadi hon?"
-  ru: здесь есть свободное парковочное место
+- ar: "كيلو تُفّاح حَقّه إثْنَعْشَر لِيرة"
+  en: "A kilo of apples costs 12 lira"
+  transliteration: "kilo tiffah ha''o itna'shar lira"
+  ru: "Килограмм яблок стоит 12 лир"
 
-- en: entry is forbidden here
-  ar: الدُّخُول مَمْنُوع هُون
-  transliteration: "ad-dukhul mamnu' hon"
-  ru: въезд запрещён здесь
+- ar: "التُّفّاح وَالخُبِز مَع بَعَض واحَد وَعِشْرين لِيرة"
+  en: "Apples and bread together are 21 lira"
+  transliteration: "it-tiffah wil-khubiz ma' ba'ad wahed w 'ishrin lira"
+  ru: "Яблоки и хлеб вместе 21 лира"
 
-- en: look at the road sign
-  ar: تَطَّلَّع عَ الِافْتَة الشََّارِع
-  transliteration: "tittalla' 'a-laftat ash-shari'"
-  ru: посмотри на дорожный указатель
+- ar: "المَجْموع سَبْعة وَتْمانين لِيرة"
+  en: "The total is 87 lira"
+  transliteration: "il-majmu' saba' w tmanin lira"
+  ru: "Общая сумма покупок 87 лир"
 
-- en: fill it up full tank please
-  ar: فَلِّلْهَا لَوْ سَمَحْت
-  transliteration: "fallilha law samaht"
-  ru: заправь полный бак пожалуйста
+- ar: "بِطاقْتي ما عَم بِتْمْرُق"
+  en: "My card is not going through"
+  transliteration: "bita'ti ma 'am bitmru'"
+  ru: "Моя карта почему-то не проходит"
 
-- en: where is the nearest gas station
-  ar: وِين أَقْرَب مَحَطَّة بَنْزِين؟
-  transliteration: "wen aqrab mahattat banzin?"
-  ru: где ближайшая заправка
+- ar: "جَرِّب تِمْرُق البِطاقة كَمان مَرّة"
+  en: "Try to swipe the card again"
+  transliteration: "jarrib timru' il-bitaqa kaman marra"
+  ru: "Попробуйте провести карту еще раз"
 
-- en: please stop after the bus stop
-  ar: إِقَف لَوْ سَمَحْت بَعِد مَوْقِف الْبَاص
-  transliteration: "iqaf law samaht ba'id mawqif il-bas"
-  ru: останови пожалуйста после автобусной остановки
+- ar: "فيني أُقْسُم المَبْلَغ عَلى دَفْعَتَيْن؟"
+  en: "Can I split the amount into two payments?"
+  transliteration: "fini aqsum il-mablagh 'a daf'atein?"
+  ru: "Можно разбить сумму на два платежа?"
 
-- en: what is the direction of traffic on this street
-  ar: شُو اتِّجَاه السَّيْر بِهَاد الشََّارِع؟
-  transliteration: "shu ittijah as-sayr bi-had ash-shari'?"
-  ru: какое направление движения на этой улице
+- ar: "أَرْبَعين لِيرة كاش وَسَبْعة وَأَرْبَعين بِالبِطاقة"
+  en: "40 lira cash and 47 by card"
+  transliteration: "arba'in lira cash w saba' w arba'in bil-bitaqa"
+  ru: "40 лир наличными и 47 картой"
 
-- en: you are driving in the wrong direction
-  ar: عَمْ تْسُوق بِالاتِّجَاه الْغَلَط
-  transliteration: "'am tsuq bil-ittijah il-ghalat"
-  ru: ты едешь в неправильном направлении
-
+- ar: "الخَصِم إثْنَعْشَر لِيرة ما نِزِل"
+  en: "The 12 lira discount didn't apply"
+  transliteration: "il-khusum itna'shar lira ma nizil"
+  ru: "Скидка в 12 лир не прошла"
 
 words:
+- en: cheese
+  ar: جِبْنة
+  transliteration: "jibne"
+  ru: сыр
 
-- en: intersection
-  ar: تَقَاطُع
-  transliteration: "taqatu'"
-  ru: перекрёсток
-- en: traffic light
-  ar: إِشَارَة
-  transliteration: "ishara"
-  ru: светофор
-- en: turn / bend
-  ar: لَفَّة
-  transliteration: "laffa"
-  ru: поворот
-- en: roundabout
-  ar: دَوَّار
-  transliteration: "dawwar"
-  ru: круговое движение
-- en: truck
-  ar: شَاحْنَة
-  transliteration: "shahna"
-  ru: грузовик
-- en: motorcycle
-  ar: مُوتُور
-  transliteration: "motor"
-  ru: мотоцикл
-- en: bicycle
-  ar: بِسْكِلِيت
-  transliteration: "bisklet"
-  ru: велосипед
-- en: parking / parking spot
-  ar: مَوْقِف
-  transliteration: "mawqif"
-  ru: парковка / парковочное место
-- en: paid parking
-  ar: مَوْقِف بِمَصَارِي
-  transliteration: "mawqif bi-masari"
-  ru: платная стоянка
-- en: entry forbidden
-  ar: الدُّخُول مَمْنُوع
-  transliteration: "ad-dukhul mamnu'"
-  ru: въезд запрещён
-- ar: إشارة مرور
-  en: road sign / traffic sign
-  transliteration: isharit murur
-  ru: дорожный знак
-- ar: إشارة تحديد السرعة
-  en: speed limit sign
-  transliteration: isharit tahdid is-sur'a
-  ru: знак ограничения скорости
-- en: full tank
-  ar: فُلّ
-  transliteration: "full"
-  ru: полный бак
-- en: gas station
-  ar: مَحَطَّة بَنْزِين
-  transliteration: "mahattat banzin"
-  ru: заправка
+- en: to weigh
+  ar: وَزَن
+  transliteration: "wazan"
+  ru: взвешивать
 
-- en: blocked / closed (f)
-  ar: مْسَكْرَة
-  transliteration: "msakkra"
-  ru: заблокированная / закрытая
-- en: right of way / priority
-  ar: أَوْلَوِيَّة
-  transliteration: "awlawiyya"
-  ru: преимущество / приоритет
-- en: tire
-  ar: عَجَلَة
-  transliteration: "'ajala"
-  ru: колесо / шина
-- en: flat tire / punctured
-  ar: بَنَشَرَت
-  transliteration: "banasharat"
-  ru: спустило (колесо) / прокололось
-- en: police
-  ar: شُرْطَة
-  transliteration: "shurta"
-  ru: полиция
-- en: he almost...
-  ar: كَان رَاح
-  transliteration: "kan rah"
-  ru: он чуть не...
-- en: drive! (to a man)
-  ar: سُوق (إِنْتَ)
-  transliteration: "suq"
-  ru: води! / едь! (м)
-- en: park! (to a man)
-  ar: صَفّ (إِنْتَ)
-  transliteration: "saff"
-  ru: припаркуйся! (м)
-- en: slow down! (to a man)
-  ar: هَدِّي
-  transliteration: "haddi"
-  ru: сбавь скорость! (м)
-- en: fill it up!
-  ar: فَلِّلْهَا
-  transliteration: "fallilha"
-  ru: заправь до полного!
+- en: weigh for me
+  ar: إِوْزِنّي
+  transliteration: "wzinni"
+  ru: взвесь мне
 
-- en: bus stop
-  ar: مَوْقِف الْبَاص
-  transliteration: "mawqif il-bas"
-  ru: автобусная остановка
+- en: to slice
+  ar: قَطَّع
+  transliteration: "qatta'"
+  ru: нарезать
 
-- en: direction
-  ar: اتِّجَاه
-  transliteration: "ittijah"
-  ru: направление
+- en: thin
+  ar: رْفيع
+  transliteration: "rfi'"
+  ru: тонкий
 
-- en: traffic / movement
-  ar: سَيْر
-  transliteration: "sayr"
-  ru: движение (дорожное)
+- en: thinner
+  ar: أَرْفَع
+  transliteration: "arfa'"
+  ru: тоньше
 
-- en: wrong / mistake
-  ar: غَلَط
-  transliteration: "ghalat"
-  ru: неправильный / ошибка
+- en: piece / chunk
+  ar: شَقْفة
+  transliteration: "sha'fe"
+  ru: кусок
 
-- en: stop! (to a man)
-  ar: إِقَف
-  transliteration: "iqaf"
-  ru: остановись! (м)
+- en: expiry date
+  ar: تاريخ الانْتِهاء
+  transliteration: "tarikh il-intiha"
+  ru: срок годности
+
+- en: product
+  ar: مُنْتَج
+  transliteration: "muntaj"
+  ru: продукт
+
+- en: to remain good
+  ar: بْيِضَلّ
+  transliteration: "bidall"
+  ru: оставаться годным
+
+- en: freshest
+  ar: أَطْزَج
+  transliteration: "atzaz"
+  ru: самый свежий
+
+- en: to expire
+  ar: بْيِخْلَص
+  transliteration: "byikhlas"
+  ru: истекать
+
+- en: flour
+  ar: طْحين
+  transliteration: "thin"
+  ru: мука
+
+- en: wheat
+  ar: قَمْح
+  transliteration: "qamh"
+  ru: пшеница
+
+- en: whole
+  ar: كامِل
+  transliteration: "kamil"
+  ru: цельный
+
+- en: section
+  ar: قِسِم
+  transliteration: "qisim"
+  ru: секция
+
+- en: loaf
+  ar: رَغيف
+  transliteration: "rghif"
+  ru: батон
+
+- en: its price
+  ar: حَقّه
+  transliteration: "ha''o"
+  ru: его цена
+
+- en: together
+  ar: مَع بَعَض
+  transliteration: "ma' ba'ad"
+  ru: вместе
+
+- en: total
+  ar: مَجْموع
+  transliteration: "majmu'"
+  ru: общая сумма
+
+- en: card
+  ar: بِطاقة
+  transliteration: "bitaqa"
+  ru: карта
+
+- en: to not go through (card)
+  ar: ما عَم بِتْمْرُق
+  transliteration: "ma 'am bitmru'"
+  ru: не проходит
+
+- en: try
+  ar: جَرِّب
+  transliteration: "jarrib"
+  ru: попробуй
+
+- en: to split
+  ar: أُقْسُم
+  transliteration: "aqsum"
+  ru: разбить / разделить
+
+- en: amount
+  ar: مَبْلَغ
+  transliteration: "mablagh"
+  ru: сумма
+
+- en: payment
+  ar: دَفْعة
+  transliteration: "daf'a"
+  ru: платеж
+
+- en: two payments
+  ar: دَفْعَتَيْن
+  transliteration: "daf'atein"
+  ru: два платежа
+
+- en: discount
+  ar: خَصِم
+  transliteration: "khusum"
+  ru: скидка
+
+- en: to not apply (discount)
+  ar: ما نِزِل
+  transliteration: "ma nizil"
+  ru: не прошла
+
+- en: to pay
+  ar: دَفَع
+  transliteration: "dafa'"
+  ru: заплатил
+
+- en: ten
+  ar: عَشَر
+  transliteration: "'ashar"
+  ru: десять
+
+- en: twelve
+  ar: إثْنَعْشَر
+  transliteration: "itna'shar"
+  ru: двенадцать
+
+- en: eighteen
+  ar: تْمَنْطَعْشَر
+  transliteration: "tmantashar"
+  ru: восемнадцать
+
+- en: fourteen
+  ar: أَرْبَعْطَعْشَر
+  transliteration: "arba'tashar"
+  ru: четырнадцать
+
+- en: twenty-five
+  ar: خَمْسة وَعِشْرين
+  transliteration: "khamse w 'ishrin"
+  ru: двадцать пять
+
+- en: sixty-five
+  ar: خَمْسة وَسِتّين
+  transliteration: "khamse w sittin"
+  ru: шестьдесят пять
+
+- en: two hundred
+  ar: ميتَيْن
+  transliteration: "mitein"
+  ru: двести
+
+- en: three hundred
+  ar: ثْلاثْمِيّة
+  transliteration: "tlat-miyye"
+  ru: триста
+
+- en: four hundred
+  ar: أَرْبَعْمِيّة
+  transliteration: "arba'-miyye"
+  ru: четыреста
+
+- en: forty
+  ar: أَرْبَعين
+  transliteration: "arba'in"
+  ru: сорок
+
+- en: forty-seven
+  ar: سَبْعة وَأَرْبَعين
+  transliteration: "saba' w arba'in"
+  ru: сорок семь
+
+- en: eighty-seven
+  ar: سَبْعة وَتْمانين
+  transliteration: "saba' w tmanin"
+  ru: восемьдесят семь

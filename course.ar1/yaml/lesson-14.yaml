@@ -1,282 +1,304 @@
-id: describe_family_1
+id: on_road_1
 name:
-  en: Tell about your family
-  ru: Рассказ о семье
-
+  en: Cars and traffic
+  ru: Автомобили и дорожное движение
 
 explanations:
   en: |
-    ### Family in Levantine - 3 hacks
+    ### Short notes about this topic
 
-    Family vocab in Levantine is built on three shortcuts.
+    **Msakkra 'alayya** ('''مْسَكْرَة عَلَيَّ'''): Literally means "closed upon me". This is the exact phrase used when another vehicle double-parks or blocks your car in.
 
-    **1. Possessives are one word.** We don't say "ab + i". We say **abuy** ('''أَبوي''') — my father, **immi** ('''إِمّي''') — my mother. Same for **jiddi** ('''جَدّي'''), **sitti** ('''سِتّي'''), **akhuy** ('''أَخوي'''), **ikhti** ('''إِخْتي'''). Learn them as a whole.
+    **Kan rah...** ('''كَان رَاح'''): A very handy construction for "almost [happened]". Combined with a verb, e.g., __kan rah yidribni__ = "he was going to hit me" / "he almost hit me".
 
-    **2. Age is "my age".** There is no verb "I am 30". You say **'umri** ('''عُمْري''') 30 — literally "my age is 30". For others **'umro** ('''عُمْره''') 70 — "his age is 70". Same model as **'indi** ('''عِنْدي''') — I have.
+    **Saff** ('''صَفّ'''): In the Levant, "to park a car" is expressed with the verb __saff__ (literally "to align/line up"), rather than formal terms. A parking space is a __mawqif__.
 
-    **3. The flip.** MSA **mutazawwij** ('''مُتَزَوِّج''') — married, becomes **mitjawwiz** ('''مِتْجَوِّز''') in Levantine. Letters '''ز''' and '''ج''' swapped. That's why **jozi** ('''جَوْزي''') means my husband, but **joz** ('''جَوْز''') also means walnut. Context saves you.
-
+    **Awlawiyya** ('''أَوْلَوِيَّة'''): Meaning "priority/right of way". At roundabouts (__dawwar__) or unmarked intersections, you can say __'indi al-awlawiyya__ ("I have the right of way").
 
   ru: |
-    ### Семья в левантийском — 3 хака
+    ### Краткие заметки по этой теме
 
-    Вся семейная лексика держится на трех приемах.
+    **Msakkra 'alayya** ('''مْسَكْرَة عَلَيَّ'''): Дословно «закрыта на меня». Идеальная фраза для ситуации, когда кто-то подпёр вашу машину или заблокировал выезд.
 
-    **1. Притяжательность — одним словом.** Мы не говорим '''أب + ي'''. Говорим **abuy** ('''أَبوي''') — мой отец, **immi** ('''إِمّي''') — моя мама. Так же **jiddi** ('''جَدّي'''), **sitti** ('''سِتّي'''), **akhuy** ('''أَخوي'''), **ikhti** ('''إِخْتي'''). Учи сразу целиком.
+    **Kan rah...** ('''كَان رَاح'''): Полезнейшая конструкция для значения «чуть не [случилось]». Например: __kan rah yidribni__ — «он чуть не врезался в меня».
 
-    **2. Возраст — это "мой возраст".** Нет "мне 30 лет". Говорят **'umri** ('''عُمْري''') 30 — букв. "мой возраст 30". Про другого **'umro** ('''عُمْره''') 70 — "его возраст 70". Та же модель что и **'indi** ('''عِنْدي''') — у меня есть.
+    **Saff** ('''صَفّ'''): В разговорном левантийском парковка машины выражается глаголом __saff__ (дословно «ставить в ряд»). Парковочное место — __mawqif__.
 
-    **3. Перевертыш.** Фусха **mutazawwij** ('''مُتَزَوِّج''') — женат, в Леванте **mitjawwiz** ('''مِتْجَوِّز'''). Буквы '''ز''' и '''ج''' поменялись местами, отсюда **jozi** ('''جَوْزي''') — мой муж, но **joz** ('''جَوْز''') — еще и грецкий орех. Спасает контекст.
+    **Awlawiyya** ('''أَوْلَوِيَّة'''): Означает «приоритет / преимущество на дороге». На кольце (__dawwar__) или перекрёстке фраза __'indi al-awlawiyya__ («у меня преимущество») поможет обозначить право проезда.
+
+story:
+  en:
+    - ar: يَا زَلَمَة، تَطَّلَّع! هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ، مِش قَادِر أَاْخُذ سَيَّارْتِي.
+      en: Man, look! This car is blocking me, I can't get my car out.
+      transliteration: "Ya zalame, tittalla'! Hay as-sayyara msakkra 'alayya, mish qadir akhud sayyarti."
+
+    - ar: شُو هَالْبَهْدَلَة! إِذَا مَا بْيِجِي هَلَّأ، بَدِّي أَتَّصِل بِالشُّرْطَة.
+      en: What a mess! If he doesn't come now, I will call the police.
+      transliteration: "Shu hal-bahdala! Idha ma byiji halla', biddi attasil bish-shurta."
+
+    - ar: صَبْرَك شْوَيّ، صَاحِبْهَا بِالصَّيْدَلِيَّة. لَفّ مِن هُونِك وِصَفّ عَالْمَوْقِف.
+      en: Be patient, its owner is in the pharmacy. Turn from over there and park in the parking spot.
+      transliteration: "Sabrak shwayy, sahibha bis-saydaliyya. Laff min honik w-saff 'al-mawqif."
+
+    - ar: طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون.
+      en: Okay, but he almost hit me earlier at the roundabout! The street is full of madness.
+      transliteration: "Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun."
+
+  ru:
+    - ar: يَا زَلَمَة، تَطَّلَّع! هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ، مِش قَادِر أَاْخُذ سَيَّارْتِي.
+      ru: Дружище, посмотри! Эта машина заблокировала меня, я не могу выехать.
+      transliteration: "Ya zalame, tittalla'! Hay as-sayyara msakkra 'alayya, mish qadir akhud sayyarti."
+
+    - ar: شُو هَالْبَهْدَلَة! إِذَا مَا بْيِجِي هَلَّأ، بَدِّي أَتَّصِل بِالشُّرْطَة.
+      ru: Что за безобразие! Если он сейчас не прийдёт, я вызову полицию.
+      transliteration: "Shu hal-bahdala! Idha ma byiji halla', biddi attasil bish-shurta."
+
+    - ar: صَبْرَك شْوَيّ، صَاحِبْهَا بِالصَّيْدَلِيَّة. لَفّ مِن هُونِك وِصَفّ عَالْمَوْقِف.
+      ru: Потерпи немного, хозяин в аптеке. Поверни вон там и припаркуйся на парковке.
+      transliteration: "Sabrak shwayy, sahibha bis-saydaliyya. Laff min honik w-saff 'al-mawqif."
+
+    - ar: طَيِّب، كَان رَاح يِضْرِبْنِي قَبْل شْوَيّ عَ الدَّوَّار! الشََّارِع مَلْيَان جُنُون.
+      ru: Ладно, но он чуть не стукнул меня чуть раньше на кольце! На улице полный беспредел.
+      transliteration: "Tayyib, kan rah yidribni qabl shwayy 'ad-dawwar! Ash-shari' malyan junun."
+
+sentences:
+- en: this car blocked me
+  ar: هَاي السَّيَّارَة مْسَكْرَة عَلَيَّ
+  transliteration: "hay as-sayyara msakkra 'alayya"
+  ru: эта машина заблокировала меня
+
+- en: i will call the police now
+  ar: هَلَّأ بَدِّي أَتَّصِل بِالشُّرْطَة
+  transliteration: "halla' biddi attasil bish-shurta"
+  ru: я сейчас вызову полицию
+
+- en: look where you are driving
+  ar: تَطَّلَّع وِين عَمْ تْسُوق
+  transliteration: "tittalla' wen 'am tsut"
+  ru: смотри куда едешь
+
+- en: let me pass i have the right of way
+  ar: مَرِّقْنِي أَنَا عِنْدِي الأَوْلَوِيَّة
+  transliteration: "marriqni ana 'indi al-awlawiyya"
+  ru: пропусти меня у меня преимущество
+
+- en: drive faster do not hold everyone up
+  ar: سُوق أَسْرَع لا تْعَطِّل الْكُلّ
+  transliteration: "suq asra' la t'attil il-kull"
+  ru: проезжай быстрее не задерживай всех
+
+- en: he almost hit me
+  ar: كَان رَاح يِضْرِبْنِي
+  transliteration: "kan rah yidribni"
+  ru: он чуть не стукнул меня
+
+- en: his tire went flat
+  ar: عَجَلْتُو بَنَشَرَت
+  transliteration: "'ajalto banasharat"
+  ru: у него спустило колесо
+
+- en: turn right at the intersection
+  ar: لَفّ يَمِين عَ التَّقَاطُع
+  transliteration: "laff yamin 'at-taqatu'"
+  ru: поверни направо на перекрёстке
+
+- en: stop at the red traffic light
+  ar: إِقَف عَ الإِشَارَة الْحَمْرَا
+  transliteration: "iqaf 'al-ishara il-hamra"
+  ru: остановись на красный светофор
+
+- en: slow down before the turn
+  ar: هَدِّي قَبْل اللَّفَّة
+  transliteration: "haddi qabl al-laffa"
+  ru: сбавь скорость перед поворотом
+
+- en: turn at the roundabout
+  ar: لَفّ عَ الدَّوَّار
+  transliteration: "laff 'ad-dawwar"
+  ru: поверни на круговом движении
+
+- en: the big truck is slow
+  ar: الشَّاحْنَة الْكْبِيرَة بَطِيئَة
+  transliteration: "ash-shahna il-kbira bati'a"
+  ru: большой грузовик медленный
+
+- en: watch out for the motorcycle
+  ar: دِير بَالَك مِن الْمُوتُور
+  transliteration: "dir balak min il-motor"
+  ru: берегись мотоцикла
+
+- en: the bicycle is on the right
+  ar: البِسْكِلِيت عَ الْيَمِين
+  transliteration: "al-bisklet 'al-yamin"
+  ru: велосипед справа
+
+- en: this parking is paid
+  ar: هَاد الْمَوْقِف بِمَصَارِي
+  transliteration: "had il-mawqif bi-masari"
+  ru: эта стоянка платная
+
+- en: is there a free parking spot here
+  ar: فِي مَوْقِف فَاضِي هُون؟
+  transliteration: "fi mawqif fadi hon?"
+  ru: здесь есть свободное парковочное место
+
+- en: entry is forbidden here
+  ar: الدُّخُول مَمْنُوع هُون
+  transliteration: "ad-dukhul mamnu' hon"
+  ru: въезд запрещён здесь
+
+- en: look at the road sign
+  ar: تَطَّلَّع عَ الِافْتَة الشََّارِع
+  transliteration: "tittalla' 'a-laftat ash-shari'"
+  ru: посмотри на дорожный указатель
+
+- en: fill it up full tank please
+  ar: فَلِّلْهَا لَوْ سَمَحْت
+  transliteration: "fallilha law samaht"
+  ru: заправь полный бак пожалуйста
+
+- en: where is the nearest gas station
+  ar: وِين أَقْرَب مَحَطَّة بَنْزِين؟
+  transliteration: "wen aqrab mahattat banzin?"
+  ru: где ближайшая заправка
+
+- en: please stop after the bus stop
+  ar: إِقَف لَوْ سَمَحْت بَعِد مَوْقِف الْبَاص
+  transliteration: "iqaf law samaht ba'id mawqif il-bas"
+  ru: останови пожалуйста после автобусной остановки
+
+- en: what is the direction of traffic on this street
+  ar: شُو اتِّجَاه السَّيْر بِهَاد الشََّارِع؟
+  transliteration: "shu ittijah as-sayr bi-had ash-shari'?"
+  ru: какое направление движения на этой улице
+
+- en: you are driving in the wrong direction
+  ar: عَمْ تْسُوق بِالاتِّجَاه الْغَلَط
+  transliteration: "'am tsuq bil-ittijah il-ghalat"
+  ru: ты едешь в неправильном направлении
+
 
 words:
 
-- ar: جَدّي
-  en: my grandfather
-  transliteration: jiddi
-  ru: мой дедушка
+- en: intersection
+  ar: تَقَاطُع
+  transliteration: "taqatu'"
+  ru: перекрёсток
+- en: traffic light
+  ar: إِشَارَة
+  transliteration: "ishara"
+  ru: светофор
+- en: turn / bend
+  ar: لَفَّة
+  transliteration: "laffa"
+  ru: поворот
+- en: roundabout
+  ar: دَوَّار
+  transliteration: "dawwar"
+  ru: круговое движение
+- en: truck
+  ar: شَاحْنَة
+  transliteration: "shahna"
+  ru: грузовик
+- en: motorcycle
+  ar: مُوتُور
+  transliteration: "motor"
+  ru: мотоцикл
+- en: bicycle
+  ar: بِسْكِلِيت
+  transliteration: "bisklet"
+  ru: велосипед
+- en: parking / parking spot
+  ar: مَوْقِف
+  transliteration: "mawqif"
+  ru: парковка / парковочное место
+- en: paid parking
+  ar: مَوْقِف بِمَصَارِي
+  transliteration: "mawqif bi-masari"
+  ru: платная стоянка
+- en: entry forbidden
+  ar: الدُّخُول مَمْنُوع
+  transliteration: "ad-dukhul mamnu'"
+  ru: въезд запрещён
+- ar: إشارة مرور
+  en: road sign / traffic sign
+  transliteration: isharit murur
+  ru: дорожный знак
+- ar: إشارة تحديد السرعة
+  en: speed limit sign
+  transliteration: isharit tahdid is-sur'a
+  ru: знак ограничения скорости
+- en: full tank
+  ar: فُلّ
+  transliteration: "full"
+  ru: полный бак
+- en: gas station
+  ar: مَحَطَّة بَنْزِين
+  transliteration: "mahattat banzin"
+  ru: заправка
 
-- ar: سِتّي
-  en: my grandmother
-  transliteration: sitti
-  ru: моя бабушка
+- en: blocked / closed (f)
+  ar: مْسَكْرَة
+  transliteration: "msakkra"
+  ru: заблокированная / закрытая
+- en: right of way / priority
+  ar: أَوْلَوِيَّة
+  transliteration: "awlawiyya"
+  ru: преимущество / приоритет
+- en: tire
+  ar: عَجَلَة
+  transliteration: "'ajala"
+  ru: колесо / шина
+- en: flat tire / punctured
+  ar: بَنَشَرَت
+  transliteration: "banasharat"
+  ru: спустило (колесо) / прокололось
+- en: police
+  ar: شُرْطَة
+  transliteration: "shurta"
+  ru: полиция
+- en: he almost...
+  ar: كَان رَاح
+  transliteration: "kan rah"
+  ru: он чуть не...
+- en: drive! (to a man)
+  ar: سُوق (إِنْتَ)
+  transliteration: "suq"
+  ru: води! / едь! (м)
+- en: park! (to a man)
+  ar: صَفّ (إِنْتَ)
+  transliteration: "saff"
+  ru: припаркуйся! (м)
+- en: slow down! (to a man)
+  ar: هَدِّي
+  transliteration: "haddi"
+  ru: сбавь скорость! (м)
+- en: fill it up!
+  ar: فَلِّلْهَا
+  transliteration: "fallilha"
+  ru: заправь до полного!
 
-- ar: أَبوي
-  en: my father
-  transliteration: abuy
-  ru: мой отец
+- en: bus stop
+  ar: مَوْقِف الْبَاص
+  transliteration: "mawqif il-bas"
+  ru: автобусная остановка
 
-- ar: إِمّي
-  en: my mother
-  transliteration: immi
-  ru: моя мать
+- en: direction
+  ar: اتِّجَاه
+  transliteration: "ittijah"
+  ru: направление
 
-- ar: أَخوي
-  en: my brother
-  transliteration: akhuy
-  ru: мой брат
+- en: traffic / movement
+  ar: سَيْر
+  transliteration: "sayr"
+  ru: движение (дорожное)
 
-- ar: إِخْتي
-  en: my sister
-  transliteration: ikhti
-  ru: моя сестра
+- en: wrong / mistake
+  ar: غَلَط
+  transliteration: "ghalat"
+  ru: неправильный / ошибка
 
-- ar: إِبْني
-  en: my son
-  transliteration: ibni
-  ru: мой сын
-
-- ar: بِنْتي
-  en: my daughter
-  transliteration: binti
-  ru: моя дочь
-
-- ar: مَرْتي
-  en: my wife
-  transliteration: marti
-  ru: моя жена
-
-- ar: جَوْزي
-  en: my husband
-  transliteration: jozi
-  ru: мой муж
-
-- ar: حَماتي
-  en: my mother-in-law
-  transliteration: hamati
-  ru: моя тёща / свекровь
-
-- ar: مِتْجَوِّز
-  en: married (man)
-  transliteration: mitjawwiz
-  ru: женат
-
-- ar: مِتْجَوِّزة
-  en: married (woman)
-  transliteration: mitjawwze
-  ru: замужем
-
-- ar: ساكِن
-  en: lives / residing
-  transliteration: sakin
-  ru: живет
-
-- ar: خِلِق
-  en: was born (m)
-  transliteration: khili'
-  ru: родился
-
-- ar: تْجَوَّز
-  en: got married
-  transliteration: tjawwaz
-  ru: женился
-
-- ar: قَدّيش
-  en: how many
-  transliteration: qaddesh
-  ru: сколько
-
-- ar: عازِب
-  en: single
-  transliteration: "'azib"
-  ru: холост
-
-- ar: أَصْله مِن
-  en: originally from
-  transliteration: aslo min
-  ru: родом из
-
-
-sentences:
-
-- ar: أَبوي ساكِن بِحَيْفا
-  en: My father lives in Haifa
-  transliteration: abuy sakin b-Hefa
-  ru: Мой отец живет в Хайфе
-
-- ar: جَدّي عُمْره خَمْسة وَسَبْعين سَنة
-  en: My grandfather is 75 years old
-  transliteration: "jiddi 'umro khamse w saba'in sene"
-  ru: Моему деду 75 лет
-
-- ar: سِتّي خِلْقِت بْيافا
-  en: My grandmother was born in Jaffa
-  transliteration: "sitti khil'it b-Yafa"
-  ru: Моя бабушка родилась в Яффе
-
-- ar: أَخوي مِتْجَوِّز
-  en: My brother is married
-  transliteration: akhuy mitjawwiz
-  ru: Мой брат женат
-
-- ar: إِخْتي مِتْجَوِّزة وَعِنْدها وَلَدَيْن
-  en: My sister is married and has two kids
-  transliteration: "ikhti mitjawwze w 'indha waladein"
-  ru: Моя сестра замужем, у нее двое детей
-
-- ar: تْجَوَّز السَّنة الماضْية
-  en: He got married last year
-  transliteration: tjawwaz is-sene il-madye
-  ru: Он женился в прошлом году
-
-- ar: بِنْتي عُمْرهَا خَمَس سْنين وَإِبْني عُمْره ثْماني
-  en: My daughter is 5 and my son is 8
-  transliteration: "binti 'umrha khamas snin w ibni 'umro tmane"
-  ru: Моей дочке 5 лет, а сыну 8
-
-- ar: حَماتي ساكْنة مَعْنا، كِلّنا مِنْجْتَمَع عِنْد سِتّي كِلّ جُمْعَة
-  en: "My mother-in-law lives with us, we all gather at grandma's every Friday"
-  transliteration: "hamati sakne ma'na, killna minijtama' 'ind sitti kill jum'a"
-  ru: Моя теща живет с нами, мы все собираемся у бабушки по пятницам
-
-- ar: قَدّيش وَلاد عِنْد أَخوك؟
-  en: How many kids does your brother have?
-  transliteration: "qaddesh wlad 'ind akhuk?"
-  ru: Сколько детей у твоего брата?
-
-- ar: عِنْد أَخوي ثْلاث وَلاد
-  en: My brother has three kids
-  transliteration: "'ind akhuy tlat wlad"
-  ru: У моего брата трое детей
-
-- ar: وَيْن ساكِن إِبْنك الكْبير؟
-  en: Where does your eldest son live?
-  transliteration: wein sakin ibnak il-kbir?
-  ru: Где живет твой старший сын?
-
-- ar: إِبْني الكْبير ساكِن بِتَلّ أَبِيب
-  en: My eldest son lives in Tel Aviv
-  transliteration: ibni il-kbir sakin b-Tall Abib
-  ru: Мой старший сын живет в Тель-Авиве
-
-- ar: كان عِنْد جَدّك إِخْوة وَأَخَوات؟
-  en: Did your grandpa have brothers and sisters?
-  transliteration: "kan 'ind jaddak ikhwe w akhawat?"
-  ru: У твоего деда были братья и сестры?
-
-- ar: إيه، كان عِنْد جَدّي أَخَوَيْن وَإِخِت
-  en: Yes, my grandpa had two brothers and a sister
-  transliteration: "eh, kan 'ind jiddi akhawein w ikhit"
-  ru: Да, у моего деда было два брата и сестра
-
-- ar: مَرْتك مِن وَيْن أَصِلها؟
-  en: Where is your wife originally from?
-  transliteration: martak min wein asilha?
-  ru: Твоя жена откуда родом?
-
-- ar: مَرْتي أَصِلها مِن بَيْروت
-  en: My wife is originally from Beirut
-  transliteration: marti asilha min Beirut
-  ru: Моя жена родом из Бейрута
-
-- ar: قَدّيش عُمُر إِمَّك؟
-  en: How old is your mom?
-  transliteration: "qaddesh 'umur immak?"
-  ru: Сколько лет твоей маме?
-
-- ar: إِمّي عُمْرهَا خَمْسة وَخَمْسين سَنة
-  en: My mom is 55 years old
-  transliteration: "immi 'umrha khamse w khamsin sene"
-  ru: Моей маме 55 лет
-
-- ar: إِنْت مِتْجَوِّز؟
-  en: Are you married?
-  transliteration: inta mitjawwiz?
-  ru: Ты женат?
-
-- ar: لا، أَنا عازِب، بَسّ أَخوي مِتْجَوِّز مِن خَمَس سْنين
-  en: "No, I'm single, but my brother has been married for five years"
-  transliteration: "la, ana 'azib, bass akhuy mitjawwiz min khamas snin"
-  ru: Нет, я холост, а брат женат уже пять лет
-
-story:
-
-  en:
-
-    - ar: "إِسْمي أَحْمَد، أَنا ساكِن بْعَكّا، بَسّ أَصْلي مِن النّاصْرة"
-      en: "My name is Ahmad, I live in Akko, but I'm originally from Nazareth"
-      transliteration: "ismi Ahmad, ana sakin b-'Akka, bass asli min in-Nasra"
-    
-    - ar: "أَبوي عُمْره إِثْنَيْن وَسِتّين وَإِمّي عُمْرهَا ثْمانة وَخَمْسين، هِنّي ساكْنين بِنابْلُس"
-      en: "My father is 62 and my mother is 58, they live in Nablus"
-      transliteration: "abuy 'umro itnein w sittin w immi 'umrha tmane w khamsin, hinni saknin b-Nablus"
-  
-    - ar: "سِتّي خِلْقِت بِسَنة إِثْنَيْن وَخَمْسين بِالقُدْس، هَلّأ عُمْرهَا إِثْنَيْن وَسَبْعين"
-      en: "My grandmother was born in 1952 in Jerusalem, now she is 72"
-      transliteration: "sitti khil'it bi-sene itnein w khamsin bil-Quds, halla 'umrha itnein w saba'in"
-    
-    - ar: "أَخوي الكْبير تْجَوَّز مِن سَنْتَيْن، مَرْته أَصِلها مِن طْرابْلُس"
-      en: "My eldest brother got married two years ago, his wife is originally from Tripoli"
-      transliteration: "akhuy il-kbir tjawwaz min santein, marto asilha min Trablous"
-  
-    - ar: "هَلّأ عِنْدهُن صَبي، عُمْره سَنْتَيْن"
-      en: "Now they have a baby boy, he is two years old"
-      transliteration: "halla 'indhun sabi, 'umro santein"
-    
-    - ar: "كِلّنا مِنْجْتَمَع عِنْد أَبوي وَإِمّي كِلّ سَبِت"
-      en: "We all gather at my parents' place every Saturday"
-      transliteration: "killna minijtama' 'ind abuy w immi kill sabit"
-
-  ru:
-    - ar: "إِسْمي أَحْمَد، أَنا ساكِن بْعَكّا، بَسّ أَصْلي مِن النّاصْرة"
-      transliteration: "ismi Ahmad, ana sakin b-'Akka, bass asli min in-Nasra"
-      ru: "Меня зовут Ахмад, я живу в Акко, но родом из Назарета"
-    
-    - ar: "أَبوي عُمْره إِثْنَيْن وَسِتّين وَإِمّي عُمْرهَا ثْمانة وَخَمْسين، هِنّي ساكْنين بِنابْلُس"
-      transliteration: "abuy 'umro itnein w sittin w immi 'umrha tmane w khamsin, hinni saknin b-Nablus"
-      ru: "Моему отцу 62, а маме 58, они живут в Наблусе"
-  
-    - ar: "سِتّي خِلْقِت بِسَنة إِثْنَيْن وَخَمْسين بِالقُدْس، هَلّأ عُمْرهَا إِثْنَيْن وَسَبْعين"
-      transliteration: "sitti khil'it bi-sene itnein w khamsin bil-Quds, halla 'umrha itnein w saba'in"
-      ru: "Моя бабушка родилась в 1952 году в Иерусалиме, ей сейчас 72"
-    
-    - ar: "أَخوي الكْبير تْجَوَّز مِن سَنْتَيْن، مَرْته أَصِلها مِن طْرابْلُس"
-      transliteration: "akhuy il-kbir tjawwaz min santein, marto asilha min Trablous"
-      ru: "Мой старший брат женился два года назад, его жена родом из Триполи"
-  
-    - ar: "هَلّأ عِنْدهُن صَبي، عُمْره سَنْتَيْن"
-      transliteration: "halla 'indhun sabi, 'umro santein"
-      ru: "Теперь у них мальчик, ему 2 года"
-    
-    - ar: "كِلّنا مِنْجْتَمَع عِنْد أَبوي وَإِمّي كِلّ سَبِت"
-      transliteration: "killna minijtama' 'ind abuy w immi kill sabit"
-      ru: "Мы все собираемся у родителей каждую субботу"
+- en: stop! (to a man)
+  ar: إِقَف
+  transliteration: "iqaf"
+  ru: остановись! (м)

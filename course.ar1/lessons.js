@@ -4213,6 +4213,354 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
     ],
     "index": 12
   },
+  "supermarket_1": {
+    "name": "In the supermarket",
+    "explanations": `### Short notes about this topic
+
+**Numbers are words, not digits.** In this lesson all numbers are written out in Arabic — '''عَشَر''', '''إثْنَعْشَر''', '''ميتَيْن''' — so you learn to pronounce and understand them, not just to read 10, 12, 200. In Levantine, teens are fused: '''إثْنَعْشَر''' __itna'shar__ (12), '''أَرْبَعْطَعْشَر''' __arba'tashar__ (14), '''تْمَنْطَعْشَر''' __tmantashar__ (18). Tens are built as unit + w + ten: '''خَمْسة وَعِشْرين''' __khamse w 'ishrin__ (25), '''سَبْعة وَتْمانين''' __saba' w tmanin__ (87). Hundreds: '''مِيّة''' __miyye__ (100), '''ميتَيْن''' __mitein__ (200), '''ثْلاثْمِيّة''' __tlat-miyye__ (300), '''أَرْبَعْمِيّة''' __arba'-miyye__ (400).
+**Cheaper / more expensive.** '''أَرْخَص''' __arkhas__ and '''أَغْلى''' __aghla__ are comparatives. The pattern is:
+'''هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — This cheese is cheaper by 10 lira.
+The '''بِـ''' __bi-__ is important: it means by this amount.
+**Weigh me.** '''إِوْزِنّي''' __wzinni__ = weigh + for me. Levantine imperative + -ni (for me) is very common in a shop: '''عْطيني''' __'tini__ (give me), '''إِوْزِنّي''' __wzinni__ (weigh for me).
+**Slice or leave it?** '''أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟''' __aqatti'ha rfi' walla atrukha sha'fe?__ — Do I slice it thin or leave it as a piece? '''شَقْفة''' __sha'fe__ is the everyday word for a chunk / piece of cheese, meat, bread.
+**Expiry.** Two ways to say it:
+- '''تاريخ الانْتِهاء''' __tarikh il-intiha__ — expiry date, formal, on the label
+- '''بْيِخْلَص بُكْرا''' __byikhlas bukra__ — it finishes / expires tomorrow, spoken
+'''بْيِضَلّ إثْنَعْشَر يَوْم''' __bidall itna'shar yom__ = it stays good for 12 more days.
+**Paying.** '''المَجْموع''' __il-majmu'__ = the total. '''حَقّه''' __ha''o__ = its price. '''بِالبِطاقة''' __bil-bitaqa__ = by card, '''كاش''' __cash__ = cash. If the card fails: '''بِطاقْتي ما عَم بِتْمْرُق''' __bita'ti ma 'am bitmru'__ — my card is not going through. If the discount didn't apply: '''الخَصِم ما نِزِل''' __il-khusum ma nizil__ — the discount didn't come down / didn't apply.
+`,
+    "story": `##story-line## ''' رامي راح عالسّوبرماركت الصّبح بكّير@رامي راح عَالسّوبِرْمارْكِت الصُّبْح بَكّير ''' ##story-translation## Rami went to the supermarket early in the morning. ##story-transcr## rami rah 'as-supermarket is-subih bakkir
+##story-line## ''' أخذ ميتين غرام جبنة ورغيف خبز@أَخَذ ميتَيْن غْرام جِبْنة وَرَغيف خُبِز ''' ##story-translation## He took two hundred grams of cheese and a loaf of bread. ##story-transcr## akhad mitein ghram jibne w rghif khubiz
+##story-line## ''' الحليب كان أرخص بسّ قرّب يخلص@الحَليب كان أَرْخَص بَسّ قَرَّب يِخْلَص ''' ##story-translation## The milk was cheaper but it is about to expire. ##story-transcr## il-halib kan arkhas bass qarrab yikhlas
+##story-line## ''' سأل البيّاع عن تاريخ الجّبنة@سَأَل البَيّاع عَن تاريخ الجِّبْنة ''' ##story-translation## He asked the seller about the cheese date. ##story-transcr## sa'al il-bayya' 'an tarikh il-jibne
+##story-line## ''' المجموع طلع خمسة وستّين ليرة@المَجْموع طِلِع خَمْسة وَسِتّين لِيرة ''' ##story-translation## The total came to sixty-five lira. ##story-transcr## il-majmu' tili' khamse w sittin lira
+##story-line## ''' دفع بالبطاقة وروّح عالبيت مبسوط@دَفَع بِالبِطاقة وَرَوَّح عَالبَيْت مَبْسوط ''' ##story-translation## He paid by card and went home happy. ##story-transcr## dafa' bil-bitaqa w rawwah 'al-beit mabsut`,
+    "sentences": [
+      [
+        "This cheese is cheaper by 10 lira",
+        "هاد الجّبنة أرخص بـ عشر ليرة@هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة",
+        "had il-jibne arkhas bi-'ashar lira"
+      ],
+      [
+        "That cheese is more expensive by 12 lira",
+        "هاديك الجّبنة أغلى بـ إثنعشر ليرة@هاديك الجِّبْنة أَغْلى بِـ إثْنَعْشَر لِيرة",
+        "hadik il-jibne aghla bi-itna'shar lira"
+      ],
+      [
+        "Weigh 150 grams of cheese for me",
+        "إوزنّي ميّة وخمسين غرام جبنة@إِوْزِنّي مِيّة وَخَمْسين غْرام جِبْنة",
+        "wzinni miyye w khamsin ghram jibne"
+      ],
+      [
+        "Weigh 250 grams of ham please",
+        "إوزنّي ميتين وخمسين غرام مرتدلّا لو سمحت@إِوْزِنّي ميتَيْن وَخَمْسين غْرام مْرْتَدَلّا لَوْ سَمَحْت",
+        "wzinni mitein w khamsin ghram murtadella law samaht"
+      ],
+      [
+        "Slice it thin or leave it as a piece?",
+        "أقطّعها رفيع ولّا أتركها شقفة؟@أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟",
+        "aqatti'ha rfi' walla atrukha sha'fe?"
+      ],
+      [
+        "Please slice this piece thinner",
+        "لو سمحت قطّع هالشّقفة أرفع@لَوْ سَمَحْت قَطِّع هالشَّقْفة أَرْفَع",
+        "law samaht qatti' ha-sh-sha'fe arfa'"
+      ],
+      [
+        "Expiry date until the 18th",
+        "تاريخ الانتهاء لـ تمنطعشر الشّهر@تاريخ الانْتِهاء لَـ تْمَنْطَعْشَر الشَّهْر",
+        "tarikh il-intiha la-tmantashar ish-shahir"
+      ],
+      [
+        "The product is good for 12 more days",
+        "المنتج بيضلّ إثنعشر يوم كمان@المُنْتَج بْيِضَلّ إثْنَعْشَر يَوْم كَمان",
+        "il-muntaj bidall itna'shar yom kaman"
+      ],
+      [
+        "This cheese is good until the 25th",
+        "هاد الجّبنة صالحة لـ خمسة وعشرين الشّهر@هاد الجِّبْنة صالْحة لَـ خَمْسة وَعِشْرين الشَّهْر",
+        "had il-jibne salha la-khamse w 'ishrin ish-shahir"
+      ],
+      [
+        "Give me 300 grams of the freshest cheese",
+        "عطيني ثلاثميّة غرام من أطزج جبنة@عْطيني ثْلاثْمِيّة غْرام مِن أَطْزَج جِبْنة",
+        "'tini tlat-miyye ghram min atzaz jibne"
+      ],
+      [
+        "This milk is cheaper but expires tomorrow",
+        "هاد الحليب أرخص، بسّ بيخلص بكرا@هاد الحَليب أَرْخَص، بَسّ بْيِخْلَص بُكْرا",
+        "had il-halib arkhas, bass byikhlas bukra"
+      ],
+      [
+        "Wholemeal bread is in section 14",
+        "الخبز من طحين قمح كامل بالقسم أربعطعشر@الخُبِز مِن طْحين قَمْح كامِل بِالقِسِم أَرْبَعْطَعْشَر",
+        "il-khubiz min thin qamh kamil bil-qisim arba'tashar"
+      ],
+      [
+        "The big loaf 750 grams costs 13 lira",
+        "الرّغيف الكبير سبعميّة وخمسين غرام حقّه تلطّعشر ليرة@الرَّغيف الكْبير سَبْعْمِيّة وَخَمْسين غْرام حَقّه تْلَطَّعْشَر لِيرة",
+        "ir-rghif il-kbir saba'-miyye w khamsin ghram ha''o tlatashar lira"
+      ],
+      [
+        "The small loaf 400 grams costs 9 lira",
+        "الرّغيف الصغير أربعميّة غرام حقّه تسع ليرة@الرَّغيف الصْغير أَرْبَعْمِيّة غْرام حَقّه تِسَع لِيرة",
+        "ir-rghif is-sghir arba'-miyye ghram ha''o tisa' lira"
+      ],
+      [
+        "A kilo of apples costs 12 lira",
+        "كيلو تفّاح حقّه إثنعشر ليرة@كيلو تُفّاح حَقّه إثْنَعْشَر لِيرة",
+        "kilo tiffah ha''o itna'shar lira"
+      ],
+      [
+        "Apples and bread together are 21 lira",
+        "التّفّاح والخبز مع بعض واحد وعشرين ليرة@التُّفّاح وَالخُبِز مَع بَعَض واحَد وَعِشْرين لِيرة",
+        "it-tiffah wil-khubiz ma' ba'ad wahed w 'ishrin lira"
+      ],
+      [
+        "The total is 87 lira",
+        "المجموع سبعة وتمانين ليرة@المَجْموع سَبْعة وَتْمانين لِيرة",
+        "il-majmu' saba' w tmanin lira"
+      ],
+      [
+        "My card is not going through",
+        "بطاقتي ما عم بتمرق@بِطاقْتي ما عَم بِتْمْرُق",
+        "bita'ti ma 'am bitmru'"
+      ],
+      [
+        "Try to swipe the card again",
+        "جرّب تمرق البطاقة كمان مرّة@جَرِّب تِمْرُق البِطاقة كَمان مَرّة",
+        "jarrib timru' il-bitaqa kaman marra"
+      ],
+      [
+        "Can I split the amount into two payments?",
+        "فيني أقسم المبلغ على دفعتين؟@فيني أُقْسُم المَبْلَغ عَلى دَفْعَتَيْن؟",
+        "fini aqsum il-mablagh 'a daf'atein?"
+      ],
+      [
+        "40 lira cash and 47 by card",
+        "أربعين ليرة كاش وسبعة وأربعين بالبطاقة@أَرْبَعين لِيرة كاش وَسَبْعة وَأَرْبَعين بِالبِطاقة",
+        "arba'in lira cash w saba' w arba'in bil-bitaqa"
+      ],
+      [
+        "The 12 lira discount didn't apply",
+        "الخصم إثنعشر ليرة ما نزل@الخَصِم إثْنَعْشَر لِيرة ما نِزِل",
+        "il-khusum itna'shar lira ma nizil"
+      ]
+    ],
+    "words": [
+      [
+        "cheese",
+        "جبنة@جِبْنة",
+        "jibne"
+      ],
+      [
+        "to weigh",
+        "وزن@وَزَن",
+        "wazan"
+      ],
+      [
+        "weigh for me",
+        "إوزنّي@إِوْزِنّي",
+        "wzinni"
+      ],
+      [
+        "to slice",
+        "قطّع@قَطَّع",
+        "qatta'"
+      ],
+      [
+        "thin",
+        "رفيع@رْفيع",
+        "rfi'"
+      ],
+      [
+        "thinner",
+        "أرفع@أَرْفَع",
+        "arfa'"
+      ],
+      [
+        "piece / chunk",
+        "شقفة@شَقْفة",
+        "sha'fe"
+      ],
+      [
+        "expiry date",
+        "تاريخ الانتهاء@تاريخ الانْتِهاء",
+        "tarikh il-intiha"
+      ],
+      [
+        "product",
+        "منتج@مُنْتَج",
+        "muntaj"
+      ],
+      [
+        "to remain good",
+        "بيضلّ@بْيِضَلّ",
+        "bidall"
+      ],
+      [
+        "freshest",
+        "أطزج@أَطْزَج",
+        "atzaz"
+      ],
+      [
+        "to expire",
+        "بيخلص@بْيِخْلَص",
+        "byikhlas"
+      ],
+      [
+        "flour",
+        "طحين@طْحين",
+        "thin"
+      ],
+      [
+        "wheat",
+        "قمح@قَمْح",
+        "qamh"
+      ],
+      [
+        "whole",
+        "كامل@كامِل",
+        "kamil"
+      ],
+      [
+        "section",
+        "قسم@قِسِم",
+        "qisim"
+      ],
+      [
+        "loaf",
+        "رغيف@رَغيف",
+        "rghif"
+      ],
+      [
+        "its price",
+        "حقّه@حَقّه",
+        "ha''o"
+      ],
+      [
+        "together",
+        "مع بعض@مَع بَعَض",
+        "ma' ba'ad"
+      ],
+      [
+        "total",
+        "مجموع@مَجْموع",
+        "majmu'"
+      ],
+      [
+        "card",
+        "بطاقة@بِطاقة",
+        "bitaqa"
+      ],
+      [
+        "to not go through (card)",
+        "ما عم بتمرق@ما عَم بِتْمْرُق",
+        "ma 'am bitmru'"
+      ],
+      [
+        "try",
+        "جرّب@جَرِّب",
+        "jarrib"
+      ],
+      [
+        "to split",
+        "أقسم@أُقْسُم",
+        "aqsum"
+      ],
+      [
+        "amount",
+        "مبلغ@مَبْلَغ",
+        "mablagh"
+      ],
+      [
+        "payment",
+        "دفعة@دَفْعة",
+        "daf'a"
+      ],
+      [
+        "two payments",
+        "دفعتين@دَفْعَتَيْن",
+        "daf'atein"
+      ],
+      [
+        "discount",
+        "خصم@خَصِم",
+        "khusum"
+      ],
+      [
+        "to not apply (discount)",
+        "ما نزل@ما نِزِل",
+        "ma nizil"
+      ],
+      [
+        "to pay",
+        "دفع@دَفَع",
+        "dafa'"
+      ],
+      [
+        "ten",
+        "عشر@عَشَر",
+        "'ashar"
+      ],
+      [
+        "twelve",
+        "إثنعشر@إثْنَعْشَر",
+        "itna'shar"
+      ],
+      [
+        "eighteen",
+        "تمنطعشر@تْمَنْطَعْشَر",
+        "tmantashar"
+      ],
+      [
+        "fourteen",
+        "أربعطعشر@أَرْبَعْطَعْشَر",
+        "arba'tashar"
+      ],
+      [
+        "twenty-five",
+        "خمسة وعشرين@خَمْسة وَعِشْرين",
+        "khamse w 'ishrin"
+      ],
+      [
+        "sixty-five",
+        "خمسة وستّين@خَمْسة وَسِتّين",
+        "khamse w sittin"
+      ],
+      [
+        "two hundred",
+        "ميتين@ميتَيْن",
+        "mitein"
+      ],
+      [
+        "three hundred",
+        "ثلاثميّة@ثْلاثْمِيّة",
+        "tlat-miyye"
+      ],
+      [
+        "four hundred",
+        "أربعميّة@أَرْبَعْمِيّة",
+        "arba'-miyye"
+      ],
+      [
+        "forty",
+        "أربعين@أَرْبَعين",
+        "arba'in"
+      ],
+      [
+        "forty-seven",
+        "سبعة وأربعين@سَبْعة وَأَرْبَعين",
+        "saba' w arba'in"
+      ],
+      [
+        "eighty-seven",
+        "سبعة وتمانين@سَبْعة وَتْمانين",
+        "saba' w tmanin"
+      ]
+    ],
+    "index": 13
+  },
   "on_road_1": {
     "name": "Cars and traffic",
     "explanations": `### Short notes about this topic
@@ -4493,7 +4841,7 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
         "iqaf"
       ]
     ],
-    "index": 13
+    "index": 14
   },
   "describe_family_1": {
     "name": "Tell about your family",
@@ -4712,7 +5060,7 @@ Family vocab in Levantine is built on three shortcuts.
 ##story-line## ''' أخوي الكبير تجوّز من سنتين، مرته أصلها من طرابلس@أَخوي الكْبير تْجَوَّز مِن سَنْتَيْن، مَرْته أَصِلها مِن طْرابْلُس ''' ##story-translation## My eldest brother got married two years ago, his wife is originally from Tripoli ##story-transcr## akhuy il-kbir tjawwaz min santein, marto asilha min Trablous
 ##story-line## ''' هلّأ عندهن صبي، عمره سنتين@هَلّأ عِنْدهُن صَبي، عُمْره سَنْتَيْن ''' ##story-translation## Now they have a baby boy, he is two years old ##story-transcr## halla 'indhun sabi, 'umro santein
 ##story-line## ''' كلّنا منجتمع عند أبوي وإمّي كلّ سبت@كِلّنا مِنْجْتَمَع عِنْد أَبوي وَإِمّي كِلّ سَبِت ''' ##story-translation## We all gather at my parents' place every Saturday ##story-transcr## killna minijtama' 'ind abuy w immi kill sabit`,
-    "index": 14
+    "index": 15
   },
   "training_1": {
     "name": "Practice the Learned",
@@ -6475,6 +6823,6 @@ The goal is to practice independently in the game format, but without the risk o
       ]
     ],
     "sentences": [],
-    "index": 15
+    "index": 16
   }
 };
