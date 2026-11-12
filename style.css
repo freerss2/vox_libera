@@ -353,7 +353,13 @@ body {
 
 /* use the same approach as for dictionary padding */
 .game-screen {
-    padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+}
+
+@media (width <= 600px) {
+    .game-screen {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+    }
 }
 
 .hidden { display: none !important; }
@@ -882,8 +888,14 @@ body {
     overflow-y: auto !important;
     
     /* Consider safe area */
-    padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important;
     box-sizing: border-box;
+}
+
+@media (width <= 600px) {
+    #screen-dictionary {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+    }
 }
 
 .dictionary-card {

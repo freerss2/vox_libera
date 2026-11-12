@@ -6,7 +6,7 @@
 "use strict";
 
 const engine_ver = '2.9.3';
-const app_version = '3.4.4';
+const app_version = '3.4.5';
 
 const courses = [
   {"ref": "course.ar1", "code": "ع", "title": "Arabic Basics"},
@@ -142,8 +142,7 @@ const smiliesMap = {
     '⏩': 'lucide-chevrons-right',
     '🔒': 'lucide-lock',
     '🌍': 'lucide-globe',
-    '👤': 'lucide-user-round',
-    '🗣': 'lucide-user-round-check',
+    '👤': 'lucide-user',
     '→': 'lucide-arrow-right',
     '➡': 'lucide-arrow-right',
     '☁': 'lucide-online',
