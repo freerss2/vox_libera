@@ -1521,7 +1521,7 @@ input:checked + .slider::before { transform: translateX(24px); }
     align-items: center;
     text-align: center;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-flex;
     margin-right: 8px;
 }
 
