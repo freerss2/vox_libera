@@ -4219,7 +4219,7 @@ Salamtak ('''سَلَامْتَك''') / Salamtik ('''سَلَامْتِك'''): T
 
 **Numbers are words, not digits.** In this lesson all numbers are written out in Arabic — '''عَشَر''', '''إثْنَعْشَر''', '''ميتَيْن''' — so you learn to pronounce and understand them, not just to read 10, 12, 200. In Levantine, teens are fused: '''إثْنَعْشَر''' __itna'shar__ (12), '''أَرْبَعْطَعْشَر''' __arba'tashar__ (14), '''تْمَنْطَعْشَر''' __tmantashar__ (18). Tens are built as unit + w + ten: '''خَمْسة وَعِشْرين''' __khamse w 'ishrin__ (25), '''سَبْعة وَتْمانين''' __saba' w tmanin__ (87). Hundreds: '''مِيّة''' __miyye__ (100), '''ميتَيْن''' __mitein__ (200), '''ثْلاثْمِيّة''' __tlat-miyye__ (300), '''أَرْبَعْمِيّة''' __arba'-miyye__ (400).
 **Cheaper / more expensive.** '''أَرْخَص''' __arkhas__ and '''أَغْلى''' __aghla__ are comparatives. The pattern is:
-'''هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — This cheese is cheaper by 10 lira.
+'''هاد الجِّبْنة أَرْخَص بِـعَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — This cheese is cheaper by 10 lira.
 The '''بِـ''' __bi-__ is important: it means by this amount.
 **Weigh me.** '''إِوْزِنّي''' __wzinni__ = weigh + for me. Levantine imperative + -ni (for me) is very common in a shop: '''عْطيني''' __'tini__ (give me), '''إِوْزِنّي''' __wzinni__ (weigh for me).
 **Slice or leave it?** '''أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟''' __aqatti'ha rfi' walla atrukha sha'fe?__ — Do I slice it thin or leave it as a piece? '''شَقْفة''' __sha'fe__ is the everyday word for a chunk / piece of cheese, meat, bread.
@@ -4238,12 +4238,12 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
     "sentences": [
       [
         "This cheese is cheaper by 10 lira",
-        "هاد الجّبنة أرخص بـ عشر ليرة@هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة",
+        "هاد الجّبنة أرخص بـعشر ليرة@هاد الجِّبْنة أَرْخَص بِـعَشَر لِيرة",
         "had il-jibne arkhas bi-'ashar lira"
       ],
       [
         "That cheese is more expensive by 12 lira",
-        "هاديك الجّبنة أغلى بـ إثنعشر ليرة@هاديك الجِّبْنة أَغْلى بِـ إثْنَعْشَر لِيرة",
+        "هاديك الجّبنة أغلى بـإثنعشر ليرة@هاديك الجِّبْنة أَغْلى بِـإثْنَعْشَر لِيرة",
         "hadik il-jibne aghla bi-itna'shar lira"
       ],
       [

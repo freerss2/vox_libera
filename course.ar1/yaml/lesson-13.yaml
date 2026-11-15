@@ -11,7 +11,7 @@ explanations:
 
     **Numbers are words, not digits.** In this lesson all numbers are written out in Arabic — '''عَشَر''', '''إثْنَعْشَر''', '''ميتَيْن''' — so you learn to pronounce and understand them, not just to read 10, 12, 200. In Levantine, teens are fused: '''إثْنَعْشَر''' __itna'shar__ (12), '''أَرْبَعْطَعْشَر''' __arba'tashar__ (14), '''تْمَنْطَعْشَر''' __tmantashar__ (18). Tens are built as unit + w + ten: '''خَمْسة وَعِشْرين''' __khamse w 'ishrin__ (25), '''سَبْعة وَتْمانين''' __saba' w tmanin__ (87). Hundreds: '''مِيّة''' __miyye__ (100), '''ميتَيْن''' __mitein__ (200), '''ثْلاثْمِيّة''' __tlat-miyye__ (300), '''أَرْبَعْمِيّة''' __arba'-miyye__ (400).
     **Cheaper / more expensive.** '''أَرْخَص''' __arkhas__ and '''أَغْلى''' __aghla__ are comparatives. The pattern is:
-    '''هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — This cheese is cheaper by 10 lira.
+    '''هاد الجِّبْنة أَرْخَص بِـعَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — This cheese is cheaper by 10 lira.
     The '''بِـ''' __bi-__ is important: it means by this amount.
     **Weigh me.** '''إِوْزِنّي''' __wzinni__ = weigh + for me. Levantine imperative + -ni (for me) is very common in a shop: '''عْطيني''' __'tini__ (give me), '''إِوْزِنّي''' __wzinni__ (weigh for me).
     **Slice or leave it?** '''أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟''' __aqatti'ha rfi' walla atrukha sha'fe?__ — Do I slice it thin or leave it as a piece? '''شَقْفة''' __sha'fe__ is the everyday word for a chunk / piece of cheese, meat, bread.
@@ -27,7 +27,7 @@ explanations:
 
     **Числа — прописью, а не цифрами.** В этом уроке все числа в арабском варианте написаны словами — '''عَشَر''', '''إثْنَعْشَر''', '''ميتَيْن''' — чтобы ты научился их произносить и понимать на слух, а не просто читать 10, 12, 200. В левантийском подростковые числа слитные: '''إثْنَعْشَر''' __itna'shar__ (12), '''أَرْبَعْطَعْشَر''' __arba'tashar__ (14), '''تْمَنْطَعْشَر''' __tmantashar__ (18). Десятки строятся как единицы + وَ + десятки: '''خَمْسة وَعِشْرين''' __khamse w 'ishrin__ (25), '''سَبْعة وَتْمانين''' __saba' w tmanin__ (87). Сотни: '''مِيّة''' __miyye__ (100), '''ميتَيْن''' __mitein__ (200), '''ثْلاثْمِيّة''' __tlat-miyye__ (300), '''أَرْبَعْمِيّة''' __arba'-miyye__ (400).
     **Дешевле / дороже.** '''أَرْخَص''' __arkhas__ и '''أَغْلى''' __aghla__ — сравнительные формы. Модель такая:
-    '''هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — Этот сыр дешевле на 10 лир.
+    '''هاد الجِّبْنة أَرْخَص بِـعَشَر لِيرة''' __had il-jibne arkhas bi-'ashar lira__ — Этот сыр дешевле на 10 лир.
     Важен предлог '''بِـ''' __bi-__ — он значит «на эту сумму».
     **Взвесь мне.** '''إِوْزِنّي''' __wzinni__ = взвесь + мне. В магазине левантийский императив + -ни (мне) встречается постоянно: '''عْطيني''' __'tini__ (дай мне), '''إِوْزِنّي''' __wzinni__ (взвесь мне).
     **Нарезать или оставить?** '''أَقَطِّعْها رْفيع وَلّا أُتْرُكْها شَقْفة؟''' __aqatti'ha rfi' walla atrukha sha'fe?__ — Нарезать тонко или оставить куском? '''شَقْفة''' __sha'fe__ — обычное слово для куска сыра, мяса, хлеба.
@@ -92,12 +92,12 @@ story:
 
 sentences:
 
-- ar: "هاد الجِّبْنة أَرْخَص بِـ عَشَر لِيرة"
+- ar: "هاد الجِّبْنة أَرْخَص بِـعَشَر لِيرة"
   en: "This cheese is cheaper by 10 lira"
   transliteration: "had il-jibne arkhas bi-'ashar lira"
   ru: "Этот сыр дешевле на 10 лир"
 
-- ar: "هاديك الجِّبْنة أَغْلى بِـ إثْنَعْشَر لِيرة"
+- ar: "هاديك الجِّبْنة أَغْلى بِـإثْنَعْشَر لِيرة"
   en: "That cheese is more expensive by 12 lira"
   transliteration: "hadik il-jibne aghla bi-itna'shar lira"
   ru: "Тот сыр дороже на 12 лир"
