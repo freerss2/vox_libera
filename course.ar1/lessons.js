@@ -4268,7 +4268,7 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
       ],
       [
         "Expiry date until the 18th",
-        "تاريخ الانتهاء لـ تمنطعشر الشّهر@تاريخ الانْتِهاء لَـ تْمَنْطَعْشَر الشَّهْر",
+        "تاريخ الانتهاء لـتمنطعشر الشّهر@تاريخ الانْتِهاء لَـتْمَنْطَعْشَر الشَّهْر",
         "tarikh il-intiha la-tmantashar ish-shahir"
       ],
       [
@@ -4278,7 +4278,7 @@ The '''بِـ''' __bi-__ is important: it means by this amount.
       ],
       [
         "This cheese is good until the 25th",
-        "هاد الجّبنة صالحة لـ خمسة وعشرين الشّهر@هاد الجِّبْنة صالْحة لَـ خَمْسة وَعِشْرين الشَّهْر",
+        "هاد الجّبنة صالحة لـخمسة وعشرين الشّهر@هاد الجِّبْنة صالْحة لَـخَمْسة وَعِشْرين الشَّهْر",
         "had il-jibne salha la-khamse w 'ishrin ish-shahir"
       ],
       [
