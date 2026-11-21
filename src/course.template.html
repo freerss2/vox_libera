@@ -343,14 +343,20 @@
         </div>
 
         <div class="last-screen-btn">
-          <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="renderCurrentScreen();">
+          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="renderCurrentScreen();">
             <span data-i18n="main|go_back">Back</span>
             <svg class="emoji-icon">
               <use href="#lucide-back"></use>
             </svg>
           </button>
         </div>
-        <div class="next-screen-btn">
+        <div class="next-screen-btn two-button-bar">
+          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadPrevNextScreen(-1);">
+            <span data-i18n="main|go_back">Back</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-back"></use>
+            </svg>
+          </button>
           <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="loadNextScreen();">
             <span data-i18n="main|go_forward">Forward</span>
             <svg class="emoji-icon">
@@ -359,8 +365,14 @@
           </button>
         </div>
         <div id="dictionary-list"></div>
-        <div class="next-screen-btn">
-          <button class="action-btn easy default full-width on-screen-actions" onclick="loadNextScreen();">
+        <div class="next-screen-btn two-button-bar">
+          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="loadPrevNextScreen(-1);">
+            <span data-i18n="main|go_back">Back</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-back"></use>
+            </svg>
+          </button>
+          <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="loadNextScreen();">
             <span data-i18n="main|go_forward">Forward</span>
             <svg class="emoji-icon">
               <use href="#lucide-chevrons-right"></use>
@@ -368,7 +380,7 @@
           </button>
         </div>
         <div class="last-screen-btn">
-          <button class="action-btn easy default row-btn full-width on-screen-actions" onclick="renderCurrentScreen();">
+          <button class="action-btn easy row-btn full-width on-screen-actions" onclick="renderCurrentScreen();">
             <span data-i18n="main|go_back">Back</span>
             <svg class="emoji-icon">
               <use href="#lucide-back"></use>
@@ -431,6 +443,20 @@
                 </button>
             </div>
 
+        </div>
+        <div class="flashcards-nav-dock two-button-bar">
+          <button class="action-btn easy full-width" onclick="loadPrevNextScreen(-1);">
+            <span data-i18n="main|go_back">Back</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-back"></use>
+            </svg>
+          </button>
+          <button class="action-btn easy default full-width" onclick="loadNextScreen();">
+            <span data-i18n="main|go_forward">Forward</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-chevrons-right"></use>
+            </svg>
+          </button>
         </div>
       </div>
 

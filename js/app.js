@@ -312,7 +312,7 @@ function loadNextScreen(fromWinDialog=false) {
             return;
         }
     }
-    loadPrevNexScreen(1);
+    loadPrevNextScreen(1);
 }
 
 function showTopicResults() {
@@ -371,7 +371,7 @@ function getCurrGameIdex() {
   return topicScreens.findIndex(m => m.id === settings.getCurrentScreenId());
 }
 
-function loadPrevNexScreen(delta) {
+function loadPrevNextScreen(delta) {
   // find current screen index
   const currGameIndex = getCurrGameIdex();
   const newGameIndex = currGameIndex+delta;
@@ -2250,23 +2250,20 @@ function showDictionary(currentData, mode='') {
         if (wordStat.attempts > 0) {
           accuracy = Math.round((  wordStat.success / wordStat.attempts) * 100);
         }
-        let statusColor = 'var(--border-color)'; // no highlight by default
-        if (wordStat.attempts > 0) {
-            if (accuracy < 50) statusColor = 'var(--error-color)';      // Failed
-            else if (accuracy < 85) statusColor = '#ce9b02';            // Acceptable
-            else statusColor = 'var(--primary-color)';                  // Good
-        }
+        let statusColor = 'var(--primary-color)';
+        if (accuracy < 50) statusColor = 'var(--error-color)';
+        else if (accuracy < 85) statusColor = '#ce9b02';
 
         // Speak the content on click
         card.onclick = () => speakTargetLang(item[1]);
-        const cardStat = wordStat.attempts > 0 ? `<span class="stat-badge" style=" color: ${statusColor};"> (${accuracy}%)</span>` : '';
+        const cardStat = wordStat.attempts > 0 ? `<span class="stat-badge" style="background: ${statusColor};">${accuracy}%</span>` : '';
         card.innerHTML = `
-            <div style="flex: 1;">
-                <div>
+            <div class="dictionary-card-header" dir="${userDir}">
+                <div class="dictionary-card-text">
                   <span style="color: var(--secondary-color);" class="user-text" dir="${userDir}" lang="${userLang}">${item[0]}</span>
-                  ${cardStat}
+                  <div class="dictionary-transl transcription">[${item[2]}]</div>
                 </div>
-                <div class="dictionary-transl transcription">[${item[2]}]</div>
+                ${cardStat}
             </div>
             <div class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}">
                 ${displayText}
