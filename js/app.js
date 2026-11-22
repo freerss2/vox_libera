@@ -1711,7 +1711,6 @@ function renderQuizGame(screen_id) {
 
     questionContainer.innerHTML = '';
     optionsGrid.innerHTML = '';
-    document.getElementById('quiz-hint-panel').textContent = i18n.t("main|hint-panel");
 
     let mainHint = '';
     const targetTags = `class="target-text" dir="${targetDir}" lang="${courseTargetLanguage}"`;
@@ -1755,6 +1754,12 @@ function renderQuizGame(screen_id) {
         if (screenType === 'quiz_u2t') {
             const displayText = itemDisplayText(word);
             btn.innerHTML = `<span ${targetTags}>${displayText}</span>`;
+            btn.classList.add('quiz-target-card');
+            const transcription = document.createElement('span');
+            transcription.className = 'matching-transcription quiz-transcription transcription';
+            transcription.classList.toggle('hidden', settings.getShowTranscription() == 0);
+            transcription.textContent = `[${word[2]}]`;
+            btn.appendChild(transcription);
             btn.dataset.speak = word[1];
         } else {
             btn.innerHTML = `<span ${userTags}>${word[0]}</span>`;
@@ -1871,13 +1876,13 @@ window.quizGiveup = function() {
 
 // Callback for click on quiz button
 function handleQuizChoice(selectedStr, btn) {
-    // if relevant - fill quiz-hint-panel with transliteration
-    const translit = btn.dataset.translit;
-    if (btn.dataset.speak) speakTargetLang(btn.dataset.speak);
-    const hintPanel = document.getElementById('quiz-hint-panel');
-    if (hintPanel && translit) {
-        hintPanel.textContent = translit;
+    document.querySelectorAll('.quiz-target-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    if (btn.classList.contains('quiz-target-card') && settings.getShowTranscription() == 1) {
+        btn.classList.add('selected');
     }
+    if (btn.dataset.speak) speakTargetLang(btn.dataset.speak);
     if (itemDisplayText(selectedStr) === itemDisplayText(quizCorrectStr)) {
         // Correct!
         btn.style.borderColor = "var(--primary)";
@@ -1907,6 +1912,7 @@ function handleQuizChoice(selectedStr, btn) {
         gameErrorData = wordsMappingForSummary[0];
         updateStats(quizCorrectStr[1], firstAttempt);
         btn.classList.add('wrong');
+        btn.classList.remove('selected');
         btn.disabled = true; // Disable as already taken
         scrollToTop('app-container');
 
@@ -3003,6 +3009,12 @@ function buildMarkdownConf(targetLanguage, targetDirection, userLanguage, userDi
 // Show text-based screen
 function renderTextScreen(screenId) {
   const wrapperElm = document.getElementById('explanationsScreen');
+  const backButton = document.getElementById('text-screen-back');
+  const hasPreviousScreen = getCurrGameIdex() > 0;
+  if (backButton) {
+    backButton.disabled = !hasPreviousScreen;
+    backButton.onclick = hasPreviousScreen ? () => loadPrevNextScreen(-1) : null;
+  }
   const topicId = settings.getCurrentTopic();
   const currTopic = topics[topicId]
   const screen = getScreenRecord(screenId);

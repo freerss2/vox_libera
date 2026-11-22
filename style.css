@@ -361,6 +361,10 @@ body {
     .game-screen {
         padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
     }
+
+    .explanations-screen {
+        padding-bottom: calc(140px + env(safe-area-inset-bottom)) !important;
+    }
 }
 
 .hidden { display: none !important; }
@@ -386,11 +390,6 @@ body {
     background: var(--panel-background);
     border-top: 1px solid var(--light-border-color);
     box-sizing: border-box;
-}
-
-.flashcards-screen,
-.explanations-screen {
-    padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
 }
 
 .flashcard-wrapper {
@@ -760,8 +759,9 @@ body {
     inset-inline-end: 12px;
     transform: none;
     z-index: 2;
-    width: max-content;
-    max-width: calc(100% + 12px);
+    width: fit-content;
+    max-width: min(260px, calc(100vw - 24px));
+    box-sizing: border-box;
     padding: 3px 8px;
     background: #ddf4ff;
     border: 1px solid #84d8ff;
@@ -773,10 +773,34 @@ body {
     line-height: 1.2;
     text-align: center;
     pointer-events: none;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+#screen-matching {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+}
+
+@media (width <= 600px) {
+    #screen-matching {
+        padding-bottom: calc(140px + env(safe-area-inset-bottom)) !important;
+    }
+
+    .matching-container {
+        padding-bottom: 24px;
+    }
 }
 
 .matching-card:not(.selected) .matching-transcription {
+    display: none;
+}
+
+.quiz-target-card {
+    position: relative;
+    overflow: visible;
+}
+
+.quiz-target-card:not(.selected) .quiz-transcription {
     display: none;
 }
 
@@ -949,6 +973,12 @@ body {
 
     .quiz-card {
        min-width: 80vw;
+    }
+}
+
+@media (width <= 600px) {
+    #screen-quiz {
+        padding-bottom: calc(140px + env(safe-area-inset-bottom)) !important;
     }
 }
 
