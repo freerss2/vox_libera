@@ -291,14 +291,8 @@
         <div id="course-map-cards"></div>
       </div>
 
-      <div class="game-screen hidden" id="explanationsScreen">
+      <div class="game-screen explanations-screen hidden" id="explanationsScreen">
         <p id="explanationsContent"></p>
-        <button class="action-btn easy default wide-btn" onclick="loadNextScreen();">
-          <span data-i18n="main|go_forward">Ok</span>
-          <svg class="emoji-icon">
-            <use href="#lucide-chevrons-right"></use>
-          </svg>
-        </button>
         <div id="firstTime" class="hidden">
             <div id="vox-auth-container" class="vox-auth-container setting-group">
               <button id="google-login-btn" onclick="handleManualLoginClick()" class="action-btn easy google-login-btn wide-btn">
@@ -318,6 +312,20 @@
               </svg>
               <span data-i18n="main|app-main-link">App explanations and courses</span>
             </button>
+        </div>
+        <div class="explanations-nav-dock two-button-bar">
+          <button class="action-btn easy" disabled>
+            <span data-i18n="main|go_back">Back</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-back"></use>
+            </svg>
+          </button>
+          <button class="action-btn easy default" onclick="loadNextScreen();">
+            <span data-i18n="main|go_forward">Forward</span>
+            <svg class="emoji-icon">
+              <use href="#lucide-chevrons-right"></use>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -461,9 +469,7 @@
       </div>
 
       <div id="screen-matching" class="game-screen hidden">
-
         <div class="matching-container" id="matching-grid"></div>
-        <div id="hint-panel" class="hint-panel transcription" data-i18n="main|hint-panel">Click to see</div>
       </div>
 
       <div id="screen-quiz" class="game-screen hidden">

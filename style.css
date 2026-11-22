@@ -373,7 +373,8 @@ body {
     padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
 }
 
-.flashcards-nav-dock {
+.flashcards-nav-dock,
+.explanations-nav-dock {
     position: fixed;
     left: 50%;
     right: auto;
@@ -385,6 +386,11 @@ body {
     background: var(--panel-background);
     border-top: 1px solid var(--light-border-color);
     box-sizing: border-box;
+}
+
+.flashcards-screen,
+.explanations-screen {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
 }
 
 .flashcard-wrapper {
@@ -524,6 +530,11 @@ body {
 }
 
 .flashcards-nav-dock > .action-btn {
+    flex: 1;
+    min-width: 0;
+}
+
+.explanations-nav-dock > .action-btn {
     flex: 1;
     min-width: 0;
 }
@@ -738,6 +749,41 @@ body {
     border-color: transparent;
 }
 
+.matching-card {
+    position: relative;
+    overflow: visible;
+}
+
+.matching-transcription {
+    position: absolute;
+    top: calc(100% - 10px);
+    inset-inline-end: 12px;
+    transform: none;
+    z-index: 2;
+    width: max-content;
+    max-width: calc(100% + 12px);
+    padding: 3px 8px;
+    background: #ddf4ff;
+    border: 1px solid #84d8ff;
+    border-radius: 999px;
+    color: #666;
+    font-size: 0.85em;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.matching-card:not(.selected) .matching-transcription {
+    display: none;
+}
+
+.matching-transcription.hidden {
+    display: none;
+}
+
 .card.wrong {
     background-color: #ffdfe0;
     border-color: var(--error-color);
@@ -807,6 +853,17 @@ body {
 
 .sent-action-bar .action-btn {
     max-width: 48%;
+}
+
+.action-btn:disabled,
+.action-btn:disabled:hover,
+.action-btn:disabled:focus,
+.action-btn:disabled:active {
+    cursor: default;
+    opacity: 0.55;
+    border-color: #a0a0a0;
+    background: #e5e5e5;
+    color: #777;
 }
 
 .sent-btn-giveup {

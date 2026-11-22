@@ -922,9 +922,6 @@ function hideAllScreens() {
     screen_elements.forEach(s => s.classList.add('hidden'));
     // hide summary elements
     hideNarrator();
-    // reset hint panel
-    const hintPanelElm = document.getElementById('hint-panel');
-    if (hintPanelElm) hintPanelElm.textContent = i18n.t("main|hint-panel");
     document.getElementById('progress-container').classList.add('hidden');
     document.getElementById('errors-panel').classList.add('hidden');
     document.getElementById('completion-screen').classList.add('hidden');
@@ -1190,10 +1187,17 @@ function renderMatchingGame() {
 // Create a single tile for pairs (matching) screen
 function createTile(item, index, side, lang, container) {
     const div = document.createElement('div');
-    div.className = 'card' + (lang === 'target' ? ' target-text' : ' user-text');
+    div.className = 'card matching-card' + (lang === 'target' ? ' target-text' : ' user-text');
     div.lang = lang === 'target' ? courseTargetLanguage : userLang;
     div.dir = lang === 'target' ? targetDir : userDir;
     div.textContent = wordDisplayText(item.t);
+    if (lang === 'target') {
+        const transcription = document.createElement('span');
+        transcription.className = 'matching-transcription transcription';
+        transcription.classList.toggle('hidden', settings.getShowTranscription() == 0);
+        transcription.textContent = `[${item.h}]`;
+        div.appendChild(transcription);
+    }
     div.dataset.col = side;
     div.dataset.target = (lang === 'target' ? item.t : '');
     div.dataset.id = item.id;
@@ -1203,7 +1207,6 @@ function createTile(item, index, side, lang, container) {
 
     div.onclick = () => {
         if (lang === 'target') {
-          document.getElementById('hint-panel').textContent = `[ ${item.h} ]`;
           speakTargetLang(item.t);
         }
         handleSelectTile(div, side);
@@ -1214,7 +1217,14 @@ function createTile(item, index, side, lang, container) {
 // Reaction on tile click (any side)
 function handleSelectTile(el, side) {
     if (el.classList.contains('correct')) return;
+
+    const wasSelected = el.classList.contains('selected');
     document.querySelectorAll(`.card[data-col="${side}"]`).forEach(t => t.classList.remove('selected'));
+    if (wasSelected) {
+        if (side === 'left') selectedLeft = null;
+        else selectedRight = null;
+        return;
+    }
     el.classList.add('selected');
 
     if (side === 'left') selectedLeft = el;
@@ -1232,8 +1242,8 @@ function checkPairMatch() {
         updateStats(targetStr, true);
         triggerSuccessEffect(r, true);
         triggerSuccessEffect(l, true);
-        document.getElementById('hint-panel').textContent = i18n.t("main|hint-panel");
 
+        l.classList.remove('selected'); r.classList.remove('selected');
         l.classList.add('correct'); r.classList.add('correct');
         matches++;
         updateProgress(matches / pairItemsInRound * 100);
