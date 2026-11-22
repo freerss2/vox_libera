@@ -1769,6 +1769,9 @@ function renderQuizGame(screen_id) {
         btn.onclick = () => handleQuizChoice(word, btn);
         optionsGrid.appendChild(btn);
     });
+
+    const optionsScroll = document.querySelector('.quiz-options-scroll');
+    if (optionsScroll) optionsScroll.scrollTop = 0;
 }
 
 // Generate a list of choices (including pre-selected correct one)
@@ -1876,9 +1879,16 @@ window.quizGiveup = function() {
 
 // Callback for click on quiz button
 function handleQuizChoice(selectedStr, btn) {
+    document.querySelectorAll('.quiz-card.wrong').forEach(card => {
+        card.classList.remove('wrong');
+        card.classList.remove('selected');
+    });
     document.querySelectorAll('.quiz-target-card').forEach(card => {
         card.classList.remove('selected');
     });
+
+    if (btn.classList.contains('wrong') || btn.classList.contains('correct')) return;
+
     if (btn.classList.contains('quiz-target-card') && settings.getShowTranscription() == 1) {
         btn.classList.add('selected');
     }
@@ -1912,7 +1922,6 @@ function handleQuizChoice(selectedStr, btn) {
         gameErrorData = wordsMappingForSummary[0];
         updateStats(quizCorrectStr[1], firstAttempt);
         btn.classList.add('wrong');
-        btn.classList.remove('selected');
         btn.disabled = true; // Disable as already taken
         scrollToTop('app-container');
 
