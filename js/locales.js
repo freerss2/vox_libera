@@ -32,11 +32,10 @@ The buttons on the right are used to customize the app interface: turn sound on/
 ![Screen 2](img/user_guide02.png)`,
     "hint": `
 The top of the menu shows the name of the current topic. The next line displays the topic's statistics: how many words and sentences it contains and the percentage of successful exercises with them. The student's goal is to achieve the maximum percentage. Once 90% is reached, the topic can be considered complete. This result will be taken into account for review exercises. If the student simply "played around," they can reset the statistics for that topic to zero.
-You can use the “Previous” and “Next” buttons to go to the previous and next topic.`
   },
   {
     "content": `
-In the **center of the menu** there is a list of lessons for the current topic.
+By clicking **map** button you will get a list of lessons for the current topic and also the links to other topics.
 ![Screen 3](img/user_guide03.png)`,
     "hint": `
 This list allows you to track your progress from exercise to exercise. We'll learn more about the different types of exercises and utility screens later.`
@@ -308,12 +307,11 @@ To start a course, select the course title and click on it.
 ![Screen 2](img/user_guide02.png)`,
     "hint": `
 В верхней части меню показано название текущей темы. В следующей строке показана статистика темы: сколько слов и предложений она содержит и каков процент удачных упражнений с ними. Цель ученика - добиться максимального процента. После достижения 90% можно отметить, что тема пройдена. Этот результат будет учитываться в упражнениях на повторение изученного материала. Если ученик просто “поигрался”, он может сбросить в ноль статистику по этой теме.
-Кнопками “Пред” и “След” можно переходить к предыдущей и следующей теме.
 `
   },
   {
     "content": `
-В **центре меню** находится список уроков текущей темы.
+По нажатию кнопки **карта** открывается список уроков текущей темы а также ссылки на остальные темы.
 ![Screen 3](img/user_guide03.png)`,
     "hint": `
 Этот список позволяет следить за продвижением от упражнения к упражнению.
