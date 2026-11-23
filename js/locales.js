@@ -15,10 +15,18 @@ const locales = { // locales for UI i18n
 Hello and welcome.
 Let's get familiar with the app's appearance and controls
 
-The "three lines" button opens the settings and navigation menu for the app.
+On the left located the lessons map button.
 The first line of the title is the topic currently being studied, the second line is the current stage (exercise, lesson).
-The buttons on the right are used to customize the app interface: turn sound on/off and adjust the text size. 
+The button on the right is opening the quick app tuning menu: turn sound on/off and adjust the text size. 
+Also, there located the "three lines" button that opens the full settings menu.
 `
+  },
+  {
+    "content": `
+By clicking **map** button you will get a list of lessons for the current topic and also the links to other topics.
+![Screen 3](img/user_guide03.png)`,
+    "hint": `
+This list allows you to track your progress from exercise to exercise. We'll learn more about the different types of exercises and utility screens later.`
   }
     ]
   },
@@ -33,13 +41,6 @@ The buttons on the right are used to customize the app interface: turn sound on/
     "hint": `
 The top of the menu shows the name of the current topic. The next line displays the topic's statistics: how many words and sentences it contains and the percentage of successful exercises with them. The student's goal is to achieve the maximum percentage. Once 90% is reached, the topic can be considered complete. This result will be taken into account for review exercises. If the student simply "played around," they can reset the statistics for that topic to zero.
 `
-  },
-  {
-    "content": `
-By clicking **map** button you will get a list of lessons for the current topic and also the links to other topics.
-![Screen 3](img/user_guide03.png)`,
-    "hint": `
-This list allows you to track your progress from exercise to exercise. We'll learn more about the different types of exercises and utility screens later.`
   },
   {
     "content": `
@@ -290,9 +291,19 @@ To start a course, select the course title and click on it.
 Привет и добро пожаловать.
 Я помогу тебе познакомьтся с внешним видом и управлением приложением
 
-Кнопкой “три полоски” открывается меню настроек и перемещений по приложению.
+Слева находится кнопка вызова карты уроков.
 Первая строчка заголовка - название изучаемой сейчас темы, вторая - этап (упражнение, урок).
-Кнопки справа используются для настройки интерфейса приложения: включение/отключение звука и регулировка размера текста.
+Кнопкой справа открываются быстрые настройки интерфейса приложения: включение/отключение звука и регулировка размера текста.
+Там же расположена кнопка “три полоски” позволяющая перейти к полному меню настроек.
+`
+  },
+  {
+    "content": `
+По нажатию кнопки **карта** открывается список уроков текущей темы а также ссылки на остальные темы.
+![Screen 3](img/user_guide03.png)`,
+    "hint": `
+Этот список позволяет следить за продвижением от упражнения к упражнению.
+С видами упражнений и служебных экранов мы познакомимся позже.
 `
   }
     ]
@@ -308,15 +319,6 @@ To start a course, select the course title and click on it.
 ![Screen 2](img/user_guide02.png)`,
     "hint": `
 В верхней части меню показано название текущей темы. В следующей строке показана статистика темы: сколько слов и предложений она содержит и каков процент удачных упражнений с ними. Цель ученика - добиться максимального процента. После достижения 90% можно отметить, что тема пройдена. Этот результат будет учитываться в упражнениях на повторение изученного материала. Если ученик просто “поигрался”, он может сбросить в ноль статистику по этой теме.
-`
-  },
-  {
-    "content": `
-По нажатию кнопки **карта** открывается список уроков текущей темы а также ссылки на остальные темы.
-![Screen 3](img/user_guide03.png)`,
-    "hint": `
-Этот список позволяет следить за продвижением от упражнения к упражнению.
-С видами упражнений и служебных экранов мы познакомимся позже.
 `
   },
   {
