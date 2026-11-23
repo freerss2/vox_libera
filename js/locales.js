@@ -32,6 +32,7 @@ The buttons on the right are used to customize the app interface: turn sound on/
 ![Screen 2](img/user_guide02.png)`,
     "hint": `
 The top of the menu shows the name of the current topic. The next line displays the topic's statistics: how many words and sentences it contains and the percentage of successful exercises with them. The student's goal is to achieve the maximum percentage. Once 90% is reached, the topic can be considered complete. This result will be taken into account for review exercises. If the student simply "played around," they can reset the statistics for that topic to zero.
+`
   },
   {
     "content": `
